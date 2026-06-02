@@ -1,0 +1,13 @@
+# https://docs.netlify.com/frameworks/next-js/overview/
+[build]
+  command = "npm run build"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Apex is primary; www → apex (same as vercel.json)
+[[redirects]]
+  from = "https://www.rewardologyacademy.com/*"
+  to = "https://rewardologyacademy.com/:splat"
+  status = 301
+  force = true

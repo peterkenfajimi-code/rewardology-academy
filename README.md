@@ -63,16 +63,16 @@ Individual SQL files also live in `supabase/` if you prefer running them separat
 
 ## Deploy (rewardologyacademy.com)
 
-**Registrar:** Namecheap · **Host:** [Vercel](https://vercel.com/new) · **Domain:** `rewardologyacademy.com`
+**Registrar:** Namecheap · **Host:** [Netlify](https://app.netlify.com/start) · **Repo:** [peterkenfajimi-code/rewardology-academy](https://github.com/peterkenfajimi-code/rewardology-academy)
 
-1. Push this repo to GitHub (install [Git for Windows](https://git-scm.com/download/win) if needed).
-2. Import the repo on Vercel; set production env vars from `.env.example` (`NEXT_PUBLIC_SITE_URL=https://rewardologyacademy.com`).
-3. Vercel → **Settings → Domains** → add apex + `www`.
-4. Namecheap → **Advanced DNS**: `A` `@` → `76.76.21.21`, `CNAME` `www` → `cname.vercel-dns.com`.
-5. Run `npm run configure:supabase-auth` (needs `SUPABASE_ACCESS_TOKEN` in `.env.local`) or set URLs in Supabase dashboard.
+1. [Netlify](https://app.netlify.com/start) → Sign up with GitHub → Import `rewardology-academy` (uses `netlify.toml`).
+2. Add environment variables from `.env.example` (`NEXT_PUBLIC_SITE_URL=https://rewardologyacademy.com`).
+3. Deploy → Domain management → add `rewardologyacademy.com` + `www` → paste DNS into Namecheap **Advanced DNS**.
+4. Add your `*.netlify.app` callback URL in Supabase until the custom domain is live.
+5. Run `npm run configure:supabase-auth` or set auth URLs in Supabase dashboard.
 6. [Resend](https://resend.com/domains) → verify domain DNS → Supabase **Authentication → SMTP**.
 
-Full checklist with copy-paste values: open **`/setup`** in the app after `npm run dev`.
+Full checklist: **`/setup`** in the app after `npm run dev`.
 
 ## Routes
 
