@@ -1,0 +1,460 @@
+/* Auth controls + modal — global (rendered outside themed scopes) */
+.ra-auth {
+  --ra-navy: #07192e;
+  --ra-navy2: #0c2340;
+  --ra-gold: #c8963e;
+  --ra-gold2: #e2ac50;
+  --ra-teal: #0c6b65;
+  --ra-teal2: #0e8a82;
+  --ra-serif: var(--font-home-serif), Georgia, serif;
+  --ra-sans: var(--font-home-sans), "Segoe UI", sans-serif;
+}
+
+/* ── Header controls ── */
+.ra-auth-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-home-sans), "Segoe UI", sans-serif;
+}
+.ra-auth-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.82);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+  font-family: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.ra-auth-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+.ra-auth-btn-primary {
+  background: linear-gradient(135deg, var(--ra-gold), var(--ra-gold2));
+  border: none;
+  color: var(--ra-navy);
+  font-weight: 700;
+}
+.ra-auth-btn-primary:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+  color: var(--ra-navy);
+  background: linear-gradient(135deg, var(--ra-gold), var(--ra-gold2));
+}
+
+/* ── Avatar + dropdown ── */
+.ra-avatar-wrap {
+  position: relative;
+}
+.ra-avatar-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, var(--ra-teal), var(--ra-teal2));
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-home-sans), "Segoe UI", sans-serif;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.ra-avatar-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+.ra-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 240px;
+  background: #0b1f38;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  padding: 8px;
+  z-index: 1200;
+  font-family: var(--font-home-sans), "Segoe UI", sans-serif;
+}
+.ra-menu-head {
+  padding: 10px 12px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 6px;
+}
+.ra-menu-head-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ra-menu-head-sub {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 2px;
+}
+.ra-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.78);
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  transition: background 0.13s, color 0.13s;
+}
+.ra-menu-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+}
+.ra-menu-item-icon {
+  font-size: 15px;
+  width: 18px;
+  text-align: center;
+}
+.ra-menu-sep {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 6px 4px;
+}
+.ra-menu-item.danger {
+  color: #fca5a5;
+}
+.ra-menu-item.danger:hover {
+  background: rgba(248, 113, 113, 0.12);
+  color: #fecaca;
+}
+
+/* ── Modal ── */
+.ra-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(4, 12, 24, 0.72);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: raFade 0.2s ease both;
+}
+.ra-modal {
+  width: 100%;
+  max-width: 420px;
+  background: #0a1e36;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 32px 32px 28px;
+  position: relative;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+  font-family: var(--font-home-sans), "Segoe UI", sans-serif;
+  color: #fff;
+  animation: raRise 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.ra-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+}
+.ra-modal-close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+.ra-modal-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.ra-modal-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, var(--ra-gold), var(--ra-gold2));
+  color: var(--ra-navy);
+  font-weight: 800;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ra-modal-brand-text {
+  font-family: var(--font-home-serif), Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+.ra-modal-title {
+  font-family: var(--font-home-serif), Georgia, serif;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+.ra-modal-title em {
+  font-style: italic;
+  color: var(--ra-gold);
+}
+.ra-modal-sub {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+.ra-field {
+  margin-bottom: 14px;
+}
+.ra-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 7px;
+}
+.ra-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 9px;
+  padding: 12px 14px;
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.15s, background 0.15s;
+}
+.ra-input:focus {
+  outline: none;
+  border-color: var(--ra-gold);
+  background: rgba(255, 255, 255, 0.06);
+}
+.ra-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+.ra-submit {
+  width: 100%;
+  margin-top: 6px;
+  background: linear-gradient(135deg, var(--ra-gold), var(--ra-gold2));
+  border: none;
+  color: var(--ra-navy);
+  padding: 13px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.15s, transform 0.15s;
+  font-family: inherit;
+}
+.ra-submit:hover:not(:disabled) {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+.ra-submit:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.ra-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.ra-divider::before,
+.ra-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.ra-oauth {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #fff;
+  padding: 12px;
+  border-radius: 9px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.ra-oauth:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+}
+.ra-oauth:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.ra-switch {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.ra-switch button,
+.ra-switch a {
+  background: none;
+  border: none;
+  color: var(--ra-gold);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  padding: 0 2px;
+  text-decoration: none;
+}
+.ra-switch button:hover,
+.ra-switch a:hover {
+  text-decoration: underline;
+}
+.ra-switch button {
+  border: none;
+}
+
+/* ── Dedicated login / signup pages ── */
+.ra-auth-root {
+  min-height: 100vh;
+  background: var(--ra-navy);
+}
+
+.ra-auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 0%, rgba(200, 150, 62, 0.1), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 80% 70%, rgba(12, 107, 101, 0.12), transparent 50%),
+    var(--ra-navy);
+}
+
+.ra-auth-page-inner {
+  width: 100%;
+  max-width: 460px;
+}
+
+.ra-auth-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.ra-auth-back:hover {
+  color: var(--ra-gold2);
+}
+
+.ra-auth-card {
+  max-width: none;
+  animation: none;
+}
+
+.ra-auth-page-loading {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+}
+
+.ra-auth-public-note {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.42);
+  line-height: 1.5;
+}
+.ra-error {
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  color: #fca5a5;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 16px;
+  line-height: 1.45;
+}
+.ra-notice {
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.28);
+  color: #86efac;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 16px;
+  line-height: 1.45;
+}
+.ra-warn {
+  background: rgba(200, 150, 62, 0.1);
+  border: 1px solid rgba(200, 150, 62, 0.3);
+  color: var(--ra-gold2);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 16px;
+  line-height: 1.45;
+}
+
+@keyframes raFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes raRise {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 640px) {
+  .ra-auth-btn {
+    padding: 7px 12px;
+    font-size: 12.5px;
+  }
+}

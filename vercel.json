@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.rewardologyacademy.com" }],
+      "destination": "https://rewardologyacademy.com/:path*",
+      "permanent": true
+    }
+  ]
+}
