@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
-    "configure:supabase-auth": "node scripts/configure-supabase-production.mjs"
+    "configure:supabase-auth": "node scripts/configure-supabase-production.mjs",
+    "configure:netlify-env": "node scripts/configure-netlify-env.mjs"
   },
   "dependencies": {
     "@portabletext/react": "^3.2.1",

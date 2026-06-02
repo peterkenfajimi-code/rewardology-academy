@@ -1,5 +1,6 @@
 import {
   AUTH_CALLBACK_PATH,
+  NETLIFY_SITE_URL,
   PRODUCTION_SITE_URL,
   PRODUCTION_AUTH_REDIRECT_URLS,
 } from "@/lib/site";
@@ -45,10 +46,12 @@ export function DeploySetupPanel() {
           <strong>not</strong> add <code>SUPABASE_ACCESS_TOKEN</code>.
         </li>
         <li>
-          <strong>Deploy</strong> — After the first deploy, note your Netlify URL (e.g.{" "}
-          <code>https://rewardology-academy.netlify.app</code>). In Supabase → Authentication → URL
-          Configuration, add redirect:{" "}
-          <code>https://YOUR-SITE.netlify.app/auth/callback</code> (until custom domain is live).
+          <strong>Live Netlify URL</strong> —{" "}
+          <a href={NETLIFY_SITE_URL} target="_blank" rel="noreferrer">
+            {NETLIFY_SITE_URL}
+          </a>
+          . Supabase redirect for this URL is configured via{" "}
+          <code>npm run configure:supabase-auth</code>.
         </li>
         <li>
           <strong>Custom domain</strong> — Netlify → Domain management → Add{" "}
@@ -93,8 +96,10 @@ NEXT_PUBLIC_SANITY_API_VERSION=2026-01-01
 ELEVENLABS_API_KEY=<optional>
 ELEVENLABS_VOICE_ID=EXAVITQu4vr4xnSDxMaL`}</pre>
       <p className="setup-section-sub" style={{ marginTop: 8 }}>
-        For the first deploy only, you can set <code>NEXT_PUBLIC_SITE_URL</code> to your Netlify
-        subdomain, then change it to <code>{PRODUCTION_SITE_URL}</code> after the custom domain works.
+        Set <code>NEXT_PUBLIC_SITE_URL</code> to <code>{NETLIFY_SITE_URL}</code> until the custom
+        domain works, then <code>{PRODUCTION_SITE_URL}</code>. Or run{" "}
+        <code>npm run configure:netlify-env</code> after adding <code>NETLIFY_AUTH_TOKEN</code> to{" "}
+        <code>.env.local</code>.
       </p>
     </div>
   );

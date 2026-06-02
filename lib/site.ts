@@ -3,6 +3,9 @@ export const PRODUCTION_SITE_URL = "https://rewardologyacademy.com";
 
 export const PRODUCTION_WWW_HOST = "www.rewardologyacademy.com";
 
+/** Netlify deploy URL (update if site is renamed). */
+export const NETLIFY_SITE_URL = "https://effulgent-cajeta-57593b.netlify.app";
+
 export const AUTH_CALLBACK_PATH = "/auth/callback";
 
 export function getPublicSiteUrl(): string {
@@ -18,5 +21,6 @@ export function authCallbackUrl(origin: string): string {
 export const PRODUCTION_AUTH_REDIRECT_URLS = [
   `${PRODUCTION_SITE_URL}${AUTH_CALLBACK_PATH}`,
   `https://${PRODUCTION_WWW_HOST}${AUTH_CALLBACK_PATH}`,
+  `${NETLIFY_SITE_URL}${AUTH_CALLBACK_PATH}`,
   `http://localhost:3000${AUTH_CALLBACK_PATH}`,
 ] as const;

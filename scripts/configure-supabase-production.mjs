@@ -15,9 +15,11 @@ const root = resolveProjectRoot(getProjectRoot(import.meta.url));
 const token = getSupabaseAccessToken(root);
 
 const PRODUCTION_SITE_URL = "https://rewardologyacademy.com";
+const NETLIFY_SITE_URL = "https://effulgent-cajeta-57593b.netlify.app";
 const REDIRECTS = [
   `${PRODUCTION_SITE_URL}/auth/callback`,
   "https://www.rewardologyacademy.com/auth/callback",
+  `${NETLIFY_SITE_URL}/auth/callback`,
   "http://localhost:3000/auth/callback",
 ];
 
