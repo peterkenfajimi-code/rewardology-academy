@@ -7,10 +7,11 @@
 import {
   getProjectRoot,
   getSupabaseAccessToken,
+  resolveProjectRoot,
   SUPABASE_PROJECT_REF,
 } from "./lib/load-env-local.mjs";
 
-const root = getProjectRoot(import.meta.url);
+const root = resolveProjectRoot(getProjectRoot(import.meta.url));
 const token = getSupabaseAccessToken(root);
 
 const PRODUCTION_SITE_URL = "https://rewardologyacademy.com";

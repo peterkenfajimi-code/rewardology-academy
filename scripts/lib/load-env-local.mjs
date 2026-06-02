@@ -7,6 +7,15 @@ export function getProjectRoot(fromImportMetaUrl) {
   return path.resolve(__dirname, "..", "..");
 }
 
+export function resolveProjectRoot(preferredRoot) {
+  const candidates = [preferredRoot, process.cwd()].filter(Boolean);
+  for (const root of candidates) {
+    if (fs.existsSync(path.join(root, ".env.local"))) return root;
+    if (fs.existsSync(path.join(root, "package.json"))) return root;
+  }
+  return preferredRoot || process.cwd();
+}
+
 export function loadEnvLocal(root) {
   const envPath = path.join(root, ".env.local");
   if (!fs.existsSync(envPath)) return {};
@@ -22,7 +31,8 @@ export function loadEnvLocal(root) {
 }
 
 export function getSupabaseAccessToken(root) {
-  const env = loadEnvLocal(root);
+  const resolved = resolveProjectRoot(root);
+  const env = loadEnvLocal(resolved);
   return process.env.SUPABASE_ACCESS_TOKEN || env.SUPABASE_ACCESS_TOKEN;
 }
 
