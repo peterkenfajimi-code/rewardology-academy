@@ -12,3 +12,8 @@ export function isSanityConfigured() {
 export function isElevenLabsConfigured() {
   return Boolean(process.env.ELEVENLABS_API_KEY);
 }
+
+/** Set NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED=true after running configure:google-oauth */
+export function isGoogleOAuthEnabled() {
+  return process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED === "true";
+}

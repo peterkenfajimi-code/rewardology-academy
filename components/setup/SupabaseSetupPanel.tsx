@@ -1,6 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { isGoogleOAuthEnabled } from "@/lib/env";
+import { SUPABASE_GOOGLE_CALLBACK_URL } from "@/lib/site";
 import type { SupabaseHealth } from "@/lib/supabase/health";
 
 function CheckRow({ label, ok }: { label: string; ok: boolean }) {
@@ -107,6 +109,47 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...`}</pre>
               )}
             </div>
           )}
+
+          <div className="setup-google" style={{ marginTop: 28 }}>
+            <h3 className="setup-subhead">Google sign-in</h3>
+            <p className="setup-section-sub">
+              Status:{" "}
+              {isGoogleOAuthEnabled() ? (
+                <strong style={{ color: "#34d399" }}>Enabled in app</strong>
+              ) : (
+                <strong style={{ color: "#e2ac50" }}>Not enabled yet</strong>
+              )}
+            </p>
+            <ol className="setup-steps">
+              <li>
+                <a
+                  href="https://console.cloud.google.com/apis/credentials"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Google Cloud → Credentials
+                </a>{" "}
+                → OAuth client ID → <strong>Web application</strong>
+              </li>
+              <li>
+                Authorized redirect URI (exact): <code>{SUPABASE_GOOGLE_CALLBACK_URL}</code>
+              </li>
+              <li>
+                Add to <code>.env.local</code>:
+                <pre className="setup-code">{`GOOGLE_CLIENT_ID=....apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=....
+NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED=true`}</pre>
+              </li>
+              <li>
+                Run <code>npm run configure:google-oauth</code> (uses{" "}
+                <code>SUPABASE_ACCESS_TOKEN</code>)
+              </li>
+              <li>
+                Add <code>NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED=true</code> to Netlify env (or{" "}
+                <code>netlify.toml</code>) and redeploy
+              </li>
+            </ol>
+          </div>
         </>
       )}
     </div>
