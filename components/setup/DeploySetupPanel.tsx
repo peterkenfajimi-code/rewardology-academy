@@ -54,10 +54,24 @@ export function DeploySetupPanel() {
           <code>npm run configure:supabase-auth</code>.
         </li>
         <li>
-          <strong>Custom domain</strong> — Netlify → Domain management → Add{" "}
-          <code>rewardologyacademy.com</code> and <code>www.rewardologyacademy.com</code>. Copy the
-          DNS records Netlify shows into Namecheap <strong>Advanced DNS</strong> (often ALIAS/ANAME or
-          A + CNAME for www — follow Netlify&apos;s exact values, not Vercel&apos;s).
+          <strong>Custom domain</strong> —{" "}
+          <a
+            href="https://app.netlify.com/projects/effulgent-cajeta-57593b/domain-management"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Netlify → Domain management
+          </a>{" "}
+          → Add <code>rewardologyacademy.com</code> and <code>www.rewardologyacademy.com</code> → set
+          primary to apex. Then Namecheap <strong>Advanced DNS</strong> (remove parking / old records):
+          <div className="setup-dns-table">
+            <CopyBlock label="A Record · Host @" value="75.2.60.5" />
+            <CopyBlock
+              label="CNAME · Host www"
+              value="effulgent-cajeta-57593b.netlify.app"
+            />
+          </div>
+          If Netlify shows different values after you add the domain, use Netlify&apos;s values instead.
         </li>
         <li>
           <strong>Supabase auth URLs</strong> — Run <code>npm run configure:supabase-auth</code> or set
@@ -96,10 +110,9 @@ NEXT_PUBLIC_SANITY_API_VERSION=2026-01-01
 ELEVENLABS_API_KEY=<optional>
 ELEVENLABS_VOICE_ID=EXAVITQu4vr4xnSDxMaL`}</pre>
       <p className="setup-section-sub" style={{ marginTop: 8 }}>
-        Set <code>NEXT_PUBLIC_SITE_URL</code> to <code>{NETLIFY_SITE_URL}</code> until the custom
-        domain works, then <code>{PRODUCTION_SITE_URL}</code>. Or run{" "}
-        <code>npm run configure:netlify-env</code> after adding <code>NETLIFY_AUTH_TOKEN</code> to{" "}
-        <code>.env.local</code>.
+        <code>netlify.toml</code> sets <code>NEXT_PUBLIC_SITE_URL={PRODUCTION_SITE_URL}</code>. After
+        DNS propagates, trigger a Netlify redeploy. Keep using <code>{NETLIFY_SITE_URL}</code> until
+        the custom domain shows Netlify SSL as active.
       </p>
     </div>
   );

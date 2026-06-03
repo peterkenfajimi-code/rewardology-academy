@@ -1,7 +1,7 @@
 # https://docs.netlify.com/frameworks/next-js/overview/
 # Public client keys only (safe in repo; same as NEXT_PUBLIC_* in the browser bundle).
 [build.environment]
-  NEXT_PUBLIC_SITE_URL = "https://effulgent-cajeta-57593b.netlify.app"
+  NEXT_PUBLIC_SITE_URL = "https://rewardologyacademy.com"
   NEXT_PUBLIC_SUPABASE_URL = "https://fgkhowgggwbsosqhfnnz.supabase.co"
   NEXT_PUBLIC_SUPABASE_ANON_KEY = "sb_publishable_SJCgneUnI2aPAetBDEzFeQ_UqpJEBts"
   NEXT_PUBLIC_SANITY_DATASET = "production"
