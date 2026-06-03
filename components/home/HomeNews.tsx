@@ -1,49 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-
-const RSS2JSON = "https://api.rss2json.com/v1/api.json?rss_url=";
-
-type Source = { name: string; url: string; tag: string };
-type FeedConfig = { color: string; label: string; sources: Source[] };
-type NewsItem = {
-  title: string;
-  description: string;
-  link: string;
-  pubDate: string;
-  source: string;
-  tag: string;
-};
-
-const FEEDS: Record<string, FeedConfig> = {
-  "total-rewards": {
-    color: "#C8963E",
-    label: "Total Rewards",
-    sources: [
-      { name: "SHRM", url: "https://www.shrm.org/rss/pages/compensation.aspx", tag: "Compensation" },
-      { name: "HR Dive", url: "https://www.hrdive.com/feeds/news/", tag: "HR News" },
-      { name: "HR Executive", url: "https://hrexecutive.com/feed/", tag: "Total Rewards" },
-    ],
-  },
-  compensation: {
-    color: "#2E7D8C",
-    label: "Compensation",
-    sources: [
-      { name: "HR Dive", url: "https://www.hrdive.com/feeds/news/", tag: "Compensation" },
-      { name: "Workforce", url: "https://www.workforce.com/feed", tag: "Pay" },
-      { name: "HR Executive", url: "https://hrexecutive.com/feed/", tag: "Pay Strategy" },
-    ],
-  },
-  benefits: {
-    color: "#3A7D44",
-    label: "Benefits",
-    sources: [
-      { name: "BenefitsPRO", url: "https://www.benefitspro.com/feed/", tag: "Benefits" },
-      { name: "HR Dive", url: "https://www.hrdive.com/feeds/news/", tag: "Benefits" },
-      { name: "HR Executive", url: "https://hrexecutive.com/feed/", tag: "Wellbeing" },
-    ],
-  },
-};
+import { FEEDS } from "@/lib/news/feedConfig";
+import type { NewsItem } from "@/lib/news/feedConfig";
 
 const TABS = [
   { key: "total-rewards", label: "Total Rewards", dot: "#C8963E" },
@@ -76,19 +35,19 @@ function formatDate(dateStr: string) {
   }
 }
 
-async function fetchFeed(source: Source): Promise<NewsItem[]> {
-  const url = RSS2JSON + encodeURIComponent(source.url) + "&count=4";
-  const r = await fetch(url, { signal: AbortSignal.timeout(7000) });
-  const data = await r.json();
-  if (data.status !== "ok") throw new Error("Feed error");
-  return (data.items || []).slice(0, 4).map((item: Record<string, string>) => ({
-    title: item.title || "",
-    description: item.description || item.content || "",
-    link: item.link || "#",
-    pubDate: item.pubDate || "",
-    source: source.name,
-    tag: source.tag,
-  }));
+async function fetchTabFromApi(tabKey: string): Promise<NewsItem[]> {
+  const res = await fetch(`/api/news-feed?tab=${encodeURIComponent(tabKey)}`, {
+    signal: AbortSignal.timeout(20_000),
+  });
+  const data = (await res.json()) as {
+    status?: string;
+    message?: string;
+    items?: NewsItem[];
+  };
+  if (!res.ok || data.status !== "ok" || !data.items?.length) {
+    throw new Error(data.message || "No articles loaded");
+  }
+  return data.items;
 }
 
 export function HomeNews() {
@@ -101,7 +60,6 @@ export function HomeNews() {
   const cache = useRef<Record<string, { items: NewsItem[]; fetchedAt: number }>>({});
 
   const loadTab = useCallback(async (tabKey: string, force: boolean) => {
-    const config = FEEDS[tabKey];
     const cached = cache.current[tabKey];
     const cacheAge = cached ? Date.now() - cached.fetchedAt : Infinity;
     if (cached && cacheAge < 300000 && !force) {
@@ -111,21 +69,7 @@ export function HomeNews() {
     }
     setStatus("loading");
     try {
-      const results = await Promise.allSettled(config.sources.map((s) => fetchFeed(s)));
-      const collected: NewsItem[] = [];
-      results.forEach((r) => {
-        if (r.status === "fulfilled") collected.push(...r.value);
-      });
-      const seen = new Set<string>();
-      const unique = collected
-        .filter((i) => {
-          if (seen.has(i.title)) return false;
-          seen.add(i.title);
-          return true;
-        })
-        .sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime())
-        .slice(0, 8);
-      if (!unique.length) throw new Error("No articles loaded");
+      const unique = await fetchTabFromApi(tabKey);
       cache.current[tabKey] = { items: unique, fetchedAt: Date.now() };
       setItems(unique);
       setStatus("ok");
@@ -232,9 +176,9 @@ export function HomeNews() {
                   <div className="news-error-icon">⚠️</div>
                   <div className="news-error-title">Feeds temporarily unavailable</div>
                   <div className="news-error-desc">
-                    Network error: {errorMsg}
+                    {errorMsg}
                     <br />
-                    Live RSS requires an internet connection. Check your network or try refreshing.
+                    Try refreshing in a moment. If this persists, some sources may be blocking requests.
                   </div>
                 </div>
               </div>
