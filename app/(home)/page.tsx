@@ -119,7 +119,7 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="hstat-num">
-                  60<span>xp</span>
+                  15<span>xp</span>
                 </div>
                 <div className="hstat-label">Daily Quizzes</div>
               </div>
@@ -132,7 +132,7 @@ export default function HomePage() {
                 <span className="challenge-dot" /> Today&apos;s Challenge
               </div>
               <div className="challenge-title">Compensation Basics Quiz</div>
-              <div className="challenge-xp">⚡ Earn up to 60 XP</div>
+              <div className="challenge-xp">⚡ Earn {15} XP daily</div>
             </div>
             <div className="hero-card-bottom">
               <div className="xp-bar-label">

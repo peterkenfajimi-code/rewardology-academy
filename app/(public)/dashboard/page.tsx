@@ -3,6 +3,8 @@ import { createClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/env";
 import { QUIZ_CENTRE } from "@/lib/quizzes/quizCentre";
 import { COURSES, allLessons } from "@/lib/courses/courseData";
+import { computeStreak } from "@/lib/daily-quiz/streak";
+import { todayDateKey } from "@/lib/daily-quiz/dailyQuizData";
 import { SignInPrompt } from "@/components/dashboard/SignInPrompt";
 import "@/styles/dashboard.css";
 
@@ -80,18 +82,24 @@ export default async function DashboardPage() {
     return <SignInPrompt configured />;
   }
 
-  const [{ data }, { data: courseData }, { data: profile }] = await Promise.all([
-    supabase
-      .from("quiz_centre_progress")
-      .select("quiz_id, best_score, best_total, best_xp, attempts, updated_at")
-      .eq("user_id", user.id)
-      .order("updated_at", { ascending: false }),
-    supabase
-      .from("course_progress")
-      .select("course_id, lesson_id, xp")
-      .eq("user_id", user.id),
-    supabase.from("profiles").select("full_name").eq("id", user.id).maybeSingle(),
-  ]);
+  const [{ data }, { data: courseData }, { data: profile }, { data: dailyData }] =
+    await Promise.all([
+      supabase
+        .from("quiz_centre_progress")
+        .select("quiz_id, best_score, best_total, best_xp, attempts, updated_at")
+        .eq("user_id", user.id)
+        .order("updated_at", { ascending: false }),
+      supabase
+        .from("course_progress")
+        .select("course_id, lesson_id, xp")
+        .eq("user_id", user.id),
+      supabase.from("profiles").select("full_name").eq("id", user.id).maybeSingle(),
+      supabase
+        .from("daily_quiz_completions")
+        .select("quiz_date, correct, xp_earned")
+        .eq("user_id", user.id)
+        .order("quiz_date", { ascending: false }),
+    ]);
 
   const rows = (data as ProgressRow[] | null) ?? [];
   const courseRows = (courseData as CourseRow[] | null) ?? [];
@@ -134,7 +142,16 @@ export default async function DashboardPage() {
   const courseXpTotal = courseStats.reduce((s, cs) => s + cs.earned, 0);
   const coursesCompleted = courseStats.filter((cs) => cs.complete).length;
 
-  const totalXp = quizXp + courseXpTotal;
+  type DailyRow = { quiz_date: string; correct: boolean; xp_earned: number };
+  const dailyRows = (dailyData as DailyRow[] | null) ?? [];
+  const dailyXp = dailyRows.reduce((s, r) => s + (r.xp_earned ?? 0), 0);
+  const dailyStreak = computeStreak(
+    dailyRows.map((r) => String(r.quiz_date).slice(0, 10)),
+    todayDateKey()
+  );
+  const dailyCompletions = dailyRows.length;
+
+  const totalXp = quizXp + courseXpTotal + dailyXp;
   const { current, next } = levelFor(totalXp);
   const levelProgress = next
     ? Math.min(100, Math.round(((totalXp - current.min) / (next.min - current.min)) * 100))
@@ -190,10 +207,17 @@ export default async function DashboardPage() {
         </div>
         <div className="dash-stat">
           <div className="dash-stat-num">
-            {perfectCount}
-            <span> ★</span>
+            {dailyStreak}
+            <span> 🔥</span>
           </div>
-          <div className="dash-stat-label">Perfect scores</div>
+          <div className="dash-stat-label">Daily quiz streak</div>
+        </div>
+        <div className="dash-stat">
+          <div className="dash-stat-num">
+            {dailyCompletions}
+            <span> ✓</span>
+          </div>
+          <div className="dash-stat-label">Daily quizzes done</div>
         </div>
       </div>
 

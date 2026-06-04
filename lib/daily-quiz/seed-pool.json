@@ -1,0 +1,392 @@
+[
+  {
+    "id": "compa-ratio",
+    "label": "Compensation Basics",
+    "title": "Compensation Basics Quiz",
+    "question": "What does a compa-ratio of 0.85 indicate about an employee's pay relative to the salary range midpoint?",
+    "options": [
+      { "key": "A", "label": "The employee is paid 15% above midpoint" },
+      { "key": "B", "label": "The employee is paid 15% below midpoint" },
+      { "key": "C", "label": "The employee is paid exactly at midpoint" },
+      { "key": "D", "label": "The employee's pay cannot be determined" }
+    ],
+    "correctKey": "B"
+  },
+  {
+    "id": "total-rewards-def",
+    "label": "Total Rewards",
+    "title": "Total Rewards Foundations",
+    "question": "Which statement best describes Total Rewards?",
+    "options": [
+      { "key": "A", "label": "A payroll process focused only on salary payment dates" },
+      { "key": "B", "label": "The full combination of financial and non-financial value employees receive from work" },
+      { "key": "C", "label": "A benefits-only program managed by external vendors" },
+      { "key": "D", "label": "A performance rating form used during annual reviews" }
+    ],
+    "correctKey": "B"
+  },
+  {
+    "id": "variable-pay",
+    "label": "Compensation",
+    "title": "Variable Pay",
+    "question": "Which item is an example of variable pay?",
+    "options": [
+      { "key": "A", "label": "Fixed monthly salary" },
+      { "key": "B", "label": "A performance bonus linked to business results" },
+      { "key": "C", "label": "Annual leave entitlement" },
+      { "key": "D", "label": "Health insurance coverage" }
+    ],
+    "correctKey": "B"
+  },
+  {
+    "id": "salary-midpoint",
+    "label": "Salary Structures",
+    "title": "Salary Ranges",
+    "question": "What does the salary midpoint usually represent?",
+    "options": [
+      { "key": "A", "label": "The minimum salary an employee can ever earn" },
+      { "key": "B", "label": "The target market or fully competent pay point for the grade" },
+      { "key": "C", "label": "The total company payroll budget" },
+      { "key": "D", "label": "The maximum bonus opportunity" }
+    ],
+    "correctKey": "B"
+  },
+  {
+    "id": "benefits-def",
+    "label": "Benefits",
+    "title": "Benefits Basics",
+    "question": "What best describes employee benefits?",
+    "options": [
+      { "key": "A", "label": "Indirect rewards that support employee security, wellbeing or quality of life" },
+      { "key": "B", "label": "Only salary increases paid once a year" },
+      { "key": "C", "label": "Only job evaluation scores" },
+      { "key": "D", "label": "Only sales incentive formulas" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": "pay-equity",
+    "label": "Pay Equity",
+    "title": "Pay Equity",
+    "question": "What does pay equity mean?",
+    "options": [
+      { "key": "A", "label": "Everyone must always earn exactly the same amount" },
+      { "key": "B", "label": "Pay differences should be fair, explainable and based on legitimate factors" },
+      { "key": "C", "label": "Employees should not know anything about pay" },
+      { "key": "D", "label": "Only executives need pay review" }
+    ],
+    "correctKey": "B"
+  },
+  {
+    "id": "job-eval",
+    "label": "Job Evaluation",
+    "title": "Job Evaluation",
+    "question": "What does job evaluation assess?",
+    "options": [
+      { "key": "A", "label": "The relative value of a job, not the personal worth of the employee" },
+      { "key": "B", "label": "Only an employee's performance rating" },
+      { "key": "C", "label": "Only the employee's length of service" },
+      { "key": "D", "label": "Only the market salary survey title" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": "pay-compression",
+    "label": "Compensation",
+    "title": "Pay Compression",
+    "question": "What is pay compression?",
+    "options": [
+      { "key": "A", "label": "When all benefits are paid in cash" },
+      { "key": "B", "label": "When pay differences between new and experienced employees become too small" },
+      { "key": "C", "label": "When salary grades are too wide to manage" },
+      { "key": "D", "label": "When payroll is processed earlier than usual" }
+    ],
+    "correctKey": "B"
+  },
+  {
+    "id": "range-spread",
+    "label": "Salary Structures",
+    "title": "Range Spread",
+    "question": "What does range spread measure?",
+    "options": [
+      { "key": "A", "label": "The number of employees in a salary grade" },
+      { "key": "B", "label": "The width of the salary range from minimum to maximum" },
+      { "key": "C", "label": "The number of job descriptions created" },
+      { "key": "D", "label": "The distance between two departments" }
+    ],
+    "correctKey": "B"
+  },
+  {
+    "id": "evp",
+    "label": "Total Rewards",
+    "title": "Employee Value Proposition",
+    "question": "What is the Employee Value Proposition most closely connected to?",
+    "options": [
+      { "key": "A", "label": "The organization's complete promise of value to employees" },
+      { "key": "B", "label": "The payroll tax schedule for each employee" },
+      { "key": "C", "label": "The company's office seating arrangement" },
+      { "key": "D", "label": "The legal name of the employer only" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": "market-pricing",
+    "label": "Market Pricing",
+    "title": "Market Pricing",
+    "question": "What is market pricing?",
+    "options": [
+      { "key": "A", "label": "Comparing jobs to external pay data for similar work" },
+      { "key": "B", "label": "Setting all salaries based on employee preference" },
+      { "key": "C", "label": "Replacing job evaluation with job titles only" },
+      { "key": "D", "label": "Calculating only payroll taxes" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": "benefits-util",
+    "label": "Benefits",
+    "title": "Benefit Utilization",
+    "question": "What is benefit utilization?",
+    "options": [
+      { "key": "A", "label": "How much or how often eligible employees use a benefit" },
+      { "key": "B", "label": "The salary midpoint for a pay grade" },
+      { "key": "C", "label": "The number of open jobs in a department" },
+      { "key": "D", "label": "The annual performance rating scale" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": "total-cash",
+    "label": "Compensation",
+    "title": "Total Cash",
+    "question": "What is total cash compensation?",
+    "options": [
+      { "key": "A", "label": "Base salary plus cash incentives or bonuses" },
+      { "key": "B", "label": "Only non-cash benefits" },
+      { "key": "C", "label": "Only retirement contributions" },
+      { "key": "D", "label": "Only employer-provided learning programs" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": "governance",
+    "label": "Compensation Governance",
+    "title": "Pay Governance",
+    "question": "What is one purpose of compensation governance?",
+    "options": [
+      { "key": "A", "label": "To create consistent rules for offers, increases, promotions and exceptions" },
+      { "key": "B", "label": "To remove all manager involvement in pay discussions" },
+      { "key": "C", "label": "To prevent HR from using salary data" },
+      { "key": "D", "label": "To make pay decisions slower without reason" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": "penetration",
+    "label": "Salary Structures",
+    "title": "Range Penetration",
+    "question": "What is range penetration used to understand?",
+    "options": [
+      { "key": "A", "label": "How far an employee's pay has moved through the salary range" },
+      { "key": "B", "label": "How many benefits an employee selected" },
+      { "key": "C", "label": "How many candidates applied for a role" },
+      { "key": "D", "label": "How long a course takes to complete" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": "rewards-comm",
+    "label": "Communication",
+    "title": "Rewards Communication",
+    "question": "Why is communication important in Total Rewards?",
+    "options": [
+      { "key": "A", "label": "It helps employees understand the value and purpose of reward programs" },
+      { "key": "B", "label": "It guarantees every employee will like every benefit" },
+      { "key": "C", "label": "It eliminates the need for governance" },
+      { "key": "D", "label": "It replaces market benchmarking" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": "wellbeing",
+    "label": "Benefits",
+    "title": "Wellbeing",
+    "question": "Which program is commonly linked to employee wellbeing?",
+    "options": [
+      { "key": "A", "label": "Salary grade midpoint" },
+      { "key": "B", "label": "Employee assistance or mental health support" },
+      { "key": "C", "label": "Job evaluation committee score" },
+      { "key": "D", "label": "Market pricing survey" }
+    ],
+    "correctKey": "B"
+  },
+  {
+    "id": "analyst-skill",
+    "label": "Rewards Analyst",
+    "title": "Analyst Skills",
+    "question": "Which skill is especially important for a rewards analyst?",
+    "options": [
+      { "key": "A", "label": "Data analysis and spreadsheet confidence" },
+      { "key": "B", "label": "Avoiding numbers completely" },
+      { "key": "C", "label": "Ignoring employee questions" },
+      { "key": "D", "label": "Using job titles as the only evidence" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": "grade-def",
+    "label": "Salary Structures",
+    "title": "Salary Grades",
+    "question": "Which statement best describes a salary grade?",
+    "options": [
+      { "key": "A", "label": "A grouping of roles with similar internal value or level" },
+      { "key": "B", "label": "A list of employee benefit vendors" },
+      { "key": "C", "label": "A payroll tax category only" },
+      { "key": "D", "label": "A manager's personal pay preference" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": "internal-equity",
+    "label": "Compensation",
+    "title": "Internal Equity",
+    "question": "Which situation could create internal equity concerns?",
+    "options": [
+      { "key": "A", "label": "Two similar roles are placed in the same grade after evaluation" },
+      { "key": "B", "label": "A new hire is paid much more than experienced peers without a clear reason" },
+      { "key": "C", "label": "Salary ranges are reviewed using market data" },
+      { "key": "D", "label": "Managers receive pay communication training" }
+    ],
+    "correctKey": "B"
+  },
+  {
+    "id": "retirement-benefit",
+    "label": "Benefits",
+    "title": "Retirement Benefits",
+    "question": "Which benefit most directly supports long-term financial security?",
+    "options": [
+      { "key": "A", "label": "Office parking allocation" },
+      { "key": "B", "label": "Retirement or pension plan" },
+      { "key": "C", "label": "Job title change" },
+      { "key": "D", "label": "Performance appraisal form" }
+    ],
+    "correctKey": "B"
+  },
+  {
+    "id": "balanced-tr",
+    "label": "Total Rewards",
+    "title": "Balanced Approach",
+    "question": "Which option best reflects a balanced Total Rewards approach?",
+    "options": [
+      { "key": "A", "label": "Designing pay, benefits, wellbeing, recognition and growth around employee and business needs" },
+      { "key": "B", "label": "Increasing salaries while removing all support programs" },
+      { "key": "C", "label": "Copying competitor benefits without checking workforce needs" },
+      { "key": "D", "label": "Using job titles alone to decide all rewards" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": "comp-def",
+    "label": "Compensation",
+    "title": "Compensation Definition",
+    "question": "What best describes compensation?",
+    "options": [
+      { "key": "A", "label": "All forms of direct financial reward provided for work performed" },
+      { "key": "B", "label": "Only employee wellness programs" },
+      { "key": "C", "label": "Only company culture initiatives" },
+      { "key": "D", "label": "Only unpaid recognition messages" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": "below-min",
+    "label": "Salary Structures",
+    "title": "Below Range Minimum",
+    "question": "An employee paid below the range minimum should usually be:",
+    "options": [
+      { "key": "A", "label": "Automatically promoted without review" },
+      { "key": "B", "label": "Ignored until the next job evaluation cycle" },
+      { "key": "C", "label": "Moved to a different benefit plan" },
+      { "key": "D", "label": "Reviewed for possible adjustment, data accuracy and role fit" }
+    ],
+    "correctKey": "D"
+  },
+  {
+    "id": "legitimate-pay",
+    "label": "Pay Equity",
+    "title": "Legitimate Pay Factors",
+    "question": "Which factor may legitimately explain pay differences?",
+    "options": [
+      { "key": "A", "label": "Manager favoritism" },
+      { "key": "B", "label": "Relevant experience, skills, performance or role scope" },
+      { "key": "C", "label": "Personal negotiation pressure only" },
+      { "key": "D", "label": "Unrecorded historical habit" }
+    ],
+    "correctKey": "B"
+  },
+  {
+    "id": "enrollment",
+    "label": "Benefits",
+    "title": "Enrollment Communication",
+    "question": "What is a practical goal of benefits enrollment communication?",
+    "options": [
+      { "key": "A", "label": "To help employees make informed choices before deadlines" },
+      { "key": "B", "label": "To discourage employees from using benefits" },
+      { "key": "C", "label": "To hide eligibility rules" },
+      { "key": "D", "label": "To replace all HR policies" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": "base-vs-var",
+    "label": "Compensation",
+    "title": "Base vs Variable",
+    "question": "Which statement is accurate?",
+    "options": [
+      { "key": "A", "label": "Base pay is fixed compensation, while incentives are usually variable" },
+      { "key": "B", "label": "Base pay is always optional" },
+      { "key": "C", "label": "Incentives should never have measures" },
+      { "key": "D", "label": "Compensation excludes cash payments" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": "noncash-tr",
+    "label": "Total Rewards",
+    "title": "Non-Cash Rewards",
+    "question": "Which item is usually considered a non-cash reward?",
+    "options": [
+      { "key": "A", "label": "Annual base salary" },
+      { "key": "B", "label": "Career development opportunity" },
+      { "key": "C", "label": "Sales commission" },
+      { "key": "D", "label": "Overtime payment" }
+    ],
+    "correctKey": "B"
+  },
+  {
+    "id": "strategy-align",
+    "label": "Total Rewards",
+    "title": "Strategy Alignment",
+    "question": "Why should Total Rewards align with business strategy?",
+    "options": [
+      { "key": "A", "label": "So reward investments support attraction, retention, performance and workforce priorities" },
+      { "key": "B", "label": "So HR can avoid using data in reward decisions" },
+      { "key": "C", "label": "So all employees receive identical rewards regardless of role" },
+      { "key": "D", "label": "So benefits can replace salary structures" }
+    ],
+    "correctKey": "A"
+  },
+  {
+    "id": "benefits-strategy",
+    "label": "Benefits",
+    "title": "Benefits Strategy",
+    "question": "What should a benefits strategy balance?",
+    "options": [
+      { "key": "A", "label": "Employee needs, market practice, affordability and business priorities" },
+      { "key": "B", "label": "Employee preferences only" },
+      { "key": "C", "label": "Vendor preferences only" },
+      { "key": "D", "label": "The number of pages in a policy document" }
+    ],
+    "correctKey": "A"
+  }
+]

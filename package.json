@@ -10,7 +10,8 @@
     "test": "vitest run",
     "configure:supabase-auth": "node scripts/configure-supabase-production.mjs",
     "configure:netlify-env": "node scripts/configure-netlify-env.mjs",
-    "configure:google-oauth": "node scripts/configure-google-oauth.mjs"
+    "configure:google-oauth": "node scripts/configure-google-oauth.mjs",
+    "generate:daily-quiz": "node scripts/generate-daily-quiz-pool.mjs"
   },
   "dependencies": {
     "@portabletext/react": "^3.2.1",

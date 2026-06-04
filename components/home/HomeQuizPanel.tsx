@@ -1,68 +1,266 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
+import { DAILY_QUIZ_XP } from "@/lib/daily-quiz/dailyQuizData";
+import { readLocalDaily, writeLocalDaily } from "@/lib/daily-quiz/localProgress";
+import { computeStreak } from "@/lib/daily-quiz/streak";
 
-const OPTIONS = [
-  { key: "A", label: "The employee is paid 15% above midpoint", correct: false },
-  { key: "B", label: "The employee is paid 15% below midpoint", correct: true },
-  { key: "C", label: "The employee is paid exactly at midpoint", correct: false },
-  { key: "D", label: "The employee's pay cannot be determined", correct: false },
-];
+type QuestionPayload = {
+  id: string;
+  label: string;
+  title: string;
+  question: string;
+  options: { key: string; label: string }[];
+  dateKey: string;
+  xpReward: number;
+};
+
+type DailyState = {
+  authenticated: boolean;
+  question: QuestionPayload;
+  today: {
+    answered: boolean;
+    correct: boolean;
+    selectedKey: string | null;
+    xpEarned: number;
+  };
+  streak: number;
+  totalXp: number;
+};
 
 export function HomeQuizPanel() {
+  const [loading, setLoading] = useState(true);
+  const [question, setQuestion] = useState<QuestionPayload | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
-  const [score, setScore] = useState(420);
+  const [correct, setCorrect] = useState(false);
+  const [correctKey, setCorrectKey] = useState<string | null>(null);
+  const [streak, setStreak] = useState(0);
+  const [totalXp, setTotalXp] = useState(0);
+  const [authenticated, setAuthenticated] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+
+  const applyState = useCallback((data: DailyState) => {
+    setQuestion(data.question);
+    setAuthenticated(data.authenticated);
+    setStreak(data.streak);
+    setTotalXp(data.totalXp);
+    setSubmitted(data.today.answered);
+    setCorrect(data.today.correct);
+    setSelected(data.today.selectedKey);
+    if (data.today.answered && data.today.correct) {
+      setCorrectKey(data.today.selectedKey);
+    }
+  }, []);
+
+  const mergeGuestLocal = useCallback((data: DailyState) => {
+    const local = readLocalDaily();
+    if (!local || local.dateKey !== data.question.dateKey) return;
+    setSubmitted(true);
+    setCorrect(local.correct);
+    setSelected(local.selectedKey);
+    setStreak(computeStreak(local.history, data.question.dateKey));
+    setTotalXp(local.totalXpEarned ?? local.xpEarned);
+  }, []);
+
+  const load = useCallback(async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/daily-quiz", { cache: "no-store" });
+      const data = (await res.json()) as DailyState & { error?: string };
+      if (!res.ok) throw new Error(data.error || "Could not load daily quiz");
+      applyState(data);
+      if (!data.authenticated) mergeGuestLocal(data);
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setLoading(false);
+    }
+  }, [applyState, mergeGuestLocal]);
+
+  useEffect(() => {
+    load();
+  }, [load]);
 
   const choose = (key: string) => {
     if (submitted) return;
     setSelected(key);
   };
 
-  const submit = () => {
-    if (!selected || submitted) return;
+  const submitGuest = async () => {
+    if (!selected || !question) return;
+
+    const res = await fetch("/api/daily-quiz/validate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        selectedKey: selected,
+        questionId: question.id,
+        dateKey: question.dateKey,
+      }),
+    });
+    const data = (await res.json()) as { correct?: boolean; correctKey?: string; error?: string };
+    if (!res.ok) throw new Error(data.error || "Could not check answer");
+
+    const wasCorrect = Boolean(data.correct);
+    const xp = wasCorrect ? DAILY_QUIZ_XP : 0;
+    const localPrev = readLocalDaily();
+    const alreadyToday = localPrev?.dateKey === question.dateKey;
+    const prevTodayXp = alreadyToday ? (localPrev?.xpEarned ?? 0) : 0;
+    const history = localPrev?.history ?? [];
+    const newHistory = history.includes(question.dateKey)
+      ? history
+      : [...history, question.dateKey];
+    const totalXpEarned = (localPrev?.totalXpEarned ?? 0) - prevTodayXp + xp;
+
+    writeLocalDaily({
+      dateKey: question.dateKey,
+      questionId: question.id,
+      selectedKey: selected,
+      correct: wasCorrect,
+      xpEarned: xp,
+      history: newHistory,
+      totalXpEarned,
+    });
+
     setSubmitted(true);
-    const picked = OPTIONS.find((o) => o.key === selected);
-    if (picked?.correct) setScore((s) => s + 15);
+    setCorrect(wasCorrect);
+    setCorrectKey(data.correctKey ?? null);
+    setStreak(computeStreak(newHistory, question.dateKey));
+    setTotalXp(totalXpEarned);
   };
+
+  const submit = async () => {
+    if (!selected || submitted || !question) return;
+    setSubmitting(true);
+    setError(null);
+
+    try {
+      if (authenticated) {
+        const res = await fetch("/api/daily-quiz", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            selectedKey: selected,
+            questionId: question.id,
+            dateKey: question.dateKey,
+          }),
+        });
+        const data = (await res.json()) as DailyState & { error?: string };
+        if (!res.ok) throw new Error(data.error || "Could not save");
+        applyState(data);
+        if (data.today.answered && !data.today.correct) {
+          const v = await fetch("/api/daily-quiz/validate", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              selectedKey: selected,
+              questionId: question.id,
+              dateKey: question.dateKey,
+            }),
+          });
+          const vd = (await v.json()) as { correctKey?: string };
+          setCorrectKey(vd.correctKey ?? null);
+        }
+      } else {
+        await submitGuest();
+      }
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const optionClass = (key: string) => {
+    let cls = "qp-opt";
+    if (!submitted) {
+      if (selected === key) cls += " correct";
+      return cls;
+    }
+    if (correctKey === key) cls += " correct";
+    else if (selected === key && !correct) cls += " wrong";
+    return cls;
+  };
+
+  if (loading) {
+    return (
+      <div className="quiz-panel reveal reveal-d2">
+        <div className="qp-header">
+          <div className="qp-label">Today&apos;s Quiz</div>
+          <div className="qp-title">Loading…</div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error && !question) {
+    return (
+      <div className="quiz-panel reveal reveal-d2">
+        <div className="qp-body">
+          <div className="news-error-desc">{error}</div>
+          <button type="button" className="qp-btn" onClick={load}>
+            Retry
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (!question) return null;
 
   return (
     <div className="quiz-panel reveal reveal-d2">
       <div className="qp-header">
-        <div className="qp-label">Today&apos;s Quiz · Compensation Basics</div>
-        <div className="qp-title">Compensation Basics Quiz</div>
-        <div className="qp-xp">Complete for up to 60 XP</div>
+        <div className="qp-label">Today&apos;s Quiz · {question.label}</div>
+        <div className="qp-title">{question.title}</div>
+        <div className="qp-xp">Complete for {DAILY_QUIZ_XP} XP</div>
       </div>
       <div className="qp-body">
-        <div className="qp-question">
-          What does a compa-ratio of 0.85 indicate about an employee&apos;s pay relative to the
-          salary range midpoint?
-        </div>
+        <div className="qp-question">{question.question}</div>
         <div className="qp-options">
-          {OPTIONS.map((o) => {
-            const isSelected = selected === o.key;
-            let cls = "qp-opt";
-            if (submitted) {
-              if (o.correct) cls += " correct";
-              else if (isSelected) cls += " wrong";
-            } else if (isSelected) {
-              cls += " correct";
-            }
-            return (
-              <button key={o.key} type="button" className={cls} onClick={() => choose(o.key)}>
-                <span className="qp-opt-bullet">{o.key}</span>
-                {o.label}
-              </button>
-            );
-          })}
+          {question.options.map((o) => (
+            <button
+              key={o.key}
+              type="button"
+              className={optionClass(o.key)}
+              onClick={() => choose(o.key)}
+              disabled={submitted}
+            >
+              <span className="qp-opt-bullet">{o.key}</span>
+              {o.label}
+            </button>
+          ))}
         </div>
-        <button className="qp-btn" type="button" onClick={submit}>
-          {submitted ? "+15 XP earned — sign up to save progress" : "Submit Answer"}
+        {error && <div className="news-error-desc">{error}</div>}
+        <button
+          className="qp-btn"
+          type="button"
+          onClick={submit}
+          disabled={!selected || submitted || submitting}
+        >
+          {submitted
+            ? correct
+              ? `+${DAILY_QUIZ_XP} XP earned`
+              : "Submitted — try again tomorrow"
+            : submitting
+            ? "Submitting…"
+            : "Submit Answer"}
         </button>
+        {submitted && !authenticated && (
+          <p className="ra-modal-sub" style={{ marginTop: 12, textAlign: "center" }}>
+            <Link href="/signup">Sign up</Link> to save progress and sync XP to your dashboard.
+          </p>
+        )}
       </div>
       <div className="qp-footer">
-        <div className="qp-streak">🔥 3-day streak</div>
-        <div className="qp-score">{score} XP</div>
+        <div className="qp-streak">🔥 {streak}-day streak</div>
+        <div className="qp-score">
+          {authenticated ? `${totalXp.toLocaleString()} XP` : `${totalXp} daily XP`}
+        </div>
       </div>
     </div>
   );
