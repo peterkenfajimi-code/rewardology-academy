@@ -8,6 +8,10 @@ export const NETLIFY_SITE_URL = "https://effulgent-cajeta-57593b.netlify.app";
 
 export const AUTH_CALLBACK_PATH = "/auth/callback";
 
+/** Homepage daily quiz section — use for nav CTA scroll targets. */
+export const DAILY_QUIZ_SECTION_ID = "daily-quiz";
+export const DAILY_QUIZ_HREF = `/#${DAILY_QUIZ_SECTION_ID}`;
+
 export const SUPABASE_PROJECT_REF = "fgkhowgggwbsosqhfnnz";
 
 export const SUPABASE_GOOGLE_CALLBACK_URL = `https://${SUPABASE_PROJECT_REF}.supabase.co/auth/v1/callback`;

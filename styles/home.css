@@ -939,6 +939,10 @@
 }
 
 /* Quiz section */
+#daily-quiz {
+  scroll-margin-top: 5.5rem;
+}
+
 .quiz-section {
   background: var(--navy);
   position: relative;

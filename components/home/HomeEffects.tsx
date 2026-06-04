@@ -1,6 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { DAILY_QUIZ_SECTION_ID } from "@/lib/site";
+
+function scrollToDailyQuiz(behavior: ScrollBehavior = "smooth") {
+  document.getElementById(DAILY_QUIZ_SECTION_ID)?.scrollIntoView({ behavior, block: "start" });
+}
 
 export function HomeEffects() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -34,6 +39,14 @@ export function HomeEffects() {
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
+
+    const scrollIfHash = () => {
+      if (window.location.hash === `#${DAILY_QUIZ_SECTION_ID}`) {
+        requestAnimationFrame(() => scrollToDailyQuiz());
+      }
+    };
+    scrollIfHash();
+    window.addEventListener("hashchange", scrollIfHash);
 
     // Custom cursor (fine pointers only)
     let raf = 0;
@@ -78,6 +91,7 @@ export function HomeEffects() {
     return () => {
       io.disconnect();
       window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("hashchange", scrollIfHash);
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseover", onOver);
       if (raf) cancelAnimationFrame(raf);

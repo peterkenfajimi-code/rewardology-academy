@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode, useState } from "react";
 import { AuthControls } from "@/components/auth/AuthControls";
+import { DAILY_QUIZ_HREF } from "@/lib/site";
 
 const nav = [
   { href: "/", label: "Home" },
@@ -48,7 +49,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
               </li>
             ))}
             <li>
-              <Link href="/quizzes" className="site-nav-cta">
+              <Link href={DAILY_QUIZ_HREF} className="site-nav-cta">
                 Take today&apos;s quiz
               </Link>
             </li>
@@ -72,7 +73,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
               {item.label}
             </Link>
           ))}
-          <Link href="/quizzes" onClick={() => setMenuOpen(false)}>
+          <Link href={DAILY_QUIZ_HREF} onClick={() => setMenuOpen(false)}>
             Take today&apos;s quiz →
           </Link>
           <div style={{ paddingTop: 12 }}>

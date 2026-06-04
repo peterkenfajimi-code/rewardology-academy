@@ -5,6 +5,7 @@ import { HomeQuizPanel } from "@/components/home/HomeQuizPanel";
 import { HomeCartoons } from "@/components/home/HomeCartoons";
 import { HomeNews } from "@/components/home/HomeNews";
 import { getEssentialById, type EssentialArticle } from "@/lib/articles/essentials";
+import { DAILY_QUIZ_HREF, DAILY_QUIZ_SECTION_ID } from "@/lib/site";
 
 const NAV = [
   { href: "/", label: "Home", active: true },
@@ -67,7 +68,7 @@ export default function HomePage() {
             </li>
           ))}
           <li>
-            <Link href="/quizzes" className="nav-cta">
+            <Link href={DAILY_QUIZ_HREF} className="nav-cta">
               Take today&apos;s quiz
             </Link>
           </li>
@@ -100,7 +101,7 @@ export default function HomePage() {
               <Link href="/courses" className="btn-primary">
                 Explore Academy &nbsp;→
               </Link>
-              <Link href="/quizzes" className="btn-ghost">
+              <Link href={DAILY_QUIZ_HREF} className="btn-ghost">
                 Take Today&apos;s Quiz
               </Link>
             </div>
@@ -297,7 +298,7 @@ export default function HomePage() {
       </section>
 
       {/* QUIZ */}
-      <section className="section quiz-section">
+      <section id={DAILY_QUIZ_SECTION_ID} className="section quiz-section">
         <div className="quiz-bg" />
         <div className="section-inner">
           <div className="quiz-inner">
