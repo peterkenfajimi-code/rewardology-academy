@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   title: "Rewardology Academy",
   description:
     "The global learning platform for Total Rewards, Compensation & Benefits professionals.",
+  icons: {
+    icon: [{ url: "/icon", type: "image/png" }],
+    apple: [{ url: "/apple-icon", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
