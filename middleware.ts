@@ -5,8 +5,30 @@ import {
   isProtectedPath,
   safeNextPath,
 } from "@/lib/auth/routes";
+import { FAVICON_SVG } from "@/lib/brand/favicon";
+
+function isFaviconPath(pathname: string) {
+  return (
+    pathname === "/favicon.ico" ||
+    pathname === "/favicon.svg" ||
+    pathname === "/api/favicon" ||
+    pathname === "/apple-touch-icon.png" ||
+    pathname === "/apple-touch-icon.svg"
+  );
+}
 
 export async function middleware(req: NextRequest) {
+  const pathname = req.nextUrl.pathname;
+
+  if (isFaviconPath(pathname)) {
+    return new NextResponse(FAVICON_SVG, {
+      headers: {
+        "Content-Type": "image/svg+xml",
+        "Cache-Control": "public, max-age=86400",
+      },
+    });
+  }
+
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
@@ -56,6 +78,11 @@ export async function middleware(req: NextRequest) {
 
 export const config = {
   matcher: [
+    "/favicon.ico",
+    "/favicon.svg",
+    "/api/favicon",
+    "/apple-touch-icon.png",
+    "/apple-touch-icon.svg",
     "/courses/:path*",
     "/quizzes/:path*",
     "/comics/:path*",

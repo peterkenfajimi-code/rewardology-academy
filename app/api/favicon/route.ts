@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { FAVICON_SVG } from "@/lib/brand/favicon";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export async function GET() {
   return new NextResponse(FAVICON_SVG, {
