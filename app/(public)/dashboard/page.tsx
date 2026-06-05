@@ -116,10 +116,12 @@ export default async function DashboardPage() {
       : 0;
 
   // ── Course progress ──
+  const courseLxp: LessonXpMap = {};
   const courseXpById = new Map<number, number>();
   const courseLessonsDone = new Map<number, Set<string>>();
   for (const r of courseRows) {
     if (r.xp > 0) {
+      courseLxp[lessonKey(r.course_id, r.lesson_id)] = r.xp;
       courseXpById.set(r.course_id, (courseXpById.get(r.course_id) ?? 0) + r.xp);
       const set = courseLessonsDone.get(r.course_id) ?? new Set<string>();
       set.add(r.lesson_id);
