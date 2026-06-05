@@ -19,3 +19,10 @@
   to = "https://rewardologyacademy.com/:splat"
   status = 301
   force = true
+
+# Browsers request /favicon.ico by default — serve our SVG logo
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/favicon.svg"
+  status = 200
+  force = true

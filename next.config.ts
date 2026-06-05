@@ -5,7 +5,10 @@ const nextConfig: NextConfig = {
     remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io" }],
   },
   async redirects() {
-    return [{ source: "/cartoons", destination: "/comics", permanent: true }];
+    return [
+      { source: "/cartoons", destination: "/comics", permanent: true },
+      { source: "/favicon.ico", destination: "/favicon.svg", permanent: false },
+    ];
   },
 };
 
