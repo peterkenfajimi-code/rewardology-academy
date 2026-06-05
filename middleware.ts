@@ -55,8 +55,6 @@ export async function middleware(req: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const pathname = req.nextUrl.pathname;
-
   if (isAuthPath(pathname) && user) {
     const dest = safeNextPath(req.nextUrl.searchParams.get("next"));
     return NextResponse.redirect(new URL(dest, req.url));
