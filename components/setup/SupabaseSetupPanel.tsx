@@ -95,10 +95,18 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...`}</pre>
               <CheckRow label="quiz_centre_progress table" ok={health.tables.quiz_centre_progress} />
               <CheckRow label="course_progress table" ok={health.tables.course_progress} />
               <CheckRow
+                label="daily_quiz_completions table"
+                ok={health.tables.daily_quiz_completions}
+              />
+              <CheckRow
                 label="record_quiz_centre_attempt()"
                 ok={health.rpc.record_quiz_centre_attempt}
               />
               <CheckRow label="record_course_lesson()" ok={health.rpc.record_course_lesson} />
+              <CheckRow
+                label="record_daily_quiz_completion()"
+                ok={health.rpc.record_daily_quiz_completion}
+              />
               {health.error && <p className="setup-warn">{health.error}</p>}
               {health.reachable && (
                 <p className="setup-ok">

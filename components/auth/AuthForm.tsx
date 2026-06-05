@@ -40,6 +40,12 @@ export function AuthForm({
     setNotice(null);
   }, [mode]);
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const oauthError = params.get("error");
+    if (oauthError) setError(oauthError);
+  }, []);
+
   const callbackUrl =
     typeof window !== "undefined"
       ? `${window.location.origin}/auth/callback?next=${encodeURIComponent(nextPath)}`

@@ -8,10 +8,12 @@ export type SupabaseHealth = {
     profiles: boolean;
     quiz_centre_progress: boolean;
     course_progress: boolean;
+    daily_quiz_completions: boolean;
   };
   rpc: {
     record_quiz_centre_attempt: boolean;
     record_course_lesson: boolean;
+    record_daily_quiz_completion: boolean;
   };
   error?: string;
 };
@@ -36,10 +38,12 @@ export async function checkSupabaseHealth(): Promise<SupabaseHealth> {
       profiles: false,
       quiz_centre_progress: false,
       course_progress: false,
+      daily_quiz_completions: false,
     },
     rpc: {
       record_quiz_centre_attempt: false,
       record_course_lesson: false,
+      record_daily_quiz_completion: false,
     },
   };
 
@@ -48,20 +52,22 @@ export async function checkSupabaseHealth(): Promise<SupabaseHealth> {
   try {
     const supabase = await createClient();
 
-    const [profiles, quiz, course] = await Promise.all([
+    const [profiles, quiz, course, daily] = await Promise.all([
       supabase.from("profiles").select("id").limit(1),
       supabase.from("quiz_centre_progress").select("quiz_id").limit(1),
       supabase.from("course_progress").select("course_id").limit(1),
+      supabase.from("daily_quiz_completions").select("quiz_date").limit(1),
     ]);
 
     const tables = {
       profiles: !tableMissing(profiles.error),
       quiz_centre_progress: !tableMissing(quiz.error),
       course_progress: !tableMissing(course.error),
+      daily_quiz_completions: !tableMissing(daily.error),
     };
 
     // RPCs exist if the call fails with "Not authenticated", not "function not found"
-    const [quizRpc, courseRpc] = await Promise.all([
+    const [quizRpc, courseRpc, dailyRpc] = await Promise.all([
       supabase.rpc("record_quiz_centre_attempt", {
         p_quiz_id: 0,
         p_score: 0,
@@ -72,6 +78,13 @@ export async function checkSupabaseHealth(): Promise<SupabaseHealth> {
         p_course_id: 0,
         p_lesson_id: "__probe__",
         p_xp: 0,
+      }),
+      supabase.rpc("record_daily_quiz_completion", {
+        p_quiz_date: "2000-01-01",
+        p_question_id: "__probe__",
+        p_selected_option: "A",
+        p_correct: false,
+        p_xp_earned: 0,
       }),
     ]);
 
@@ -87,6 +100,9 @@ export async function checkSupabaseHealth(): Promise<SupabaseHealth> {
       record_course_lesson:
         !rpcMissing(courseRpc.error) ||
         (courseRpc.error?.message ?? "").includes("Not authenticated"),
+      record_daily_quiz_completion:
+        !rpcMissing(dailyRpc.error) ||
+        (dailyRpc.error?.message ?? "").includes("Not authenticated"),
     };
 
     const allTables = Object.values(tables).every(Boolean);

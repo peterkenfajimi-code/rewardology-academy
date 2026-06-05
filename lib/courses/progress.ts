@@ -1,4 +1,10 @@
-import { COURSES, allLessons, type Course } from "@/lib/courses/courseData";
+import {
+  COURSES,
+  allLessons,
+  type Course,
+  type CourseLesson,
+  type CourseModule,
+} from "@/lib/courses/courseData";
 
 // Earned XP per lesson, keyed `${courseId}-${lessonId}` (matches the API map).
 export type LessonXpMap = Record<string, number>;
@@ -51,4 +57,27 @@ export function mergeLessonXp(map: LessonXpMap, key: string, xp: number): Lesson
   const prev = map[key] || 0;
   if (xp <= prev) return map;
   return { ...map, [key]: xp };
+}
+
+/** First lesson with no earned XP, or first lesson if the course is complete. */
+export function nextLessonForCourse(
+  map: LessonXpMap,
+  course: Course
+): { lesson: CourseLesson; mod: CourseModule } | null {
+  const lessons = allLessons(course);
+  for (const item of lessons) {
+    if ((map[lessonKey(course.id, item.lesson.id)] || 0) === 0) return item;
+  }
+  return lessons[0] ?? null;
+}
+
+export function courseResumeHref(courseId: number, map: LessonXpMap): string {
+  const course = COURSES.find((c) => c.id === courseId);
+  if (!course) return "/courses";
+  if (courseXp(map, courseId) === 0) return `/courses?course=${courseId}`;
+  const next = nextLessonForCourse(map, course);
+  if (!next) return `/courses?course=${courseId}`;
+  const params = new URLSearchParams({ course: String(courseId), lesson: next.lesson.id });
+  if (next.lesson.type === "quiz") params.set("view", "mod-quiz");
+  return `/courses?${params.toString()}`;
 }

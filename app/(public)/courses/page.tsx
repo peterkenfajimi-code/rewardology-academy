@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { CourseCentre } from "@/components/courses/CourseCentre";
 
 export const metadata = {
@@ -7,5 +8,9 @@ export const metadata = {
 };
 
 export default function CoursesPage() {
-  return <CourseCentre />;
+  return (
+    <Suspense fallback={<div className="cc-loading">Loading courses…</div>}>
+      <CourseCentre />
+    </Suspense>
+  );
 }

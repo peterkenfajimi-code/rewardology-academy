@@ -5,6 +5,7 @@ import { QUIZ_CENTRE } from "@/lib/quizzes/quizCentre";
 import { COURSES, allLessons } from "@/lib/courses/courseData";
 import { computeStreak } from "@/lib/daily-quiz/streak";
 import { todayDateKey } from "@/lib/daily-quiz/dailyQuizData";
+import { courseResumeHref, lessonKey, type LessonXpMap } from "@/lib/courses/progress";
 import { SignInPrompt } from "@/components/dashboard/SignInPrompt";
 import "@/styles/dashboard.css";
 
@@ -274,7 +275,7 @@ export default async function DashboardPage() {
               {cs.earned}/{cs.course.total_xp}
             </div>
             <div className="dash-row-xp">⚡ {cs.earned} XP</div>
-            <Link href="/courses" className="dash-row-cta">
+            <Link href={courseResumeHref(cs.course.id, courseLxp)} className="dash-row-cta">
               {cs.complete ? "Review" : cs.pct === 0 ? "Start →" : "Continue →"}
             </Link>
           </div>

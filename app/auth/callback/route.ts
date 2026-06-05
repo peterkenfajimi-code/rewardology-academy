@@ -9,7 +9,16 @@ import { safeNextPath } from "@/lib/auth/routes";
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
   const code = searchParams.get("code");
+  const oauthError = searchParams.get("error");
+  const oauthDescription = searchParams.get("error_description");
   const next = safeNextPath(searchParams.get("next"));
+
+  if (oauthError) {
+    const message = oauthDescription || oauthError;
+    return NextResponse.redirect(
+      `${origin}/login?error=${encodeURIComponent(message)}&next=${encodeURIComponent(next)}`
+    );
+  }
 
   if (code && isSupabaseConfigured()) {
     const cookieStore = await cookies();
@@ -29,7 +38,12 @@ export async function GET(request: Request) {
         },
       }
     );
-    await supabase.auth.exchangeCodeForSession(code);
+    const { error } = await supabase.auth.exchangeCodeForSession(code);
+    if (error) {
+      return NextResponse.redirect(
+        `${origin}/login?error=${encodeURIComponent(error.message)}&next=${encodeURIComponent(next)}`
+      );
+    }
   }
 
   return NextResponse.redirect(`${origin}${next}`);

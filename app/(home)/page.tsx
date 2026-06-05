@@ -4,7 +4,9 @@ import { HomeEffects } from "@/components/home/HomeEffects";
 import { HomeQuizPanel } from "@/components/home/HomeQuizPanel";
 import { HomeCartoons } from "@/components/home/HomeCartoons";
 import { HomeNews } from "@/components/home/HomeNews";
+import { HomeTestimonials } from "@/components/home/HomeTestimonials";
 import { getEssentialById, type EssentialArticle } from "@/lib/articles/essentials";
+import { COURSES as COURSE_CENTRE } from "@/lib/courses/courseData";
 import { DAILY_QUIZ_HREF, DAILY_QUIZ_SECTION_ID } from "@/lib/site";
 
 const NAV = [
@@ -27,11 +29,20 @@ const MARQUEE = [
   "Salary Structures",
 ];
 
-const COURSES = [
-  { href: "/courses", banner: "cc-banner-1", icon: "📐", badge: "Beginner", name: "Compensation Fundamentals", desc: "Build salary structures, master job evaluation methods, and create the foundations of a fair pay system from scratch.", price: "Free", free: true, meta: "8 modules · 3hrs", delay: "reveal-d1" },
-  { href: "/courses", banner: "cc-banner-4", icon: "🏛️", badge: "Advanced", name: "Coming Soon", desc: "Coming Soon", price: "$--", free: false, meta: "12 modules · 6hrs", delay: "reveal-d2" },
-  { href: "/courses", banner: "cc-banner-2", icon: "⚖️", badge: "Intermediate", name: "Coming Soon", desc: "Coming Soon", price: "$--", free: false, meta: "10 modules · 5hrs", delay: "reveal-d3" },
-];
+const HOME_COURSE_BANNERS = ["cc-banner-1", "cc-banner-4", "cc-banner-2"] as const;
+
+const COURSES = COURSE_CENTRE.map((c, i) => ({
+  href: `/courses?course=${c.id}`,
+  banner: HOME_COURSE_BANNERS[i] ?? "cc-banner-1",
+  icon: c.icon,
+  badge: c.level,
+  name: c.title,
+  desc: c.desc,
+  price: "Free",
+  free: true,
+  meta: `${c.lessons_count} lessons · ${c.duration}`,
+  delay: `reveal-d${(i % 3) + 1}` as "reveal-d1" | "reveal-d2" | "reveal-d3",
+}));
 
 function articleHref(a?: EssentialArticle) {
   return a ? `/articles/${a.slug}` : "/articles/all";
@@ -359,40 +370,7 @@ export default function HomePage() {
       {/* COMICS */}
       <HomeCartoons />
 
-      {/* TESTIMONIALS */}
-      <section className="section proof-section">
-        <div className="section-inner">
-          <div className="section-hd reveal">
-            <div>
-              <div className="section-eyebrow">Testimonials</div>
-              <h2 className="section-title">
-                Trusted by HR <em>Professionals</em>
-              </h2>
-            </div>
-          </div>
-          <div className="proof-grid">
-            {[
-              { d: "reveal-d1", avatar: "A", bg: "linear-gradient(135deg,#0C4A6E,#0891B2)", text: "Rewardology is the only platform that explains compensation concepts the way practitioners actually think. I transitioned into Total Rewards in six months using these materials.", name: "Amara Osei", role: "Total Rewards Analyst · Lagos" },
-              { d: "reveal-d2", avatar: "D", bg: "linear-gradient(135deg,#064E3B,#059669)", text: "The pay equity module alone saved our organization from a costly audit. The practical frameworks here go far beyond anything in a generic HR certification.", name: "Daniel Mensah", role: "Senior HR Manager · Accra" },
-              { d: "reveal-d3", avatar: "S", bg: "linear-gradient(135deg,#3B0764,#7C3AED)", text: "I read the 25 articles cover to cover before my first compensation director interview. The vocabulary, frameworks, and confidence I walked in with were completely different.", name: "Sophia Nkrumah", role: "Compensation Director · Nairobi" },
-            ].map((p) => (
-              <div className={`proof-card reveal ${p.d}`} key={p.name}>
-                <div className="proof-stars">★★★★★</div>
-                <div className="proof-text">&ldquo;{p.text}&rdquo;</div>
-                <div className="proof-author">
-                  <div className="proof-avatar" style={{ background: p.bg }}>
-                    {p.avatar}
-                  </div>
-                  <div>
-                    <div className="proof-name">{p.name}</div>
-                    <div className="proof-role">{p.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HomeTestimonials />
 
       {/* NEWS */}
       <HomeNews />

@@ -1,9 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   COURSES,
   allLessons,
+  findLesson,
   type Course,
   type CourseLesson,
   type CourseModule,
@@ -14,6 +16,7 @@ import {
   lessonKey,
   MAX_COURSE_XP,
   mergeLessonXp,
+  nextLessonForCourse,
   readLocalCourseXp,
   totalCourseXp,
   writeLocalCourseXp,
@@ -45,10 +48,13 @@ type ResultData = {
 
 export function CourseCentre() {
   const { user } = useAuth();
+  const searchParams = useSearchParams();
+  const deepLinkHandled = useRef(false);
 
   const [view, setView] = useState<View>("lobby");
   const [lxp, setLxp] = useState<LessonXpMap>({});
   const [synced, setSynced] = useState(false);
+  const [progressReady, setProgressReady] = useState(false);
 
   const [activeCourseId, setActiveCourseId] = useState<number | null>(null);
   const [activeLessonId, setActiveLessonId] = useState<string | null>(null);
@@ -86,6 +92,7 @@ export function CourseCentre() {
           setSynced(true);
           setLxp(data.lxp ?? {});
           writeLocalCourseXp(data.lxp ?? {});
+          if (!cancelled) setProgressReady(true);
           return;
         }
       } catch {
@@ -94,12 +101,53 @@ export function CourseCentre() {
       if (!cancelled) {
         setSynced(false);
         setLxp(readLocalCourseXp());
+        setProgressReady(true);
       }
     })();
     return () => {
       cancelled = true;
     };
   }, [user?.id]);
+
+  useEffect(() => {
+    if (!progressReady || deepLinkHandled.current) return;
+    const courseRaw = searchParams.get("course");
+    if (!courseRaw) return;
+    const courseId = Number(courseRaw);
+    if (!Number.isFinite(courseId)) return;
+    const course = COURSES.find((c) => c.id === courseId);
+    if (!course) return;
+
+    deepLinkHandled.current = true;
+    const lessonId = searchParams.get("lesson");
+    if (lessonId) {
+      const found = findLesson(courseId, lessonId);
+      if (found) {
+        setActiveCourseId(courseId);
+        setOpenModules({ [found.mod.id]: true });
+        if (found.lesson.type === "quiz" || searchParams.get("view") === "mod-quiz") {
+          setMqLes(found.lesson);
+          setMqModId(found.mod.id);
+          setMqQ(0);
+          setMqSel(null);
+          setMqAnswered(false);
+          setMqAnswers([]);
+          setView("mod-quiz");
+        } else {
+          setActiveLessonId(found.lesson.id);
+          setKcSel(null);
+          setKcAnswered(false);
+          setView("lesson");
+        }
+        scrollTop();
+        return;
+      }
+    }
+    setActiveCourseId(courseId);
+    setOpenModules({ [course.modules[0].id]: true });
+    setView("overview");
+    scrollTop();
+  }, [progressReady, searchParams]);
 
   const activeCourse = useMemo(
     () => COURSES.find((c) => c.id === activeCourseId) ?? null,
@@ -576,7 +624,10 @@ export function CourseCentre() {
                 type="button"
                 className="cc-btn-start"
                 style={{ background: c.color, color: c.bg }}
-                onClick={() => startLesson(c.id, c.modules[0].lessons[0], c.modules[0])}
+                onClick={() => {
+                  const next = nextLessonForCourse(lxp, c);
+                  if (next) startLesson(c.id, next.lesson, next.mod);
+                }}
               >
                 {earned > 0 ? "Continue Course →" : "Start Course →"}
               </button>
