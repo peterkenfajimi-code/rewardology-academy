@@ -14,7 +14,6 @@ import {
 
 const NETLIFY_SITE_SLUG = "effulgent-cajeta-57593b";
 const NETLIFY_SITE_URL = "https://effulgent-cajeta-57593b.netlify.app";
-
 const root = resolveProjectRoot(getProjectRoot(import.meta.url));
 const env = loadEnvLocal(root);
 const token = process.env.NETLIFY_AUTH_TOKEN || env.NETLIFY_AUTH_TOKEN;
@@ -74,30 +73,55 @@ if (!site) {
   process.exit(1);
 }
 
-const getRes = await fetch(`https://api.netlify.com/api/v1/sites/${site.id}`, { headers });
-if (!getRes.ok) {
-  console.error("Get site failed:", getRes.status, await getRes.text());
+const accountId = site.account_id || site.account_slug;
+if (!accountId) {
+  console.error("Could not resolve Netlify account_id for site");
   process.exit(1);
 }
-const full = await getRes.json();
-const mergedEnv = { ...(full.build_settings?.env || {}), ...newVars };
 
-const patchRes = await fetch(`https://api.netlify.com/api/v1/sites/${site.id}`, {
-  method: "PATCH",
+const existingRes = await fetch(`https://api.netlify.com/api/v1/sites/${site.id}/env`, { headers });
+if (!existingRes.ok) {
+  console.error("List site env failed:", existingRes.status, await existingRes.text());
+  process.exit(1);
+}
+const existingVars = await existingRes.json();
+const existingKeys = new Set(existingVars.map((v) => v.key));
+
+function envVarBody(key, value) {
+  return {
+    key,
+    values: [{ context: "all", value }],
+  };
+}
+
+for (const [key, value] of Object.entries(newVars)) {
+  const body = envVarBody(key, value);
+  const siteQuery = `site_id=${site.id}`;
+  const url = existingKeys.has(key)
+    ? `https://api.netlify.com/api/v1/accounts/${accountId}/env/${encodeURIComponent(key)}?${siteQuery}`
+    : `https://api.netlify.com/api/v1/accounts/${accountId}/env?${siteQuery}`;
+  const method = existingKeys.has(key) ? "PUT" : "POST";
+  const payload = existingKeys.has(key) ? body : [body];
+
+  const res = await fetch(url, { method, headers, body: JSON.stringify(payload) });
+  if (!res.ok) {
+    console.error(`Set ${key} failed:`, res.status, await res.text());
+    process.exit(1);
+  }
+  console.log(existingKeys.has(key) ? "Updated" : "Created", key);
+}
+
+console.log("\nNetlify env updated for", site.ssl_url || NETLIFY_SITE_URL);
+
+const buildRes = await fetch(`https://api.netlify.com/api/v1/sites/${site.id}/builds`, {
+  method: "POST",
   headers,
-  body: JSON.stringify({
-    build_settings: {
-      ...full.build_settings,
-      env: mergedEnv,
-    },
-  }),
+  body: JSON.stringify({}),
 });
-
-if (!patchRes.ok) {
-  console.error("PATCH site env failed:", patchRes.status, await patchRes.text());
-  process.exit(1);
+if (buildRes.ok) {
+  const build = await buildRes.json();
+  console.log("Production deploy triggered:", build.deploy_url || build.id);
+} else {
+  console.log("Trigger deploy manually: Netlify → Deploys → Deploy site");
+  console.error("Build trigger failed:", buildRes.status, await buildRes.text());
 }
-
-console.log("Netlify env updated for", site.ssl_url || NETLIFY_SITE_URL);
-for (const key of Object.keys(newVars)) console.log("  ", key);
-console.log("\nNetlify → Deploys → Trigger deploy → Deploy site");

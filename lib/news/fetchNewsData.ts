@@ -18,7 +18,7 @@ type NewsDataResponse = {
   status?: string;
   code?: string | number;
   message?: string;
-  results?: NewsDataArticle[];
+  results?: NewsDataArticle[] | { message?: string; code?: string };
 };
 
 export class NewsDataLimitError extends Error {
@@ -42,11 +42,18 @@ export function isNewsDataLimitError(error: unknown): boolean {
   );
 }
 
+function getErrorMessage(data: NewsDataResponse): string {
+  if (data.message) return data.message;
+  const results = data.results;
+  if (results && !Array.isArray(results) && results.message) return results.message;
+  return "";
+}
+
 function isLimitResponse(res: Response, data: NewsDataResponse): boolean {
   if (res.status === 429) return true;
   if (String(data.code) === "429") return true;
 
-  const message = (data.message || "").toLowerCase();
+  const message = getErrorMessage(data).toLowerCase();
   return (
     message.includes("rate limit") ||
     message.includes("too many requests") ||
@@ -68,7 +75,6 @@ export async function fetchTabFromNewsData(tabKey: string): Promise<NewsItem[]> 
     q: config.newsDataQuery,
     language: "en",
     size: String(MAX_ITEMS_PER_TAB),
-    timeframe: "48",
   });
 
   const res = await fetch(`${NEWSDATA_API}?${params}`, {
@@ -80,16 +86,17 @@ export async function fetchTabFromNewsData(tabKey: string): Promise<NewsItem[]> 
   const data = (await res.json()) as NewsDataResponse;
 
   if (isLimitResponse(res, data)) {
-    throw new NewsDataLimitError(data.message || "NewsData.io rate limit exceeded");
+    throw new NewsDataLimitError(getErrorMessage(data) || "NewsData.io rate limit exceeded");
   }
 
   if (!res.ok || data.status !== "success") {
-    throw new Error(data.message || `NewsData.io: HTTP ${res.status}`);
+    throw new Error(getErrorMessage(data) || `NewsData.io: HTTP ${res.status}`);
   }
 
   const defaultTag = config.sources[0]?.tag || "News";
+  const articles = Array.isArray(data.results) ? data.results : [];
 
-  return (data.results || [])
+  return articles
     .filter((article) => article.title && article.link)
     .slice(0, MAX_ITEMS_PER_TAB)
     .map((article) => ({

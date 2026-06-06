@@ -1,5 +1,5 @@
 import type { NewsItem } from "@/lib/news/feedConfig";
-import { fetchTabFromNewsData, isNewsDataLimitError } from "@/lib/news/fetchNewsData";
+import { fetchTabFromNewsData } from "@/lib/news/fetchNewsData";
 import { fetchTabFromRss } from "@/lib/news/fetchRssFeeds";
 
 export type FetchTabResult = {
@@ -18,13 +18,9 @@ export async function fetchTabNews(tabKey: string): Promise<FetchTabResult> {
     if (items.length) {
       return { items, warnings: [], provider: "newsdata" };
     }
+    return fetchTabFromRss(tabKey, ["NewsData.io returned no articles — using RSS fallback"]);
   } catch (error) {
-    if (isNewsDataLimitError(error)) {
-      const message = error instanceof Error ? error.message : "NewsData.io limit exceeded";
-      return fetchTabFromRss(tabKey, [`${message} — using RSS fallback`]);
-    }
-    throw error;
+    const message = error instanceof Error ? error.message : "NewsData.io unavailable";
+    return fetchTabFromRss(tabKey, [`${message} — using RSS fallback`]);
   }
-
-  return fetchTabFromRss(tabKey, ["NewsData.io returned no articles — using RSS fallback"]);
 }
