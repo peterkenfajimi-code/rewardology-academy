@@ -1,6 +1,12 @@
 export type NewsSource = { name: string; url: string; tag: string };
 
-export type FeedConfig = { color: string; label: string; sources: NewsSource[] };
+export type FeedConfig = {
+  color: string;
+  label: string;
+  /** NewsData.io search query for the latest endpoint */
+  newsDataQuery: string;
+  sources: NewsSource[];
+};
 
 export type NewsItem = {
   title: string;
@@ -15,6 +21,7 @@ export const FEEDS: Record<string, FeedConfig> = {
   "total-rewards": {
     color: "#C8963E",
     label: "Total Rewards",
+    newsDataQuery: '"total rewards" OR "employee compensation" OR payroll OR "HR benefits"',
     sources: [
       { name: "AIHR", url: "https://www.aihr.com/feed/", tag: "HR" },
       { name: "HR Morning", url: "https://www.hrmorning.com/feed/", tag: "HR News" },
@@ -24,6 +31,7 @@ export const FEEDS: Record<string, FeedConfig> = {
   compensation: {
     color: "#2E7D8C",
     label: "Compensation",
+    newsDataQuery: 'compensation OR salary OR wages OR "pay equity" OR "executive pay"',
     sources: [
       { name: "HR Dive", url: "https://www.hrdive.com/feeds/news/", tag: "Compensation" },
       { name: "HR Executive", url: "https://hrexecutive.com/feed/", tag: "Pay Strategy" },
@@ -33,6 +41,7 @@ export const FEEDS: Record<string, FeedConfig> = {
   benefits: {
     color: "#3A7D44",
     label: "Benefits",
+    newsDataQuery: '"employee benefits" OR "health insurance" OR wellbeing OR "paid leave" OR perks',
     sources: [
       { name: "HR Daily Advisor", url: "https://hrdailyadvisor.blr.com/feed/", tag: "Benefits" },
       { name: "HR Dive", url: "https://www.hrdive.com/feeds/news/", tag: "Benefits" },
@@ -42,6 +51,7 @@ export const FEEDS: Record<string, FeedConfig> = {
   "general-hr": {
     color: "#6B4C9A",
     label: "General HR News",
+    newsDataQuery: '"human resources" OR HR OR workforce OR hiring OR "talent management"',
     sources: [
       { name: "BBC Business", url: "https://feeds.bbci.co.uk/news/business/rss.xml", tag: "Business" },
       { name: "PR Newswire", url: "https://www.prnewswire.com/rss/news-releases-list.rss", tag: "HR" },

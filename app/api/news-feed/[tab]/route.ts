@@ -14,9 +14,9 @@ export async function GET(_request: Request, context: RouteContext) {
   }
 
   try {
-    const { items, warnings } = await fetchTabNews(tab);
+    const { items, warnings, provider } = await fetchTabNews(tab);
     return NextResponse.json(
-      { status: "ok", items, warnings, fetchedAt: new Date().toISOString() },
+      { status: "ok", items, warnings, provider, fetchedAt: new Date().toISOString() },
       {
         headers: {
           "Cache-Control": "public, s-maxage=300, stale-while-revalidate=600",
