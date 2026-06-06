@@ -1,13 +1,21 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { FEEDS } from "@/lib/news/feedConfig";
+import { FEEDS, NEWS_TAB_KEYS } from "@/lib/news/feedConfig";
 import type { NewsItem } from "@/lib/news/feedConfig";
 
-const TABS = [
-  { key: "total-rewards", label: "Total Rewards", dot: "#C8963E" },
-  { key: "compensation", label: "Compensation", dot: "#2E7D8C" },
-  { key: "benefits", label: "Benefits", dot: "#3A7D44" },
+const TABS = NEWS_TAB_KEYS.map((key) => ({
+  key,
+  label: FEEDS[key].label,
+  dot: FEEDS[key].color,
+}));
+
+const LIVE_SOURCES = [
+  { href: "https://www.aihr.com", dot: "#C8963E", name: "AIHR", tag: "HR" },
+  { href: "https://www.hrmorning.com", dot: "#C8963E", name: "HR Morning", tag: "HR News" },
+  { href: "https://www.hrdive.com", dot: "#2E7D8C", name: "HR Dive", tag: "Comp" },
+  { href: "https://hrdailyadvisor.blr.com", dot: "#3A7D44", name: "HR Daily Advisor", tag: "Benefits" },
+  { href: "https://www.bbc.co.uk/news/business", dot: "#6B4C9A", name: "BBC Business", tag: "News" },
 ];
 
 function stripHtml(html: string) {
@@ -35,7 +43,9 @@ function formatDate(dateStr: string) {
   }
 }
 
-async function fetchTabFromApi(tabKey: string): Promise<NewsItem[]> {
+type TabFeedResult = { items: NewsItem[]; warnings: string[] };
+
+async function fetchTabFromApi(tabKey: string): Promise<TabFeedResult> {
   const res = await fetch(`/api/news-feed?tab=${encodeURIComponent(tabKey)}`, {
     signal: AbortSignal.timeout(20_000),
   });
@@ -43,39 +53,45 @@ async function fetchTabFromApi(tabKey: string): Promise<NewsItem[]> {
     status?: string;
     message?: string;
     items?: NewsItem[];
+    warnings?: string[];
   };
   if (!res.ok || data.status !== "ok" || !data.items?.length) {
     throw new Error(data.message || "No articles loaded");
   }
-  return data.items;
+  return { items: data.items, warnings: data.warnings ?? [] };
 }
 
 export function HomeNews() {
   const [activeTab, setActiveTab] = useState("total-rewards");
   const [items, setItems] = useState<NewsItem[]>([]);
-  const [status, setStatus] = useState<"loading" | "ok" | "error">("loading");
+  const [status, setStatus] = useState<"loading" | "ok" | "partial" | "error">("loading");
   const [errorMsg, setErrorMsg] = useState("");
+  const [feedWarnings, setFeedWarnings] = useState<string[]>([]);
   const [updatedAt, setUpdatedAt] = useState("");
   const [spinning, setSpinning] = useState(false);
-  const cache = useRef<Record<string, { items: NewsItem[]; fetchedAt: number }>>({});
+  const cache = useRef<Record<string, { items: NewsItem[]; warnings: string[]; fetchedAt: number }>>({});
 
   const loadTab = useCallback(async (tabKey: string, force: boolean) => {
     const cached = cache.current[tabKey];
     const cacheAge = cached ? Date.now() - cached.fetchedAt : Infinity;
     if (cached && cacheAge < 300000 && !force) {
       setItems(cached.items);
-      setStatus("ok");
+      setFeedWarnings(cached.warnings);
+      setStatus(cached.warnings.length ? "partial" : "ok");
       return;
     }
     setStatus("loading");
+    setFeedWarnings([]);
     try {
-      const unique = await fetchTabFromApi(tabKey);
-      cache.current[tabKey] = { items: unique, fetchedAt: Date.now() };
-      setItems(unique);
-      setStatus("ok");
+      const { items, warnings } = await fetchTabFromApi(tabKey);
+      cache.current[tabKey] = { items, warnings, fetchedAt: Date.now() };
+      setItems(items);
+      setFeedWarnings(warnings);
+      setStatus(warnings.length ? "partial" : "ok");
       setUpdatedAt(new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" }));
     } catch (e) {
       setErrorMsg((e as Error).message || "unknown");
+      setFeedWarnings([]);
       setStatus("error");
     }
   }, []);
@@ -117,7 +133,8 @@ export function HomeNews() {
                   width: 6,
                   height: 6,
                   borderRadius: "50%",
-                  background: status === "error" ? "#F87171" : "#4ADE80",
+                  background:
+                    status === "error" ? "#F87171" : status === "partial" ? "#FBBF24" : "#4ADE80",
                   display: "inline-block",
                   marginRight: 6,
                 }}
@@ -126,6 +143,10 @@ export function HomeNews() {
                 ? "Loading feeds…"
                 : status === "error"
                 ? "Could not load feeds"
+                : status === "partial"
+                ? updatedAt
+                  ? `Partial update ${updatedAt}`
+                  : "Some feeds unavailable"
                 : updatedAt
                 ? `Updated ${updatedAt}`
                 : "Live"}
@@ -184,8 +205,14 @@ export function HomeNews() {
               </div>
             )}
 
-            {status === "ok" && (
+            {(status === "ok" || status === "partial") && (
               <div className="news-feed">
+                {status === "partial" && feedWarnings.length > 0 && (
+                  <div className="news-warning" role="status">
+                    <div className="news-warning-title">Some sources could not be loaded</div>
+                    <div className="news-warning-desc">{feedWarnings.join(" · ")}</div>
+                  </div>
+                )}
                 {items.map((item, i) => (
                   <a
                     key={item.link + i}
@@ -240,13 +267,7 @@ export function HomeNews() {
             <div className="news-sidebar-card">
               <div className="nsc-title">📡 Live Sources</div>
               <div className="news-sources-list">
-                {[
-                  ["https://www.shrm.org", "#C8963E", "SHRM", "HR & Comp"],
-                  ["https://www.hrdive.com", "#2E7D8C", "HR Dive", "News"],
-                  ["https://www.benefitspro.com", "#3A7D44", "BenefitsPRO", "Benefits"],
-                  ["https://hrexecutive.com", "#6B4C9A", "HR Executive", "Strategy"],
-                  ["https://www.workforce.com", "#B84B4B", "Workforce", "Analytics"],
-                ].map(([href, dot, name, tag]) => (
+                {LIVE_SOURCES.map(({ href, dot, name, tag }) => (
                   <a href={href} target="_blank" rel="noopener noreferrer" className="ns-item" key={name}>
                     <span className="ns-dot" style={{ background: dot }} />
                     <span className="ns-name">{name}</span>

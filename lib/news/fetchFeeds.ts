@@ -2,14 +2,21 @@ import type { NewsItem, NewsSource } from "@/lib/news/feedConfig";
 import { FEEDS } from "@/lib/news/feedConfig";
 
 const RSS2JSON = "https://api.rss2json.com/v1/api.json";
+const MAX_ITEMS_PER_SOURCE = 4;
+const MAX_ITEMS_PER_TAB = 8;
+
+export type FetchTabResult = {
+  items: NewsItem[];
+  warnings: string[];
+};
 
 async function fetchOneSource(source: NewsSource): Promise<NewsItem[]> {
-  const params = new URLSearchParams({
-    rss_url: source.url,
-    count: "4",
-  });
+  const params = new URLSearchParams({ rss_url: source.url });
   const apiKey = process.env.RSS2JSON_API_KEY;
-  if (apiKey) params.set("api_key", apiKey);
+  if (apiKey) {
+    params.set("api_key", apiKey);
+    params.set("count", String(MAX_ITEMS_PER_SOURCE));
+  }
 
   const res = await fetch(`${RSS2JSON}?${params}`, {
     headers: { Accept: "application/json", "User-Agent": "RewardologyAcademy/1.0" },
@@ -29,7 +36,7 @@ async function fetchOneSource(source: NewsSource): Promise<NewsItem[]> {
     throw new Error(data.message || `${source.name}: feed error`);
   }
 
-  return (data.items || []).slice(0, 4).map((item) => ({
+  return (data.items || []).slice(0, MAX_ITEMS_PER_SOURCE).map((item) => ({
     title: item.title || "",
     description: item.description || item.content || "",
     link: item.link || "#",
@@ -39,32 +46,37 @@ async function fetchOneSource(source: NewsSource): Promise<NewsItem[]> {
   }));
 }
 
-export async function fetchTabNews(tabKey: string): Promise<NewsItem[]> {
+export async function fetchTabNews(tabKey: string): Promise<FetchTabResult> {
   const config = FEEDS[tabKey];
   if (!config) throw new Error("Unknown tab");
 
   const results = await Promise.allSettled(config.sources.map((s) => fetchOneSource(s)));
   const collected: NewsItem[] = [];
-  const errors: string[] = [];
+  const warnings: string[] = [];
 
   results.forEach((r, i) => {
-    if (r.status === "fulfilled") collected.push(...r.value);
-    else errors.push(r.reason?.message || config.sources[i].name);
+    const sourceName = config.sources[i].name;
+    if (r.status === "fulfilled") {
+      if (r.value.length) collected.push(...r.value);
+      else warnings.push(`${sourceName}: no articles returned`);
+      return;
+    }
+    warnings.push(r.reason?.message || `${sourceName}: feed unavailable`);
   });
 
   const seen = new Set<string>();
-  const unique = collected
+  const items = collected
     .filter((i) => {
       if (!i.title || seen.has(i.title)) return false;
       seen.add(i.title);
       return true;
     })
     .sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime())
-    .slice(0, 8);
+    .slice(0, MAX_ITEMS_PER_TAB);
 
-  if (!unique.length) {
-    throw new Error(errors[0] || "No articles loaded");
+  if (!items.length) {
+    throw new Error(warnings.join("; ") || "No articles loaded");
   }
 
-  return unique;
+  return { items, warnings };
 }
