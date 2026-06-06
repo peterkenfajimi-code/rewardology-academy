@@ -46,7 +46,7 @@ function formatDate(dateStr: string) {
 type TabFeedResult = { items: NewsItem[]; warnings: string[] };
 
 async function fetchTabFromApi(tabKey: string): Promise<TabFeedResult> {
-  const res = await fetch(`/api/news-feed?tab=${encodeURIComponent(tabKey)}`, {
+  const res = await fetch(`/api/news-feed/${encodeURIComponent(tabKey)}`, {
     signal: AbortSignal.timeout(20_000),
   });
   const data = (await res.json()) as {

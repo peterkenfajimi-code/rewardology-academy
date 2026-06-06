@@ -4,8 +4,10 @@ import { isValidNewsTab } from "@/lib/news/feedConfig";
 
 export const runtime = "nodejs";
 
-export async function GET(request: Request) {
-  const tab = new URL(request.url).searchParams.get("tab");
+type RouteContext = { params: Promise<{ tab: string }> };
+
+export async function GET(_request: Request, context: RouteContext) {
+  const tab = (await context.params).tab;
 
   if (!isValidNewsTab(tab)) {
     return NextResponse.json({ status: "error", message: "Invalid tab" }, { status: 400 });
