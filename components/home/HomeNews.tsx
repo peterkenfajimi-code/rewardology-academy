@@ -10,14 +10,6 @@ const TABS = NEWS_TAB_KEYS.map((key) => ({
   dot: FEEDS[key].color,
 }));
 
-const LIVE_SOURCES = [
-  { href: "https://www.aihr.com", dot: "#C8963E", name: "AIHR", tag: "HR" },
-  { href: "https://www.hrmorning.com", dot: "#C8963E", name: "HR Morning", tag: "HR News" },
-  { href: "https://www.hrdive.com", dot: "#2E7D8C", name: "HR Dive", tag: "Comp" },
-  { href: "https://hrdailyadvisor.blr.com", dot: "#3A7D44", name: "HR Daily Advisor", tag: "Benefits" },
-  { href: "https://www.bbc.co.uk/news/business", dot: "#6B4C9A", name: "BBC Business", tag: "News" },
-];
-
 function stripHtml(html: string) {
   if (typeof document === "undefined") return html;
   const d = document.createElement("div");
@@ -267,9 +259,9 @@ export function HomeNews() {
             <div className="news-sidebar-card">
               <div className="nsc-title">📡 Live Sources</div>
               <div className="news-sources-list">
-                {LIVE_SOURCES.map(({ href, dot, name, tag }) => (
+                {config.liveSources.map(({ href, name, tag }) => (
                   <a href={href} target="_blank" rel="noopener noreferrer" className="ns-item" key={name}>
-                    <span className="ns-dot" style={{ background: dot }} />
+                    <span className="ns-dot" style={{ background: config.color }} />
                     <span className="ns-name">{name}</span>
                     <span className="ns-tag">{tag}</span>
                   </a>

@@ -1,11 +1,16 @@
 export type NewsSource = { name: string; url: string; tag: string };
 
+export type LiveSource = { name: string; href: string; tag: string };
+
 export type FeedConfig = {
   color: string;
   label: string;
   /** NewsData.io search query for the latest endpoint */
   newsDataQuery: string;
+  /** RSS fallback feeds (rss2json) */
   sources: NewsSource[];
+  /** Sidebar links for the active tab */
+  liveSources: LiveSource[];
 };
 
 export type NewsItem = {
@@ -22,20 +27,20 @@ export const FEEDS: Record<string, FeedConfig> = {
     color: "#C8963E",
     label: "Total Rewards",
     newsDataQuery: "total rewards compensation benefits",
-    sources: [
-      { name: "AIHR", url: "https://www.aihr.com/feed/", tag: "HR" },
-      { name: "HR Morning", url: "https://www.hrmorning.com/feed/", tag: "HR News" },
-      { name: "HR Executive", url: "https://hrexecutive.com/feed/", tag: "Total Rewards" },
-    ],
+    sources: [{ name: "WorldatWork", url: "https://www.worldatwork.org/rss.xml", tag: "Total Rewards" }],
+    liveSources: [{ name: "WorldatWork", href: "https://www.worldatwork.org", tag: "Total Rewards" }],
   },
   compensation: {
     color: "#2E7D8C",
     label: "Compensation",
     newsDataQuery: "employee compensation salary wages",
     sources: [
-      { name: "HR Dive", url: "https://www.hrdive.com/feeds/news/", tag: "Compensation" },
-      { name: "HR Executive", url: "https://hrexecutive.com/feed/", tag: "Pay Strategy" },
-      { name: "CNBC Business", url: "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001147", tag: "Business" },
+      { name: "Compensation Café", url: "https://compensationcafe.com/feed/", tag: "Compensation" },
+      { name: "PayScale", url: "https://www.payscale.com/compensation-today/feed/", tag: "Pay" },
+    ],
+    liveSources: [
+      { name: "Compensation Café", href: "https://compensationcafe.com", tag: "Compensation" },
+      { name: "PayScale", href: "https://www.payscale.com/compensation-today", tag: "Pay" },
     ],
   },
   benefits: {
@@ -43,9 +48,12 @@ export const FEEDS: Record<string, FeedConfig> = {
     label: "Benefits",
     newsDataQuery: "employee benefits health insurance",
     sources: [
-      { name: "HR Daily Advisor", url: "https://hrdailyadvisor.blr.com/feed/", tag: "Benefits" },
-      { name: "HR Dive", url: "https://www.hrdive.com/feeds/news/", tag: "Benefits" },
-      { name: "Globe Newswire", url: "https://www.globenewswire.com/RssFeed/subjectcode/23-HREM", tag: "HR" },
+      { name: "BenefitsPRO", url: "https://www.benefitspro.com/feed/", tag: "Benefits" },
+      { name: "Benefit News", url: "https://www.benefitnews.com/feed", tag: "Benefits" },
+    ],
+    liveSources: [
+      { name: "BenefitsPRO", href: "https://www.benefitspro.com", tag: "Benefits" },
+      { name: "Benefit News", href: "https://www.benefitnews.com", tag: "Benefits" },
     ],
   },
   "general-hr": {
@@ -53,9 +61,14 @@ export const FEEDS: Record<string, FeedConfig> = {
     label: "General HR News",
     newsDataQuery: "human resources workforce hiring",
     sources: [
-      { name: "BBC Business", url: "https://feeds.bbci.co.uk/news/business/rss.xml", tag: "Business" },
-      { name: "PR Newswire", url: "https://www.prnewswire.com/rss/news-releases-list.rss", tag: "HR" },
-      { name: "Guardian Business", url: "https://www.theguardian.com/business/rss", tag: "Business" },
+      { name: "HR Daily Advisor", url: "https://hrdailyadvisor.blr.com/feed/", tag: "HR" },
+      { name: "AIHR Blog", url: "https://aihr.com/blog/feed/", tag: "HR" },
+      { name: "HR Morning", url: "https://www.hrmorning.com/feed/", tag: "HR News" },
+    ],
+    liveSources: [
+      { name: "HR Daily Advisor", href: "https://hrdailyadvisor.blr.com", tag: "HR" },
+      { name: "AIHR Blog", href: "https://www.aihr.com/blog", tag: "HR" },
+      { name: "HR Morning", href: "https://www.hrmorning.com", tag: "HR News" },
     ],
   },
 };
