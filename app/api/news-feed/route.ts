@@ -12,9 +12,9 @@ export async function GET(request: Request) {
   }
 
   try {
-    const items = await fetchTabNews(tab);
+    const { items, warnings } = await fetchTabNews(tab);
     return NextResponse.json(
-      { status: "ok", items, fetchedAt: new Date().toISOString() },
+      { status: "ok", items, warnings, fetchedAt: new Date().toISOString() },
       {
         headers: {
           "Cache-Control": "public, s-maxage=300, stale-while-revalidate=600",

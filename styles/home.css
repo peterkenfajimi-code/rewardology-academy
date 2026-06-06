@@ -2033,6 +2033,24 @@
   font-size: 13px;
   color: rgba(255, 255, 255, 0.35);
 }
+.news-warning {
+  margin-bottom: 12px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  background: rgba(251, 191, 36, 0.08);
+}
+.news-warning-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fbbf24;
+  margin-bottom: 4px;
+}
+.news-warning-desc {
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.45);
+}
 .news-sidebar {
   display: flex;
   flex-direction: column;
