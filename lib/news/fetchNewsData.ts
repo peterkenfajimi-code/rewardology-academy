@@ -3,6 +3,10 @@ import { FEEDS } from "@/lib/news/feedConfig";
 
 const NEWSDATA_API = "https://newsdata.io/api/1/latest";
 const MAX_ITEMS_PER_TAB = 8;
+const FETCH_SIZE = 10;
+
+const HR_RELEVANCE =
+  /\b(hr|human resources|employer|employee|workplace|compensation|payroll|workforce|hiring|recruiting|benefits plan|open enrollment|401k|health plan|total rewards|pay equity|salary|wages|talent management)\b/i;
 
 type NewsDataArticle = {
   title?: string;
@@ -63,6 +67,11 @@ function isLimitResponse(res: Response, data: NewsDataResponse): boolean {
   );
 }
 
+function isHrRelevant(article: NewsDataArticle): boolean {
+  const text = `${article.title || ""} ${article.description || ""} ${article.content || ""}`;
+  return HR_RELEVANCE.test(text);
+}
+
 export async function fetchTabFromNewsData(tabKey: string): Promise<NewsItem[]> {
   const apiKey = process.env.NEWSDATA_API_KEY;
   if (!apiKey) return [];
@@ -72,9 +81,11 @@ export async function fetchTabFromNewsData(tabKey: string): Promise<NewsItem[]> 
 
   const params = new URLSearchParams({
     apikey: apiKey,
+    qInTitle: config.newsDataTitleQuery,
     q: config.newsDataQuery,
     language: "en",
-    size: String(MAX_ITEMS_PER_TAB),
+    country: "us,gb,ca,au",
+    size: String(FETCH_SIZE),
   });
 
   const res = await fetch(`${NEWSDATA_API}?${params}`, {
@@ -97,7 +108,7 @@ export async function fetchTabFromNewsData(tabKey: string): Promise<NewsItem[]> 
   const articles = Array.isArray(data.results) ? data.results : [];
 
   return articles
-    .filter((article) => article.title && article.link)
+    .filter((article) => article.title && article.link && isHrRelevant(article))
     .slice(0, MAX_ITEMS_PER_TAB)
     .map((article) => ({
       title: article.title || "",

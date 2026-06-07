@@ -5,7 +5,9 @@ export type LiveSource = { name: string; href: string; tag: string };
 export type FeedConfig = {
   color: string;
   label: string;
-  /** NewsData.io search query for the latest endpoint */
+  /** NewsData.io title search (qInTitle) */
+  newsDataTitleQuery: string;
+  /** NewsData.io body search (q) — anchors results to HR/workplace context */
   newsDataQuery: string;
   /** RSS fallback feeds (rss2json) */
   sources: NewsSource[];
@@ -26,14 +28,16 @@ export const FEEDS: Record<string, FeedConfig> = {
   "total-rewards": {
     color: "#C8963E",
     label: "Total Rewards",
-    newsDataQuery: "total rewards compensation benefits",
+    newsDataTitleQuery: '"total rewards" OR "compensation strategy" OR "pay equity" OR payroll',
+    newsDataQuery: "HR OR employer OR workplace OR human resources",
     sources: [{ name: "WorldatWork", url: "https://www.worldatwork.org/rss.xml", tag: "Total Rewards" }],
     liveSources: [{ name: "WorldatWork", href: "https://www.worldatwork.org", tag: "Total Rewards" }],
   },
   compensation: {
     color: "#2E7D8C",
     label: "Compensation",
-    newsDataQuery: "employee compensation salary wages",
+    newsDataTitleQuery: '"employee compensation" OR "salary survey" OR "pay transparency" OR wages',
+    newsDataQuery: "HR OR employer OR workplace OR human resources",
     sources: [
       { name: "Compensation Café", url: "https://compensationcafe.com/feed/", tag: "Compensation" },
       { name: "PayScale", url: "https://www.payscale.com/compensation-today/feed/", tag: "Pay" },
@@ -46,7 +50,9 @@ export const FEEDS: Record<string, FeedConfig> = {
   benefits: {
     color: "#3A7D44",
     label: "Benefits",
-    newsDataQuery: "employee benefits health insurance",
+    newsDataTitleQuery:
+      '"employee benefits" OR "workplace benefits" OR "health plan" OR "open enrollment" OR 401k',
+    newsDataQuery: "employer OR HR OR workplace OR employees OR human resources",
     sources: [
       { name: "BenefitsPRO", url: "https://www.benefitspro.com/feed/", tag: "Benefits" },
       { name: "Benefit News", url: "https://www.benefitnews.com/feed", tag: "Benefits" },
@@ -59,7 +65,8 @@ export const FEEDS: Record<string, FeedConfig> = {
   "general-hr": {
     color: "#6B4C9A",
     label: "General HR News",
-    newsDataQuery: "human resources workforce hiring",
+    newsDataTitleQuery: '"human resources" OR "talent management" OR "workforce planning" OR hiring',
+    newsDataQuery: "HR OR employer OR workplace OR employees",
     sources: [
       { name: "HR Daily Advisor", url: "https://hrdailyadvisor.blr.com/feed/", tag: "HR" },
       { name: "AIHR Blog", url: "https://aihr.com/blog/feed/", tag: "HR" },

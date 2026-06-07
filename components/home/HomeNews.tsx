@@ -246,13 +246,13 @@ export function HomeNews() {
                   ["04", "Global Pay Equity Audits", "19 articles this week"],
                   ["05", "Mental Health Benefits ROI", "17 articles this week"],
                 ].map(([rank, topic, count]) => (
-                  <a href="#" className="trending-item" key={rank}>
+                  <div className="trending-item" key={rank}>
                     <div className="ti-rank">{rank}</div>
                     <div>
                       <div className="ti-topic">{topic}</div>
                       <div className="ti-count">{count}</div>
                     </div>
-                  </a>
+                  </div>
                 ))}
               </div>
             </div>
