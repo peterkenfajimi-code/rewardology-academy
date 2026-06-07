@@ -82,7 +82,6 @@ export async function fetchTabFromNewsData(tabKey: string): Promise<NewsItem[]> 
   const params = new URLSearchParams({
     apikey: apiKey,
     qInTitle: config.newsDataTitleQuery,
-    q: config.newsDataQuery,
     language: "en",
     country: "us,gb,ca,au",
     size: String(FETCH_SIZE),
