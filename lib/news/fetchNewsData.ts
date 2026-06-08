@@ -98,6 +98,10 @@ export async function fetchTabFromNewsData(tabKey: string): Promise<NewsItem[]> 
   const config = FEEDS[tabKey];
   if (!config) throw new Error("Unknown tab");
 
+  if (config.newsDataTitleQuery.length > 100) {
+    throw new Error(`NewsData.io: query length cannot be greater than 100`);
+  }
+
   const params = new URLSearchParams({
     apikey: apiKey,
     qInTitle: config.newsDataTitleQuery,

@@ -26,16 +26,14 @@ export const FEEDS: Record<string, FeedConfig> = {
   "total-rewards": {
     color: "#C8963E",
     label: "Total Rewards",
-    newsDataTitleQuery:
-      '"total rewards" OR "executive compensation" OR "pay equity" OR "compensation and benefits" OR remuneration',
+    newsDataTitleQuery: '"total rewards" OR "executive compensation" OR "pay equity" OR remuneration',
     sources: [{ name: "WorldatWork", url: "https://www.worldatwork.org/rss.xml", tag: "Total Rewards" }],
     liveSources: [{ name: "WorldatWork", href: "https://www.worldatwork.org", tag: "Total Rewards" }],
   },
   compensation: {
     color: "#2E7D8C",
     label: "Compensation",
-    newsDataTitleQuery:
-      '"salary survey" OR "pay transparency" OR "executive compensation" OR "pay equity" OR "merit increase"',
+    newsDataTitleQuery: '"salary survey" OR "pay transparency" OR "executive compensation" OR "pay equity"',
     sources: [
       { name: "Compensation Café", url: "https://compensationcafe.com/feed/", tag: "Compensation" },
       { name: "PayScale", url: "https://www.payscale.com/compensation-today/feed/", tag: "Pay" },
@@ -62,8 +60,7 @@ export const FEEDS: Record<string, FeedConfig> = {
   "general-hr": {
     color: "#6B4C9A",
     label: "General HR News",
-    newsDataTitleQuery:
-      '"human resources" OR "HR leaders" OR "talent management" OR "employee engagement" OR "workforce planning"',
+    newsDataTitleQuery: '"human resources" OR "talent management" OR "employee engagement" OR "workforce planning"',
     sources: [
       { name: "HR Daily Advisor", url: "https://hrdailyadvisor.blr.com/feed/", tag: "HR" },
       { name: "AIHR Blog", url: "https://aihr.com/blog/feed/", tag: "HR" },
