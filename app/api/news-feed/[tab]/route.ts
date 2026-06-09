@@ -19,7 +19,7 @@ export async function GET(_request: Request, context: RouteContext) {
       { status: "ok", items, warnings, provider, fetchedAt: new Date().toISOString() },
       {
         headers: {
-          "Cache-Control": "public, s-maxage=300, stale-while-revalidate=600",
+          "Cache-Control": "public, s-maxage=1800, stale-while-revalidate=3600",
         },
       }
     );

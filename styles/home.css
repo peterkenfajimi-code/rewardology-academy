@@ -447,9 +447,28 @@
 }
 .xp-fill {
   height: 100%;
-  width: 42%;
+  width: 0%;
   background: linear-gradient(90deg, var(--gold), var(--gold2));
   border-radius: 2px;
+  transition: width 0.4s ease;
+}
+.mc-price.waitlist {
+  color: var(--gold2);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.hero-xp-hint {
+  display: block;
+  margin-top: 14px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.hero-xp-hint:hover {
+  color: rgba(255, 255, 255, 0.7);
 }
 .mini-courses {
   display: flex;
@@ -2110,6 +2129,12 @@
   font-size: 11px;
   color: rgba(255, 255, 255, 0.35);
   margin-top: 2px;
+}
+.trending-empty {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.5;
+  padding: 8px 0 4px;
 }
 .news-sources-list {
   display: flex;

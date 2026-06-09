@@ -1,8 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { FEEDS, NEWS_TAB_KEYS } from "@/lib/news/feedConfig";
 import type { NewsItem } from "@/lib/news/feedConfig";
+import { deriveTrendingTopics, formatTrendingCount } from "@/lib/news/trendingTopics";
+
+const CACHE_DURATION_MS = 30 * 60 * 1000;
 
 const TABS = NEWS_TAB_KEYS.map((key) => ({
   key,
@@ -37,6 +40,21 @@ function formatDate(dateStr: string) {
 
 type TabFeedResult = { items: NewsItem[]; warnings: string[] };
 
+function itemsFromCache(
+  cache: Record<string, { items: NewsItem[]; warnings: string[]; fetchedAt: number }>
+): NewsItem[] {
+  const seen = new Set<string>();
+  const merged: NewsItem[] = [];
+  for (const entry of Object.values(cache)) {
+    for (const item of entry.items) {
+      if (seen.has(item.link)) continue;
+      seen.add(item.link);
+      merged.push(item);
+    }
+  }
+  return merged;
+}
+
 async function fetchTabFromApi(tabKey: string): Promise<TabFeedResult> {
   const res = await fetch(`/api/news-feed/${encodeURIComponent(tabKey)}`, {
     signal: AbortSignal.timeout(20_000),
@@ -61,15 +79,21 @@ export function HomeNews() {
   const [feedWarnings, setFeedWarnings] = useState<string[]>([]);
   const [updatedAt, setUpdatedAt] = useState("");
   const [spinning, setSpinning] = useState(false);
+  const [poolItems, setPoolItems] = useState<NewsItem[]>([]);
   const cache = useRef<Record<string, { items: NewsItem[]; warnings: string[]; fetchedAt: number }>>({});
+
+  const syncPoolFromCache = useCallback(() => {
+    setPoolItems(itemsFromCache(cache.current));
+  }, []);
 
   const loadTab = useCallback(async (tabKey: string, force: boolean) => {
     const cached = cache.current[tabKey];
     const cacheAge = cached ? Date.now() - cached.fetchedAt : Infinity;
-    if (cached && cacheAge < 300000 && !force) {
+    if (cached && cacheAge < CACHE_DURATION_MS && !force) {
       setItems(cached.items);
       setFeedWarnings(cached.warnings);
       setStatus(cached.warnings.length ? "partial" : "ok");
+      syncPoolFromCache();
       return;
     }
     setStatus("loading");
@@ -81,12 +105,13 @@ export function HomeNews() {
       setFeedWarnings(warnings);
       setStatus(warnings.length ? "partial" : "ok");
       setUpdatedAt(new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" }));
+      syncPoolFromCache();
     } catch (e) {
       setErrorMsg((e as Error).message || "unknown");
       setFeedWarnings([]);
       setStatus("error");
     }
-  }, []);
+  }, [syncPoolFromCache]);
 
   useEffect(() => {
     loadTab("total-rewards", false);
@@ -103,6 +128,7 @@ export function HomeNews() {
   };
 
   const config = FEEDS[activeTab];
+  const trendingTopics = useMemo(() => deriveTrendingTopics(poolItems), [poolItems]);
 
   return (
     <section className="section news-section">
@@ -205,12 +231,13 @@ export function HomeNews() {
                     <div className="news-warning-desc">{feedWarnings.join(" · ")}</div>
                   </div>
                 )}
-                {items.map((item, i) => (
+                {items.map((item, i) => {
+                  const internal = item.link.startsWith("/");
+                  return (
                   <a
                     key={item.link + i}
                     href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...(internal ? {} : { target: "_blank", rel: "noopener noreferrer" })}
                     className="news-card"
                     style={{ ["--tab-color" as string]: config.color }}
                   >
@@ -230,7 +257,8 @@ export function HomeNews() {
                     </div>
                     <div className="nc-arrow">→</div>
                   </a>
-                ))}
+                  );
+                })}
               </div>
             )}
           </div>
@@ -239,21 +267,21 @@ export function HomeNews() {
             <div className="news-sidebar-card">
               <div className="nsc-title">🔥 Trending Topics</div>
               <div className="trending-list">
-                {[
-                  ["01", "Pay Transparency Laws 2026", "42 articles this week"],
-                  ["02", "Skills-Based Pay Models", "31 articles this week"],
-                  ["03", "AI in Compensation Planning", "28 articles this week"],
-                  ["04", "Global Pay Equity Audits", "19 articles this week"],
-                  ["05", "Mental Health Benefits ROI", "17 articles this week"],
-                ].map(([rank, topic, count]) => (
-                  <div className="trending-item" key={rank}>
-                    <div className="ti-rank">{rank}</div>
-                    <div>
-                      <div className="ti-topic">{topic}</div>
-                      <div className="ti-count">{count}</div>
+                {status === "loading" && trendingTopics.length === 0 ? (
+                  <div className="trending-empty">Analyzing loaded feeds…</div>
+                ) : trendingTopics.length === 0 ? (
+                  <div className="trending-empty">No topics yet — refresh feeds or switch tabs.</div>
+                ) : (
+                  trendingTopics.map((topic, index) => (
+                    <div className="trending-item" key={topic.label}>
+                      <div className="ti-rank">{String(index + 1).padStart(2, "0")}</div>
+                      <div>
+                        <div className="ti-topic">{topic.label}</div>
+                        <div className="ti-count">{formatTrendingCount(topic.count)}</div>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))
+                )}
               </div>
             </div>
             <div className="news-sidebar-card">

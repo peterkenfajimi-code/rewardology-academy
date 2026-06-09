@@ -1,62 +1,40 @@
 import type { NewsItem, NewsSource } from "@/lib/news/feedConfig";
 import { FEEDS } from "@/lib/news/feedConfig";
+import { parseRssXml } from "@/lib/news/parseRss";
 
-const RSS2JSON = "https://api.rss2json.com/v1/api.json";
 const MAX_ITEMS_PER_SOURCE = 4;
-const MAX_ITEMS_PER_TAB = 8;
-
-export type FetchTabResult = {
-  items: NewsItem[];
-  warnings: string[];
-  provider: "rss";
-};
 
 async function fetchOneSource(source: NewsSource): Promise<NewsItem[]> {
-  const params = new URLSearchParams({ rss_url: source.url });
-  const apiKey = process.env.RSS2JSON_API_KEY;
-  if (apiKey) {
-    params.set("api_key", apiKey);
-    params.set("count", String(MAX_ITEMS_PER_SOURCE));
-  }
-
-  const res = await fetch(`${RSS2JSON}?${params}`, {
-    headers: { Accept: "application/json", "User-Agent": "RewardologyAcademy/1.0" },
+  const res = await fetch(source.url, {
+    headers: { Accept: "application/rss+xml, application/xml, text/xml", "User-Agent": "RewardologyAcademy/1.0" },
     signal: AbortSignal.timeout(12_000),
-    next: { revalidate: 300 },
+    next: { revalidate: 1800 },
   });
 
   if (!res.ok) throw new Error(`${source.name}: HTTP ${res.status}`);
 
-  const data = (await res.json()) as {
-    status?: string;
-    message?: string;
-    items?: Record<string, string>[];
-  };
+  const xml = await res.text();
+  const items = parseRssXml(xml);
 
-  if (data.status !== "ok") {
-    throw new Error(data.message || `${source.name}: feed error`);
-  }
+  if (!items.length) throw new Error(`${source.name}: no articles in feed`);
 
-  return (data.items || []).slice(0, MAX_ITEMS_PER_SOURCE).map((item) => ({
-    title: item.title || "",
-    description: item.description || item.content || "",
-    link: item.link || "#",
-    pubDate: item.pubDate || "",
+  return items.slice(0, MAX_ITEMS_PER_SOURCE).map((item) => ({
+    title: item.title,
+    description: item.description,
+    link: item.link,
+    pubDate: item.pubDate,
     source: source.name,
     tag: source.tag,
   }));
 }
 
-export async function fetchTabFromRss(
-  tabKey: string,
-  extraWarnings: string[] = []
-): Promise<FetchTabResult> {
+export async function fetchTabFromRss(tabKey: string): Promise<{ items: NewsItem[]; warnings: string[] }> {
   const config = FEEDS[tabKey];
   if (!config) throw new Error("Unknown tab");
 
   const results = await Promise.allSettled(config.sources.map((s) => fetchOneSource(s)));
   const collected: NewsItem[] = [];
-  const warnings = [...extraWarnings];
+  const warnings: string[] = [];
 
   results.forEach((r, i) => {
     const sourceName = config.sources[i].name;
@@ -68,19 +46,5 @@ export async function fetchTabFromRss(
     warnings.push(r.reason?.message || `${sourceName}: feed unavailable`);
   });
 
-  const seen = new Set<string>();
-  const items = collected
-    .filter((i) => {
-      if (!i.title || seen.has(i.title)) return false;
-      seen.add(i.title);
-      return true;
-    })
-    .sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime())
-    .slice(0, MAX_ITEMS_PER_TAB);
-
-  if (!items.length) {
-    throw new Error(warnings.join("; ") || "No articles loaded");
-  }
-
-  return { items, warnings, provider: "rss" };
+  return { items: collected, warnings };
 }

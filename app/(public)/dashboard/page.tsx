@@ -7,6 +7,7 @@ import { computeStreak } from "@/lib/daily-quiz/streak";
 import { todayDateKey } from "@/lib/daily-quiz/dailyQuizData";
 import { courseResumeHref, lessonKey, type LessonXpMap } from "@/lib/courses/progress";
 import { SignInPrompt } from "@/components/dashboard/SignInPrompt";
+import { levelFor } from "@/lib/xp/levels";
 import "@/styles/dashboard.css";
 
 export const metadata = {
@@ -27,27 +28,6 @@ type CourseRow = {
   lesson_id: string;
   xp: number;
 };
-
-const LEVELS = [
-  { name: "HR Intern", min: 0 },
-  { name: "Reward Analyst", min: 150 },
-  { name: "Compensation Specialist", min: 450 },
-  { name: "Total Rewards Manager", min: 750 },
-  { name: "Global Rewards Director", min: 1050 },
-  { name: "Chief People Officer", min: 1350 },
-];
-
-function levelFor(xp: number) {
-  let current = LEVELS[0];
-  let next: (typeof LEVELS)[number] | null = null;
-  for (let i = 0; i < LEVELS.length; i++) {
-    if (xp >= LEVELS[i].min) {
-      current = LEVELS[i];
-      next = LEVELS[i + 1] ?? null;
-    }
-  }
-  return { current, next };
-}
 
 function hexToRgba(hex: string, a: number) {
   const r = parseInt(hex.slice(1, 3), 16);

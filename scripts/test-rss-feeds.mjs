@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const configSource = readFileSync(join(root, "lib/news/feedConfig.ts"), "utf8");
+
 function parseSources(block) {
   return [...block.matchAll(/name:\s*"([^"]+)"[\s\S]*?url:\s*"([^"]+)"/g)].map((m) => ({
     name: m[1],
@@ -16,28 +17,20 @@ const tabs = [
 ].map((m) => [m[1] || m[2], m[3]]);
 
 async function testSource(name, url) {
-  const params = new URLSearchParams({ rss_url: url });
-  const apiKey = process.env.RSS2JSON_API_KEY;
-  if (apiKey) {
-    params.set("api_key", apiKey);
-    params.set("count", "4");
-  }
-
-  const res = await fetch(`https://api.rss2json.com/v1/api.json?${params}`, {
+  const res = await fetch(url, {
+    headers: { Accept: "application/rss+xml, application/xml, text/xml", "User-Agent": "RewardologyAcademy/1.0" },
     signal: AbortSignal.timeout(15_000),
   });
-  const data = await res.json();
-  const ok = res.ok && data.status === "ok" && data.items?.length;
-  return {
-    ok,
-    detail: ok ? `${data.items.length} items` : data.message || `HTTP ${res.status}`,
-  };
+  if (!res.ok) return { ok: false, detail: `HTTP ${res.status}` };
+  const xml = await res.text();
+  const count = (xml.match(/<item\b/gi) || []).length + (xml.match(/<entry\b/gi) || []).length;
+  return { ok: count > 0, detail: count > 0 ? `${count} items` : "No items in feed" };
 }
 
 let passed = 0;
 let failed = 0;
 
-console.log("RSS feed verification (rss2json)\n");
+console.log("RSS feed verification (direct fetch)\n");
 
 for (const [tab, block] of tabs) {
   const sources = parseSources(block);

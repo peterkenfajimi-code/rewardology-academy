@@ -1,25 +1,10 @@
 import type { NewsItem } from "@/lib/news/feedConfig";
 import { FEEDS } from "@/lib/news/feedConfig";
+import { isRelevantArticle } from "@/lib/news/relevanceFilter";
 
 const NEWSDATA_API = "https://newsdata.io/api/1/latest";
 const MAX_ITEMS_PER_TAB = 8;
 const FETCH_SIZE = 10;
-
-const JOB_BOARD_SPAM =
-  /\b(now hiring|multiple .{0,50} jobs|jobs in [a-z][a-z\s,.-]{2,60})\b/i;
-const OFF_TOPIC =
-  /\b(wages war|land regulari|encroachment|himachal|cabinet approves land)\b/i;
-
-const TAB_RELEVANCE: Record<string, RegExp> = {
-  "total-rewards":
-    /\b(total rewards|executive compensation|pay equity|remuneration|compensation and benefits|rewards strategy|compensation strategy)\b/i,
-  compensation:
-    /\b(compensation|salary|pay transparency|pay equity|executive compensation|merit increase|salary survey|wage growth|minimum wage)\b/i,
-  benefits:
-    /\b(employee benefits|workplace benefits|health plan|open enrollment|401k|health benefits|benefits plan)\b/i,
-  "general-hr":
-    /\b(human resources|talent management|workforce planning|employee engagement|people analytics|hr leaders|hr department|workplace culture)\b/i,
-};
 
 type NewsDataArticle = {
   title?: string;
@@ -80,15 +65,13 @@ function isLimitResponse(res: Response, data: NewsDataResponse): boolean {
   );
 }
 
-function articleText(article: NewsDataArticle): string {
-  return `${article.title || ""} ${article.description || ""} ${article.content || ""}`;
-}
 
-function isRelevantArticle(tabKey: string, article: NewsDataArticle): boolean {
-  const text = articleText(article);
-  if (JOB_BOARD_SPAM.test(text) || OFF_TOPIC.test(text)) return false;
-  const tabPattern = TAB_RELEVANCE[tabKey];
-  return tabPattern ? tabPattern.test(text) : false;
+function isRelevantNewsDataArticle(tabKey: string, article: NewsDataArticle): boolean {
+  return isRelevantArticle(
+    tabKey,
+    article.title || "",
+    `${article.description || ""} ${article.content || ""}`
+  );
 }
 
 export async function fetchTabFromNewsData(tabKey: string): Promise<NewsItem[]> {
@@ -113,7 +96,7 @@ export async function fetchTabFromNewsData(tabKey: string): Promise<NewsItem[]> 
   const res = await fetch(`${NEWSDATA_API}?${params}`, {
     headers: { Accept: "application/json", "User-Agent": "RewardologyAcademy/1.0" },
     signal: AbortSignal.timeout(12_000),
-    next: { revalidate: 300 },
+    next: { revalidate: 1800 },
   });
 
   const data = (await res.json()) as NewsDataResponse;
@@ -130,7 +113,7 @@ export async function fetchTabFromNewsData(tabKey: string): Promise<NewsItem[]> 
   const articles = Array.isArray(data.results) ? data.results : [];
 
   return articles
-    .filter((article) => article.title && article.link && isRelevantArticle(tabKey, article))
+    .filter((article) => article.title && article.link && isRelevantNewsDataArticle(tabKey, article))
     .slice(0, MAX_ITEMS_PER_TAB)
     .map((article) => ({
       title: article.title || "",

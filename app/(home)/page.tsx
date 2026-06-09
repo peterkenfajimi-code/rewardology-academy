@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AuthControls } from "@/components/auth/AuthControls";
+import { HeroProgressCard } from "@/components/home/HeroProgressCard";
 import { HomeEffects } from "@/components/home/HomeEffects";
 import { HomeQuizPanel } from "@/components/home/HomeQuizPanel";
 import { HomeCartoons } from "@/components/home/HomeCartoons";
@@ -138,46 +139,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="hero-card">
-            <div className="hero-card-top">
-              <div className="challenge-eyebrow">
-                <span className="challenge-dot" /> Today&apos;s Challenge
-              </div>
-              <div className="challenge-title">Compensation Basics Quiz</div>
-              <div className="challenge-xp">⚡ Earn {15} XP daily</div>
-            </div>
-            <div className="hero-card-bottom">
-              <div className="xp-bar-label">
-                <span>Your XP Progress</span>
-                <span>420 / 1000</span>
-              </div>
-              <div className="xp-bar">
-                <div className="xp-fill" />
-              </div>
-              <div className="mini-courses">
-                <Link href="/courses" className="mini-course">
-                  <div className="mc-icon" style={{ background: "linear-gradient(135deg,#0C4A6E,#0891B2)" }}>
-                    📐
-                  </div>
-                  <div>
-                    <div className="mc-name">Compensation Fundamentals</div>
-                    <div className="mc-meta">Salary structures · Job evaluation</div>
-                  </div>
-                  <div className="mc-price">Free</div>
-                </Link>
-                <Link href="/courses" className="mini-course">
-                  <div className="mc-icon" style={{ background: "linear-gradient(135deg,#7F1D1D,#DC2626)" }}>
-                    🏛️
-                  </div>
-                  <div>
-                    <div className="mc-name">Coming Soon</div>
-                    <div className="mc-meta">Advanced · In development</div>
-                  </div>
-                  <div className="mc-price">$--</div>
-                </Link>
-              </div>
-            </div>
-          </div>
+          <HeroProgressCard />
         </div>
       </section>
 
