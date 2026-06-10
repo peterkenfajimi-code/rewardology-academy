@@ -29,5 +29,6 @@ export async function POST(req: Request) {
   return NextResponse.json({
     correct,
     correctKey: q.correctKey,
+    explanation: q.explanation ?? null,
   });
 }

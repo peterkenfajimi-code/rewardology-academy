@@ -11,6 +11,7 @@ export type DailyQuizQuestion = {
   question: string;
   options: DailyQuizOption[];
   correctKey: string;
+  explanation?: string;
 };
 
 /** Rotating pool — 365 daily-only questions (seeds + expanded bank; not from Quiz Centre). */

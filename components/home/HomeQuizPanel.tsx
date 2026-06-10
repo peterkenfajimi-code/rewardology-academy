@@ -24,6 +24,8 @@ type DailyState = {
     correct: boolean;
     selectedKey: string | null;
     xpEarned: number;
+    explanation?: string | null;
+    correctKey?: string;
   };
   streak: number;
   totalXp: number;
@@ -36,6 +38,7 @@ export function HomeQuizPanel() {
   const [submitted, setSubmitted] = useState(false);
   const [correct, setCorrect] = useState(false);
   const [correctKey, setCorrectKey] = useState<string | null>(null);
+  const [explanation, setExplanation] = useState<string | null>(null);
   const [streak, setStreak] = useState(0);
   const [totalXp, setTotalXp] = useState(0);
   const [authenticated, setAuthenticated] = useState(false);
@@ -50,7 +53,9 @@ export function HomeQuizPanel() {
     setSubmitted(data.today.answered);
     setCorrect(data.today.correct);
     setSelected(data.today.selectedKey);
-    if (data.today.answered && data.today.correct) {
+    setExplanation(data.today.explanation ?? null);
+    if (data.today.correctKey) setCorrectKey(data.today.correctKey);
+    else if (data.today.answered && data.today.correct) {
       setCorrectKey(data.today.selectedKey);
     }
   }, []);
@@ -102,7 +107,12 @@ export function HomeQuizPanel() {
         dateKey: question.dateKey,
       }),
     });
-    const data = (await res.json()) as { correct?: boolean; correctKey?: string; error?: string };
+    const data = (await res.json()) as {
+      correct?: boolean;
+      correctKey?: string;
+      explanation?: string | null;
+      error?: string;
+    };
     if (!res.ok) throw new Error(data.error || "Could not check answer");
 
     const wasCorrect = Boolean(data.correct);
@@ -129,6 +139,7 @@ export function HomeQuizPanel() {
     setSubmitted(true);
     setCorrect(wasCorrect);
     setCorrectKey(data.correctKey ?? null);
+    setExplanation(data.explanation ?? null);
     setStreak(computeStreak(newHistory, question.dateKey));
     setTotalXp(totalXpEarned);
   };
@@ -162,8 +173,9 @@ export function HomeQuizPanel() {
               dateKey: question.dateKey,
             }),
           });
-          const vd = (await v.json()) as { correctKey?: string };
+          const vd = (await v.json()) as { correctKey?: string; explanation?: string | null };
           setCorrectKey(vd.correctKey ?? null);
+          setExplanation(vd.explanation ?? null);
         }
       } else {
         await submitGuest();
@@ -250,6 +262,9 @@ export function HomeQuizPanel() {
             ? "Submitting…"
             : "Submit Answer"}
         </button>
+        {submitted && explanation && (
+          <p className="qp-explanation">{explanation}</p>
+        )}
         {submitted && !authenticated && (
           <p className="ra-modal-sub" style={{ marginTop: 12, textAlign: "center" }}>
             <Link href="/signup">Sign up</Link> to save progress and sync XP to your dashboard.

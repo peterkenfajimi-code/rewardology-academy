@@ -5,6 +5,7 @@ import {
   DAILY_QUIZ_XP,
   isCorrectAnswer,
   questionForClient,
+  questionForDate,
   todayDateKey,
 } from "@/lib/daily-quiz/dailyQuizData";
 import { computeStreak } from "@/lib/daily-quiz/streak";
@@ -53,6 +54,8 @@ async function loadUserDailyState(userId: string) {
           correct: todayRow.correct,
           selectedKey: todayRow.selected_option,
           xpEarned: todayRow.xp_earned,
+          explanation: questionForDate(todayKey).explanation ?? null,
+          correctKey: questionForDate(todayKey).correctKey,
         }
       : { answered: false, correct: false, selectedKey: null, xpEarned: 0 },
     streak: computeStreak(dateKeys, todayKey),
