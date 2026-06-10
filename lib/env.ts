@@ -17,3 +17,8 @@ export function isElevenLabsConfigured() {
 export function isGoogleOAuthEnabled() {
   return process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED === "true";
 }
+
+/** True when RESEND_API_KEY is set (local .env only — used for setup scripts). */
+export function isResendApiKeyConfigured() {
+  return Boolean(process.env.RESEND_API_KEY?.trim());
+}

@@ -16,6 +16,16 @@ export const SUPABASE_PROJECT_REF = "fgkhowgggwbsosqhfnnz";
 
 export const SUPABASE_GOOGLE_CALLBACK_URL = `https://${SUPABASE_PROJECT_REF}.supabase.co/auth/v1/callback`;
 
+/** Domain verified in Resend for auth email (no www). */
+export const RESEND_AUTH_DOMAIN = "rewardologyacademy.com";
+
+/** Resend SMTP (Supabase Auth transactional email) */
+export const RESEND_FROM_EMAIL = "noreply@rewardologyacademy.com";
+export const RESEND_SENDER_NAME = "Rewardology Academy";
+export const RESEND_SMTP_HOST = "smtp.resend.com";
+export const RESEND_SMTP_PORT = 587;
+export const RESEND_SMTP_USER = "resend";
+
 export function getPublicSiteUrl(): string {
   const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim();
   if (!raw) return "http://localhost:3000";

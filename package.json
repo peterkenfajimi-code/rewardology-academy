@@ -11,6 +11,9 @@
     "configure:supabase-auth": "node scripts/configure-supabase-production.mjs",
     "configure:netlify-env": "node scripts/configure-netlify-env.mjs",
     "configure:google-oauth": "node scripts/configure-google-oauth.mjs",
+    "configure:resend-smtp": "node scripts/configure-resend-smtp.mjs",
+    "configure:supabase-email-rate-limit": "node scripts/configure-supabase-email-rate-limit.mjs",
+    "test:signup-email": "node scripts/test-signup-email.mjs",
     "generate:daily-quiz": "node scripts/generate-daily-quiz-pool.mjs",
     "test:rss": "node scripts/test-rss-feeds.mjs"
   },

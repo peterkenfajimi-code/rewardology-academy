@@ -1,5 +1,6 @@
-import { isElevenLabsConfigured, isSanityConfigured, isSupabaseConfigured } from "@/lib/env";
+import { isElevenLabsConfigured, isResendApiKeyConfigured, isSanityConfigured, isSupabaseConfigured } from "@/lib/env";
 import { DeploySetupPanel } from "@/components/setup/DeploySetupPanel";
+import { ResendSetupPanel } from "@/components/setup/ResendSetupPanel";
 import { SupabaseSetupPanel } from "@/components/setup/SupabaseSetupPanel";
 import "@/styles/setup.css";
 
@@ -42,6 +43,7 @@ export default function SetupPage() {
       <div className="s-grid" style={{ marginBottom: 40 }}>
         <StatusRow label="Sanity CMS" ok={isSanityConfigured()} />
         <StatusRow label="Supabase" ok={supabaseOk} />
+        <StatusRow label="Resend (local key)" ok={isResendApiKeyConfigured()} />
         <StatusRow label="ElevenLabs TTS" ok={isElevenLabsConfigured()} />
       </div>
 
@@ -50,6 +52,10 @@ export default function SetupPage() {
       <hr className="ph-hr" style={{ margin: "40px 0" }} />
 
       <SupabaseSetupPanel configured={supabaseOk} />
+
+      <hr className="ph-hr" style={{ margin: "40px 0" }} />
+
+      <ResendSetupPanel />
     </div>
   );
 }

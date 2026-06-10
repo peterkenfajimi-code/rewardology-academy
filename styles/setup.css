@@ -133,6 +133,10 @@
   margin-bottom: 0;
 }
 
+.setup-resend {
+  margin-bottom: 0;
+}
+
 .setup-subhead {
   font-family: var(--hsans);
   font-size: 15px;
