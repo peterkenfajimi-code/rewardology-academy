@@ -8,7 +8,7 @@ export const XP_LEVELS = [
 ] as const;
 
 export function levelFor(xp: number) {
-  let current = XP_LEVELS[0];
+  let current: (typeof XP_LEVELS)[number] = XP_LEVELS[0];
   let next: (typeof XP_LEVELS)[number] | null = null;
   for (let i = 0; i < XP_LEVELS.length; i++) {
     if (xp >= XP_LEVELS[i].min) {
