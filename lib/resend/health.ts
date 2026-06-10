@@ -73,6 +73,7 @@ async function fetchSupabaseSmtpStatus(): Promise<{
 
 export async function checkResendHealth(): Promise<ResendHealth> {
   const apiKey = process.env.RESEND_API_KEY?.trim();
+  const supabaseToken = process.env.SUPABASE_ACCESS_TOKEN?.trim();
   const domain = RESEND_AUTH_DOMAIN;
 
   const base: ResendHealth = {
@@ -84,21 +85,23 @@ export async function checkResendHealth(): Promise<ResendHealth> {
     reachable: false,
   };
 
-  if (!apiKey) {
+  if (!apiKey && !supabaseToken) {
     return {
       ...base,
       error:
-        "Add RESEND_API_KEY to .env.local (local only — not needed on Netlify). Supabase stores the key for sending.",
+        "Add SUPABASE_ACCESS_TOKEN (and optionally RESEND_API_KEY) to .env.local or Netlify server env for live checks.",
     };
   }
 
   try {
     const [domainStatus, smtp] = await Promise.all([
-      fetchResendDomainStatus(apiKey, domain),
-      fetchSupabaseSmtpStatus(),
+      apiKey ? fetchResendDomainStatus(apiKey, domain) : Promise.resolve("unknown" as const),
+      supabaseToken ? fetchSupabaseSmtpStatus() : Promise.resolve({ configured: null, fromEmail: null }),
     ]);
 
-    const reachable = domainStatus === "verified" && smtp.configured === true;
+    const domainOk = domainStatus === "verified";
+    const smtpOk = smtp.configured === true;
+    const reachable = smtpOk && (domainOk || (!apiKey && domainStatus === "unknown"));
 
     return {
       ...base,
@@ -111,12 +114,14 @@ export async function checkResendHealth(): Promise<ResendHealth> {
           ? `Add ${domain} in Resend → Domains and configure DNS in Netlify.`
           : domainStatus === "pending"
           ? "Domain DNS is propagating — wait for Verified in Resend."
-          : domainStatus !== "verified"
+          : apiKey && domainStatus !== "verified"
           ? "Domain not verified in Resend yet."
           : smtp.configured === false
           ? "Run npm run configure:resend-smtp to push SMTP settings into Supabase."
           : smtp.configured === null
-          ? "Add SUPABASE_ACCESS_TOKEN to .env.local to verify Supabase SMTP from this page."
+          ? "Add SUPABASE_ACCESS_TOKEN to verify Supabase SMTP from this page."
+          : !apiKey && smtpOk
+          ? "Supabase SMTP is configured. Add RESEND_API_KEY for domain verification checks."
           : undefined,
     };
   } catch (e) {

@@ -169,8 +169,9 @@ export function ResendSetupPanel() {
       </ol>
 
       <p className="setup-section-sub" style={{ marginTop: 16, marginBottom: 0 }}>
-        Resend free tier is enough for launch. The API key lives in Supabase SMTP only — not in Netlify
-        env vars.
+        Resend free tier is enough for launch. The API key lives in Supabase SMTP for sending.
+        Add <code>SUPABASE_ACCESS_TOKEN</code> and <code>RESEND_API_KEY</code> as server-only Netlify
+        env vars to enable live checks on this page.
       </p>
     </div>
   );

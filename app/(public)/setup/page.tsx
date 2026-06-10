@@ -1,4 +1,5 @@
-import { isElevenLabsConfigured, isResendApiKeyConfigured, isSanityConfigured, isSupabaseConfigured } from "@/lib/env";
+import { isElevenLabsConfigured, isSanityConfigured, isSupabaseConfigured } from "@/lib/env";
+import { checkResendHealth } from "@/lib/resend/health";
 import { DeploySetupPanel } from "@/components/setup/DeploySetupPanel";
 import { ResendSetupPanel } from "@/components/setup/ResendSetupPanel";
 import { SupabaseSetupPanel } from "@/components/setup/SupabaseSetupPanel";
@@ -25,8 +26,10 @@ function StatusRow({ label, ok }: { label: string; ok: boolean }) {
   );
 }
 
-export default function SetupPage() {
+export default async function SetupPage() {
   const supabaseOk = isSupabaseConfigured();
+  const resendHealth = await checkResendHealth();
+  const resendOk = resendHealth.reachable;
 
   return (
     <div className="page-wrap narrow">
@@ -43,7 +46,7 @@ export default function SetupPage() {
       <div className="s-grid" style={{ marginBottom: 40 }}>
         <StatusRow label="Sanity CMS" ok={isSanityConfigured()} />
         <StatusRow label="Supabase" ok={supabaseOk} />
-        <StatusRow label="Resend (local key)" ok={isResendApiKeyConfigured()} />
+        <StatusRow label="Resend email" ok={resendOk} />
         <StatusRow label="ElevenLabs TTS" ok={isElevenLabsConfigured()} />
       </div>
 

@@ -53,6 +53,13 @@ if (env.RSS2JSON_API_KEY) newVars.RSS2JSON_API_KEY = env.RSS2JSON_API_KEY;
 if (env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED) {
   newVars.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED = env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED;
 }
+// Server-only — powers /setup Resend health checks (never NEXT_PUBLIC_*)
+if (env.SUPABASE_ACCESS_TOKEN) {
+  newVars.SUPABASE_ACCESS_TOKEN = env.SUPABASE_ACCESS_TOKEN;
+}
+if (env.RESEND_API_KEY) {
+  newVars.RESEND_API_KEY = env.RESEND_API_KEY;
+}
 
 const headers = {
   Authorization: `Bearer ${token}`,
