@@ -33,7 +33,11 @@ export default function ArticlesIndexPage() {
               {a.category}
             </div>
             <div className="ess-idx-ti">{a.title}</div>
-            <div className="ess-idx-arr">→</div>
+            {a.description && <div className="ess-idx-desc">{a.description}</div>}
+            <div className="ess-idx-meta">
+              <span>⏱ {a.readTime}</span>
+              <span style={{ color: a.color }}>⚡ {a.xp} XP</span>
+            </div>
           </Link>
         ))}
       </div>

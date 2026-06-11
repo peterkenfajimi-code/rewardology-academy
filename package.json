@@ -15,6 +15,7 @@
     "configure:supabase-email-rate-limit": "node scripts/configure-supabase-email-rate-limit.mjs",
     "test:signup-email": "node scripts/test-signup-email.mjs",
     "generate:daily-quiz": "node scripts/generate-daily-quiz-pool.mjs",
+    "extract:articles": "node scripts/extract-articles.mjs",
     "test:rss": "node scripts/test-rss-feeds.mjs"
   },
   "dependencies": {
