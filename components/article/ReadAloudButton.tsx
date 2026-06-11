@@ -1,19 +1,23 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { chunkTextForTts } from "@/lib/tts/chunkText";
+import { loadBrowserVoices, pickBrowserVoice } from "@/lib/tts/browserVoice";
+import { chunkTextForBrowser, chunkTextForTts } from "@/lib/tts/chunkText";
+import { GaplessAudioPlayer } from "@/lib/tts/gaplessPlayer";
+import { prepareTextForTts } from "@/lib/tts/prepareText";
 
 type PlaybackState = "idle" | "loading" | "playing" | "paused";
+type Engine = "premium" | "browser" | null;
 
-function pickFemaleBrowserVoice(): SpeechSynthesisVoice | null {
-  const voices = window.speechSynthesis.getVoices();
-  return (
-    voices.find((v) =>
-      /female|zira|samantha|aria|jenny|google uk english female|natasha|emma/i.test(
-        v.name
-      )
-    ) ?? null
-  );
+async function fetchTtsStatus(): Promise<boolean> {
+  try {
+    const res = await fetch("/api/tts", { cache: "no-store" });
+    if (!res.ok) return false;
+    const data = (await res.json()) as { available?: boolean };
+    return Boolean(data.available);
+  } catch {
+    return false;
+  }
 }
 
 async function fetchChunkAudio(text: string): Promise<Blob | null> {
@@ -30,23 +34,36 @@ export function ReadAloudButton({ text }: { text: string }) {
   const [state, setState] = useState<PlaybackState>("idle");
   const [progress, setProgress] = useState({ current: 0, total: 0 });
   const [statusLabel, setStatusLabel] = useState("");
+  const [premiumAvailable, setPremiumAvailable] = useState<boolean | null>(null);
+  const [voiceName, setVoiceName] = useState("");
 
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const engineRef = useRef<Engine>(null);
   const abortRef = useRef(false);
   const chunksRef = useRef<string[]>([]);
+  const browserIdxRef = useRef(0);
+  const browserVoiceRef = useRef<SpeechSynthesisVoice | null>(null);
+  const playerRef = useRef<GaplessAudioPlayer | null>(null);
+
+  useEffect(() => {
+    void fetchTtsStatus().then(setPremiumAvailable);
+    void loadBrowserVoices().then((voices) => {
+      const voice = pickBrowserVoice(voices);
+      browserVoiceRef.current = voice;
+      if (voice) setVoiceName(voice.name);
+    });
+  }, []);
+
   const cleanup = useCallback(() => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.onended = null;
-      audioRef.current.onerror = null;
-      audioRef.current = null;
-    }
+    playerRef.current?.stop();
+    playerRef.current = null;
     window.speechSynthesis.cancel();
+    browserIdxRef.current = 0;
   }, []);
 
   const reset = useCallback(() => {
     abortRef.current = true;
     cleanup();
+    engineRef.current = null;
     chunksRef.current = [];
     setState("idle");
     setProgress({ current: 0, total: 0 });
@@ -60,54 +77,69 @@ export function ReadAloudButton({ text }: { text: string }) {
     };
   }, [cleanup]);
 
-  const playAudioBlob = useCallback((blob: Blob) => {
-    return new Promise<void>((resolve, reject) => {
-      const url = URL.createObjectURL(blob);
-      const audio = new Audio(url);
-      audioRef.current = audio;
+  const speakBrowserNext = useCallback(() => {
+    const chunks = chunksRef.current;
+    const idx = browserIdxRef.current;
 
-      audio.onended = () => {
-        URL.revokeObjectURL(url);
-        audioRef.current = null;
-        resolve();
-      };
-      audio.onerror = () => {
-        URL.revokeObjectURL(url);
-        audioRef.current = null;
-        reject(new Error("Playback error"));
-      };
+    if (abortRef.current || idx >= chunks.length) {
+      if (!abortRef.current) {
+        setState("idle");
+        setStatusLabel("");
+        setProgress({ current: 0, total: 0 });
+        engineRef.current = null;
+      }
+      return;
+    }
 
-      audio.play().catch(reject);
-    });
-  }, []);
+    setProgress({ current: idx + 1, total: chunks.length });
+    setStatusLabel(
+      chunks.length > 1
+        ? `Reading segment ${idx + 1} of ${chunks.length}${voiceName ? ` · ${voiceName}` : ""}`
+        : voiceName
+          ? `Reading · ${voiceName}`
+          : "Reading…"
+    );
+    setState("playing");
 
-  const playBrowserFallback = useCallback(
-    (fromIndex: number) => {
-      const remaining = chunksRef.current.slice(fromIndex).join(" ");
-      if (!remaining.trim()) return;
+    const utt = new SpeechSynthesisUtterance(chunks[idx]);
+    const voice = browserVoiceRef.current;
+    if (voice) utt.voice = voice;
+    utt.rate = 0.92;
+    utt.pitch = 1.02;
+    utt.volume = 1;
 
-      const synth = window.speechSynthesis;
-      const utt = new SpeechSynthesisUtterance(remaining);
-      const female = pickFemaleBrowserVoice();
-      if (female) utt.voice = female;
-      utt.rate = 1;
-      utt.pitch = 1;
-      utt.onend = () => {
-        if (!abortRef.current) {
-          setState("idle");
-          setStatusLabel("");
-          setProgress({ current: 0, total: 0 });
-        }
-      };
-      setStatusLabel("Playing (browser voice)…");
-      setState("playing");
-      synth.speak(utt);
-    },
-    []
-  );
+    utt.onend = () => {
+      if (abortRef.current) return;
+      browserIdxRef.current = idx + 1;
+      speakBrowserNext();
+    };
+    utt.onerror = () => {
+      if (abortRef.current) return;
+      browserIdxRef.current = idx + 1;
+      speakBrowserNext();
+    };
+
+    window.speechSynthesis.speak(utt);
+  }, [voiceName]);
+
+  const runBrowserPlayback = useCallback(async () => {
+    engineRef.current = "browser";
+    const voices = await loadBrowserVoices();
+    const voice = pickBrowserVoice(voices);
+    browserVoiceRef.current = voice;
+    if (voice) setVoiceName(voice.name);
+
+    browserIdxRef.current = 0;
+    speakBrowserNext();
+  }, [speakBrowserNext]);
 
   const runPremiumPlayback = useCallback(async () => {
+    engineRef.current = "premium";
     const chunks = chunksRef.current;
+    const player = new GaplessAudioPlayer();
+    playerRef.current = player;
+    player.reset();
+
     let nextPreload: Promise<Blob | null> | null = fetchChunkAudio(chunks[0]);
 
     for (let i = 0; i < chunks.length; i++) {
@@ -116,27 +148,25 @@ export function ReadAloudButton({ text }: { text: string }) {
       setProgress({ current: i + 1, total: chunks.length });
       setStatusLabel(
         chunks.length > 1
-          ? `Playing part ${i + 1} of ${chunks.length}…`
-          : "Playing…"
+          ? `Playing part ${i + 1} of ${chunks.length} · premium voice`
+          : "Playing · premium voice"
       );
 
       const blob = await nextPreload;
       if (abortRef.current) return;
 
       if (!blob) {
-        playBrowserFallback(i);
+        await runBrowserPlayback();
         return;
       }
 
-      // Preload next chunk while current plays
-      nextPreload =
-        i + 1 < chunks.length ? fetchChunkAudio(chunks[i + 1]) : null;
+      nextPreload = i + 1 < chunks.length ? fetchChunkAudio(chunks[i + 1]) : null;
 
       setState("playing");
       try {
-        await playAudioBlob(blob);
+        await player.playBlob(blob);
       } catch {
-        playBrowserFallback(i);
+        await runBrowserPlayback();
         return;
       }
     }
@@ -145,8 +175,9 @@ export function ReadAloudButton({ text }: { text: string }) {
       setState("idle");
       setStatusLabel("");
       setProgress({ current: 0, total: 0 });
+      engineRef.current = null;
     }
-  }, [playAudioBlob, playBrowserFallback]);
+  }, [runBrowserPlayback]);
 
   const start = useCallback(async () => {
     const trimmed = text?.trim();
@@ -154,28 +185,43 @@ export function ReadAloudButton({ text }: { text: string }) {
 
     abortRef.current = false;
     cleanup();
-    chunksRef.current = chunkTextForTts(trimmed);
+
+    const prepared = prepareTextForTts(trimmed, false);
+    const usePremium = premiumAvailable ?? (await fetchTtsStatus());
+
+    if (usePremium) {
+      chunksRef.current = chunkTextForTts(prepared);
+    } else {
+      chunksRef.current = chunkTextForBrowser(prepared);
+    }
+
     if (!chunksRef.current.length) return;
 
     setState("loading");
     setProgress({ current: 0, total: chunksRef.current.length });
     setStatusLabel(
-      chunksRef.current.length > 1
-        ? `Preparing ${chunksRef.current.length} parts…`
-        : "Preparing voice…"
+      usePremium
+        ? chunksRef.current.length > 1
+          ? `Preparing ${chunksRef.current.length} parts…`
+          : "Preparing premium voice…"
+        : "Preparing natural voice…"
     );
 
-    await runPremiumPlayback();
-  }, [text, cleanup, runPremiumPlayback]);
+    if (usePremium) {
+      await runPremiumPlayback();
+    } else {
+      await runBrowserPlayback();
+    }
+  }, [text, cleanup, premiumAvailable, runPremiumPlayback, runBrowserPlayback]);
 
   const pause = useCallback(() => {
-    if (audioRef.current && !audioRef.current.paused) {
-      audioRef.current.pause();
+    if (engineRef.current === "premium" && playerRef.current) {
+      playerRef.current.pause();
       setState("paused");
       setStatusLabel("Paused");
       return;
     }
-    if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+    if (engineRef.current === "browser" && window.speechSynthesis.speaking) {
       window.speechSynthesis.pause();
       setState("paused");
       setStatusLabel("Paused");
@@ -183,24 +229,32 @@ export function ReadAloudButton({ text }: { text: string }) {
   }, []);
 
   const resume = useCallback(() => {
-    if (audioRef.current?.paused) {
-      audioRef.current.play();
+    if (engineRef.current === "premium" && playerRef.current) {
+      playerRef.current.resume();
       setState("playing");
       setStatusLabel(
         progress.total > 1
-          ? `Playing part ${progress.current} of ${progress.total}…`
-          : "Playing…"
+          ? `Playing part ${progress.current} of ${progress.total} · premium voice`
+          : "Playing · premium voice"
       );
       return;
     }
-    if (window.speechSynthesis.paused) {
+    if (engineRef.current === "browser" && window.speechSynthesis.paused) {
       window.speechSynthesis.resume();
       setState("playing");
-      setStatusLabel("Playing (browser voice)…");
     }
   }, [progress]);
 
   const isActive = state === "loading" || state === "playing" || state === "paused";
+
+  const idleHint =
+    premiumAvailable === true
+      ? "Premium human voice · full article playback"
+      : premiumAvailable === false
+        ? voiceName
+          ? `Natural voice · ${voiceName}`
+          : "Natural browser voice · full article playback"
+        : "Loading voice engine…";
 
   return (
     <div className="ess-ra-wrap">
@@ -237,7 +291,7 @@ export function ReadAloudButton({ text }: { text: string }) {
         {state === "loading" && (statusLabel || "Preparing voice…")}
         {state === "playing" && (statusLabel || "Playing…")}
         {state === "paused" && (statusLabel || "Paused")}
-        {state === "idle" && "Human female voice · full article playback"}
+        {state === "idle" && idleHint}
       </p>
     </div>
   );

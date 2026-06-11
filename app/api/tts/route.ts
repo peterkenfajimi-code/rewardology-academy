@@ -1,6 +1,27 @@
 import { NextResponse } from "next/server";
+import { isElevenLabsConfigured } from "@/lib/env";
+import { prepareTextForTts } from "@/lib/tts/prepareText";
 
-const MAX_CHARS = 5000;
+export const runtime = "nodejs";
+
+const MAX_CHARS = 10000;
+
+/** Educational narration — stable, clear, slightly slower. */
+const VOICE_SETTINGS = {
+  stability: 0.58,
+  similarity_boost: 0.78,
+  style: 0,
+  use_speaker_boost: true,
+  speed: 0.94,
+};
+
+export async function GET() {
+  return NextResponse.json({
+    available: isElevenLabsConfigured(),
+    voiceId: process.env.ELEVENLABS_VOICE_ID || "EXAVITQu4vr4xnSDxMaL",
+    model: "eleven_multilingual_v2",
+  });
+}
 
 export async function POST(req: Request) {
   try {
@@ -10,7 +31,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Invalid text" }, { status: 400 });
     }
 
-    const trimmed = text.trim().slice(0, MAX_CHARS);
+    const prepared = prepareTextForTts(text, true);
+    const trimmed = prepared.trim().slice(0, MAX_CHARS);
     if (!trimmed) {
       return NextResponse.json({ error: "Empty text" }, { status: 400 });
     }
@@ -23,7 +45,7 @@ export async function POST(req: Request) {
     }
 
     const response = await fetch(
-      `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`,
+      `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}?output_format=mp3_44100_128`,
       {
         method: "POST",
         headers: {
@@ -34,12 +56,7 @@ export async function POST(req: Request) {
         body: JSON.stringify({
           text: trimmed,
           model_id: "eleven_multilingual_v2",
-          voice_settings: {
-            stability: 0.45,
-            similarity_boost: 0.85,
-            style: 0.35,
-            use_speaker_boost: true,
-          },
+          voice_settings: VOICE_SETTINGS,
         }),
       }
     );

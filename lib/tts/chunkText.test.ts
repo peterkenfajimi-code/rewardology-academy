@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { chunkTextForTts } from "./chunkText";
+import { chunkTextForTts, chunkTextForBrowser } from "./chunkText";
 
 describe("chunkTextForTts", () => {
   it("returns empty for blank input", () => {
@@ -16,5 +16,11 @@ describe("chunkTextForTts", () => {
     const chunks = chunkTextForTts(long, 500);
     expect(chunks.length).toBeGreaterThan(1);
     chunks.forEach((c) => expect(c.length).toBeLessThanOrEqual(500));
+  });
+
+  it("chunks browser text by word count", () => {
+    const words = Array.from({ length: 400 }, (_, i) => `word${i}.`).join(" ");
+    const chunks = chunkTextForBrowser(words, 80);
+    expect(chunks.length).toBeGreaterThan(1);
   });
 });
