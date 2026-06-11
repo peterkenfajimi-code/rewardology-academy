@@ -16,14 +16,14 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Environment setup
 
-### ElevenLabs (human female read-aloud)
+### ElevenLabs (Charlotte read-aloud)
 
 1. Create an account at [elevenlabs.io](https://elevenlabs.io)
 2. Copy your API key into `.env.local`:
 
 ```bash
 ELEVENLABS_API_KEY=sk_...
-ELEVENLABS_VOICE_ID=EXAVITQu4vr4xnSDxMaL
+ELEVENLABS_VOICE_ID=XB0fDUnXU5powFXDhCwa
 ```
 
 3. Open any article → click **Read aloud**

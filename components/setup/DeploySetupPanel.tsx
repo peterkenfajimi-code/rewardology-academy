@@ -108,7 +108,7 @@ NEXT_PUBLIC_SANITY_PROJECT_ID=<optional>
 NEXT_PUBLIC_SANITY_DATASET=production
 NEXT_PUBLIC_SANITY_API_VERSION=2026-01-01
 ELEVENLABS_API_KEY=<optional>
-ELEVENLABS_VOICE_ID=EXAVITQu4vr4xnSDxMaL`}</pre>
+ELEVENLABS_VOICE_ID=XB0fDUnXU5powFXDhCwa`}</pre>
       <p className="setup-section-sub" style={{ marginTop: 8 }}>
         <code>netlify.toml</code> sets <code>NEXT_PUBLIC_SITE_URL={PRODUCTION_SITE_URL}</code>. After
         DNS propagates, trigger a Netlify redeploy. Keep using <code>{NETLIFY_SITE_URL}</code> until

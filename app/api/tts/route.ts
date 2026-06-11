@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { isElevenLabsConfigured } from "@/lib/env";
 import { prepareTextForTts } from "@/lib/tts/prepareText";
+import {
+  DEFAULT_ELEVENLABS_VOICE_ID,
+  DEFAULT_ELEVENLABS_VOICE_NAME,
+} from "@/lib/tts/voiceConfig";
 
 export const runtime = "nodejs";
 
@@ -18,7 +22,8 @@ const VOICE_SETTINGS = {
 export async function GET() {
   return NextResponse.json({
     available: isElevenLabsConfigured(),
-    voiceId: process.env.ELEVENLABS_VOICE_ID || "EXAVITQu4vr4xnSDxMaL",
+    voiceId: process.env.ELEVENLABS_VOICE_ID || DEFAULT_ELEVENLABS_VOICE_ID,
+    voiceName: DEFAULT_ELEVENLABS_VOICE_NAME,
     model: "eleven_multilingual_v2",
   });
 }
@@ -38,7 +43,7 @@ export async function POST(req: Request) {
     }
 
     const apiKey = process.env.ELEVENLABS_API_KEY;
-    const voiceId = process.env.ELEVENLABS_VOICE_ID || "EXAVITQu4vr4xnSDxMaL";
+    const voiceId = process.env.ELEVENLABS_VOICE_ID || DEFAULT_ELEVENLABS_VOICE_ID;
 
     if (!apiKey) {
       return NextResponse.json({ error: "TTS not configured" }, { status: 503 });
