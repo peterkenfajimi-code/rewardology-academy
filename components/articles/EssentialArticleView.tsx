@@ -1,8 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import type { EssentialArticle } from "@/lib/articles/essentials";
 import { ESSENTIALS_ARTICLES } from "@/lib/articles/essentials";
 import { ReadAloudButton } from "@/components/article/ReadAloudButton";
-import { ReadingProgress } from "@/components/articles/ReadingProgress";
+import {
+  ArticleReadingProgress,
+  ArticleXpBanner,
+  useArticleRead,
+} from "@/components/articles/ArticleReadTracker";
 import { ArticleKeyboardNav } from "@/components/articles/ArticleKeyboardNav";
 import { articlePlainText, sectionParagraphs } from "@/lib/articles/utils";
 
@@ -30,6 +36,7 @@ export function EssentialArticleView({ article }: { article: EssentialArticle })
   const prev = ESSENTIALS_ARTICLES.find((a) => a.id === article.id - 1);
   const next = ESSENTIALS_ARTICLES.find((a) => a.id === article.id + 1);
   const plainText = articlePlainText(article);
+  const read = useArticleRead(article.id);
 
   const sectionIds = [
     ...article.sections.map((_, i) => `sec-${article.id}-${i}`),
@@ -42,7 +49,7 @@ export function EssentialArticleView({ article }: { article: EssentialArticle })
   return (
     <>
       <ArticleKeyboardNav prevSlug={prev?.slug} nextSlug={next?.slug} />
-      <ReadingProgress />
+      <ArticleReadingProgress width={read.progressWidth} />
       <div
         className="essentials-root min-h-screen"
         style={{ ["--article-color" as string]: article.color }}
@@ -249,6 +256,18 @@ export function EssentialArticleView({ article }: { article: EssentialArticle })
                     </div>
                   </div>
                 )}
+
+                <ArticleXpBanner
+                  xp={article.xp}
+                  color={article.color}
+                  showBanner={read.showBanner}
+                  completed={read.completed}
+                  authenticated={read.authenticated}
+                  articlesRead={read.articlesRead}
+                  articleXpTotal={read.articleXpTotal}
+                  maxArticleXp={read.maxArticleXp}
+                  articlesTotal={read.articlesTotal}
+                />
               </div>
 
               <footer className="ess-art-foot">

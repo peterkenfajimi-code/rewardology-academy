@@ -16,9 +16,11 @@ export function HeroProgressCard() {
     refresh();
     window.addEventListener("storage", refresh);
     window.addEventListener("focus", refresh);
+    window.addEventListener("ra-xp-updated", refresh);
     return () => {
       window.removeEventListener("storage", refresh);
       window.removeEventListener("focus", refresh);
+      window.removeEventListener("ra-xp-updated", refresh);
     };
   }, []);
 

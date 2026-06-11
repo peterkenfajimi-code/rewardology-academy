@@ -7,6 +7,8 @@ import { computeStreak } from "@/lib/daily-quiz/streak";
 import { todayDateKey } from "@/lib/daily-quiz/dailyQuizData";
 import { courseResumeHref, lessonKey, type LessonXpMap } from "@/lib/courses/progress";
 import { SignInPrompt } from "@/components/dashboard/SignInPrompt";
+import { ESSENTIALS_ARTICLES } from "@/lib/articles/essentials";
+import { maxArticleXp } from "@/lib/articles/progress";
 import { levelFor } from "@/lib/xp/levels";
 import "@/styles/dashboard.css";
 
@@ -63,7 +65,7 @@ export default async function DashboardPage() {
     return <SignInPrompt configured />;
   }
 
-  const [{ data }, { data: courseData }, { data: profile }, { data: dailyData }] =
+  const [{ data }, { data: courseData }, { data: profile }, { data: dailyData }, { data: articleData }] =
     await Promise.all([
       supabase
         .from("quiz_centre_progress")
@@ -80,6 +82,11 @@ export default async function DashboardPage() {
         .select("quiz_date, correct, xp_earned")
         .eq("user_id", user.id)
         .order("quiz_date", { ascending: false }),
+      supabase
+        .from("article_progress")
+        .select("article_id, slug, xp, read_at")
+        .eq("user_id", user.id)
+        .order("read_at", { ascending: false }),
     ]);
 
   const rows = (data as ProgressRow[] | null) ?? [];
@@ -134,7 +141,13 @@ export default async function DashboardPage() {
   );
   const dailyCompletions = dailyRows.length;
 
-  const totalXp = quizXp + courseXpTotal + dailyXp;
+  type ArticleRow = { article_id: number; slug: string; xp: number; read_at: string };
+  const articleRows = (articleData as ArticleRow[] | null) ?? [];
+  const articleXp = articleRows.reduce((s, r) => s + (r.xp ?? 0), 0);
+  const articlesRead = articleRows.length;
+  const articlesMaxXp = maxArticleXp();
+
+  const totalXp = quizXp + courseXpTotal + dailyXp + articleXp;
   const { current, next } = levelFor(totalXp);
   const levelProgress = next
     ? Math.min(100, Math.round(((totalXp - current.min) / (next.min - current.min)) * 100))
@@ -150,6 +163,7 @@ export default async function DashboardPage() {
     { icon: "💎", name: "Flawless", desc: "Score 100% on any quiz", earned: perfectCount >= 1 },
     { icon: "🔥", name: "Halfway There", desc: "Complete 5 quizzes", earned: completedCount >= 5 },
     { icon: "👑", name: "Total Mastery", desc: "Complete all 10 quizzes", earned: completedCount >= 10 },
+    { icon: "📖", name: "Article Reader", desc: "Read 5 Total Rewards articles", earned: articlesRead >= 5 },
     { icon: "⚡", name: "XP Hunter", desc: "Earn 750 XP", earned: totalXp >= 750 },
     { icon: "🏆", name: "Grand Master", desc: "Reach 1,350 XP", earned: totalXp >= 1350 },
   ];
@@ -201,6 +215,20 @@ export default async function DashboardPage() {
             <span> ✓</span>
           </div>
           <div className="dash-stat-label">Daily quizzes done</div>
+        </div>
+        <div className="dash-stat">
+          <div className="dash-stat-num">
+            {articlesRead}
+            <span> /25</span>
+          </div>
+          <div className="dash-stat-label">Articles read</div>
+        </div>
+        <div className="dash-stat">
+          <div className="dash-stat-num">
+            {articleXp}
+            <span> XP</span>
+          </div>
+          <div className="dash-stat-label">Article XP ({articlesMaxXp} max)</div>
         </div>
       </div>
 
@@ -263,6 +291,51 @@ export default async function DashboardPage() {
           </div>
         ))}
       </div>
+
+      <h2 className="dash-section-title">
+        Articles{articlesRead > 0 ? ` · ${articlesRead} read` : ""}
+      </h2>
+      {articleRows.length === 0 ? (
+        <div className="dash-empty">
+          <div className="dash-empty-title">No articles completed yet</div>
+          <p className="dash-empty-sub">
+            Read to at least 78% of an article to earn XP. Progress syncs here when you are
+            signed in.
+          </p>
+          <Link href="/articles/all" className="ra-auth ra-auth-btn ra-auth-btn-primary">
+            Browse articles →
+          </Link>
+        </div>
+      ) : (
+        <div className="dash-history">
+          {articleRows.map((row) => {
+            const article = ESSENTIALS_ARTICLES.find((a) => a.id === row.article_id);
+            const color = article?.color ?? "#c8963e";
+            return (
+              <div key={row.article_id} className="dash-row">
+                <div
+                  className="dash-row-icon"
+                  style={{ background: hexToRgba(color, 0.16), color }}
+                >
+                  📖
+                </div>
+                <div className="dash-row-main">
+                  <div className="dash-row-title">{article?.title ?? `Article ${row.article_id}`}</div>
+                  <div className="dash-row-sub">
+                    <span>{article?.category ?? "Total Rewards"}</span>
+                    <span style={{ opacity: 0.4 }}>·</span>
+                    <span>{formatDate(row.read_at)}</span>
+                  </div>
+                </div>
+                <div className="dash-row-xp">⚡ {row.xp} XP</div>
+                <Link href={`/articles/${row.slug}`} className="dash-row-cta">
+                  Re-read →
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      )}
 
       <h2 className="dash-section-title">Quiz history</h2>
       {rows.length === 0 ? (

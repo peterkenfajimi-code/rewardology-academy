@@ -1,12 +1,14 @@
 import { readLocalDaily } from "@/lib/daily-quiz/localProgress";
+import { localArticleXpTotal } from "@/lib/articles/progress";
 import { totalCourseXp, readLocalCourseXp } from "@/lib/courses/progress";
 import { readLocalProgress, totalXpFromMap } from "@/lib/quizzes/progress";
 
-/** Combined XP from quiz centre, courses, and daily quizzes (local device cache). */
+/** Combined XP from quizzes, courses, daily quizzes, and articles (local device cache). */
 export function readLocalTotalXp(): number {
   if (typeof window === "undefined") return 0;
   const quizXp = totalXpFromMap(readLocalProgress());
   const courseXp = totalCourseXp(readLocalCourseXp());
   const dailyXp = readLocalDaily()?.totalXpEarned ?? 0;
-  return quizXp + courseXp + dailyXp;
+  const articleXp = localArticleXpTotal();
+  return quizXp + courseXp + dailyXp + articleXp;
 }

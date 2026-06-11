@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ESSENTIALS_ARTICLES } from "@/lib/articles/essentials";
+import { ArticlesIndexGrid } from "@/components/articles/ArticlesIndexGrid";
 import { essentialsSerif, essentialsSans } from "@/lib/articles/utils";
 import "@/styles/essentials.css";
 
@@ -20,27 +20,7 @@ export default function ArticlesIndexPage() {
           </Link>
         </header>
       </section>
-      <div className="ess-ix-grid">
-        {ESSENTIALS_ARTICLES.map((a) => (
-          <Link
-            key={a.id}
-            href={`/articles/${a.slug}`}
-            className="ess-idx-card"
-            style={{ ["--article-color" as string]: a.color }}
-          >
-            <div className="ess-idx-n">{a.num}</div>
-            <div className="ess-idx-cat" style={{ color: a.color }}>
-              {a.category}
-            </div>
-            <div className="ess-idx-ti">{a.title}</div>
-            {a.description && <div className="ess-idx-desc">{a.description}</div>}
-            <div className="ess-idx-meta">
-              <span>⏱ {a.readTime}</span>
-              <span style={{ color: a.color }}>⚡ {a.xp} XP</span>
-            </div>
-          </Link>
-        ))}
-      </div>
+      <ArticlesIndexGrid />
     </div>
   );
 }

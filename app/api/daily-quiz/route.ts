@@ -36,13 +36,15 @@ async function loadUserDailyState(userId: string) {
   const dateKeys = list.map((r) => String(r.quiz_date).slice(0, 10));
   const todayRow = list.find((r) => String(r.quiz_date).slice(0, 10) === todayKey);
 
-  const [{ data: quizRows }, { data: courseRows }] = await Promise.all([
+  const [{ data: quizRows }, { data: courseRows }, { data: articleRows }] = await Promise.all([
     supabase.from("quiz_centre_progress").select("best_xp").eq("user_id", userId),
     supabase.from("course_progress").select("xp").eq("user_id", userId),
+    supabase.from("article_progress").select("xp").eq("user_id", userId),
   ]);
 
   const quizXp = (quizRows ?? []).reduce((s, r) => s + (r.best_xp ?? 0), 0);
   const courseXp = (courseRows ?? []).reduce((s, r) => s + (r.xp ?? 0), 0);
+  const articleXp = (articleRows ?? []).reduce((s, r) => s + (r.xp ?? 0), 0);
   const dailyXp = list.reduce((s, r) => s + (r.xp_earned ?? 0), 0);
 
   return {
@@ -60,7 +62,7 @@ async function loadUserDailyState(userId: string) {
       : { answered: false, correct: false, selectedKey: null, xpEarned: 0 },
     streak: computeStreak(dateKeys, todayKey),
     dailyXp,
-    totalXp: quizXp + courseXp + dailyXp,
+    totalXp: quizXp + courseXp + dailyXp + articleXp,
     dailyCompletions: list.length,
   };
 }

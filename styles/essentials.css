@@ -322,6 +322,15 @@
   transform: translateX(4px);
 }
 
+.ess-idx-read {
+  border-color: rgba(74, 222, 128, 0.25);
+  background: rgba(74, 222, 128, 0.04);
+}
+
+.ess-idx-read .ess-idx-meta span:last-child {
+  color: #4ade80 !important;
+}
+
 /* ── Reader layout ── */
 .ess-rd-lay {
   display: flex;
@@ -885,6 +894,47 @@
   flex-shrink: 0;
   margin-top: 2px;
   font-size: 13px;
+}
+
+.ess-xp-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 32px 0 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.ess-xp-banner.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ess-xp-banner-done {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--rule);
+}
+
+.ess-xp-banner-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.ess-xp-banner-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #4ade80;
+}
+
+.ess-xp-banner-sub {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 2px;
 }
 
 .ess-art-foot {
