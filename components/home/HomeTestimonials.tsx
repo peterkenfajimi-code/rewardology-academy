@@ -19,16 +19,18 @@ export function HomeTestimonials() {
         <div className="proof-grid">
           {HOME_TESTIMONIALS.map((p) => (
             <div className={`proof-card reveal ${p.revealDelay}`} key={p.id}>
-              <div className="proof-stars">★★★★★</div>
-              <div className="proof-text">&ldquo;{p.quote}&rdquo;</div>
+              <div className="proof-stars" aria-hidden={!p.quote}>
+                {p.quote ? "★★★★★" : "\u00A0"}
+              </div>
+              <div className="proof-text">{p.quote ? `\u201C${p.quote}\u201D` : "\u00A0"}</div>
               <div className="proof-author">
                 <div className="proof-avatar" style={{ background: p.avatarBg }}>
-                  {p.avatar}
+                  {p.avatar || "\u00A0"}
                 </div>
                 <div>
-                  <div className="proof-name">{p.name}</div>
+                  <div className="proof-name">{p.name || "\u00A0"}</div>
                   <div className="proof-role">
-                    {p.role} · {p.location}
+                    {[p.role, p.location].filter(Boolean).join(" · ") || "\u00A0"}
                   </div>
                 </div>
               </div>

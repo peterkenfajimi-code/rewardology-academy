@@ -119,26 +119,6 @@ export default function HomePage() {
                 Take Today&apos;s Quiz
               </Link>
             </div>
-            <div className="hero-stats">
-              <div>
-                <div className="hstat-num">
-                  25<span>+</span>
-                </div>
-                <div className="hstat-label">Free Articles</div>
-              </div>
-              <div>
-                <div className="hstat-num">
-                  5<span></span>
-                </div>
-                <div className="hstat-label">Courses</div>
-              </div>
-              <div>
-                <div className="hstat-num">
-                  15<span>xp</span>
-                </div>
-                <div className="hstat-label">Daily Quizzes</div>
-              </div>
-            </div>
           </div>
 
           <HeroProgressCard />
