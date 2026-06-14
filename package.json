@@ -16,6 +16,7 @@
     "test:signup-email": "node scripts/test-signup-email.mjs",
     "generate:daily-quiz": "node scripts/generate-daily-quiz-pool.mjs",
     "extract:articles": "node scripts/extract-articles.mjs",
+    "extract:courses": "node scripts/extract-courses.mjs",
     "apply:article-progress": "node scripts/apply-article-progress.mjs",
     "test:rss": "node scripts/test-rss-feeds.mjs"
   },

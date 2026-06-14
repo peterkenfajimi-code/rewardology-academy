@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import {
@@ -10,6 +11,9 @@ import {
   type CourseLesson,
   type CourseModule,
 } from "@/lib/courses/courseData";
+import { lessonPlainText } from "@/lib/courses/lessonText";
+import { getEssentialById } from "@/lib/articles/essentials";
+import { BrowserVoiceBar } from "@/components/tts/BrowserVoiceBar";
 import {
   courseXp,
   isCourseComplete,
@@ -77,8 +81,27 @@ export function CourseCentre() {
 
   const [confetti, setConfetti] = useState<React.CSSProperties[]>([]);
   const [toast, setToast] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [levelFilter, setLevelFilter] = useState("All");
 
   const totalXP = useMemo(() => totalCourseXp(lxp), [lxp]);
+
+  const filteredCourses = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    return COURSES.filter((c) => {
+      if (levelFilter !== "All" && c.level !== levelFilter) return false;
+      if (!q) return true;
+      const hay = [c.title, c.subtitle, c.desc, ...c.outcomes, ...c.modules.map((m) => m.title)]
+        .join(" ")
+        .toLowerCase();
+      return hay.includes(q);
+    });
+  }, [searchQuery, levelFilter]);
+
+  const levelTabs = useMemo(
+    () => ["All", ...Array.from(new Set(COURSES.map((c) => c.level)))],
+    []
+  );
 
   // Load progress: account first, otherwise this device's cache. Re-runs on login/logout.
   useEffect(() => {
@@ -458,12 +481,36 @@ export function CourseCentre() {
         </div>
 
         <div className="cc-courses-sec">
+          <div className="cc-lobby-toolbar">
+            <input
+              className="cc-lobby-search"
+              placeholder="🔍 Search courses and topics…"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <div className="cc-level-tabs">
+              {levelTabs.map((tab) => (
+                <button
+                  key={tab}
+                  type="button"
+                  className={`cc-ltab${levelFilter === tab ? " active" : ""}`}
+                  onClick={() => setLevelFilter(tab)}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+          </div>
           <div className="cc-cs-hd">
             <div className="cc-cs-title cc-serif">Available Courses</div>
-            <div className="cc-cs-sub">Click any course to begin</div>
+            <div className="cc-cs-sub">
+              {filteredCourses.length === COURSES.length
+                ? "Click any course to begin"
+                : `${filteredCourses.length} course${filteredCourses.length === 1 ? "" : "s"} matched`}
+            </div>
           </div>
           <div className="cc-courses-grid">
-            {COURSES.map((c, i) => {
+            {filteredCourses.map((c, i) => {
               const earned = courseXp(lxp, c.id);
               const pct = Math.min(100, Math.round((earned / c.total_xp) * 100));
               const done = isCourseComplete(lxp, c);
@@ -768,8 +815,33 @@ export function CourseCentre() {
               <div className="cc-lc-met">
                 <span>⏱ {l.duration}</span>
                 <span>⚡ {l.xp} XP</span>
-                <span style={{ color: m.color }}>Beginner</span>
+                <span style={{ color: m.color }}>{c.level}</span>
               </div>
+
+              <BrowserVoiceBar
+                text={lessonPlainText(l)}
+                title="Listen to lesson"
+                className="cc-voice-bar q-voice-bar"
+              />
+
+              {typeof l.article === "number" && (() => {
+                const article = getEssentialById(l.article);
+                if (!article) return null;
+                return (
+                  <Link
+                    href={`/articles/${article.slug}`}
+                    className="cc-art-cta"
+                    style={{ borderColor: hexToRgba(article.color, 0.35) }}
+                  >
+                    <span className="cc-art-cta-icon">📖</span>
+                    <span>
+                      <span className="cc-art-cta-label">Related article</span>
+                      <span className="cc-art-cta-title">{article.title}</span>
+                    </span>
+                    <span className="cc-art-cta-arrow">→</span>
+                  </Link>
+                );
+              })()}
 
               {l.objectives && (
                 <div className="cc-obj-box">
@@ -822,9 +894,17 @@ export function CourseCentre() {
                 if (b.t === "scenario")
                   return (
                     <div key={bi} className="cc-lc-scenario">
-                      <div className="cc-lc-sc-lbl">📋 {b.label}</div>
+                      <div className="cc-lc-sc-lbl">
+                        📋 {b.label ?? (b.org ? `Scenario · ${b.org}` : "Scenario")}
+                      </div>
                       <div className="cc-lc-sc-ttl cc-serif">{b.title}</div>
                       <div className="cc-lc-sc-text">{b.v as string}</div>
+                    </div>
+                  );
+                if (b.t === "quiz_intro")
+                  return (
+                    <div key={bi} className="cc-lc-intro cc-serif" style={{ ["--cc" as string]: m.color }}>
+                      {b.v as string}
                     </div>
                   );
                 if (b.t === "takeaways")
@@ -837,7 +917,7 @@ export function CourseCentre() {
                       <div className="cc-lc-tk-lbl" style={{ color: m.color }}>
                         Key Takeaways
                       </div>
-                      {(b.v as string[]).map((tk, ti) => (
+                      {(b.items ?? (b.v as string[] | undefined) ?? []).map((tk, ti) => (
                         <div key={ti} className="cc-lc-tk-item">
                           <span style={{ color: m.color, flexShrink: 0 }}>→</span>
                           <span>{tk}</span>
@@ -981,6 +1061,17 @@ export function CourseCentre() {
             </span>
             <span>{correct} correct</span>
           </div>
+
+          <BrowserVoiceBar
+            key={`mq-${mqQ}-${mqAnswered}`}
+            text={
+              mqAnswered
+                ? `${q.q}. ${mqSel === q.ans ? "Correct." : "Incorrect."} ${q.exp}`
+                : q.q
+            }
+            title={mqAnswered ? "Listen to explanation" : "Listen to question"}
+            className="cc-voice-bar q-voice-bar"
+          />
 
           <div className="cc-mq-card" key={mqQ}>
             <div className="cc-mq-step" style={{ color: mod.color }}>
@@ -1217,6 +1308,25 @@ export function CourseCentre() {
     );
   }
 
+  const breadcrumb = (() => {
+    if (view === "lobby") return null;
+    const parts: { label: string; action?: () => void }[] = [{ label: "Courses", action: goLobby }];
+    if (activeCourse) {
+      parts.push({
+        label: activeCourse.title,
+        action: view === "overview" ? undefined : backToOverview,
+      });
+    }
+    if (view === "lesson" && activeLesson) {
+      parts.push({ label: activeLesson.lesson.title });
+    } else if (view === "mod-quiz" && mqLes) {
+      parts.push({ label: mqLes.title });
+    } else if (view === "certificate" && activeCourse) {
+      parts.push({ label: "Certificate" });
+    }
+    return parts;
+  })();
+
   return (
     <div className="cc-root">
       <div className="cc-topbar">
@@ -1233,6 +1343,23 @@ export function CourseCentre() {
           </button>
         )}
       </div>
+
+      {breadcrumb && (
+        <div className="cc-breadcrumb show">
+          {breadcrumb.map((crumb, i) => (
+            <span key={`${crumb.label}-${i}`} className="cc-bc-wrap">
+              {i > 0 && <span className="cc-bc-sep">/</span>}
+              {crumb.action ? (
+                <button type="button" className="cc-bc-item" onClick={crumb.action}>
+                  {crumb.label}
+                </button>
+              ) : (
+                <span className="cc-bc-active">{crumb.label}</span>
+              )}
+            </span>
+          ))}
+        </div>
+      )}
 
       {view === "lobby" && renderLobby()}
       {view === "overview" && renderOverview()}

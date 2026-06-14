@@ -10,12 +10,14 @@ import {
   type ProgressMap,
 } from "@/lib/quizzes/progress";
 import { useAuth } from "@/components/auth/AuthProvider";
+import { BrowserVoiceBar } from "@/components/tts/BrowserVoiceBar";
 import "@/styles/quiz-centre.css";
 
 const LABELS = ["A", "B", "C", "D"];
 const RING_CIRCUMFERENCE = 427;
+const QUIZ_CERT_NAME_KEY = "ra_quiz_name";
 
-type View = "lobby" | "runner" | "results";
+type View = "lobby" | "runner" | "results" | "certificate";
 
 function hexToRgba(hex: string, a: number) {
   const r = parseInt(hex.slice(1, 3), 16);
@@ -37,8 +39,15 @@ export function QuizCentre() {
   const [lastXp, setLastXp] = useState(0);
   const [arcOffset, setArcOffset] = useState(RING_CIRCUMFERENCE);
   const [confetti, setConfetti] = useState<React.CSSProperties[]>([]);
+  const [certAllDone, setCertAllDone] = useState(false);
+  const [certName, setCertName] = useState("");
+  const [certNameInput, setCertNameInput] = useState("");
 
   const totalXP = useMemo(() => totalXpFromMap(completed), [completed]);
+  const allQuizzesDone = useMemo(
+    () => QUIZ_CENTRE.every((q) => Boolean(completed[q.id])),
+    [completed]
+  );
 
   // Load progress: from the signed-in account when available, otherwise
   // from this device's localStorage cache. Re-runs whenever the user logs
@@ -88,6 +97,23 @@ export function QuizCentre() {
     setActiveId(null);
     if (typeof window !== "undefined") window.scrollTo(0, 0);
   }, []);
+
+  const openCertificate = useCallback((allDone: boolean) => {
+    setCertAllDone(allDone);
+    const saved =
+      typeof window !== "undefined" ? localStorage.getItem(QUIZ_CERT_NAME_KEY) || "" : "";
+    setCertNameInput(saved);
+    setCertName(saved);
+    setView("certificate");
+    if (typeof window !== "undefined") window.scrollTo(0, 0);
+  }, []);
+
+  const saveCertName = useCallback(() => {
+    const name = certNameInput.trim();
+    if (!name) return;
+    localStorage.setItem(QUIZ_CERT_NAME_KEY, name);
+    setCertName(name);
+  }, [certNameInput]);
 
   const startQuiz = useCallback((id: number) => {
     setActiveId(id);
@@ -242,6 +268,20 @@ export function QuizCentre() {
             <div className="qc-grid-title">All Quizzes</div>
             <div className="qc-grid-sub">Select any topic to begin</div>
           </div>
+          {allQuizzesDone && (
+            <div className="qc-all-cert-wrap">
+              <div className="qc-all-cert-icon">🏅</div>
+              <div>
+                <div className="qc-all-cert-title">All 10 Quizzes Complete!</div>
+                <div className="qc-all-cert-sub">
+                  You&apos;ve completed the full Quiz Centre. Download your certificate.
+                </div>
+              </div>
+              <button type="button" className="qc-all-cert-btn" onClick={() => openCertificate(true)}>
+                Get Certificate
+              </button>
+            </div>
+          )}
           <div className="qc-grid">
             {QUIZ_CENTRE.map((quiz) => {
               const done = completed[quiz.id];
@@ -338,6 +378,16 @@ export function QuizCentre() {
             </span>
             <span>{correctCount} correct</span>
           </div>
+
+          <BrowserVoiceBar
+            key={`q-${currentQ}-${answered}`}
+            text={
+              answered
+                ? `${q.q}. ${selectedOpt === q.ans ? "Correct." : "Incorrect."} ${q.exp}`
+                : q.q
+            }
+            title={answered ? "Listen to explanation" : "Listen to question"}
+          />
 
           <div className="qc-q-card qc-anim-up" key={currentQ}>
             <div className="qc-q-step">Question {currentQ + 1}</div>
@@ -494,6 +544,9 @@ export function QuizCentre() {
             <button type="button" className="qc-btn-retry" onClick={() => startQuiz(activeQuiz.id)}>
               ↺ Retry Quiz
             </button>
+            <button type="button" className="qc-btn-retry" onClick={() => openCertificate(false)}>
+              🎓 Certificate
+            </button>
             {nextQuiz && (
               <button
                 type="button"
@@ -510,11 +563,102 @@ export function QuizCentre() {
     );
   }
 
+  function renderCertificate() {
+    const done = Object.keys(completed).length;
+    const totalScore = Object.values(completed).reduce((s, r) => s + (r.score ?? 0), 0);
+    const totalQ = Object.values(completed).reduce((s, r) => s + (r.total ?? 10), 0);
+    const pct = totalQ > 0 ? Math.round((totalScore / totalQ) * 100) : 0;
+    const showDoc = Boolean(certName);
+
+    return (
+      <div className="qc-view active qc-cert-view">
+        <div className="qc-cert-container">
+          {!showDoc ? (
+            <div className="qc-cert-name-form">
+              <h3>Your Certificate is Ready</h3>
+              <p>Enter your name to personalise and download your Quiz Centre certificate</p>
+              <input
+                className="qc-cert-name-inp"
+                value={certNameInput}
+                onChange={(e) => setCertNameInput(e.target.value)}
+                placeholder="Your full name"
+                maxLength={60}
+              />
+              <button type="button" className="qc-cert-gen-btn" onClick={saveCertName}>
+                Generate Certificate
+              </button>
+            </div>
+          ) : (
+            <>
+              <div className="qc-cert-actions-row">
+                <button type="button" className="qc-btn-retry" onClick={goLobby}>
+                  ← Back to Quizzes
+                </button>
+                <button type="button" className="qc-cert-print-btn" onClick={() => window.print()}>
+                  🖨 Download / Print
+                </button>
+              </div>
+              <div className="qc-cert-doc">
+                <div className="qc-cert-stripe" />
+                <div className="qc-cert-body">
+                  <div className="qc-cert-logo">
+                    <span className="qc-cert-logo-mark">R</span>
+                    <span>Rewardology Academy</span>
+                  </div>
+                  <div className="qc-cert-ey">Certificate of Achievement</div>
+                  <h1 className="qc-cert-h1">
+                    This certifies that <em>the following</em>
+                  </h1>
+                  <div className="qc-cert-sub">HR professional has demonstrated knowledge in Total Rewards</div>
+                  <div className="qc-cert-name-display">{certName}</div>
+                  <div className="qc-cert-achievement">Achievement</div>
+                  <div className="qc-cert-score-title">
+                    {certAllDone || allQuizzesDone
+                      ? "Quiz Centre — All 10 Quizzes Completed"
+                      : "Quiz Centre — In Progress"}
+                  </div>
+                  <div className="qc-cert-score-sub">
+                    {certAllDone || allQuizzesDone
+                      ? `Completion · ${pct}% average score across ${totalQ} questions`
+                      : `${done} of ${QUIZ_CENTRE.length} quizzes completed · ${pct}% average score`}
+                  </div>
+                  <div className="qc-cert-ft">
+                    <div>
+                      <div className="qc-cert-date-label">Date Issued</div>
+                      <div className="qc-cert-date-val">
+                        {new Date().toLocaleDateString("en-GB", {
+                          day: "numeric",
+                          month: "long",
+                          year: "numeric",
+                        })}
+                      </div>
+                    </div>
+                    <div className="qc-cert-badge">
+                      <span>🏅</span>
+                      <div>
+                        Verified Achievement
+                        <br />
+                        <span style={{ fontWeight: 400, color: "rgba(74,222,128,.7)" }}>
+                          Rewardology Academy
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="qc-root">
       {view === "lobby" && renderLobby()}
       {view === "runner" && renderRunner()}
       {view === "results" && renderResults()}
+      {view === "certificate" && renderCertificate()}
 
       {confetti.length > 0 && (
         <div className="qc-confetti-wrap">

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { AuthControls } from "@/components/auth/AuthControls";
 import { HeroProgressCard } from "@/components/home/HeroProgressCard";
+import { HubXpBanner } from "@/components/home/HubXpBanner";
+import { PlatformStatsStrip } from "@/components/home/PlatformStatsStrip";
 import { HomeEffects } from "@/components/home/HomeEffects";
 import { HomeQuizPanel } from "@/components/home/HomeQuizPanel";
 import { HomeCartoons } from "@/components/home/HomeCartoons";
@@ -30,7 +32,7 @@ const MARQUEE = [
   "Salary Structures",
 ];
 
-const HOME_COURSE_BANNERS = ["cc-banner-1", "cc-banner-4", "cc-banner-2"] as const;
+const HOME_COURSE_BANNERS = ["cc-banner-1", "cc-banner-4", "cc-banner-2", "cc-banner-3", "cc-banner-5"] as const;
 
 const COURSES = COURSE_CENTRE.map((c, i) => ({
   href: `/courses?course=${c.id}`,
@@ -126,7 +128,7 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="hstat-num">
-                  6<span>+</span>
+                  5<span></span>
                 </div>
                 <div className="hstat-label">Courses</div>
               </div>
@@ -142,6 +144,9 @@ export default function HomePage() {
           <HeroProgressCard />
         </div>
       </section>
+
+      <PlatformStatsStrip />
+      <HubXpBanner />
 
       {/* MARQUEE */}
       <div className="marquee-strip">
