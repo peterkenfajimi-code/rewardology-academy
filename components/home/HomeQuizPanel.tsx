@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { DAILY_QUIZ_XP } from "@/lib/daily-quiz/dailyQuizData";
 import { readLocalDaily, writeLocalDaily } from "@/lib/daily-quiz/localProgress";
+import { dispatchXpUpdated } from "@/lib/xp/dispatch";
 import { computeStreak } from "@/lib/daily-quiz/streak";
 
 type QuestionPayload = {
@@ -142,6 +143,7 @@ export function HomeQuizPanel() {
     setExplanation(data.explanation ?? null);
     setStreak(computeStreak(newHistory, question.dateKey));
     setTotalXp(totalXpEarned);
+    dispatchXpUpdated();
   };
 
   const submit = async () => {
@@ -163,6 +165,7 @@ export function HomeQuizPanel() {
         const data = (await res.json()) as DailyState & { error?: string };
         if (!res.ok) throw new Error(data.error || "Could not save");
         applyState(data);
+        dispatchXpUpdated();
         if (data.today.answered && !data.today.correct) {
           const v = await fetch("/api/daily-quiz/validate", {
             method: "POST",

@@ -11,6 +11,7 @@ import {
 } from "@/lib/quizzes/progress";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { BrowserVoiceBar } from "@/components/tts/BrowserVoiceBar";
+import { dispatchXpUpdated } from "@/lib/xp/dispatch";
 import "@/styles/quiz-centre.css";
 
 const LABELS = ["A", "B", "C", "D"];
@@ -148,6 +149,7 @@ export function QuizCentre() {
       setCompleted((prev) => {
         const next = mergeResult(prev, quizId, result);
         writeLocalProgress(next);
+        dispatchXpUpdated();
         return next;
       });
 

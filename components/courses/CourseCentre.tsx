@@ -28,6 +28,7 @@ import {
 } from "@/lib/courses/progress";
 import { useAuth } from "@/components/auth/AuthProvider";
 import "@/styles/course-centre.css";
+import { dispatchXpUpdated } from "@/lib/xp/dispatch";
 
 const LABELS = ["A", "B", "C", "D"];
 const RING_CIRCUMFERENCE = 390;
@@ -221,6 +222,7 @@ export function CourseCentre() {
       setLxp((prev) => {
         const next = mergeLessonXp(prev, key, xp);
         writeLocalCourseXp(next);
+        dispatchXpUpdated();
         return next;
       });
       if (synced) {

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { AuthControls } from "@/components/auth/AuthControls";
+import { useAuth } from "@/components/auth/AuthProvider";
 import { BrowserVoiceBar } from "@/components/tts/BrowserVoiceBar";
 import { getEssentialById } from "@/lib/articles/essentials";
 import {
@@ -15,8 +16,10 @@ import {
 } from "@/lib/dictionary/terms";
 import {
   earnDictionaryTermXp,
+  mergeDictionaryFromServer,
   readDictionaryReadSet,
   readDictionaryXp,
+  syncDictionaryTermToAccount,
 } from "@/lib/dictionary/progress";
 import {
   lessonHref,
@@ -69,6 +72,7 @@ function termOfDayIndex(): number {
 }
 
 export function DictionaryCentre() {
+  const { user } = useAuth();
   const [filterLetter, setFilterLetter] = useState("all");
   const [filterCat, setFilterCat] = useState("all");
   const [filterQ, setFilterQ] = useState("");
@@ -79,9 +83,52 @@ export function DictionaryCentre() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    let cancelled = false;
+
+    function refreshLocal() {
+      setReadSet(readDictionaryReadSet());
+      setDictXp(readDictionaryXp());
+      setMounted(true);
+    }
+
+    (async () => {
+      refreshLocal();
+      try {
+        const res = await fetch("/api/dictionary/progress", { cache: "no-store" });
+        const data = (await res.json()) as {
+          authenticated?: boolean;
+          terms?: string[];
+          dictionaryXp?: number;
+        };
+        if (cancelled) return;
+        if (data.authenticated && data.terms) {
+          mergeDictionaryFromServer(data.terms, data.dictionaryXp ?? 0);
+          const localTerms = readDictionaryReadSet();
+          for (const term of localTerms) {
+            if (!data.terms.includes(term)) {
+              await syncDictionaryTermToAccount(term, DICTIONARY_XP_PER_TERM);
+            }
+          }
+          if (!cancelled) refreshLocal();
+        }
+      } catch {
+        /* local cache only */
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [user?.id]);
+
+  const awardTerm = useCallback(async (term: string) => {
+    const earned = earnDictionaryTermXp(term, DICTIONARY_XP_PER_TERM);
     setReadSet(readDictionaryReadSet());
     setDictXp(readDictionaryXp());
-    setMounted(true);
+    if (earned > 0) {
+      await syncDictionaryTermToAccount(term, DICTIONARY_XP_PER_TERM);
+      setDictXp(readDictionaryXp());
+    }
   }, []);
 
   useEffect(() => {
@@ -116,18 +163,12 @@ export function DictionaryCentre() {
       if (!t) return;
       const id = termCardId(t.term);
       setExpandedId(id);
-      const earned = earnDictionaryTermXp(t.term, DICTIONARY_XP_PER_TERM);
-      if (earned > 0) {
-        setReadSet(readDictionaryReadSet());
-        setDictXp(readDictionaryXp());
-      } else {
-        setReadSet((prev) => new Set(prev).add(t.term));
-      }
+      void awardTerm(t.term);
       window.setTimeout(() => {
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "center" });
       }, 60);
     },
-    []
+    [awardTerm]
   );
 
   const handleCardClick = useCallback(
@@ -135,18 +176,12 @@ export function DictionaryCentre() {
       const id = termCardId(t.term);
       if (expandedId === id) return;
       setExpandedId(id);
-      const earned = earnDictionaryTermXp(t.term, DICTIONARY_XP_PER_TERM);
-      if (earned > 0) {
-        setReadSet(readDictionaryReadSet());
-        setDictXp(readDictionaryXp());
-      } else {
-        setReadSet((prev) => new Set(prev).add(t.term));
-      }
+      void awardTerm(t.term);
       window.setTimeout(() => {
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "nearest" });
       }, 50);
     },
-    [expandedId]
+    [expandedId, awardTerm]
   );
 
   const resultLabel =

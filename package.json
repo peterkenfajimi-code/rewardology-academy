@@ -19,6 +19,7 @@
     "extract:courses": "node scripts/extract-courses.mjs",
     "extract:dictionary": "node scripts/extract-dictionary.mjs",
     "apply:article-progress": "node scripts/apply-article-progress.mjs",
+    "apply:dictionary-progress": "node scripts/apply-dictionary-progress.mjs",
     "test:rss": "node scripts/test-rss-feeds.mjs"
   },
   "dependencies": {

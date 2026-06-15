@@ -1,4 +1,7 @@
 import { ESSENTIALS_ARTICLES, getEssentialById } from "@/lib/articles/essentials";
+import { dispatchXpUpdated } from "@/lib/xp/dispatch";
+
+export { dispatchXpUpdated };
 
 /** Matches rewardology-articles-full.html localStorage key. */
 export const ARTICLE_READ_STORAGE_KEY = "ra_read";
@@ -35,9 +38,4 @@ export function totalArticleXpFromMap(map: ArticleProgressMap): number {
 
 export function maxArticleXp(): number {
   return ESSENTIALS_ARTICLES.reduce((sum, a) => sum + a.xp, 0);
-}
-
-export function dispatchXpUpdated() {
-  if (typeof window === "undefined") return;
-  window.dispatchEvent(new Event("ra-xp-updated"));
 }

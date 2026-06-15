@@ -9,7 +9,9 @@ import { courseResumeHref, lessonKey, type LessonXpMap } from "@/lib/courses/pro
 import { SignInPrompt } from "@/components/dashboard/SignInPrompt";
 import { ESSENTIALS_ARTICLES } from "@/lib/articles/essentials";
 import { maxArticleXp } from "@/lib/articles/progress";
+import { DICTIONARY_TERM_COUNT, DICTIONARY_XP_PER_TERM } from "@/lib/dictionary/terms";
 import { levelFor } from "@/lib/xp/levels";
+import { sumPlatformXp } from "@/lib/xp/sumPlatformXp";
 import "@/styles/dashboard.css";
 
 export const metadata = {
@@ -65,7 +67,7 @@ export default async function DashboardPage() {
     return <SignInPrompt configured />;
   }
 
-  const [{ data }, { data: courseData }, { data: profile }, { data: dailyData }, { data: articleData }] =
+  const [{ data }, { data: courseData }, { data: profile }, { data: dailyData }, { data: articleData }, { data: dictionaryData }] =
     await Promise.all([
       supabase
         .from("quiz_centre_progress")
@@ -85,6 +87,11 @@ export default async function DashboardPage() {
       supabase
         .from("article_progress")
         .select("article_id, slug, xp, read_at")
+        .eq("user_id", user.id)
+        .order("read_at", { ascending: false }),
+      supabase
+        .from("dictionary_progress")
+        .select("term, xp, read_at")
         .eq("user_id", user.id)
         .order("read_at", { ascending: false }),
     ]);
@@ -147,7 +154,19 @@ export default async function DashboardPage() {
   const articlesRead = articleRows.length;
   const articlesMaxXp = maxArticleXp();
 
-  const totalXp = quizXp + courseXpTotal + dailyXp + articleXp;
+  type DictionaryRow = { term: string; xp: number; read_at: string };
+  const dictionaryRows = (dictionaryData as DictionaryRow[] | null) ?? [];
+  const dictionaryXp = dictionaryRows.reduce((s, r) => s + (r.xp ?? 0), 0);
+  const dictionaryTermsRead = dictionaryRows.length;
+  const dictionaryMaxXp = DICTIONARY_TERM_COUNT * DICTIONARY_XP_PER_TERM;
+
+  const totalXp = sumPlatformXp({
+    quizXp,
+    courseXp: courseXpTotal,
+    dailyXp,
+    articleXp,
+    dictionaryXp,
+  });
   const { current, next } = levelFor(totalXp);
   const levelProgress = next
     ? Math.min(100, Math.round(((totalXp - current.min) / (next.min - current.min)) * 100))
@@ -164,6 +183,7 @@ export default async function DashboardPage() {
     { icon: "🔥", name: "Halfway There", desc: "Complete 5 quizzes", earned: completedCount >= 5 },
     { icon: "👑", name: "Total Mastery", desc: "Complete all 10 quizzes", earned: completedCount >= 10 },
     { icon: "📖", name: "Article Reader", desc: "Read 5 Total Rewards articles", earned: articlesRead >= 5 },
+    { icon: "📚", name: "Term Explorer", desc: "Look up 10 dictionary terms", earned: dictionaryTermsRead >= 10 },
     { icon: "⚡", name: "XP Hunter", desc: "Earn 750 XP", earned: totalXp >= 750 },
     { icon: "🏆", name: "Grand Master", desc: "Reach 1,350 XP", earned: totalXp >= 1350 },
   ];
@@ -229,6 +249,20 @@ export default async function DashboardPage() {
             <span> XP</span>
           </div>
           <div className="dash-stat-label">Article XP ({articlesMaxXp} max)</div>
+        </div>
+        <div className="dash-stat">
+          <div className="dash-stat-num">
+            {dictionaryTermsRead}
+            <span> /{DICTIONARY_TERM_COUNT}</span>
+          </div>
+          <div className="dash-stat-label">Dictionary terms</div>
+        </div>
+        <div className="dash-stat">
+          <div className="dash-stat-num">
+            {dictionaryXp}
+            <span> XP</span>
+          </div>
+          <div className="dash-stat-label">Dictionary XP ({dictionaryMaxXp} max)</div>
         </div>
       </div>
 
@@ -334,6 +368,47 @@ export default async function DashboardPage() {
               </div>
             );
           })}
+        </div>
+      )}
+
+      <h2 className="dash-section-title">
+        Dictionary{dictionaryTermsRead > 0 ? ` · ${dictionaryTermsRead} terms` : ""}
+      </h2>
+      {dictionaryRows.length === 0 ? (
+        <div className="dash-empty">
+          <div className="dash-empty-title">No dictionary terms explored yet</div>
+          <p className="dash-empty-sub">
+            Expand any term in the Total Rewards Dictionary to earn 5 XP. Progress syncs here
+            when you are signed in.
+          </p>
+          <Link href="/dictionary" className="ra-auth ra-auth-btn ra-auth-btn-primary">
+            Open dictionary →
+          </Link>
+        </div>
+      ) : (
+        <div className="dash-history">
+          {dictionaryRows.slice(0, 8).map((row) => (
+            <div key={row.term} className="dash-row">
+              <div
+                className="dash-row-icon"
+                style={{ background: "rgba(12,107,101,0.16)", color: "#0E8A83" }}
+              >
+                📚
+              </div>
+              <div className="dash-row-main">
+                <div className="dash-row-title">{row.term}</div>
+                <div className="dash-row-sub">
+                  <span>Dictionary</span>
+                  <span style={{ opacity: 0.4 }}>·</span>
+                  <span>{formatDate(row.read_at)}</span>
+                </div>
+              </div>
+              <div className="dash-row-xp">⚡ {row.xp} XP</div>
+              <Link href="/dictionary" className="dash-row-cta">
+                View →
+              </Link>
+            </div>
+          ))}
         </div>
       )}
 
