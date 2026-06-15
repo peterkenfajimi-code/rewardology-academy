@@ -17,7 +17,7 @@ export function PlatformStatsStrip() {
       num: MAX_PLATFORM_XP.toLocaleString(),
       suffix: "",
       label: "XP Available",
-      sub: "Courses + Articles + Quizzes",
+      sub: "Courses + Articles + Quizzes + Dictionary",
       raw: true,
     },
   ];

@@ -1,0 +1,200 @@
+/* Total Rewards Dictionary — scoped under .dict-root */
+.dict-root {
+  --navy: #07192e;
+  --navy-card: #0c2540;
+  --navy-deep: #051525;
+  --navy-panel: #071e36;
+  --gold: #c8963e;
+  --gold-dim: rgba(200, 150, 62, 0.12);
+  --gold-bdr: rgba(200, 150, 62, 0.25);
+  --teal: #0c6b65;
+  --teal-lit: #0e8a83;
+  --text: #e8dcc8;
+  --muted: #9b8f7e;
+  --dim: #6b6057;
+  --bdr: rgba(232, 220, 200, 0.1);
+  --r: 6px;
+  --serif: var(--font-editorial-serif, "Cormorant Garamond", Georgia, serif);
+  --sans: var(--font-editorial-sans, "DM Sans", system-ui, sans-serif);
+  box-sizing: border-box;
+  background: var(--navy);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+.dict-root *, .dict-root *::before, .dict-root *::after { box-sizing: border-box; }
+.dict-root a { color: var(--gold); text-decoration: none; }
+.dict-root a:hover { color: var(--text); }
+.dict-root button { cursor: pointer; border: none; background: none; font-family: var(--sans); }
+.dict-root .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.dict-root .dict-voice-bar { margin-bottom: 16px; }
+.dict-root .nav { position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(5,21,37,.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--gold-bdr);
+  padding:0 24px;height:54px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px; }
+.dict-root .nav-brand { font-family:var(--serif);font-size:1.05rem;color:var(--gold);letter-spacing:.03em;white-space:nowrap }
+.dict-root .nav-links { display:flex;gap:20px }
+.dict-root .nav-links a { font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);transition:color .2s }
+.dict-root .nav-links a:hover, .dict-root .nav-links a.active { color:var(--text) }
+.dict-root .nav-xp { font-size:12px;font-weight:600;color:var(--gold);background:var(--gold-dim);border:1px solid var(--gold-bdr);padding:4px 14px;border-radius:20px;white-space:nowrap }
+.dict-root .hero { padding:108px 24px 56px;text-align:center;
+  background:linear-gradient(180deg,var(--navy-deep) 0%,var(--navy) 100%);
+  border-bottom:1px solid var(--gold-bdr);position:relative;overflow:hidden; }
+.dict-root .hero::before { content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 55% at 50% -10%,rgba(12,107,101,.18) 0%,transparent 70%);
+  pointer-events:none; }
+.dict-root .hero-eye { font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-lit);margin-bottom:16px }
+.dict-root .hero h1 { font-family:var(--serif);font-size:clamp(2.4rem,5vw,4.2rem);
+  font-weight:600;line-height:1.08;letter-spacing:-.01em;
+  color:var(--text);margin-bottom:10px; }
+.dict-root .hero h1 em { color:var(--gold);font-style:italic }
+.dict-root .hero-sub { font-size:14px;color:var(--muted);margin-bottom:36px;max-width:580px;margin-left:auto;margin-right:auto }
+.dict-root .srch-wrap { max-width:640px;margin:0 auto 32px;position:relative }
+.dict-root .srch-wrap svg { position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;width:17px;height:17px }
+.dict-root .srch-wrap input { width:100%;padding:13px 44px 13px 48px;
+  background:var(--navy-card);border:1px solid var(--gold-bdr);border-radius:4px;
+  color:var(--text);font-family:var(--sans);font-size:15px;outline:none;
+  transition:border-color .2s,box-shadow .2s; }
+.dict-root .srch-wrap input::placeholder { color:var(--dim) }
+.dict-root .srch-wrap input:focus { border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,150,62,.12) }
+.dict-root .srch-clear { position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  color:var(--muted);font-size:18px;line-height:1;display:block;padding:4px;transition:color .2s; }
+.dict-root .srch-clear:hover { color:var(--text) }
+.dict-root .hero-stats { display:flex;justify-content:center;gap:40px;flex-wrap:wrap }
+.dict-root .stat-num { font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1 }
+.dict-root .stat-lbl { font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:4px }
+.dict-root .totd-outer { max-width:900px;margin:0 auto;padding:36px 24px 24px }
+.dict-root .totd-card { background:var(--navy-card);border:1px solid var(--gold-bdr);
+  border-left:4px solid var(--gold);border-radius:var(--r);
+  padding:26px 28px;position:relative;overflow:hidden; }
+.dict-root .totd-card::after { content:attr(data-initial);position:absolute;right:20px;top:-4px;
+  font-family:var(--serif);font-size:9rem;font-weight:700;
+  color:var(--gold);opacity:.055;line-height:1;pointer-events:none;user-select:none; }
+.dict-root .totd-lbl { font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px }
+.dict-root .totd-term { font-family:var(--serif);font-size:1.85rem;font-weight:600;color:var(--text);margin-bottom:6px;line-height:1.2 }
+.dict-root .totd-abbr { font-size:12px;color:var(--muted);margin-bottom:8px }
+.dict-root .totd-cat { display:inline-block;margin-bottom:14px;
+  font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--teal-lit);background:rgba(12,107,101,.12);
+  border:1px solid rgba(12,107,101,.3);padding:3px 10px;border-radius:20px; }
+.dict-root .totd-def { color:var(--muted);font-size:14px;line-height:1.75;margin-bottom:20px;max-width:640px }
+.dict-root .totd-btn { font-size:13px;font-weight:500;letter-spacing:.04em;
+  color:var(--gold);border:1px solid var(--gold-bdr);
+  padding:8px 20px;border-radius:3px;transition:background .2s,color .2s; }
+.dict-root .totd-btn:hover { background:var(--gold);color:var(--navy) }
+.dict-root .controls { position:sticky;top:54px;z-index:100;
+  background:rgba(7,30,54,.97);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--bdr);
+  padding:12px 24px 8px; }
+.dict-root .az-strip { display:flex;gap:3px;flex-wrap:wrap;margin-bottom:8px }
+.dict-root .az-btn { font-size:13px;font-weight:500;color:var(--muted);
+  padding:3px 8px;border-radius:3px;border:1px solid transparent;
+  transition:all .15s; }
+.dict-root .az-btn:hover { color:var(--text);border-color:var(--bdr) }
+.dict-root .az-btn.active { color:var(--gold);background:var(--gold-dim);border-color:var(--gold-bdr) }
+.dict-root .az-all { font-size:11px;letter-spacing:.05em;text-transform:uppercase }
+.dict-root .cat-strip { display:flex;gap:6px;flex-wrap:wrap }
+.dict-root .cat-btn { font-size:11px;font-weight:500;color:var(--muted);
+  padding:4px 11px;border-radius:20px;border:1px solid var(--bdr);
+  transition:all .15s;white-space:nowrap;letter-spacing:.02em; }
+.dict-root .cat-btn:hover { color:var(--text);border-color:rgba(232,220,200,.25) }
+.dict-root .cat-btn.active { color:white;background:var(--teal);border-color:var(--teal) }
+.dict-root .res-count { margin-top:8px;font-size:12px;color:var(--dim) }
+.dict-root .terms-section { max-width:1360px;margin:0 auto;padding:20px 20px 80px }
+.dict-root .terms-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:10px }
+@media (max-width: 1080px) {
+  .dict-root .terms-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .dict-root .terms-grid { grid-template-columns: 1fr; }
+}
+.dict-root .tc { background:var(--navy-card);border:1px solid var(--bdr);border-radius:var(--r);
+  overflow:hidden;transition:border-color .2s,box-shadow .2s;
+  cursor:pointer;position:relative; }
+.dict-root .tc:hover { border-color:var(--gold-bdr);box-shadow:0 4px 20px rgba(0,0,0,.35) }
+.dict-root .tc.expanded { border-color:var(--gold);grid-column:1/-1;cursor:default }
+.dict-root .tc-head { padding:16px 18px 12px;display:flex;flex-direction:column;gap:5px }
+.dict-root .tc-top { display:flex;align-items:flex-start;justify-content:space-between;gap:8px }
+.dict-root .tc-name { font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--text);line-height:1.2 }
+.dict-root .tc-abbr { font-size:10px;font-weight:600;letter-spacing:.08em;
+  color:var(--gold);background:var(--gold-dim);border:1px solid var(--gold-bdr);
+  padding:2px 8px;border-radius:20px;white-space:nowrap;flex-shrink:0;margin-top:2px; }
+.dict-root .tc-cat { display:inline-block;font-size:10px;font-weight:500;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--teal-lit);
+  background:rgba(12,107,101,.1);border:1px solid rgba(12,107,101,.22);
+  padding:2px 9px;border-radius:20px; }
+.dict-root .tc-preview { font-size:13px;color:var(--muted);line-height:1.6;padding:0 18px 14px }
+.dict-root .tc-read-dot { position:absolute;top:10px;right:12px;
+  font-size:10px;color:var(--gold);opacity:.7;display:none; }
+.dict-root .tc.read .tc-read-dot { display:block }
+.dict-root .tc-body {
+  display:none;border-top:1px solid var(--bdr);
+  padding:26px 28px 22px;position:relative;
+}
+.dict-root .tc-body::after { content:attr(data-initial);
+  position:absolute;right:18px;top:8px;
+  font-family:var(--serif);font-size:8rem;font-weight:700;
+  color:var(--gold);opacity:.05;line-height:1;
+  pointer-events:none;user-select:none;
+}
+.dict-root .tc.expanded .tc-body { display:block }
+.dict-root .sec-lbl { font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:7px;
+}
+.dict-root .e-def { font-size:15px;color:var(--text);line-height:1.78;margin-bottom:22px }
+.dict-root .e-note { margin-bottom:22px;padding:13px 16px;
+  border-left:3px solid var(--teal);
+  background:rgba(12,107,101,.06);border-radius:0 4px 4px 0; }
+.dict-root .e-note p { font-size:14px;color:var(--muted);line-height:1.72 }
+.dict-root .e-formula { margin-bottom:22px }
+.dict-root .formula-box { background:var(--navy-deep);border:1px solid rgba(14,138,131,.35);
+  border-radius:4px;padding:13px 16px;
+  font-family:'Courier New',monospace;font-size:12.5px;
+  color:var(--teal-lit);line-height:1.85;white-space:pre-wrap;word-break:break-word; }
+.dict-root .e-example { margin-bottom:22px }
+.dict-root .example-box { background:var(--navy-panel);border:1px solid var(--bdr);
+  border-radius:4px;padding:15px 17px;
+  font-size:13px;color:var(--muted);line-height:1.72;font-style:italic; }
+.dict-root .see-also-row { margin-bottom:22px;display:flex;flex-wrap:wrap;gap:6px }
+.dict-root .sa-chip { font-size:12px;font-weight:500;color:var(--muted);
+  border:1px solid var(--bdr);padding:3px 11px;border-radius:20px;
+  cursor:pointer;transition:all .15s;background:none;font-family:var(--sans); }
+.dict-root .sa-chip:hover { color:var(--gold);border-color:var(--gold-bdr);background:var(--gold-dim) }
+.dict-root .card-actions { display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-top:16px;border-top:1px solid var(--bdr); }
+.dict-root .act-btn { font-size:12px;font-weight:500;letter-spacing:.03em;
+  padding:6px 14px;border-radius:3px;border:1px solid var(--bdr);
+  color:var(--muted);display:flex;align-items:center;gap:5px;
+  transition:all .15s;font-family:var(--sans);cursor:pointer; }
+.dict-root .act-btn:hover { color:var(--text);border-color:rgba(232,220,200,.3);background:rgba(232,220,200,.04) }
+.dict-root .act-btn.teal { color:var(--teal-lit);border-color:rgba(14,138,131,.35);background:rgba(12,107,101,.07) }
+.dict-root .act-btn.teal:hover { background:var(--teal-lit);color:white;border-color:var(--teal-lit) }
+.dict-root .act-btn.gold { color:var(--gold);border-color:var(--gold-bdr);background:var(--gold-dim) }
+.dict-root .act-btn.gold:hover { background:var(--gold);color:var(--navy);border-color:var(--gold) }
+.dict-root .xp-pill { font-size:11px;font-weight:600;letter-spacing:.07em;
+  color:var(--gold);padding:5px 12px;border-radius:20px;
+  background:var(--gold-dim);border:1px solid var(--gold-bdr);margin-left:auto; }
+.dict-root .xp-pill.done { opacity:.45;text-decoration:line-through }
+.dict-root .close-btn { position:absolute;top:14px;right:16px;
+  font-size:18px;color:var(--dim);width:26px;height:26px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;border:1px solid transparent;transition:all .15s; }
+.dict-root .close-btn:hover { color:var(--text);border-color:var(--bdr);background:rgba(232,220,200,.06) }
+.dict-root .empty { display:none;text-align:center;padding:60px 24px;
+  grid-column:1/-1; }
+.dict-root .empty h3 { font-family:var(--serif);font-size:1.5rem;color:var(--muted);margin-bottom:8px }
+.dict-root .empty p { color:var(--dim);font-size:14px }
+.dict-root .footer { border-top:1px solid var(--bdr);padding:32px 24px;
+  text-align:center;background:var(--navy-deep); }
+.dict-root .footer p { font-size:13px;color:var(--dim);line-height:1.9 }
+.dict-root .footer strong { color:var(--gold) }
+@media (max-width: 640px) {
+  .dict-root .nav-links { display:none; }
+  .dict-root .hero h1 { font-size:2rem; }
+  .dict-root .tc-body { padding:18px 18px 16px; }
+  .dict-root .card-actions { gap:6px; }
+}

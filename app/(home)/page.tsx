@@ -17,6 +17,7 @@ const NAV = [
   { href: "/articles", label: "Articles" },
   { href: "/courses", label: "Courses" },
   { href: "/quizzes", label: "Quizzes" },
+  { href: "/dictionary", label: "Dictionary" },
   { href: "/comics", label: "Comics" },
 ];
 
@@ -365,6 +366,7 @@ export default function HomePage() {
                 <li><Link href="/articles">Articles</Link></li>
                 <li><Link href="/courses">Courses</Link></li>
                 <li><Link href="/quizzes">Quizzes</Link></li>
+                <li><Link href="/dictionary">Dictionary</Link></li>
                 <li><Link href="/comics">Comics</Link></li>
               </ul>
             </div>
