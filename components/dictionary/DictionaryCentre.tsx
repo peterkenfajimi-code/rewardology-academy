@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { AuthControls } from "@/components/auth/AuthControls";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { BrowserVoiceBar } from "@/components/tts/BrowserVoiceBar";
 import { getEssentialById } from "@/lib/articles/essentials";
@@ -28,14 +27,6 @@ import {
   termPlainText,
 } from "@/lib/dictionary/utils";
 import "@/styles/dictionary.css";
-
-const NAV = [
-  { href: "/", label: "Home" },
-  { href: "/courses", label: "Courses" },
-  { href: "/articles/all", label: "Articles" },
-  { href: "/quizzes", label: "Quizzes" },
-  { href: "/dictionary", label: "Dictionary", active: true },
-];
 
 function articleHref(articleId: number): string | null {
   const article = getEssentialById(articleId);
@@ -191,33 +182,18 @@ export function DictionaryCentre() {
 
   return (
     <div className="dict-root">
-      <nav className="nav">
-        <Link href="/" className="nav-brand">
-          Rewardology Academy
-        </Link>
-        <div className="nav-links">
-          {NAV.map((n) => (
-            <Link key={n.href} href={n.href} className={n.active ? "active" : ""}>
-              {n.label}
-            </Link>
-          ))}
-        </div>
-        <div className="nav-right">
-          <div className="nav-xp">{mounted ? `${dictXp} XP` : "— XP"}</div>
-          <AuthControls />
-        </div>
-      </nav>
-
-      <header className="hero">
-        <p className="hero-eye">Rewardology Academy</p>
-        <h1>
+      <div className="dict-hero">
+        <div className="dict-hero-mesh" aria-hidden />
+        <div className="dict-hero-grid" aria-hidden />
+        <div className="dict-eyebrow">Total Rewards Dictionary</div>
+        <h1 className="dict-h1">
           The Total Rewards <em>Dictionary</em>
         </h1>
-        <p className="hero-sub">
+        <p className="dict-desc">
           {DICTIONARY_TERM_COUNT} practitioner-depth entries across {DICTIONARY_CATEGORIES.length}{" "}
           disciplines — free, searchable, and cross-linked to courses and articles.
         </p>
-        <div className="srch-wrap">
+        <div className="dict-srch-wrap">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <circle cx="11" cy="11" r="8" />
             <line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -233,7 +209,7 @@ export function DictionaryCentre() {
           {searchInput ? (
             <button
               type="button"
-              className="srch-clear"
+              className="dict-srch-clear"
               onClick={() => {
                 setSearchInput("");
                 setFilterQ("");
@@ -244,21 +220,22 @@ export function DictionaryCentre() {
             </button>
           ) : null}
         </div>
-        <div className="hero-stats">
-          <div>
-            <div className="stat-num">{DICTIONARY_TERM_COUNT}</div>
-            <div className="stat-lbl">Terms</div>
-          </div>
-          <div>
-            <div className="stat-num">{DICTIONARY_CATEGORIES.length}</div>
-            <div className="stat-lbl">Disciplines</div>
-          </div>
-          <div>
-            <div className="stat-num">{mounted ? dictXp : 0}</div>
-            <div className="stat-lbl">XP Earned</div>
-          </div>
+      </div>
+
+      <div className="dict-stats">
+        <div>
+          <div className="dict-stat-num">{DICTIONARY_TERM_COUNT}</div>
+          <div className="dict-stat-lbl">Terms</div>
         </div>
-      </header>
+        <div>
+          <div className="dict-stat-num">{DICTIONARY_CATEGORIES.length}</div>
+          <div className="dict-stat-lbl">Disciplines</div>
+        </div>
+        <div>
+          <div className="dict-stat-num">{mounted ? dictXp : 0}</div>
+          <div className="dict-stat-lbl">{user ? "Your XP · synced" : "Your XP"}</div>
+        </div>
+      </div>
 
       <div className="totd-outer">
         <div className="totd-card" data-initial={totd.term[0]?.toUpperCase() ?? "T"}>
@@ -273,7 +250,7 @@ export function DictionaryCentre() {
         </div>
       </div>
 
-      <div className="controls">
+      <div className="dict-controls">
         <div className="az-strip">
           <button
             type="button"
@@ -324,10 +301,19 @@ export function DictionaryCentre() {
             </button>
           ))}
         </div>
-        <div className="res-count">{resultLabel}</div>
       </div>
 
-      <section className="terms-section">
+      <section className="dict-terms-section">
+        <div className="dict-grid-header">
+          <div className="dict-grid-title">All Terms</div>
+          <div className="dict-grid-sub">
+            {resultLabel}
+            {mounted && readSet.size > 0 ? (
+              <> · {readSet.size} explored</>
+            ) : null}
+            {" · +5 XP per term"}
+          </div>
+        </div>
         <div className="terms-grid">
           {!visible.length ? (
             <div className="empty" style={{ display: "block" }}>
@@ -455,16 +441,6 @@ export function DictionaryCentre() {
           )}
         </div>
       </section>
-
-      <footer className="footer">
-        <p>
-          <strong>Rewardology Academy</strong> — Total Rewards Dictionary
-          <br />
-          {DICTIONARY_TERM_COUNT} original entries covering Total Rewards, Compensation, Benefits,
-          Pay Equity, HR Analytics, and more.
-          <br />© 2026 Rewardology Academy
-        </p>
-      </footer>
     </div>
   );
 }

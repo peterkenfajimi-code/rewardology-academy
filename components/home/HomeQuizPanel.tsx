@@ -29,7 +29,6 @@ type DailyState = {
     correctKey?: string;
   };
   streak: number;
-  totalXp: number;
 };
 
 export function HomeQuizPanel() {
@@ -41,7 +40,7 @@ export function HomeQuizPanel() {
   const [correctKey, setCorrectKey] = useState<string | null>(null);
   const [explanation, setExplanation] = useState<string | null>(null);
   const [streak, setStreak] = useState(0);
-  const [totalXp, setTotalXp] = useState(0);
+  const [todayXpEarned, setTodayXpEarned] = useState(0);
   const [authenticated, setAuthenticated] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
@@ -50,7 +49,7 @@ export function HomeQuizPanel() {
     setQuestion(data.question);
     setAuthenticated(data.authenticated);
     setStreak(data.streak);
-    setTotalXp(data.totalXp);
+    setTodayXpEarned(data.today.xpEarned);
     setSubmitted(data.today.answered);
     setCorrect(data.today.correct);
     setSelected(data.today.selectedKey);
@@ -68,7 +67,7 @@ export function HomeQuizPanel() {
     setCorrect(local.correct);
     setSelected(local.selectedKey);
     setStreak(computeStreak(local.history, data.question.dateKey));
-    setTotalXp(local.totalXpEarned ?? local.xpEarned);
+    setTodayXpEarned(local.xpEarned);
   }, []);
 
   const load = useCallback(async () => {
@@ -142,7 +141,7 @@ export function HomeQuizPanel() {
     setCorrectKey(data.correctKey ?? null);
     setExplanation(data.explanation ?? null);
     setStreak(computeStreak(newHistory, question.dateKey));
-    setTotalXp(totalXpEarned);
+    setTodayXpEarned(xp);
     dispatchXpUpdated();
   };
 
@@ -277,7 +276,9 @@ export function HomeQuizPanel() {
       <div className="qp-footer">
         <div className="qp-streak">🔥 {streak}-day streak</div>
         <div className="qp-score">
-          {authenticated ? `${totalXp.toLocaleString()} XP` : `${totalXp} daily XP`}
+          {submitted
+            ? `${todayXpEarned > 0 ? "+" : ""}${todayXpEarned} XP today`
+            : `Up to ${DAILY_QUIZ_XP} XP today`}
         </div>
       </div>
     </div>
