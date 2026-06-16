@@ -208,6 +208,12 @@ export function DictionaryCentre() {
         className="dict-term-panel"
         data-initial={t.term[0]?.toUpperCase() ?? "T"}
       >
+        <div className="dict-panel-nav">
+          <button type="button" className="dict-back-btn" onClick={closeExpanded}>
+            ← Back to all terms
+          </button>
+        </div>
+
         <div className="tc-body-head">
           <h2 className="tc-body-title">{t.term}</h2>
           <div className="tc-body-meta">
@@ -360,14 +366,6 @@ export function DictionaryCentre() {
       <section className="dict-terms-section">
         {expandedId && expandedTerm ? (
           <div className="dict-term-detail" id={termCardId(expandedTerm.term)}>
-            <div className="dict-back-wrap dict-back-wrap--fixed">
-              <div className="dict-back-bar">
-                <button type="button" className="dict-back-btn" onClick={closeExpanded}>
-                  ← Back to all terms
-                </button>
-                <span className="dict-back-label">{expandedTerm.term}</span>
-              </div>
-            </div>
             {renderTermDetail(expandedTerm)}
           </div>
         ) : (
