@@ -1,14 +1,16 @@
+import { COMIC_XP_PER_ISSUE } from "@/lib/comics/progress";
 import { DAILY_QUIZ_XP } from "@/lib/daily-quiz/dailyQuizData";
 import { DICTIONARY_XP_PER_TERM } from "@/lib/dictionary/terms";
 import {
   MAX_ARTICLE_XP_PLATFORM,
+  MAX_COMICS_XP_PLATFORM,
   MAX_COURSE_XP_PLATFORM,
   MAX_DICTIONARY_XP_PLATFORM,
   MAX_QUIZ_XP_PLATFORM,
   PLATFORM_LESSON_COUNT,
 } from "@/lib/xp/platformMax";
 
-export const COMIC_XP_PER_ISSUE = 25;
+export { COMIC_XP_PER_ISSUE } from "@/lib/comics/progress";
 
 export type XpEarnRate = {
   label: string;
@@ -35,7 +37,7 @@ export const XP_EARN_RATES: XpEarnRate[] = [
     unit: "per term",
     max: MAX_DICTIONARY_XP_PLATFORM,
   },
-  { label: "Comics Issue", xp: COMIC_XP_PER_ISSUE, unit: "per issue", max: null },
+  { label: "Comics Issue", xp: COMIC_XP_PER_ISSUE, unit: "per issue", max: MAX_COMICS_XP_PLATFORM },
   { label: "Daily Quiz", xp: DAILY_QUIZ_XP, unit: "per day", max: null },
 ];
 
@@ -63,6 +65,7 @@ export const XP_SOURCE_MAX: Partial<Record<XpSourceKey, number>> = {
   articles: MAX_ARTICLE_XP_PLATFORM,
   quizzes: MAX_QUIZ_XP_PLATFORM,
   dictionary: MAX_DICTIONARY_XP_PLATFORM,
+  comics: MAX_COMICS_XP_PLATFORM,
 };
 
 export function sumXpSources(sources: XpSources): number {

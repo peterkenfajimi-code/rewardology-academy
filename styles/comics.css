@@ -478,3 +478,50 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* XP banner */
+.cm-xp-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin: 0 0 24px;
+  padding: 16px 18px;
+  border-radius: 8px;
+  background: rgba(200, 150, 62, 0.12);
+  border: 1px solid rgba(200, 150, 62, 0.35);
+  opacity: 0;
+  transform: translateY(6px);
+  animation: cm-xp-in 0.45s var(--cm-ease) forwards;
+}
+.cm-xp-banner-done {
+  background: rgba(12, 107, 101, 0.12);
+  border-color: rgba(14, 138, 130, 0.35);
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+@keyframes cm-xp-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.cm-xp-banner-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.cm-xp-banner-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--cm-gold2);
+  margin-bottom: 4px;
+}
+.cm-xp-banner-done .cm-xp-banner-title {
+  color: #5fded3;
+}
+.cm-xp-banner-sub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+}

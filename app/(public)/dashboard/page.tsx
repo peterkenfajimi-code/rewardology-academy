@@ -39,7 +39,7 @@ export default async function DashboardPage() {
     return <SignInPrompt configured />;
   }
 
-  const [{ data }, { data: courseData }, { data: profile }, { data: dailyData }, { data: articleData }, { data: dictionaryData }] =
+  const [{ data }, { data: courseData }, { data: profile }, { data: dailyData }, { data: articleData }, { data: dictionaryData }, { data: comicsData }] =
     await Promise.all([
       supabase
         .from("quiz_centre_progress")
@@ -50,6 +50,7 @@ export default async function DashboardPage() {
       supabase.from("daily_quiz_completions").select("xp_earned").eq("user_id", user.id),
       supabase.from("article_progress").select("article_id, xp").eq("user_id", user.id),
       supabase.from("dictionary_progress").select("term, xp").eq("user_id", user.id),
+      supabase.from("comics_progress").select("slug, xp").eq("user_id", user.id),
     ]);
 
   const rows = (data as ProgressRow[] | null) ?? [];
@@ -89,12 +90,16 @@ export default async function DashboardPage() {
   const dictionaryXp = dictionaryRows.reduce((s, r) => s + (r.xp ?? 0), 0);
   const dictionaryTermsRead = dictionaryRows.length;
 
+  type ComicsRow = { slug: string; xp: number };
+  const comicsRows = (comicsData as ComicsRow[] | null) ?? [];
+  const comicsXp = comicsRows.reduce((s, r) => s + (r.xp ?? 0), 0);
+
   const sources: XpSources = {
     courses: courseXp,
     articles: articleXp,
     quizzes: quizXp,
     dictionary: dictionaryXp,
-    comics: 0,
+    comics: comicsXp,
     daily: dailyXp,
   };
 

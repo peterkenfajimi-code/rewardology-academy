@@ -271,7 +271,7 @@ export function MemberDashboard({ displayName, sources, badgeActions }: MemberDa
                 {pinnacleName} ({fmt(PINNACLE_RANK_XP)} XP)
               </strong>{" "}
               is the pinnacle rank and is intentionally aspirational. Today&apos;s platform offers{" "}
-              {fmt(MAX_PLATFORM_XP)} XP of content across courses, articles, quizzes, and the
+              {fmt(MAX_PLATFORM_XP)} XP of content across courses, articles, quizzes, comics, and the
               dictionary. As new content is published, this ceiling grows — ensuring there is always
               something to strive for.
             </p>

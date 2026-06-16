@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { ComicIssue } from "@/lib/comics/comicData";
 import { getAdjacentIssues } from "@/lib/comics/comicData";
 import { ComicSeriesFooter } from "./ComicSeriesFooter";
+import { ComicReadTracker } from "./ComicReadTracker";
 
 type Props = {
   issue: ComicIssue;
@@ -46,6 +47,13 @@ export function ComicIssueView({ issue }: Props) {
           <h1 className="cm-issue-title">{issue.title}</h1>
           <p className="cm-issue-tagline">{issue.tagline}</p>
         </header>
+
+        <ComicReadTracker
+          slug={issue.slug}
+          issueNumber={issue.number}
+          title={issue.title}
+          available={issue.available}
+        />
 
         <div className="cm-comic-frame">
           {issue.available && issue.image ? (

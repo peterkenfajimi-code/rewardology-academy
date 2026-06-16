@@ -1,3 +1,4 @@
+import { localComicsXpTotal } from "@/lib/comics/progress";
 import { localDictionaryXpTotal } from "@/lib/dictionary/progress";
 import { readLocalDaily } from "@/lib/daily-quiz/localProgress";
 import { localArticleXpTotal } from "@/lib/articles/progress";
@@ -12,5 +13,6 @@ export function readLocalTotalXp(): number {
   const dailyXp = readLocalDaily()?.totalXpEarned ?? 0;
   const articleXp = localArticleXpTotal();
   const dictionaryXp = localDictionaryXpTotal();
-  return quizXp + courseXp + dailyXp + articleXp + dictionaryXp;
+  const comicsXp = localComicsXpTotal();
+  return quizXp + courseXp + dailyXp + articleXp + dictionaryXp + comicsXp;
 }
