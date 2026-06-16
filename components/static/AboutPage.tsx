@@ -50,7 +50,7 @@ const VALUES = [
   {
     marker: "◎",
     title: "Context matters",
-    body: "Pay equity in Lagos is not the same as pay equity in London. Rewardology is built with awareness that Total Rewards practice varies significantly by market, sector, and regulatory environment.",
+    body: "Pay equity in Lagos is not the same as pay equity in London. Rewardology Academy is built with awareness that Total Rewards practice varies significantly by market, sector, and regulatory environment.",
   },
   {
     marker: "◆",
@@ -145,7 +145,7 @@ export function AboutPage() {
         <section className="sp-section sp-section-narrow">
           <p className="sp-section-eyebrow">Audience</p>
           <h2>
-            Who <em>Rewardology</em> is for.
+            Who <em>Rewardology Academy</em> is for.
           </h2>
           <p>
             Rewardology Academy is built for HR generalists growing into specialist roles, C&amp;B
