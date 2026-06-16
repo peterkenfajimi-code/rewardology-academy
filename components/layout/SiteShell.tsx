@@ -21,6 +21,9 @@ const footerLinks = [
   { href: "/quizzes", label: "Quizzes" },
   { href: "/dictionary", label: "Dictionary" },
   { href: "/comics", label: "Comics" },
+  { href: "/about", label: "About" },
+  { href: "/privacy", label: "Privacy" },
+  { href: "/terms", label: "Terms" },
   { href: "/setup", label: "Integration status" },
 ];
 
