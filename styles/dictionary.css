@@ -287,6 +287,69 @@
   padding: 14px 40px 12px;
 }
 
+/* Term detail view — fixed back bar, full-width panel */
+.dict-term-detail {
+  position: relative;
+  animation: dictFadeUp 0.3s var(--ease);
+}
+@keyframes dictFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.dict-back-wrap--fixed {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  z-index: 110;
+  margin: 0;
+  background: rgba(7, 25, 46, 0.98);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--rule);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+.dict-term-panel {
+  margin-top: 56px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(200, 150, 62, 0.45);
+  border-left: 4px solid var(--gold);
+  border-radius: 14px;
+  padding: 36px 40px 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.4);
+}
+.dict-term-panel::after {
+  content: attr(data-initial);
+  position: absolute;
+  right: 24px;
+  top: 12px;
+  font-family: var(--hserif);
+  font-size: 9rem;
+  font-weight: 700;
+  color: var(--gold);
+  opacity: 0.05;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.dict-root .tc-read-badge {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  background: rgba(200, 150, 62, 0.12);
+  border: 1px solid rgba(200, 150, 62, 0.3);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
 /* Sticky back bar when reading a term */
 .dict-back-wrap {
   position: sticky;
@@ -436,6 +499,9 @@
   .dict-back-wrap {
     margin-left: -24px;
     margin-right: -24px;
+  }
+  .dict-term-panel {
+    padding: 28px 24px 24px;
   }
   .dict-back-bar {
     padding: 10px 24px;
