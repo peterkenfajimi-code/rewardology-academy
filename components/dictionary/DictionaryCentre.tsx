@@ -180,6 +180,17 @@ export function DictionaryCentre() {
       ? `Showing all ${DICTIONARY_TERM_COUNT} terms`
       : `${visible.length} of ${DICTIONARY_TERM_COUNT} terms`;
 
+  const expandedTerm = useMemo(() => {
+    if (!expandedId) return null;
+    return (
+      DICTIONARY_TERMS.find((t) => termCardId(t.term) === expandedId) ??
+      visible.find((t) => termCardId(t.term) === expandedId) ??
+      null
+    );
+  }, [expandedId, visible]);
+
+  const closeExpanded = useCallback(() => setExpandedId(null), []);
+
   return (
     <div className="dict-root">
       <div className="dict-hero">
@@ -250,59 +261,6 @@ export function DictionaryCentre() {
         </div>
       </div>
 
-      <div className="dict-controls">
-        <div className="az-strip">
-          <button
-            type="button"
-            className={`az-btn az-all${filterLetter === "all" ? " active" : ""}`}
-            onClick={() => {
-              setFilterLetter("all");
-              setExpandedId(null);
-            }}
-          >
-            All
-          </button>
-          {DICTIONARY_LETTERS.map((letter) => (
-            <button
-              key={letter}
-              type="button"
-              className={`az-btn${filterLetter === letter ? " active" : ""}`}
-              onClick={() => {
-                setFilterLetter(letter);
-                setExpandedId(null);
-              }}
-            >
-              {letter}
-            </button>
-          ))}
-        </div>
-        <div className="cat-strip">
-          <button
-            type="button"
-            className={`cat-btn${filterCat === "all" ? " active" : ""}`}
-            onClick={() => {
-              setFilterCat("all");
-              setExpandedId(null);
-            }}
-          >
-            All Categories
-          </button>
-          {DICTIONARY_CATEGORIES.map((cat) => (
-            <button
-              key={cat}
-              type="button"
-              className={`cat-btn${filterCat === cat ? " active" : ""}`}
-              onClick={() => {
-                setFilterCat(cat);
-                setExpandedId(null);
-              }}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-      </div>
-
       <section className="dict-terms-section">
         <div className="dict-grid-header">
           <div className="dict-grid-title">All Terms</div>
@@ -311,9 +269,78 @@ export function DictionaryCentre() {
             {mounted && readSet.size > 0 ? (
               <> · {readSet.size} explored</>
             ) : null}
-            {" · +5 XP per term"}
+            {" · tap any term to expand · +5 XP"}
           </div>
         </div>
+
+        {expandedId ? (
+          <div className="dict-back-wrap">
+            <div className="dict-back-bar">
+              <button type="button" className="dict-back-btn" onClick={closeExpanded}>
+                ← Back to all terms
+              </button>
+              {expandedTerm ? (
+                <span className="dict-back-label">{expandedTerm.term}</span>
+              ) : null}
+            </div>
+          </div>
+        ) : (
+          <div className="dict-controls-wrap">
+            <div className="dict-controls">
+              <div className="az-strip">
+              <button
+                type="button"
+                className={`az-btn az-all${filterLetter === "all" ? " active" : ""}`}
+                onClick={() => {
+                  setFilterLetter("all");
+                  setExpandedId(null);
+                }}
+              >
+                All
+              </button>
+              {DICTIONARY_LETTERS.map((letter) => (
+                <button
+                  key={letter}
+                  type="button"
+                  className={`az-btn${filterLetter === letter ? " active" : ""}`}
+                  onClick={() => {
+                    setFilterLetter(letter);
+                    setExpandedId(null);
+                  }}
+                >
+                  {letter}
+                </button>
+              ))}
+            </div>
+            <div className="cat-strip">
+              <button
+                type="button"
+                className={`cat-btn${filterCat === "all" ? " active" : ""}`}
+                onClick={() => {
+                  setFilterCat("all");
+                  setExpandedId(null);
+                }}
+              >
+                All Categories
+              </button>
+              {DICTIONARY_CATEGORIES.map((cat) => (
+                <button
+                  key={cat}
+                  type="button"
+                  className={`cat-btn${filterCat === cat ? " active" : ""}`}
+                  onClick={() => {
+                    setFilterCat(cat);
+                    setExpandedId(null);
+                  }}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+            </div>
+          </div>
+        )}
+
         <div className="terms-grid">
           {!visible.length ? (
             <div className="empty" style={{ display: "block" }}>
@@ -339,15 +366,17 @@ export function DictionaryCentre() {
                   }}
                 >
                   <div className="tc-read-dot">✓</div>
-                  <div className="tc-head">
-                    <div className="tc-top">
-                      <div className="tc-name">{t.term}</div>
-                      {t.abbr ? <span className="tc-abbr">{t.abbr}</span> : null}
-                    </div>
-                    <span className="tc-cat">{t.cat}</span>
-                  </div>
                   {!expanded ? (
-                    <div className="tc-preview">{previewText(t.definition)}</div>
+                    <>
+                      <div className="tc-head">
+                        <div className="tc-top">
+                          <div className="tc-name">{t.term}</div>
+                          {t.abbr ? <span className="tc-abbr">{t.abbr}</span> : null}
+                        </div>
+                        <span className="tc-cat">{t.cat}</span>
+                      </div>
+                      <div className="tc-preview">{previewText(t.definition)}</div>
+                    </>
                   ) : null}
 
                   {expanded ? (
@@ -358,11 +387,25 @@ export function DictionaryCentre() {
                         aria-label="Close"
                         onClick={(e) => {
                           e.stopPropagation();
-                          setExpandedId(null);
+                          closeExpanded();
                         }}
                       >
                         ✕
                       </button>
+                      <div className="tc-body-head">
+                        <h2 className="tc-body-title">{t.term}</h2>
+                        <div className="tc-body-meta">
+                          {t.abbr ? <span className="tc-abbr">{t.abbr}</span> : null}
+                          <span className="tc-cat">{t.cat}</span>
+                        </div>
+                      </div>
+
+                      <BrowserVoiceBar
+                        text={termPlainText(t)}
+                        title="Read term aloud"
+                        className="dict-voice-bar"
+                      />
+
                       <div className="sec-lbl">Definition</div>
                       <div className="e-def">{t.definition}</div>
 
@@ -408,13 +451,17 @@ export function DictionaryCentre() {
                         </div>
                       ) : null}
 
-                      <BrowserVoiceBar
-                        text={termPlainText(t)}
-                        title="Read term aloud"
-                        className="dict-voice-bar"
-                      />
-
                       <div className="card-actions">
+                        <button
+                          type="button"
+                          className="act-btn"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            closeExpanded();
+                          }}
+                        >
+                          ← All terms
+                        </button>
                         {artHref ? (
                           <Link className="act-btn teal" href={artHref} onClick={(e) => e.stopPropagation()}>
                             📖 Article {t.article}
