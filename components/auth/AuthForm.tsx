@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState, type FormEvent } from "react";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { AuthMode } from "@/components/auth/AuthProvider";
+import { SignupConsentFields } from "@/components/auth/SignupConsentFields";
 import { isGoogleOAuthEnabled } from "@/lib/env";
 
 type Props = {
@@ -31,13 +32,20 @@ export function AuthForm({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
+  const [agreedTerms, setAgreedTerms] = useState(false);
+  const [marketingConsent, setMarketingConsent] = useState(false);
 
   const isSignup = mode === "signup";
   const googleEnabled = isGoogleOAuthEnabled();
+  const signupBlocked = isSignup && !agreedTerms;
 
   useEffect(() => {
     setError(null);
     setNotice(null);
+    if (mode !== "signup") {
+      setAgreedTerms(false);
+      setMarketingConsent(false);
+    }
   }, [mode]);
 
   useEffect(() => {
@@ -54,6 +62,10 @@ export function AuthForm({
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (!supabase) return;
+    if (isSignup && !agreedTerms) {
+      setError("Please agree to the Terms of Service and Privacy Policy to create an account.");
+      return;
+    }
     setLoading(true);
     setError(null);
     setNotice(null);
@@ -64,7 +76,10 @@ export function AuthForm({
           email,
           password,
           options: {
-            data: { full_name: name || undefined },
+            data: {
+              full_name: name || undefined,
+              marketing_consent: marketingConsent,
+            },
             emailRedirectTo: callbackUrl,
           },
         });
@@ -88,6 +103,10 @@ export function AuthForm({
 
   async function handleGoogle() {
     if (!supabase) return;
+    if (isSignup && !agreedTerms) {
+      setError("Please agree to the Terms of Service and Privacy Policy to continue.");
+      return;
+    }
     setLoading(true);
     setError(null);
     try {
@@ -187,7 +206,20 @@ export function AuthForm({
             disabled={!configured || loading}
           />
         </div>
-        <button className="ra-submit" type="submit" disabled={!configured || loading}>
+        {isSignup && (
+          <SignupConsentFields
+            agreedTerms={agreedTerms}
+            onAgreedTermsChange={setAgreedTerms}
+            marketingConsent={marketingConsent}
+            onMarketingConsentChange={setMarketingConsent}
+            disabled={!configured || loading}
+          />
+        )}
+        <button
+          className="ra-submit"
+          type="submit"
+          disabled={!configured || loading || signupBlocked}
+        >
           {loading ? "Please wait…" : isSignup ? "Create account" : "Sign in"}
         </button>
       </form>
@@ -196,7 +228,7 @@ export function AuthForm({
         <>
           <div className="ra-divider">or</div>
 
-          <button className="ra-oauth" onClick={handleGoogle} disabled={!configured || loading}>
+          <button className="ra-oauth" onClick={handleGoogle} disabled={!configured || loading || signupBlocked}>
             <svg width="16" height="16" viewBox="0 0 48 48" aria-hidden="true">
               <path
                 fill="#FFC107"

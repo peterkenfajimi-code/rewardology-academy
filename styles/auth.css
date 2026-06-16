@@ -281,6 +281,39 @@
   opacity: 0.5;
   cursor: default;
 }
+.ra-consent {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 18px 0 4px;
+}
+.ra-consent-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+.ra-consent-check {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: var(--ra-gold);
+  cursor: pointer;
+}
+.ra-consent-text {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.62);
+}
+.ra-consent-text a {
+  color: var(--ra-gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.ra-consent-text a:hover {
+  color: var(--ra-gold2);
+}
 .ra-divider {
   display: flex;
   align-items: center;
