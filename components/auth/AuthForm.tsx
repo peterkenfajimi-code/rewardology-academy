@@ -5,6 +5,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { AuthMode } from "@/components/auth/AuthProvider";
 import { SignupConsentFields } from "@/components/auth/SignupConsentFields";
+import { signupConsentPayload, writeSignupConsentCookie } from "@/lib/auth/signupConsent";
 import { isGoogleOAuthEnabled } from "@/lib/env";
 
 type Props = {
@@ -72,13 +73,15 @@ export function AuthForm({
 
     try {
       if (isSignup) {
+        const consent = signupConsentPayload(marketingConsent);
         const { data, error: signErr } = await supabase.auth.signUp({
           email,
           password,
           options: {
             data: {
               full_name: name || undefined,
-              marketing_consent: marketingConsent,
+              marketing_consent: consent.marketing_consent,
+              terms_accepted_at: consent.terms_accepted_at,
             },
             emailRedirectTo: callbackUrl,
           },
@@ -110,6 +113,9 @@ export function AuthForm({
     setLoading(true);
     setError(null);
     try {
+      if (isSignup) {
+        writeSignupConsentCookie(signupConsentPayload(marketingConsent));
+      }
       const { error: oauthErr } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: { redirectTo: callbackUrl },

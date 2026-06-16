@@ -3,6 +3,7 @@ import { cookies } from "next/headers";
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { isSupabaseConfigured } from "@/lib/env";
 import { safeNextPath } from "@/lib/auth/routes";
+import { parseSignupConsentCookie, SIGNUP_CONSENT_COOKIE } from "@/lib/auth/signupConsent";
 
 // Exchanges the OAuth / email-confirmation code for a session cookie, then
 // redirects back into the app.
@@ -43,6 +44,18 @@ export async function GET(request: Request) {
       return NextResponse.redirect(
         `${origin}/login?error=${encodeURIComponent(error.message)}&next=${encodeURIComponent(next)}`
       );
+    }
+
+    const consentRaw = cookieStore.get(SIGNUP_CONSENT_COOKIE)?.value;
+    const consent = parseSignupConsentCookie(consentRaw);
+    if (consent) {
+      await supabase.auth.updateUser({
+        data: {
+          marketing_consent: consent.marketing_consent,
+          terms_accepted_at: consent.terms_accepted_at,
+        },
+      });
+      cookieStore.delete(SIGNUP_CONSENT_COOKIE);
     }
   }
 
