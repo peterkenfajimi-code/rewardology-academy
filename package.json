@@ -20,6 +20,7 @@
     "extract:dictionary": "node scripts/extract-dictionary.mjs",
     "apply:article-progress": "node scripts/apply-article-progress.mjs",
     "apply:dictionary-progress": "node scripts/apply-dictionary-progress.mjs",
+    "apply:testimonials": "node scripts/apply-testimonials.mjs",
     "test:rss": "node scripts/test-rss-feeds.mjs"
   },
   "dependencies": {

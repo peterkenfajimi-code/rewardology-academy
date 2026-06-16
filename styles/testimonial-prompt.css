@@ -1,0 +1,153 @@
+.testimonial-prompt {
+  margin-top: 28px;
+  padding: 22px 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  text-align: left;
+}
+
+.testimonial-prompt-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.testimonial-prompt-sub {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.testimonial-stars {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.testimonial-star-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.2);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.testimonial-star-btn:hover,
+.testimonial-star-btn.active {
+  color: #fbbf24;
+  transform: scale(1.05);
+}
+
+.testimonial-field {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 14px;
+}
+
+.testimonial-field::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.testimonial-textarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.testimonial-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.testimonial-consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.45;
+  margin: 12px 0 14px;
+}
+
+.testimonial-consent input {
+  margin-top: 3px;
+}
+
+.testimonial-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.testimonial-btn-primary {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #0a1628;
+  background: #c8963e;
+}
+
+.testimonial-btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.testimonial-btn-ghost {
+  border: none;
+  background: none;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 8px 4px;
+}
+
+.testimonial-btn-ghost:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.testimonial-msg {
+  font-size: 13px;
+  margin-top: 10px;
+  line-height: 1.45;
+}
+
+.testimonial-msg.ok {
+  color: #4ade80;
+}
+
+.testimonial-msg.err {
+  color: #f87171;
+}
+
+.testimonial-signin {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.testimonial-signin a {
+  color: #c8963e;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .testimonial-row {
+    grid-template-columns: 1fr;
+  }
+}

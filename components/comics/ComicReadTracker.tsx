@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { TestimonialPrompt } from "@/components/testimonials/TestimonialPrompt";
 import { COMIC_ISSUES } from "@/lib/comics/comicData";
 import {
   COMICS_READ_STORAGE_KEY,
@@ -148,21 +149,30 @@ export function ComicReadTracker({ slug, issueNumber, title, available }: Props)
   const justEarned = showBanner;
 
   return (
-    <div className={`cm-xp-banner${justEarned ? " show" : " cm-xp-banner-done"}`}>
-      <div className="cm-xp-banner-icon" aria-hidden>
-        {justEarned ? "⚡" : "✓"}
-      </div>
-      <div>
-        <div className="cm-xp-banner-title">
-          {justEarned
-            ? `+${COMIC_XP_PER_ISSUE} XP earned — Issue #${issueNumber} complete!`
-            : `${title} · +${COMIC_XP_PER_ISSUE} XP`}
+    <>
+      <div className={`cm-xp-banner${justEarned ? " show" : " cm-xp-banner-done"}`}>
+        <div className="cm-xp-banner-icon" aria-hidden>
+          {justEarned ? "⚡" : "✓"}
         </div>
-        <div className="cm-xp-banner-sub">
-          {issuesRead} of {issuesTotal} issues · {comicsXpTotal} / {maxComicsXp} XP total
-          {!authenticated && " · sign in to sync to your dashboard"}
+        <div>
+          <div className="cm-xp-banner-title">
+            {justEarned
+              ? `+${COMIC_XP_PER_ISSUE} XP earned — Issue #${issueNumber} complete!`
+              : `${title} · +${COMIC_XP_PER_ISSUE} XP`}
+          </div>
+          <div className="cm-xp-banner-sub">
+            {issuesRead} of {issuesTotal} issues · {comicsXpTotal} / {maxComicsXp} XP total
+            {!authenticated && " · sign in to sync to your dashboard"}
+          </div>
         </div>
       </div>
-    </div>
+      <TestimonialPrompt
+        enabled={justEarned}
+        sourceType="comic"
+        sourceId={slug}
+        sourceLabel={`Issue #${issueNumber}: ${title}`}
+        accentColor="#6B4C9A"
+      />
+    </>
   );
 }

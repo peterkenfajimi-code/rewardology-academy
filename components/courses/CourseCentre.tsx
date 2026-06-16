@@ -29,6 +29,7 @@ import {
   type LessonXpMap,
 } from "@/lib/courses/progress";
 import { useAuth } from "@/components/auth/AuthProvider";
+import { TestimonialPrompt } from "@/components/testimonials/TestimonialPrompt";
 import "@/styles/course-centre.css";
 import { dispatchXpUpdated } from "@/lib/xp/dispatch";
 
@@ -1335,6 +1336,13 @@ export function CourseCentre() {
               ⬇ Save Certificate
             </button>
           </div>
+          <TestimonialPrompt
+            enabled={Boolean(result?.courseComplete)}
+            sourceType="course"
+            sourceId={String(c.id)}
+            sourceLabel={c.title}
+            accentColor={c.color}
+          />
         </div>
       </div>
     );

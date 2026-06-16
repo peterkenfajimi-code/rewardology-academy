@@ -1,6 +1,31 @@
-import { HOME_TESTIMONIALS } from "@/lib/home/testimonials";
+import { fetchApprovedTestimonials } from "@/lib/testimonials/fetchApproved";
+import { starsForRating } from "@/lib/testimonials/types";
+import { HOME_TESTIMONIAL_SLOTS } from "@/lib/home/testimonials";
 
-export function HomeTestimonials() {
+const AVATAR_BACKGROUNDS = [
+  "linear-gradient(135deg,#0C4A6E,#0891B2)",
+  "linear-gradient(135deg,#064E3B,#059669)",
+  "linear-gradient(135deg,#3B0764,#7C3AED)",
+];
+
+export async function HomeTestimonials() {
+  const approved = await fetchApprovedTestimonials(3);
+
+  const cards =
+    approved.length > 0
+      ? approved.map((item, index) => ({
+          id: item.id,
+          quote: item.quote,
+          name: item.name,
+          role: item.role,
+          location: item.location,
+          avatar: item.avatar,
+          stars: starsForRating(item.rating),
+          avatarBg: AVATAR_BACKGROUNDS[index % AVATAR_BACKGROUNDS.length],
+          revealDelay: HOME_TESTIMONIAL_SLOTS[index]?.revealDelay ?? "reveal-d1",
+        }))
+      : HOME_TESTIMONIAL_SLOTS;
+
   return (
     <section className="section proof-section">
       <div className="section-inner">
@@ -11,16 +36,16 @@ export function HomeTestimonials() {
               Trusted by HR <em>Professionals</em>
             </h2>
             <p className="section-sub" style={{ marginTop: 12, maxWidth: 520 }}>
-              Curated perspectives from rewards and HR practitioners across Africa — shared to
-              reflect how learners use Rewardology Academy in real careers.
+              Perspectives from rewards and HR practitioners — shared after completing courses,
+              quizzes, and comics on Rewardology Academy.
             </p>
           </div>
         </div>
         <div className="proof-grid">
-          {HOME_TESTIMONIALS.map((p) => (
+          {cards.map((p) => (
             <div className={`proof-card reveal ${p.revealDelay}`} key={p.id}>
               <div className="proof-stars" aria-hidden={!p.quote}>
-                {p.quote ? "★★★★★" : "\u00A0"}
+                {p.quote ? p.stars ?? "★★★★★" : "\u00A0"}
               </div>
               <div className="proof-text">{p.quote ? `\u201C${p.quote}\u201D` : "\u00A0"}</div>
               <div className="proof-author">

@@ -1,4 +1,4 @@
-export type Testimonial = {
+export type TestimonialSlot = {
   id: string;
   quote: string;
   name: string;
@@ -6,11 +6,12 @@ export type Testimonial = {
   location: string;
   avatar: string;
   avatarBg: string;
+  stars?: string;
   revealDelay: "reveal-d1" | "reveal-d2" | "reveal-d3";
 };
 
-/** Placeholder cards — fill quote, name, role, and stars when real testimonials are ready. */
-export const HOME_TESTIMONIALS: Testimonial[] = [
+/** Empty layout slots when no approved testimonials exist yet. */
+export const HOME_TESTIMONIAL_SLOTS: TestimonialSlot[] = [
   {
     id: "slot-1",
     quote: "",
@@ -42,3 +43,6 @@ export const HOME_TESTIMONIALS: Testimonial[] = [
     revealDelay: "reveal-d3",
   },
 ];
+
+/** @deprecated Use HOME_TESTIMONIAL_SLOTS */
+export const HOME_TESTIMONIALS = HOME_TESTIMONIAL_SLOTS;

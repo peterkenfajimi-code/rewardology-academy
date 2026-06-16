@@ -10,6 +10,8 @@ import {
   type ProgressMap,
 } from "@/lib/quizzes/progress";
 import { useAuth } from "@/components/auth/AuthProvider";
+import { TestimonialPrompt } from "@/components/testimonials/TestimonialPrompt";
+import { incrementQuizFinishCount, isQuizTestimonialEligible } from "@/lib/testimonials/promptState";
 import { BrowserVoiceBar } from "@/components/tts/BrowserVoiceBar";
 import { dispatchXpUpdated } from "@/lib/xp/dispatch";
 import "@/styles/quiz-centre.css";
@@ -43,6 +45,7 @@ export function QuizCentre() {
   const [certAllDone, setCertAllDone] = useState(false);
   const [certName, setCertName] = useState("");
   const [certNameInput, setCertNameInput] = useState("");
+  const [quizFinishCount, setQuizFinishCount] = useState(0);
 
   const totalXP = useMemo(() => totalXpFromMap(completed), [completed]);
   const allQuizzesDone = useMemo(
@@ -144,6 +147,7 @@ export function QuizCentre() {
       const xpEarned = Math.round((score / total) * activeQuiz.xp);
 
       setLastXp(xpEarned);
+      setQuizFinishCount(incrementQuizFinishCount());
 
       const result = { score, total, xp: xpEarned, date: new Date().toISOString() };
       setCompleted((prev) => {
@@ -560,6 +564,14 @@ export function QuizCentre() {
               </button>
             )}
           </div>
+
+          <TestimonialPrompt
+            enabled={isQuizTestimonialEligible(quizFinishCount, pct)}
+            sourceType="quiz"
+            sourceId={String(activeQuiz.id)}
+            sourceLabel={activeQuiz.title}
+            accentColor={activeQuiz.color}
+          />
         </div>
       </div>
     );
