@@ -1,5 +1,6 @@
 import type { NewsItem } from "@/lib/news/feedConfig";
 import { FEEDS } from "@/lib/news/feedConfig";
+import { fetchRemoteXml } from "@/lib/news/fetchRemoteXml";
 import { parseRssXml } from "@/lib/news/parseRss";
 
 const GOOGLE_NEWS_RSS = "https://news.google.com/rss/search";
@@ -20,15 +21,7 @@ export async function fetchTabFromGoogleNews(tabKey: string): Promise<NewsItem[]
     ceid: "US:en",
   });
 
-  const res = await fetch(`${GOOGLE_NEWS_RSS}?${params}`, {
-    headers: { Accept: "application/rss+xml, application/xml, text/xml", "User-Agent": "RewardologyAcademy/1.0" },
-    signal: AbortSignal.timeout(12_000),
-    next: { revalidate: 1800 },
-  });
-
-  if (!res.ok) throw new Error(`Google News: HTTP ${res.status}`);
-
-  const xml = await res.text();
+  const xml = await fetchRemoteXml(`${GOOGLE_NEWS_RSS}?${params}`);
   const defaultTag = config.sources[0]?.tag || "News";
 
   return parseRssXml(xml).map((item) => ({

@@ -8,6 +8,7 @@ import { HomeQuizPanel } from "@/components/home/HomeQuizPanel";
 import { HomeCartoons } from "@/components/home/HomeCartoons";
 import { HomeNews } from "@/components/home/HomeNews";
 import { HomeTestimonials } from "@/components/home/HomeTestimonials";
+import { fetchTabNews } from "@/lib/news/fetchFeeds";
 import { getEssentialById, type EssentialArticle } from "@/lib/articles/essentials";
 import { COURSES as COURSE_CENTRE } from "@/lib/courses/courseData";
 import { DAILY_QUIZ_HREF, DAILY_QUIZ_SECTION_ID } from "@/lib/site";
@@ -52,7 +53,17 @@ function articleHref(a?: EssentialArticle) {
   return a ? `/articles/${a.slug}` : "/articles/all";
 }
 
-export default function HomePage() {
+export default async function HomePage() {
+  let initialNewsItems: Awaited<ReturnType<typeof fetchTabNews>>["items"] = [];
+  let initialNewsWarnings: string[] = [];
+  try {
+    const initialNews = await fetchTabNews("total-rewards");
+    initialNewsItems = initialNews.items;
+    initialNewsWarnings = initialNews.warnings;
+  } catch {
+    /* Client will fetch or show fallbacks */
+  }
+
   const featured = getEssentialById(1);
   const side = [
     { a: getEssentialById(10), color: "#3A7D44", desc: "Practical steps for 2026 — structures, communication, and governance before you open the books." },
@@ -321,7 +332,7 @@ export default function HomePage() {
       <HomeTestimonials />
 
       {/* NEWS */}
-      <HomeNews />
+      <HomeNews initialItems={initialNewsItems} initialWarnings={initialNewsWarnings} />
 
       {/* CTA */}
       <section className="cta-section">

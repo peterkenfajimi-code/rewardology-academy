@@ -31,9 +31,17 @@ export const FEEDS: Record<string, FeedConfig> = {
     googleNewsQuery: "total rewards HR compensation when:7d",
     newsDataTitleQuery: '"total rewards" OR "executive compensation" OR "pay equity" OR remuneration',
     sources: [
-      { name: "WorldatWork", url: "https://www.worldatwork.org/rss.xml", tag: "Total Rewards" },
+      {
+        name: "WorldatWork",
+        url: "https://news.google.com/rss/search?q=site:worldatwork.org+when:30d&hl=en-US&gl=US&ceid=US:en",
+        tag: "Total Rewards",
+      },
       { name: "HR Executive", url: "https://hrexecutive.com/feed/", tag: "Total Rewards" },
-      { name: "HR Exchange Network", url: "https://www.hrexchangenetwork.com/rss", tag: "C&B" },
+      {
+        name: "HR Exchange Network",
+        url: "https://news.google.com/rss/search?q=site:hrexchangenetwork.com+when:30d&hl=en-US&gl=US&ceid=US:en",
+        tag: "C&B",
+      },
     ],
     liveSources: [
       { name: "WorldatWork", href: "https://www.worldatwork.org", tag: "Total Rewards" },
@@ -47,8 +55,16 @@ export const FEEDS: Record<string, FeedConfig> = {
     googleNewsQuery: "salary compensation pay equity wages when:7d",
     newsDataTitleQuery: '"salary survey" OR "pay transparency" OR "executive compensation" OR "pay equity"',
     sources: [
-      { name: "Compensation Café", url: "https://compensationcafe.com/feed/", tag: "Compensation" },
-      { name: "PayScale", url: "https://www.payscale.com/compensation-today/feed/", tag: "Pay" },
+      {
+        name: "Compensation Café",
+        url: "https://news.google.com/rss/search?q=site:compensationcafe.com+when:30d&hl=en-US&gl=US&ceid=US:en",
+        tag: "Compensation",
+      },
+      {
+        name: "PayScale",
+        url: "https://news.google.com/rss/search?q=site:payscale.com+compensation+when:30d&hl=en-US&gl=US&ceid=US:en",
+        tag: "Pay",
+      },
       { name: "HR Executive", url: "https://hrexecutive.com/feed/", tag: "Compensation" },
     ],
     liveSources: [
@@ -64,8 +80,16 @@ export const FEEDS: Record<string, FeedConfig> = {
     newsDataTitleQuery:
       '"employee benefits" OR "workplace benefits" OR "health plan" OR "open enrollment" OR 401k',
     sources: [
-      { name: "BenefitsPRO", url: "https://www.benefitspro.com/feed/", tag: "Benefits" },
-      { name: "Benefit News", url: "https://www.benefitnews.com/feed", tag: "Benefits" },
+      {
+        name: "BenefitsPRO",
+        url: "https://news.google.com/rss/search?q=site:benefitspro.com+when:30d&hl=en-US&gl=US&ceid=US:en",
+        tag: "Benefits",
+      },
+      {
+        name: "Benefit News",
+        url: "https://news.google.com/rss/search?q=site:benefitnews.com+when:30d&hl=en-US&gl=US&ceid=US:en",
+        tag: "Benefits",
+      },
       { name: "PeopleKeep", url: "https://www.peoplekeep.com/blog/rss.xml", tag: "Benefits" },
     ],
     liveSources: [
@@ -82,8 +106,16 @@ export const FEEDS: Record<string, FeedConfig> = {
       '"pay transparency" OR "salary transparency" OR "pay equity" OR "gender pay gap"',
     sources: [
       { name: "HR Dive", url: "https://www.hrdive.com/feeds/news/", tag: "Pay Transparency" },
-      { name: "Workforce", url: "https://www.workforce.com/feed/", tag: "Pay Transparency" },
-      { name: "HR Exchange Network", url: "https://www.hrexchangenetwork.com/rss", tag: "Pay Equity" },
+      {
+        name: "Workforce",
+        url: "https://news.google.com/rss/search?q=site:workforce.com+pay+transparency+when:30d&hl=en-US&gl=US&ceid=US:en",
+        tag: "Pay Transparency",
+      },
+      {
+        name: "HR Exchange Network",
+        url: "https://news.google.com/rss/search?q=site:hrexchangenetwork.com+pay+equity+when:30d&hl=en-US&gl=US&ceid=US:en",
+        tag: "Pay Equity",
+      },
     ],
     liveSources: [
       { name: "HR Dive", href: "https://www.hrdive.com", tag: "Pay Transparency" },

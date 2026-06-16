@@ -3,9 +3,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { FEEDS, NEWS_TAB_KEYS } from "@/lib/news/feedConfig";
 import type { NewsItem } from "@/lib/news/feedConfig";
+import { getFallbackArticles } from "@/lib/news/fallbackArticles";
 import { deriveTrendingTopics, formatTrendingCount } from "@/lib/news/trendingTopics";
 
 const CACHE_DURATION_MS = 30 * 60 * 1000;
+const FETCH_TIMEOUT_MS = 30_000;
 
 const TABS = NEWS_TAB_KEYS.map((key) => ({
   key,
@@ -40,9 +42,15 @@ function formatDate(dateStr: string) {
 
 type TabFeedResult = { items: NewsItem[]; warnings: string[] };
 
-function itemsFromCache(
-  cache: Record<string, { items: NewsItem[]; warnings: string[]; fetchedAt: number }>
-): NewsItem[] {
+type CacheEntry = { items: NewsItem[]; warnings: string[]; fetchedAt: number };
+
+export type HomeNewsProps = {
+  initialTab?: string;
+  initialItems?: NewsItem[];
+  initialWarnings?: string[];
+};
+
+function itemsFromCache(cache: Record<string, CacheEntry>): NewsItem[] {
   const seen = new Set<string>();
   const merged: NewsItem[] = [];
   for (const entry of Object.values(cache)) {
@@ -55,67 +63,107 @@ function itemsFromCache(
   return merged;
 }
 
-async function fetchTabFromApi(tabKey: string): Promise<TabFeedResult> {
-  const res = await fetch(`/api/news-feed/${encodeURIComponent(tabKey)}`, {
-    signal: AbortSignal.timeout(20_000),
-  });
-  const data = (await res.json()) as {
-    status?: string;
-    message?: string;
-    items?: NewsItem[];
-    warnings?: string[];
-  };
-  if (!res.ok || data.status !== "ok" || !data.items?.length) {
-    throw new Error(data.message || "No articles loaded");
+function fetchSignal(timeoutMs: number): AbortSignal | undefined {
+  if (typeof AbortSignal !== "undefined" && "timeout" in AbortSignal) {
+    return AbortSignal.timeout(timeoutMs);
   }
-  return { items: data.items, warnings: data.warnings ?? [] };
+  return undefined;
 }
 
-export function HomeNews() {
-  const [activeTab, setActiveTab] = useState("total-rewards");
-  const [items, setItems] = useState<NewsItem[]>([]);
-  const [status, setStatus] = useState<"loading" | "ok" | "partial" | "error">("loading");
-  const [errorMsg, setErrorMsg] = useState("");
-  const [feedWarnings, setFeedWarnings] = useState<string[]>([]);
-  const [updatedAt, setUpdatedAt] = useState("");
+async function fetchTabFromApi(tabKey: string): Promise<TabFeedResult> {
+  const endpoints = [
+    `/api/industry-news/${encodeURIComponent(tabKey)}`,
+    `/api/news-feed/${encodeURIComponent(tabKey)}`,
+  ];
+
+  for (const url of endpoints) {
+    try {
+      const res = await fetch(url, { signal: fetchSignal(FETCH_TIMEOUT_MS) });
+      const data = (await res.json()) as {
+        status?: string;
+        message?: string;
+        items?: NewsItem[];
+        warnings?: string[];
+      };
+      if (res.ok && data.status === "ok" && data.items?.length) {
+        return { items: data.items, warnings: data.warnings ?? [] };
+      }
+    } catch {
+      /* try next endpoint */
+    }
+  }
+
+  return {
+    items: getFallbackArticles(tabKey),
+    warnings: ["Live feeds unavailable — showing curated articles"],
+  };
+}
+
+export function HomeNews({
+  initialTab = "total-rewards",
+  initialItems = [],
+  initialWarnings = [],
+}: HomeNewsProps) {
+  const hasInitial = initialItems.length > 0;
+
+  const cache = useRef<Record<string, CacheEntry>>(
+    hasInitial
+      ? { [initialTab]: { items: initialItems, warnings: initialWarnings, fetchedAt: Date.now() } }
+      : {}
+  );
+
+  const [activeTab, setActiveTab] = useState(initialTab);
+  const [items, setItems] = useState<NewsItem[]>(initialItems);
+  const [status, setStatus] = useState<"loading" | "ok" | "partial" | "error">(() => {
+    if (!hasInitial) return "loading";
+    return initialWarnings.length ? "partial" : "ok";
+  });
+  const [feedWarnings, setFeedWarnings] = useState<string[]>(initialWarnings);
+  const [updatedAt, setUpdatedAt] = useState(() =>
+    hasInitial
+      ? new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })
+      : ""
+  );
   const [spinning, setSpinning] = useState(false);
-  const [poolItems, setPoolItems] = useState<NewsItem[]>([]);
-  const cache = useRef<Record<string, { items: NewsItem[]; warnings: string[]; fetchedAt: number }>>({});
+  const [poolItems, setPoolItems] = useState<NewsItem[]>(() =>
+    hasInitial ? itemsFromCache(cache.current) : []
+  );
 
   const syncPoolFromCache = useCallback(() => {
     setPoolItems(itemsFromCache(cache.current));
   }, []);
 
-  const loadTab = useCallback(async (tabKey: string, force: boolean) => {
-    const cached = cache.current[tabKey];
-    const cacheAge = cached ? Date.now() - cached.fetchedAt : Infinity;
-    if (cached && cacheAge < CACHE_DURATION_MS && !force) {
-      setItems(cached.items);
-      setFeedWarnings(cached.warnings);
-      setStatus(cached.warnings.length ? "partial" : "ok");
-      syncPoolFromCache();
-      return;
-    }
-    setStatus("loading");
-    setFeedWarnings([]);
-    try {
-      const { items, warnings } = await fetchTabFromApi(tabKey);
-      cache.current[tabKey] = { items, warnings, fetchedAt: Date.now() };
-      setItems(items);
+  const loadTab = useCallback(
+    async (tabKey: string, force: boolean) => {
+      const cached = cache.current[tabKey];
+      const cacheAge = cached ? Date.now() - cached.fetchedAt : Infinity;
+      if (cached && cacheAge < CACHE_DURATION_MS && !force) {
+        setItems(cached.items);
+        setFeedWarnings(cached.warnings);
+        setStatus(cached.warnings.length ? "partial" : "ok");
+        syncPoolFromCache();
+        return;
+      }
+
+      if (!cached?.items.length) {
+        setStatus("loading");
+        setFeedWarnings([]);
+      }
+
+      const { items: nextItems, warnings } = await fetchTabFromApi(tabKey);
+      cache.current[tabKey] = { items: nextItems, warnings, fetchedAt: Date.now() };
+      setItems(nextItems);
       setFeedWarnings(warnings);
       setStatus(warnings.length ? "partial" : "ok");
       setUpdatedAt(new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" }));
       syncPoolFromCache();
-    } catch (e) {
-      setErrorMsg((e as Error).message || "unknown");
-      setFeedWarnings([]);
-      setStatus("error");
-    }
-  }, [syncPoolFromCache]);
+    },
+    [syncPoolFromCache]
+  );
 
   useEffect(() => {
-    loadTab("total-rewards", false);
-  }, [loadTab]);
+    loadTab(initialTab, false);
+  }, [loadTab, initialTab]);
 
   const switchTab = (key: string) => {
     setActiveTab(key);
@@ -209,20 +257,6 @@ export function HomeNews() {
               </div>
             )}
 
-            {status === "error" && (
-              <div className="news-feed">
-                <div className="news-error">
-                  <div className="news-error-icon">⚠️</div>
-                  <div className="news-error-title">Feeds temporarily unavailable</div>
-                  <div className="news-error-desc">
-                    {errorMsg}
-                    <br />
-                    Try refreshing in a moment. If this persists, some sources may be blocking requests.
-                  </div>
-                </div>
-              </div>
-            )}
-
             {(status === "ok" || status === "partial") && (
               <div className="news-feed">
                 {status === "partial" && feedWarnings.length > 0 && (
@@ -234,29 +268,29 @@ export function HomeNews() {
                 {items.map((item, i) => {
                   const internal = item.link.startsWith("/");
                   return (
-                  <a
-                    key={item.link + i}
-                    href={item.link}
-                    {...(internal ? {} : { target: "_blank", rel: "noopener noreferrer" })}
-                    className="news-card"
-                    style={{ ["--tab-color" as string]: config.color }}
-                  >
-                    <div>
-                      <div className="nc-source">{item.source}</div>
-                      <div className="nc-title">{item.title}</div>
-                      <div className="nc-desc">{truncate(item.description, 120)}</div>
-                      <div className="nc-meta">
-                        <span className="nc-date">{formatDate(item.pubDate)}</span>
-                        <span
-                          className="nc-badge"
-                          style={{ background: `${config.color}22`, color: config.color }}
-                        >
-                          {item.tag}
-                        </span>
+                    <a
+                      key={item.link + i}
+                      href={item.link}
+                      {...(internal ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+                      className="news-card"
+                      style={{ ["--tab-color" as string]: config.color }}
+                    >
+                      <div>
+                        <div className="nc-source">{item.source}</div>
+                        <div className="nc-title">{item.title}</div>
+                        <div className="nc-desc">{truncate(item.description, 120)}</div>
+                        <div className="nc-meta">
+                          <span className="nc-date">{formatDate(item.pubDate)}</span>
+                          <span
+                            className="nc-badge"
+                            style={{ background: `${config.color}22`, color: config.color }}
+                          >
+                            {item.tag}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                    <div className="nc-arrow">→</div>
-                  </a>
+                      <div className="nc-arrow">→</div>
+                    </a>
                   );
                 })}
               </div>

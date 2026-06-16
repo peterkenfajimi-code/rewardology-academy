@@ -1,19 +1,12 @@
 import type { NewsItem, NewsSource } from "@/lib/news/feedConfig";
 import { FEEDS } from "@/lib/news/feedConfig";
+import { fetchRemoteXml } from "@/lib/news/fetchRemoteXml";
 import { parseRssXml } from "@/lib/news/parseRss";
 
 const MAX_ITEMS_PER_SOURCE = 4;
 
 async function fetchOneSource(source: NewsSource): Promise<NewsItem[]> {
-  const res = await fetch(source.url, {
-    headers: { Accept: "application/rss+xml, application/xml, text/xml", "User-Agent": "RewardologyAcademy/1.0" },
-    signal: AbortSignal.timeout(12_000),
-    next: { revalidate: 1800 },
-  });
-
-  if (!res.ok) throw new Error(`${source.name}: HTTP ${res.status}`);
-
-  const xml = await res.text();
+  const xml = await fetchRemoteXml(source.url);
   const items = parseRssXml(xml);
 
   if (!items.length) throw new Error(`${source.name}: no articles in feed`);
