@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { StaticPageHero } from "@/components/static/StaticPageHero";
 import { DICTIONARY_TERM_COUNT } from "@/lib/dictionary/terms";
+import { CONTACT_EMAIL } from "@/lib/site";
 import "@/styles/static-pages.css";
 
 const PILLARS = [
@@ -191,7 +192,7 @@ export function AboutPage() {
           <p>
             Whether you have feedback on the platform, a suggestion for a course topic, a question
             about content, or a partnership enquiry — reach us at{" "}
-            <a href="mailto:hello@rewardologyacademy.com">hello@rewardologyacademy.com</a>. We read
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. We read
             every message.
           </p>
         </section>

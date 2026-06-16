@@ -271,7 +271,11 @@
   border-radius: 8px;
   transition: opacity 0.2s;
 }
-.sp-btn-primary:hover {
+.sp-root a.sp-btn-primary {
+  color: var(--navy);
+}
+.sp-btn-primary:hover,
+.sp-root a.sp-btn-primary:hover {
   opacity: 0.88;
   color: var(--navy);
 }
@@ -284,7 +288,11 @@
   border-radius: 8px;
   transition: border-color 0.2s, background 0.2s;
 }
-.sp-btn-ghost:hover {
+.sp-root a.sp-btn-ghost {
+  color: var(--white);
+}
+.sp-btn-ghost:hover,
+.sp-root a.sp-btn-ghost:hover {
   border-color: rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.04);
   color: var(--white);

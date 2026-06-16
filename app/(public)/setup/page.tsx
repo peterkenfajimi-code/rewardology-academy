@@ -1,6 +1,7 @@
 import { isElevenLabsConfigured, isSanityConfigured, isSupabaseConfigured } from "@/lib/env";
 import { checkResendHealth } from "@/lib/resend/health";
 import { DeploySetupPanel } from "@/components/setup/DeploySetupPanel";
+import { ImprovMXSetupPanel } from "@/components/setup/ImprovMXSetupPanel";
 import { ResendSetupPanel } from "@/components/setup/ResendSetupPanel";
 import { SupabaseSetupPanel } from "@/components/setup/SupabaseSetupPanel";
 import "@/styles/setup.css";
@@ -59,6 +60,10 @@ export default async function SetupPage() {
       <hr className="ph-hr" style={{ margin: "40px 0" }} />
 
       <ResendSetupPanel />
+
+      <hr className="ph-hr" style={{ margin: "40px 0" }} />
+
+      <ImprovMXSetupPanel />
     </div>
   );
 }
