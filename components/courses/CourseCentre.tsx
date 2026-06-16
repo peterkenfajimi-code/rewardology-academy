@@ -10,7 +10,9 @@ import {
   type Course,
   type CourseLesson,
   type CourseModule,
+  type KnowledgeQuiz,
 } from "@/lib/courses/courseData";
+import { getLessonQuiz, getModuleQuizQuestions } from "@/lib/courses/quizContent";
 import { lessonPlainText } from "@/lib/courses/lessonText";
 import { getEssentialById } from "@/lib/articles/essentials";
 import { BrowserVoiceBar } from "@/components/tts/BrowserVoiceBar";
@@ -46,6 +48,7 @@ type ResultData = {
   course: Course;
   mod: CourseModule;
   quizLes: CourseLesson;
+  quizQuestions: KnowledgeQuiz[];
   answers: boolean[];
   xpEarned: number;
   courseComplete: boolean;
@@ -72,6 +75,7 @@ export function CourseCentre() {
   // Module-quiz state
   const [mqLes, setMqLes] = useState<CourseLesson | null>(null);
   const [mqModId, setMqModId] = useState<string | null>(null);
+  const [mqQuestions, setMqQuestions] = useState<KnowledgeQuiz[]>([]);
   const [mqQ, setMqQ] = useState(0);
   const [mqSel, setMqSel] = useState<number | null>(null);
   const [mqAnswered, setMqAnswered] = useState(false);
@@ -152,6 +156,7 @@ export function CourseCentre() {
         if (found.lesson.type === "quiz" || searchParams.get("view") === "mod-quiz") {
           setMqLes(found.lesson);
           setMqModId(found.mod.id);
+          setMqQuestions(getModuleQuizQuestions(found.lesson, found.mod));
           setMqQ(0);
           setMqSel(null);
           setMqAnswered(false);
@@ -278,6 +283,7 @@ export function CourseCentre() {
       if (lesson.type === "quiz") {
         setMqLes(lesson);
         setMqModId(mod.id);
+        setMqQuestions(getModuleQuizQuestions(lesson, mod));
         setMqQ(0);
         setMqSel(null);
         setMqAnswered(false);
@@ -299,7 +305,7 @@ export function CourseCentre() {
   const checkKc = useCallback(() => {
     if (kcSel === null || kcAnswered || !activeCourse || !activeLesson) return;
     const { lesson, mod } = activeLesson;
-    const q = lesson.quiz;
+    const q = getLessonQuiz(lesson);
     if (!q) return;
     setKcAnswered(true);
     const ok = kcSel === q.ans;
@@ -314,18 +320,18 @@ export function CourseCentre() {
 
   // ── Module quiz ──
   const submitMq = useCallback(() => {
-    if (mqSel === null || mqAnswered || !mqLes?.quiz_questions) return;
+    if (mqSel === null || mqAnswered || !mqQuestions.length) return;
     setMqAnswered(true);
-    const q = mqLes.quiz_questions[mqQ];
+    const q = mqQuestions[mqQ];
     setMqAnswers((prev) => [...prev, mqSel === q.ans]);
-  }, [mqSel, mqAnswered, mqLes, mqQ]);
+  }, [mqSel, mqAnswered, mqQuestions, mqQ]);
 
   const finishMq = useCallback(
     (answers: boolean[]) => {
-      if (!activeCourse || !mqLes || !mqModId || !mqLes.quiz_questions) return;
+      if (!activeCourse || !mqLes || !mqModId || !mqQuestions.length) return;
       const mod = activeCourse.modules.find((m) => m.id === mqModId);
       if (!mod) return;
-      const total = mqLes.quiz_questions.length;
+      const total = mqQuestions.length;
       const score = answers.filter(Boolean).length;
       const xpEarned = Math.round((score / total) * mqLes.xp);
 
@@ -341,6 +347,7 @@ export function CourseCentre() {
         course: activeCourse,
         mod,
         quizLes: mqLes,
+        quizQuestions: mqQuestions,
         answers,
         xpEarned,
         courseComplete,
@@ -356,12 +363,12 @@ export function CourseCentre() {
       const pct = Math.round((score / total) * 100);
       if (courseComplete ? pct >= 60 : pct >= 80) launchConfetti(mod.color);
     },
-    [activeCourse, mqLes, mqModId, lxp, persistXp, launchConfetti]
+    [activeCourse, mqLes, mqModId, mqQuestions, lxp, persistXp, launchConfetti]
   );
 
   const nextMq = useCallback(() => {
-    if (!mqLes?.quiz_questions) return;
-    const isLast = mqQ >= mqLes.quiz_questions.length - 1;
+    if (!mqQuestions.length) return;
+    const isLast = mqQ >= mqQuestions.length - 1;
     if (isLast) {
       finishMq(mqAnswers);
       return;
@@ -369,7 +376,7 @@ export function CourseCentre() {
     setMqQ((q) => q + 1);
     setMqSel(null);
     setMqAnswered(false);
-  }, [mqLes, mqQ, mqAnswers, finishMq]);
+  }, [mqQuestions, mqQ, mqAnswers, finishMq]);
 
   const retryMq = useCallback(() => {
     if (!result) return;
@@ -764,7 +771,7 @@ export function CourseCentre() {
     const next = idx < all.length - 1 ? all[idx + 1] : null;
     const doneAll = all.filter((x) => (lxp[lessonKey(c.id, x.lesson.id)] || 0) > 0).length;
     const lessonPct = Math.round((doneAll / all.length) * 100);
-    const q = l.quiz;
+    const q = getLessonQuiz(l);
     const alreadyDone = (lxp[lessonKey(c.id, l.id)] || 0) > 0;
 
     return (
@@ -1016,7 +1023,17 @@ export function CourseCentre() {
                 <button
                   type="button"
                   className="cc-lf-btn next"
-                  onClick={() => startLesson(c.id, next.lesson, next.mod)}
+                  onClick={() => {
+                    if (!alreadyDone && q && !kcAnswered) {
+                      showToast("Complete the knowledge check to earn XP before continuing.");
+                      return;
+                    }
+                    if (!alreadyDone && q && kcAnswered && kcSel !== q.ans) {
+                      showToast("Answer correctly to earn XP, then continue.");
+                      return;
+                    }
+                    startLesson(c.id, next.lesson, next.mod);
+                  }}
                 >
                   <span className="cc-lf-dir">Next →</span>
                   <span className="cc-lf-name cc-serif">{next.lesson.title}</span>
@@ -1032,10 +1049,23 @@ export function CourseCentre() {
   // ── Render: Module Quiz ──
   function renderModQuiz() {
     const c = activeCourse;
-    if (!c || !mqLes?.quiz_questions || !mqModId) return null;
+    if (!c || !mqLes || !mqModId) return null;
     const mod = c.modules.find((m) => m.id === mqModId);
     if (!mod) return null;
-    const qs = mqLes.quiz_questions;
+    const qs =
+      mqQuestions.length > 0 ? mqQuestions : getModuleQuizQuestions(mqLes, mod);
+    if (!qs.length) {
+      return (
+        <div className="cc-view">
+          <div className="cc-mq-inner">
+            <p className="cc-lc-p">This module quiz could not be loaded. Please go back and try again.</p>
+            <button type="button" className="cc-ltb-back" onClick={backToOverview}>
+              ← Back to course
+            </button>
+          </div>
+        </div>
+      );
+    }
     const q = qs[mqQ];
     const pct = Math.round((mqQ / qs.length) * 100);
     const correct = mqAnswers.filter(Boolean).length;
@@ -1140,8 +1170,8 @@ export function CourseCentre() {
   // ── Render: Quiz Result ──
   function renderResult() {
     if (!result) return null;
-    const { course: c, mod: m, quizLes, answers, xpEarned, courseComplete } = result;
-    const total = quizLes.quiz_questions?.length ?? 0;
+    const { course: c, mod: m, quizQuestions, answers, xpEarned, courseComplete } = result;
+    const total = quizQuestions.length;
     const score = answers.filter(Boolean).length;
     const pct = total ? Math.round((score / total) * 100) : 0;
 
@@ -1195,7 +1225,7 @@ export function CourseCentre() {
 
           <div className="cc-qr-bd">
             <div className="cc-qr-bd-title">Question Breakdown</div>
-            {quizLes.quiz_questions?.map((qq, i) => (
+            {quizQuestions.map((qq, i) => (
               <div key={i} className="cc-qr-item">
                 <div
                   className="cc-qr-dot"
