@@ -70,7 +70,8 @@ export function TestimonialsSetupPanel({ configured }: { configured: boolean }) 
       <h2 className="setup-section-title">Testimonials moderation</h2>
       <p className="setup-section-sub">
         Review learner feedback submitted after courses, quizzes, and comics. Approved quotes with
-        at least 20 characters appear on the homepage.
+        at least 20 characters appear on the homepage. New submissions email{" "}
+        <code>{CONTACT_FORWARD_GMAIL}</code> when <code>RESEND_API_KEY</code> is configured.
       </p>
 
       {!user ? (

@@ -270,14 +270,12 @@
   border-color: var(--gold);
 }
 
-/* Sticky filters — full-width bar, content aligned to grid */
+/* Filters bar — full-width, non-sticky so it doesn't obstruct scrolled content */
 .dict-controls-wrap {
-  position: sticky;
-  top: 64px;
-  z-index: 100;
+  position: relative;
+  z-index: 10;
   margin: 0 -40px 24px;
   background: rgba(7, 25, 46, 0.96);
-  backdrop-filter: blur(16px);
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
 }
@@ -291,7 +289,7 @@
 .dict-term-detail {
   position: relative;
   animation: dictFadeUp 0.3s var(--ease);
-  scroll-margin-top: 80px;
+  scroll-margin-top: 24px;
 }
 @keyframes dictFadeUp {
   from {
@@ -509,7 +507,7 @@
   grid-column: 1 / -1;
   cursor: default;
   transform: none;
-  scroll-margin-top: 88px;
+  scroll-margin-top: 24px;
   box-shadow: 0 24px 56px rgba(0, 0, 0, 0.4);
 }
 .dict-root .tc-head {

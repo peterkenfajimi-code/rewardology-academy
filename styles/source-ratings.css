@@ -1,0 +1,19 @@
+.source-rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+.cc-body .source-rating-badge,
+.qc-body .source-rating-badge {
+  margin-top: 6px;
+  margin-bottom: 2px;
+}
+
+.course-card-body .source-rating-badge {
+  margin-top: 8px;
+}

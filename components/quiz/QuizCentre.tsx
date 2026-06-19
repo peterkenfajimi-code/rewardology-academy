@@ -11,6 +11,9 @@ import {
 } from "@/lib/quizzes/progress";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { TestimonialPrompt } from "@/components/testimonials/TestimonialPrompt";
+import { SourceRatingBadge } from "@/components/testimonials/SourceRatingBadge";
+import { useSourceRatings } from "@/components/testimonials/useSourceRatings";
+import { getSourceRating } from "@/lib/testimonials/ratings";
 import { incrementQuizFinishCount, isQuizTestimonialEligible } from "@/lib/testimonials/promptState";
 import { BrowserVoiceBar } from "@/components/tts/BrowserVoiceBar";
 import { dispatchXpUpdated } from "@/lib/xp/dispatch";
@@ -31,6 +34,7 @@ function hexToRgba(hex: string, a: number) {
 
 export function QuizCentre() {
   const { user } = useAuth();
+  const sourceRatings = useSourceRatings();
   const [view, setView] = useState<View>("lobby");
   const [activeId, setActiveId] = useState<number | null>(null);
   const [currentQ, setCurrentQ] = useState(0);
@@ -328,6 +332,10 @@ export function QuizCentre() {
                       {quiz.category}
                     </div>
                     <div className="qc-title">{quiz.title}</div>
+                    <SourceRatingBadge
+                      rating={getSourceRating(sourceRatings, "quiz", quiz.id)}
+                      accentColor={quiz.color}
+                    />
                     <div className="qc-desc">{quiz.desc}</div>
                     <div className="qc-footer">
                       <div className="qc-meta">

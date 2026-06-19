@@ -30,6 +30,9 @@ import {
 } from "@/lib/courses/progress";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { TestimonialPrompt } from "@/components/testimonials/TestimonialPrompt";
+import { SourceRatingBadge } from "@/components/testimonials/SourceRatingBadge";
+import { useSourceRatings } from "@/components/testimonials/useSourceRatings";
+import { getSourceRating } from "@/lib/testimonials/ratings";
 import "@/styles/course-centre.css";
 import { dispatchXpUpdated } from "@/lib/xp/dispatch";
 
@@ -57,6 +60,7 @@ type ResultData = {
 
 export function CourseCentre() {
   const { user } = useAuth();
+  const sourceRatings = useSourceRatings();
   const searchParams = useSearchParams();
   const deepLinkHandled = useRef(false);
 
@@ -569,6 +573,10 @@ export function CourseCentre() {
                       {c.modules.map((m) => m.title).join(" · ")}
                     </div>
                     <div className="cc-card-title cc-serif">{c.title}</div>
+                    <SourceRatingBadge
+                      rating={getSourceRating(sourceRatings, "course", c.id)}
+                      accentColor={c.color}
+                    />
                     <div className="cc-desc-txt">{c.desc}</div>
                     <div className="cc-prog-l">
                       <span>

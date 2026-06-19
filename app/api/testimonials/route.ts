@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/env";
 import { fetchApprovedTestimonials } from "@/lib/testimonials/fetchApproved";
+import { notifyAdminNewTestimonial } from "@/lib/testimonials/notifyAdmin";
 import { parseSubmitPayload } from "@/lib/testimonials/validate";
 import type { TestimonialSourceType } from "@/lib/testimonials/types";
 
@@ -106,6 +107,10 @@ export async function POST(req: Request) {
         );
       }
       return NextResponse.json({ error: "Could not save feedback" }, { status: 500 });
+    }
+
+    if (data?.id) {
+      void notifyAdminNewTestimonial(payload, data.id).catch(() => {});
     }
 
     return NextResponse.json({

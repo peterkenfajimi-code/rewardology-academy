@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { AuthControls } from "@/components/auth/AuthControls";
-import { HeroProgressCard } from "@/components/home/HeroProgressCard";
+import { HeroDictionaryCard } from "@/components/home/HeroDictionaryCard";
 import { HubXpBanner } from "@/components/home/HubXpBanner";
 import { PlatformStatsStrip } from "@/components/home/PlatformStatsStrip";
 import { HomeEffects } from "@/components/home/HomeEffects";
@@ -8,7 +8,10 @@ import { HomeQuizPanel } from "@/components/home/HomeQuizPanel";
 import { HomeCartoons } from "@/components/home/HomeCartoons";
 import { HomeNews } from "@/components/home/HomeNews";
 import { HomeTestimonials } from "@/components/home/HomeTestimonials";
+import { SourceRatingBadge } from "@/components/testimonials/SourceRatingBadge";
 import { fetchTabNews } from "@/lib/news/fetchFeeds";
+import { fetchSourceRatings } from "@/lib/testimonials/fetchRatings";
+import { getSourceRating } from "@/lib/testimonials/ratings";
 import { getEssentialById, type EssentialArticle } from "@/lib/articles/essentials";
 import { COURSES as COURSE_CENTRE } from "@/lib/courses/courseData";
 import { DAILY_QUIZ_HREF, DAILY_QUIZ_SECTION_ID } from "@/lib/site";
@@ -37,12 +40,14 @@ const MARQUEE = [
 const HOME_COURSE_BANNERS = ["cc-banner-1", "cc-banner-4", "cc-banner-2", "cc-banner-3", "cc-banner-5"] as const;
 
 const COURSES = COURSE_CENTRE.map((c, i) => ({
+  id: c.id,
   href: `/courses?course=${c.id}`,
   banner: HOME_COURSE_BANNERS[i] ?? "cc-banner-1",
   icon: c.icon,
   badge: c.level,
   name: c.title,
   desc: c.desc,
+  color: c.color,
   price: "Free",
   free: true,
   meta: `${c.lessons_count} lessons · ${c.duration}`,
@@ -63,6 +68,8 @@ export default async function HomePage() {
   } catch {
     /* Client will fetch or show fallbacks */
   }
+
+  const sourceRatings = await fetchSourceRatings();
 
   const featured = getEssentialById(1);
   const side = [
@@ -133,7 +140,7 @@ export default async function HomePage() {
             </div>
           </div>
 
-          <HeroProgressCard />
+          <HeroDictionaryCard />
         </div>
       </section>
 
@@ -179,6 +186,10 @@ export default async function HomePage() {
                 </div>
                 <div className="course-card-body">
                   <div className="cc-name">{c.name}</div>
+                  <SourceRatingBadge
+                    rating={getSourceRating(sourceRatings, "course", c.id)}
+                    accentColor={c.color}
+                  />
                   <p className="cc-desc">{c.desc}</p>
                   <div className="cc-footer">
                     <span className={`cc-price${c.free ? " free" : ""}`}>{c.price}</span>
