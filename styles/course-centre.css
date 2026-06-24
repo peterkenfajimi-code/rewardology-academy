@@ -91,7 +91,7 @@
 .cc-cs-hd { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 28px; }
 .cc-cs-title { font-size: 32px; font-weight: 300; }
 .cc-cs-sub { font-size: 13px; color: rgba(255, 255, 255, 0.38); }
-.cc-courses-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.cc-courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
 .cc-card { border-radius: 14px; overflow: hidden; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.09); transition: transform 0.28s var(--ease), box-shadow 0.28s, border-color 0.28s; background: rgba(255, 255, 255, 0.04); position: relative; }
 .cc-card:hover { transform: translateY(-6px); box-shadow: 0 24px 56px rgba(0, 0, 0, 0.4); border-color: rgba(255, 255, 255, 0.2); }
 .cc-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--cc); transform: scaleY(0); transform-origin: bottom; transition: transform 0.2s; z-index: 2; }

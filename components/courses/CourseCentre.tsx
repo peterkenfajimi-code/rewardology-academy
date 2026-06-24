@@ -427,32 +427,32 @@ export function CourseCentre() {
               </p>
               <div className="cc-lh-stats">
                 <div>
-                  <div className="cc-lhs-n cc-serif">{COURSES.length}</div>
-                  <div className="cc-lhs-l">Courses</div>
+                  <div className="cc-lhs-n cc-serif">
+                    {COURSES.filter((c) => courseXp(lxp, c.id) > 0).length}
+                    <span>/{COURSES.length}</span>
+                  </div>
+                  <div className="cc-lhs-l">Courses started</div>
                 </div>
                 <div>
-                  <div className="cc-lhs-n cc-serif">{totalModules}</div>
-                  <div className="cc-lhs-l">Modules</div>
-                </div>
-                <div>
-                  <div className="cc-lhs-n cc-serif">{MAX_COURSE_XP.toLocaleString()}</div>
-                  <div className="cc-lhs-l">Max XP</div>
+                  <div className="cc-lhs-n cc-serif">
+                    {COURSES.filter((c) => isCourseComplete(lxp, c)).length}
+                  </div>
+                  <div className="cc-lhs-l">Certificates earned</div>
                 </div>
                 <div>
                   <div className="cc-lhs-n cc-serif">{totalXP.toLocaleString()}</div>
-                  <div className="cc-lhs-l">{synced ? "Your XP · synced" : "Your XP"}</div>
+                  <div className="cc-lhs-l">{synced ? "XP · synced" : "XP earned"}</div>
                 </div>
               </div>
             </div>
             <div>
               <div className="cc-lh-card">
                 <div className="cc-lhc-top">
-                  <div className="cc-lhc-l">Your Learning Progress</div>
+                  <div className="cc-lhc-l">Your rank</div>
                   <div className="cc-lhc-xp cc-serif">
-                    {totalXP.toLocaleString()}
-                    <span>XP</span>
+                    {totalXP === 0 ? "HR Intern" : totalXP < 500 ? "Reward Analyst" : totalXP < 1200 ? "Reward Coordinator" : totalXP < 2500 ? "Reward Manager" : "Reward Director"}
                   </div>
-                  <div className="cc-lhc-sub">of {MAX_COURSE_XP.toLocaleString()} XP available</div>
+                  <div className="cc-lhc-sub">{totalXP.toLocaleString()} XP earned</div>
                 </div>
                 <div className="cc-lhc-body">
                   <div className="cc-xp-bar-row">
@@ -568,9 +568,9 @@ export function CourseCentre() {
                   </div>
                   <div className="cc-body">
                     <div className="cc-cat" style={{ color: c.color }}>
-                      {c.modules.map((m) => m.title).join(" · ")}
+                      {c.title}
                     </div>
-                    <div className="cc-card-title cc-serif">{c.title}</div>
+                    <div className="cc-card-title cc-serif">{c.subtitle ?? c.desc.slice(0, 60)}</div>
                     <SourceRatingBadge
                       rating={getSourceRating(sourceRatings, "course", c.id)}
                       accentColor={c.color}
