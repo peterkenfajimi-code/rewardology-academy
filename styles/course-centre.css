@@ -92,9 +92,11 @@
 .cc-cs-title { font-size: 32px; font-weight: 300; }
 .cc-cs-sub { font-size: 13px; color: rgba(255, 255, 255, 0.38); }
 .cc-courses-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.cc-card { border-radius: 16px; overflow: hidden; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08); transition: transform 0.3s var(--ease), box-shadow 0.3s, border-color 0.3s; background: rgba(255, 255, 255, 0.03); }
-.cc-card:hover { transform: translateY(-6px); box-shadow: 0 28px 64px rgba(0, 0, 0, 0.45); border-color: rgba(255, 255, 255, 0.18); }
-.cc-banner { height: 190px; position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 22px; }
+.cc-card { border-radius: 14px; overflow: hidden; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.09); transition: transform 0.28s var(--ease), box-shadow 0.28s, border-color 0.28s; background: rgba(255, 255, 255, 0.04); position: relative; }
+.cc-card:hover { transform: translateY(-6px); box-shadow: 0 24px 56px rgba(0, 0, 0, 0.4); border-color: rgba(255, 255, 255, 0.2); }
+.cc-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--cc); transform: scaleY(0); transform-origin: bottom; transition: transform 0.2s; z-index: 2; }
+.cc-card:hover::before { transform: scaleY(1); }
+.cc-banner { height: 120px; position: relative; overflow: hidden; display: flex; align-items: flex-end; justify-content: space-between; padding: 16px 18px; }
 .cc-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px); background-size: 36px 36px; }
 .cc-ov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 60%); }
 .cc-icon-big { position: absolute; top: 22px; right: 22px; font-size: 62px; opacity: 0.12; line-height: 1; }
@@ -466,4 +468,48 @@
 @media print {
   .cc-topbar, .cc-cert-actions { display: none !important; }
   .cc-root { background: #fff; }
+}
+
+/* ════════ COURSE VIEW STATS SIDEBAR ════════ */
+.cc-cvs-card { background: rgba(255, 255, 255, 0.04); border: 1px solid var(--rule); border-radius: 12px; padding: 22px; margin-bottom: 16px; }
+.cc-cvs-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255, 255, 255, 0.3); margin-bottom: 14px; }
+.cc-cvs-stat { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.06); font-size: 13px; color: rgba(255, 255, 255, 0.55); }
+.cc-cvs-stat:last-child { border-bottom: none; }
+.cc-cvs-stat-val { font-weight: 600; color: var(--cc); }
+.cc-cvs-cta { width: 100%; padding: 14px; background: var(--cc); border: none; border-radius: 9px; font-family: inherit; font-size: 16px; font-weight: 700; color: var(--navy); cursor: pointer; transition: all 0.2s; margin-top: 4px; }
+.cc-cvs-cta:hover { background: var(--cc2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+.cc-cvs-cert-btn { width: 100%; padding: 12px; background: rgba(74, 222, 128, 0.12); border: 1px solid rgba(74, 222, 128, 0.4); border-radius: 9px; font-family: inherit; font-size: 13px; font-weight: 700; color: #4ade80; cursor: pointer; transition: all 0.2s; margin-top: 8px; }
+.cc-cvs-cert-btn:hover { background: rgba(74, 222, 128, 0.22); }
+
+/* ════════ CERTIFICATE (dark navy redesign) ════════ */
+.cc-cert-outer { max-width: 860px; margin: 0 auto; padding: 48px 28px 80px; }
+.cc-cert-actions { display: flex; gap: 12px; margin-bottom: 28px; justify-content: flex-end; }
+.cc-cert-card { background: var(--navy2); border: 1px solid var(--rule); border-radius: 20px; overflow: hidden; position: relative; box-shadow: 0 32px 80px rgba(0, 0, 0, 0.55); }
+.cc-cert-inner-border { position: absolute; inset: 12px; border: 1px solid rgba(200, 150, 62, 0.25); border-radius: 12px; pointer-events: none; }
+.cc-cert-top-bar { height: 6px; }
+.cc-cert-inner { padding: 56px 72px; }
+.cc-cert-logo-row { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+.cc-cert-mark { width: 44px; height: 44px; background: linear-gradient(135deg, var(--gold), var(--gold2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: var(--navy); flex-shrink: 0; }
+.cc-cert-brand { font-size: 22px; font-weight: 600; color: rgba(255, 255, 255, 0.85); }
+.cc-cert-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+.cc-cert-eyebrow::before { content: ""; width: 24px; height: 1px; background: var(--gold); }
+.cc-cert-title { font-size: clamp(30px, 4vw, 40px); font-weight: 300; line-height: 1.1; margin-bottom: 32px; color: var(--w); }
+.cc-cert-to { font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255, 255, 255, 0.4); margin-bottom: 6px; }
+.cc-cert-name { font-size: clamp(28px, 3.5vw, 36px); font-weight: 600; color: var(--gold); margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+.cc-cert-statement { font-size: 15px; font-weight: 300; line-height: 1.6; color: rgba(255, 255, 255, 0.55); max-width: 560px; margin-bottom: 48px; }
+.cc-cert-statement strong { color: var(--w); font-weight: 500; }
+.cc-cert-footer { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid rgba(255, 255, 255, 0.07); padding-top: 28px; gap: 16px; flex-wrap: wrap; }
+.cc-cert-sig-block { text-align: center; }
+.cc-cert-sig { font-size: 22px; font-style: italic; color: rgba(255, 255, 255, 0.85); margin-bottom: 4px; }
+.cc-cert-sig-lbl { font-size: 11px; color: rgba(255, 255, 255, 0.35); }
+.cc-cert-meta-block { text-align: right; }
+.cc-cert-date-val { font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, 0.8); }
+.cc-cert-id-val { font-size: 10px; font-family: monospace; color: rgba(255, 255, 255, 0.3); margin-top: 4px; }
+.cc-cert-xp-badge { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 24px; font-size: 15px; font-weight: 700; margin-bottom: 32px; }
+
+@media (max-width: 860px) {
+  .cc-cert-inner { padding: 36px 28px; }
+  .cc-cert-logo-row { margin-bottom: 32px; }
+  .cc-cert-title { margin-bottom: 22px; }
+  .cc-cert-statement { margin-bottom: 32px; }
 }

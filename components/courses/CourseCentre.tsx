@@ -474,16 +474,18 @@ export function CourseCentre() {
                           onClick={() => openCourse(c.id)}
                         >
                           <span className="cc-pill-dot" style={{ background: c.color }} />
-                          <span className="cc-pill-name">{c.title}</span>
-                          <span className="cc-pill-xp">
-                            {earned}/{c.total_xp} XP
+                          <span className="cc-pill-name">
+                            <span style={{ display: "flex", justifyContent: "space-between" }}>
+                              <span>{c.title}</span>
+                              <span className="cc-pill-xp">{pct}%</span>
+                            </span>
+                            <div className="cc-pill-bar">
+                              <div
+                                className="cc-pill-barf"
+                                style={{ width: `${pct}%`, background: c.color }}
+                              />
+                            </div>
                           </span>
-                          <div className="cc-pill-bar">
-                            <div
-                              className="cc-pill-barf"
-                              style={{ width: `${pct}%`, background: c.color }}
-                            />
-                          </div>
                         </button>
                       );
                     })}
@@ -539,34 +541,30 @@ export function CourseCentre() {
                   <div
                     className="cc-banner"
                     style={{
-                      background: `linear-gradient(160deg, ${c.bg} 0%, ${hexToRgba(c.color, 0.28)} 100%)`,
+                      background: `linear-gradient(135deg, ${hexToRgba(c.color, 0.13)} 0%, ${hexToRgba(c.color, 0.04)} 100%)`,
                     }}
                   >
                     <div className="cc-bg" />
-                    <div className="cc-ov" />
-                    <div className="cc-icon-big">{c.icon}</div>
-                    <div className="cc-n-big cc-serif">{String(i + 1).padStart(2, "0")}</div>
-                    <div className="cc-banner-row">
-                      <span
-                        className="cc-lv"
-                        style={{
-                          background: hexToRgba(c.color, 0.18),
-                          color: c.color,
-                          border: `1px solid ${hexToRgba(c.color, 0.35)}`,
-                        }}
-                      >
-                        {c.level}
-                      </span>
-                      <div className="cc-badges">
-                        <span className="cc-badge">⏱ {c.duration}</span>
-                        <span className="cc-badge">📚 {c.lessons_count} lessons</span>
-                        {done && (
-                          <span className="cc-badge" style={{ color: "#4ADE80" }}>
-                            ✓ Complete
-                          </span>
-                        )}
-                      </div>
+                    <div className="cc-n-big cc-serif" style={{ fontSize: 46, fontWeight: 700, color: "rgba(255,255,255,.1)", position: "absolute", bottom: -4, left: 16, lineHeight: 1 }}>
+                      {String(i + 1).padStart(2, "0")}
                     </div>
+                    <span
+                      className="cc-lv"
+                      style={{
+                        background: hexToRgba(c.color, 0.18),
+                        color: c.color,
+                        border: `1px solid ${hexToRgba(c.color, 0.35)}`,
+                        position: "relative",
+                        zIndex: 1,
+                      }}
+                    >
+                      {c.level}
+                    </span>
+                    {done && (
+                      <span className="cc-badge" style={{ color: "#4ADE80", position: "relative", zIndex: 1 }}>
+                        ✓ Complete
+                      </span>
+                    )}
                   </div>
                   <div className="cc-body">
                     <div className="cc-cat" style={{ color: c.color }}>
@@ -590,9 +588,9 @@ export function CourseCentre() {
                       <div className="cc-prog-f" style={{ width: `${pct}%`, background: c.color }} />
                     </div>
                     <div className="cc-foot">
-                      <span className="cc-out">📋 {c.outcomes.length} learning outcomes</span>
+                      <span className="cc-out">⏱ {c.duration} · 📚 {c.lessons_count} lessons</span>
                       <span className="cc-cta" style={{ background: c.color, color: c.bg }}>
-                        {pct === 0 ? "Start Course ▶" : "Continue →"}
+                        {pct === 0 ? "Start ▶" : "Continue →"}
                       </span>
                     </div>
                   </div>
@@ -610,6 +608,9 @@ export function CourseCentre() {
     const c = activeCourse;
     if (!c) return null;
     const earned = courseXp(lxp, c.id);
+    const pct = Math.min(100, Math.round((earned / c.total_xp) * 100));
+    const complete = isCourseComplete(lxp, c);
+    const statusLabel = complete ? "Completed" : earned > 0 ? "In progress" : "Not started";
     return (
       <div className="cc-view" style={{ ["--cc" as string]: c.color }}>
         <div
@@ -660,34 +661,27 @@ export function CourseCentre() {
         <div className="cc-curriculum">
           <div>{c.modules.map((m) => renderModuleBlock(c, m))}</div>
           <div>
-            <div className="cc-start-card">
-              <div className="cc-sc-title cc-serif">
-                {earned > 0 ? "Continue Learning" : "Ready to begin?"}
+            <div className="cc-cvs-card">
+              <div className="cc-cvs-label">Your Progress</div>
+              <div className="cc-cvs-stat">
+                <span>Status</span>
+                <span className="cc-cvs-stat-val">{statusLabel}</span>
               </div>
-              <div className="cc-sc-sub">
-                {earned > 0
-                  ? `You have earned ${earned} XP so far.`
-                  : `${c.lessons_count} lessons · ${c.duration}`}
+              <div className="cc-cvs-stat">
+                <span>Earned XP</span>
+                <span className="cc-cvs-stat-val">{earned} / {c.total_xp} XP</span>
               </div>
-              <div className="cc-sc-xp-row">
-                <div>
-                  <div className="cc-sc-xp-lbl">Total XP available</div>
-                  <div className="cc-sc-xp-val cc-serif">
-                    {c.total_xp}
-                    <span style={{ fontSize: 14, color: "rgba(255,255,255,.4)" }}> XP</span>
-                  </div>
-                </div>
-                <div>
-                  <div className="cc-sc-xp-lbl">Your earned XP</div>
-                  <div className="cc-sc-xp-val cc-serif">
-                    {earned}
-                    <span style={{ fontSize: 14, color: "var(--gold)" }}> XP</span>
-                  </div>
-                </div>
+              <div className="cc-cvs-stat">
+                <span>Completion</span>
+                <span className="cc-cvs-stat-val">{pct}%</span>
+              </div>
+              <div className="cc-cvs-stat">
+                <span>Duration</span>
+                <span className="cc-cvs-stat-val">{c.duration}</span>
               </div>
               <button
                 type="button"
-                className="cc-btn-start"
+                className="cc-cvs-cta"
                 style={{ background: c.color, color: c.bg }}
                 onClick={() => {
                   const next = nextLessonForCourse(lxp, c);
@@ -696,6 +690,15 @@ export function CourseCentre() {
               >
                 {earned > 0 ? "Continue Course →" : "Start Course →"}
               </button>
+              {complete && (
+                <button
+                  type="button"
+                  className="cc-cvs-cert-btn"
+                  onClick={() => { setView("certificate"); scrollTop(); }}
+                >
+                  🎓 View Certificate
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -1269,10 +1272,6 @@ export function CourseCentre() {
     const c = result?.course ?? activeCourse;
     if (!c) return null;
     const earned = courseXp(lxp, c.id);
-    const initials = c.title
-      .split(" ")
-      .map((w) => w[0])
-      .join("");
     const dateStr = new Date().toLocaleDateString("en-GB", {
       day: "numeric",
       month: "long",
@@ -1283,54 +1282,6 @@ export function CourseCentre() {
     return (
       <div className="cc-view">
         <div className="cc-cert-outer">
-          <div className="cc-cert-card">
-            <div
-              className="cc-cert-top-bar"
-              style={{ background: `linear-gradient(90deg, ${c.color}, ${c.color2}, ${c.color})` }}
-            />
-            <div className="cc-cert-wm cc-serif">{initials}</div>
-            <div className="cc-cert-logo cc-serif">Rewardology Academy</div>
-            <div className="cc-cert-tag">Certificate of Completion</div>
-            <div className="cc-cert-of">This certifies that</div>
-            <div className="cc-cert-name-lbl">Learner</div>
-            <div className="cc-cert-name cc-serif">{displayName}</div>
-            <div className="cc-cert-date">Completed {dateStr}</div>
-            <div className="cc-cert-of">has successfully completed</div>
-            <div className="cc-cert-ttl cc-serif">{c.title}</div>
-            <div className="cc-cert-sub cc-serif">{c.subtitle}</div>
-            <div
-              className="cc-cert-div"
-              style={{ background: `linear-gradient(90deg, transparent, ${c.color}, transparent)` }}
-            />
-            <div
-              className="cc-cert-xp"
-              style={{
-                background: hexToRgba(c.color, 0.12),
-                border: `1px solid ${hexToRgba(c.color, 0.3)}`,
-                color: c.color,
-              }}
-            >
-              ⚡ {earned} XP Earned
-            </div>
-            <div className="cc-cert-skills">
-              {c.outcomes.map((o) => (
-                <span key={o} className="cc-cert-skill">
-                  {o.split(" ").slice(0, 4).join(" ")}…
-                </span>
-              ))}
-            </div>
-            <div className="cc-cert-footer">
-              <div>
-                <div className="cc-cert-sig-name cc-serif">Rewardology Academy</div>
-                <div className="cc-cert-sig-title">Total Rewards Learning Platform</div>
-              </div>
-              <div className="cc-cert-id">
-                Certificate ID
-                <br />
-                {certId}
-              </div>
-            </div>
-          </div>
           <div className="cc-cert-actions">
             <button type="button" className="cc-btn-qr cc-btn-qr-ghost" onClick={goLobby}>
               ← All Courses
@@ -1344,6 +1295,55 @@ export function CourseCentre() {
               ⬇ Save Certificate
             </button>
           </div>
+
+          <div className="cc-cert-card">
+            <div className="cc-cert-inner-border" />
+            <div
+              className="cc-cert-top-bar"
+              style={{ background: `linear-gradient(90deg, var(--teal), ${c.color}, var(--teal))` }}
+            />
+            <div className="cc-cert-inner">
+              <div className="cc-cert-logo-row">
+                <div className="cc-cert-mark">R</div>
+                <span className="cc-cert-brand cc-serif">Rewardology Academy</span>
+              </div>
+
+              <div className="cc-cert-eyebrow">Certificate of Completion</div>
+              <div className="cc-cert-title cc-serif">This certificate is awarded to</div>
+
+              <div className="cc-cert-to">LEARNER</div>
+              <div className="cc-cert-name cc-serif">{displayName}</div>
+
+              <p className="cc-cert-statement">
+                who has successfully completed{" "}
+                <strong>{c.title}</strong> — {c.subtitle} — demonstrating
+                mastery of the core concepts and practitioner skills in Total Rewards.
+              </p>
+
+              <div
+                className="cc-cert-xp-badge"
+                style={{
+                  background: hexToRgba(c.color, 0.12),
+                  border: `1px solid ${hexToRgba(c.color, 0.35)}`,
+                  color: c.color,
+                }}
+              >
+                ⚡ {earned} XP Earned
+              </div>
+
+              <div className="cc-cert-footer">
+                <div className="cc-cert-sig-block">
+                  <div className="cc-cert-sig cc-serif">Rewardology Academy</div>
+                  <div className="cc-cert-sig-lbl">Total Rewards Learning Platform</div>
+                </div>
+                <div className="cc-cert-meta-block">
+                  <div className="cc-cert-date-val">{dateStr}</div>
+                  <div className="cc-cert-id-val">{certId}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <TestimonialPrompt
             enabled={Boolean(result?.courseComplete)}
             sourceType="course"
