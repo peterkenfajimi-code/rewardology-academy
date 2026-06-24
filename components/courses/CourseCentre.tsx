@@ -878,21 +878,28 @@ export function CourseCentre() {
               {(l.body ?? []).map((b, bi) => {
                 if (b.t === "intro")
                   return (
-                    <div key={bi} className="cc-lc-intro cc-serif" style={{ ["--cc" as string]: m.color }}>
-                      {b.v as string}
-                    </div>
+                    <div
+                      key={bi}
+                      className="cc-lc-intro cc-serif"
+                      style={{ ["--cc" as string]: m.color }}
+                      dangerouslySetInnerHTML={{ __html: b.v as string }}
+                    />
                   );
                 if (b.t === "h")
                   return (
-                    <h2 key={bi} className="cc-lc-h cc-serif">
-                      {b.v as string}
-                    </h2>
+                    <h2
+                      key={bi}
+                      className="cc-lc-h cc-serif"
+                      dangerouslySetInnerHTML={{ __html: b.v as string }}
+                    />
                   );
                 if (b.t === "p")
                   return (
-                    <p key={bi} className="cc-lc-p">
-                      {b.v as string}
-                    </p>
+                    <p
+                      key={bi}
+                      className="cc-lc-p"
+                      dangerouslySetInnerHTML={{ __html: b.v as string }}
+                    />
                   );
                 if (b.t === "box")
                   return (
@@ -904,7 +911,7 @@ export function CourseCentre() {
                       <div className="cc-lc-box-lbl" style={{ color: m.color }}>
                         {b.label}
                       </div>
-                      {b.v as string}
+                      <div dangerouslySetInnerHTML={{ __html: b.v as string }} />
                     </div>
                   );
                 if (b.t === "scenario")
@@ -914,14 +921,20 @@ export function CourseCentre() {
                         📋 {b.label ?? (b.org ? `Scenario · ${b.org}` : "Scenario")}
                       </div>
                       <div className="cc-lc-sc-ttl cc-serif">{b.title}</div>
-                      <div className="cc-lc-sc-text">{b.v as string}</div>
+                      <div
+                        className="cc-lc-sc-text"
+                        dangerouslySetInnerHTML={{ __html: b.v as string }}
+                      />
                     </div>
                   );
                 if (b.t === "quiz_intro")
                   return (
-                    <div key={bi} className="cc-lc-intro cc-serif" style={{ ["--cc" as string]: m.color }}>
-                      {b.v as string}
-                    </div>
+                    <div
+                      key={bi}
+                      className="cc-lc-intro cc-serif"
+                      style={{ ["--cc" as string]: m.color }}
+                      dangerouslySetInnerHTML={{ __html: b.v as string }}
+                    />
                   );
                 if (b.t === "takeaways")
                   return (
@@ -961,9 +974,8 @@ export function CourseCentre() {
                         <div
                           className="cc-lc-reveal-body"
                           style={{ borderColor: hexToRgba(m.color, 0.3), background: hexToRgba(m.color, 0.06) }}
-                        >
-                          {b.v as string}
-                        </div>
+                          dangerouslySetInnerHTML={{ __html: b.v as string }}
+                        />
                       )}
                     </div>
                   );
