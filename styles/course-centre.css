@@ -105,19 +105,34 @@
 .cc-lv { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; }
 .cc-badges { display: flex; gap: 7px; flex-wrap: wrap; justify-content: flex-end; }
 .cc-badge { font-size: 11px; color: rgba(255, 255, 255, 0.6); background: rgba(255, 255, 255, 0.1); padding: 4px 10px; border-radius: 10px; }
-.cc-body { padding: 22px 24px 24px; }
-.cc-cat { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
-.cc-card-title { font-size: 24px; font-weight: 700; line-height: 1.2; margin-bottom: 9px; }
-.cc-desc-txt { font-size: 13.5px; color: rgba(255, 255, 255, 0.45); line-height: 1.65; margin-bottom: 18px; }
+.cc-body { padding: 18px 20px 20px; }
+.cc-card-title { font-size: 19px; font-weight: 700; line-height: 1.25; margin-bottom: 7px; }
+.cc-desc-txt { font-size: 13px; color: rgba(255, 255, 255, 0.45); line-height: 1.6; margin-bottom: 16px; }
 .cc-prog-l { display: flex; justify-content: space-between; font-size: 11px; color: rgba(255, 255, 255, 0.4); margin-bottom: 5px; }
-.cc-prog-bar { height: 3px; background: rgba(255, 255, 255, 0.1); border-radius: 2px; overflow: hidden; }
+.cc-prog-bar { height: 4px; background: rgba(255, 255, 255, 0.1); border-radius: 2px; overflow: hidden; }
 .cc-prog-f { height: 100%; border-radius: 2px; transition: width 0.7s var(--ease); }
-.cc-foot { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.07); margin-top: 16px; }
-.cc-out { font-size: 12px; color: rgba(255, 255, 255, 0.35); }
-.cc-cta { font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 8px; border: none; cursor: pointer; transition: all 0.2s var(--ease); font-family: inherit; }
-.cc-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); }
+.cc-foot { display: flex; align-items: center; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.07); margin-top: 12px; }
+.cc-out { font-size: 11px; color: rgba(255, 255, 255, 0.35); display: flex; gap: 10px; }
+.cc-xp-val { font-size: 12px; font-weight: 700; margin-left: auto; }
+.cc-cert-done { font-size: 11px; color: #4ade80; display: flex; align-items: center; gap: 4px; margin-left: auto; }
 
 /* ════════ OVERVIEW ════════ */
+/* New single-layout overview (matches HTML prototype cv-layout) */
+.cc-cv-layout { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 300px; gap: 32px; padding: 40px 40px 80px; align-items: start; }
+.cc-cv-hero { background: linear-gradient(135deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; margin-bottom: 28px; }
+.cc-cvh-top { padding: 32px 36px 28px; position: relative; overflow: hidden; }
+.cc-cvh-mesh { position: absolute; inset: 0; opacity: .5; pointer-events: none; }
+.cc-cvh-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--cc); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; position: relative; }
+.cc-cvh-eyebrow::before { content: ""; width: 20px; height: 1px; background: var(--cc); }
+.cc-cvh-title { font-size: clamp(22px, 3vw, 36px); font-weight: 700; line-height: 1.05; margin-bottom: 10px; position: relative; }
+.cc-cvh-sub { font-size: 14px; color: rgba(255,255,255,.55); line-height: 1.6; margin-bottom: 24px; position: relative; }
+.cc-cvh-info { display: flex; gap: 20px; flex-wrap: wrap; position: relative; }
+.cc-cvh-badge { display: flex; align-items: center; gap: 6px; font-size: 13px; color: rgba(255,255,255,.55); }
+.cc-cvh-body { padding: 0 36px 28px; }
+.cc-cv-out-lbl { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 14px; }
+.cc-cv-out-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: rgba(255,255,255,.65); line-height: 1.5; margin-bottom: 10px; }
+.cc-cv-out-item:last-child { margin-bottom: 0; }
+
 .cc-ov-hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--rule); }
 .cc-ov-inner { max-width: 1200px; margin: 0 auto; padding: 56px 40px 48px; display: grid; grid-template-columns: 1fr 340px; gap: 56px; align-items: start; }
 .cc-back { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: rgba(255, 255, 255, 0.4); background: none; border: none; font-family: inherit; cursor: pointer; margin-bottom: 24px; transition: color 0.15s; }
@@ -327,7 +342,7 @@
 .cc-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
 @media (max-width: 1024px) {
-  .cc-lh-inner, .cc-ov-inner, .cc-curriculum { grid-template-columns: 1fr; }
+  .cc-lh-inner, .cc-ov-inner, .cc-curriculum, .cc-cv-layout { grid-template-columns: 1fr; }
   .cc-courses-grid { grid-template-columns: 1fr; }
   .cc-les-layout { grid-template-columns: 1fr; }
   .cc-les-sb { display: none; }

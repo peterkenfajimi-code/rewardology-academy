@@ -567,31 +567,25 @@ export function CourseCentre() {
                     )}
                   </div>
                   <div className="cc-body">
-                    <div className="cc-cat" style={{ color: c.color }}>
-                      {c.title}
-                    </div>
-                    <div className="cc-card-title cc-serif">{c.subtitle ?? c.desc.slice(0, 60)}</div>
-                    <SourceRatingBadge
-                      rating={getSourceRating(sourceRatings, "course", c.id)}
-                      accentColor={c.color}
-                    />
-                    <div className="cc-desc-txt">{c.desc}</div>
+                    <div className="cc-card-title cc-serif">{c.title}</div>
+                    <div className="cc-desc-txt">{c.subtitle}</div>
                     <div className="cc-prog-l">
-                      <span>
-                        {pct === 0 ? "Not started" : pct === 100 ? "Completed" : `${pct}% complete`}
-                      </span>
-                      <span>
-                        {earned} / {c.total_xp} XP
-                      </span>
+                      <span>Progress</span>
+                      <span>{pct}%</span>
                     </div>
                     <div className="cc-prog-bar">
                       <div className="cc-prog-f" style={{ width: `${pct}%`, background: c.color }} />
                     </div>
                     <div className="cc-foot">
-                      <span className="cc-out">⏱ {c.duration} · 📚 {c.lessons_count} lessons</span>
-                      <span className="cc-cta" style={{ background: c.color, color: c.bg }}>
-                        {pct === 0 ? "Start ▶" : "Continue →"}
+                      <span className="cc-out">
+                        <span>⏱ {c.duration}</span>
+                        <span>📚 {c.lessons_count} lessons</span>
                       </span>
+                      {done ? (
+                        <span className="cc-cert-done">✓ Certificate ready</span>
+                      ) : (
+                        <span className="cc-xp-val" style={{ color: c.color }}>⚡ {c.total_xp} XP</span>
+                      )}
                     </div>
                   </div>
                 </button>
@@ -613,53 +607,49 @@ export function CourseCentre() {
     const statusLabel = complete ? "Completed" : earned > 0 ? "In progress" : "Not started";
     return (
       <div className="cc-view" style={{ ["--cc" as string]: c.color }}>
-        <div
-          className="cc-ov-hero"
-          style={{ background: `linear-gradient(160deg, ${c.bg} 0%, ${hexToRgba(c.color, 0.1)} 100%)` }}
-        >
-          <div className="cc-ov-inner">
-            <div>
-              <button type="button" className="cc-back" onClick={goLobby}>
-                ← All Courses
-              </button>
-              <div className="cc-ov-ey">
-                <span style={{ color: c.color }}>Course {c.id}</span> · {c.level}
-              </div>
-              <h1 className="cc-ov-title cc-serif">{c.title}</h1>
-              <p className="cc-ov-sub cc-serif">{c.subtitle}</p>
-              <div className="cc-ov-badges">
-                {[`⏱ ${c.duration}`, `📚 ${c.lessons_count} lessons`, `⚡ ${c.total_xp} XP`].map(
-                  (b) => (
-                    <span
-                      key={b}
-                      className="cc-ov-badge"
-                      style={{
-                        color: c.color,
-                        borderColor: hexToRgba(c.color, 0.35),
-                        background: hexToRgba(c.color, 0.1),
-                      }}
-                    >
-                      {b}
-                    </span>
-                  )
-                )}
-              </div>
-              <p className="cc-ov-desc">{c.desc}</p>
-            </div>
-            <div className="cc-ov-outcomes">
-              <div className="cc-ov-out-title">What you&apos;ll learn</div>
-              {c.outcomes.map((o) => (
-                <div key={o} className="cc-ov-out-item">
-                  <span style={{ color: c.color, flexShrink: 0, marginTop: 1 }}>✓</span>
-                  <span>{o}</span>
+        <div className="cc-cv-layout">
+          {/* ── Left column ── */}
+          <div>
+            {/* Hero card */}
+            <div className="cc-cv-hero">
+              <div
+                className="cc-cvh-top"
+                style={{ background: `linear-gradient(135deg, ${hexToRgba(c.color, 0.15)}, rgba(7,25,46,0.3))` }}
+              >
+                <div className="cc-cvh-mesh"
+                  style={{ background: `radial-gradient(ellipse 60% 50% at 70% 30%, ${hexToRgba(c.color, 0.22)}, transparent)` }}
+                />
+                <button type="button" className="cc-back" style={{ marginBottom: 16, position: "relative" }} onClick={goLobby}>
+                  ← All Courses
+                </button>
+                <div className="cc-cvh-eyebrow" style={{ color: c.color }}>
+                  Course {c.id}
                 </div>
-              ))}
+                <h1 className="cc-cvh-title cc-serif">{c.title}</h1>
+                <p className="cc-cvh-sub">{c.subtitle}</p>
+                <div className="cc-cvh-info">
+                  <span className="cc-cvh-badge">🎓 {c.level}</span>
+                  <span className="cc-cvh-badge">⏱ {c.duration}</span>
+                  <span className="cc-cvh-badge">📚 {c.lessons_count} lessons</span>
+                  <span className="cc-cvh-badge" style={{ color: c.color }}>⚡ {c.total_xp} XP</span>
+                </div>
+              </div>
+              <div className="cc-cvh-body">
+                <div className="cc-cv-out-lbl">What you&apos;ll learn</div>
+                {c.outcomes.map((o) => (
+                  <div key={o} className="cc-cv-out-item">
+                    <span style={{ color: c.color, flexShrink: 0, marginTop: 2 }}>✓</span>
+                    <span>{o}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div className="cc-curriculum">
-          <div>{c.modules.map((m) => renderModuleBlock(c, m))}</div>
+            {/* Module accordion */}
+            {c.modules.map((m) => renderModuleBlock(c, m))}
+          </div>
+
+          {/* ── Right column (sidebar) ── */}
           <div>
             <div className="cc-cvs-card">
               <div className="cc-cvs-label">Your Progress</div>
@@ -688,7 +678,7 @@ export function CourseCentre() {
                   if (next) startLesson(c.id, next.lesson, next.mod);
                 }}
               >
-                {earned > 0 ? "Continue Course →" : "Start Course →"}
+                {earned > 0 ? "Continue →" : "Start Course →"}
               </button>
               {complete && (
                 <button
@@ -700,6 +690,10 @@ export function CourseCentre() {
                 </button>
               )}
             </div>
+            <SourceRatingBadge
+              rating={getSourceRating(sourceRatings, "course", c.id)}
+              accentColor={c.color}
+            />
           </div>
         </div>
       </div>
