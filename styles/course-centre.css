@@ -218,6 +218,22 @@
 .cc-lc-tk-item { display: flex; align-items: flex-start; gap: 11px; font-size: 14px; line-height: 1.6; margin-bottom: 11px; color: rgba(255, 255, 255, 0.72); }
 .cc-lc-tk-item:last-child { margin-bottom: 0; }
 
+/* reveal block */
+.cc-lc-reveal { margin-top: 22px; }
+.cc-lc-reveal-btn {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  width: 100%; padding: 13px 20px; border-radius: 10px; border: 1px solid;
+  background: transparent; cursor: pointer; font-size: 14px; font-weight: 600;
+  letter-spacing: 0.01em; transition: background 0.18s, opacity 0.18s; text-align: left;
+}
+.cc-lc-reveal-btn:hover { background: rgba(255, 255, 255, 0.05); }
+.cc-lc-reveal-ico { font-size: 10px; flex-shrink: 0; opacity: 0.7; }
+.cc-lc-reveal-body {
+  margin-top: 2px; padding: 18px 22px; border-radius: 0 0 10px 10px;
+  border: 1px solid; border-top: none; font-size: 14.5px; line-height: 1.75;
+  color: rgba(255, 255, 255, 0.82);
+}
+
 /* knowledge check */
 .cc-kc { margin-top: 44px; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; }
 .cc-kc-hd { padding: 18px 26px; border-bottom: 1px solid var(--rule); display: flex; align-items: center; gap: 10px; }

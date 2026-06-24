@@ -91,6 +91,7 @@ export function CourseCentre() {
 
   const [confetti, setConfetti] = useState<React.CSSProperties[]>([]);
   const [toast, setToast] = useState<string | null>(null);
+  const [revealOpen, setRevealOpen] = useState<Record<string, boolean>>({});
   const [searchQuery, setSearchQuery] = useState("");
   const [levelFilter, setLevelFilter] = useState("All");
 
@@ -940,6 +941,33 @@ export function CourseCentre() {
                       ))}
                     </div>
                   );
+                if (b.t === "reveal") {
+                  const rKey = `${l.id}-${bi}`;
+                  const open = !!revealOpen[rKey];
+                  return (
+                    <div key={bi} className="cc-lc-reveal">
+                      <button
+                        type="button"
+                        className={`cc-lc-reveal-btn${open ? " open" : ""}`}
+                        style={{ borderColor: m.color, color: m.color }}
+                        onClick={() =>
+                          setRevealOpen((prev) => ({ ...prev, [rKey]: !prev[rKey] }))
+                        }
+                      >
+                        <span>{open ? "Hide" : (b.label ?? "See the answer")}</span>
+                        <span className="cc-lc-reveal-ico">{open ? "▲" : "▼"}</span>
+                      </button>
+                      {open && (
+                        <div
+                          className="cc-lc-reveal-body"
+                          style={{ borderColor: hexToRgba(m.color, 0.3), background: hexToRgba(m.color, 0.06) }}
+                        >
+                          {b.v as string}
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
                 return null;
               })}
 

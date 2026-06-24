@@ -22,6 +22,9 @@ export function lessonPlainText(lesson: CourseLesson): string {
       if (list.length) parts.push("Key takeaways.", ...list);
     } else if (b.t === "quiz_intro" && typeof b.v === "string") {
       parts.push(b.v);
+    } else if (b.t === "reveal" && typeof b.v === "string") {
+      if (b.label) parts.push(b.label);
+      parts.push(b.v);
     }
   }
   if (lesson.quiz) {

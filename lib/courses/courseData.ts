@@ -1,5 +1,5 @@
 ﻿export type CourseBlock = {
-  t: "intro" | "h" | "p" | "box" | "scenario" | "takeaways" | "quiz_intro";
+  t: "intro" | "h" | "p" | "box" | "scenario" | "takeaways" | "quiz_intro" | "reveal";
   v?: string | string[];
   label?: string;
   title?: string;
@@ -187,7 +187,8 @@ export const COURSES: Course[] =
                                                                  "v":  "1–2: Actively driving attrition\n3: Adequate, not a differentiator\n4–5: A genuine strength employees would cite unprompted"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the model scoring",
                                                                  "v":  "\u003cstrong\u003eCompensation: 4/5.\u003c/strong\u003e Paying above median removes pay as a credible complaint — exit interviews confirm this directly (‘pay is fine’).\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eBenefits: Unscored — no data given.\u003c/strong\u003e This is itself a finding: if benefits were a problem, exit interviews would likely mention it. Absence of a signal isn\u0027t proof of strength, just lower priority for this diagnosis.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eWellbeing: 2/5.\u003c/strong\u003e ‘Unsustainable workload during close periods’ is a wellbeing red flag hiding inside what looks like an operations issue.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eRecognition: 2/5.\u003c/strong\u003e A direct, frequent complaint about managers not acknowledging good work — this is acute, not background noise.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eCareer Development: 1/5.\u003c/strong\u003e The single most-cited theme. This is the dominant driver of the 28% turnover figure."
                                                              },
                                                              {
@@ -216,7 +217,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Score Solaris Financial yourself before revealing the model scoring. Pay close attention to the gap between the turnover figure and the engagement figure — it\u0027s the most important clue in this profile."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the model scoring for Solaris Financial",
                                                                  "v":  "\u003cstrong\u003eCompensation: 2/5.\u003c/strong\u003e Below-median positioning, and the dominant reason people who do leave give is finding a better offer — a direct, repeated pay signal.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eThe key insight is the gap between turnover and engagement.\u003c/strong\u003e Low turnover (14%) alongside low engagement (+6 eNPS) is a classic sign of \u003cem\u003edisengaged retention\u003c/em\u003e — people who aren\u0027t actively looking but aren\u0027t genuinely committed either. The stay-interview comment (\u0027I\u0027d leave if something better came along\u0027) confirms this directly. A company can look healthy on a turnover dashboard while quietly accumulating exactly the kind of flight risk that shows up the moment the labour market loosens or a competitor starts hiring aggressively.\u003cbr\u003e\u003cbr\u003eThis is why turnover alone is a lagging, sometimes misleading metric — engagement data caught a risk that the headline retention number was actively hiding."
                                                              },
                                                              {
@@ -261,7 +263,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before reading further: if you were advising Nova Tech\u0027s CHRO, what would you investigate first, and why?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See how an experienced practitioner would approach this",
                                                                  "v":  "The 4% counter-offer detail is the single most important data point here. If pay were the real driver, you\u0027d expect senior engineers to be chasing 15–25% pay jumps elsewhere — that\u0027s the typical gap needed to justify the disruption of leaving a stable role. A 4% gap accepted as ‘good enough to leave for’ tells you the job itself, not the paycheck, is what\u0027s pushing them out the door."
                                                              },
                                                              {
@@ -273,7 +276,8 @@ export const COURSES: Course[] =
                                                                  "v":  "The exit survey shows two related but distinct complaints: lack of a growth path, and managers who don\u0027t understand the work deeply enough to develop people. Which would you tackle first, and why?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Manager capability is usually the faster, higher-leverage fix. A formal technical career ladder takes months to design and calibrate fairly. Training senior managers — many promoted for technical skill, not people development — to run substantive growth conversations can start within weeks and directly addresses the second complaint while a longer-term ladder is built."
                                                              },
                                                              {
@@ -285,7 +289,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Nova Tech\u0027s CFO proposes a blanket 10% raise for all senior engineers as a quick retention fix. What\u0027s your honest assessment of this proposal?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "It would likely buy a few months of goodwill but wouldn\u0027t resolve the underlying issue — and it sets a precedent that future retention problems get solved with cash, which is the most expensive lever available and the one Nova Tech has the least flexibility to keep pulling. The data suggests this money would be better spent building the technical ladder and manager capability the exit surveys are actually pointing to."
                                                              },
                                                              {
@@ -297,7 +302,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Six months later, assume Nova Tech has built a technical ladder and trained managers. Senior turnover has dropped to 19%. What would you check next to confirm this was the actual cause, rather than coincidence?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Check whether exit survey themes among the remaining leavers have shifted — if ‘lack of growth path’ has dropped sharply as a cited reason while other themes (workload, pay, location) have become relatively more prominent, that\u0027s strong evidence the intervention worked. If the same themes persist among the smaller group still leaving, the drop in turnover may be coincidental — a hiring slowdown elsewhere in the market, for instance — and the underlying issue hasn\u0027t actually been fixed."
                                                              },
                                                              {
@@ -309,7 +315,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Nova Tech\u0027s VP of Engineering wants to roll the same technical-ladder-plus-manager-training fix out to the Product and Design teams, who have entirely different attrition patterns and exit themes. Is this a good idea?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Not without first running the same diagnostic on Product and Design specifically. The fix that worked for Engineering was correctly targeted because it was built from Engineering\u0027s specific data — the 4% counter-offer detail, the dominance of growth-path and manager-depth complaints. Applying the same solution to a different function, with potentially different drivers, repeats the exact mistake the case opened with: reaching for a familiar fix before diagnosing the actual problem. The right move is to run the Five Pillars Diagnostic on Product and Design\u0027s own data before assuming the same intervention applies."
                                                              },
                                                              {
@@ -516,7 +523,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before revealing the answer below, calculate Folake\u0027s Total Cash for the year using the profile above. Work through each component separately, then add them together."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the step-by-step calculation",
                                                                  "v":  "\u003cstrong\u003eStep 1 — Base pay:\u003c/strong\u003e $62,000 (fixed, unaffected by performance).\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eStep 2 — Annual bonus:\u003c/strong\u003e Target is 15% of base = $9,300. Paid at 110% of target = $9,300 × 1.10 = $10,230.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eStep 3 — Sales commission:\u003c/strong\u003e 2% of $340,000 = $6,800.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eStep 4 — Overtime:\u003c/strong\u003e $1,800, paid as-is.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eTotal Cash = $62,000 + $10,230 + $6,800 + $1,800 = $80,830.\u003c/strong\u003e\u003cbr\u003e\u003cbr\u003eNotice that variable pay (bonus + commission + overtime) made up $18,830 — over 23% of her Total Cash this year. In a weaker performance year, that same employee\u0027s Total Cash could fall well below $80,830, even with an identical base salary. This is exactly why base pay alone is a poor proxy for what someone actually earns."
                                                              },
                                                              {
@@ -545,7 +553,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Calculate Adeyemi\u0027s Total Cash for the year. Pay close attention to the quarterly bonus (it wasn\u0027t paid every quarter) and the commission threshold (it doesn\u0027t apply to the full $620,000)."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the step-by-step calculation",
                                                                  "v":  "\u003cstrong\u003eStep 1 — Base pay:\u003c/strong\u003e $74,000.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eStep 2 — Quarterly bonus:\u003c/strong\u003e 5% of $74,000 = $3,700 per quarter. Paid for 3 of 4 quarters = $3,700 × 3 = $11,100. (The missed Q2 target means this quarter contributes $0, not a quarter\u0027s worth of bonus.)\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eStep 3 — Commission:\u003c/strong\u003e The threshold means commission only applies to new business above $200,000. $620,000 − $200,000 = $420,000 commissionable. 1.5% of $420,000 = $6,300.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eStep 4 — Spot bonus:\u003c/strong\u003e $1,200, paid as a one-time amount.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eTotal Cash = $74,000 + $11,100 + $6,300 + $1,200 = $92,600.\u003c/strong\u003e\u003cbr\u003e\u003cbr\u003eThe most common error here is calculating commission on the full $620,000 instead of the $420,000 above threshold — a mistake that would overstate Total Cash by $3,300. Threshold structures like this are common precisely because they reward exceptional performance above a baseline, rather than paying commission on every dollar of business a senior salesperson would likely have closed anyway."
                                                              },
                                                              {
@@ -585,7 +594,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before reading on: what\u0027s the fundamental design flaw in the original plan, stated precisely?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "The plan measured only one dimension of performance — volume — with no countervailing guardrail for quality or profitability. Whenever an incentive plan rewards a single metric in isolation, people will optimise exactly that metric, even at the expense of outcomes the business actually cares about. This isn\u0027t a people problem; it\u0027s a plan design problem."
                                                              },
                                                              {
@@ -597,7 +607,8 @@ export const COURSES: Course[] =
                                                                  "v":  "The CEO insists volume must remain central to the new plan. Sketch a redesigned plan structure that keeps volume important but closes the gap that caused the defect problem."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See a model redesign",
                                                                  "v":  "A workable redesign ties payout to a \u003cem\u003ecombined\u003c/em\u003e metric rather than volume alone — for example: 60% of the incentive based on units shipped, 40% based on a quality gate (defect rate must stay below a defined threshold, e.g. 2%). Critically, the quality gate should function as a genuine gate, not just a weighting — if defect rate exceeds the threshold, the volume-based portion of the payout is capped or forfeited entirely, regardless of how high volume climbed. This preserves the incentive to ship more, while removing the incentive to ship more at any cost."
                                                              },
                                                              {
@@ -609,7 +620,8 @@ export const COURSES: Course[] =
                                                                  "v":  "A plant manager objects: “Defect rates aren\u0027t fully within my control — some of it comes from supplier material quality.” How would you respond to this, and does it change the design?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "This is a legitimate concern and worth taking seriously — incentive plans that punish people for outcomes outside their control breed resentment and game-playing, not genuine behaviour change. The fix isn\u0027t to drop the quality gate, but to separate defect causes: track defects by root cause (process-driven vs supplier-material-driven) and apply the gate only to the process-driven category the plant manager can actually influence. This keeps the guardrail meaningful while staying fair to what the manager genuinely controls."
                                                              },
                                                              {
@@ -621,7 +633,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Six months after the redesign, volume has grown 22% (lower than the original 40%, but still positive) and defect rates have fallen to 1.4%. Was the redesign a success?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Almost certainly yes — but the full answer requires comparing net outcomes, not just the headline volume number. The original plan\u0027s 40% volume growth came with tripled defect returns that pushed the plant into a net loss. A 22% volume increase with defect rates well under control is very likely a stronger financial outcome overall, even though the volume figure alone looks less impressive. This is the core lesson of incentive design: the metric you publish isn\u0027t always the metric that matters most to the business."
                                                              },
                                                              {
@@ -633,7 +646,8 @@ export const COURSES: Course[] =
                                                                  "v":  "A second plant in the same company, with a very different production process (lower defect risk by nature, but high variability in raw material costs), asks to adopt the exact same 60/40 volume-quality plan. Should they?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Probably not without adjustment. The volume-quality split worked at the first plant because quality (defect rate) was the specific failure mode the original plan created. A plant with low inherent defect risk but high material-cost variability has a different risk to guard against — a gate built around defect rate wouldn\u0027t meaningfully change behaviour there, because defects were never the problem. The redesign principle — pair the core metric with a guardrail against its most likely failure mode — transfers. The specific guardrail (defect rate) does not; it should be replaced with one suited to that plant\u0027s actual risk, such as a cost-per-unit ceiling."
                                                              },
                                                              {
@@ -840,7 +854,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before revealing a model allocation, decide how you would split the $340,000 across these five categories. There\u0027s no single correct split — but be ready to justify your reasoning against the survey data."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal a model allocation and rationale",
                                                                  "v":  "\u003cstrong\u003eMental health support — $130,000 (38%).\u003c/strong\u003e Highest-stated priority, and mental health support tends to have a high utilisation rate relative to cost, making it efficient spend as well as high-demand.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eEnhanced parental leave — $110,000 (32%).\u003c/strong\u003e Second-highest priority, and parental leave enhancements are a strong signal benefit — they shape employer brand and candidate decisions even among employees not currently planning to use them.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eStudent loan / education debt support — $75,000 (22%).\u003c/strong\u003e Strongly preferred by this young, early-tenure workforce; directly addresses the financial stress that a young workforce disproportionately reports.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eGym or wellness stipend — $15,000 (4%).\u003c/strong\u003e Lower stated priority; a modest allocation acknowledges the preference without overinvesting relative to demand.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eAdditional pension matching — $10,000 (3%).\u003c/strong\u003e Lowest stated priority for this demographic — unsurprising given median tenure of just over two years and an average age of 31, where retirement feels distant. A small allocation respects the preference without overweighting a benefit this workforce is telling you it values least right now."
                                                              },
                                                              {
@@ -869,7 +884,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Allocate the $210,000 across these five categories for this very different workforce, then compare your split to the model allocation below."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal a model allocation and rationale",
                                                                  "v":  "\u003cstrong\u003eAdditional pension matching — $95,000 (45%).\u003c/strong\u003e Highest-stated priority, and entirely consistent with an older, long-tenured workforce genuinely approaching retirement — unlike Driftwood, this isn\u0027t a low-impact category here.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eEnhanced health insurance for dependants — $80,000 (38%).\u003c/strong\u003e Second-highest priority; older employees are statistically more likely to have dependants with greater healthcare needs, making this a high-utilisation, high-value category.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eFlexible/reduced hours approaching retirement — $30,000 (14%).\u003c/strong\u003e A meaningful but lower-cost category — often implemented through policy and scheduling flexibility rather than large direct spend, so a modest budget allocation can still fund a credible programme.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eGym or wellness stipend — $5,000 (2%).\u003c/strong\u003e Low stated priority, modest allocation.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eStudent loan support — $0.\u003c/strong\u003e At only 6% stated interest in a workforce with a 9.3-year median tenure, this category is reasonably excluded entirely rather than given a token allocation — the budget is better concentrated where it will be both wanted and used.\u003cbr\u003e\u003cbr\u003eNotice how dramatically different this allocation is from the Driftwood split, despite using the same five-category structure — the workforce profile, not a generic template, should drive where the money goes."
                                                              },
                                                              {
@@ -915,7 +931,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Given this diagnostic, would you still recommend the $2.1M pay increase to the 65th percentile? Why or why not?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "The data argues strongly against leading with the pay increase. Only 12% of leavers cited pay as a factor, while recognition and burnout-related themes dominate at over 60% each. Spending $2.1M to move a benchmark that isn\u0027t the actual driver of attrition would be a significant misallocation — the diagnostic should redirect the budget conversation toward recognition systems and burnout mitigation instead."
                                                              },
                                                              {
@@ -927,7 +944,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Palora introduces a peer-to-peer recognition platform allowing any employee to publicly acknowledge a colleague\u0027s contribution in real time, alongside small monthly micro-bonuses tied to peer nominations. Annual cost: $180,000. After 12 months, turnover falls to 26%. Is this a strong result?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Yes — an 8-point drop in turnover at roughly 8.5% of the cost of the originally modelled pay increase is a strong outcome by almost any measure. It also validates the diagnostic: recognition, not pay, was the higher-leverage lever for this specific workforce at this specific moment. That said, turnover at 26% is still above the sector average, which suggests recognition addressed part of the problem but not all of it."
                                                              },
                                                              {
@@ -939,7 +957,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Given that burnout (58% of exit interviews) was the other major theme and hasn\u0027t yet been directly addressed, what would you recommend Palora investigate next?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Burnout in ICU and emergency departments is a wellbeing and resourcing problem more than a rewards-design problem in the narrow sense — it likely requires staffing ratio analysis, shift pattern review, and access to mental health support specifically tailored to high-acuity environments, rather than another reward mechanism. This is a useful reminder that the five pillars interact with operational decisions outside HR\u0027s direct control, and a Total Rewards strategy sometimes needs to flag issues for other functions to act on, not solve everything itself."
                                                              },
                                                              {
@@ -951,7 +970,8 @@ export const COURSES: Course[] =
                                                                  "v":  "A board member, impressed by the recognition platform\u0027s results, suggests scrapping the modelled $2.1M pay increase entirely and never revisiting compensation again. Is this the right conclusion to draw?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "No — this overcorrects in the opposite direction. The diagnostic showed pay wasn\u0027t the primary driver of attrition \u003cem\u003eat this specific moment, for this specific workforce\u003c/em\u003e. That\u0027s different from concluding compensation will never again be a relevant lever. Market pay positioning should still be reviewed periodically; if Palora\u0027s pay positioning were ever to genuinely fall behind the market, the same diagnostic approach would likely surface it as the dominant theme, the way it did at Almont Solutions in the capstone scenario later in this course. The discipline here isn\u0027t \u0027pay never matters\u0027 — it\u0027s \u0027let the data tell you which pillar matters most right now.\u0027"
                                                              },
                                                              {
@@ -1149,7 +1169,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Tunde sees his payslip and thinks of his pay as “about $58,000, plus a bit of bonus.” Calculate his actual Total Compensation using every line in the profile above, including a reasonable value for his annual leave (assume a 260-day working year for the daily rate calculation)."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the full calculation",
                                                                  "v":  "\u003cstrong\u003eBase salary:\u003c/strong\u003e $58,000\u003cbr\u003e\u003cstrong\u003eBonus:\u003c/strong\u003e $4,640\u003cbr\u003e\u003cstrong\u003ePension contribution:\u003c/strong\u003e 8% of $58,000 = $4,640\u003cbr\u003e\u003cstrong\u003eHealth insurance:\u003c/strong\u003e $6,200\u003cbr\u003e\u003cstrong\u003eLife insurance:\u003c/strong\u003e $340\u003cbr\u003e\u003cstrong\u003eAnnual leave value:\u003c/strong\u003e Daily rate = $58,000 ÷ 260 = $223.08. 24 days × $223.08 = $5,353.85\u003cbr\u003e\u003cstrong\u003eTraining investment:\u003c/strong\u003e $1,500\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eTotal Compensation = $58,000 + $4,640 + $4,640 + $6,200 + $340 + $5,353.85 + $1,500 = $80,673.85\u003c/strong\u003e\u003cbr\u003e\u003cbr\u003eTunde\u0027s actual Total Compensation is roughly 39% higher than the $58,000 base salary he mentally anchors on — and that\u0027s before counting any of the non-financial Total Rewards value like recognition or career development."
                                                              },
                                                              {
@@ -1178,7 +1199,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Calculate Grace\u0027s Total Compensation, treating the RSU vesting value as cash-equivalent for this calculation."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the full calculation",
                                                                  "v":  "\u003cstrong\u003eBase salary:\u003c/strong\u003e $112,000\u003cbr\u003e\u003cstrong\u003eBonus:\u003c/strong\u003e $16,800\u003cbr\u003e\u003cstrong\u003ePension contribution:\u003c/strong\u003e 10% of $112,000 = $11,200\u003cbr\u003e\u003cstrong\u003eHealth insurance:\u003c/strong\u003e $9,400\u003cbr\u003e\u003cstrong\u003eLife insurance:\u003c/strong\u003e $520\u003cbr\u003e\u003cstrong\u003eAnnual leave value:\u003c/strong\u003e Daily rate = $112,000 ÷ 260 = $430.77. 28 days × $430.77 = $12,061.54\u003cbr\u003e\u003cstrong\u003eRSU vesting value:\u003c/strong\u003e 2,000 × $14.50 = $29,000\u003cbr\u003e\u003cstrong\u003eTraining investment:\u003c/strong\u003e $3,200\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eTotal Compensation = $112,000 + $16,800 + $11,200 + $9,400 + $520 + $12,061.54 + $29,000 + $3,200 = $194,181.54\u003c/strong\u003e\u003cbr\u003e\u003cbr\u003eGrace\u0027s Total Compensation is roughly 73% higher than her base salary alone — a far larger gap than Tunde\u0027s 39%, driven almost entirely by the RSU vesting value. This is exactly why senior, equity-heavy roles benefit even more from a clear Total Reward Statement than junior cash-only roles: the larger and more complex the package, the larger the perception gap tends to be if it\u0027s never made visible."
                                                              },
                                                              {
@@ -1218,7 +1240,8 @@ export const COURSES: Course[] =
                                                                  "v":  "If both companies copied each other\u0027s Total Rewards strategy wholesale, what would likely go wrong for each?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "If Nova Tech adopted Solaris\u0027s stable, cash-heavy, low-equity approach, it would burn through scarce cash reserves it needs for growth, while losing the equity-based upside that\u0027s often the main reason ambitious people join an early-stage company in the first place. If Solaris adopted Nova Tech\u0027s equity-heavy, lower-cash approach, it would struggle to attract the risk-averse, stability-seeking talent that fits its mature, low-turnover culture — equity upside in a 12-year-old firm with no exit event on the horizon isn\u0027t a compelling pitch."
                                                              },
                                                              {
@@ -1230,7 +1253,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Nova Tech\u0027s board wants to introduce more market-rate cash compensation to compete for senior engineering talent against larger, well-funded competitors, while preserving its equity-heavy culture. What tension does this create, and how would you navigate it?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "The tension is cash runway versus competitiveness — every dollar shifted toward cash compensation is a dollar not extending the company\u0027s runway toward its next funding milestone. A common navigation path is targeted, not universal: raise cash compensation specifically for roles where the market gap versus well-funded competitors is largest and most retention-critical (often senior engineering), while holding the broader workforce\u0027s pay mix unchanged, preserving the equity-heavy approach where it still works."
                                                              },
                                                              {
@@ -1242,7 +1266,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Solaris is losing some younger employees to startups offering equity upside, despite its stability and strong cash compensation. Should Solaris introduce equity compensation to compete?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Probably not as a wholesale strategy shift. Introducing meaningful equity in a mature, profitable firm with no liquidity event on the horizon is a weak value proposition compared to an actual startup\u0027s equity story — the upside math simply doesn\u0027t work the same way. A more coherent response leans into what Solaris can genuinely offer that a startup can\u0027t: stability, defined career paths, and predictable cash compensation — while accepting that some employees who specifically want startup-style equity upside were never going to be a long-term fit for a mature firm\u0027s value proposition in the first place."
                                                              },
                                                              {
@@ -1254,7 +1279,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Five years from now, suppose Nova Tech has matured into a stable, profitable, publicly listed company much like Solaris is today. Should its Total Rewards strategy still look the same as it does now?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "No — and this is the central point of thinking about lifecycle stage at all. As Nova Tech matures, cash constraints ease, the urgency of equity-based upside as a recruiting tool diminishes (a public company\u0027s equity behaves very differently from an early-stage private grant), and the talent it needs to attract and retain shifts toward people who value the stability Nova Tech wouldn\u0027t have been able to credibly offer five years earlier. A Total Rewards strategy isn\u0027t a one-time design decision — it should be revisited as the business itself moves through different stages, which is exactly why Solaris\u0027s current strategy looks the way it does today, and why Nova Tech\u0027s current strategy shouldn\u0027t be expected to last forever unchanged."
                                                              },
                                                              {
@@ -1393,7 +1419,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Score Almont against each of the five pillars (1–5) using the profile above, exactly as you practised in Module 1, before revealing the model scoring."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the model scoring for Step 1",
                                                                  "v":  "\u003cstrong\u003eCompensation: 2/5.\u003c/strong\u003e The dominant, most-cited exit theme directly names pay falling behind the market — and three years without benchmarking makes this entirely plausible rather than just a perception problem.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eBenefits: 3/5.\u003c/strong\u003e The data suggests the benefits themselves aren\u0027t the core complaint — the complaint is about visibility and understanding, not the underlying value, which points toward a communication gap rather than a benefits design gap.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eWellbeing: Unscored.\u003c/strong\u003e No direct signal either way in this profile.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eRecognition: Unscored.\u003c/strong\u003e No direct signal either way in this profile.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eCareer Development: Unscored.\u003c/strong\u003e No direct signal either way in this profile — worth flagging as a genuine data gap to close before drawing firm conclusions, rather than assuming it\u0027s fine."
                                                              },
                                                              {
@@ -1405,7 +1432,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Two exit themes both relate to compensation and pay process: falling behind the market, and limited visibility into pay decisions. Are these the same underlying problem, or two distinct ones? What would you investigate to tell the difference?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the reasoning for Step 2",
                                                                  "v":  "These are related but genuinely distinct. ‘Falling behind the market’ is a market positioning and benchmarking problem — the actual pay levels may need to move. ‘Limited visibility into pay decisions’ is a governance and communication problem — even if pay were perfectly positioned, employees wouldn\u0027t know it without a clearer process and philosophy. The fact that Almont has neither benchmarked in three years nor written a philosophy statement means both problems are very likely present simultaneously, and fixing one without the other will leave a meaningful gap unaddressed."
                                                              },
                                                              {
@@ -1417,7 +1445,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Given limited budget and limited HR bandwidth, in what order would you tackle: (a) a market benchmarking exercise and pay adjustment, (b) writing a Total Rewards philosophy statement, (c) introducing Total Reward Statements? Justify your sequencing."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal a model sequencing and rationale",
                                                                  "v":  "\u003cstrong\u003e1. Market benchmarking exercise (immediately).\u003c/strong\u003e This produces the data needed to know how large the compensation gap actually is — without it, every other decision is a guess. It\u0027s also the most urgent issue, since it\u0027s the most-cited exit theme by a wide margin.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003e2. Write the philosophy statement (in parallel with, or immediately after, the benchmarking).\u003c/strong\u003e The benchmarking data is most useful once anchored to a clear philosophy — should Almont target market median, given its plateaued growth and profitability profile? The philosophy statement turns the raw benchmarking numbers into an actual pay decision framework.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003e3. Introduce Total Reward Statements (after the pay adjustment lands).\u003c/strong\u003e Communicating the full value of the package matters, but doing it before the compensation gap is addressed risks looking like a deflection — ‘look how much you actually get’ lands very differently once the most urgent, validated complaint has also been acted on."
                                                              },
                                                              {
@@ -1429,7 +1458,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Almont\u0027s leadership, eager to fix the problem quickly, proposes skipping the benchmarking step and immediately giving every employee a flat 10% increase. What would you say to this proposal?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the reasoning for Step 4",
                                                                  "v":  "A flat increase without benchmarking data risks two failure modes: overpaying roles that were never actually behind the market (wasting budget), and underpaying roles where the gap is much larger than 10% (leaving the core complaint only partially resolved). It also forgoes the opportunity to fix the visibility problem at the same time — a benchmarked, philosophy-anchored adjustment can be explained and justified to employees in a way a flat across-the-board increase, decided without data, cannot."
                                                              },
                                                              {
@@ -1441,7 +1471,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Using everything in the profile — a 9-year-old, profitable but plateaued professional services firm, currently positioned at the 55th percentile — draft one or two sentences for the market positioning section of Almont\u0027s new philosophy statement. Decide deliberately: should Almont lead, match, or lag the market, and why?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal a model draft for Step 5",
                                                                  "v":  "\u003cem\u003e“Almont Solutions targets the 60th percentile of the market for base pay across all roles, reflecting our position as a profitable, established firm that competes on stability and career depth rather than aggressive pay leadership. For roles identified as critical-skill or high-flight-risk through annual workforce analysis, we will selectively target the 75th percentile.”\u003c/em\u003e\u003cbr\u003e\u003cbr\u003eThis draft makes a deliberate, defensible choice rather than vague language like ‘competitive pay.’ It commits to a specific percentile (addressing the benchmarking finding), allows for targeted exceptions (acknowledging that a single blanket percentile rarely fits every role equally), and ties the positioning explicitly to the kind of company Almont actually is — profitable and stable, not a high-growth firm trying to out-pay larger competitors across the board. Notice how this single short paragraph, once written and published, gives every future hiring manager and every future employee pay question a consistent, citable answer — exactly the governance gap the exit interviews identified."
                                                              },
                                                              {
@@ -1680,7 +1711,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Using a ±20% spread around the midpoint, calculate the minimum and maximum of this range. Then calculate the compa-ratio and range penetration for an employee in this grade earning $88,000."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the calculation",
                                                                  "v":  "\u003cstrong\u003eMinimum\u003c/strong\u003e = $95,000 × 0.80 = $76,000\u003cbr\u003e\u003cstrong\u003eMaximum\u003c/strong\u003e = $95,000 × 1.20 = $114,000\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eEmployee at $88,000:\u003c/strong\u003e\u003cbr\u003eCompa-ratio = $88,000 ÷ $95,000 = 0.93\u003cbr\u003eRange penetration = ($88,000 − $76,000) ÷ ($114,000 − $76,000) = $12,000 ÷ $38,000 = 31.6%\u003cbr\u003e\u003cbr\u003eThis employee sits below midpoint with meaningful room left in the range — a reasonable candidate for continued merit increases as performance and tenure build, without yet approaching the grade ceiling."
                                                              },
                                                              {
@@ -1701,7 +1733,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Calculate the minimum and maximum for this junior grade, then compare the dollar width of this range to the width of the Grade 6 range above."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the calculation",
                                                                  "v":  "\u003cstrong\u003eMinimum\u003c/strong\u003e = $42,000 × 0.85 = $35,700\u003cbr\u003e\u003cstrong\u003eMaximum\u003c/strong\u003e = $42,000 × 1.15 = $48,300\u003cbr\u003e\u003cbr\u003eRange width = $48,300 − $35,700 = $12,600 (30% of midpoint, consistent with a ±15% spread)\u003cbr\u003e\u003cbr\u003eCompare this to Grade 6\u0027s width of $38,000 (40% of midpoint, consistent with a ±20% spread). Grade 6\u0027s range is over three times wider in dollar terms and proportionally wider too — exactly the intended effect of using a narrower spread at junior levels and a wider one at more senior levels."
                                                              },
                                                              {
@@ -1746,7 +1779,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before reading on: is the $310,000 budget likely sufficient to fully correct the 37 under-graded employees? Do the arithmetic."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "37 employees × $9,400 average gap = $347,800 needed to bring every under-graded employee up to the corrected range minimum. The approved $310,000 budget falls roughly $37,800 short — about 11% underfunded. This means either the correction needs to be phased over more than one cycle, or the Head of Reward needs to go back to the CFO with this specific gap, rather than assuming the approved budget will stretch to cover everyone."
                                                              },
                                                              {
@@ -1758,7 +1792,8 @@ export const COURSES: Course[] =
                                                                  "v":  "The CFO has refused to allow pay cuts for the 38 over-graded employees. What\u0027s the right way to handle their grade correction without violating this constraint?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Move them to the correct, lower grade for documentation and governance purposes, but red-circle their pay — meaning their current salary is protected and frozen in nominal terms (or given smaller-than-standard increases) until market movement of the lower grade\u0027s range eventually catches up to their pay level. This satisfies the CFO\u0027s no-pay-cut constraint while still correcting the structural inconsistency the audit uncovered, rather than leaving incorrect grades on the books indefinitely."
                                                              },
                                                              {
@@ -1770,7 +1805,8 @@ export const COURSES: Course[] =
                                                                  "v":  "An employee who is under-graded, and whose pay falls within the new $310,000 budget\u0027s reach, asks why a colleague doing what looks like similar work wasn\u0027t corrected. How would you explain this without breaching confidentiality?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Without naming the colleague or discussing their specific pay, you can explain the process transparently: every role was independently evaluated against the same point-factor criteria, and corrections were based on each role\u0027s individual evaluation outcome, not visual similarity in day-to-day tasks. Two roles that look similar from the outside can score differently on accountability, complexity, or decision-making scope — which is precisely why a structured evaluation, rather than a subjective comparison, is the right basis for these decisions."
                                                              },
                                                              {
@@ -1782,7 +1818,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Six months after the rollout, three of the red-circled (over-graded) employees resign, citing pay stagnation. Was the red-circling approach a mistake?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Not necessarily a mistake — but a real and foreseeable trade-off that should have been planned for upfront. Red-circling protects against an immediate pay cut, but by design, it produces stagnant pay relative to a lower grade\u0027s range until the market catches up, which can itself become a retention risk for employees who feel pay has frozen. A more complete rollout plan would have included a retention risk assessment for red-circled employees and possibly a modest, time-limited transition allowance for the highest flight-risk cases among them — acknowledging the policy\u0027s defensibility doesn\u0027t eliminate its real cost in specific cases."
                                                              },
                                                              {
@@ -1794,7 +1831,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Kestrel\u0027s Head of Reward wants to avoid ever facing a 22% mis-grading rate again. What governance change from Module 1 would most directly prevent this from recurring?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "The governance principle that any grade assignment or change requires evaluation-panel review and documented rationale — not informal manager or hiring-negotiation decisions — is the direct preventive fix. The 22% mis-grading rate accumulated specifically because pay had been set through negotiation at hire for years, with no structured evaluation gate. Embedding that gate going forward, for every new hire and every role change, is what stops the same drift from re-accumulating over the next few years."
                                                              },
                                                              {
@@ -2009,7 +2047,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Apply aging first (for the 14 months elapsed), then apply the geographic differential, to arrive at the adjusted market rate this organisation should actually use today."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the calculation",
                                                                  "v":  "\u003cstrong\u003eStep 1 — Age the data:\u003c/strong\u003e 14 months = 1.167 years. Aging factor = (1 + 0.035)^1.167 ≈ 1.0410. Aged P50 = $78,000 × 1.0410 = $81,198.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eStep 2 — Apply the geographic differential:\u003c/strong\u003e $81,198 × 1.06 = $86,070.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eAdjusted market rate ≈ $86,070.\u003c/strong\u003e\u003cbr\u003e\u003cbr\u003eNotice this is 10.3% above the raw, unadjusted $78,000 figure. Using the raw figure directly — a common shortcut under time pressure — would have under-priced this role by over $8,000, even though the organisation\u0027s actual positioning strategy (P50) never changed."
                                                              },
                                                              {
@@ -2030,7 +2069,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Calculate the adjusted market rate for this second role, where the geographic differential works in the opposite direction."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the calculation",
                                                                  "v":  "\u003cstrong\u003eStep 1 — Age the data:\u003c/strong\u003e 8 months = 0.667 years. Aging factor = (1 + 0.042)^0.667 ≈ 1.0278. Aged P50 = $61,000 × 1.0278 = $62,695.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eStep 2 — Apply the geographic differential:\u003c/strong\u003e $62,695 × 0.97 = $60,814.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eAdjusted market rate ≈ $60,814.\u003c/strong\u003e\u003cbr\u003e\u003cbr\u003eHere, aging pushed the figure up, but the negative geographic differential pulled it back down almost to the original raw number — a useful reminder that adjustments don\u0027t always compound in the same direction, and skipping either step independently can produce errors in either direction depending on the specific role and market."
                                                              },
                                                              {
@@ -2075,7 +2115,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before reading on: what does the contrast between the department\u0027s overall 11% turnover and the Data Analyst role\u0027s recent backfill pattern tell you?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "The department-wide turnover figure is healthy and arguably masks a role-specific problem — the Data Analyst role\u0027s high recent backfill rate (4 of 7 with under 12 months\u0027 tenure) suggests this specific role, not the department broadly, is where the real pressure sits. This is the same lesson as compa-ratio distributions in earlier modules: an aggregate number can hide a role-specific issue that deserves a targeted response rather than a department-wide one."
                                                              },
                                                              {
@@ -2087,7 +2128,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Given the trade-off data, would you recommend funding the move to P75 by cutting the broader analytics merit budget by 40%?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Probably not as structured. The data points to a role-specific competitive problem, not a department-wide positioning failure — yet the proposed funding mechanism would create a department-wide cost (reduced merit for everyone else) to fix a role-specific issue. A more targeted approach would isolate the Data Analyst adjustment from the broader merit pool, funded as a specific market correction rather than financed by reducing everyone else\u0027s increase, even if that means going back to Finance for incremental budget rather than accepting the first funding mechanism offered."
                                                              },
                                                              {
@@ -2099,7 +2141,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Finance pushes back: “We don\u0027t have incremental budget — it\u0027s this funding mechanism or nothing this cycle.” What would you propose as a middle path?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "A phased move — targeting P65 this cycle rather than the full jump to P75, narrowing but not eliminating the competitive gap, funded by a smaller, more contained reduction to the merit pool (or none at all if the smaller P65 move fits within existing budget). This preserves most of the department\u0027s merit budget while still meaningfully improving the Data Analyst role\u0027s competitiveness, and leaves room to complete the move to P75 in a future cycle if the retention data still supports it."
                                                              },
                                                              {
@@ -2111,7 +2154,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Six months after a phased move to P65, the Data Analyst role\u0027s backfill rate has improved (1 of 7 now under 12 months\u0027 tenure). The broader department\u0027s merit budget was only modestly reduced. Was this the right call in hindsight?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Based on the available evidence, yes — the targeted, phased approach addressed the specific signal (role-level backfill rate) without imposing the full cost of the original all-or-nothing proposal on people whose roles weren\u0027t actually showing the same competitive pressure. This is a useful general pattern: when a problem is shown by the data to be role-specific, a department-wide funding mechanism is usually the wrong instrument, even when it\u0027s the first one offered."
                                                              },
                                                              {
@@ -2317,7 +2361,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Calculate the total annual employer-paid cost for Option A, accounting for both the assumed take-up rate and the employer\u0027s 80% premium share."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the calculation",
                                                                  "v":  "Enrolled employees = 280 × 0.72 = 201.6, round to 202.\u003cbr\u003eTotal premium cost = 202 × $4,800 = $969,600.\u003cbr\u003eEmployer share (80%) = $969,600 × 0.80 = $775,680.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eOption A annual employer cost ≈ $775,680.\u003c/strong\u003e"
                                                              },
                                                              {
@@ -2330,7 +2375,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Calculate Option B\u0027s total annual employer-paid cost using the same method, then compare the two options\u0027 total employer cost."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the calculation",
                                                                  "v":  "Enrolled employees = 280 × 0.84 = 235.2, round to 235.\u003cbr\u003eTotal premium cost = 235 × $5,900 = $1,386,500.\u003cbr\u003eEmployer share (75%) = $1,386,500 × 0.75 = $1,039,875.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eOption B annual employer cost ≈ $1,039,875.\u003c/strong\u003e\u003cbr\u003e\u003cbr\u003eOption B costs the employer roughly $264,195 more per year than Option A — a 34% increase — driven by both the richer premium and the higher assumed take-up. This is the real number that should anchor any decision between the two options, not a surface-level comparison of premium prices alone, which would have understated the true cost gap since Option B\u0027s higher take-up compounds with its higher premium."
                                                              },
                                                              {
@@ -2383,7 +2429,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before reading on: is it reasonable to attribute this renewal entirely to \u0027rising healthcare costs\u0027 when discussing it with employees, or is that framing missing something important?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "It\u0027s an incomplete framing. The increase is specifically attributed to a small number of high-cost claims in the prior year — a different and more specific driver than generic healthcare inflation. This distinction matters for communication: framing it as broad market inflation may feel evasive if employees later learn the real driver was claims experience, whereas being specific (without breaching individual privacy) about claims experience as a renewal factor is both more accurate and, somewhat counterintuitively, often received as more trustworthy than a vague appeal to \u0027rising costs.\u0027"
                                                              },
                                                              {
@@ -2395,7 +2442,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Option 2 (raising employee contribution share) closes $260,000 of the $410,000 gap. What\u0027s the remaining shortfall, and what does that arithmetic tell you about whether Option 2 alone is sufficient?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "$410,000 − $260,000 = $150,000 remaining shortfall. Option 2 alone is not sufficient — it closes about 63% of the gap, meaning some combination with Option 1 (partial budget overage) or Option 3 (plan richness reduction) is still required to fully close the remaining $150,000, unless Finance is willing to revisit the 6% budget cap itself."
                                                              },
                                                              {
@@ -2407,7 +2455,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Weighing Option 3\u0027s projected 9-point satisfaction drop against the budget pressure, would you recommend implementing the full plan richness reduction, a partial version of it, or neither?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "A partial version is the most defensible middle path. A full reduction closes the remaining gap but absorbs the full projected satisfaction cost; a partial reduction — for example, raising the deductible modestly without narrowing the provider network, which tends to be the change employees notice and react to most negatively — might close most of the remaining $150,000 gap while limiting the satisfaction impact closer to a 3–4 point drop rather than the full 9 points. This illustrates a broader principle: a single bundled option doesn\u0027t have to be accepted or rejected as a whole; its individual components often carry very different cost-versus-satisfaction trade-offs."
                                                              },
                                                              {
@@ -2419,7 +2468,8 @@ export const COURSES: Course[] =
                                                                  "v":  "A board member asks why Meridian doesn\u0027t simply self-insure to avoid this kind of premium volatility going forward. What would you want to know before answering this seriously?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Self-insurance shifts claims risk directly onto the organisation rather than spreading it across an insurer\u0027s broader risk pool, which can reduce average costs over time but increases exposure to exactly the kind of high-cost-claim volatility that caused this year\u0027s renewal shock. Before answering seriously, you\u0027d want to know Meridian\u0027s claims history volatility over several years (not just this one anomalous year), its risk tolerance and cash reserve position, and whether it has access to stop-loss insurance to cap catastrophic claim exposure if it did self-insure. This is a multi-year strategic decision, not a quick fix for a single bad renewal year, and shouldn\u0027t be decided based on one volatile year\u0027s experience alone."
                                                              },
                                                              {
@@ -2633,7 +2683,8 @@ export const COURSES: Course[] =
                                                                  "v":  "A hiring manager wants to offer a candidate $128,000 for a role with a range of $95,000–$120,000 (midpoint $107,500). Determine which approval tier this offer requires, and calculate exactly how far above the maximum it sits as a percentage."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the analysis",
                                                                  "v":  "$128,000 exceeds the range maximum of $120,000 by $8,000.\u003cbr\u003ePercentage above maximum = $8,000 ÷ $120,000 = 6.67%.\u003cbr\u003e\u003cbr\u003eThis falls in the \u0027above range maximum, up to 10%\u0027 tier — requiring \u003cstrong\u003ecompensation lead approval with documented rationale\u003c/strong\u003e, not the higher compensation committee tier. A common error here is comparing the offer to the midpoint ($107,500) rather than the maximum ($120,000) when calculating the percentage — using the wrong reference point would have produced a 19% figure and incorrectly escalated this to the most senior approval tier."
                                                              },
                                                              {
@@ -2645,7 +2696,8 @@ export const COURSES: Course[] =
                                                                  "v":  "A second hiring manager wants to offer $134,000 for a different role, with a range of $98,000–$125,000 (midpoint $111,500). Apply the same matrix to this offer."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the analysis",
                                                                  "v":  "$134,000 exceeds the range maximum of $125,000 by $9,000.\u003cbr\u003ePercentage above maximum = $9,000 ÷ $125,000 = 7.2%.\u003cbr\u003e\u003cbr\u003eThis also falls in the \u0027up to 10%\u0027 tier, requiring compensation lead approval — despite the dollar amount above maximum ($9,000) being larger than the first example ($8,000). This is an important distinction: the matrix tier is based on the \u003cem\u003epercentage\u003c/em\u003e deviation from maximum, not the raw dollar amount, because a $9,000 deviation means something very different for a $125,000 maximum than it would for a $50,000 maximum."
                                                              },
                                                              {
@@ -2698,7 +2750,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before reading on: based on this data, is the core problem that three hiring managers were abusing the approval process, or something else?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "The data points toward something else: a genuinely mispriced job family (technical engineering), not approver misconduct. The exceptions cluster precisely around the roles where market data confirms a real 12% gap, and the rationale given — while poorly documented — was substantively accurate. This is an important diagnostic distinction: the same surface symptom (high exception rate) can stem from either a governance failure or a pricing failure, and the fix is completely different depending on which it is."
                                                              },
                                                              {
@@ -2710,7 +2763,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Given this, would you recommend disciplinary action against the three hiring managers, a market repricing of the technical engineering job family, or both?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Primarily a market repricing of the technical engineering job family, since the underlying rationale was substantively correct — disciplining managers for making accurate market judgement calls, just because the documentation was thin, would be a disproportionate and arguably counterproductive response. That said, the documentation gap is real and should still be addressed going forward — future exceptions, even well-founded ones, need supporting market data attached at the time of approval, not just a one-line note."
                                                              },
                                                              {
@@ -2722,7 +2776,8 @@ export const COURSES: Course[] =
                                                                  "v":  "The compensation lead who approved most of these exceptions argues: “I knew the market data informally from recent conversations — I didn\u0027t think I needed to attach a formal source every time.” How would you respond to this?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "The informal knowledge may well have been accurate — but informal knowledge that isn\u0027t documented is indistinguishable, from an audit or pay equity review months or years later, from no rationale at all. The standard isn\u0027t that the compensation lead\u0027s judgement was wrong; it\u0027s that undocumented judgement, however well-informed, can\u0027t be defended later and creates exactly the kind of unexplained pattern that triggered this review in the first place. Going forward, even informally-known market shifts need a documented source attached at approval time, not reconstructed after the fact."
                                                              },
                                                              {
@@ -2734,7 +2789,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Almont repriced the technical engineering job family and tightened documentation requirements. Eight months later, above-range exceptions in that job family have dropped to near zero, while exceptions in other job families remain at their previous, low, well-documented baseline. Does this confirm the original diagnosis was correct?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Yes, this is strong supporting evidence. If the original problem had been approver misconduct rather than a pricing gap, repricing alone wouldn\u0027t have meaningfully changed exception rates — the same managers would likely have found other roles or other rationales to request exceptions for. The fact that exceptions dropped specifically in the repriced job family, while other job families stayed at their stable baseline, confirms the fix addressed the actual root cause rather than just suppressing a symptom."
                                                              },
                                                              {
@@ -2746,7 +2802,8 @@ export const COURSES: Course[] =
                                                                  "v":  "What single governance change, applied going forward, would most help Almont catch a similar mispricing gap earlier next time, before it accumulates into a 34% exception rate?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "A periodic (at minimum, annual) review of exception patterns by job family — exactly the kind of review that, if it had existed before this incident, would likely have flagged the technical engineering job family\u0027s rising exception rate well before it reached 34% of all offers. Combined with tighter documentation, this gives Almont an early-warning signal: a job family with a rising exception rate over consecutive review periods is very likely signalling it needs repricing, well before the situation escalates to the scale uncovered in this case."
                                                              },
                                                              {
@@ -2885,7 +2942,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Given 180 employees and no existing structure, recommend a grade count and explain whether narrow grades or broader bands fit better here."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal a model recommendation for Step 1",
                                                                  "v":  "At 180 employees, this sits in the 100–500 employee range where 7–9 grades is the typical practical fit. Given the firm has no existing structure to migrate from gradually — it\u0027s starting from zero — a moderate 7-grade structure is a reasonable starting recommendation: enough precision to support meaningful career progression signalling, without the administrative overhead of a 12+ grade system the firm has no existing capability to manage. The structure can always be refined to 8–9 grades later if 7 proves too coarse in practice."
                                                              },
                                                              {
@@ -2897,7 +2955,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Leadership\u0027s stated preference is \u0027not necessarily the highest payer, but never embarrassingly behind the market.\u0027 Translate this into a specific, defensible percentile target."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal a model translation for Step 2",
                                                                  "v":  "This maps most naturally to a P50 target — explicitly matching the market median rather than leading it (consistent with \u0027not necessarily the highest payer\u0027) while ensuring the firm is never below median, which is the most literal reading of \u0027never embarrassingly behind.\u0027 A small number of high-flight-risk or hard-to-fill roles could carry a targeted P60–P65 override, similar to the targeted-exception approach used in Module 2\u0027s Solaris case, without abandoning P50 as the firm-wide default."
                                                              },
                                                              {
@@ -2909,7 +2968,8 @@ export const COURSES: Course[] =
                                                                  "v":  "The available market data is 9 months old, in a market with 4% assumed annual movement. Calculate the aging adjustment that should be applied before this data is used to set any range."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the calculation for Step 3",
                                                                  "v":  "9 months = 0.75 years. Aging factor = (1 + 0.04)^0.75 ≈ 1.0298, roughly a 3% upward adjustment. Any P50 figure from this survey should be multiplied by approximately 1.03 before being used as a range midpoint — skipping this step, given the market has had 9 months to move, would understate the appropriate midpoint by roughly that same 3% across every single grade in the new structure."
                                                              },
                                                              {
@@ -2921,7 +2981,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Castleton\u0027s benefits spend (22% of payroll) sits below the industry benchmark (27%). Should this gap be closed immediately, and if so, how would you prioritise where the additional investment goes?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the reasoning for Step 4",
                                                                  "v":  "Closing the full 5-point gap immediately may not be necessary or even desirable without first checking workforce preference and utilisation data, exactly as covered in the Total Rewards Foundations course — a benchmark gap shows where Castleton sits relative to competitors, not automatically where its own employees most want investment directed. The right sequence is: run a workforce preference survey, identify the highest-demand, highest-impact categories specific to this workforce, and close the gap deliberately toward those categories rather than spreading the additional 5 points evenly or matching the benchmark\u0027s category mix by default."
                                                              },
                                                              {
@@ -2933,7 +2994,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Castleton has never had an approval matrix. Given this is a brand-new structure, what would you recommend as the very first governance rule to put in place, before any offers are even made against the new ranges?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the reasoning for Step 5",
                                                                  "v":  "The most important first rule is that every exception above range maximum requires documented rationale at the time of approval — captured in this curriculum\u0027s Module 4 as the single factor separating governance from drift. Building this requirement into the structure from day one, before any hiring manager has had the chance to establish an informal pattern of undocumented exceptions, is far easier than trying to retrofit documentation discipline after exception creep has already taken hold, as Almont Solutions discovered the hard way."
                                                              },
                                                              {
@@ -3177,7 +3239,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Using the factor definitions above, assign a level (1–3) to each of the four factors for this role, then convert to points and total them."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the scoring for Role 1",
                                                                  "v":  "\u003cstrong\u003eKnowledge:\u003c/strong\u003e Level 1 (uses documented procedures) = 10 pts\u003cbr\u003e\u003cstrong\u003eProblem-Solving:\u003c/strong\u003e Level 1 (escalates anything non-routine) = 10 pts\u003cbr\u003e\u003cstrong\u003eAccountability:\u003c/strong\u003e Level 1 (supervised, errors caught before reaching customer) = 10 pts\u003cbr\u003e\u003cstrong\u003ePeople Management:\u003c/strong\u003e Level 1 (no direct reports) = 10 pts\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eTotal: 40 points.\u003c/strong\u003e This role scores at Level 1 on every factor — a clean, low-ambiguity case, useful as a calibration anchor itself for genuinely entry-level roles."
                                                              },
                                                              {
@@ -3194,7 +3257,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Score this second role using the same factor definitions. Pay particular attention to the People Management factor — this role doesn\u0027t directly supervise the 10–12 frontline staff, only the two team leads."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the scoring for Role 2",
                                                                  "v":  "\u003cstrong\u003eKnowledge:\u003c/strong\u003e Level 2 (specialist operational expertise, not a basic procedure-following role, though not requiring an advanced formal qualification) = 25 pts\u003cbr\u003e\u003cstrong\u003eProblem-Solving:\u003c/strong\u003e Level 3 (explicitly described as having no standard playbook, requiring judgement on novel situations) = 45 pts\u003cbr\u003e\u003cstrong\u003eAccountability:\u003c/strong\u003e Level 3 (explicitly tied to six-figure regional revenue impact) = 45 pts\u003cbr\u003e\u003cstrong\u003ePeople Management:\u003c/strong\u003e Level 2 (manages two team leads directly — the factor scores direct reporting relationships, not the total headcount of the wider team beneath them) = 25 pts\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eTotal: 140 points.\u003c/strong\u003e\u003cbr\u003e\u003cbr\u003eThe People Management score is the detail most evaluators get wrong on a first pass: it\u0027s tempting to score Level 3 because 10–12 people are ultimately affected by this role\u0027s decisions, but the factor specifically measures direct management scope. The two team leads are the direct reports; the wider team\u0027s headcount is already captured indirectly through the Accountability factor\u0027s impact scoring."
                                                              },
                                                              {
@@ -3239,7 +3303,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before reading on: does a roughly 42% increase in average Accountability scores for comparable roles necessarily mean roles have genuinely become more complex over three years?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Not necessarily — and the panel composition change is the more likely explanation worth investigating first. Two of the four original evaluators, who presumably calibrated together against the original benchmarks, have left, and two newer evaluators joined without (per the audit) ever formally revisiting those original benchmark scores. This is exactly the calibration drift pattern Module 1 warned about: scoring habits drift when the people doing the scoring change and no one actively re-anchors them against the original reference points."
                                                              },
                                                              {
@@ -3251,7 +3316,8 @@ export const COURSES: Course[] =
                                                                  "v":  "How would you design a test to distinguish \u0027roles have genuinely become more complex\u0027 from \u0027evaluator calibration has drifted\u0027 as the explanation for this pattern?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Re-score the five original benchmark roles — whose actual job descriptions and scope haven\u0027t changed — using the current panel. If the current panel scores these unchanged benchmark roles meaningfully higher than the original launch scores, that\u0027s direct evidence of calibration drift, since the roles themselves are identical. If the current panel reproduces close to the original benchmark scores, the increase in average scores elsewhere is more likely explained by genuine role complexity growth across the organisation, which would need a different kind of investigation."
                                                              },
                                                              {
@@ -3263,7 +3329,8 @@ export const COURSES: Course[] =
                                                                  "v":  "The re-scoring test confirms calibration drift — the current panel scores the unchanged benchmark roles 15–20% higher than the original launch scores. What would you recommend as the immediate fix?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Re-anchor the panel by walking through each benchmark role\u0027s original scoring rationale in detail, with both newer evaluators present, before any further evaluations proceed — essentially redoing the calibration exercise from launch. This should happen before deciding what to do about the roughly 60 roles scored over the drifted period, since fixing the panel\u0027s calibration is the prerequisite for any defensible re-scoring of those roles, not a parallel, independent step."
                                                              },
                                                              {
@@ -3275,7 +3342,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Once recalibrated, should Driftwood re-score all 60 roles evaluated during the drift period, or only a sample?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Given the audit found drift was specific and consistent (roughly 15–20% inflation, concentrated in the Accountability factor), a full re-score of all 60 roles is the more defensible approach, rather than a sample — a sample-based correction risks leaving some genuinely mis-scored roles uncorrected, which is precisely the kind of unexplained variance a future pay equity audit would flag. Given the scale (60 roles) is manageable, and the cost of leaving some roles incorrectly scored is a recurring pay equity exposure, a full re-score is worth the additional time investment here."
                                                              },
                                                              {
@@ -3287,7 +3355,8 @@ export const COURSES: Course[] =
                                                                  "v":  "What ongoing governance change would prevent this same multi-year drift from recurring after this correction is complete?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "A scheduled, recurring benchmark re-confirmation — for example, annually, or any time panel composition changes — where the current panel re-scores the existing benchmark roles and compares the result against the original anchor scores before continuing any new evaluations that cycle. This converts calibration from a one-time launch activity into an ongoing maintenance discipline, catching drift within a single cycle rather than letting it accumulate silently for three years before an unrelated audit happens to surface it."
                                                              },
                                                              {
@@ -3502,7 +3571,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Calculate the average pay for all women and all men across this full group of 8 employees, with no grade control, and express the gap as a percentage of the men\u0027s average."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the calculation",
                                                                  "v":  "\u003cstrong\u003eWomen\u0027s average:\u003c/strong\u003e ($82,000 + $79,000 + $118,000 + $121,000) ÷ 4 = $400,000 ÷ 4 = $100,000\u003cbr\u003e\u003cstrong\u003eMen\u0027s average:\u003c/strong\u003e ($85,000 + $84,000 + $145,000 + $148,000) ÷ 4 = $462,000 ÷ 4 = $115,500\u003cbr\u003e\u003cbr\u003eUnadjusted gap = ($115,500 − $100,000) ÷ $115,500 = \u003cstrong\u003e13.4%\u003c/strong\u003e"
                                                              },
                                                              {
@@ -3514,7 +3584,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Recalculate the gap, this time controlling for grade — comparing women\u0027s and men\u0027s average pay separately within Grade 5 and within Grade 7, then looking at whether a gap persists within each grade."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the calculation",
                                                                  "v":  "\u003cstrong\u003eWithin Grade 5:\u003c/strong\u003e Women\u0027s average = ($82,000 + $79,000) ÷ 2 = $80,500. Men\u0027s average = ($85,000 + $84,000) ÷ 2 = $84,500. Gap = ($84,500 − $80,500) ÷ $84,500 = \u003cstrong\u003e4.7%\u003c/strong\u003e\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eWithin Grade 7:\u003c/strong\u003e Women\u0027s average = ($118,000 + $121,000) ÷ 2 = $119,500. Men\u0027s average = ($145,000 + $148,000) ÷ 2 = $146,500. Gap = ($146,500 − $119,500) ÷ $146,500 = \u003cstrong\u003e18.4%\u003c/strong\u003e\u003cbr\u003e\u003cbr\u003eThe grade-controlled (adjusted) gaps are 4.7% in Grade 5 and a much larger 18.4% in Grade 7 — both still meaningfully present, and notably, the higher grade shows a substantially larger within-grade gap than the lower grade. This is the opposite of the earlier scenario where adjusting for grade nearly eliminated the gap — here, controlling for grade reveals the problem is concentrated, and even larger, at the more senior level."
                                                              },
                                                              {
@@ -3567,7 +3638,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before reading on: given the 19% unadjusted gap collapses to 3.1% once adjusted, does this mean Palora\u0027s pay equity issue is essentially resolved?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "No — the combined adjusted figure of 3.1% is misleadingly reassuring because it blends a much larger Grade 8 problem (11.4%) with smaller or negligible gaps at other grades. This is exactly the pattern Module 2\u0027s calculation exercise demonstrated: a single blended adjusted average can mask a concentrated, more serious gap at one specific level. Stopping the analysis at the combined 3.1% figure would mean missing the most actionable finding in the entire audit."
                                                              },
                                                              {
@@ -3579,7 +3651,8 @@ export const COURSES: Course[] =
                                                                  "v":  "The representation data shows women hold 71% of mid-level roles but only 38% of senior leadership roles. How does this representation pattern relate to, or differ from, the Grade 8 pay gap finding?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "These are related but distinct findings requiring different responses. The representation imbalance (71% vs 38%) is a pipeline and promotion-equity issue — it speaks to who reaches senior leadership at all. The Grade 8 pay gap (11.4%) is a separate finding about how the women who do reach Grade 8 are then paid relative to their male peers once there. An organisation could fix one without fixing the other: improving promotion rates into Grade 8 wouldn\u0027t, by itself, close the pay gap among the women who are already there, and vice versa."
                                                              },
                                                              {
@@ -3591,7 +3664,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Given limited remediation budget this cycle, would you prioritise closing the 11.4% Grade 8 pay gap, addressing the senior leadership representation imbalance, or attempt both simultaneously?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "The Grade 8 pay gap is the more time-bound, legally pointed exposure — it represents women currently being paid less for comparable work today, which is the core equal-pay concern most pay equity legislation is designed to address. The representation imbalance, while a serious and important issue, is more of a multi-year pipeline investment (sponsorship, promotion process review, leadership development access) that doesn\u0027t carry the same immediate legal and ethical urgency as an active, current pay disparity among people already doing the same job today. If budget genuinely can\u0027t stretch to both simultaneously, the pay gap correction is the more defensible immediate priority, with a committed multi-year plan for the representation work running in parallel."
                                                              },
                                                              {
@@ -3603,7 +3677,8 @@ export const COURSES: Course[] =
                                                                  "v":  "A board member asks why the audit excluded frontline clinical roles under the union pay scale. Is this exclusion a reasonable scoping decision, or a problematic gap in the audit?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "It\u0027s a reasonable scoping decision, provided it\u0027s transparently documented and explained, rather than quietly omitted. Roles under a union-negotiated, largely standardised pay scale have a fundamentally different pay-setting mechanism than discretionary administrative and leadership pay — lumping them together in the same audit would muddy rather than clarify the analysis, since any gap findings there would point to a different remedy (collective bargaining) than the individual pay-decision-level remedies relevant to the in-scope functions. The key is that this scoping choice should be stated explicitly in the audit\u0027s methodology, not left for a board member to have to ask about after the fact."
                                                              },
                                                              {
@@ -3615,7 +3690,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Eighteen months after correcting the Grade 8 pay gap and launching a leadership pipeline programme, Grade 8 representation has improved modestly (38% to 43%) but the pay gap at that grade has crept back up slightly (from a corrected near-zero to 2.8%). Is this a sign the correction failed?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Not necessarily a failure — a small re-emergence at 2.8%, well below the original 11.4%, is a plausible and expected effect of new people moving into the grade (through the pipeline programme, and through normal hiring and promotion activity) whose starting pay positions haven\u0027t yet been fully calibrated against the corrected baseline. This is exactly why a recurring audit cadence, not a one-time correction, is essential — new entrants to a grade need their pay checked against the corrected standard, or small gaps will gradually reaccumulate even after a successful initial fix."
                                                              },
                                                              {
@@ -3830,7 +3906,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Using job family + grade as the peer group definition (the standard approach from Module 1), sort these 12 employees into their correct peer groups before revealing the grouping below."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the peer groups",
                                                                  "v":  "\u003cstrong\u003eGroup 1 — Sales, Grade 4 (5 people):\u003c/strong\u003e Adaeze, Brian, Chinwe, David, Esther\u003cbr\u003e\u003cstrong\u003eGroup 2 — Sales, Grade 6 (3 people):\u003c/strong\u003e Frank, Grace, Henry\u003cbr\u003e\u003cstrong\u003eGroup 3 — Operations, Grade 4 (4 people):\u003c/strong\u003e Ibrahim, Joy, Kemi, Lucas\u003cbr\u003e\u003cbr\u003eNotice that Sales Grade 4 and Operations Grade 4 are kept as separate peer groups despite sharing the same grade — job family is a genuine, job-related distinction (different roles, different markets) that shouldn\u0027t be collapsed just because the grade number matches."
                                                              },
                                                              {
@@ -3842,7 +3919,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Using a 5% within-group gender pay gap as the flagging threshold, calculate the gap in each of the three peer groups and identify which group(s), if any, should be flagged for further investigation."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the analysis",
                                                                  "v":  "\u003cstrong\u003eGroup 1 (Sales, Grade 4):\u003c/strong\u003e Women\u0027s average = ($58,000+$57,500+$59,000)÷3 = $58,167. Men\u0027s average = ($61,000+$60,500)÷2 = $60,750. Gap = ($60,750−$58,167)÷$60,750 = 4.3%. \u003cstrong\u003eBelow threshold — not flagged.\u003c/strong\u003e\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eGroup 2 (Sales, Grade 6):\u003c/strong\u003e Women\u0027s average = $79,000 (1 person). Men\u0027s average = ($92,000+$90,500)÷2 = $91,250. Gap = ($91,250−$79,000)÷$91,250 = 13.4%. \u003cstrong\u003eAbove threshold — flagged,\u003c/strong\u003e though with only 1 woman in this group, this is also a sample-size caveat worth noting alongside the flag.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eGroup 3 (Operations, Grade 4):\u003c/strong\u003e Women\u0027s average = ($55,500+$56,500)÷2 = $56,000. Men\u0027s average = ($56,000+$57,000)÷2 = $56,500. Gap = ($56,500−$56,000)÷$56,500 = 0.9%. \u003cstrong\u003eBelow threshold — not flagged.\u003c/strong\u003e\u003cbr\u003e\u003cbr\u003eOnly Group 2 (Sales, Grade 6) is flagged — but the single-woman sample size means this flag should prompt further investigation (gathering more data, checking individual circumstances) rather than an immediate, confident conclusion of bias based on this group alone."
                                                              },
                                                              {
@@ -3895,7 +3973,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before reading on: what does the gap between the original (2.1%) and revised (8.7%) findings tell you about the cost of methodological errors in pay equity work?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "A flawed control factor doesn\u0027t just introduce a small amount of noise — it can completely change the headline conclusion of an audit, here moving from ‘essentially no issue’ (2.1%, nothing flagged) to a finding of real concern (8.7%, three flagged groups). This illustrates why methodology design deserves as much scrutiny as the final calculation itself: a technically correct calculation built on a flawed input variable produces a confidently wrong answer, which can be more dangerous than an openly uncertain one because it doesn\u0027t invite the same scrutiny."
                                                              },
                                                              {
@@ -3907,7 +3986,8 @@ export const COURSES: Course[] =
                                                                  "v":  "All three newly-flagged peer groups include at least one employee who took extended parental leave. Does this pattern, by itself, prove the original proxy factor was the actual cause of those specific flags?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "It\u0027s strong circumstantial evidence, but not absolute proof on its own — a careful audit would still re-examine each of the three flagged groups individually to confirm the parental-leave-affected employee\u0027s corrected pay position, rather than assuming the pattern explains every flag automatically. It\u0027s entirely possible one of the three flags has an additional, separate driver beyond the corrected experience measure, and treating the pattern as fully explanatory without checking each case individually risks prematurely closing an investigation that should go a layer deeper."
                                                              },
                                                              {
@@ -3919,7 +3999,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Castleton\u0027s legal counsel asks whether the original, flawed audit (showing only 2.1%, nothing flagged) creates any legal exposure now that it\u0027s been superseded by the corrected 8.7% finding. How would you think through this?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "The existence of a superseded, flawed analysis is generally less risky than having never investigated at all, provided Castleton acts promptly and in good faith on the corrected finding once it\u0027s identified — organisations that proactively catch and correct their own methodological errors, and act on the corrected results, are in a meaningfully different position than ones that either never audit or that discover a problem and sit on it. The key going-forward action is documenting both the original error, how it was caught, and the remediation taken on the corrected findings — that documentation is itself protective, demonstrating a genuine, good-faith governance process rather than concealment."
                                                              },
                                                              {
@@ -3931,7 +4012,8 @@ export const COURSES: Course[] =
                                                                  "v":  "What change to Castleton\u0027s audit governance process, going forward, would help catch a similar methodological flaw earlier, before it reaches a near-final audit result?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "A mandatory, documented review of every proposed control factor\u0027s job-related justification and proxy risk — conducted by someone other than the person who proposed the factor — before the audit methodology is finalised and applied to live data, not after results are already calculated. Castleton caught this issue relatively late, partway through the audit; building in an earlier methodology peer-review checkpoint, specifically focused on proxy risk for every proposed control variable, would catch this category of error before it has the chance to produce a confidently wrong headline result."
                                                              },
                                                              {
@@ -3943,7 +4025,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Should Castleton publish or share the original 2.1% finding internally, now that it\u0027s been superseded, or simply replace it with the corrected 8.7% figure without reference to the earlier number?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Transparently documenting both numbers, with a clear explanation of the methodological correction between them, is the more defensible path — quietly replacing one figure with another, without explanation, risks looking evasive if the discrepancy surfaces later through any other channel (a future audit, a legal inquiry, an employee question). Being explicit about catching and correcting a real methodological flaw is a stronger governance story than appearing to have arrived at the right answer on the first attempt, and it directly supports the documentation point raised in Discussion Point 3 about demonstrating good-faith process."
                                                              },
                                                              {
@@ -4158,7 +4241,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Calculate the individual correction amount needed to bring each of these four employees to the $98,000 peer-group target, then total the full lump-sum correction budget required."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the calculation",
                                                                  "v":  "Aisha: $98,000 − $89,500 = $8,500\u003cbr\u003eBeatrice: $98,000 − $91,200 = $6,800\u003cbr\u003eCynthia: $98,000 − $93,800 = $4,200\u003cbr\u003eDeborah: $98,000 − $86,000 = $12,000\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eTotal lump-sum correction budget = $8,500 + $6,800 + $4,200 + $12,000 = $31,500.\u003c/strong\u003e\u003cbr\u003e\u003cbr\u003eNotice the individual amounts range from $4,200 to $12,000 — nearly a 3x difference. A blanket adjustment (e.g. giving everyone flagged a flat $7,875, the average of these four amounts) would overcorrect Cynthia and undercorrect Deborah, which is precisely why individual calculation, not an averaged blanket figure, is the defensible approach."
                                                              },
                                                              {
@@ -4170,7 +4254,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Kestrel\u0027s Finance team asks for a two-year phased option instead, citing the recurring-cost concern from Module 4\u0027s opening scenario. Model a 60%/40% phased correction across Year 1 and Year 2, and calculate each employee\u0027s Year 1 increase."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the phased calculation",
                                                                  "v":  "Year 1 (60% of each individual gap):\u003cbr\u003eAisha: $8,500 × 0.60 = $5,100\nBeatrice: $6,800 × 0.60 = $4,080\nCynthia: $4,200 × 0.60 = $2,520\nDeborah: $12,000 × 0.60 = $7,200\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eYear 1 total: $18,900\u003c/strong\u003e (versus $31,500 for the full lump sum)\u003cbr\u003e\u003cbr\u003eYear 2 (remaining 40%):\u003cbr\u003eAisha: $3,400 · Beatrice: $2,720 · Cynthia: $1,680 · Deborah: $4,800\u003cbr\u003e\u003cstrong\u003eYear 2 total: $12,600\u003c/strong\u003e\u003cbr\u003e\u003cbr\u003eThe phasing splits the same total $31,500 correction across two budget cycles, easing the immediate cash impact — but each employee\u0027s pay remains below the $98,000 target for the full first year, which is the explicit trade-off that should be disclosed and documented, not left ambiguous."
                                                              },
                                                              {
@@ -4215,7 +4300,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before reading on: do these two root causes — salary history anchoring at hire, and a manager\u0027s rating pattern — call for the same governance fix, or different ones?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Different ones, and conflating them would produce an incomplete fix. Salary history anchoring is an offer-process problem, requiring a structural change to how starting offers are set (e.g. anchoring to grade midpoint and qualifications, not previous pay). The manager\u0027s rating pattern is a performance-management calibration problem, requiring rating calibration review and likely a closer look at that specific manager\u0027s pattern across their full team, not just this one flagged employee. Treating both as \u0027the Grade 6 gap\u0027 and applying one generic fix would address one root cause while leaving the other untouched."
                                                              },
                                                              {
@@ -4227,7 +4313,8 @@ export const COURSES: Course[] =
                                                                  "v":  "For the salary-history-anchoring root cause, what specific governance rule would you recommend going forward?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "A rule that starting offers must be anchored to the role\u0027s grade midpoint (adjusted for relevant experience and qualifications using the corrected, non-discriminatory experience measure from Module 3), with any deviation — including matching a candidate\u0027s stated previous salary — requiring documented justification through the approval matrix covered in this curriculum\u0027s second course. This directly closes the mechanism (uncontrolled salary history anchoring) that created three of the four flagged cases, rather than addressing only the symptom after the fact."
                                                              },
                                                              {
@@ -4239,7 +4326,8 @@ export const COURSES: Course[] =
                                                                  "v":  "For the manager rating pattern, the investigation found this manager\u0027s ratings were consistently lower for this one employee than for comparably-performing peers. What would you want to check before concluding this reflects biased rating, rather than a genuine performance difference?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "You\u0027d want to review the actual performance evidence underlying the ratings — documented examples, project outcomes, peer and stakeholder feedback — not just the rating scores themselves, to assess whether the gap in ratings is supported by a genuine, demonstrable difference in contribution or appears to lack that supporting evidence. You\u0027d also want to check this manager\u0027s rating pattern across their full team and over multiple cycles, not just this one employee in isolation, since a single comparison could reflect a genuine, justified performance difference rather than a pattern. If the pattern holds across multiple employees and cycles without clear supporting evidence, that\u0027s a stronger basis for concluding the ratings reflect bias rather than genuine performance variation."
                                                              },
                                                              {
@@ -4251,7 +4339,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Should the rating-pattern investigation be handled by the Total Rewards team, or does it belong elsewhere in the organisation?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "This is primarily a performance management and people-leadership issue that belongs with HR Business Partners and, depending on severity, possibly Employee Relations — the Total Rewards team\u0027s role is to flag the pattern (since it surfaced through the pay equity audit) and ensure any confirmed rating bias translates into a corrected pay outcome, but the underlying manager behaviour investigation and any coaching or disciplinary action sits with a different function. This is a useful general principle: a pay equity audit can surface issues whose root cause and appropriate remedy live outside the compensation function entirely, and routing them to the right owner matters as much as identifying them in the first place."
                                                              },
                                                              {
@@ -4263,7 +4352,8 @@ export const COURSES: Course[] =
                                                                  "v":  "One year after implementing the offer-anchoring rule and the manager rating review, Kestrel\u0027s next scheduled pay equity audit finds no new flags in Grade 6. What single piece of additional evidence would most strengthen confidence that this is due to the governance fixes, rather than coincidence?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Evidence that the offer-anchoring rule was actually applied consistently to every new Grade 6 hire over the period — for example, an audit trail showing each new offer\u0027s documented anchor point and any deviations with their required justification — combined with confirmation that the flagged manager\u0027s subsequent rating pattern, reviewed against the same evidence-based standard, no longer shows the same disparity. Without checking that the specific mechanisms were actually followed in practice, a clean audit result could simply reflect no new hires or rating cycles having occurred in the period, rather than the fixes genuinely working as intended."
                                                              },
                                                              {
@@ -4402,7 +4492,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Given the panel membership change 2 years ago and no calibration re-confirmation since launch, should the audit proceed directly to gap calculation, or is there a prerequisite step first?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the model recommendation for Step 1",
                                                                  "v":  "A prerequisite step is needed: re-confirm calibration by re-scoring the original benchmark roles with the current panel and comparing against the original launch scores, exactly as covered in Module 1\u0027s Driftwood Media case. If grading itself has drifted since the panel change, any pay gap calculation built on top of potentially inconsistent grading would be unreliable — a gap might be partly explained by grading inconsistency rather than genuine pay disparity. This calibration check should happen before, not after, the pay equity calculation begins."
                                                              },
                                                              {
@@ -4414,7 +4505,8 @@ export const COURSES: Course[] =
                                                                  "v":  "The available \u0027years of experience\u0027 measure is calculated from each employee\u0027s stated career start date. Based on Module 3\u0027s proxy-risk discussion, what would you want to verify about this measure before using it as a control factor?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the reasoning for Step 2",
                                                                  "v":  "Verify whether this measure penalises career breaks — parental leave, caregiving leave, or other gaps — the way Castleton Partners\u0027 flawed \u0027continuous full-time experience\u0027 measure did, and check whether it correlates strongly with gender in this specific dataset. If it does, before using it as a control factor in the gap calculation, it should be redefined to count total relevant experience without penalising leave-related gaps, exactly as Castleton\u0027s corrected measure did, rather than assumed to be a neutral, job-related factor just because it sounds reasonable on its face."
                                                              },
                                                              {
@@ -4426,7 +4518,8 @@ export const COURSES: Course[] =
                                                                  "v":  "With 180 employees across multiple job families and grades, recommend a peer group definition and a flagging threshold, and justify your choice given the likely size of individual peer groups at this headcount."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the reasoning for Step 3",
                                                                  "v":  "Peer groups defined by job family plus grade, as established in Module 3, with a flagging threshold around 5%. Given 180 employees spread across multiple job families and grades, many individual peer groups will likely be small — closer to the matched-pairs comparison approach from Module 3 than a full regression model, which would need larger sample sizes per group to be statistically reliable. Any flags emerging from small peer groups (as in the earlier Sales Grade 6 example) should be explicitly noted with a lower confidence caveat, not treated with the same certainty as a flag from a larger group."
                                                              },
                                                              {
@@ -4438,7 +4531,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Once the methodology is set, the audit produces an unadjusted gap of 21% and an adjusted (grade and tenure controlled) gap of 4.2% overall, with one specific grade showing an adjusted gap of 13.8%. What should the headline conclusion be?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the reasoning for Step 4",
                                                                  "v":  "The pattern — a large unadjusted gap collapsing to a small overall adjusted gap, but with one grade showing a much larger adjusted gap — mirrors exactly the Palora Health case from Module 2. The headline conclusion should explicitly separate two distinct findings: a likely representation/occupational-segregation issue (driving the gap between unadjusted and adjusted), requiring a pipeline and promotion-equity response, and a concentrated, more urgent pay-for-comparable-work issue in the one flagged grade, requiring direct remediation. Stopping at the reassuring overall adjusted figure of 4.2% would miss the most actionable finding in the entire audit."
                                                              },
                                                              {
@@ -4450,7 +4544,8 @@ export const COURSES: Course[] =
                                                                  "v":  "For the flagged grade, draft a brief remediation and governance recommendation, addressing both the immediate correction and the root-cause prevention, within the one-quarter timeline leadership has requested."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal a model recommendation for Step 5",
                                                                  "v":  "\u003cstrong\u003eImmediate correction:\u003c/strong\u003e Calculate individual correction targets for each flagged employee in the affected grade against the peer-group benchmark (not a blanket adjustment), and recommend a lump-sum correction given the relatively contained, one-grade scope — a phased approach is less necessary here than in the larger, multi-grade Kestrel example, given the narrower scope. \u003cstrong\u003eRoot-cause investigation:\u003c/strong\u003e Before finalising the correction, investigate whether the gap traces to offer-setting practices, merit calibration, or another specific process, exactly as Kestrel\u0027s review distinguished salary-history anchoring from manager rating bias — the correction and the process fix should be designed together, not sequentially. \u003cstrong\u003eGovernance going forward:\u003c/strong\u003e Establish a recurring (at minimum annual) audit cadence, and embed the calibration re-confirmation step from Step 1 as a standing requirement whenever evaluation panel composition changes, so the next audit doesn\u0027t have to repeat this same foundational check from a position of uncertainty."
                                                              },
                                                              {
@@ -4689,7 +4784,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Using the five-stage model, determine which stage Meridian Group currently sits at, being precise about the distinction between having a structure internally and that structure being published to employees."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the placement",
                                                                  "v":  "Meridian sits at \u003cstrong\u003eStage 1\u003c/strong\u003e, not Stage 2. Having an internal grading structure that HR uses for pay decisions is necessary infrastructure, but Stage 2 specifically requires that structure to be published and explained to employees — an unpublished internal structure provides none of the process transparency benefit Stage 2 is meant to capture. This is a common, easy-to-miss distinction: many organisations technically have the underlying structure (it\u0027s needed to run any consistent pay process) long before they\u0027re transparent about it, and assuming structure-having equals structure-transparency overstates where the organisation actually sits."
                                                              },
                                                              {
@@ -4701,7 +4797,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Leadership wants to reach Stage 4 (managers trained to discuss pay position confidently) within 12 months. Given the current Stage 1 position, what intermediate milestones need to happen, and in what order, to realistically reach Stage 4?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal a realistic milestone sequence",
                                                                  "v":  "\u003cstrong\u003eMonths 1–3:\u003c/strong\u003e Publish the existing grading structure to employees (reaching Stage 2) — this requires no new structural work, just communication, since the structure already exists internally.\u003cbr\u003e\u003cstrong\u003eMonths 3–6:\u003c/strong\u003e Finalise and publish range minimums and midpoints for each grade (reaching Stage 3), which may require some range-design work if the existing ranges haven\u0027t been formally documented for external publication.\u003cbr\u003e\u003cstrong\u003eMonths 6–12:\u003c/strong\u003e Build and deliver manager training — briefing packs, talking points, disclosure boundaries — specifically on discussing individual pay position against the now-published ranges (reaching Stage 4).\u003cbr\u003e\u003cbr\u003eAttempting to compress this into, for example, training managers on pay conversations before the ranges themselves are even published would leave managers without the published reference points the training is meant to help them discuss — the sequence matters as much as the destination."
                                                              },
                                                              {
@@ -4746,7 +4843,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before reading on: is the Month 4 spike in grade-placement questions a sign the rollout was going poorly?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "No — this is a predictable and arguably healthy response to newly published information, not a sign of failure. Employees who previously had no visibility into the grading structure naturally generate questions once they can see it for the first time; a spike in questions reflects genuine engagement with new information, not a problem with the rollout itself. The more important measure is whether those questions were resolved straightforwardly using the published criteria (which they were) — that\u0027s the actual signal of whether the published structure is clear and defensible."
                                                              },
                                                              {
@@ -4758,7 +4856,8 @@ export const COURSES: Course[] =
                                                                  "v":  "The Month 10 discovery — three employees paid below their grade\u0027s published minimum — is more concerning. What does this finding suggest about Almont\u0027s structure before this rollout began?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "This suggests the underlying salary structure had pre-existing inconsistencies that weren\u0027t visible until ranges were published and could be checked against actual pay — exactly the kind of gap that silent, unpublished structures can hide indefinitely. Publishing the ranges didn\u0027t create this problem; it surfaced a problem that already existed. This is actually one of the underappreciated benefits of moving toward outcome transparency: it forces a level of internal consistency-checking that often doesn\u0027t happen rigorously while pay remains entirely private."
                                                              },
                                                              {
@@ -4770,7 +4869,8 @@ export const COURSES: Course[] =
                                                                  "v":  "How should Almont handle the three below-minimum employees discovered in Month 10, and how quickly?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "These should be corrected promptly — being paid below a now-published range minimum is a clear, visible inconsistency that, left unaddressed, directly undermines the credibility of the entire published structure. Delaying the correction risks employees (and potentially regulators, depending on jurisdiction) interpreting the gap between the published minimum and actual practice as evidence that the published structure isn\u0027t being taken seriously, which would damage trust in everything else Almont is trying to build through this rollout."
                                                              },
                                                              {
@@ -4782,7 +4882,8 @@ export const COURSES: Course[] =
                                                                  "v":  "The Month 16 results show a 34% drop in pay-related HR queries and improved offer acceptance. What\u0027s the most likely explanation connecting these two outcomes to the rollout\u0027s design, specifically the decision to train managers last rather than first?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Training managers last, after the structure and ranges were already published, meant managers were equipped to discuss something concrete and already visible to employees — rather than being trained to discuss a structure employees couldn\u0027t yet see for themselves. This sequencing likely made the training more effective than it would have been earlier in the rollout, supporting both outcomes: fewer queries reaching HR because managers could field them directly and confidently, and improved offer acceptance because candidates encountered a hiring process where managers could speak credibly about pay positioning from the first conversation."
                                                              },
                                                              {
@@ -4794,7 +4895,8 @@ export const COURSES: Course[] =
                                                                  "v":  "A different organisation, watching Almont\u0027s success, wants to compress the same rollout into 6 months instead of 18. What would you want to flag as a risk in this compression?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "The Month 10 discovery — pre-existing structural inconsistencies surfacing only once ranges were published — took real time to find and correct properly within Almont\u0027s 18-month timeline. A 6-month compression leaves much less room to discover and fix similar inconsistencies before they become publicly visible problems, and similarly less room for manager training to be built and delivered with the same care. Compressing the timeline doesn\u0027t just accelerate the plan; it removes the buffer that absorbed Almont\u0027s actual real-world surprises along the way."
                                                              },
                                                              {
@@ -5009,7 +5111,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Using a simple Compliant / Partially Compliant / Non-Compliant scale, assess Solaris against each of the four EU Directive requirements listed in the profile above."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the compliance scoring",
                                                                  "v":  "\u003cstrong\u003eRange disclosure in job postings: Partially Compliant.\u003c/strong\u003e 40% inclusion is a meaningful start but falls well short of consistent disclosure across all postings, which the Directive requires.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eEmployee pay information requests: Non-Compliant.\u003c/strong\u003e No formal process exists at all — informal, inconsistent responses to ad hoc requests doesn\u0027t meet a requirement for employees to have a defined right to this information.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eGender pay gap reporting: Non-Compliant.\u003c/strong\u003e An internal calculation existing privately is not the same as formal reporting — the requirement is about disclosure, not just internal awareness.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eJoint assessment trigger: Non-Compliant.\u003c/strong\u003e A confirmed unexplained gap above 5% (the 13.8% finding) that hasn\u0027t triggered the required joint remedial process with worker representatives is the most legally exposed gap of the four, since this is a specific, triggered obligation rather than a general disclosure practice."
                                                              },
                                                              {
@@ -5021,7 +5124,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Given limited compliance team capacity to address all four gaps simultaneously, which would you prioritise first, and why?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the prioritisation reasoning",
                                                                  "v":  "The joint assessment trigger (the 13.8% unexplained gap) should be prioritised first — unlike the other three gaps, which are general disclosure practices that carry ongoing but somewhat diffuse exposure, this is a specific, already-identified, already-triggered legal obligation that exists right now and is not being met. The range disclosure and information-request gaps are real and should be addressed promptly too, but they don\u0027t carry the same already-triggered, specific-event quality that the unexplained gap finding does."
                                                              },
                                                              {
@@ -5066,7 +5170,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before reading on: is the proposed \u0027one global policy, applied everywhere\u0027 approach clearly the right call, given these three stakeholder concerns?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Not clearly — each concern raises a genuine, distinct trade-off that a single blanket policy doesn\u0027t resolve so much as choose to accept. The simplicity benefit is real, but it comes at the cost of accepting the Nigeria/Kenya team\u0027s concern about premature internal pressure in markets without the surrounding compensation infrastructure (published grading, trained managers) that made Almont\u0027s earlier rollout land well, and at the cost of accepting Finance\u0027s competitive visibility concern globally rather than only where legally required. A single global policy isn\u0027t wrong, but it shouldn\u0027t be adopted without weighing these costs explicitly, not just for the simplicity it offers."
                                                              },
                                                              {
@@ -5078,7 +5183,8 @@ export const COURSES: Course[] =
                                                                  "v":  "The Nigeria/Kenya team\u0027s concern echoes a theme from earlier in this curriculum. What does the five-stage transparency maturity model from Module 1 suggest about applying Stage 3+ disclosure in a market that hasn\u0027t yet built Stage 2 (published structure) and Stage 4 (manager readiness) underneath it?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "It directly supports the Nigeria/Kenya team\u0027s concern. Module 1 established that skipping intermediate stages — disclosing outcomes (ranges) before building process transparency (structure) and manager readiness — tends to generate confusion and pressure rather than the intended clarity, exactly the risk the local team is flagging. Applying range disclosure globally in one move, without regard to each market\u0027s actual transparency maturity stage, risks repeating Almont\u0027s Month 4–Month 10 challenges simultaneously across multiple markets that aren\u0027t equally prepared for it."
                                                              },
                                                              {
@@ -5090,7 +5196,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Given this, would you recommend the single global policy, a fully market-by-market approach with no shared standard, or something in between?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Something in between is the more defensible path: a shared global commitment to eventually reach consistent range disclosure everywhere (satisfying Talent Acquisition\u0027s simplicity goal as an end state), but with a market-specific rollout sequence that respects each market\u0027s current transparency maturity stage — meaning the EU and UK markets, likely further along the maturity model already, could move to consistent disclosure sooner, while Nigeria and Kenya follow the same staged sequence Almont used, building structure and manager readiness first. This isn\u0027t indefinite delay; it\u0027s sequencing the same destination differently based on each market\u0027s actual starting point."
                                                              },
                                                              {
@@ -5102,7 +5209,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Finance\u0027s competitive visibility concern is a real cost, but is it a strong enough reason to avoid disclosure in jurisdictions where it isn\u0027t legally required?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "It\u0027s a legitimate factor to weigh, but generally not strong enough on its own to override the broader trust and consistency benefits of transparency, particularly once an organisation has already committed to transparency as a direction in its higher-disclosure markets. A more balanced response is acknowledging the competitive cost explicitly as a trade-off leadership is choosing to accept in exchange for the trust and consistency benefits, rather than treating it as a decisive argument against disclosure — the EU and UK markets are already accepting this same cost as a function of legal requirement, and there\u0027s a consistency argument for accepting it elsewhere too, once the market is otherwise ready."
                                                              },
                                                              {
@@ -5114,7 +5222,8 @@ export const COURSES: Course[] =
                                                                  "v":  "One year into this staged, market-by-market approach, how would Meridian know whether the sequencing decision was the right call, rather than just a more cautious, slower path to the same outcome?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Comparing outcomes in markets that moved sooner (EU/UK) against markets still building foundational stages (Nigeria/Kenya) on metrics like pay-related query volume, employee trust survey scores, and any structural inconsistencies surfaced — essentially replicating Almont\u0027s own before/after tracking, market by market. If markets that moved without full Stage 2/4 readiness show more disruption (more unresolved queries, lower trust scores) than markets that waited, that\u0027s direct evidence the staged approach was the right call, not just a slower version of the same destination."
                                                              },
                                                              {
@@ -5329,7 +5438,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before revealing a model answer, draft how a manager should respond to this question — keeping in mind the disclosure boundary principle (no specific colleague pay details) and the structural understanding principle (explaining what drives range differences)."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal a model talking point",
                                                                  "v":  "“Good question — ranges are set by job evaluation, not job title, so two roles that sound similar can sit in different grades if their actual scope, complexity, or accountability differ. I\u0027d be glad to walk through how your specific role was evaluated and what factors placed it in this range. If you want to understand the other team\u0027s role specifically, that\u0027s a conversation best had with that team\u0027s manager, since I don\u0027t have full visibility into how their role was evaluated.”\u003cbr\u003e\u003cbr\u003eNotice this answer explains the structural principle (job evaluation, not title, drives range placement), offers to go deeper on the employee\u0027s own role specifically, and redirects the comparison to the other role without speculating about it or disclosing anything about the other team — hitting all three enablement requirements from Module 1 without over- or under-disclosing."
                                                              },
                                                              {
@@ -5346,7 +5456,8 @@ export const COURSES: Course[] =
                                                                  "v":  "This question is harder because it directly invites a same-team pay comparison. Draft a talking point that respects the colleague\u0027s confidentiality while still genuinely engaging with the employee\u0027s underlying concern about fairness."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal a model talking point",
                                                                  "v":  "“I can\u0027t discuss anyone else\u0027s specific pay or increase — that needs to stay confidential. What I can do is walk through exactly how your own increase was calculated this cycle: your performance rating, your current position in the range, and how the merit budget was applied. If after that conversation you still feel something doesn\u0027t add up, I\u0027d encourage you to raise it with HR, and I\u0027m glad to support that conversation.”\u003cbr\u003e\u003cbr\u003eThis response holds the confidentiality boundary firmly (no comparison, no confirming or denying the colleague\u0027s increase) while still substantively engaging with the employee\u0027s own situation and offering a genuine next step — avoiding the under-disclosure failure mode of simply shutting the conversation down."
                                                              },
                                                              {
@@ -5399,7 +5510,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before reading on: what\u0027s the main weakness of Option A (a single comprehensive live session) for this specific purpose?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "A single 90-minute session covering everything at once risks information overload — managers are unlikely to retain detailed structural information (range mechanics, grade boundaries) at the same time as they\u0027re absorbing sensitive disclosure-boundary guidance, especially when the real conversations they\u0027ll need this for might not happen for weeks after the session. Detailed reference information tends to be better served by something managers can revisit later, rather than information delivered once in a single dense session."
                                                              },
                                                              {
@@ -5411,7 +5523,8 @@ export const COURSES: Course[] =
                                                                  "v":  "What\u0027s the main weakness of Option B (written briefing pack only, no live session)?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Disclosure boundary guidance — the over-disclosure and under-disclosure failure modes covered earlier — is exactly the kind of nuanced, judgement-dependent content that benefits from live discussion and real Q\u0026A, not just written guidance a manager reads alone. A manager might read written boundaries clearly but still feel uncertain about how to apply them to an ambiguous real scenario without the chance to ask a clarifying question, which a written-only approach doesn\u0027t provide."
                                                              },
                                                              {
@@ -5423,7 +5536,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Why does Option C\u0027s split — live session for disclosure boundaries and sensitive scenarios, written pack for structural reference — address both of the previous weaknesses?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "It matches each type of content to the delivery format best suited to it: the nuanced, judgement-dependent disclosure guidance gets the interactive format (live Q\u0026A) it actually needs, while the detailed, reference-heavy structural information gets a format (written, revisitable) that supports looking it up later rather than relying on session-time memory. This isn\u0027t simply \u0027more delivery channels are better\u0027 — it\u0027s matching content type to format deliberately, which is the actual design principle worth generalising beyond this specific case."
                                                              },
                                                              {
@@ -5435,7 +5549,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Almont chose Option C. Three months after rollout, a survey of managers found 89% felt confident discussing range mechanics, but only 61% felt confident handling a same-team pay comparison question like the one practised in Module 3\u0027s exercise. What does this gap suggest?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Even with the hybrid approach, the most genuinely difficult scenario — a direct same-team comparison — remained the hardest to build confidence around, which is unsurprising given it\u0027s also the scenario with the most tension between competing goods (genuine engagement vs confidentiality). This suggests the live session\u0027s scenario practice may have under-weighted this specific, hardest case relative to its real-world frequency and difficulty, and a follow-up, more targeted session specifically on same-team comparison scenarios would likely close this remaining gap more efficiently than a generic refresher covering everything again."
                                                              },
                                                              {
@@ -5447,7 +5562,8 @@ export const COURSES: Course[] =
                                                                  "v":  "What would you recommend Almont track going forward to confirm whether a targeted same-team-comparison follow-up session actually closes this 61% confidence gap?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "A repeat of the same confidence survey question after the targeted follow-up session, plus, ideally, a count of escalations to HR specifically involving same-team comparison questions before and after the follow-up — if the follow-up worked, both the self-reported confidence figure should rise and the volume of escalated same-team comparison questions reaching HR should fall, since more would be resolved directly by the now more confident manager. Tracking only the confidence survey risks measuring perceived improvement without confirming it actually changes real conversation outcomes."
                                                              },
                                                              {
@@ -5662,7 +5778,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Calculate the percentage of employees who agreed or strongly agreed their package was competitive, before the TRS rollout, using the data above."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the calculation",
                                                                  "v":  "Agree/Strongly Agree = 106 ÷ 280 = \u003cstrong\u003e37.9%\u003c/strong\u003e, often rounded to 38% in reporting.\u003cbr\u003e\u003cbr\u003eThis is the baseline figure against which any post-rollout improvement should be measured — without it, a post-rollout figure has no real comparison point and could be (mis)interpreted in either direction."
                                                              },
                                                              {
@@ -5679,7 +5796,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Calculate the new percentage agreeing their package is competitive, and express the change versus the baseline both in percentage points and as a relative percentage increase."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the calculation",
                                                                  "v":  "New Agree/Strongly Agree = 179 ÷ 280 = \u003cstrong\u003e63.9%\u003c/strong\u003e, rounded to 64%.\u003cbr\u003e\u003cbr\u003ePercentage point change = 64% − 38% = \u003cstrong\u003e26 percentage points.\u003c/strong\u003e\u003cbr\u003eRelative increase = 26 ÷ 38 = \u003cstrong\u003e68.4% relative increase\u003c/strong\u003e in the proportion of employees who view their package as competitive.\u003cbr\u003e\u003cbr\u003eReporting both figures matters: the 26-point absolute change is the more intuitive, directly comparable number for most audiences, while the 68% relative increase better communicates the scale of change for a metric that started from a relatively low base — using only one framing can understate or overstate the result depending on the audience and what they\u0027re comparing it to."
                                                              },
                                                              {
@@ -5732,7 +5850,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before reading on: which of these four changes would you guess contributed most to the 26-point perception swing, and why?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "While all four likely contributed, the manager involvement change is plausibly the highest-leverage single factor, consistent with the broader theme established in Module 3: a TRS connected to an actual conversation, even briefly, tends to land far more effectively than a document alone, however well-designed or accessible. The dashboard and personalisation changes likely improved engagement with the document itself, but the manager conversation requirement is what most directly connects the information to a moment of genuine, personal relevance for the employee."
                                                              },
                                                              {
@@ -5744,7 +5863,8 @@ export const COURSES: Course[] =
                                                                  "v":  "The dashboard engagement tracking metric found that only 41% of employees logged in during the measurement period, despite the 64% post-rollout perception improvement. How do you reconcile these two figures?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "This strongly supports the Discussion Point 1 reasoning — a meaningfully larger share of employees shifted their perception (64% agreeing the package is competitive) than the share who directly engaged with the dashboard itself (41% logged in). This gap suggests the manager conversation requirement is doing a substantial amount of the actual communication work, reaching employees who never personally logged into the dashboard but absorbed the same information through their manager\u0027s quarterly reference to it instead."
                                                              },
                                                              {
@@ -5756,7 +5876,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Given this finding, if Driftwood had limited budget to maintain only one of the four changes going forward, which would you recommend prioritising?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "The manager involvement requirement, based on the evidence so far — it appears to be carrying a disproportionate share of the actual impact relative to the more expensive, more technically complex dashboard infrastructure. This doesn\u0027t mean the dashboard has no value (it likely still serves the 41% who do engage directly, and provides the underlying data the manager conversations reference), but if a genuine trade-off were forced, the evidence points toward the lower-cost, higher-leverage manager conversation requirement as the higher priority to protect."
                                                              },
                                                              {
@@ -5768,7 +5889,8 @@ export const COURSES: Course[] =
                                                                  "v":  "A skeptical board member argues the entire 26-point swing might simply reflect a strong bonus year, not the communication redesign itself. How would you investigate this alternative explanation?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Check whether bonus payouts in the measurement year were unusually strong compared to the prior year, and if so, whether the perception survey question specifically asked about \u0027total compensation\u0027 broadly (which a strong bonus year would genuinely and legitimately improve, independent of any communication change) versus a more targeted question about awareness of benefits and total package value specifically. If the survey included a sub-question on awareness of non-cash elements (pension, insurance, leave value) and that sub-question also improved sharply, that\u0027s much harder to explain through bonus payouts alone, since bonus has no direct bearing on awareness of those other elements — strengthening the case that the communication redesign, not just compensation itself, drove the result."
                                                              },
                                                              {
@@ -5780,7 +5902,8 @@ export const COURSES: Course[] =
                                                                  "v":  "What would a fully rigorous before-and-after design have included, that this case\u0027s measurement approach may have missed?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "A control or comparison group — for example, if Driftwood had multiple business units, rolling out the redesign to only some of them initially while measuring perception in both the redesigned and not-yet-redesigned units over the same period would isolate the communication redesign\u0027s effect from other simultaneous changes (like the bonus year a skeptical board member might raise) much more cleanly than a single before/after comparison across the whole organisation can. Without a comparison group, some ambiguity about alternative explanations, like Discussion Point 4\u0027s bonus year concern, is difficult to fully rule out using this measurement design alone."
                                                              },
                                                              {
@@ -5918,7 +6041,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Given Kestrel\u0027s Stage 1 starting position, recommend a staged sequence toward at least Stage 4, with a rough timeline, drawing on the Almont case\u0027s approach."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal a model sequence for Step 1",
                                                                  "v":  "Following the same sequence that worked for Almont: Stage 2 (publish the existing grading structure, which already exists internally following the Course 2 grading correction) in the first 1–3 months — this is lower-risk and faster since the structural work is already done. Stage 3 (publish range minimums and midpoints) in months 3–6, allowing time to ensure the post-correction ranges are clean and ready for external publication. Stage 4 (manager training) in months 6–12, sequenced after structure and ranges are visible, exactly as Module 1 established as the more effective order."
                                                              },
                                                              {
@@ -5930,7 +6054,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Kestrel\u0027s small remote-hire presence in two US states with range-disclosure-in-postings requirements needs to be addressed. Should this wait for the full Stage 3 rollout, or be handled separately and sooner?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the reasoning for Step 2",
                                                                  "v":  "This specific, narrow compliance obligation should be addressed immediately and separately from the broader staged rollout — it\u0027s a legal requirement tied to current job postings, not a broader transparency maturity choice that can be sequenced at Kestrel\u0027s own pace. Treating a specific legal trigger with the same timeline as a discretionary maturity journey, exactly the kind of priority confusion flagged in Module 2\u0027s compliance-gap prioritisation exercise, would leave Kestrel out of compliance on live job postings for months longer than necessary."
                                                              },
                                                              {
@@ -5942,7 +6067,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Drawing on Module 3\u0027s three-option comparison, recommend an enablement format for Kestrel\u0027s Stage 4 work, and identify which scenario deserves the most dedicated practice time."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the reasoning for Step 3",
                                                                  "v":  "A hybrid approach, mirroring Almont\u0027s Option C: a focused live session on disclosure boundaries and difficult scenarios, paired with a written reference pack on structural mechanics. Given the Almont case\u0027s finding that same-team comparison questions remained the hardest scenario even after a hybrid rollout (61% confidence versus 89% on structural mechanics), Kestrel\u0027s live session should deliberately over-weight practice time on same-team comparison scenarios specifically, rather than splitting practice time evenly across all scenario types, to avoid reproducing the same residual gap Almont experienced."
                                                              },
                                                              {
@@ -5954,7 +6080,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Recommend a TRS delivery approach for Kestrel, given the budget and infrastructure trade-offs surfaced in Driftwood Media\u0027s case."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the reasoning for Step 4",
                                                                  "v":  "Given Driftwood\u0027s finding that manager-conversation involvement plausibly carried a disproportionate share of the impact relative to the more expensive dashboard infrastructure, Kestrel — a smaller organisation likely with a more limited initial budget than Driftwood — should prioritise building the manager-conversation requirement first (a one-page TRS highlights summary per employee, referenced in at least one 1:1 per quarter), and treat a full self-service dashboard as a valuable but lower-priority future investment rather than a precondition for launching meaningful TRS communication now."
                                                              },
                                                              {
@@ -5966,7 +6093,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Design a measurement plan for Kestrel\u0027s overall rollout, incorporating the lessons from Module 4\u0027s discussion about control groups and alternative explanations."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal a model measurement plan for Step 5",
                                                                  "v":  "A baseline perception survey (the same “competitive total package” question used at Driftwood) before the rollout begins, repeated as a panel survey at 12 months, reporting both percentage-point and relative change. Given Kestrel operates as a single organisation without multiple comparable business units for a true control group (unlike the hypothetical option raised in Driftwood\u0027s case), the team should instead track a secondary, less bonus-sensitive sub-question specifically on awareness of non-cash benefit value, which would help distinguish a genuine communication effect from any confounding factor like a particularly strong pay cycle during the measurement period — the same logic Module 4 used to interrogate Driftwood\u0027s result, applied here in the absence of an ideal control-group design."
                                                              },
                                                              {
@@ -6204,7 +6332,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Calculate the compa-ratio for each of the 10 employees (salary ÷ $90,000 midpoint), then sort them into the standard bucket structure: below 0.85, 0.85–0.95, 0.95–1.05, 1.05–1.15, above 1.15."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the calculation and bucketing",
                                                                  "v":  "A: $74,500÷$90,000=0.83 (below 0.85) · B: $79,200÷$90,000=0.88 (0.85–0.95) · C: $82,800÷$90,000=0.92 (0.85–0.95) · D: $86,400÷$90,000=0.96 (0.95–1.05) · E: $88,900÷$90,000=0.99 (0.95–1.05)\u003cbr\u003eF: $91,800÷$90,000=1.02 (0.95–1.05) · G: $96,300÷$90,000=1.07 (1.05–1.15) · H: $103,500÷$90,000=1.15 (1.05–1.15) · I: $107,100÷$90,000=1.19 (above 1.15) · J: $112,500÷$90,000=1.25 (above 1.15)\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eBucket counts:\u003c/strong\u003e Below 0.85: 1 · 0.85–0.95: 2 · 0.95–1.05: 3 · 1.05–1.15: 2 · Above 1.15: 2\u003cbr\u003e\u003cbr\u003eThis is a roughly normal, healthy-looking shape — the largest single bucket (3 of 10) sits in the core 0.95–1.05 range, with a reasonably even taper toward both extremes, not a concerning skew or bimodal split."
                                                              },
                                                              {
@@ -6216,7 +6345,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Suppose five additional employees join this same Grade 5 group: K: $76,000 · L: $78,500 · M: $108,000 · N: $110,500 · O: $114,000. Recalculate the full 15-person distribution and assess whether the shape has changed meaningfully."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the updated distribution",
                                                                  "v":  "K: $76,000÷$90,000=0.84 (below 0.85) · L: $78,500÷$90,000=0.87 (0.85–0.95) · M: $108,000÷$90,000=1.20 (above 1.15) · N: $110,500÷$90,000=1.23 (above 1.15) · O: $114,000÷$90,000=1.27 (above 1.15)\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eUpdated bucket counts (15 total):\u003c/strong\u003e Below 0.85: 2 · 0.85–0.95: 3 · 0.95–1.05: 3 · 1.05–1.15: 2 · Above 1.15: 5\u003cbr\u003e\u003cbr\u003eThe shape has shifted meaningfully — the \u0027above 1.15\u0027 bucket has grown from 2 to 5 employees (now the single largest bucket, tied with the combined low end), while the core 0.95–1.05 bucket\u0027s relative share has shrunk from 30% of the group to 20%. This is now showing early signs of the kind of bimodal-leaning pattern Module 1\u0027s Solaris scenario described — worth flagging for closer investigation into why these five new entrants cluster so heavily at the high end."
                                                              },
                                                              {
@@ -6261,7 +6391,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before reading on: what does the combination of the tenure and hire-date cross-tabs suggest about the likely root cause of this bimodal pattern?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "This strongly suggests a market-pricing-and-tenure compression problem: longer-tenured employees, whose pay has grown primarily through periodic merit increases over many years, have fallen behind the current market rate that new hires are being brought in at. New hires are being priced at today\u0027s market rate (explaining their high compa-ratios relative to a midpoint that hasn\u0027t kept pace), while tenured employees\u0027 compa-ratios reflect years of merit increases applied to a now-outdated relative position. This is compression — the gap between long-tenured and newly-hired pay for comparable roles — showing up clearly in the distribution data."
                                                              },
                                                              {
@@ -6273,7 +6404,8 @@ export const COURSES: Course[] =
                                                                  "v":  "The performance rating cross-tab shows no meaningful difference between the two groups. Why is this finding important to the overall diagnosis?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "It rules out a tempting alternative explanation: that the below-0.90 group is simply lower-performing and therefore appropriately paid less. Since performance ratings are statistically indistinguishable between the groups, the compa-ratio gap can\u0027t be explained by a genuine performance difference — strengthening the case that this is a structural compression issue tied to tenure and hire timing, not a merit-based, defensible pay difference."
                                                              },
                                                              {
@@ -6285,7 +6417,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Given this diagnosis, would a standard annual merit increase cycle, applied as usual, meaningfully close this gap over time?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Almost certainly not, or only very slowly. A standard merit cycle typically applies similar percentage increases across comparable performance ratings — and since the two groups here show indistinguishable performance, a standard merit approach would likely apply similar increase percentages to both groups, preserving the existing gap in relative terms rather than closing it. Closing a structural compression gap requires a market-correcting approach (similar to the merit matrix logic covered elsewhere in this curriculum) that deliberately allocates larger increases to the lower-compa-ratio, longer-tenured group specifically, not a standard, evenly-applied cycle."
                                                              },
                                                              {
@@ -6297,7 +6430,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Solaris\u0027s CFO is hesitant to fund a market-correcting merit allocation, asking: ‘why should we pay more just because someone has been here longer, if their performance is the same as a newer hire?’ How would you respond to this framing?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "The framing somewhat inverts the actual problem: this isn\u0027t about rewarding tenure for its own sake, it\u0027s about correcting a market-positioning gap that emerged because external hiring rates moved faster than internal merit increases did — the tenured employees are arguably underpaid relative to the current market for their role, not simply due for a tenure bonus. A more accurate framing for the CFO is: ‘the market rate for this role has moved up faster than our internal merit cycles have kept pace, and we\u0027re now seeing that gap directly in the data — the correction restores market-appropriate pay, it doesn\u0027t reward tenure as such.’"
                                                              },
                                                              {
@@ -6309,7 +6443,8 @@ export const COURSES: Course[] =
                                                                  "v":  "One year after a targeted market-correction allocation, the distribution shows the below-0.90 bucket has shrunk from 34% to 19%, and the core 0.95–1.05 bucket has grown from 22% to 41%. What would you recommend Solaris monitor going forward to prevent this pattern from re-emerging?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "A recurring (at minimum annual) distribution analysis, specifically cross-tabbed by tenure and hire date, rather than relying on the single average compa-ratio figure that originally concealed this problem. Given the root cause was market rates moving faster than internal merit cycles, this gap is likely to re-emerge gradually over time unless either merit cycles are explicitly designed to track market movement going forward, or the distribution is checked regularly enough to catch a recurrence early — before it reaccumulates to the scale originally found."
                                                              },
                                                              {
@@ -6529,7 +6664,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Using the scoring structure above, calculate Chiamaka\u0027s total flight-risk score and determine whether she crosses the flagging threshold."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the calculation",
                                                                  "v":  "Compa-ratio below 0.90: +30 (applies)\u003cbr\u003eTenure 3+ years without promotion: +25 (applies, 4.2 years)\u003cbr\u003eManager change within 6 months: +20 (applies, 3 months ago)\u003cbr\u003eEngagement bottom quartile: +0 (does not apply, 2nd quartile)\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eTotal score: 30 + 25 + 20 + 0 = 75 points.\u003c/strong\u003e Crosses the 70-point flagging threshold."
                                                              },
                                                              {
@@ -6546,7 +6682,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Calculate Tobias\u0027s score using the same structure, and consider what\u0027s different about the combination of factors present in his profile compared to Chiamaka\u0027s."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the calculation",
                                                                  "v":  "Compa-ratio below 0.90: +0 (does not apply, 1.08)\u003cbr\u003eTenure 3+ years without promotion: +0 (does not apply, 1.5 years)\u003cbr\u003eManager change within 6 months: +0 (does not apply)\u003cbr\u003eEngagement bottom quartile: +25 (applies)\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eTotal score: 25 points.\u003c/strong\u003e Well below the 70-point threshold, despite the concerning engagement score on its own.\u003cbr\u003e\u003cbr\u003eThis is an important nuance: a single strongly negative factor (bottom-quartile engagement) doesn\u0027t automatically produce a high composite score if the other factors are favourable — Tobias is paid above midpoint, relatively new to his role, and hasn\u0027t had a recent manager change. The model is specifically designed to flag the accumulation of multiple risk factors, not react to any single concerning data point in isolation."
                                                              },
                                                              {
@@ -6599,7 +6736,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before reading on: does the 43% departure rate among flagged employees, against a 9% baseline, validate the model as having real predictive value?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Yes, directionally — a flagged group departing at roughly 4.8 times the rate of the unflagged workforce is a strong signal the model is identifying genuine risk, not just noise. This doesn\u0027t mean the model is perfect (57% of flagged employees did not depart, meaning the model also has a meaningful false-positive rate), but as a prioritisation tool specifically, a several-fold difference in actual outcome between flagged and unflagged groups is exactly the kind of result that justifies continued investment and refinement, rather than abandoning the approach."
                                                              },
                                                              {
@@ -6611,7 +6749,8 @@ export const COURSES: Course[] =
                                                                  "v":  "All 6 who departed had received a retention conversation, but only 2 received a concrete intervention beyond that conversation. What does this pattern suggest about where Nova Tech\u0027s response may have fallen short?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "This suggests the flagging and conversation stage of the process may have worked reasonably well (identifying genuinely at-risk people and engaging them), but the follow-through into concrete action was inconsistent — a conversation alone, without a tangible change to the underlying risk factors (pay position, stalled progression, the relationship disruption from a recent manager change), may not be sufficient to change the outcome for someone already experiencing compounding risk factors. This points to a process gap between identification and meaningful intervention, not necessarily a flaw in the identification model itself."
                                                              },
                                                              {
@@ -6623,7 +6762,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Of the 8 flagged employees who did not depart, would you recommend investigating what happened with their cases as part of refining the model, and if so, why?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Yes — understanding what differed about the 8 who stayed (did they receive a different type of intervention, did one specific risk factor resolve on its own, was there a difference in their specific combination of risk factors compared to those who left) could reveal whether certain combinations of the four factors are more \u0027actionable\u0027 or responsive to intervention than others, which would meaningfully improve both the model\u0027s predictive precision and, more practically, which interventions Nova Tech should prioritise offering to future flagged employees."
                                                              },
                                                              {
@@ -6635,7 +6775,8 @@ export const COURSES: Course[] =
                                                                  "v":  "A team lead argues the model should now be expanded to flag employees at a lower threshold (e.g. 50 points instead of 70) to ‘catch problems earlier.’ What trade-off should Nova Tech weigh before making this change?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Lowering the threshold would flag more employees, including some who would not have left even without intervention (increasing the false-positive rate), which spreads the same limited retention-conversation and intervention capacity across a larger, less precisely targeted group — potentially diluting the quality and follow-through of interventions exactly where Discussion Point 2 already identified inconsistency. Before lowering the threshold, Nova Tech should weigh whether it actually has the capacity to meaningfully act on a larger flagged group, or whether a lower threshold would mostly just generate more conversations without the concrete follow-through needed to change outcomes."
                                                              },
                                                              {
@@ -6647,7 +6788,8 @@ export const COURSES: Course[] =
                                                                  "v":  "What single change to Nova Tech\u0027s process, based on this validation round, would you recommend prioritising before adjusting the model\u0027s scoring or threshold at all?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Closing the conversation-to-intervention follow-through gap identified in Discussion Point 2 — explicitly tracking and improving the rate at which a flagged, engaged employee actually receives a concrete intervention, not just a conversation, since this gap is plausibly costing Nova Tech more in preventable departures than any refinement to the underlying scoring weights would. This is a useful general principle in predictive people analytics: a model\u0027s practical value is capped by the weakest link in the surrounding process, and improving the model\u0027s technical precision before fixing a known process gap downstream of it often yields a smaller return than fixing the process gap first."
                                                              },
                                                              {
@@ -6862,7 +7004,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Calculate the current annual cost of turnover in this 60-person population, before any intervention, using the current 28% turnover rate and the $42,000 per-departure cost."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the calculation",
                                                                  "v":  "Expected departures per year at 28% = 60 × 0.28 = 16.8 departures.\u003cbr\u003eCost of inaction = 16.8 × $42,000 = \u003cstrong\u003e$705,600 per year.\u003c/strong\u003e"
                                                              },
                                                              {
@@ -6874,7 +7017,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Using the projected reduction from 28% to 17%, calculate the new expected annual turnover cost, the gross annual savings, the net annual benefit after the $310,000 intervention cost, and the approximate payback period."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the calculation",
                                                                  "v":  "Expected departures per year at 17% = 60 × 0.17 = 10.2 departures.\u003cbr\u003eNew annual turnover cost = 10.2 × $42,000 = $428,400.\u003cbr\u003e\u003cstrong\u003eGross annual savings\u003c/strong\u003e = $705,600 − $428,400 = $277,200.\u003cbr\u003e\u003cstrong\u003eNet annual benefit\u003c/strong\u003e = $277,200 − $310,000 (intervention cost) = \u003cstrong\u003e−$32,800.\u003c/strong\u003e\u003cbr\u003e\u003cbr\u003eNotice this comes out slightly negative in Year 1 — the intervention costs marginally more than the projected savings in its first year, assuming the full $310,000 cost and the full projected benefit both land in the same 12-month period.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003ePayback period\u003c/strong\u003e = $310,000 ÷ $277,200 annual savings ≈ \u003cstrong\u003e1.12 years\u003c/strong\u003e — just over a year, not the under-six-months figure seen in the Palora Health scenario, since this proposal\u0027s intervention cost is proportionally larger relative to its population size and projected savings."
                                                              },
                                                              {
@@ -6927,7 +7071,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before reading on: the actual savings ($650,000) came in well below the original projection ($1.1M). Does this mean the business case was wrong, or the intervention failed?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Not necessarily either — the regional nursing shortage driving up market-wide recruitment costs by 15% during the same period is a confounding factor that worked against the projection, independent of whether the retention intervention itself worked as intended. The original $42,000-per-departure-style cost assumption embedded in the projection was presumably based on pre-shortage market costs; if recruitment costs for the departures that did still occur rose 15% due to the regional shortage, that alone would reduce the realised savings relative to the original projection, even if the intervention\u0027s actual effect on turnover rate matched expectations exactly."
                                                              },
                                                              {
@@ -6939,7 +7084,8 @@ export const COURSES: Course[] =
                                                                  "v":  "How would you investigate whether the intervention\u0027s effect on turnover rate itself — separate from the cost-per-departure confound — matched the original projection?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Check the actual number of departures against the originally projected departure count, independent of cost — if departures fell roughly in line with the original turnover-rate projection (the intervention\u0027s actual people-level effect), but the cost-per-departure rose due to the regional shortage, that cleanly separates ‘did the intervention work as intended’ from ‘did external market conditions affect the financial translation of that effect.’ This kind of decomposition is exactly the type of rigour that protects a Total Rewards team\u0027s credibility when a result comes in below projection for reasons outside the original model\u0027s scope."
                                                              },
                                                              {
@@ -6951,7 +7097,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Suppose this decomposition confirms departures did fall roughly as projected, and the shortfall in savings is fully explained by the regional cost increase. How should this be communicated to the CFO?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Directly and with the supporting decomposition, not defensively — explaining that the intervention\u0027s effect on actual turnover (departures) matched the original projection, and that the financial shortfall versus the original savings estimate is attributable to a documented, external, regional market factor that affected the underlying cost-per-departure assumption, not the intervention\u0027s effectiveness itself. This kind of transparent, evidence-based explanation, presented proactively rather than only in response to a challenge, is what builds durable credibility for future business cases, even when a specific result comes in below an original projection."
                                                              },
                                                              {
@@ -6963,7 +7110,8 @@ export const COURSES: Course[] =
                                                                  "v":  "The intervention also ran 6% over its original $480,000 budget, landing at $510,000. Is this cost overrun a separate concern from the savings shortfall, or related to it?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "It\u0027s worth investigating as a genuinely separate question, since conflating it with the (largely externally-driven) savings shortfall risks either unfairly blaming the team for something outside their control, or inappropriately excusing a real execution issue by attributing it to the same external factor. A careful review should ask specifically why the intervention itself cost more than budgeted — if the answer also traces to the regional shortage (e.g. recruitment-adjacent costs within the intervention itself), that\u0027s a related explanation; if it traces to scope creep or poor initial estimation, that\u0027s a distinct execution issue worth addressing on its own terms regardless of the broader market context."
                                                              },
                                                              {
@@ -6975,7 +7123,8 @@ export const COURSES: Course[] =
                                                                  "v":  "What should Palora\u0027s Total Rewards team do differently in its next business case, given this experience?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Explicitly flag known external risk factors (like potential market-wide cost shifts) as a named sensitivity in the original case, alongside the conservative/expected/optimistic range recommended in Module 3\u0027s theory — rather than only discovering and explaining such factors retrospectively once a result comes in below projection. A business case that proactively names ‘if regional market conditions shift, the cost-per-departure assumption may not hold, which would affect realised savings independent of the intervention\u0027s own effectiveness’ sets a more accurate expectation upfront and makes any later explanation far more credible, since it was anticipated rather than constructed after the fact to explain an underperforming result."
                                                              },
                                                              {
@@ -7190,7 +7339,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Using the skill overlaps described above, map which roles connect to which others as plausible next moves — both lateral (same grade, different role) and vertical (next grade up) — based on genuine skill overlap, not just organisational proximity."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the lattice mapping",
                                                                  "v":  "\u003cstrong\u003eFinancial Analyst → Senior Financial Analyst (vertical):\u003c/strong\u003e Strong overlap (financial modelling, variance analysis) plus the new mentoring skill to build — a clean, traditional vertical step.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eFinancial Analyst → FP\u0026A Analyst (lateral):\u003c/strong\u003e Shares financial modelling as a core skill, but requires building forecasting and more advanced stakeholder communication — a genuine lateral move requiring real skill-building, not just a title change.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eFP\u0026A Analyst → FP\u0026A Manager (vertical):\u003c/strong\u003e Strong overlap (forecasting, advanced stakeholder communication) plus the new team management skill to build — a clean vertical step from this lateral position.\u003cbr\u003e\u003cbr\u003e\u003cstrong\u003eSenior Financial Analyst → FP\u0026A Manager: weaker direct connection.\u003c/strong\u003e Shares financial modelling, but lacks the forecasting and advanced stakeholder communication skills FP\u0026A Manager requires — this path would need an intermediate step (likely through FP\u0026A Analyst) rather than being a direct, defensible next move."
                                                              },
                                                              {
@@ -7243,7 +7393,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before reading on: given everything covered earlier in this curriculum about communication design (Course 4\u0027s manager enablement and TRS rollout lessons), what\u0027s the most likely weakness in this launch plan as designed?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "The launch communication — a single email announcement with no accompanying session or manager involvement — closely mirrors exactly the low-impact delivery pattern that produced poor results in the earlier Driftwood Media TRS case. Building a genuinely better tool doesn\u0027t guarantee better engagement if the delivery and communication design repeats the same low-engagement channel that failed to drive adoption of valuable content before, in this same curriculum\u0027s own earlier findings."
                                                              },
                                                              {
@@ -7255,7 +7406,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Drawing directly on the Driftwood Media case\u0027s findings, what specific change would you recommend to Castleton\u0027s launch communication plan?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Pair the email announcement with a manager-led conversation requirement — similar to the one-page TRS highlights summary and quarterly 1:1 reference that proved to be the highest-leverage element in Driftwood\u0027s redesign — asking managers to walk each direct report through the tool and discuss their own current position on the lattice during a scheduled 1:1, rather than relying on employees to discover and engage with the tool entirely on their own initiative from a single email."
                                                              },
                                                              {
@@ -7267,7 +7419,8 @@ export const COURSES: Course[] =
                                                                  "v":  "90 days after launch (incorporating the manager-conversation addition), tool usage analytics show 71% of analysts logged in at least once, and 58% viewed more than one role\u0027s skill requirements (suggesting genuine exploration, not just a single curiosity click). How would you interpret these figures relative to the original PDF\u0027s 12% engagement rate?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "This is a substantial improvement, and the 58% figure exploring multiple roles is arguably the more meaningful number, since it suggests genuine engagement with the lattice\u0027s actual purpose (comparing options, understanding paths) rather than a single perfunctory visit. Combined with the manager-conversation requirement, this pattern is consistent with the broader lesson from Driftwood\u0027s case: pairing a self-service tool with a structured human conversation about it drives meaningfully more genuine engagement than either element alone."
                                                              },
                                                              {
@@ -7279,7 +7432,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Should Castleton consider the framework redesign a complete success at this point, or is there a further validation step worth taking?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "Usage analytics confirm engagement with the tool, but the framework\u0027s ultimate purpose is supporting actual career movement — the next validation step is tracking whether lateral and vertical moves within the analyst function increase over the following 12–18 months compared to the period before the new framework launched, and specifically whether moves follow the mapped lattice paths (e.g. Financial Analyst → FP\u0026A Analyst as an intermediate step) rather than the kind of poorly-supported jumps the old, vague framework might have implicitly encouraged. Usage is a leading indicator; actual movement pattern is the lagging outcome that confirms the framework is doing its intended job."
                                                              },
                                                              {
@@ -7291,7 +7445,8 @@ export const COURSES: Course[] =
                                                                  "v":  "A year later, Castleton finds lateral moves (Financial Analyst to FP\u0026A Analyst) have increased notably, but moves into the FP\u0026A Manager role still predominantly come directly from FP\u0026A Analyst, exactly as the lattice mapping predicted, with very few coming from Senior Financial Analyst without an intermediate step. What does this confirm?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "See the reasoning",
                                                                  "v":  "This is strong confirming evidence that the lattice\u0027s mapped paths, built from genuine skill-overlap analysis in Module 4\u0027s exercise, accurately reflect the real skill-building sequence required for these specific roles — employees and managers, once given visibility into the actual skill requirements, are naturally gravitating toward the paths the skill data supports, rather than the kind of poorly-grounded direct jump the framework\u0027s design specifically flagged as a weak connection. This validates not just that the framework is being used, but that the underlying analytical work behind it (Module 4\u0027s skill-mapping exercise) was substantively accurate."
                                                              },
                                                              {
@@ -7429,7 +7584,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Before designing any intervention, recommend the first analytical step to test leadership\u0027s anecdotal concern about mid-tenure production staff turnover."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the model recommendation for Step 1",
                                                                  "v":  "Build a compa-ratio distribution specifically for the production function, cross-tabbed by tenure, exactly as practised in Module 1 — this would directly test whether mid-tenure staff show a distinct compa-ratio pattern (e.g. a compression signature similar to Solaris Financial\u0027s case) that could explain the anecdotal turnover concern, before committing further analytics or intervention budget to a concern that is currently based on impression rather than data. If the distribution shows no unusual pattern for mid-tenure staff specifically, that\u0027s valuable information suggesting the anecdotal concern may not be the right place to focus, before any further investment."
                                                              },
                                                              {
@@ -7441,7 +7597,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Suppose the Step 1 distribution analysis does confirm a compression pattern concentrated among mid-tenure production staff. Should Driftwood now build a full flight-risk scoring model, or is this premature?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the reasoning for Step 2",
                                                                  "v":  "Given the confirmed compression pattern, a flight-risk model combining compa-ratio position with the other factors covered in Module 2 (tenure without promotion, recent manager change, engagement score) is a reasonable next step — but Driftwood should calibrate the model\u0027s weights against its own historical departures first, exactly as Module 2 emphasised, rather than borrowing generic weights, since this is a one-time model-building investment worth doing properly rather than quickly. Given Driftwood has limited prior analytics infrastructure, this may take longer to build credibly than it did for Nova Tech, which had more established historical data practices already in place."
                                                              },
                                                              {
@@ -7453,7 +7610,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Assume the distribution and flight-risk analysis point toward a targeted market-correction merit allocation for the affected mid-tenure group, similar to Solaris Financial\u0027s case. Outline the business case structure you would build to support this proposal."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the reasoning for Step 3",
                                                                  "v":  "Following the structure established in Module 3: quantify the cost of inaction (turnover cost modelling applied specifically to the affected mid-tenure production population, using their actual historical departure rate and an appropriate per-departure cost estimate), quantify the cost of the proposed market-correction allocation, calculate a payback period, and present a conservative/expected/optimistic range rather than a single point estimate — explicitly naming any foreseeable external risk factor (for example, broader media industry hiring trends) as a sensitivity within the case itself, learning directly from the lesson Palora Health\u0027s team took away from their own underperforming projection."
                                                              },
                                                              {
@@ -7465,7 +7623,8 @@ export const COURSES: Course[] =
                                                                  "v":  "With no existing formal framework and progression historically dependent on individual manager advocacy, recommend a starting approach for the production function career framework."
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal the reasoning for Step 4",
                                                                  "v":  "Start by mapping actual skill overlaps between current production roles, exactly as practised in Module 4\u0027s lattice-mapping exercise, rather than starting from assumed organisational hierarchy alone — given progression has depended on individual manager advocacy, there\u0027s a meaningful risk that perceived \u0027natural\u0027 progression paths reflect historical manager relationships and visibility rather than genuine skill-based readiness, making an honest, data-driven skill-mapping exercise particularly valuable here as a way to surface paths that may have been previously overlooked simply because no manager happened to advocate for them."
                                                              },
                                                              {
@@ -7477,7 +7636,8 @@ export const COURSES: Course[] =
                                                                  "v":  "Given Driftwood\u0027s prior, hard-won lesson from its TRS rollout (covered elsewhere in this curriculum) about the importance of manager-conversation involvement, how should the new career framework be launched?"
                                                              },
                                                              {
-                                                                 "t":  "p",
+                                                                 "t":  "reveal",
+                                                                 "label":  "Reveal a model recommendation for Step 5",
                                                                  "v":  "Apply the same lesson directly: pair the framework\u0027s launch with a structured manager-conversation requirement, similar to both the TRS rollout\u0027s successful approach and Castleton Partners\u0027 lattice launch in Module 4 — not a standalone email announcement, which the curriculum has now shown to underperform across multiple different contexts (TRS communication, career framework communication) whenever it\u0027s tried alone. Driftwood is in the fortunate position of having already learned this lesson once, at real cost, through its own TRS experience; applying it proactively to the career framework launch, rather than relearning the same lesson a second time through another underwhelming standalone-email rollout, is the more disciplined path forward."
                                                              },
                                                              {
