@@ -544,6 +544,29 @@
   .cc-cert-statement { margin-bottom: 32px; }
 }
 
+/* ── Mark Complete button (quiz-less lessons) ── */
+.cc-mark-done-btn {
+  display: block;
+  width: 100%;
+  margin-top: 36px;
+  padding: 16px 24px;
+  border-radius: 10px;
+  border: 1.5px solid;
+  background: transparent;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+.cc-mark-done-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+}
+.cc-mark-done-btn:active { transform: translateY(0); }
+
 /* ── XP Completion Banner ── */
 .cc-xp-banner {
   display: flex;

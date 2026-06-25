@@ -1088,6 +1088,22 @@ export function CourseCentre() {
                 </div>
               ))}
 
+              {/* No-quiz lessons: "Mark complete" button awards XP */}
+              {!q && !alreadyDone && (
+                <button
+                  type="button"
+                  className="cc-mark-done-btn"
+                  style={{ borderColor: m.color, color: m.color }}
+                  onClick={() => {
+                    persistXp(c.id, l.id, l.xp);
+                    showToast(`⚡ +${l.xp} XP earned!`);
+                    launchConfetti(m.color);
+                  }}
+                >
+                  ✓ Mark complete — +{l.xp} XP
+                </button>
+              )}
+
               {/* Lesson complete XP banner — shows once XP is earned */}
               {(alreadyDone || (kcAnswered && (lxp[lessonKey(activeCourseId!, l.id)] || 0) > 0)) && (
                 <div className="cc-xp-banner" style={{ borderColor: hexToRgba(m.color, 0.4), background: hexToRgba(m.color, 0.08) }}>
