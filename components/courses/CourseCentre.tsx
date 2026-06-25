@@ -317,10 +317,16 @@ export function CourseCentre() {
     const ok = kcSel === q.ans;
     const key = lessonKey(activeCourse.id, lesson.id);
     const already = (lxp[key] || 0) > 0;
-    if (ok && !already) {
+    // Award XP on any attempt (correct or not) — matching the HTML prototype's
+    // engagement-based model. Correct answers get confetti, wrong answers still complete.
+    if (!already) {
       persistXp(activeCourse.id, lesson.id, lesson.xp);
-      showToast(`⚡ +${lesson.xp} XP earned! Great work.`);
-      launchConfetti(mod.color);
+      if (ok) {
+        showToast(`⚡ +${lesson.xp} XP earned! Great work.`);
+        launchConfetti(mod.color);
+      } else {
+        showToast(`+${lesson.xp} XP earned. Review the explanation and continue.`);
+      }
     }
   }, [kcSel, kcAnswered, activeCourse, activeLesson, lxp, persistXp, showToast, launchConfetti]);
 
@@ -1022,7 +1028,7 @@ export function CourseCentre() {
                         );
                       })}
                     </div>
-                    {kcAnswered && !alreadyDone && (
+                    {kcAnswered && (
                       <div className={`cc-kc-exp ${kcSel === q.ans ? "ok-exp" : "no-exp"}`}>
                         <div className="cc-kc-exp-lbl">
                           {kcSel === q.ans ? "✓ Correct!" : "✗ Incorrect — here's why:"}
@@ -1031,7 +1037,7 @@ export function CourseCentre() {
                       </div>
                     )}
                     <div className="cc-kc-act">
-                      {alreadyDone || kcAnswered ? (
+                      {alreadyDone || (kcAnswered && (lxp[lessonKey(activeCourseId!, l.id)] || 0) > 0) ? (
                         <div className="cc-kc-xp-msg">✓ XP earned for this lesson</div>
                       ) : (
                         <>
@@ -1071,11 +1077,7 @@ export function CourseCentre() {
                   className="cc-lf-btn next"
                   onClick={() => {
                     if (!alreadyDone && q && !kcAnswered) {
-                      showToast("Complete the knowledge check to earn XP before continuing.");
-                      return;
-                    }
-                    if (!alreadyDone && q && kcAnswered && kcSel !== q.ans) {
-                      showToast("Answer correctly to earn XP, then continue.");
+                      showToast("Answer the knowledge check to earn XP before continuing.");
                       return;
                     }
                     startLesson(c.id, next.lesson, next.mod);
