@@ -801,7 +801,8 @@ export function CourseCentre() {
     const next = idx < all.length - 1 ? all[idx + 1] : null;
     const doneAll = all.filter((x) => (lxp[lessonKey(c.id, x.lesson.id)] || 0) > 0).length;
     const lessonPct = Math.round((doneAll / all.length) * 100);
-    const q = getLessonQuiz(l);
+    // Only show KC if the lesson has an explicit quiz in the data (no auto-generated ones)
+    const q = l.quiz ? getLessonQuiz(l) : null;
     const alreadyDone = (lxp[lessonKey(c.id, l.id)] || 0) > 0;
 
     return (
