@@ -54,6 +54,25 @@ type SavePayload = {
   xp: number;
 };
 
+// ── Reset (delete) all course progress for the signed-in user ──
+export async function DELETE() {
+  if (!isSupabaseConfigured()) return UNAUTH;
+
+  try {
+    const supabase = await createClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (!user) return UNAUTH;
+
+    await supabase.from("course_progress").delete().eq("user_id", user.id);
+
+    return NextResponse.json({ authenticated: true, lxp: {} });
+  } catch {
+    return NextResponse.json({ error: "Unexpected error" }, { status: 500 });
+  }
+}
+
 // ── Record lesson XP for the signed-in user, return refreshed map ──
 export async function POST(req: Request) {
   if (!isSupabaseConfigured()) return UNAUTH;

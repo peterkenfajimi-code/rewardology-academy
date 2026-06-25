@@ -9,7 +9,8 @@ import {
 // Earned XP per lesson, keyed `${courseId}-${lessonId}` (matches the API map).
 export type LessonXpMap = Record<string, number>;
 
-export const COURSE_XP_STORAGE_KEY = "ra_course_lxp";
+// v2: key bumped to clear old-curriculum progress data (pre-June 2026 rebuild)
+export const COURSE_XP_STORAGE_KEY = "ra_course_lxp_v2";
 
 export function lessonKey(courseId: number, lessonId: string): string {
   return `${courseId}-${lessonId}`;

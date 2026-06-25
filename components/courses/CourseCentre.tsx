@@ -35,6 +35,7 @@ import { useSourceRatings } from "@/components/testimonials/useSourceRatings";
 import { getSourceRating } from "@/lib/testimonials/ratings";
 import "@/styles/course-centre.css";
 import { dispatchXpUpdated } from "@/lib/xp/dispatch";
+import { levelFor, rankProgress } from "@/lib/xp/levels";
 
 const LABELS = ["A", "B", "C", "D"];
 const RING_CIRCUMFERENCE = 390;
@@ -408,10 +409,24 @@ export function CourseCentre() {
     );
   }, [user]);
 
+  // ── Reset all progress ──
+  function resetProgress() {
+    if (!window.confirm("Reset all course progress and XP? This cannot be undone.")) return;
+    setLxp({});
+    writeLocalCourseXp({});
+    // Also wipe server-side progress
+    if (user) {
+      fetch("/api/course-centre", { method: "DELETE" }).catch(() => {});
+    }
+    showToast("Progress reset. Starting fresh!");
+    setView("lobby");
+  }
+
   // ── Render: Lobby ──
   function renderLobby() {
-    const overallPct = Math.min(100, Math.round((totalXP / MAX_COURSE_XP) * 100));
-    const totalModules = COURSES.reduce((s, c) => s + c.modules.length, 0);
+    const { current: rank, next: nextRank } = levelFor(totalXP);
+    const rankPct = Math.round(rankProgress(totalXP) * 100);
+    const xpToNext = nextRank ? nextRank.min - totalXP : 0;
     return (
       <div className="cc-view">
         <div className="cc-lobby-hero">
@@ -456,18 +471,20 @@ export function CourseCentre() {
               <div className="cc-lh-card">
                 <div className="cc-lhc-top">
                   <div className="cc-lhc-l">Your rank</div>
-                  <div className="cc-lhc-xp cc-serif">
-                    {totalXP === 0 ? "HR Intern" : totalXP < 500 ? "Reward Analyst" : totalXP < 1200 ? "Reward Coordinator" : totalXP < 2500 ? "Reward Manager" : "Reward Director"}
-                  </div>
+                  <div className="cc-lhc-xp cc-serif">{rank.name}</div>
                   <div className="cc-lhc-sub">{totalXP.toLocaleString()} XP earned</div>
                 </div>
                 <div className="cc-lhc-body">
                   <div className="cc-xp-bar-row">
-                    <span>Overall completion</span>
-                    <span>{overallPct}%</span>
+                    <span>
+                      {nextRank
+                        ? `${xpToNext.toLocaleString()} XP to ${nextRank.name}`
+                        : "Top rank reached"}
+                    </span>
+                    <span>{rankPct}%</span>
                   </div>
                   <div className="cc-xp-bar">
-                    <div className="cc-xp-bar-f" style={{ width: `${overallPct}%` }} />
+                    <div className="cc-xp-bar-f" style={{ width: `${rankPct}%` }} />
                   </div>
                   <div className="cc-pills">
                     {COURSES.map((c) => {
@@ -1056,6 +1073,16 @@ export function CourseCentre() {
                   </div>
                 </div>
               )}
+              {/* Lesson complete XP banner — shows once XP is earned */}
+              {(alreadyDone || (kcAnswered && (lxp[lessonKey(activeCourseId!, l.id)] || 0) > 0)) && (
+                <div className="cc-xp-banner" style={{ borderColor: hexToRgba(m.color, 0.4), background: hexToRgba(m.color, 0.08) }}>
+                  <span className="cc-xp-banner-ico">⚡</span>
+                  <div>
+                    <div className="cc-xp-banner-title" style={{ color: m.color }}>Lesson complete</div>
+                    <div className="cc-xp-banner-sub">+{l.xp} XP added to your total.</div>
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className="cc-les-foot">
@@ -1424,6 +1451,11 @@ export function CourseCentre() {
         {view !== "lobby" && (
           <button type="button" className="cc-nav-btn" onClick={goLobby}>
             ← All Courses
+          </button>
+        )}
+        {view === "lobby" && (
+          <button type="button" className="cc-reset-btn" onClick={resetProgress}>
+            Reset progress
           </button>
         )}
       </div>
