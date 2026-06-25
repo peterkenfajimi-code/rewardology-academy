@@ -898,7 +898,8 @@ export function CourseCentre() {
                 </div>
               )}
 
-              {(l.body ?? []).map((b, bi) => {
+              {/* All blocks except takeaways — KC section is inserted before takeaways */}
+              {(l.body ?? []).filter((b) => b.t !== "takeaways").map((b, bi) => {
                 if (b.t === "intro")
                   return (
                     <div
@@ -1067,6 +1068,25 @@ export function CourseCentre() {
                   </div>
                 </div>
               )}
+              {/* Key takeaways — rendered after the KC section (matches prototype order) */}
+              {(l.body ?? []).filter((b) => b.t === "takeaways").map((b, bi) => (
+                <div
+                  key={`tk-${bi}`}
+                  className="cc-lc-tk"
+                  style={{ background: hexToRgba(m.color, 0.07), borderColor: hexToRgba(m.color, 0.3) }}
+                >
+                  <div className="cc-lc-tk-lbl" style={{ color: m.color }}>
+                    Key Takeaways
+                  </div>
+                  {(b.items ?? (b.v as string[] | undefined) ?? []).map((tk, ti) => (
+                    <div key={ti} className="cc-lc-tk-item">
+                      <span style={{ color: m.color, flexShrink: 0 }}>→</span>
+                      <span>{tk}</span>
+                    </div>
+                  ))}
+                </div>
+              ))}
+
               {/* Lesson complete XP banner — shows once XP is earned */}
               {(alreadyDone || (kcAnswered && (lxp[lessonKey(activeCourseId!, l.id)] || 0) > 0)) && (
                 <div className="cc-xp-banner" style={{ borderColor: hexToRgba(m.color, 0.4), background: hexToRgba(m.color, 0.08) }}>
