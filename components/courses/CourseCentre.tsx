@@ -1090,18 +1090,21 @@ export function CourseCentre() {
 
               {/* No-quiz lessons: "Mark complete" button awards XP */}
               {!q && !alreadyDone && (
-                <button
-                  type="button"
-                  className="cc-mark-done-btn"
-                  style={{ borderColor: m.color, color: m.color }}
-                  onClick={() => {
-                    persistXp(c.id, l.id, l.xp);
-                    showToast(`⚡ +${l.xp} XP earned!`);
-                    launchConfetti(m.color);
-                  }}
-                >
-                  ✓ Mark complete — +{l.xp} XP
-                </button>
+                <div className="cc-mark-done-wrap">
+                  <p className="cc-mark-done-hint">Finished reading? Click below to earn your XP.</p>
+                  <button
+                    type="button"
+                    className="cc-mark-done-btn"
+                    style={{ borderColor: m.color, color: m.color }}
+                    onClick={() => {
+                      persistXp(c.id, l.id, l.xp);
+                      showToast(`⚡ +${l.xp} XP earned!`);
+                      launchConfetti(m.color);
+                    }}
+                  >
+                    ✓ Mark complete — +{l.xp} XP
+                  </button>
+                </div>
               )}
 
               {/* Lesson complete XP banner — shows once XP is earned */}

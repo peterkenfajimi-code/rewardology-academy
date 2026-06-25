@@ -545,10 +545,11 @@
 }
 
 /* ── Mark Complete button (quiz-less lessons) ── */
+.cc-mark-done-wrap { margin-top: 36px; }
+.cc-mark-done-hint { font-size: 13px; color: rgba(255, 255, 255, 0.45); margin-bottom: 10px; text-align: center; }
 .cc-mark-done-btn {
   display: block;
   width: 100%;
-  margin-top: 36px;
   padding: 16px 24px;
   border-radius: 10px;
   border: 1.5px solid;
