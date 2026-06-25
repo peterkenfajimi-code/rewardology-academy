@@ -1009,25 +1009,20 @@ export function CourseCentre() {
               {q && (
                 <div className="cc-kc">
                   <div className="cc-kc-hd">
-                    <div className="cc-kc-hd-icon">💡</div>
-                    <div>
-                      <div className="cc-kc-hd-title">Knowledge Check</div>
-                      <div className="cc-kc-hd-sub">
-                        {alreadyDone
-                          ? "Completed — XP already earned"
-                          : `Answer correctly to earn ${l.xp} XP`}
-                      </div>
-                    </div>
+                    <div className="cc-kc-hd-eyebrow">Check Your Understanding</div>
                   </div>
                   <div className="cc-kc-body">
                     <div className="cc-kc-q">{q.q}</div>
                     <div className="cc-kc-opts">
                       {q.opts.map((o, i) => {
+                        const answered = alreadyDone || kcAnswered;
+                        const isCorrect = answered && i === q.ans;
+                        const isWrong = answered && i === kcSel && kcSel !== q.ans;
                         let cls = "cc-kc-opt";
-                        if (alreadyDone || kcAnswered) {
+                        if (answered) {
                           cls += " locked";
-                          if (i === q.ans) cls += " ok";
-                          else if (i === kcSel && kcSel !== q.ans) cls += " no";
+                          if (isCorrect) cls += " ok";
+                          else if (isWrong) cls += " no";
                         } else if (i === kcSel) {
                           cls += " sel";
                         }
@@ -1039,20 +1034,19 @@ export function CourseCentre() {
                               if (!alreadyDone && !kcAnswered) setKcSel(i);
                             }}
                           >
-                            <span className="cc-kc-bull">{LABELS[i]}</span>
-                            {o}
+                            <div className="cc-kc-opt-row">
+                              <span className="cc-kc-bull">{LABELS[i]}</span>
+                              <span>{o}</span>
+                            </div>
+                            {isWrong && (
+                              <div className="cc-kc-inline-exp">
+                                {q.exp}
+                              </div>
+                            )}
                           </div>
                         );
                       })}
                     </div>
-                    {kcAnswered && (
-                      <div className={`cc-kc-exp ${kcSel === q.ans ? "ok-exp" : "no-exp"}`}>
-                        <div className="cc-kc-exp-lbl">
-                          {kcSel === q.ans ? "✓ Correct!" : "✗ Incorrect — here's why:"}
-                        </div>
-                        <span>{q.exp}</span>
-                      </div>
-                    )}
                     <div className="cc-kc-act">
                       {alreadyDone || (kcAnswered && (lxp[lessonKey(activeCourseId!, l.id)] || 0) > 0) ? (
                         <div className="cc-kc-xp-msg">✓ XP earned for this lesson</div>
