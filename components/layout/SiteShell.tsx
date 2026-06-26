@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode, useState } from "react";
 import { AuthControls } from "@/components/auth/AuthControls";
+import { DashboardNavLink } from "@/components/auth/DashboardNavLink";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { CONTACT_FORWARD_GMAIL, DAILY_QUIZ_HREF } from "@/lib/site";
 
@@ -36,7 +37,6 @@ export function SiteShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const { user } = useAuth();
-  const isLoggedIn = Boolean(user);
   const isAdmin = user?.email?.toLowerCase() === CONTACT_FORWARD_GMAIL.toLowerCase();
 
   return (
@@ -56,13 +56,9 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 </Link>
               </li>
             ))}
-            {isLoggedIn && (
-              <li>
-                <Link href="/dashboard" className={isActive(pathname, "/dashboard") ? "active" : ""}>
-                  Dashboard
-                </Link>
-              </li>
-            )}
+            <li>
+              <DashboardNavLink />
+            </li>
             <li>
               <Link href={DAILY_QUIZ_HREF} className="site-nav-cta">
                 Take today&apos;s quiz
@@ -88,11 +84,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
               {item.label}
             </Link>
           ))}
-          {isLoggedIn && (
-            <Link href="/dashboard" onClick={() => setMenuOpen(false)}>
-              Dashboard
-            </Link>
-          )}
+          <DashboardNavLink />
           <Link href={DAILY_QUIZ_HREF} onClick={() => setMenuOpen(false)}>
             Take today&apos;s quiz →
           </Link>

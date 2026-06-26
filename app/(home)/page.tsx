@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AuthControls } from "@/components/auth/AuthControls";
+import { DashboardNavLink } from "@/components/auth/DashboardNavLink";
 import { HeroDictionaryCard } from "@/components/home/HeroDictionaryCard";
 import { HubXpBanner } from "@/components/home/HubXpBanner";
 import { PlatformStatsStrip } from "@/components/home/PlatformStatsStrip";
@@ -100,6 +101,9 @@ export default async function HomePage() {
               </Link>
             </li>
           ))}
+          <li>
+            <DashboardNavLink />
+          </li>
           <li>
             <Link href={DAILY_QUIZ_HREF} className="nav-cta">
               Take today&apos;s quiz
