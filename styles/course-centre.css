@@ -496,8 +496,53 @@
 }
 
 @media print {
-  .cc-topbar, .cc-cert-actions { display: none !important; }
-  .cc-root { background: #fff; }
+  /* Hide everything that is not the certificate card */
+  .cc-topbar,
+  .cc-breadcrumb,
+  .cc-cert-actions,
+  .cc-no-print {
+    display: none !important;
+  }
+
+  /* Force a single landscape page */
+  @page {
+    size: A4 landscape;
+    margin: 10mm;
+  }
+
+  html, body { height: auto; }
+
+  /* Make the root transparent so the dark card prints correctly */
+  .cc-root {
+    background: transparent !important;
+    min-height: auto;
+  }
+
+  /* Certificate outer: no extra padding, fill the page */
+  .cc-cert-outer {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Scale the card to fit the page without overflow */
+  .cc-cert-card {
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Tighten internal padding so it fits on one page */
+  .cc-cert-inner {
+    padding: 32px 52px !important;
+  }
+  .cc-cert-logo-row { margin-bottom: 24px !important; }
+  .cc-cert-title { margin-bottom: 18px !important; }
+  .cc-cert-name { margin-bottom: 16px !important; padding-bottom: 10px !important; }
+  .cc-cert-statement { margin-bottom: 28px !important; font-size: 13px !important; }
+  .cc-cert-xp-badge { margin-bottom: 20px !important; }
+
+  /* Prevent any other page content from appearing */
+  .cc-view > *:not(.cc-cert-outer) { display: none !important; }
 }
 
 /* ════════ COURSE VIEW STATS SIDEBAR ════════ */

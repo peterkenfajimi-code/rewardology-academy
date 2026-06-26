@@ -1441,13 +1441,15 @@ export function CourseCentre() {
             </div>
           </div>
 
-          <TestimonialPrompt
-            enabled={Boolean(result?.courseComplete)}
-            sourceType="course"
-            sourceId={String(c.id)}
-            sourceLabel={c.title}
-            accentColor={c.color}
-          />
+          <div className="cc-no-print">
+            <TestimonialPrompt
+              enabled={Boolean(result?.courseComplete)}
+              sourceType="course"
+              sourceId={String(c.id)}
+              sourceLabel={c.title}
+              accentColor={c.color}
+            />
+          </div>
         </div>
       </div>
     );
