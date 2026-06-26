@@ -10,10 +10,23 @@ export function HubXpBanner() {
   const [totalXp, setTotalXp] = useState(0);
 
   useEffect(() => {
+    // Show localStorage value immediately, then replace with authoritative server total.
+    setTotalXp(readLocalTotalXp());
+
+    fetch("/api/xp/total")
+      .then((r) => r.json())
+      .then((data: { authenticated: boolean; total: number }) => {
+        if (data.authenticated) {
+          setTotalXp(data.total);
+        }
+      })
+      .catch(() => {
+        // Silent fallback: keep the localStorage value already shown.
+      });
+
     function refresh() {
       setTotalXp(readLocalTotalXp());
     }
-    refresh();
     window.addEventListener("storage", refresh);
     window.addEventListener("focus", refresh);
     window.addEventListener("ra-xp-updated", refresh);
@@ -43,7 +56,9 @@ export function HubXpBanner() {
               {totalXp.toLocaleString()} XP earned · {pct}% of platform · {current.name}
               {next ? ` · ${(next.min - totalXp).toLocaleString()} XP to ${next.name}` : ""}
             </span>
-            <span>{MAX_PLATFORM_XP.toLocaleString()} XP total</span>
+            <span className="hub-xp-max-label">
+              of {MAX_PLATFORM_XP.toLocaleString()} XP max
+            </span>
           </div>
           <Link href="/dashboard" className="hub-xp-link">
             Open dashboard →
