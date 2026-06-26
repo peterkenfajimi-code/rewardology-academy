@@ -175,3 +175,141 @@
   padding: 4px 8px;
   display: inline-block;
 }
+
+/* ════════ ADMIN DASHBOARD ════════ */
+.adm-loading, .adm-error {
+  padding: 24px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+.adm-error { color: #f87171; }
+
+.adm-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 12px;
+}
+
+.adm-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.adm-title {
+  font-family: var(--hserif);
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 4px;
+}
+.adm-refreshed {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.adm-section-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+.adm-section-icon { font-size: 18px; }
+.adm-section-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+}
+
+.adm-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.adm-stat-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.adm-stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 4px;
+  font-family: var(--hserif);
+}
+.adm-stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+}
+.adm-stat-sub {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.28);
+  margin-top: 2px;
+}
+
+/* Course table */
+.adm-course-table {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.adm-course-row {
+  display: grid;
+  grid-template-columns: 1fr 80px 90px 140px;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 9px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.adm-course-hd {
+  background: transparent;
+  border-color: transparent;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  padding-bottom: 4px;
+}
+.adm-course-name {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+}
+.adm-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+.adm-bar-fill {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #c8963e, #e2ac50);
+  flex-shrink: 0;
+  transition: width 0.6s ease;
+}
+.adm-bar-lbl {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .adm-course-row { grid-template-columns: 1fr 60px 70px; }
+  .adm-course-row > span:nth-child(3) { display: none; }
+}
