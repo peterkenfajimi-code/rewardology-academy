@@ -196,9 +196,16 @@ export function AuthForm({
           />
         </div>
         <div className="ra-field">
-          <label className="ra-label" htmlFor="ra-password">
-            Password
-          </label>
+          <div className="ra-label-row">
+            <label className="ra-label" htmlFor="ra-password">
+              Password
+            </label>
+            {!isSignup && (
+              <Link href="/forgot-password" className="ra-forgot-link">
+                Forgot password?
+              </Link>
+            )}
+          </div>
           <input
             id="ra-password"
             className="ra-input"
