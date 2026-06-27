@@ -1,39 +1,69 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { levelFor } from "@/lib/xp/levels";
 import { readLocalTotalXp } from "@/lib/xp/localTotalXp";
 import { MAX_PLATFORM_XP } from "@/lib/xp/platformMax";
 
+async function fetchServerXp(): Promise<number | null> {
+  try {
+    const r = await fetch("/api/xp/total");
+    const data = (await r.json()) as { authenticated: boolean; total: number };
+    return data.authenticated ? data.total : null;
+  } catch {
+    return null;
+  }
+}
+
 export function HubXpBanner() {
   const [totalXp, setTotalXp] = useState(0);
+  // Track whether we've received a valid server value; if so, never overwrite it
+  // with a stale localStorage read — only refresh via a new server fetch.
+  const serverLoaded = useRef(false);
 
   useEffect(() => {
-    // Show localStorage value immediately, then replace with authoritative server total.
+    // Show local cache instantly to avoid a blank flash
     setTotalXp(readLocalTotalXp());
 
-    fetch("/api/xp/total")
-      .then((r) => r.json())
-      .then((data: { authenticated: boolean; total: number }) => {
-        if (data.authenticated) {
-          setTotalXp(data.total);
-        }
-      })
-      .catch(() => {
-        // Silent fallback: keep the localStorage value already shown.
-      });
+    // Fetch authoritative server total
+    fetchServerXp().then((serverXp) => {
+      if (serverXp !== null) {
+        setTotalXp(serverXp);
+        serverLoaded.current = true;
+      }
+    });
 
-    function refresh() {
-      setTotalXp(readLocalTotalXp());
+    // When new XP is awarded in this tab, re-fetch from server for accuracy
+    function onXpUpdated() {
+      if (serverLoaded.current) {
+        fetchServerXp().then((serverXp) => {
+          if (serverXp !== null) setTotalXp(serverXp);
+        });
+      } else {
+        setTotalXp(readLocalTotalXp());
+      }
     }
-    window.addEventListener("storage", refresh);
-    window.addEventListener("focus", refresh);
-    window.addEventListener("ra-xp-updated", refresh);
+
+    // Re-fetch from server when user returns to the tab or another tab changes storage
+    function onFocusOrStorage() {
+      fetchServerXp().then((serverXp) => {
+        if (serverXp !== null) {
+          setTotalXp(serverXp);
+          serverLoaded.current = true;
+        } else if (!serverLoaded.current) {
+          setTotalXp(readLocalTotalXp());
+        }
+      });
+    }
+
+    window.addEventListener("ra-xp-updated", onXpUpdated);
+    window.addEventListener("focus", onFocusOrStorage);
+    window.addEventListener("storage", onFocusOrStorage);
     return () => {
-      window.removeEventListener("storage", refresh);
-      window.removeEventListener("focus", refresh);
-      window.removeEventListener("ra-xp-updated", refresh);
+      window.removeEventListener("ra-xp-updated", onXpUpdated);
+      window.removeEventListener("focus", onFocusOrStorage);
+      window.removeEventListener("storage", onFocusOrStorage);
     };
   }, []);
 

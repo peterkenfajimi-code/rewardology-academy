@@ -125,8 +125,46 @@ export function CourseCentre() {
         if (cancelled) return;
         if (data.authenticated) {
           setSynced(true);
-          setLxp(data.lxp ?? {});
-          writeLocalCourseXp(data.lxp ?? {});
+
+          // Reconcile: upload any lessons that exist in localStorage but not on the server.
+          // This recovers progress earned while offline or before sign-in.
+          const serverLxp: LessonXpMap = data.lxp ?? {};
+          const localLxp = readLocalCourseXp();
+          const unsynced = Object.entries(localLxp).filter(
+            ([k, xp]) => xp > 0 && (serverLxp[k] ?? 0) === 0
+          );
+
+          if (unsynced.length > 0 && !cancelled) {
+            // Upload each unsynced lesson; use the final refreshed lxp from the last call.
+            let merged: LessonXpMap = serverLxp;
+            for (const [key, xp] of unsynced) {
+              const [courseIdStr, ...rest] = key.split("-");
+              const lessonId = rest.join("-");
+              try {
+                const syncRes = await fetch("/api/course-centre", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ courseId: Number(courseIdStr), lessonId, xp }),
+                });
+                const syncData = (await syncRes.json()) as { authenticated: boolean; lxp: LessonXpMap };
+                if (syncData.authenticated && syncData.lxp) {
+                  merged = syncData.lxp;
+                }
+              } catch {
+                // Keep the merged map so far; don't abort the rest.
+              }
+            }
+            if (!cancelled) {
+              setLxp(merged);
+              writeLocalCourseXp(merged);
+            }
+          } else {
+            if (!cancelled) {
+              setLxp(serverLxp);
+              writeLocalCourseXp(serverLxp);
+            }
+          }
+
           if (!cancelled) setProgressReady(true);
           return;
         }
