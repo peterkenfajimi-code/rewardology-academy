@@ -36,6 +36,7 @@ import { getSourceRating } from "@/lib/testimonials/ratings";
 import "@/styles/course-centre.css";
 import { dispatchXpUpdated } from "@/lib/xp/dispatch";
 import { levelFor, rankProgress } from "@/lib/xp/levels";
+import { playLessonComplete, playCourseComplete } from "@/lib/audio/sounds";
 
 const LABELS = ["A", "B", "C", "D"];
 const RING_CIRCUMFERENCE = 390;
@@ -360,6 +361,7 @@ export function CourseCentre() {
     // engagement-based model. Correct answers get confetti, wrong answers still complete.
     if (!already) {
       persistXp(activeCourse.id, lesson.id, lesson.xp);
+      playLessonComplete();
       if (ok) {
         showToast(`⚡ +${lesson.xp} XP earned! Great work.`);
         launchConfetti(mod.color);
@@ -437,6 +439,7 @@ export function CourseCentre() {
   const showCertificate = useCallback(() => {
     setView("certificate");
     scrollTop();
+    playCourseComplete();
     if (result) launchConfetti(result.course.color);
   }, [result, launchConfetti]);
 
@@ -1136,6 +1139,7 @@ export function CourseCentre() {
                     style={{ borderColor: m.color, color: m.color }}
                     onClick={() => {
                       persistXp(c.id, l.id, l.xp);
+                      playLessonComplete();
                       showToast(`⚡ +${l.xp} XP earned!`);
                       launchConfetti(m.color);
                     }}
