@@ -16,7 +16,7 @@ export type BadgeActionFlags = {
 };
 
 export const DASHBOARD_BADGES: DashboardBadge[] = [
-  { id: "first_steps", name: "First Steps", icon: "🌱", desc: "Reach 300 XP", trigger: "xp", threshold: 300 },
+  { id: "first_steps", name: "First Steps", icon: "🌱", desc: "Reach 3,000 XP", trigger: "xp", threshold: 3000 },
   {
     id: "course_champion",
     name: "Course Champion",
@@ -49,9 +49,9 @@ export const DASHBOARD_BADGES: DashboardBadge[] = [
     trigger: "action",
     key: "dict_50",
   },
-  { id: "xp_hunter", name: "XP Hunter", icon: "🏹", desc: "Reach 4,500 XP", trigger: "xp", threshold: 4500 },
-  { id: "platform_master", name: "Platform Master", icon: "🏆", desc: "Reach 8,500 XP", trigger: "xp", threshold: 8500 },
-  { id: "grand_master", name: "Grand Master", icon: "👑", desc: "Reach 12,000 XP", trigger: "xp", threshold: 12000 },
+  { id: "xp_hunter", name: "XP Hunter", icon: "🏹", desc: "Reach 45,000 XP", trigger: "xp", threshold: 45000 },
+  { id: "platform_master", name: "Platform Master", icon: "🏆", desc: "Reach 85,000 XP", trigger: "xp", threshold: 85000 },
+  { id: "grand_master", name: "Grand Master", icon: "👑", desc: "Reach 120,000 XP", trigger: "xp", threshold: 120000 },
 ];
 
 export function isBadgeEarned(
