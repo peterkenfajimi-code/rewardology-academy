@@ -1,14 +1,27 @@
+"use client";
+
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { DICTIONARY_TERMS } from "@/lib/dictionary/terms";
 import { slugifyTerm, previewText } from "@/lib/dictionary/utils";
 
 function getTodaysTerm() {
-  const dayIndex = Math.floor(Date.now() / 86400000) % DICTIONARY_TERMS.length;
+  // Uses the client's local calendar date so the term rotates at midnight local time,
+  // independent of any server-side or CDN caching of the page.
+  const now = new Date();
+  const dayIndex =
+    (now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate()) %
+    DICTIONARY_TERMS.length;
   return DICTIONARY_TERMS[dayIndex];
 }
 
 export function HeroDictionaryCard() {
-  const term = getTodaysTerm();
+  const [term, setTerm] = useState(DICTIONARY_TERMS[0]);
+
+  useEffect(() => {
+    setTerm(getTodaysTerm());
+  }, []);
+
   const href = `/dictionary#tc-${slugifyTerm(term.term)}`;
   const preview = previewText(term.definition, 155);
 
