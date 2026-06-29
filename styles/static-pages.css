@@ -233,6 +233,79 @@
   line-height: 1.65;
 }
 
+/* ── Founder card ──────────────────────────────────────────────────────────── */
+.sp-founder-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
+  align-items: start;
+  background: var(--sp-card);
+  border: 1px solid var(--sp-rule);
+  border-radius: 10px;
+  padding: 36px;
+  margin: 28px 0;
+}
+.sp-founder-photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: rgba(200, 150, 62, 0.1);
+  border: 2px solid rgba(200, 150, 62, 0.3);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.sp-founder-name {
+  font-size: 1.2rem;
+  font-family: var(--sp-serif);
+  color: var(--sp-text);
+  margin-bottom: 2px;
+}
+.sp-founder-title {
+  font-size: 12.5px;
+  color: var(--sp-teal);
+  letter-spacing: 0.04em;
+  margin-bottom: 18px;
+}
+.sp-founder-body p {
+  font-size: 14.5px;
+  color: var(--sp-muted);
+  line-height: 1.85;
+  margin-bottom: 14px;
+}
+.sp-founder-signoff {
+  font-style: italic;
+  color: var(--sp-dim) !important;
+  margin-bottom: 18px !important;
+}
+.sp-founder-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--sp-gold);
+  border: 1px solid rgba(200, 150, 62, 0.3);
+  border-radius: 6px;
+  padding: 7px 16px;
+  transition: background 0.2s, color 0.2s;
+}
+.sp-founder-link:hover {
+  background: rgba(200, 150, 62, 0.1);
+  color: var(--sp-gold);
+}
+@media (max-width: 600px) {
+  .sp-founder-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .sp-founder-photo {
+    margin: 0 auto;
+  }
+  .sp-founder-link {
+    margin: 0 auto;
+  }
+}
+
 .sp-cta-band {
   background: var(--sp-card);
   border: 1px solid var(--sp-rule);

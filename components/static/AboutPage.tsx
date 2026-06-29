@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { StaticPageHero } from "@/components/static/StaticPageHero";
 import { DICTIONARY_TERM_COUNT } from "@/lib/dictionary/terms";
 import { CONTACT_EMAIL } from "@/lib/site";
@@ -91,6 +92,81 @@ export function AboutPage() {
             HR professionals who build equitable, competitive, well-communicated reward systems make
             workplaces better for thousands of employees, and that work deserves better tools.
           </p>
+        </section>
+
+        <div className="sp-divider" />
+
+        {/* ── Founder's Note ── */}
+        <section className="sp-section sp-section-narrow">
+          <p className="sp-section-eyebrow">Founder&apos;s Note</p>
+          <h2>
+            Why I <em>built</em> this.
+          </h2>
+          <div className="sp-founder-card">
+            <div className="sp-founder-photo">
+              <Image
+                src="/images/peter-fajimi.png"
+                alt="Peter Fajimi"
+                width={96}
+                height={96}
+                style={{ objectFit: "cover", borderRadius: "50%" }}
+              />
+            </div>
+            <div className="sp-founder-body">
+              <div className="sp-founder-name">Peter Fajimi</div>
+              <div className="sp-founder-title">Founder, Rewardology Academy</div>
+              <p>It started with a message on LinkedIn.</p>
+              <p>
+                A young HR professional — one of several over the years — reached out asking if I
+                could mentor him in compensation and benefits. He&apos;d looked at my background and
+                wanted to learn. I said yes, the way I usually do. But as more of these requests
+                came in, I noticed a pattern: smart, ambitious HR practitioners, hungry to understand
+                Total Rewards properly, with nowhere good to go.
+              </p>
+              <p>
+                So, I did what most people do — I went looking. I searched for free, well-structured,
+                comprehensive courses on Total Rewards I could simply point people to. I couldn&apos;t
+                find satisfactory ones. What existed was either locked behind enterprise pricing built
+                for global consultancies, scattered across forum posts and slide decks, or simply not
+                designed with emerging market compensation realities in mind.
+              </p>
+              <p>
+                My first instinct was to build something myself — a PowerPoint deck covering the
+                fundamentals of compensation, benefits, and rewards strategy. But that broke down
+                fast. Walking each person through the same slides, one at a time, wasn&apos;t a
+                mentoring program — it was a bottleneck. It didn&apos;t scale, it wasn&apos;t
+                immersive, and it asked people to learn passively instead of actually building skill.
+              </p>
+              <p>That&apos;s the gap Rewardology Academy was built to close.</p>
+              <p>
+                I&apos;ve spent my career inside Total Rewards, and working across HR functions
+                before that. I&apos;ve sat on both sides of the table: building reward structures
+                for organizations, and fielding the same questions, again and again, from
+                professionals trying to break into or grow within this field. Rewardology Academy is
+                what I wish had existed when I was the one asking.
+              </p>
+              <p>
+                It&apos;s built to be generally free, because the people who need it most often
+                can&apos;t access what currently exists. It&apos;s built to be gamified and
+                structured into real learning journeys, because reading about compensation theory
+                isn&apos;t the same as being able to apply it. And it&apos;s designed from the
+                ground up for the realities, data gaps, and talent market of emerging markets — with
+                the ambition to grow into something much bigger.
+              </p>
+              <p className="sp-founder-signoff">
+                If you&apos;ve ever sent a message like that one I received — asking someone to
+                teach you what you couldn&apos;t find anywhere else — this is for you.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/peter-fajimi-872a5911/"
+                className="sp-founder-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Connect on LinkedIn →
+              </a>
+            </div>
+          </div>
         </section>
 
         <div className="sp-divider" />
