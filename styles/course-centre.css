@@ -496,53 +496,100 @@
 }
 
 @media print {
-  /* Hide everything that is not the certificate card */
-  .cc-topbar,
-  .cc-breadcrumb,
-  .cc-cert-actions,
-  .cc-no-print {
+  /* ── 1. Force a single landscape A4 page ── */
+  @page {
+    size: A4 landscape;
+    margin: 8mm;
+  }
+
+  /* ── 2. Hide the global site shell (nav + footer) ── */
+  .site-nav,
+  .site-footer,
+  .site-menu-btn {
     display: none !important;
   }
 
-  /* Force a single landscape page */
-  @page {
-    size: A4 landscape;
-    margin: 10mm;
+  /* ── 3. Hide all course UI except the certificate card ── */
+  .cc-topbar,
+  .cc-breadcrumb,
+  .cc-cert-actions,
+  .cc-no-print,
+  .cc-view > *:not(.cc-cert-outer) {
+    display: none !important;
   }
 
-  html, body { height: auto; }
+  /* ── 4. Page / body layout ── */
+  html, body {
+    height: auto !important;
+    overflow: visible !important;
+    background: transparent !important;
+  }
 
-  /* Make the root transparent so the dark card prints correctly */
+  .site-main { padding: 0 !important; }
+
   .cc-root {
     background: transparent !important;
-    min-height: auto;
+    min-height: auto !important;
   }
 
-  /* Certificate outer: no extra padding, fill the page */
+  /* ── 5. Strip all outer spacing — let the card fill the page ── */
   .cc-cert-outer {
     padding: 0 !important;
     max-width: 100% !important;
+    margin: 0 !important;
   }
 
-  /* Scale the card to fit the page without overflow */
+  /* ── 6. Certificate card: no shadow, must not break across pages ── */
   .cc-cert-card {
     box-shadow: none !important;
-    page-break-inside: avoid;
     break-inside: avoid;
+    page-break-inside: avoid;
+    max-width: 100% !important;
   }
 
-  /* Tighten internal padding so it fits on one page */
+  /* ── 7. Compress internal padding and typography to fit on one sheet ── */
   .cc-cert-inner {
-    padding: 32px 52px !important;
+    padding: 22px 44px !important;
   }
-  .cc-cert-logo-row { margin-bottom: 24px !important; }
-  .cc-cert-title { margin-bottom: 18px !important; }
-  .cc-cert-name { margin-bottom: 16px !important; padding-bottom: 10px !important; }
-  .cc-cert-statement { margin-bottom: 28px !important; font-size: 13px !important; }
-  .cc-cert-xp-badge { margin-bottom: 20px !important; }
-
-  /* Prevent any other page content from appearing */
-  .cc-view > *:not(.cc-cert-outer) { display: none !important; }
+  .cc-cert-logo-row {
+    margin-bottom: 18px !important;
+  }
+  .cc-cert-eyebrow {
+    margin-bottom: 8px !important;
+    font-size: 10px !important;
+  }
+  .cc-cert-title {
+    font-size: 26px !important;
+    margin-bottom: 14px !important;
+  }
+  .cc-cert-to {
+    font-size: 10px !important;
+    margin-bottom: 3px !important;
+  }
+  .cc-cert-name {
+    font-size: 26px !important;
+    margin-bottom: 14px !important;
+    padding-bottom: 10px !important;
+  }
+  .cc-cert-statement {
+    font-size: 12px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 16px !important;
+  }
+  .cc-cert-xp-badge {
+    font-size: 13px !important;
+    padding: 7px 16px !important;
+    margin-bottom: 18px !important;
+  }
+  .cc-cert-footer {
+    padding-top: 16px !important;
+  }
+  .cc-cert-sig {
+    font-size: 18px !important;
+  }
+  .cc-cert-inner-border {
+    display: none !important;
+  }
 }
 
 /* ════════ COURSE VIEW STATS SIDEBAR ════════ */
