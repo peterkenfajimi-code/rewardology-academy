@@ -26,10 +26,10 @@ export const RESEND_SMTP_HOST = "smtp.resend.com";
 export const RESEND_SMTP_PORT = 587;
 export const RESEND_SMTP_USER = "resend";
 
-/** Public contact address (About, Privacy, Terms). Receiving mail requires ImprovMX forwarding. */
+/** Public contact address (About, Privacy, Terms, mailto links). Hosted in Zoho Mail. */
 export const CONTACT_EMAIL = "hello@rewardologyacademy.com";
 
-/** Gmail inbox that receives forwarded mail from CONTACT_EMAIL (ImprovMX alias destination). */
+/** Personal Gmail for admin dashboard access and Resend alert delivery (not shown publicly). */
 export const CONTACT_FORWARD_GMAIL = "peterkenfajimi@gmail.com";
 
 export function getPublicSiteUrl(): string {

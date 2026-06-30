@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { DAILY_QUIZ_HREF } from "@/lib/site";
+import { CONTACT_EMAIL, DAILY_QUIZ_HREF } from "@/lib/site";
 import { readLocalTotalXp } from "@/lib/xp/localTotalXp";
 import { levelFor, XP_LEVELS } from "@/lib/xp/levels";
 
@@ -59,7 +59,7 @@ export function HeroProgressCard() {
             <div className="mc-price">Free</div>
           </Link>
           <a
-            href="mailto:hello@rewardologyacademy.com?subject=Advanced%20Total%20Rewards%20Course%20Waitlist"
+            href={`mailto:${CONTACT_EMAIL}?subject=Advanced%20Total%20Rewards%20Course%20Waitlist`}
             className="mini-course mini-course-waitlist"
           >
             <div className="mc-icon" style={{ background: "linear-gradient(135deg,#7F1D1D,#DC2626)" }}>

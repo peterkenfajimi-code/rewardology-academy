@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { StaticPageHero } from "@/components/static/StaticPageHero";
+import { CONTACT_EMAIL } from "@/lib/site";
 import "@/styles/static-pages.css";
 
 const LEGAL_DATE = "1 June 2026";
@@ -34,7 +35,7 @@ export function PrivacyPage() {
             Rewardology Academy is an online learning platform for Total Rewards, Compensation and
             Benefits professionals. The platform is operated from Nigeria and serves a global learner
             base. For any privacy-related enquiries, contact us at{" "}
-            <a href="mailto:hello@rewardologyacademy.com">hello@rewardologyacademy.com</a>.
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
           </p>
 
           <h2>2. What Data We Collect</h2>
@@ -256,7 +257,7 @@ export function PrivacyPage() {
           </ul>
           <p>
             To exercise any of these rights, contact us at{" "}
-            <a href="mailto:hello@rewardologyacademy.com">hello@rewardologyacademy.com</a>. We will
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. We will
             respond within 30 days. If you are an EU or UK resident and believe your rights have not
             been adequately addressed, you have the right to lodge a complaint with your local
             supervisory authority. If you are a Nigerian resident, you may contact the Nigeria Data
@@ -302,7 +303,7 @@ export function PrivacyPage() {
           <p>
             <strong>Rewardology Academy</strong>
             <br />
-            Email: <a href="mailto:hello@rewardologyacademy.com">hello@rewardologyacademy.com</a>
+            Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
             <br />
             Website: <Link href="/">rewardologyacademy.com</Link>
           </p>

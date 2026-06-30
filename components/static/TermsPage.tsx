@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { StaticPageHero } from "@/components/static/StaticPageHero";
+import { CONTACT_EMAIL } from "@/lib/site";
 import "@/styles/static-pages.css";
 
 const LEGAL_DATE = "1 June 2026";
@@ -222,7 +223,7 @@ export function TermsPage() {
           </p>
           <p>
             We encourage you to contact us first at{" "}
-            <a href="mailto:hello@rewardologyacademy.com">hello@rewardologyacademy.com</a> to resolve
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> to resolve
             any concerns informally before initiating formal proceedings.
           </p>
 
@@ -238,7 +239,7 @@ export function TermsPage() {
           <p>
             <strong>Rewardology Academy</strong>
             <br />
-            Email: <a href="mailto:hello@rewardologyacademy.com">hello@rewardologyacademy.com</a>
+            Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
             <br />
             Website: <Link href="/">rewardologyacademy.com</Link>
           </p>
