@@ -530,6 +530,9 @@
   .cc-root {
     background: transparent !important;
     min-height: auto !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color-adjust: exact;
   }
 
   /* ── 5. Strip all outer spacing — let the card fill the page ── */
@@ -539,12 +542,30 @@
     margin: 0 !important;
   }
 
-  /* ── 6. Certificate card: no shadow, must not break across pages ── */
+  /* ── 6. Certificate card: preserve screen colors in print ── */
+  .cc-cert-card,
+  .cc-cert-inner,
+  .cc-cert-top-bar,
+  .cc-cert-name,
+  .cc-cert-xp-badge,
+  .cc-cert-mark,
+  .cc-cert-eyebrow,
+  .cc-cert-eyebrow::before,
+  .cc-cert-inner-border {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
   .cc-cert-card {
     box-shadow: none !important;
     break-inside: avoid;
     page-break-inside: avoid;
     max-width: 100% !important;
+  }
+
+  .cc-cert-top-bar {
+    height: 4px !important;
   }
 
   /* ── 7. Compress internal padding and typography to fit on one sheet ── */
@@ -586,9 +607,6 @@
   }
   .cc-cert-sig {
     font-size: 18px !important;
-  }
-  .cc-cert-inner-border {
-    display: none !important;
   }
 }
 
