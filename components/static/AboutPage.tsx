@@ -1,7 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { StaticPageHero } from "@/components/static/StaticPageHero";
+import { ESSENTIALS_ARTICLES } from "@/lib/articles/essentials";
+import { COURSES } from "@/lib/courses/courseData";
 import { DICTIONARY_TERM_COUNT } from "@/lib/dictionary/terms";
+import { QUIZ_CENTRE } from "@/lib/quizzes/quizCentre";
 import { CONTACT_EMAIL } from "@/lib/site";
 import "@/styles/static-pages.css";
 
@@ -9,22 +12,22 @@ const PILLARS = [
   {
     icon: "◈",
     title: "Structured Courses",
-    body: "Five courses from Total Rewards Foundations through to HR Analytics — each with six in-depth lessons, certificates, and XP rewards.",
+    body: "Courses from Total Rewards Foundations through to HR Analytics — each with in-depth lessons, certificates, and XP rewards.",
   },
   {
     icon: "📰",
     title: "Practitioner Articles",
-    body: "25 long-form articles covering every pillar of modern Total Rewards strategy — written for working HR professionals, not textbooks.",
+    body: `${ESSENTIALS_ARTICLES.length} long-form articles covering every pillar of modern Total Rewards strategy — written for working HR professionals, not textbooks.`,
   },
   {
     icon: "⚡",
-    title: "Daily Quizzes",
-    body: "Short, targeted quizzes calibrated to real HR situations. Earn XP daily, track your knowledge gaps, and build fluency through practice.",
+    title: "Quizzes",
+    body: "Short, targeted quizzes calibrated to real HR situations. Earn XP, track your knowledge gaps, and build fluency through practice.",
   },
   {
     icon: "📖",
     title: "The TR Dictionary",
-    body: `${DICTIONARY_TERM_COUNT} original Total Rewards terms — each with a practitioner note, worked example, and formula where applicable. The most comprehensive practitioner C&B reference available.`,
+    body: `${DICTIONARY_TERM_COUNT} Total Rewards terms — each with a practitioner note, worked example, and formula where applicable. The most comprehensive practitioner C&B reference available.`,
   },
   {
     icon: "🎨",
@@ -185,15 +188,15 @@ export function AboutPage() {
           </p>
           <div className="sp-stat-row">
             <div className="sp-stat-cell">
-              <div className="sp-stat-n">5</div>
+              <div className="sp-stat-n">{COURSES.length}</div>
               <div className="sp-stat-l">Expert Courses</div>
             </div>
             <div className="sp-stat-cell">
-              <div className="sp-stat-n">25</div>
+              <div className="sp-stat-n">{ESSENTIALS_ARTICLES.length}</div>
               <div className="sp-stat-l">Practitioner Articles</div>
             </div>
             <div className="sp-stat-cell">
-              <div className="sp-stat-n">10</div>
+              <div className="sp-stat-n">{QUIZ_CENTRE.length}</div>
               <div className="sp-stat-l">Topic Quizzes</div>
             </div>
             <div className="sp-stat-cell">
@@ -282,7 +285,7 @@ export function AboutPage() {
             Start learning <em>today.</em>
           </h2>
           <p>
-            Courses · articles · daily quizzes · {DICTIONARY_TERM_COUNT}-term dictionary. Create a
+            Courses · articles · quizzes · {DICTIONARY_TERM_COUNT}-term dictionary. Create a
             free account to get started.
           </p>
           <div className="sp-cta-btns">
