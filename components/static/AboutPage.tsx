@@ -125,23 +125,24 @@ export function AboutPage() {
               </p>
               <p>
                 So, I did what most people do — I went looking. I searched for free, well-structured,
-                comprehensive courses on Total Rewards I could simply point people to. I couldn&apos;t
-                find satisfactory ones. What existed was either locked behind enterprise pricing built
-                for global consultancies, scattered across forum posts and slide decks, or simply not
-                designed with emerging market compensation realities in mind.
+                comprehensive courses on Total Rewards that I could simply point people to. I
+                couldn&apos;t find satisfactory ones. What existed was either locked behind enterprise
+                pricing built for global consultancies, was scattered across forum posts and slide
+                decks, or was simply not designed with emerging market compensation realities in mind.
               </p>
               <p>
                 My first instinct was to build something myself — a PowerPoint deck covering the
                 fundamentals of compensation, benefits, and rewards strategy. But that broke down
-                fast. Walking each person through the same slides, one at a time, wasn&apos;t a
-                mentoring program — it was a bottleneck. It didn&apos;t scale, it wasn&apos;t
-                immersive, and it asked people to learn passively instead of actually building skill.
+                fast. Walking each person through the same slides, one at a time, wouldn&apos;t be a
+                mentoring program — it would be a bottleneck. It wouldn&apos;t scale, it wouldn&apos;t
+                be immersive, and it would be asking people to learn passively instead of actually
+                building skill.
               </p>
               <p>That&apos;s the gap Rewardology Academy was built to close.</p>
               <p>
                 I&apos;ve spent my career inside Total Rewards, and working across HR functions
                 before that. I&apos;ve sat on both sides of the table: building reward structures
-                for organizations, and fielding the same questions, again and again, from
+                in organizations, and fielding the same questions, again and again, from
                 professionals trying to break into or grow within this field. Rewardology Academy is
                 what I wish had existed when I was the one asking.
               </p>
@@ -156,6 +157,9 @@ export function AboutPage() {
               <p className="sp-founder-signoff">
                 If you&apos;ve ever sent a message like that one I received — asking someone to
                 teach you what you couldn&apos;t find anywhere else — this is for you.
+              </p>
+              <p className="sp-founder-signoff">
+                — Peter Fajimi, Founder, Rewardology Academy
               </p>
               <a
                 href="https://www.linkedin.com/in/peter-fajimi-872a5911/"
