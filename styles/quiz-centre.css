@@ -917,7 +917,22 @@
   font-family: var(--font-home-serif, "Cormorant Garamond", Georgia, serif);
   font-size: 36px;
   font-weight: 700;
-  margin: 24px 0 8px;
+  margin: 16px 0 8px;
+}
+
+.qc-cert-sub {
+  font-size: 15px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.qc-cert-achievement {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 6px;
 }
 
 .qc-cert-score-title {
