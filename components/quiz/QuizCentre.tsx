@@ -590,11 +590,25 @@ export function QuizCentre() {
   }
 
   function renderCertificate() {
-    const done = Object.keys(completed).length;
-    const totalScore = Object.values(completed).reduce((s, r) => s + (r.score ?? 0), 0);
-    const totalQ = Object.values(completed).reduce((s, r) => s + (r.total ?? 10), 0);
-    const pct = totalQ > 0 ? Math.round((totalScore / totalQ) * 100) : 0;
     const showDoc = Boolean(certName);
+    const certQuiz = activeQuiz;
+    const stored = certQuiz ? completed[certQuiz.id] : undefined;
+
+    let certPct = 0;
+    let certScoreLine: string;
+
+    if (certQuiz && stored) {
+      certPct = Math.round((stored.score / stored.total) * 100);
+      certScoreLine = `Scored ${certPct}% on ${certQuiz.title}`;
+    } else if (certAllDone || allQuizzesDone) {
+      const results = Object.values(completed);
+      const totalScore = results.reduce((s, r) => s + r.score, 0);
+      const totalQuestions = results.reduce((s, r) => s + r.total, 0);
+      certPct = totalQuestions > 0 ? Math.round((totalScore / totalQuestions) * 100) : 0;
+      certScoreLine = `Scored ${certPct}% across all 10 quizzes`;
+    } else {
+      certScoreLine = "—";
+    }
 
     return (
       <div className="qc-view active qc-cert-view">
@@ -632,22 +646,14 @@ export function QuizCentre() {
                     <span>Rewardology Academy</span>
                   </div>
                   <div className="qc-cert-ey">Certificate of Achievement</div>
-                  <h1 className="qc-cert-h1">
-                    This certifies that <em>the following</em>
-                  </h1>
-                  <div className="qc-cert-sub">HR professional has demonstrated knowledge in Total Rewards</div>
+                  <h1 className="qc-cert-h1">This certifies that</h1>
                   <div className="qc-cert-name-display">{certName}</div>
-                  <div className="qc-cert-achievement">Achievement</div>
-                  <div className="qc-cert-score-title">
-                    {certAllDone || allQuizzesDone
-                      ? "Quiz Centre — All 10 Quizzes Completed"
-                      : "Quiz Centre — In Progress"}
+                  <div className="qc-cert-sub">
+                    has demonstrated knowledge in Total Rewards
                   </div>
-                  <div className="qc-cert-score-sub">
-                    {certAllDone || allQuizzesDone
-                      ? `Completion · ${pct}% average score across ${totalQ} questions`
-                      : `${done} of ${QUIZ_CENTRE.length} quizzes completed · ${pct}% average score`}
-                  </div>
+                  <div className="qc-cert-achievement">Quiz Centre Achievement</div>
+                  <div className="qc-cert-score-title">{certScoreLine}</div>
+                  <div className="qc-cert-score-sub">Quiz Completed</div>
                   <div className="qc-cert-ft">
                     <div>
                       <div className="qc-cert-date-label">Date Issued</div>
