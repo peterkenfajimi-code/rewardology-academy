@@ -17,6 +17,7 @@ import { getSourceRating } from "@/lib/testimonials/ratings";
 import { incrementQuizFinishCount, isQuizTestimonialEligible } from "@/lib/testimonials/promptState";
 import { BrowserVoiceBar } from "@/components/tts/BrowserVoiceBar";
 import { dispatchXpUpdated } from "@/lib/xp/dispatch";
+import { playLessonComplete } from "@/lib/audio/sounds";
 import "@/styles/quiz-centre.css";
 
 const LABELS = ["A", "B", "C", "D"];
@@ -145,6 +146,7 @@ export function QuizCentre() {
     (finalAnswers: boolean[]) => {
       if (!activeQuiz) return;
       const quizId = activeQuiz.id;
+      const alreadyCompleted = Boolean(completed[quizId]);
       const score = finalAnswers.filter(Boolean).length;
       const total = activeQuiz.questions.length;
       const pct = Math.round((score / total) * 100);
@@ -185,6 +187,8 @@ export function QuizCentre() {
         })();
       }
 
+      if (!alreadyCompleted) playLessonComplete();
+
       setArcOffset(RING_CIRCUMFERENCE);
       setView("results");
       if (typeof window !== "undefined") window.scrollTo(0, 0);
@@ -195,7 +199,7 @@ export function QuizCentre() {
 
       if (pct >= 80) launchConfetti(activeQuiz.color);
     },
-    [activeQuiz, synced]
+    [activeQuiz, synced, completed]
   );
 
   const nextQuestion = useCallback(() => {

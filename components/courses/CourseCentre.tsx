@@ -389,12 +389,14 @@ export function CourseCentre() {
       const xpEarned = Math.round((score / total) * mqLes.xp);
 
       const key = lessonKey(activeCourse.id, mqLes.id);
+      const already = (lxp[key] || 0) > 0;
       const nextMap = mergeLessonXp(lxp, key, xpEarned);
       const courseComplete = isCourseComplete(nextMap, activeCourse);
 
       if (xpEarned > (lxp[key] || 0)) {
         persistXp(activeCourse.id, mqLes.id, xpEarned);
       }
+      if (!already) playLessonComplete();
 
       setResult({
         course: activeCourse,
