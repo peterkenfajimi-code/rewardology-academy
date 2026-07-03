@@ -436,7 +436,7 @@ export function QuizCentre() {
 
           {answered && (
             <div
-              className={`qc-explanation ${selectedOpt === q.ans ? "correct-exp" : "wrong-exp"}`}
+              className={`qc-explanation show ${selectedOpt === q.ans ? "correct-exp" : "wrong-exp"}`}
             >
               <div className="qc-exp-label">
                 {selectedOpt === q.ans ? "✓ Correct!" : "✗ Incorrect"}
