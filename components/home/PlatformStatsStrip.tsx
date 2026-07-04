@@ -1,11 +1,17 @@
 import { ESSENTIALS_ARTICLES } from "@/lib/articles/essentials";
+import { COMIC_ISSUES, COMIC_SERIES } from "@/lib/comics/comicData";
 import { COURSES } from "@/lib/courses/courseData";
-import { QUIZ_CENTRE } from "@/lib/quizzes/quizCentre";
+import {
+  DICTIONARY_CATEGORIES,
+  DICTIONARY_TERM_COUNT,
+} from "@/lib/dictionary/terms";
 import {
   MAX_PLATFORM_XP,
   PLATFORM_LESSON_COUNT,
   PLATFORM_QUIZ_QUESTIONS,
 } from "@/lib/xp/platformMax";
+
+const AVAILABLE_COMIC_COUNT = COMIC_ISSUES.filter((i) => i.available).length;
 
 export function PlatformStatsStrip() {
   const stats = [
@@ -14,10 +20,22 @@ export function PlatformStatsStrip() {
     { num: ESSENTIALS_ARTICLES.length, suffix: "", label: "Practitioner Articles", sub: "Published 2026" },
     { num: PLATFORM_QUIZ_QUESTIONS, suffix: "", label: "Quiz Questions", sub: "Across 10 topics" },
     {
+      num: DICTIONARY_TERM_COUNT,
+      suffix: "",
+      label: "Dictionary Terms",
+      sub: `Across ${DICTIONARY_CATEGORIES.length} disciplines`,
+    },
+    {
+      num: AVAILABLE_COMIC_COUNT,
+      suffix: "",
+      label: "Comic Issues",
+      sub: COMIC_SERIES.title,
+    },
+    {
       num: MAX_PLATFORM_XP.toLocaleString(),
       suffix: "",
       label: "XP Available",
-      sub: "Courses + Articles + Quizzes + Dictionary",
+      sub: "Courses + Articles + Quizzes + Dictionary + Comics",
       raw: true,
     },
   ];
