@@ -360,8 +360,8 @@ export default async function HomePage() {
               <em>Rewards Expertise</em> Today.
             </h2>
             <p className="cta-desc">
-              25 free articles, daily quizzes, and structured courses — everything you need to become
-              the most capable person in the room.
+              25 free articles, daily quizzes, structured courses, a dictionary, and comics —
+              everything you need to become the most capable person in the room.
             </p>
             <div className="cta-actions">
               <Link href="/courses" className="btn-primary">

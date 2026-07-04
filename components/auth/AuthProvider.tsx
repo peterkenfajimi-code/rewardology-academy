@@ -14,6 +14,7 @@ import { useRouter } from "next/navigation";
 import type { SupabaseClient, User } from "@supabase/supabase-js";
 import { createClient } from "@/lib/supabase/client";
 import { AuthModal } from "@/components/auth/AuthModal";
+import { GeoRecorder } from "@/components/geo/GeoRecorder";
 import { safeNextPath } from "@/lib/auth/routes";
 import "@/styles/auth.css";
 
@@ -107,6 +108,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   return (
     <AuthContext.Provider value={value}>
+      <GeoRecorder />
       {children}
       {modalOpen && (
         <AuthModal

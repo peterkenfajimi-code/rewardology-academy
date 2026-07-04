@@ -313,3 +313,101 @@
   .adm-course-row { grid-template-columns: 1fr 60px 70px; }
   .adm-course-row > span:nth-child(3) { display: none; }
 }
+
+/* Location analytics */
+.adm-location-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 16px;
+}
+.adm-location-panel {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.adm-location-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 0 12px;
+}
+.adm-location-table {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.adm-location-row {
+  display: grid;
+  grid-template-columns: 1fr 56px 120px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.adm-location-row-region {
+  grid-template-columns: 1fr 56px;
+}
+.adm-location-hd {
+  background: transparent;
+  border-color: transparent;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  padding-bottom: 2px;
+}
+.adm-location-name {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.adm-location-code {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.3);
+}
+.adm-location-recent {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.adm-location-recent li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+}
+.adm-location-time {
+  color: rgba(255, 255, 255, 0.35);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.adm-location-empty {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 800px) {
+  .adm-location-grid { grid-template-columns: 1fr; }
+  .adm-location-row { grid-template-columns: 1fr 48px 90px; }
+}

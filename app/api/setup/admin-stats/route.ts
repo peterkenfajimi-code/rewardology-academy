@@ -26,6 +26,7 @@ export async function GET() {
     dictionaryProgressRes,
     comicsProgressRes,
     testimonialsRes,
+    locationRes,
   ] = await Promise.all([
     supabase.from("profiles").select("id, created_at"),
     supabase.from("course_progress").select("user_id, course_id, lesson_id, xp, updated_at"),
@@ -35,6 +36,7 @@ export async function GET() {
     supabase.from("dictionary_progress").select("user_id, xp"),
     supabase.from("comics_progress").select("user_id, xp"),
     supabase.from("testimonials").select("id, status, source_type, source_label, rating, created_at"),
+    supabase.rpc("admin_user_location_stats"),
   ]);
 
   const profiles = profilesRes.data ?? [];
@@ -126,11 +128,43 @@ export async function GET() {
     rejected: testimonials.filter((t) => t.status === "rejected").length,
   };
 
+  type LocationStats = {
+    totalTracked: number;
+    totalUsers: number;
+    unknown: number;
+    countriesRepresented: number;
+    byCountry: { countryCode: string; countryName: string | null; users: number }[];
+    byRegion: { countryCode: string; region: string; users: number }[];
+    recent: {
+      countryCode: string;
+      countryName: string | null;
+      region: string | null;
+      city: string | null;
+      lastSeenAt: string;
+    }[];
+  };
+
+  const emptyLocations: LocationStats = {
+    totalTracked: 0,
+    totalUsers: totalUsers,
+    unknown: totalUsers,
+    countriesRepresented: 0,
+    byCountry: [],
+    byRegion: [],
+    recent: [],
+  };
+
+  const locations: LocationStats =
+    locationRes.error || !locationRes.data
+      ? emptyLocations
+      : (locationRes.data as LocationStats);
+
   return NextResponse.json({
     users: { total: totalUsers, newLast7: newUsersLast7, newLast30: newUsersLast30, active7: activeUserIds7.size, active30: activeUserIds30.size },
     xp: { total: totalXpAllUsers, courses: courseXpTotal, quizzes: quizXpTotal, daily: dailyXpTotal, articles: articleXpTotal, dictionary: dictionaryXpTotal, comics: comicsXpTotal },
     courses: courseStats,
     quizzes: { usersAttempted: quizUsersCount, attempts: quizAttempts, perfectScores: quizPerfectCount },
     testimonials: testimonialsByStatus,
+    locations,
   });
 }

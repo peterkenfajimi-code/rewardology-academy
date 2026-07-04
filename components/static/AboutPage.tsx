@@ -37,7 +37,7 @@ const PILLARS = [
   {
     icon: "📊",
     title: "XP Dashboard",
-    body: "A unified progress tracker that aggregates your learning across every module — courses, articles, quizzes, and dictionary — into one career profile.",
+    body: "A unified progress tracker that aggregates your learning across every module — courses, articles, quizzes, dictionary, and comics — into one career profile.",
   },
 ] as const;
 
@@ -285,8 +285,8 @@ export function AboutPage() {
             Start learning <em>today.</em>
           </h2>
           <p>
-            Courses · articles · quizzes · {DICTIONARY_TERM_COUNT}-term dictionary. Create a
-            free account to get started.
+            Courses · articles · quizzes · {DICTIONARY_TERM_COUNT}-term dictionary · comics.
+            Create a free account to get started.
           </p>
           <div className="sp-cta-btns">
             <Link href="/courses" className="sp-btn-primary">

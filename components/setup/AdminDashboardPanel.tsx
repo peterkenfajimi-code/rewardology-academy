@@ -8,6 +8,21 @@ type AdminStats = {
   courses: { id: number; title: string; started: number; completed: number; avgPct: number }[];
   quizzes: { usersAttempted: number; attempts: number; perfectScores: number };
   testimonials: { pending: number; approved: number; rejected: number };
+  locations: {
+    totalTracked: number;
+    totalUsers: number;
+    unknown: number;
+    countriesRepresented: number;
+    byCountry: { countryCode: string; countryName: string | null; users: number }[];
+    byRegion: { countryCode: string; region: string; users: number }[];
+    recent: {
+      countryCode: string;
+      countryName: string | null;
+      region: string | null;
+      city: string | null;
+      lastSeenAt: string;
+    }[];
+  };
 };
 
 function StatCard({ label, value, sub, accent }: { label: string; value: string | number; sub?: string; accent?: string }) {
@@ -20,6 +35,29 @@ function StatCard({ label, value, sub, accent }: { label: string; value: string 
       {sub && <div className="adm-stat-sub">{sub}</div>}
     </div>
   );
+}
+
+function formatLocationLabel(
+  countryCode: string,
+  countryName: string | null,
+  region?: string | null,
+  city?: string | null
+) {
+  const country = countryName || countryCode;
+  const parts = [city, region, country].filter(Boolean);
+  return parts.join(", ");
+}
+
+function formatRelativeTime(iso: string) {
+  const diff = Date.now() - new Date(iso).getTime();
+  const mins = Math.floor(diff / 60_000);
+  if (mins < 1) return "just now";
+  if (mins < 60) return `${mins}m ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return `${hrs}h ago`;
+  const days = Math.floor(hrs / 24);
+  if (days < 7) return `${days}d ago`;
+  return new Date(iso).toLocaleDateString();
 }
 
 function SectionHead({ title, icon }: { title: string; icon: string }) {
@@ -61,7 +99,8 @@ export function AdminDashboardPanel() {
   if (error) return <div className="adm-error">{error}</div>;
   if (!stats) return null;
 
-  const { users, xp, courses, quizzes, testimonials } = stats;
+  const { users, xp, courses, quizzes, testimonials, locations } = stats;
+  const topCountryUsers = locations.byCountry[0]?.users ?? 1;
 
   return (
     <div className="adm-dashboard">
@@ -132,6 +171,103 @@ export function AdminDashboardPanel() {
         <StatCard label="Total attempts" value={quizzes.attempts} />
         <StatCard label="Perfect scores" value={quizzes.perfectScores} accent="#4ade80" />
       </div>
+
+      {/* ── User locations ── */}
+      <SectionHead title="User locations" icon="🌍" />
+      <div className="adm-stat-grid">
+        <StatCard
+          label="Users with location"
+          value={locations.totalTracked}
+          accent="#c8963e"
+          sub={`of ${locations.totalUsers} registered`}
+        />
+        <StatCard label="Countries represented" value={locations.countriesRepresented} />
+        <StatCard
+          label="Location unknown"
+          value={locations.unknown}
+          sub="not yet recorded or unavailable"
+        />
+      </div>
+
+      {locations.byCountry.length > 0 ? (
+        <div className="adm-location-grid">
+          <div className="adm-location-panel">
+            <h4 className="adm-location-title">By country</h4>
+            <div className="adm-location-table">
+              <div className="adm-location-row adm-location-hd">
+                <span>Country</span>
+                <span>Users</span>
+                <span>Share</span>
+              </div>
+              {locations.byCountry.map((row) => {
+                const pct =
+                  locations.totalTracked > 0
+                    ? Math.round((row.users / locations.totalTracked) * 100)
+                    : 0;
+                const barPct = Math.round((row.users / topCountryUsers) * 100);
+                return (
+                  <div key={row.countryCode} className="adm-location-row">
+                    <span className="adm-location-name">
+                      {row.countryName || row.countryCode}
+                      <span className="adm-location-code">{row.countryCode}</span>
+                    </span>
+                    <span>{row.users}</span>
+                    <span>
+                      <div className="adm-bar-wrap">
+                        <div className="adm-bar-fill" style={{ width: `${barPct}%` }} />
+                        <span className="adm-bar-lbl">{pct}%</span>
+                      </div>
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="adm-location-panel">
+            <h4 className="adm-location-title">Top regions</h4>
+            {locations.byRegion.length > 0 ? (
+              <div className="adm-location-table">
+                <div className="adm-location-row adm-location-hd adm-location-row-region">
+                  <span>Region</span>
+                  <span>Users</span>
+                </div>
+                {locations.byRegion.map((row) => (
+                  <div key={`${row.countryCode}-${row.region}`} className="adm-location-row adm-location-row-region">
+                    <span className="adm-location-name">
+                      {row.region}
+                      <span className="adm-location-code">{row.countryCode}</span>
+                    </span>
+                    <span>{row.users}</span>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="adm-location-empty">No regional data yet.</p>
+            )}
+
+            <h4 className="adm-location-title" style={{ marginTop: 20 }}>
+              Recent activity
+            </h4>
+            {locations.recent.length > 0 ? (
+              <ul className="adm-location-recent">
+                {locations.recent.map((row, i) => (
+                  <li key={`${row.countryCode}-${row.lastSeenAt}-${i}`}>
+                    <span>{formatLocationLabel(row.countryCode, row.countryName, row.region, row.city)}</span>
+                    <span className="adm-location-time">{formatRelativeTime(row.lastSeenAt)}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="adm-location-empty">No recent visits recorded.</p>
+            )}
+          </div>
+        </div>
+      ) : (
+        <p className="adm-location-empty">
+          Location data will appear once signed-in users visit the site. Approximate geo is derived from IP/CDN headers — no GPS permission is requested.
+        </p>
+      )}
 
       {/* ── Testimonials ── */}
       <SectionHead title="Testimonials" icon="💬" />

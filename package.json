@@ -21,6 +21,7 @@
     "apply:article-progress": "node scripts/apply-article-progress.mjs",
     "apply:dictionary-progress": "node scripts/apply-dictionary-progress.mjs",
     "apply:testimonials": "node scripts/apply-testimonials.mjs",
+    "apply:user-locations": "node scripts/apply-user-locations.mjs",
     "test:rss": "node scripts/test-rss-feeds.mjs"
   },
   "dependencies": {
