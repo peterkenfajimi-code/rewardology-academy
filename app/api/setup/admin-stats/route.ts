@@ -30,8 +30,8 @@ export async function GET() {
   ] = await Promise.all([
     supabase.from("profiles").select("id, created_at"),
     supabase.from("course_progress").select("user_id, course_id, lesson_id, xp, updated_at"),
-    supabase.from("quiz_centre_progress").select("user_id, quiz_id, best_xp, best_score, best_total"),
-    supabase.from("daily_quiz_completions").select("user_id, xp_earned, completed_at"),
+    supabase.from("quiz_centre_progress").select("user_id, quiz_id, best_xp, best_score, best_total, updated_at"),
+    supabase.from("daily_quiz_completions").select("user_id, xp_earned, created_at"),
     supabase.from("article_progress").select("user_id, xp"),
     supabase.from("dictionary_progress").select("user_id, xp"),
     supabase.from("comics_progress").select("user_id, xp"),
@@ -70,15 +70,13 @@ export async function GET() {
     courseXpTotal + quizXpTotal + dailyXpTotal + articleXpTotal + dictionaryXpTotal + comicsXpTotal;
 
   // ── Active users (any activity in last 7 / 30 days) ──
-  const recentActivity = [...courseRows, ...quizRows, ...dailyRows].filter(
-    (r) => (r as { updated_at?: string; completed_at?: string }).updated_at ||
-            (r as { completed_at?: string }).completed_at
-  );
+  type ActivityRow = { user_id: string; updated_at?: string; created_at?: string };
+  const activityTs = (r: ActivityRow) => r.updated_at ?? r.created_at;
+  const recentActivity = [...courseRows, ...quizRows, ...dailyRows].filter((r) => activityTs(r as ActivityRow));
   const activeUserIds7 = new Set(
     recentActivity
       .filter((r) => {
-        const ts = (r as { updated_at?: string; completed_at?: string }).updated_at ||
-                   (r as { completed_at?: string }).completed_at;
+        const ts = activityTs(r as ActivityRow);
         return ts && now - new Date(ts).getTime() < 7 * DAY;
       })
       .map((r) => r.user_id)
@@ -86,8 +84,7 @@ export async function GET() {
   const activeUserIds30 = new Set(
     recentActivity
       .filter((r) => {
-        const ts = (r as { updated_at?: string; completed_at?: string }).updated_at ||
-                   (r as { completed_at?: string }).completed_at;
+        const ts = activityTs(r as ActivityRow);
         return ts && now - new Date(ts).getTime() < 30 * DAY;
       })
       .map((r) => r.user_id)
