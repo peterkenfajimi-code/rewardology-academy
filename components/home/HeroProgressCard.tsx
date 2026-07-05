@@ -2,14 +2,21 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useAuth } from "@/components/auth/AuthProvider";
 import { CONTACT_EMAIL, DAILY_QUIZ_HREF } from "@/lib/site";
 import { readLocalTotalXp } from "@/lib/xp/localTotalXp";
 import { levelFor, XP_LEVELS } from "@/lib/xp/levels";
 
 export function HeroProgressCard() {
+  const { user } = useAuth();
   const [totalXp, setTotalXp] = useState(0);
 
   useEffect(() => {
+    if (!user) {
+      setTotalXp(0);
+      return;
+    }
+
     function refresh() {
       setTotalXp(readLocalTotalXp());
     }
@@ -22,11 +29,12 @@ export function HeroProgressCard() {
       window.removeEventListener("focus", refresh);
       window.removeEventListener("ra-xp-updated", refresh);
     };
-  }, []);
+  }, [user]);
 
   const { next } = levelFor(totalXp);
   const goal = next?.min ?? XP_LEVELS[XP_LEVELS.length - 1].min;
   const pct = goal > 0 ? Math.min(100, Math.round((totalXp / goal) * 100)) : 0;
+  const showXp = Boolean(user);
 
   return (
     <div className="hero-card">
@@ -38,15 +46,23 @@ export function HeroProgressCard() {
         <div className="challenge-xp">⚡ Earn 15 XP daily</div>
       </div>
       <div className="hero-card-bottom">
-        <div className="xp-bar-label">
-          <span>Your XP Progress</span>
-          <span>
-            {totalXp} / {goal}
-          </span>
-        </div>
-        <div className="xp-bar">
-          <div className="xp-fill" style={{ width: `${pct}%` }} />
-        </div>
+        {showXp ? (
+          <>
+            <div className="xp-bar-label">
+              <span>Your XP Progress</span>
+              <span>
+                {totalXp} / {goal}
+              </span>
+            </div>
+            <div className="xp-bar">
+              <div className="xp-fill" style={{ width: `${pct}%` }} />
+            </div>
+          </>
+        ) : (
+          <p className="hero-xp-hint" style={{ marginBottom: 16 }}>
+            <Link href="/login">Sign in</Link> to track XP and rank progress.
+          </p>
+        )}
         <div className="mini-courses">
           <Link href="/courses?course=1" className="mini-course">
             <div className="mc-icon" style={{ background: "linear-gradient(135deg,#0C4A6E,#0891B2)" }}>
@@ -72,7 +88,7 @@ export function HeroProgressCard() {
             <div className="mc-price waitlist">Waitlist</div>
           </a>
         </div>
-        {totalXp === 0 && (
+        {showXp && totalXp === 0 && (
           <Link href={DAILY_QUIZ_HREF} className="hero-xp-hint">
             Start earning XP with today&apos;s quiz →
           </Link>

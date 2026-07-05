@@ -310,10 +310,12 @@ export function QuizCentre() {
             </div>
             <div className="qc-ls-label">Max XP</div>
           </div>
-          <div style={{ textAlign: "center" }}>
-            <div className="qc-ls-num">{totalXP.toLocaleString()}</div>
-            <div className="qc-ls-label">{synced ? "Your XP · synced" : "Your XP"}</div>
-          </div>
+          {user && (
+            <div style={{ textAlign: "center" }}>
+              <div className="qc-ls-num">{totalXP.toLocaleString()}</div>
+              <div className="qc-ls-label">{synced ? "Your XP · synced" : "Your XP"}</div>
+            </div>
+          )}
         </div>
 
         <div className="qc-grid-wrap">
@@ -423,7 +425,7 @@ export function QuizCentre() {
               ← Exit Quiz
             </button>
             <div className="qc-runner-label">{activeQuiz.title}</div>
-            <div className="qc-xp-live">⚡ {liveXp} XP</div>
+            {user && <div className="qc-xp-live">⚡ {liveXp} XP</div>}
           </div>
 
           <div className="qc-progress-wrap">
@@ -577,9 +579,11 @@ export function QuizCentre() {
 
           <h2 className="qc-results-title">{title}</h2>
           <p className="qc-results-sub">{sub}</p>
-          <div className="qc-results-xp" style={{ color: activeQuiz.color }}>
-            ⚡ +{xpEarned} XP earned
-          </div>
+          {user && (
+            <div className="qc-results-xp" style={{ color: activeQuiz.color }}>
+              ⚡ +{xpEarned} XP earned
+            </div>
+          )}
 
           <div className="qc-results-breakdown">
             <div className="qc-rb-title">Question Breakdown</div>

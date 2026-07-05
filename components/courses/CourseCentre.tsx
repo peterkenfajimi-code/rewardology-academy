@@ -365,13 +365,19 @@ export function CourseCentre() {
       persistXp(activeCourse.id, lesson.id, lesson.xp);
       playLessonComplete();
       if (ok) {
-        showToast(`⚡ +${lesson.xp} XP earned! Great work.`);
+        showToast(
+          user ? `⚡ +${lesson.xp} XP earned! Great work.` : "⚡ Great work!"
+        );
         launchConfetti(mod.color);
       } else {
-        showToast(`+${lesson.xp} XP earned. Review the explanation and continue.`);
+        showToast(
+          user
+            ? `+${lesson.xp} XP earned. Review the explanation and continue.`
+            : "Review the explanation and continue."
+        );
       }
     }
-  }, [kcSel, kcAnswered, activeCourse, activeLesson, lxp, persistXp, showToast, launchConfetti]);
+  }, [kcSel, kcAnswered, activeCourse, activeLesson, lxp, persistXp, showToast, launchConfetti, user]);
 
   // ── Module quiz ──
   const submitMq = useCallback(() => {
@@ -519,12 +525,15 @@ export function CourseCentre() {
                   </div>
                   <div className="cc-lhs-l">Certificates earned</div>
                 </div>
-                <div>
-                  <div className="cc-lhs-n cc-serif">{totalXP.toLocaleString()}</div>
-                  <div className="cc-lhs-l">{synced ? "XP · synced" : "XP earned"}</div>
-                </div>
+                {user && (
+                  <div>
+                    <div className="cc-lhs-n cc-serif">{totalXP.toLocaleString()}</div>
+                    <div className="cc-lhs-l">{synced ? "XP · synced" : "XP earned"}</div>
+                  </div>
+                )}
               </div>
             </div>
+            {user && (
             <div>
               <div className="cc-lh-card">
                 <div className="cc-lhc-top">
@@ -575,6 +584,7 @@ export function CourseCentre() {
                 </div>
               </div>
             </div>
+            )}
           </div>
         </div>
 
@@ -1109,7 +1119,9 @@ export function CourseCentre() {
                     </div>
                     <div className="cc-kc-act">
                       {alreadyDone || (kcAnswered && (lxp[lessonKey(activeCourseId!, l.id)] || 0) > 0) ? (
-                        <div className="cc-kc-xp-msg">✓ XP earned for this lesson</div>
+                        <div className="cc-kc-xp-msg">
+                          ✓ {user ? "XP earned for this lesson" : "Lesson complete"}
+                        </div>
                       ) : (
                         <>
                           <span />
@@ -1149,7 +1161,11 @@ export function CourseCentre() {
               {/* No-quiz lessons: "Mark complete" button awards XP */}
               {!q && !alreadyDone && (
                 <div className="cc-mark-done-wrap">
-                  <p className="cc-mark-done-hint">Finished reading? Click below to earn your XP.</p>
+                  <p className="cc-mark-done-hint">
+                    {user
+                      ? "Finished reading? Click below to earn your XP."
+                      : "Finished reading? Mark this lesson complete."}
+                  </p>
                   <button
                     type="button"
                     className="cc-mark-done-btn"
@@ -1157,22 +1173,23 @@ export function CourseCentre() {
                     onClick={() => {
                       persistXp(c.id, l.id, l.xp);
                       playLessonComplete();
-                      showToast(`⚡ +${l.xp} XP earned!`);
+                      showToast(user ? `⚡ +${l.xp} XP earned!` : "⚡ Lesson complete!");
                       launchConfetti(m.color);
                     }}
                   >
-                    ✓ Mark complete — +{l.xp} XP
+                    {user ? `✓ Mark complete — +${l.xp} XP` : "✓ Mark complete"}
                   </button>
                 </div>
               )}
 
-              {/* Lesson complete XP banner — shows once XP is earned */}
               {(alreadyDone || (kcAnswered && (lxp[lessonKey(activeCourseId!, l.id)] || 0) > 0)) && (
                 <div className="cc-xp-banner" style={{ borderColor: hexToRgba(m.color, 0.4), background: hexToRgba(m.color, 0.08) }}>
                   <span className="cc-xp-banner-ico">⚡</span>
                   <div>
                     <div className="cc-xp-banner-title" style={{ color: m.color }}>Lesson complete</div>
-                    <div className="cc-xp-banner-sub">+{l.xp} XP added to your total.</div>
+                    {user && (
+                      <div className="cc-xp-banner-sub">+{l.xp} XP added to your total.</div>
+                    )}
                   </div>
                 </div>
               )}
@@ -1380,16 +1397,18 @@ export function CourseCentre() {
             {titleParts.slice(0, -1).join(" ")} <em>{titleParts.slice(-1)}</em>
           </h2>
           <p className="cc-qr-sub">{subs[ti]}</p>
-          <div
-            className="cc-qr-xp-badge"
-            style={{
-              background: hexToRgba(m.color, 0.12),
-              border: `1px solid ${hexToRgba(m.color, 0.4)}`,
-              color: m.color,
-            }}
-          >
-            ⚡ +{xpEarned} XP earned
-          </div>
+          {user && (
+            <div
+              className="cc-qr-xp-badge"
+              style={{
+                background: hexToRgba(m.color, 0.12),
+                border: `1px solid ${hexToRgba(m.color, 0.4)}`,
+                color: m.color,
+              }}
+            >
+              ⚡ +{xpEarned} XP earned
+            </div>
+          )}
 
           <div className="cc-qr-bd">
             <div className="cc-qr-bd-title">Question Breakdown</div>
@@ -1480,16 +1499,18 @@ export function CourseCentre() {
                 mastery of the core concepts and practitioner skills in Total Rewards.
               </p>
 
-              <div
-                className="cc-cert-xp-badge"
-                style={{
-                  background: hexToRgba(c.color, 0.12),
-                  border: `1px solid ${hexToRgba(c.color, 0.35)}`,
-                  color: c.color,
-                }}
-              >
-                ⚡ {earned} XP Earned
-              </div>
+              {user && (
+                <div
+                  className="cc-cert-xp-badge"
+                  style={{
+                    background: hexToRgba(c.color, 0.12),
+                    border: `1px solid ${hexToRgba(c.color, 0.35)}`,
+                    color: c.color,
+                  }}
+                >
+                  ⚡ {earned} XP Earned
+                </div>
+              )}
 
               <div className="cc-cert-footer">
                 <div className="cc-cert-sig-block">
@@ -1541,11 +1562,15 @@ export function CourseCentre() {
     <div className="cc-root">
       <div className="cc-topbar">
         <div className="cc-topbar-left">
-          <span className="cc-xp-pill">
-            <span className="cc-xp-bolt">⚡</span>
-            {totalXP.toLocaleString()} XP Total
-          </span>
-          <span className="cc-sync">{synced ? "Synced to your account" : "Saved on this device"}</span>
+          {user && (
+            <span className="cc-xp-pill">
+              <span className="cc-xp-bolt">⚡</span>
+              {totalXP.toLocaleString()} XP Total
+            </span>
+          )}
+          {user && (
+            <span className="cc-sync">{synced ? "Synced to your account" : "Saved on this device"}</span>
+          )}
         </div>
         {view !== "lobby" && (
           <button type="button" className="cc-nav-btn" onClick={goLobby}>

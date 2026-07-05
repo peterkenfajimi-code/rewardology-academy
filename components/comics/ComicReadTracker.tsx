@@ -144,7 +144,8 @@ export function ComicReadTracker({ slug, issueNumber, title, available }: Props)
     return () => window.removeEventListener("storage", onStorage);
   }, [applyProgress, authenticated]);
 
-  if (!available || (!showBanner && !completed)) return null;
+  if (!available || !authenticated) return null;
+  if (!showBanner && !completed) return null;
 
   const justEarned = showBanner;
 
@@ -162,7 +163,6 @@ export function ComicReadTracker({ slug, issueNumber, title, available }: Props)
           </div>
           <div className="cm-xp-banner-sub">
             {issuesRead} of {issuesTotal} issues · {comicsXpTotal} / {maxComicsXp} XP total
-            {!authenticated && " · sign in to sync to your dashboard"}
           </div>
         </div>
       </div>

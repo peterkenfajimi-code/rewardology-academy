@@ -258,7 +258,9 @@ export function HomeQuizPanel() {
         >
           {submitted
             ? correct
-              ? `+${DAILY_QUIZ_XP} XP earned`
+              ? authenticated
+                ? `+${DAILY_QUIZ_XP} XP earned`
+                : "Correct — sign in to save XP"
               : "Submitted — try again tomorrow"
             : submitting
             ? "Submitting…"
@@ -274,11 +276,17 @@ export function HomeQuizPanel() {
         )}
       </div>
       <div className="qp-footer">
-        <div className="qp-streak">🔥 {streak}-day streak</div>
+        {authenticated && <div className="qp-streak">🔥 {streak}-day streak</div>}
         <div className="qp-score">
-          {submitted
-            ? `${todayXpEarned > 0 ? "+" : ""}${todayXpEarned} XP today`
-            : `Up to ${DAILY_QUIZ_XP} XP today`}
+          {authenticated
+            ? submitted
+              ? `${todayXpEarned > 0 ? "+" : ""}${todayXpEarned} XP today`
+              : `Up to ${DAILY_QUIZ_XP} XP today`
+            : submitted
+            ? correct
+              ? "Correct answer"
+              : "Try again tomorrow"
+            : "Sign in to track XP"}
         </div>
       </div>
     </div>

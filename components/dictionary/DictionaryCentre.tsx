@@ -344,10 +344,12 @@ export function DictionaryCentre() {
           <div className="dict-stat-num">{DICTIONARY_CATEGORIES.length}</div>
           <div className="dict-stat-lbl">Disciplines</div>
         </div>
-        <div>
-          <div className="dict-stat-num">{mounted ? dictXp : 0}</div>
-          <div className="dict-stat-lbl">{user ? "Your XP · synced" : "Your XP"}</div>
-        </div>
+        {user && (
+          <div>
+            <div className="dict-stat-num">{mounted ? dictXp : 0}</div>
+            <div className="dict-stat-lbl">Your XP · synced</div>
+          </div>
+        )}
       </div>
 
       <div className="totd-outer">

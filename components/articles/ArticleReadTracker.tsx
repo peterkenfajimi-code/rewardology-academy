@@ -183,6 +183,7 @@ export function ArticleXpBanner({
   maxArticleXp: number;
   articlesTotal: number;
 }) {
+  if (!authenticated) return null;
   if (!showBanner && !completed) return null;
 
   const justEarned = showBanner;
@@ -197,7 +198,6 @@ export function ArticleXpBanner({
         </div>
         <div className="ess-xp-banner-sub">
           {articlesRead} of {articlesTotal} articles · {articleXpTotal} / {maxArticleXp} XP total
-          {!authenticated && " · sign in to sync to your dashboard"}
         </div>
       </div>
     </div>

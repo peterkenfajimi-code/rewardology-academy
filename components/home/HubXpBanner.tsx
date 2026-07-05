@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useAuth } from "@/components/auth/AuthProvider";
 import { levelFor } from "@/lib/xp/levels";
 import { readLocalTotalXp } from "@/lib/xp/localTotalXp";
 import { MAX_PLATFORM_XP } from "@/lib/xp/platformMax";
@@ -17,12 +18,19 @@ async function fetchServerXp(): Promise<number | null> {
 }
 
 export function HubXpBanner() {
+  const { user, loading } = useAuth();
   const [totalXp, setTotalXp] = useState(0);
   // Track whether we've received a valid server value; if so, never overwrite it
   // with a stale localStorage read — only refresh via a new server fetch.
   const serverLoaded = useRef(false);
 
   useEffect(() => {
+    if (!user) {
+      setTotalXp(0);
+      serverLoaded.current = false;
+      return;
+    }
+
     // Show local cache instantly to avoid a blank flash
     setTotalXp(readLocalTotalXp());
 
@@ -66,6 +74,29 @@ export function HubXpBanner() {
       window.removeEventListener("storage", onFocusOrStorage);
     };
   }, []);
+
+  }, [user]);
+
+  if (!loading && !user) {
+    return (
+      <section className="hub-xp-banner">
+        <div className="hub-xp-inner">
+          <div>
+            <div className="hub-xp-label">Your Progress</div>
+            <h2 className="hub-xp-title">
+              Track your learning <em>across every platform module</em>
+            </h2>
+            <p className="hub-xp-nums" style={{ marginBottom: 16 }}>
+              Sign in to earn XP, unlock ranks, and sync progress across devices.
+            </p>
+            <Link href="/login" className="hub-xp-link">
+              Sign in to track XP →
+            </Link>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   const pct = MAX_PLATFORM_XP > 0 ? Math.min(100, Math.round((totalXp / MAX_PLATFORM_XP) * 100)) : 0;
   const { current, next } = levelFor(totalXp);
