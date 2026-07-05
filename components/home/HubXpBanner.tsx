@@ -73,8 +73,6 @@ export function HubXpBanner() {
       window.removeEventListener("focus", onFocusOrStorage);
       window.removeEventListener("storage", onFocusOrStorage);
     };
-  }, []);
-
   }, [user]);
 
   if (!loading && !user) {
