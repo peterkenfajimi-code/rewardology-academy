@@ -37,6 +37,8 @@ import "@/styles/course-centre.css";
 import { dispatchXpUpdated } from "@/lib/xp/dispatch";
 import { levelFor, rankProgress } from "@/lib/xp/levels";
 import { playLessonComplete, playCourseComplete } from "@/lib/audio/sounds";
+import { CertificateSharePanel } from "@/components/certificates/CertificateSharePanel";
+import type { IssueCertificatePayload } from "@/lib/certificates/types";
 
 const LABELS = ["A", "B", "C", "D"];
 const RING_CIRCUMFERENCE = 390;
@@ -451,6 +453,19 @@ export function CourseCentre() {
       meta.full_name || meta.name || user?.email?.split("@")[0] || "HR Professional"
     );
   }, [user]);
+
+  const certCourse = result?.course ?? activeCourse;
+  const courseCertPayload = useMemo<IssueCertificatePayload | null>(() => {
+    if (view !== "certificate" || !certCourse) return null;
+    return {
+      certType: "course",
+      sourceId: String(certCourse.id),
+      recipientName: displayName,
+      credentialName: certCourse.title,
+      credentialDetail: certCourse.subtitle,
+      xpEarned: courseXp(lxp, certCourse.id),
+    };
+  }, [view, certCourse, displayName, lxp]);
 
   // ── Reset all progress ──
   function resetProgress() {
@@ -1418,7 +1433,6 @@ export function CourseCentre() {
       month: "long",
       year: "numeric",
     });
-    const certId = `RA-${c.id}-${Date.now().toString(36).toUpperCase()}`;
 
     return (
       <div className="cc-view">
@@ -1436,6 +1450,11 @@ export function CourseCentre() {
               ⬇ Save Certificate
             </button>
           </div>
+          <CertificateSharePanel
+            payload={courseCertPayload}
+            enabled={view === "certificate"}
+            signedIn={Boolean(user)}
+          />
 
           <div className="cc-cert-card">
             <div className="cc-cert-inner-border" />
@@ -1479,7 +1498,7 @@ export function CourseCentre() {
                 </div>
                 <div className="cc-cert-meta-block">
                   <div className="cc-cert-date-val">{dateStr}</div>
-                  <div className="cc-cert-id-val">{certId}</div>
+                  <div className="cc-cert-id-val">Verify at rewardologyacademy.com/verify</div>
                 </div>
               </div>
             </div>

@@ -18,6 +18,8 @@ import { incrementQuizFinishCount, isQuizTestimonialEligible } from "@/lib/testi
 import { BrowserVoiceBar } from "@/components/tts/BrowserVoiceBar";
 import { dispatchXpUpdated } from "@/lib/xp/dispatch";
 import { playLessonComplete } from "@/lib/audio/sounds";
+import { CertificateSharePanel } from "@/components/certificates/CertificateSharePanel";
+import type { IssueCertificatePayload } from "@/lib/certificates/types";
 import "@/styles/quiz-centre.css";
 
 const LABELS = ["A", "B", "C", "D"];
@@ -94,6 +96,43 @@ export function QuizCentre() {
     () => QUIZ_CENTRE.find((q) => q.id === activeId) ?? null,
     [activeId]
   );
+
+  const quizCertPayload = useMemo<IssueCertificatePayload | null>(() => {
+    if (view !== "certificate" || !certName.trim()) return null;
+
+    if (activeQuiz && completed[activeQuiz.id] && !certAllDone) {
+      const stored = completed[activeQuiz.id];
+      const certPct = Math.round((stored.score / stored.total) * 100);
+      return {
+        certType: "quiz",
+        sourceId: String(activeQuiz.id),
+        recipientName: certName.trim(),
+        credentialName: `${activeQuiz.title} — Rewardology Academy`,
+        credentialDetail: `Scored ${certPct}% on ${activeQuiz.title}`,
+        scorePct: certPct,
+        xpEarned: stored.xp,
+      };
+    }
+
+    if (certAllDone || allQuizzesDone) {
+      const results = Object.values(completed);
+      const totalScore = results.reduce((s, r) => s + r.score, 0);
+      const totalQuestions = results.reduce((s, r) => s + r.total, 0);
+      const certPct =
+        totalQuestions > 0 ? Math.round((totalScore / totalQuestions) * 100) : 0;
+      return {
+        certType: "quiz_centre",
+        sourceId: "centre",
+        recipientName: certName.trim(),
+        credentialName: "Quiz Centre Achievement — Rewardology Academy",
+        credentialDetail: `Scored ${certPct}% across all 10 Total Rewards quizzes`,
+        scorePct: certPct,
+        xpEarned: totalXP,
+      };
+    }
+
+    return null;
+  }, [view, certName, certAllDone, allQuizzesDone, completed, activeQuiz, totalXP]);
 
   const correctCount = answers.filter(Boolean).length;
   const perQuestionXp = activeQuiz
@@ -638,6 +677,11 @@ export function QuizCentre() {
                   🖨 Download / Print
                 </button>
               </div>
+              <CertificateSharePanel
+                payload={quizCertPayload}
+                enabled={view === "certificate" && showDoc}
+                signedIn={Boolean(user)}
+              />
               <div className="qc-cert-doc">
                 <div className="qc-cert-stripe" />
                 <div className="qc-cert-body">
