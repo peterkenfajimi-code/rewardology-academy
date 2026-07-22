@@ -1,16 +1,21 @@
 /**
  * Apply supabase/user-locations.sql to the linked remote project.
  *
- * Requires SUPABASE_ACCESS_TOKEN in .env.local (never commit).
+ * Requires SUPABASE_ACCESS_TOKEN and ADMIN_EMAIL in .env.local (never commit).
  * Usage: node scripts/apply-user-locations.mjs
  */
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
+import {
+  applySqlAdminEmail,
+  getAdminEmail,
+  getProjectRoot,
+  resolveProjectRoot,
+  SUPABASE_PROJECT_REF,
+} from "./lib/load-env-local.mjs";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const root = path.resolve(__dirname, "..");
-const projectRef = "fgkhowgggwbsosqhfnnz";
+const root = resolveProjectRoot(getProjectRoot(import.meta.url));
+const projectRef = SUPABASE_PROJECT_REF;
 
 function loadEnvLocal() {
   const envPath = path.join(root, ".env.local");
@@ -43,7 +48,8 @@ Then run: node scripts/apply-user-locations.mjs
 }
 
 const sqlPath = path.join(root, "supabase", "user-locations.sql");
-const query = fs.readFileSync(sqlPath, "utf8");
+const adminEmail = getAdminEmail(root, { required: true });
+const query = applySqlAdminEmail(fs.readFileSync(sqlPath, "utf8"), adminEmail);
 
 const res = await fetch(
   `https://api.supabase.com/v1/projects/${projectRef}/database/query`,

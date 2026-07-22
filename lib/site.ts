@@ -29,8 +29,15 @@ export const RESEND_SMTP_USER = "resend";
 /** Public contact address (About, Privacy, Terms, mailto links). Hosted in Zoho Mail. */
 export const CONTACT_EMAIL = "hello@rewardologyacademy.com";
 
-/** Personal Gmail for admin dashboard access and Resend alert delivery (not shown publicly). */
-export const CONTACT_FORWARD_GMAIL = "peterkenfajimi@gmail.com";
+/**
+ * Platform owner email for /setup access and admin alerts.
+ * Set ADMIN_EMAIL and NEXT_PUBLIC_ADMIN_EMAIL in env (same value) — never commit the address.
+ */
+export const CONTACT_FORWARD_GMAIL = (
+  process.env.NEXT_PUBLIC_ADMIN_EMAIL?.trim() ||
+  process.env.ADMIN_EMAIL?.trim() ||
+  ""
+);
 
 export function getPublicSiteUrl(): string {
   const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim();

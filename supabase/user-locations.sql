@@ -72,7 +72,7 @@ begin
 end;
 $$;
 
--- Admin-only aggregated location analytics (platform owner email).
+-- Admin email is injected at apply time from ADMIN_EMAIL env (__ADMIN_EMAIL__ placeholder).
 create or replace function public.admin_user_location_stats()
 returns json
 language plpgsql
@@ -80,7 +80,7 @@ security definer
 set search_path = public
 as $$
 declare
-  admin_email constant text := 'peterkenfajimi@gmail.com';
+  admin_email constant text := '__ADMIN_EMAIL__';
   result json;
 begin
   if auth.uid() is null then

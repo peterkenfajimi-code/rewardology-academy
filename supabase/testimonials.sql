@@ -51,7 +51,7 @@ security definer
 set search_path = public
 as $$
 declare
-  admin_email constant text := 'peterkenfajimi@gmail.com';
+  admin_email constant text := '__ADMIN_EMAIL__';
 begin
   if auth.uid() is null then
     raise exception 'Not authenticated';
@@ -76,7 +76,7 @@ security definer
 set search_path = public
 as $$
 declare
-  admin_email constant text := 'peterkenfajimi@gmail.com';
+  admin_email constant text := '__ADMIN_EMAIL__';
 begin
   if auth.uid() is null then
     raise exception 'Not authenticated';

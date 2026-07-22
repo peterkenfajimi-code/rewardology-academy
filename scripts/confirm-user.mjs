@@ -1,34 +1,34 @@
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
+/**
+ * Manually confirm a Supabase auth user (dev utility).
+ *
+ * Usage:
+ *   node scripts/confirm-user.mjs
+ *   node scripts/confirm-user.mjs you@example.com
+ *
+ * Requires SUPABASE_ACCESS_TOKEN and ADMIN_EMAIL in .env.local (or pass email as arg).
+ */
+import {
+  getAdminEmail,
+  getProjectRoot,
+  getSupabaseAccessToken,
+  resolveProjectRoot,
+  SUPABASE_PROJECT_REF,
+} from "./lib/load-env-local.mjs";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const root = path.resolve(__dirname, "..");
-const projectRef = "fgkhowgggwbsosqhfnnz";
-const email = "peterkenfajimi@gmail.com";
+const root = resolveProjectRoot(getProjectRoot(import.meta.url));
+const email = process.argv[2]?.trim() || getAdminEmail(root, { required: true });
+const token = getSupabaseAccessToken(root);
 
-function loadEnvLocal() {
-  const envPath = path.join(root, ".env.local");
-  const env = {};
-  for (const line of fs.readFileSync(envPath, "utf8").split(/\r?\n/)) {
-    const t = line.trim();
-    if (!t || t.startsWith("#")) continue;
-    const i = t.indexOf("=");
-    if (i === -1) continue;
-    env[t.slice(0, i).trim()] = t.slice(i + 1).trim();
-  }
-  return env;
-}
-
-const token = loadEnvLocal().SUPABASE_ACCESS_TOKEN;
 if (!token) {
   console.error("No SUPABASE_ACCESS_TOKEN in .env.local");
   process.exit(1);
 }
 
+const escaped = email.replace(/'/g, "''");
+
 async function query(sql) {
   const res = await fetch(
-    `https://api.supabase.com/v1/projects/${projectRef}/database/query`,
+    `https://api.supabase.com/v1/projects/${SUPABASE_PROJECT_REF}/database/query`,
     {
       method: "POST",
       headers: {
@@ -44,13 +44,13 @@ async function query(sql) {
 }
 
 const users = await query(
-  `select id, email, email_confirmed_at, created_at from auth.users where email = '${email}' limit 1;`
+  `select id, email, email_confirmed_at, created_at from auth.users where email = '${escaped}' limit 1;`
 );
 console.log("User:", JSON.stringify(users, null, 2));
 
 if (users?.[0] && !users[0].email_confirmed_at) {
   await query(
-    `update auth.users set email_confirmed_at = now(), confirmed_at = now() where email = '${email}';`
+    `update auth.users set email_confirmed_at = now(), confirmed_at = now() where email = '${escaped}';`
   );
   console.log("Email confirmed manually.");
 } else if (users?.[0]?.email_confirmed_at) {

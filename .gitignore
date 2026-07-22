@@ -6,3 +6,9 @@ node_modules
 .vercel
 .DS_Store
 *.log
+build-log.txt
+data/quiz-docx/*.docx
+assets/comics-source/*
+!assets/comics-source/README.md
+scripts/git-history-replacements.txt
+scripts/git-history-replacements.local.txt

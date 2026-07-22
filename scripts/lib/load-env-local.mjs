@@ -36,4 +36,33 @@ export function getSupabaseAccessToken(root) {
   return process.env.SUPABASE_ACCESS_TOKEN || env.SUPABASE_ACCESS_TOKEN;
 }
 
+/** Admin email from env — never hardcode personal addresses in source. */
+export function getAdminEmail(root, { required = false } = {}) {
+  const resolved = resolveProjectRoot(root);
+  const env = loadEnvLocal(resolved);
+  const email = (
+    process.env.ADMIN_EMAIL ||
+    process.env.NEXT_PUBLIC_ADMIN_EMAIL ||
+    env.ADMIN_EMAIL ||
+    env.NEXT_PUBLIC_ADMIN_EMAIL ||
+    ""
+  ).trim();
+  if (!email && required) {
+    console.error(`
+Missing ADMIN_EMAIL.
+
+Add to .env.local:
+  ADMIN_EMAIL=you@example.com
+  NEXT_PUBLIC_ADMIN_EMAIL=you@example.com   (same value — required for /setup in the browser)
+`);
+    process.exit(1);
+  }
+  return email;
+}
+
+export function applySqlAdminEmail(sql, adminEmail) {
+  const safe = adminEmail.replace(/'/g, "''");
+  return sql.replaceAll("__ADMIN_EMAIL__", safe);
+}
+
 export const SUPABASE_PROJECT_REF = "fgkhowgggwbsosqhfnnz";

@@ -1,5 +1,6 @@
 /**
  * Parse Rewardology Daily Quiz Bank docx files (Vol 1–4) into question objects.
+ * Place .docx files in data/quiz-docx/ or set QUIZ_DOCX_DIR.
  * Usage: node scripts/parse-quiz-docx.mjs [--json]
  */
 import fs from "fs";
@@ -7,11 +8,16 @@ import path from "path";
 import { execSync } from "node:child_process";
 import { fileURLToPath } from "url";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const root = path.resolve(__dirname, "..");
+
+const docxDir = process.env.QUIZ_DOCX_DIR || path.join(root, "data", "quiz-docx");
+
 const FILES = [
-  { vol: 1, path: "C:/Users/pfajimi/Downloads/Rewardology_Daily_Quiz_Bank.docx" },
-  { vol: 2, path: "C:/Users/pfajimi/Downloads/Rewardology_Daily_Quiz_Bank_Vol2.docx" },
-  { vol: 3, path: "C:/Users/pfajimi/Downloads/Rewardology_Daily_Quiz_Bank_Vol3.docx" },
-  { vol: 4, path: "C:/Users/pfajimi/Downloads/Rewardology_Daily_Quiz_Bank_Vol4.docx" },
+  { vol: 1, path: path.join(docxDir, "Rewardology_Daily_Quiz_Bank.docx") },
+  { vol: 2, path: path.join(docxDir, "Rewardology_Daily_Quiz_Bank_Vol2.docx") },
+  { vol: 3, path: path.join(docxDir, "Rewardology_Daily_Quiz_Bank_Vol3.docx") },
+  { vol: 4, path: path.join(docxDir, "Rewardology_Daily_Quiz_Bank_Vol4.docx") },
 ];
 
 function decodeXml(text) {

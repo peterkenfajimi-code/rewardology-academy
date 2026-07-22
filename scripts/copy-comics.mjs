@@ -1,3 +1,9 @@
+/**
+ * Copy comic PNGs from a local source folder into public/assets/comics.
+ *
+ * Default source: assets/comics-source/ (place timestamped PNG exports there)
+ * Override: COMICS_SOURCE_DIR=/path/to/folder node scripts/copy-comics.mjs
+ */
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -5,11 +11,14 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 
-const src = path.join(
-  process.env.USERPROFILE,
-  ".cursor/projects/c-Users-pfajimi-OneDrive-Nigerian-Exchange-Group-Documents-Peter-Fajimi-Peter-Personal-Folder-Peter-s-Personal-records-AI-Work-REWARDOLOGY-ACADEMY/assets"
-);
-const dest = path.join(root, "public/assets/comics");
+const src = process.env.COMICS_SOURCE_DIR || path.join(root, "assets", "comics-source");
+const dest = path.join(root, "public", "assets", "comics");
+
+if (!fs.existsSync(src)) {
+  console.error(`Source folder not found: ${src}`);
+  console.error("Create assets/comics-source/ and add PNG exports, or set COMICS_SOURCE_DIR.");
+  process.exit(1);
+}
 
 fs.mkdirSync(dest, { recursive: true });
 

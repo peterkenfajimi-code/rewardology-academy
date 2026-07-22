@@ -1,0 +1,7 @@
+# Copy to git-history-replacements.local.txt (gitignored) before running scrub-git-history.mjs
+# Format: literal==>replacement  (one per line; git-filter-repo --replace-text)
+#
+# Example entries — replace with your own strings to redact from git history:
+# you@example.com==>REDACTED_ADMIN_EMAIL
+# C:/Users/yourname==>C:/Users/<local-user>
+# Your-Employer-Name==><redacted>

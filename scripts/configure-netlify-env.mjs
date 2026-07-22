@@ -60,6 +60,14 @@ if (env.SUPABASE_ACCESS_TOKEN) {
 if (env.RESEND_API_KEY) {
   newVars.RESEND_API_KEY = env.RESEND_API_KEY;
 }
+if (env.ADMIN_EMAIL) {
+  newVars.ADMIN_EMAIL = env.ADMIN_EMAIL;
+}
+if (env.NEXT_PUBLIC_ADMIN_EMAIL) {
+  newVars.NEXT_PUBLIC_ADMIN_EMAIL = env.NEXT_PUBLIC_ADMIN_EMAIL;
+} else if (env.ADMIN_EMAIL) {
+  newVars.NEXT_PUBLIC_ADMIN_EMAIL = env.ADMIN_EMAIL;
+}
 
 const headers = {
   Authorization: `Bearer ${token}`,
