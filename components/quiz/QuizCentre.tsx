@@ -54,6 +54,30 @@ export function QuizCentre() {
   const [certNameInput, setCertNameInput] = useState("");
   const [quizFinishCount, setQuizFinishCount] = useState(0);
 
+  useEffect(() => {
+    if (view !== "certificate") {
+      document.body.classList.remove("qc-print-certificate");
+      return;
+    }
+
+    const enablePrintMode = () => document.body.classList.add("qc-print-certificate");
+    const disablePrintMode = () => document.body.classList.remove("qc-print-certificate");
+
+    window.addEventListener("beforeprint", enablePrintMode);
+    window.addEventListener("afterprint", disablePrintMode);
+
+    return () => {
+      window.removeEventListener("beforeprint", enablePrintMode);
+      window.removeEventListener("afterprint", disablePrintMode);
+      disablePrintMode();
+    };
+  }, [view]);
+
+  const printCertificate = useCallback(() => {
+    document.body.classList.add("qc-print-certificate");
+    window.print();
+  }, []);
+
   const totalXP = useMemo(() => totalXpFromMap(completed), [completed]);
   const allQuizzesDone = useMemo(
     () => QUIZ_CENTRE.every((q) => Boolean(completed[q.id])),
@@ -673,21 +697,26 @@ export function QuizCentre() {
             </div>
           ) : (
             <>
-              <div className="qc-cert-actions-row">
-                <button type="button" className="qc-btn-retry" onClick={goLobby}>
-                  ← Back to Quizzes
-                </button>
-                <button type="button" className="qc-cert-print-btn" onClick={() => window.print()}>
-                  🖨 Download / Print
-                </button>
+              <div className="qc-no-print">
+                <div className="qc-cert-actions-row">
+                  <button type="button" className="qc-btn-retry" onClick={goLobby}>
+                    ← Back to Quizzes
+                  </button>
+                  <button type="button" className="qc-cert-print-btn" onClick={printCertificate}>
+                    🖨 Download / Print
+                  </button>
+                </div>
+                <CertificateSharePanel
+                  payload={quizCertPayload}
+                  enabled={view === "certificate" && showDoc}
+                  signedIn={Boolean(user)}
+                />
               </div>
-              <CertificateSharePanel
-                payload={quizCertPayload}
-                enabled={view === "certificate" && showDoc}
-                signedIn={Boolean(user)}
-              />
               <div className="qc-cert-doc">
-                <div className="qc-cert-stripe" />
+                <div className="qc-cert-stripe" aria-hidden>
+                  <span className="qc-cert-stripe-teal" />
+                  <span className="qc-cert-stripe-gold" />
+                </div>
                 <div className="qc-cert-body">
                   <div className="qc-cert-logo">
                     <span className="qc-cert-logo-mark">R</span>
@@ -718,9 +747,7 @@ export function QuizCentre() {
                       <div>
                         Verified Achievement
                         <br />
-                        <span style={{ fontWeight: 400, color: "rgba(74,222,128,.7)" }}>
-                          Rewardology Academy
-                        </span>
+                        <span className="qc-cert-badge-org">Rewardology Academy</span>
                       </div>
                     </div>
                   </div>

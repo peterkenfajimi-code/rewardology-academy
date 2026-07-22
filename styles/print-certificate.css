@@ -1,0 +1,94 @@
+/* Quiz certificate print — loaded from root layout so rules always apply */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+
+  html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body.qc-print-certificate {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Hide everything except the certificate document */
+  body.qc-print-certificate * {
+    visibility: hidden;
+  }
+
+  body.qc-print-certificate .qc-cert-doc,
+  body.qc-print-certificate .qc-cert-doc * {
+    visibility: visible;
+  }
+
+  body.qc-print-certificate .qc-cert-doc {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background: #f7f5f0 !important;
+    color: #111827 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    overflow: visible;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body.qc-print-certificate .qc-cert-stripe {
+    display: flex !important;
+    height: 4px !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body.qc-print-certificate .qc-cert-stripe-teal {
+    flex: 1;
+    background: #0c6b65 !important;
+  }
+
+  body.qc-print-certificate .qc-cert-stripe-gold {
+    flex: 1;
+    background: #c8963e !important;
+  }
+
+  body.qc-print-certificate .qc-cert-logo-mark {
+    background: #c8963e !important;
+    color: #07192e !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body.qc-print-certificate .qc-cert-ey {
+    color: #6b7280 !important;
+  }
+
+  body.qc-print-certificate .qc-cert-sub,
+  body.qc-print-certificate .qc-cert-score-sub {
+    color: #6b7280 !important;
+  }
+
+  body.qc-print-certificate .qc-cert-achievement,
+  body.qc-print-certificate .qc-cert-date-label {
+    color: #9ca3af !important;
+  }
+
+  body.qc-print-certificate .qc-cert-badge-org {
+    color: #16a34a !important;
+  }
+
+  body.qc-print-certificate .qc-cert-ft {
+    border-top: 1px solid #ede9e0 !important;
+  }
+
+  body.qc-print-certificate .qc-cert-body {
+    padding: 40px 48px !important;
+  }
+}

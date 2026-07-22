@@ -867,8 +867,18 @@
 }
 
 .qc-cert-stripe {
+  display: flex;
   height: 4px;
-  background: linear-gradient(90deg, var(--teal), var(--gold));
+}
+
+.qc-cert-stripe-teal {
+  flex: 1;
+  background: var(--teal);
+}
+
+.qc-cert-stripe-gold {
+  flex: 1;
+  background: var(--gold);
 }
 
 .qc-cert-body {
@@ -972,10 +982,7 @@
   font-weight: 700;
 }
 
-@media print {
-  .qc-root nav,
-  .qc-cert-actions-row,
-  .qc-cert-name-form {
-    display: none !important;
-  }
+.qc-cert-badge-org {
+  font-weight: 400;
+  color: rgba(74, 222, 128, 0.7);
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "@/styles/print-certificate.css";
 import { editorialSerif, editorialSans } from "@/lib/fonts";
 import { AuthProvider } from "@/components/auth/AuthProvider";
 import { APPLE_TOUCH_DATA_URL, FAVICON_DATA_URL } from "@/lib/brand/favicon";
