@@ -27,12 +27,9 @@ export function ComicIssueView({ issue }: Props) {
             ) : (
               <span className="cm-pager-btn disabled">← Previous</span>
             )}
-            {next ? (
-              <Link
-                href={next.available ? `/comics/${next.slug}` : "/comics"}
-                className="cm-pager-btn"
-              >
-                {next.available ? `Issue #${next.number} →` : "All Issues →"}
+            {next?.available ? (
+              <Link href={`/comics/${next.slug}`} className="cm-pager-btn">
+                Issue #{next.number} →
               </Link>
             ) : (
               <Link href="/comics" className="cm-pager-btn">
@@ -56,15 +53,21 @@ export function ComicIssueView({ issue }: Props) {
         />
 
         <div className="cm-comic-frame">
-          {issue.available && issue.image ? (
-            <Image
-              src={issue.image}
-              alt={`${issue.title} — full comic issue`}
-              width={928}
-              height={1200}
-              priority
-              sizes="(max-width: 960px) 100vw, 928px"
-            />
+          {issue.available && issue.pages.length > 0 ? (
+            <div className="cm-comic-pages">
+              {issue.pages.map((page, index) => (
+                <Image
+                  key={page}
+                  src={page}
+                  alt={`${issue.title} — page ${index + 1} of ${issue.pages.length}`}
+                  width={928}
+                  height={1200}
+                  priority={index < 2}
+                  sizes="(max-width: 960px) 100vw, 928px"
+                  className="cm-comic-page"
+                />
+              ))}
+            </div>
           ) : (
             <div className="cm-coming-soon">
               <h3>Coming Soon</h3>

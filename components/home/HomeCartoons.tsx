@@ -4,10 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { COMIC_ISSUES, COMIC_SERIES } from "@/lib/comics/comicData";
 
-const GRID_ISSUES = COMIC_ISSUES.filter((i) => i.number !== 1);
-
 export function HomeCartoons() {
   const featured = COMIC_ISSUES[0];
+  const availableCount = COMIC_ISSUES.filter((issue) => issue.available).length;
 
   return (
     <section className="section cartoons-section">
@@ -24,15 +23,15 @@ export function HomeCartoons() {
             </p>
           </div>
           <Link href="/comics" className="section-link">
-            View all issues →
+            Read the comic →
           </Link>
         </div>
 
         <div className="cartoon-hero reveal">
           <Link href={`/comics/${featured.slug}`} className="cartoon-hero-frame">
             <Image
-              src={featured.image ?? COMIC_SERIES.coverImage}
-              alt={`Issue #1: ${featured.title}`}
+              src={featured.coverImage}
+              alt={`Issue #${featured.number}: ${featured.title}`}
               width={640}
               height={480}
               style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
@@ -40,7 +39,7 @@ export function HomeCartoons() {
             <div className="cartoon-play">
               <div className="play-circle">▶</div>
             </div>
-            <div className="cartoon-episode-badge">Issue #1</div>
+            <div className="cartoon-episode-badge">Issue #{featured.number}</div>
             <div className="cartoon-new-badge">New</div>
           </Link>
 
@@ -50,8 +49,10 @@ export function HomeCartoons() {
             <p className="ch-desc">{featured.tagline}</p>
             <div className="ch-meta">
               <div className="ch-meta-item">🎨 Illustrated Series</div>
-              <div className="ch-meta-item">📖 5 Issues</div>
-              <div className="ch-meta-item">✨ New Monthly</div>
+              <div className="ch-meta-item">
+                📖 {availableCount} Issue{availableCount === 1 ? "" : "s"}
+              </div>
+              <div className="ch-meta-item">✨ More Coming</div>
             </div>
             <div className="ch-tags">
               <span
@@ -72,7 +73,7 @@ export function HomeCartoons() {
                   background: "rgba(46,125,140,.08)",
                 }}
               >
-                Retention
+                Workplace Stories
               </span>
               <span
                 className="ch-tag"
@@ -82,81 +83,18 @@ export function HomeCartoons() {
                   background: "rgba(58,125,68,.08)",
                 }}
               >
-                Recognition
+                Culture
               </span>
             </div>
             <div className="ch-actions">
               <Link href={`/comics/${featured.slug}`} className="btn-cartoon">
-                ▶&nbsp; Read Issue #1
+                ▶&nbsp; Read Issue #{featured.number}
               </Link>
               <Link href="/comics" className="btn-cartoon-ghost">
-                All Issues →
+                Comic Hub →
               </Link>
             </div>
           </div>
-        </div>
-
-        <div className="cartoon-grid-label reveal">More Issues</div>
-        <div className="cartoons-grid">
-          {GRID_ISSUES.map((issue, i) => (
-            <Link
-              key={issue.slug}
-              href={issue.available ? `/comics/${issue.slug}` : "/comics"}
-              className={`cartoon-card reveal reveal-d${i + 1}${issue.available ? "" : " cm-soon-card"}`}
-            >
-              <div className="cc-thumb">
-                {issue.image ? (
-                  <Image
-                    src={issue.image}
-                    alt={`Issue #${issue.number}: ${issue.title}`}
-                    width={400}
-                    height={280}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
-                  />
-                ) : (
-                  <div
-                    style={{
-                      background: `linear-gradient(135deg, ${issue.accent}33, #07192e)`,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      height: "100%",
-                      padding: 20,
-                    }}
-                  >
-                    <div style={{ textAlign: "center" }}>
-                      <div
-                        style={{
-                          fontFamily: "var(--hserif)",
-                          fontSize: 16,
-                          fontWeight: 700,
-                          color: "white",
-                          lineHeight: 1.2,
-                        }}
-                      >
-                        {issue.title}
-                      </div>
-                    </div>
-                  </div>
-                )}
-                <div className="cc-thumb-overlay">
-                  <span className="cc-ep-num">Issue #{String(issue.number).padStart(2, "0")}</span>
-                </div>
-                {issue.available && (
-                  <div className="cc-hover-play">
-                    <div className="cc-play-sm">▶</div>
-                  </div>
-                )}
-              </div>
-              <div className="cartoon-card-body">
-                <div className="cc-topic" style={{ color: issue.accent }}>
-                  {issue.available ? "Available Now" : "Coming Soon"}
-                </div>
-                <div className="cc-title-sm">{issue.title}</div>
-                <div className="cc-desc-sm">{issue.description}</div>
-              </div>
-            </Link>
-          ))}
         </div>
       </div>
     </section>

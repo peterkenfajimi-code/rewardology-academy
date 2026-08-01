@@ -4,85 +4,53 @@ export type ComicIssue = {
   title: string;
   tagline: string;
   description: string;
-  image?: string;
+  coverImage: string;
+  pages: string[];
   available: boolean;
   accent: string;
   nextIssue?: string;
 };
+
+const ISSUE_1_PAGES = [
+  "/assets/comics/issue-1/01-cover.png",
+  "/assets/comics/issue-1/02-inside-cover.png",
+  "/assets/comics/issue-1/03-meet-the-characters.png",
+  "/assets/comics/issue-1/04-the-welcome.png",
+  "/assets/comics/issue-1/05-beyond-the-welcome-pack.png",
+  "/assets/comics/issue-1/06-the-tour.png",
+  "/assets/comics/issue-1/07-the-reflection.png",
+  "/assets/comics/issue-1/08-the-real-test.png",
+  "/assets/comics/issue-1/09-hidden-in-plain-sight-corrected.png",
+  "/assets/comics/issue-1/10-what-employees-value-corrected.png",
+  "/assets/comics/issue-1/11-the-rewardology-lens.png",
+  "/assets/comics/issue-1/12-jordan-connects-the-dots.png",
+  "/assets/comics/issue-1/13-key-takeaways-and-issue-2-preview.png",
+] as const;
 
 export const COMIC_SERIES = {
   title: "The Total Rewards Effect",
   slug: "total-rewards-effect",
   eyebrow: "Comic Series",
   tagline:
-    "Stories, workplaces, real impact. Exploring the people side of total rewards.",
-  coverImage: "/assets/comics/series-cover.png",
+    "Workplace stories with real impact — exploring the people side of total rewards.",
+  coverImage: ISSUE_1_PAGES[0],
   footerTagline: "Better Conversations. Better Workplaces. Better Rewards.",
-  nextTeaser: "The Future of Work Is Human!",
+  nextTeaser: "Issue 2 — Coming Soon",
 };
 
 export const COMIC_ISSUES: ComicIssue[] = [
   {
     number: 1,
     slug: "issue-1",
-    title: "The Total Rewards Effect",
-    tagline: "Two companies. Same industry. Same salaries. Completely different stories.",
+    title: "Hidden in Plain Sight",
+    tagline: "It's not just what we pay. It's why it matters.",
     description:
-      "Discover how total rewards shapes engagement, performance, and retention.",
-    image: "/assets/comics/issue-1.png",
+      "Jordan's first week at Veridian Global reveals how total rewards shapes culture, trust, and retention — often in ways employees feel before they can name.",
+    coverImage: ISSUE_1_PAGES[0],
+    pages: [...ISSUE_1_PAGES],
     available: true,
     accent: "#C8963E",
-    nextIssue: "The Retention Conversation",
-  },
-  {
-    number: 2,
-    slug: "issue-2",
-    title: "The Retention Conversation",
-    tagline:
-      "Sometimes people don't leave because of the job. They leave because of how they feel.",
-    description:
-      "A manager's guide to meaningful conversations that build loyalty.",
-    image: "/assets/comics/issue-2.png",
-    available: true,
-    accent: "#2E7D8C",
-    nextIssue: "The Pay Transparency Meeting",
-  },
-  {
-    number: 3,
-    slug: "issue-3",
-    title: "The Pay Transparency Meeting",
-    tagline:
-      "How pay transparency done right creates fairness, trust, and a stronger culture.",
-    description:
-      "Practical steps to communicate compensation with confidence.",
-    image: "/assets/comics/issue-3.png",
-    available: true,
-    accent: "#0C6B65",
-    nextIssue: "Recognition That Sticks",
-  },
-  {
-    number: 4,
-    slug: "issue-4",
-    title: "Recognition That Sticks",
-    tagline: "Recognition isn't extra. It's essential.",
-    description:
-      "How meaningful recognition drives engagement, performance, and culture.",
-    image: "/assets/comics/issue-4.png",
-    available: true,
-    accent: "#6B4C9A",
-    nextIssue: "Purpose, Performance, and Pay",
-  },
-  {
-    number: 5,
-    slug: "issue-5",
-    title: "Purpose, Performance, and Pay",
-    tagline: "When purpose and performance align, everyone wins—including you.",
-    description:
-      "Aligning growth, impact, and total rewards for lasting success.",
-    image: "/assets/comics/issue-5.png",
-    available: true,
-    accent: "#B84B4B",
-    nextIssue: "The Future of Work Is Human!",
+    nextIssue: "Issue 2",
   },
 ];
 

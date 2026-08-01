@@ -1,8 +1,12 @@
 /**
- * Copy comic PNGs from a local source folder into public/assets/comics.
+ * Copy comic page PNGs from a local source folder into public/assets/comics/.
  *
- * Default source: assets/comics-source/ (place timestamped PNG exports there)
- * Override: COMICS_SOURCE_DIR=/path/to/folder node scripts/copy-comics.mjs
+ * Expected layout for a single issue:
+ *   assets/comics-source/issue-1/01-cover.png
+ *   assets/comics-source/issue-1/02-inside-cover.png
+ *   ...
+ *
+ * Override source root: COMICS_SOURCE_DIR=/path/to/folder node scripts/copy-comics.mjs
  */
 import fs from "fs";
 import path from "path";
@@ -11,33 +15,38 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 
-const src = process.env.COMICS_SOURCE_DIR || path.join(root, "assets", "comics-source");
-const dest = path.join(root, "public", "assets", "comics");
+const srcRoot = process.env.COMICS_SOURCE_DIR || path.join(root, "assets", "comics-source");
+const destRoot = path.join(root, "public", "assets", "comics");
 
-if (!fs.existsSync(src)) {
-  console.error(`Source folder not found: ${src}`);
-  console.error("Create assets/comics-source/ and add PNG exports, or set COMICS_SOURCE_DIR.");
+function copyDir(src, dest) {
+  if (!fs.existsSync(src)) return 0;
+  fs.mkdirSync(dest, { recursive: true });
+  let count = 0;
+  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    const from = path.join(src, entry.name);
+    const to = path.join(dest, entry.name);
+    if (entry.isDirectory()) {
+      count += copyDir(from, to);
+      continue;
+    }
+    if (!/\.(png|jpg|jpeg|webp)$/i.test(entry.name)) continue;
+    fs.copyFileSync(from, to);
+    console.log(`copied ${path.relative(root, to)}`);
+    count += 1;
+  }
+  return count;
+}
+
+if (!fs.existsSync(srcRoot)) {
+  console.error(`Source folder not found: ${srcRoot}`);
+  console.error("Create assets/comics-source/issue-1/ with page PNGs, or set COMICS_SOURCE_DIR.");
   process.exit(1);
 }
 
-fs.mkdirSync(dest, { recursive: true });
-
-const map = [
-  ["07_19_46", "series-cover.png"],
-  ["10_44_27", "issue-1.png"],
-  ["11_45_11", "issue-2.png"],
-  ["11_01_39", "issue-3.png"],
-  ["11_07_11", "issue-4.png"],
-  ["11_15_05", "issue-5.png"],
-];
-
-for (const file of fs.readdirSync(src)) {
-  for (const [key, out] of map) {
-    if (file.includes(key)) {
-      fs.copyFileSync(path.join(src, file), path.join(dest, out));
-      console.log(`copied ${out}`);
-    }
-  }
+const copied = copyDir(srcRoot, destRoot);
+if (copied === 0) {
+  console.error("No image files found to copy.");
+  process.exit(1);
 }
 
-console.log("done:", fs.readdirSync(dest));
+console.log(`done: ${copied} file(s) copied to public/assets/comics/`);

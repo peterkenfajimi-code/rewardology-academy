@@ -3,33 +3,35 @@ import Link from "next/link";
 import { COMIC_ISSUES, COMIC_SERIES } from "@/lib/comics/comicData";
 
 export function ComicsCoverPage() {
+  const availableIssues = COMIC_ISSUES.filter((issue) => issue.available);
+
   return (
     <div className="comics-root">
-      <section className="cm-cover-poster" aria-label={`${COMIC_SERIES.title} comic series`}>
-        <Image
-          src={COMIC_SERIES.coverImage}
-          alt={`${COMIC_SERIES.title} — comic series cover with all five issues`}
-          width={1400}
-          height={1800}
-          priority
-          sizes="(max-width: 1400px) 100vw, 1400px"
-          className="cm-cover-poster-img"
-        />
-        <nav className="cm-cover-links" aria-label="Read an issue">
-          {COMIC_ISSUES.map((issue) =>
-            issue.available ? (
-              <Link
-                key={issue.slug}
-                href={`/comics/${issue.slug}`}
-                className="cm-cover-issue-link"
-              >
-                Read Issue #{issue.number}
-              </Link>
-            ) : (
-              <span key={issue.slug} className="cm-cover-issue-link cm-cover-issue-soon" />
-            )
-          )}
-        </nav>
+      <section className="cm-series-hub" aria-label={`${COMIC_SERIES.title} comic series`}>
+        <div className="cm-series-hero">
+          <Image
+            src={COMIC_SERIES.coverImage}
+            alt={`${COMIC_SERIES.title} — Issue 1 cover`}
+            width={960}
+            height={1240}
+            priority
+            sizes="(max-width: 960px) 100vw, 960px"
+            className="cm-series-cover-img"
+          />
+          <div className="cm-series-hero-copy">
+            <p className="cm-series-eyebrow">{COMIC_SERIES.eyebrow}</p>
+            <h1 className="cm-series-title">{COMIC_SERIES.title}</h1>
+            <p className="cm-series-tagline">{COMIC_SERIES.tagline}</p>
+            <div className="cm-series-actions">
+              {availableIssues.map((issue) => (
+                <Link key={issue.slug} href={`/comics/${issue.slug}`} className="cm-read-btn">
+                  Read Issue #{issue.number}: {issue.title}
+                </Link>
+              ))}
+            </div>
+            <p className="cm-series-soon">{COMIC_SERIES.nextTeaser}</p>
+          </div>
+        </div>
       </section>
     </div>
   );

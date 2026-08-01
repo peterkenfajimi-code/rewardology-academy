@@ -1,18 +1,15 @@
-# Comic PNG source exports (not committed)
+# Comic page source files (not committed)
 
-Place timestamped comic PNG exports here, then run:
+Place issue folders here before running `node scripts/copy-comics.mjs`:
 
-```bash
-node scripts/copy-comics.mjs
+```
+assets/comics-source/
+  issue-1/
+    01-cover.png
+    02-inside-cover.png
+    ...
 ```
 
-Or set `COMICS_SOURCE_DIR` in `.env.local` to another folder.
+Files are copied into `public/assets/comics/` preserving folder structure.
 
-Expected filename fragments (see `scripts/copy-comics.mjs` for the mapping):
-
-- `07_19_46` → series cover
-- `10_44_27` → issue 1
-- `11_45_11` → issue 2
-- `11_01_39` → issue 3
-- `11_07_11` → issue 4
-- `11_15_05` → issue 5
+Or set `COMICS_SOURCE_DIR` in `.env.local` to another root folder.

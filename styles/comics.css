@@ -12,7 +12,78 @@
   min-height: calc(100vh - 64px);
 }
 
-/* ── Full-page series poster ── */
+/* ── Series hub (single-issue layout) ── */
+.cm-series-hub {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 48px 24px 72px;
+}
+
+.cm-series-hero {
+  display: grid;
+  grid-template-columns: minmax(280px, 420px) 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.cm-series-cover-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+}
+
+.cm-series-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cm-gold);
+  margin: 0 0 12px;
+}
+
+.cm-series-title {
+  font-family: var(--hserif);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 600;
+  margin: 0 0 12px;
+  line-height: 1.1;
+}
+
+.cm-series-tagline {
+  margin: 0 0 24px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+.cm-series-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.cm-series-soon {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.cm-comic-pages {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.cm-comic-page {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ── Full-page series poster (legacy) ── */
 .cm-cover-poster {
   position: relative;
   max-width: 1400px;
@@ -434,6 +505,15 @@
 }
 
 @media (max-width: 768px) {
+  .cm-series-hub {
+    padding: 32px 20px 56px;
+  }
+
+  .cm-series-hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
   .cm-cover-poster {
     padding: 16px 12px 32px;
   }
