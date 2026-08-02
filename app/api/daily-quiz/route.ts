@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { comicsXpFromRows } from "@/lib/comics/progress";
 import { createClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/env";
 import {
@@ -43,14 +44,14 @@ async function loadUserDailyState(userId: string) {
     supabase.from("course_progress").select("xp").eq("user_id", userId),
     supabase.from("article_progress").select("xp").eq("user_id", userId),
     supabase.from("dictionary_progress").select("xp").eq("user_id", userId),
-    supabase.from("comics_progress").select("xp").eq("user_id", userId),
+    supabase.from("comics_progress").select("slug, xp").eq("user_id", userId),
   ]);
 
   const quizXp = (quizRows ?? []).reduce((s, r) => s + (r.best_xp ?? 0), 0);
   const courseXp = (courseRows ?? []).reduce((s, r) => s + (r.xp ?? 0), 0);
   const articleXp = (articleRows ?? []).reduce((s, r) => s + (r.xp ?? 0), 0);
   const dictionaryXp = (dictionaryRows ?? []).reduce((s, r) => s + (r.xp ?? 0), 0);
-  const comicsXp = (comicsRows ?? []).reduce((s, r) => s + (r.xp ?? 0), 0);
+  const comicsXp = comicsXpFromRows(comicsRows as { slug: string; xp?: number }[] | null);
   const dailyXp = list.reduce((s, r) => s + (r.xp_earned ?? 0), 0);
 
   return {

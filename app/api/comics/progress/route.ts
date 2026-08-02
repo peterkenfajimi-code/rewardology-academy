@@ -1,7 +1,12 @@
 import { NextResponse } from "next/server";
+import { getComicBySlug } from "@/lib/comics/comicData";
+import {
+  COMIC_XP_PER_ISSUE,
+  comicsXpFromRows,
+  filterComicsProgressRows,
+} from "@/lib/comics/progress";
 import { createClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/env";
-import { COMIC_XP_PER_ISSUE } from "@/lib/comics/progress";
 
 export const runtime = "nodejs";
 
@@ -13,6 +18,16 @@ type ProgressRow = {
 };
 
 const UNAUTH = NextResponse.json({ authenticated: false, slugs: [], comicsXp: 0 });
+
+function progressPayload(rows: ProgressRow[]) {
+  const validRows = filterComicsProgressRows(rows);
+  return {
+    authenticated: true,
+    slugs: validRows.map((row) => row.slug),
+    comicsXp: comicsXpFromRows(validRows),
+    issuesRead: validRows.length,
+  };
+}
 
 export async function GET() {
   if (!isSupabaseConfigured()) return UNAUTH;
@@ -32,15 +47,7 @@ export async function GET() {
 
     if (error) return UNAUTH;
 
-    const rows = (data as ProgressRow[] | null) ?? [];
-    const comicsXp = rows.reduce((s, r) => s + (r.xp ?? 0), 0);
-
-    return NextResponse.json({
-      authenticated: true,
-      slugs: rows.map((r) => r.slug),
-      comicsXp,
-      issuesRead: rows.length,
-    });
+    return NextResponse.json(progressPayload((data as ProgressRow[] | null) ?? []));
   } catch {
     return UNAUTH;
   }
@@ -63,7 +70,12 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Missing slug" }, { status: 400 });
   }
 
-  const issueNumber = body.issueNumber;
+  const issue = getComicBySlug(slug);
+  if (!issue?.available) {
+    return NextResponse.json({ error: "Unknown comic issue" }, { status: 400 });
+  }
+
+  const issueNumber = body.issueNumber ?? issue.number;
   if (typeof issueNumber !== "number" || issueNumber < 1) {
     return NextResponse.json({ error: "Missing issue number" }, { status: 400 });
   }
@@ -94,14 +106,8 @@ export async function POST(req: Request) {
       .select("slug, issue_number, xp, read_at")
       .eq("user_id", user.id);
 
-    const rows = (data as ProgressRow[] | null) ?? [];
-    const comicsXp = rows.reduce((s, r) => s + (r.xp ?? 0), 0);
-
     return NextResponse.json({
-      authenticated: true,
-      slugs: rows.map((r) => r.slug),
-      comicsXp,
-      issuesRead: rows.length,
+      ...progressPayload((data as ProgressRow[] | null) ?? []),
       newlyAwarded: Boolean(inserted),
       xpEarned: inserted ? xp : 0,
     });

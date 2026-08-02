@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { comicsXpFromRows } from "@/lib/comics/progress";
 import { isSupabaseConfigured } from "@/lib/env";
 import { COURSES, allLessons } from "@/lib/courses/courseData";
 import { SignInPrompt } from "@/components/dashboard/SignInPrompt";
@@ -92,7 +93,7 @@ export default async function DashboardPage() {
 
   type ComicsRow = { slug: string; xp: number };
   const comicsRows = (comicsData as ComicsRow[] | null) ?? [];
-  const comicsXp = comicsRows.reduce((s, r) => s + (r.xp ?? 0), 0);
+  const comicsXp = comicsXpFromRows(comicsRows);
 
   const sources: XpSources = {
     courses: courseXp,

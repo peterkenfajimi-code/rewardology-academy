@@ -5,10 +5,13 @@ import { TestimonialPrompt } from "@/components/testimonials/TestimonialPrompt";
 import { COMIC_ISSUES } from "@/lib/comics/comicData";
 import {
   COMICS_READ_STORAGE_KEY,
+  comicsXpForSlugs,
   earnComicIssueXp,
+  filterValidComicSlugs,
   mergeComicsFromServer,
   readComicsReadSet,
   syncComicIssueToAccount,
+  writeComicsReadSet,
 } from "@/lib/comics/progress";
 import { COMIC_XP_PER_ISSUE } from "@/lib/comics/progress";
 
@@ -34,9 +37,13 @@ export function ComicReadTracker({ slug, issueNumber, title, available }: Props)
   const applyProgress = useCallback(
     (serverSlugs: string[], authed: boolean) => {
       setAuthenticated(authed);
-      const merged = new Set([...readComicsReadSet(), ...serverSlugs]);
+      const merged = new Set([
+        ...readComicsReadSet(),
+        ...filterValidComicSlugs(serverSlugs),
+      ]);
+      writeComicsReadSet(merged);
       setIssuesRead(merged.size);
-      setComicsXpTotal(merged.size * COMIC_XP_PER_ISSUE);
+      setComicsXpTotal(comicsXpForSlugs(merged));
       const done = merged.has(slug);
       setCompleted(done);
       if (done) awardedRef.current = true;

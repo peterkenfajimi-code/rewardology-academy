@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { comicsXpFromRows } from "@/lib/comics/progress";
 import { createClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/env";
 
@@ -40,7 +41,7 @@ export async function GET() {
         .eq("user_id", user.id),
       supabase
         .from("comics_progress")
-        .select("xp")
+        .select("slug, xp")
         .eq("user_id", user.id),
     ]);
 
@@ -53,7 +54,7 @@ export async function GET() {
     sum(dailyRes.data, "xp_earned") +
     sum(articleRes.data, "xp") +
     sum(dictRes.data, "xp") +
-    sum(comicsRes.data, "xp");
+    comicsXpFromRows(comicsRes.data as { slug: string; xp?: number }[] | null);
 
   return NextResponse.json({ authenticated: true, total });
 }
