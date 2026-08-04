@@ -85,6 +85,8 @@ export const config = {
     "/quizzes/:path*",
     "/comics/:path*",
     "/dashboard/:path*",
+    "/setup",
+    "/api/setup/:path*",
     "/api/course-centre/:path*",
     "/api/quiz-centre/:path*",
     "/login",

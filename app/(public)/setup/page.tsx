@@ -1,14 +1,15 @@
 import { redirect } from "next/navigation";
+import { isPlatformAdminConfigured, isPlatformAdminEmail } from "@/lib/auth/admin";
 import { isElevenLabsConfigured, isSanityConfigured, isSupabaseConfigured } from "@/lib/env";
 import { checkResendHealth } from "@/lib/resend/health";
 import { createClient } from "@/lib/supabase/server";
-import { CONTACT_FORWARD_GMAIL } from "@/lib/site";
 import { TestimonialsSetupPanel } from "@/components/setup/TestimonialsSetupPanel";
 import { DeploySetupPanel } from "@/components/setup/DeploySetupPanel";
 import { ImprovMXSetupPanel } from "@/components/setup/ImprovMXSetupPanel";
 import { ResendSetupPanel } from "@/components/setup/ResendSetupPanel";
 import { SupabaseSetupPanel } from "@/components/setup/SupabaseSetupPanel";
 import { AdminDashboardPanel } from "@/components/setup/AdminDashboardPanel";
+import Link from "next/link";
 import "@/styles/setup.css";
 
 function StatusRow({ label, ok }: { label: string; ok: boolean }) {
@@ -29,13 +30,61 @@ function StatusRow({ label, ok }: { label: string; ok: boolean }) {
   );
 }
 
+function AdminConfigNotice() {
+  return (
+    <div className="page-wrap narrow">
+      <div className="ph-eyebrow">Platform</div>
+      <h1 className="ph-title" style={{ fontSize: "clamp(24px,3vw,32px)" }}>
+        Admin access <em>not configured</em>
+      </h1>
+      <p className="ph-sub">
+        Set <code>ADMIN_EMAIL</code> and <code>NEXT_PUBLIC_ADMIN_EMAIL</code> in your Netlify
+        environment variables, then redeploy. Run{" "}
+        <code>node scripts/configure-netlify-env.mjs</code> locally if needed.
+      </p>
+      <Link href="/dashboard" className="setup-btn">
+        Go to member dashboard →
+      </Link>
+    </div>
+  );
+}
+
+function AdminAccessDenied() {
+  return (
+    <div className="page-wrap narrow">
+      <div className="ph-eyebrow">Platform</div>
+      <h1 className="ph-title" style={{ fontSize: "clamp(24px,3vw,32px)" }}>
+        Admin access <em>required</em>
+      </h1>
+      <p className="ph-sub">
+        Integration Status is only available to the platform owner account. Sign in with the admin
+        email configured for this site.
+      </p>
+      <Link href="/dashboard" className="setup-btn">
+        Go to member dashboard →
+      </Link>
+    </div>
+  );
+}
+
 export default async function SetupPage() {
-  // Gate: only the admin email may access this page
   if (isSupabaseConfigured()) {
     const supabase = await createClient();
-    const { data: { user } } = await supabase.auth.getUser();
-    const isAdmin = user?.email?.toLowerCase() === CONTACT_FORWARD_GMAIL.toLowerCase();
-    if (!isAdmin) redirect("/");
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (!user) {
+      redirect("/login?next=/setup");
+    }
+
+    if (!isPlatformAdminConfigured()) {
+      return <AdminConfigNotice />;
+    }
+
+    if (!isPlatformAdminEmail(user.email)) {
+      return <AdminAccessDenied />;
+    }
   }
 
   const supabaseOk = isSupabaseConfigured();

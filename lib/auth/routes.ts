@@ -4,8 +4,10 @@ export const PROTECTED_PREFIXES = [
   "/quizzes",
   "/comics",
   "/dashboard",
+  "/setup",
   "/api/course-centre",
   "/api/quiz-centre",
+  "/api/setup",
 ];
 
 /** Always reachable without a session. */
