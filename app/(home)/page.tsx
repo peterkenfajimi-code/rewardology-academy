@@ -49,7 +49,7 @@ const COURSES = COURSE_CENTRE.map((c, i) => ({
   name: c.title,
   desc: c.desc,
   color: c.color,
-  price: "Free",
+  price: "Open Access",
   free: true,
   meta: `${c.lessons_count} lessons · ${c.duration}`,
   delay: `reveal-d${(i % 3) + 1}` as "reveal-d1" | "reveal-d2" | "reveal-d3",

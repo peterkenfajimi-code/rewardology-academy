@@ -72,7 +72,7 @@ export function HeroProgressCard() {
               <div className="mc-name">Compensation Fundamentals</div>
               <div className="mc-meta">Salary structures · Job evaluation</div>
             </div>
-            <div className="mc-price">Free</div>
+            <div className="mc-price">Open Access</div>
           </Link>
           <a
             href={`mailto:${CONTACT_EMAIL}?subject=Advanced%20Total%20Rewards%20Course%20Waitlist`}
