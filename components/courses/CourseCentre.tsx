@@ -933,6 +933,8 @@ export function CourseCentre() {
                 className="cc-voice-bar q-voice-bar"
               />
 
+              <LessonToolkitButton lessonId={l.id} />
+
               {typeof l.article === "number" && (() => {
                 const article = getEssentialById(l.article);
                 if (!article) return null;
@@ -1158,8 +1160,6 @@ export function CourseCentre() {
                   ))}
                 </div>
               ))}
-
-              <LessonToolkitButton lessonId={l.id} />
 
               {/* No-quiz lessons: "Mark complete" button awards XP */}
               {!q && !alreadyDone && (
