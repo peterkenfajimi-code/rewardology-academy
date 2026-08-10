@@ -38,6 +38,7 @@ import { dispatchXpUpdated } from "@/lib/xp/dispatch";
 import { levelFor, rankProgress } from "@/lib/xp/levels";
 import { playLessonComplete, playCourseComplete } from "@/lib/audio/sounds";
 import { CertificateSharePanel } from "@/components/certificates/CertificateSharePanel";
+import { LessonToolkitButton } from "@/components/courses/LessonToolkitButton";
 import type { IssueCertificatePayload } from "@/lib/certificates/types";
 
 const LABELS = ["A", "B", "C", "D"];
@@ -1157,6 +1158,8 @@ export function CourseCentre() {
                   ))}
                 </div>
               ))}
+
+              <LessonToolkitButton lessonId={l.id} />
 
               {/* No-quiz lessons: "Mark complete" button awards XP */}
               {!q && !alreadyDone && (

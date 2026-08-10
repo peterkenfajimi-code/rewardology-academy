@@ -709,3 +709,55 @@
   font-size: 14px;
   color: rgba(255, 255, 255, 0.6);
 }
+
+.toolkit-cta {
+  margin: 32px 0;
+  padding: 20px 24px;
+  background: rgba(200, 150, 62, 0.06);
+  border: 1px solid rgba(200, 150, 62, 0.25);
+  border-left: 3px solid #c8963e;
+  border-radius: 0 12px 12px 0;
+}
+
+.toolkit-cta-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #c8963e;
+  margin-bottom: 10px;
+}
+
+.toolkit-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: #c8963e;
+  color: #07192e;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.toolkit-cta-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.toolkit-icon {
+  font-size: 16px;
+}
+
+.toolkit-arrow {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.toolkit-cta-sub {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 10px;
+}

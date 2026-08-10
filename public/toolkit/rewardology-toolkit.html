@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Practitioner Toolkit — Rewardology Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#07192E;--navy2:#0C2340;
+  --gold:#C8963E;--gold2:#E2AC50;
+  --teal:#0C6B65;--teal2:#0E8A82;
+  --purple:#6B4C9A;--coral:#B84B4B;--green:#3A7D44;
+  --white:#fff;--rule:rgba(255,255,255,.09);
+  --sans:'DM Sans','Segoe UI',sans-serif;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --c1:#C8963E;--c2:#0C6B65;--c3:#6B4C9A;--c4:#B84B4B;--c5:#3A7D44;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:var(--sans);background:var(--navy);color:var(--white);display:flex;height:100vh;overflow:hidden}
+.sidebar{width:260px;flex-shrink:0;background:rgba(0,0,0,.3);border-right:1px solid var(--rule);overflow-y:auto;display:flex;flex-direction:column}
+.sidebar::-webkit-scrollbar{width:4px}.sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:2px}
+.sb-brand{padding:20px 18px 16px;border-bottom:1px solid var(--rule)}
+.sb-mark{display:flex;align-items:center;gap:10px}
+.sb-logo{width:32px;height:32px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:var(--navy);flex-shrink:0}
+.sb-name{font-family:var(--serif);font-size:16px;font-weight:600}
+.sb-sub{font-size:10px;color:rgba(255,255,255,.35);margin-top:3px;letter-spacing:.5px;text-transform:uppercase}
+.sb-group{padding:12px 0 4px}
+.sb-group-label{font-size:9.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.28);padding:0 14px 6px;display:flex;align-items:center;gap:8px}
+.sb-group-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.sb-item{display:flex;align-items:flex-start;gap:8px;padding:8px 14px;cursor:pointer;transition:all .15s;border-left:2px solid transparent;font-size:12.5px;line-height:1.35;color:rgba(255,255,255,.45)}
+.sb-item:hover{background:rgba(255,255,255,.05);color:rgba(255,255,255,.8)}
+.sb-item.active{background:rgba(255,255,255,.07);color:var(--white);border-left-color:var(--active-c,var(--gold))}
+.sb-item-icon{font-size:13px;flex-shrink:0;margin-top:1px}
+.main{flex:1;overflow-y:auto;display:flex;flex-direction:column}
+.main::-webkit-scrollbar{width:6px}.main::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:3px}
+.tool-panel{display:none;padding:36px 44px 60px;max-width:900px;width:100%;animation:fadeIn .2s ease}
+.tool-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.tool-hd{margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--rule)}
+.tool-eye{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.tool-eye::before{content:'';width:20px;height:1px;background:currentColor;opacity:.6}
+.tool-title{font-family:var(--serif);font-size:clamp(26px,3vw,38px);font-weight:700;line-height:1.05;margin-bottom:8px}
+.tool-desc{font-size:14px;color:rgba(255,255,255,.5);line-height:1.65;max-width:560px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.field input,.field select,.field textarea{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px 14px;font-family:var(--sans);font-size:14px;color:var(--white);outline:none;transition:border-color .15s;width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(200,150,62,.5)}
+.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.2)}
+.field select option{background:#1a2840;color:var(--white)}
+.field textarea{resize:vertical;min-height:72px}
+.out-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin:20px 0}
+.out-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:16px 18px}
+.out-card.highlight{background:rgba(200,150,62,.08);border-color:rgba(200,150,62,.25)}
+.out-card.good{background:rgba(74,222,128,.07);border-color:rgba(74,222,128,.25)}
+.out-card.warn{background:rgba(251,191,36,.07);border-color:rgba(251,191,36,.25)}
+.out-card.bad{background:rgba(239,68,68,.07);border-color:rgba(239,68,68,.25)}
+.out-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:6px}
+.out-val{font-family:var(--serif);font-size:28px;font-weight:700;line-height:1;color:var(--gold)}
+.out-val.big{font-size:36px}
+.out-val.sm{font-size:20px;color:var(--white)}
+.out-sub{font-size:11px;color:rgba(255,255,255,.35);margin-top:4px;line-height:1.4}
+.section{margin-bottom:28px}
+.section-title{font-size:13px;font-weight:600;color:rgba(255,255,255,.6);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.section-title::after{content:'';flex:1;height:1px;background:var(--rule)}
+.result-block{background:rgba(255,255,255,.03);border:1px solid var(--rule);border-radius:12px;padding:22px 24px;margin-top:20px}
+.result-block.colored{border-left:3px solid var(--active-c,var(--gold))}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.5px}
+.pill.green{background:rgba(74,222,128,.12);color:#4ADE80;border:1px solid rgba(74,222,128,.3)}
+.pill.amber{background:rgba(251,191,36,.12);color:#FBBf24;border:1px solid rgba(251,191,36,.3)}
+.pill.red{background:rgba(239,68,68,.12);color:#EF4444;border:1px solid rgba(239,68,68,.3)}
+.pill.gold{background:rgba(200,150,62,.12);color:var(--gold);border:1px solid rgba(200,150,62,.3)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
+.tbl th{padding:8px 12px;text-align:left;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.35);border-bottom:1px solid var(--rule)}
+.tbl td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.04);color:rgba(255,255,255,.8)}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:rgba(255,255,255,.03)}
+.tbl .num{font-family:var(--serif);font-weight:600;color:var(--gold)}
+.btn{padding:10px 22px;border-radius:8px;border:none;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;transition:all .15s}
+.btn-primary{background:var(--active-c,var(--gold));color:var(--navy)}
+.btn-primary:hover{opacity:.88;transform:translateY(-1px)}
+.btn-ghost{background:rgba(255,255,255,.07);color:rgba(255,255,255,.7);border:1px solid var(--rule)}
+.btn-ghost:hover{background:rgba(255,255,255,.12);color:var(--white)}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.slider-row{display:grid;grid-template-columns:130px 1fr 40px;align-items:center;gap:12px;margin-bottom:12px}
+.slider-label{font-size:13px;color:rgba(255,255,255,.7);font-weight:500}
+input[type=range]{-webkit-appearance:none;appearance:none;height:4px;border-radius:2px;background:rgba(255,255,255,.12);outline:none;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--active-c,var(--gold));cursor:pointer}
+.slider-val{font-family:var(--serif);font-size:20px;font-weight:700;text-align:center;color:var(--active-c,var(--gold))}
+.checklist{display:flex;flex-direction:column;gap:8px}
+.check-item{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:8px;cursor:pointer;transition:all .15s}
+.check-item:hover{background:rgba(255,255,255,.05)}
+.check-item input[type=checkbox]{width:16px;height:16px;flex-shrink:0;margin-top:1px;accent-color:var(--active-c,var(--gold))}
+.check-item-text{font-size:13px;line-height:1.5;color:rgba(255,255,255,.7)}
+.check-item.done .check-item-text{color:rgba(255,255,255,.35);text-decoration:line-through}
+.prog-bar-wrap{height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;margin-top:8px}
+.prog-bar-fill{height:100%;border-radius:3px;transition:width .4s ease;background:linear-gradient(90deg,var(--active-c,var(--gold)),rgba(200,150,62,.5))}
+.emp-row{display:grid;gap:10px;align-items:end;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.05)}
+#toast{position:fixed;bottom:28px;right:28px;background:var(--teal);color:var(--white);padding:10px 20px;border-radius:8px;font-size:13px;font-weight:500;display:none;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+@media print{.sidebar{display:none}.main{overflow:visible}.tool-panel{display:block!important;padding:20px}}
+@media(max-width:700px){.sidebar{position:fixed;left:-260px;top:0;height:100vh;z-index:100;transition:left .25s}.sidebar.open{left:0}.tool-panel{padding:24px 20px 48px}.grid-2,.grid-3{grid-template-columns:1fr}.menu-btn{display:flex!important}}
+.menu-btn{display:none;position:fixed;top:16px;left:16px;z-index:200;background:rgba(7,25,46,.95);border:1px solid var(--rule);border-radius:8px;width:40px;height:40px;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:var(--white)}
+</style>
+</head>
+<body>
+<div class="menu-btn" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</div>
+<div class="sidebar" id="sidebar"><div class="sb-brand"><div class="sb-mark"><div class="sb-logo">R</div><div><div class="sb-name">Rewardology</div><div class="sb-sub">Practitioner Toolkit</div></div></div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#C8963E"></div>Course 1 · Total Rewards Foundations</div><div class="sb-item" id="nav-t01" onclick="showTool('t01')" style="--active-c:var(--c1)"><span class="sb-item-icon">🎯</span>Five Pillars Diagnostic</div><div class="sb-item" id="nav-t02" onclick="showTool('t02')" style="--active-c:var(--c1)"><span class="sb-item-icon">📋</span>Total Reward Statement Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#0C6B65"></div>Course 2 · Compensation & Benefits Essentials</div><div class="sb-item" id="nav-t03" onclick="showTool('t03')" style="--active-c:var(--c2)"><span class="sb-item-icon">📐</span>Salary Range Builder</div><div class="sb-item" id="nav-t04" onclick="showTool('t04')" style="--active-c:var(--c2)"><span class="sb-item-icon">📊</span>Market Pricing Worksheet</div><div class="sb-item" id="nav-t05" onclick="showTool('t05')" style="--active-c:var(--c2)"><span class="sb-item-icon">💰</span>Benefits Budget Calculator</div><div class="sb-item" id="nav-t06" onclick="showTool('t06')" style="--active-c:var(--c2)"><span class="sb-item-icon">✅</span>Approval Matrix Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#6B4C9A"></div>Course 3 · Pay Equity & Job Evaluation</div><div class="sb-item" id="nav-t07" onclick="showTool('t07')" style="--active-c:var(--c3)"><span class="sb-item-icon">⚖️</span>Point-Factor Evaluation Scorecard</div><div class="sb-item" id="nav-t08" onclick="showTool('t08')" style="--active-c:var(--c3)"><span class="sb-item-icon">📉</span>Pay Gap Calculator</div><div class="sb-item" id="nav-t09" onclick="showTool('t09')" style="--active-c:var(--c3)"><span class="sb-item-icon">🔧</span>Remediation Budget Calculator</div><div class="sb-item" id="nav-t10" onclick="showTool('t10')" style="--active-c:var(--c3)"><span class="sb-item-icon">📋</span>Pay Equity Audit Checklist</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#B84B4B"></div>Course 4 · Pay Transparency & Communication</div><div class="sb-item" id="nav-t11" onclick="showTool('t11')" style="--active-c:var(--c4)"><span class="sb-item-icon">🔍</span>Transparency Maturity Assessment</div><div class="sb-item" id="nav-t12" onclick="showTool('t12')" style="--active-c:var(--c4)"><span class="sb-item-icon">💬</span>Manager Briefing Pack</div><div class="sb-item" id="nav-t13" onclick="showTool('t13')" style="--active-c:var(--c4)"><span class="sb-item-icon">📄</span>Total Reward Statement Template</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#3A7D44"></div>Course 5 · HR Analytics & Career Development</div><div class="sb-item" id="nav-t14" onclick="showTool('t14')" style="--active-c:var(--c5)"><span class="sb-item-icon">📈</span>Compa-Ratio Distribution Analyser</div><div class="sb-item" id="nav-t15" onclick="showTool('t15')" style="--active-c:var(--c5)"><span class="sb-item-icon">⚠️</span>Flight-Risk Scoring Tool</div><div class="sb-item" id="nav-t16" onclick="showTool('t16')" style="--active-c:var(--c5)"><span class="sb-item-icon">💹</span>Turnover Cost & ROI Calculator</div><div class="sb-item" id="nav-t17" onclick="showTool('t17')" style="--active-c:var(--c5)"><span class="sb-item-icon">🗺️</span>Career Lattice Mapping Tool</div></div></div>
+<div class="main" id="main">
+<div class="tool-panel" id="panel-t01" style="--active-c:var(--c1)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c1)">Course 1 · Total Rewards Foundations</div><div class="tool-title">Five Pillars Diagnostic</div><div class="tool-desc">Score each pillar 1–5 using real data from exit interviews, engagement surveys, and turnover reports. The tool identifies your weakest pillar and recommends where to focus investment first.</div></div>
+<div class="section"><div class="section-title">Rate each pillar</div>
+<div class="slider-row"><div class="slider-label">Compensation</div><input type="range" min="1" max="5" value="3" id="p1" oninput="calcPillars()"><div class="slider-val" id="v1">3</div></div>
+<div class="slider-row"><div class="slider-label">Benefits</div><input type="range" min="1" max="5" value="3" id="p2" oninput="calcPillars()"><div class="slider-val" id="v2">3</div></div>
+<div class="slider-row"><div class="slider-label">Wellbeing</div><input type="range" min="1" max="5" value="3" id="p3" oninput="calcPillars()"><div class="slider-val" id="v3">3</div></div>
+<div class="slider-row"><div class="slider-label">Recognition</div><input type="range" min="1" max="5" value="3" id="p4" oninput="calcPillars()"><div class="slider-val" id="v4">3</div></div>
+<div class="slider-row"><div class="slider-label">Career Dev.</div><input type="range" min="1" max="5" value="3" id="p5" oninput="calcPillars()"><div class="slider-val" id="v5">3</div></div>
+</div>
+<div class="section"><div class="section-title">Evidence notes</div><div class="grid-2">
+<div class="field"><label>Key data source</label><textarea id="ev1" placeholder="e.g. 68% of leavers cited pay behind market"></textarea></div>
+<div class="field"><label>Engagement signal</label><textarea id="ev2" placeholder="e.g. eNPS +9, below industry average of +21"></textarea></div>
+</div></div>
+<div class="result-block colored"><div class="out-grid" id="pillar-cards"></div><div id="pillar-insight" style="margin-top:16px;font-size:14px;line-height:1.7;color:rgba(255,255,255,.7)"></div></div></div>
+<div class="tool-panel" id="panel-t02" style="--active-c:var(--c1)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c1)">Course 1 · Total Rewards Foundations</div><div class="tool-title">Total Reward Statement Builder</div><div class="tool-desc">Enter the components of an employee's package. The tool calculates Total Compensation, the perception gap versus base salary, and produces a formatted summary ready to share.</div></div>
+<div class="section"><div class="section-title">Employee details</div><div class="grid-2">
+<div class="field"><label>Employee name</label><input type="text" id="trs-name" placeholder="e.g. Amara Okafor" oninput="calcTRS()"></div>
+<div class="field"><label>Role title</label><input type="text" id="trs-role" placeholder="e.g. Senior HR Analyst" oninput="calcTRS()"></div>
+</div></div>
+<div class="section"><div class="section-title">Pay components</div><div class="grid-3">
+<div class="field"><label>Base salary ($)</label><input type="number" id="trs-base" placeholder="0" oninput="calcTRS()"></div>
+<div class="field"><label>Annual bonus paid ($)</label><input type="number" id="trs-bonus" placeholder="0" oninput="calcTRS()"></div>
+<div class="field"><label>Employer pension (% of base)</label><input type="number" id="trs-pension" placeholder="8" oninput="calcTRS()"></div>
+</div></div>
+<div class="section"><div class="section-title">Benefits &amp; investment</div><div class="grid-3">
+<div class="field"><label>Health insurance ($/yr)</label><input type="number" id="trs-health" placeholder="0" oninput="calcTRS()"></div>
+<div class="field"><label>Life insurance ($/yr)</label><input type="number" id="trs-life" placeholder="0" oninput="calcTRS()"></div>
+<div class="field"><label>Annual leave (days)</label><input type="number" id="trs-leave" placeholder="24" oninput="calcTRS()"></div>
+<div class="field"><label>Working days per year</label><input type="number" id="trs-workdays" value="260" oninput="calcTRS()"></div>
+<div class="field"><label>Training investment ($/yr)</label><input type="number" id="trs-training" placeholder="0" oninput="calcTRS()"></div>
+<div class="field"><label>Other benefits ($/yr)</label><input type="number" id="trs-other" placeholder="0" oninput="calcTRS()"></div>
+</div></div>
+<div class="result-block colored" id="trs-result" style="display:none">
+<div class="out-grid">
+<div class="out-card highlight"><div class="out-label">Base Salary</div><div class="out-val" id="r-base">$0</div></div>
+<div class="out-card highlight"><div class="out-label">Total Cash</div><div class="out-val" id="r-cash">$0</div><div class="out-sub">Base + Bonus</div></div>
+<div class="out-card highlight" style="border-color:rgba(200,150,62,.5)"><div class="out-label">Total Compensation</div><div class="out-val big" id="r-total">$0</div></div>
+<div class="out-card"><div class="out-label">Perception Gap</div><div class="out-val" id="r-gap">0%</div><div class="out-sub">More than they think they earn</div></div>
+<div class="out-card"><div class="out-label">Leave Value</div><div class="out-val sm" id="r-leave">$0</div></div>
+<div class="out-card"><div class="out-label">Benefits Value</div><div class="out-val sm" id="r-benefits">$0</div></div>
+</div>
+<div style="margin-top:20px;padding:18px;background:rgba(255,255,255,.03);border-radius:8px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.65)" id="trs-summary"></div>
+<div class="btn-row"><button class="btn btn-primary" onclick="window.print()">Print / Save as PDF</button><button class="btn btn-ghost" onclick="resetTRS()">Reset</button></div>
+</div></div>
+<div class="tool-panel" id="panel-t03" style="--active-c:var(--c2)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c2)">Course 2 · Compensation &amp; Benefits Essentials</div><div class="tool-title">Salary Range Builder</div><div class="tool-desc">Set a market midpoint and spread to generate a salary range. Then check any employee's pay — compa-ratio and range penetration are calculated instantly.</div></div>
+<div class="section"><div class="section-title">Range parameters</div><div class="grid-3">
+<div class="field"><label>Grade / Role label</label><input type="text" id="sr-grade" placeholder="e.g. Grade 5 — Senior Analyst" oninput="calcRange()"></div>
+<div class="field"><label>Market midpoint ($)</label><input type="number" id="sr-mid" placeholder="80000" oninput="calcRange()"></div>
+<div class="field"><label>Spread (± %)</label><input type="number" id="sr-spread" placeholder="20" oninput="calcRange()"></div>
+</div></div>
+<div class="result-block colored" id="range-result" style="display:none">
+<div class="out-grid">
+<div class="out-card"><div class="out-label">Minimum</div><div class="out-val" id="rr-min">$0</div></div>
+<div class="out-card highlight"><div class="out-label">Midpoint</div><div class="out-val" id="rr-mid">$0</div></div>
+<div class="out-card"><div class="out-label">Maximum</div><div class="out-val" id="rr-max">$0</div></div>
+<div class="out-card"><div class="out-label">Range Width</div><div class="out-val sm" id="rr-width">$0</div></div>
+</div></div>
+<div class="section" style="margin-top:28px"><div class="section-title">Check an employee's pay</div>
+<div class="grid-2">
+<div class="field"><label>Employee name</label><input type="text" id="sr-empname" placeholder="e.g. Chiamaka" oninput="calcEmpRange()"></div>
+<div class="field"><label>Employee salary ($)</label><input type="number" id="sr-emppay" placeholder="0" oninput="calcEmpRange()"></div>
+</div>
+<div class="out-grid" id="emp-range-result" style="display:none">
+<div class="out-card"><div class="out-label">Compa-Ratio</div><div class="out-val" id="er-cr">—</div><div class="out-sub">Pay ÷ Midpoint</div></div>
+<div class="out-card"><div class="out-label">Range Penetration</div><div class="out-val" id="er-rp">—</div><div class="out-sub">(Pay−Min)÷(Max−Min)</div></div>
+<div class="out-card"><div class="out-label">Position</div><div class="out-val sm" id="er-pos">—</div></div>
+<div class="out-card"><div class="out-label">Status</div><div id="er-status" style="margin-top:6px"></div></div>
+</div></div></div>
+<div class="tool-panel" id="panel-t04" style="--active-c:var(--c2)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c2)">Course 2 · Compensation &amp; Benefits Essentials</div><div class="tool-title">Market Pricing Worksheet</div><div class="tool-desc">Apply aging and geographic adjustments to raw survey data to arrive at the correct market rate for your location and decision date. Compare up to four roles at once.</div></div>
+<div class="section"><div class="section-title">Adjustment parameters</div><div class="grid-3">
+<div class="field"><label>Survey data age (months)</label><input type="number" id="mp-age" value="12" oninput="calcMP()"></div>
+<div class="field"><label>Annual market movement (%)</label><input type="number" id="mp-move" value="3.5" oninput="calcMP()"></div>
+<div class="field"><label>Geographic differential (%)</label><input type="number" id="mp-geo" value="0" oninput="calcMP()"></div>
+</div></div>
+<div class="section"><div class="section-title">Role benchmarks</div>
+<div style="display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:10px;margin-bottom:8px;padding:0 2px">
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Role / Job family</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Survey P50 ($)</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Target percentile</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Adjusted rate</div>
+</div>
+<div id="mp-rows"></div>
+<div class="result-block" id="mp-notes" style="margin-top:14px;font-size:13px;color:rgba(255,255,255,.5);line-height:1.65"></div>
+</div></div>
+<div class="tool-panel" id="panel-t05" style="--active-c:var(--c2)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c2)">Course 2 · Compensation &amp; Benefits Essentials</div><div class="tool-title">Benefits Budget Calculator</div><div class="tool-desc">Enter each benefit with its premium, eligible headcount, take-up assumption, and employer cost share. The tool calculates your realistic annual employer cost and benchmarks it against payroll.</div></div>
+<div class="section"><div class="section-title">Workforce baseline</div><div class="grid-3">
+<div class="field"><label>Total annual payroll ($)</label><input type="number" id="bb-payroll" placeholder="5000000" oninput="calcBB()"></div>
+<div class="field"><label>Industry benchmark (% of payroll)</label><input type="number" id="bb-bench" value="27" oninput="calcBB()"></div>
+<div class="field"><label>Total eligible employees</label><input type="number" id="bb-headcount" placeholder="280" oninput="calcBB()"></div>
+</div></div>
+<div class="section"><div class="section-title">Benefit lines</div>
+<div style="display:grid;grid-template-columns:1.8fr 1fr 0.8fr 0.8fr 1fr;gap:10px;margin-bottom:6px;padding:0 2px">
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Benefit</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Premium/person ($/yr)</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Take-up %</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Employer share %</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Employer cost</div>
+</div>
+<div id="bb-rows"></div>
+</div>
+<div class="result-block colored" id="bb-result">
+<div class="out-grid">
+<div class="out-card highlight"><div class="out-label">Total Employer Cost</div><div class="out-val" id="bb-total">$0</div></div>
+<div class="out-card"><div class="out-label">As % of Payroll</div><div class="out-val" id="bb-pct">—</div></div>
+<div class="out-card"><div class="out-label">Industry Benchmark</div><div class="out-val sm" id="bb-benchval">27%</div></div>
+<div class="out-card"><div class="out-label">Gap vs Benchmark</div><div id="bb-gap">—</div></div>
+</div></div></div>
+<div class="tool-panel" id="panel-t06" style="--active-c:var(--c2)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c2)">Course 2 · Compensation &amp; Benefits Essentials</div><div class="tool-title">Approval Matrix Builder</div><div class="tool-desc">Define your organisation's approval tiers for pay exceptions. Check any proposed offer — the tool tells you exactly which tier it falls into and what approval it requires.</div></div>
+<div class="section"><div class="section-title">Configure approval tiers</div><div class="grid-2">
+<div class="field"><label>Tier 1 — Within range (0% above max)</label><input type="text" id="am-t1a" value="Hiring Manager" oninput="calcAM()"></div>
+<div class="field"><label>Tier 2 — Up to this % above max</label><input type="number" id="am-t2" value="10" oninput="calcAM()"></div>
+<div class="field"><label>Tier 2 — Approver</label><input type="text" id="am-t2a" value="Compensation Lead — documented rationale required" oninput="calcAM()"></div>
+<div class="field"><label>Tier 3 — Above Tier 2 threshold</label><input type="text" id="am-t3a" value="Compensation Committee / Senior Leadership" oninput="calcAM()"></div>
+</div></div>
+<div class="section"><div class="section-title">Check an offer</div><div class="grid-3">
+<div class="field"><label>Range maximum ($)</label><input type="number" id="am-rmax" placeholder="120000" oninput="calcAMOffer()"></div>
+<div class="field"><label>Proposed offer ($)</label><input type="number" id="am-offer" placeholder="128000" oninput="calcAMOffer()"></div>
+<div class="field"><label>Role / Candidate (optional)</label><input type="text" id="am-role" placeholder="e.g. Senior Engineer" oninput="calcAMOffer()"></div>
+</div>
+<div class="result-block" id="am-result" style="display:none;margin-top:14px">
+<div class="out-grid">
+<div class="out-card"><div class="out-label">Amount Above Max</div><div class="out-val sm" id="am-excess">$0</div></div>
+<div class="out-card"><div class="out-label">% Above Maximum</div><div class="out-val" id="am-pct">0%</div></div>
+<div class="out-card highlight"><div class="out-label">Approval Tier</div><div id="am-tier" style="margin-top:6px;font-size:15px;font-weight:600;color:var(--gold)">—</div></div>
+</div>
+<div style="margin-top:14px;font-size:14px;line-height:1.65;color:rgba(255,255,255,.7)" id="am-guidance"></div>
+</div></div></div>
+<div class="tool-panel" id="panel-t07" style="--active-c:var(--c3)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c3)">Course 3 · Pay Equity &amp; Job Evaluation</div><div class="tool-title">Point-Factor Evaluation Scorecard</div><div class="tool-desc">Score any role across the four compensable factors. The tool calculates the total point score and, if you provide grade boundaries, assigns the role to the correct grade automatically.</div></div>
+<div class="section"><div class="section-title">Role details</div><div class="grid-2">
+<div class="field"><label>Role title</label><input type="text" id="pf-role" placeholder="e.g. Regional Operations Lead" oninput="calcPF()"></div>
+<div class="field"><label>Department</label><input type="text" id="pf-dept" placeholder="e.g. Operations" oninput="calcPF()"></div>
+</div></div>
+<div class="section"><div class="section-title">Factor scoring — Level 1=10pts · Level 2=25pts · Level 3=45pts</div>
+<div class="grid-2" style="gap:20px">
+<div><div class="section-title" style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:10px">Knowledge &amp; Technical Skill</div>
+<div class="checklist">
+<label class="check-item"><input type="radio" name="pf-k" value="10" onchange="calcPF()"><div class="check-item-text"><strong>Level 1 (10 pts)</strong> — Basic procedures; tasks are routine and clearly defined</div></label>
+<label class="check-item"><input type="radio" name="pf-k" value="25" onchange="calcPF()"><div class="check-item-text"><strong>Level 2 (25 pts)</strong> — Specialist technical skill applied beyond standard procedures</div></label>
+<label class="check-item"><input type="radio" name="pf-k" value="45" onchange="calcPF()"><div class="check-item-text"><strong>Level 3 (45 pts)</strong> — Advanced expertise, typically requiring a professional qualification</div></label>
+</div></div>
+<div><div class="section-title" style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:10px">Problem-Solving &amp; Complexity</div>
+<div class="checklist">
+<label class="check-item"><input type="radio" name="pf-ps" value="10" onchange="calcPF()"><div class="check-item-text"><strong>Level 1 (10 pts)</strong> — Routine problems with clear procedures; non-standard situations are escalated</div></label>
+<label class="check-item"><input type="radio" name="pf-ps" value="25" onchange="calcPF()"><div class="check-item-text"><strong>Level 2 (25 pts)</strong> — Varied problems requiring judgement; adapts existing approaches</div></label>
+<label class="check-item"><input type="radio" name="pf-ps" value="45" onchange="calcPF()"><div class="check-item-text"><strong>Level 3 (45 pts)</strong> — Novel, ambiguous problems with no established precedent</div></label>
+</div></div>
+<div><div class="section-title" style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:10px">Accountability &amp; Impact</div>
+<div class="checklist">
+<label class="check-item"><input type="radio" name="pf-acc" value="10" onchange="calcPF()"><div class="check-item-text"><strong>Level 1 (10 pts)</strong> — Supervised; individual output; errors caught before reaching the business</div></label>
+<label class="check-item"><input type="radio" name="pf-acc" value="25" onchange="calcPF()"><div class="check-item-text"><strong>Level 2 (25 pts)</strong> — Independent; team-level impact; real autonomy within a defined function</div></label>
+<label class="check-item"><input type="radio" name="pf-acc" value="45" onchange="calcPF()"><div class="check-item-text"><strong>Level 3 (45 pts)</strong> — Significant, organisation-level impact on revenue, strategy, or operations</div></label>
+</div></div>
+<div><div class="section-title" style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:10px">People &amp; Resource Management</div>
+<div class="checklist">
+<label class="check-item"><input type="radio" name="pf-pm" value="10" onchange="calcPF()"><div class="check-item-text"><strong>Level 1 (10 pts)</strong> — No direct reports; individual contributor</div></label>
+<label class="check-item"><input type="radio" name="pf-pm" value="25" onchange="calcPF()"><div class="check-item-text"><strong>Level 2 (25 pts)</strong> — Manages a small team directly (1–5 direct reports) or significant resources</div></label>
+<label class="check-item"><input type="radio" name="pf-pm" value="45" onchange="calcPF()"><div class="check-item-text"><strong>Level 3 (45 pts)</strong> — Manages multiple teams or a function; responsible for significant people or resource scope</div></label>
+</div></div>
+</div></div>
+<div class="section"><div class="section-title">Grade boundaries (optional)</div><div class="grid-3">
+<div class="field"><label>Grade 1 max pts</label><input type="number" id="g1max" placeholder="60" oninput="calcPF()"></div>
+<div class="field"><label>Grade 2 max pts</label><input type="number" id="g2max" placeholder="100" oninput="calcPF()"></div>
+<div class="field"><label>Grade 3 max pts</label><input type="number" id="g3max" placeholder="140" oninput="calcPF()"></div>
+<div class="field"><label>Grade 4 max pts</label><input type="number" id="g4max" placeholder="160" oninput="calcPF()"></div>
+<div class="field"><label>Grade 5 max pts</label><input type="number" id="g5max" placeholder="180" oninput="calcPF()"></div>
+</div></div>
+<div class="result-block colored" id="pf-result" style="display:none">
+<div class="out-grid">
+<div class="out-card"><div class="out-label">Knowledge</div><div class="out-val sm" id="pf-k-score">—</div></div>
+<div class="out-card"><div class="out-label">Problem-Solving</div><div class="out-val sm" id="pf-ps-score">—</div></div>
+<div class="out-card"><div class="out-label">Accountability</div><div class="out-val sm" id="pf-acc-score">—</div></div>
+<div class="out-card"><div class="out-label">People Mgmt</div><div class="out-val sm" id="pf-pm-score">—</div></div>
+<div class="out-card highlight"><div class="out-label">Total Score</div><div class="out-val big" id="pf-total">—</div></div>
+<div class="out-card"><div class="out-label">Grade Assigned</div><div id="pf-grade" style="margin-top:6px;font-size:18px;font-weight:700;color:var(--purple)">—</div></div>
+</div></div></div>
+<div class="tool-panel" id="panel-t08" style="--active-c:var(--c3)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c3)">Course 3 · Pay Equity &amp; Job Evaluation</div><div class="tool-title">Pay Gap Calculator</div><div class="tool-desc">Enter salary data for a peer group. The tool calculates the unadjusted gap across the whole group and the adjusted gap by grade, flagging any group above your threshold.</div></div>
+<div class="section"><div class="section-title">Settings</div><div class="grid-3">
+<div class="field"><label>Organisation / function</label><input type="text" id="pg-org" placeholder="e.g. Palora Health — Finance" oninput="calcPG()"></div>
+<div class="field"><label>Flagging threshold (%)</label><input type="number" id="pg-thresh" value="5" oninput="calcPG()"></div>
+<div class="field"><label>Group label</label><input type="text" id="pg-glabel" value="Gender (M/F)" oninput="calcPG()"></div>
+</div></div>
+<div class="section"><div class="section-title">Employee data</div>
+<div style="display:grid;grid-template-columns:1.2fr 0.8fr 0.8fr 0.8fr;gap:10px;margin-bottom:8px;padding:0 2px">
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Name</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Salary ($)</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Grade</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Group</div>
+</div>
+<div id="pg-rows"></div>
+</div>
+<div class="result-block colored" id="pg-result" style="display:none">
+<div class="out-grid">
+<div class="out-card"><div class="out-label">Unadjusted Gap</div><div class="out-val" id="pg-unadj">—</div><div class="out-sub">Whole group, no controls</div></div>
+<div class="out-card highlight"><div class="out-label">Flags found</div><div class="out-val big" id="pg-flags">0</div><div class="out-sub" id="pg-flagsub">No peer groups above threshold</div></div>
+</div>
+<div id="pg-grade-results" style="margin-top:16px"></div>
+</div></div>
+<div class="tool-panel" id="panel-t09" style="--active-c:var(--c3)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c3)">Course 3 · Pay Equity &amp; Job Evaluation</div><div class="tool-title">Remediation Budget Calculator</div><div class="tool-desc">Enter each flagged employee's current pay and their peer-group target. The tool calculates individual correction amounts, the total lump-sum budget, and a phased alternative across two cycles.</div></div>
+<div class="section"><div class="section-title">Peer group target</div><div class="grid-3">
+<div class="field"><label>Peer group label</label><input type="text" id="rb-grade" placeholder="e.g. Grade 6 — Finance" oninput="calcRB()"></div>
+<div class="field"><label>Target pay (peer-group average $)</label><input type="number" id="rb-target" placeholder="98000" oninput="calcRB()"></div>
+<div class="field"><label>Phase 1 percentage (%)</label><input type="number" id="rb-phase1" value="60" oninput="calcRB()"></div>
+</div></div>
+<div class="section"><div class="section-title">Flagged employees</div>
+<div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:10px;margin-bottom:8px;padding:0 2px">
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Employee</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Current Pay ($)</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Correction</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Phase 1</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Phase 2</div>
+</div>
+<div id="rb-rows"></div>
+<div class="btn-row" style="margin-top:12px"><button class="btn btn-ghost" onclick="addRBRow()">+ Add employee</button></div>
+</div>
+<div class="result-block colored" id="rb-result" style="display:none">
+<div class="out-grid">
+<div class="out-card highlight"><div class="out-label">Total Lump-Sum</div><div class="out-val" id="rb-lump">$0</div></div>
+<div class="out-card"><div class="out-label">Phase 1 Total</div><div class="out-val sm" id="rb-p1total">$0</div></div>
+<div class="out-card"><div class="out-label">Phase 2 Total</div><div class="out-val sm" id="rb-p2total">$0</div></div>
+<div class="out-card"><div class="out-label">Employees corrected</div><div class="out-val sm" id="rb-count">0</div></div>
+</div>
+<div id="rb-table-wrap" style="margin-top:16px"></div>
+</div></div>
+<div class="tool-panel" id="panel-t10" style="--active-c:var(--c3)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c3)">Course 3 · Pay Equity &amp; Job Evaluation</div><div class="tool-title">Pay Equity Audit Checklist</div><div class="tool-desc">A structured methodology checklist for running a defensible pay equity audit. Complete each section before the audit begins — this document becomes part of your audit trail.</div></div>
+<div class="section"><div class="section-title">Audit details</div><div class="grid-3">
+<div class="field"><label>Organisation</label><input type="text" id="ck-org" placeholder="Organisation name"></div>
+<div class="field"><label>Audit lead</label><input type="text" id="ck-lead" placeholder="Name / team"></div>
+<div class="field"><label>Date</label><input type="date" id="ck-date"></div>
+</div></div>
+<div id="checklist-sections"></div>
+<div class="result-block" id="ck-result" style="margin-top:20px">
+<div style="display:flex;align-items:center;gap:16px">
+<div><div class="out-label" style="margin-bottom:6px">Completion</div><div class="out-val" id="ck-pct" style="font-size:36px">0%</div></div>
+<div style="flex:1"><div class="prog-bar-wrap" style="height:8px;margin-top:0"><div class="prog-bar-fill" id="ck-bar" style="width:0%"></div></div>
+<div style="font-size:12px;color:rgba(255,255,255,.35);margin-top:8px" id="ck-status">Complete all items before proceeding with the audit.</div>
+</div></div></div>
+<div class="btn-row"><button class="btn btn-primary" onclick="window.print()">Print Checklist</button><button class="btn btn-ghost" onclick="resetChecklist()">Reset</button></div></div>
+<div class="tool-panel" id="panel-t11" style="--active-c:var(--c4)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c4)">Course 4 · Pay Transparency &amp; Communication</div><div class="tool-title">Transparency Maturity Assessment</div><div class="tool-desc">Answer five questions about your organisation's current pay transparency practices. The tool places you on the five-stage maturity model and recommends specific next actions.</div></div>
+<div id="tma-questions"></div>
+<div class="result-block colored" id="tma-result" style="display:none;margin-top:20px">
+<div class="out-grid">
+<div class="out-card highlight"><div class="out-label">Current Stage</div><div class="out-val" id="tma-stage">—</div></div>
+<div class="out-card"><div class="out-label">Stage Name</div><div class="out-val sm" id="tma-stagename">—</div></div>
+</div>
+<div style="margin-top:16px" id="tma-guidance"></div>
+<div style="margin-top:14px;padding:14px 16px;background:rgba(255,255,255,.03);border-radius:8px" id="tma-next-actions"></div>
+</div></div>
+<div class="tool-panel" id="panel-t12" style="--active-c:var(--c4)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c4)">Course 4 · Pay Transparency &amp; Communication</div><div class="tool-title">Manager Briefing Pack</div><div class="tool-desc">A fillable briefing pack for equipping managers to discuss pay confidently. Complete the fields and print — this becomes the reference document managers carry into pay conversations.</div></div>
+<div class="section"><div class="section-title">Organisation details</div><div class="grid-2">
+<div class="field"><label>Organisation name</label><input type="text" id="mb-org" placeholder="Your Organisation" oninput="updateMB()"></div>
+<div class="field"><label>Prepared by / Date</label><input type="text" id="mb-by" placeholder="HR · June 2026" oninput="updateMB()"></div>
+<div class="field"><label>Salary ranges published?</label><select id="mb-ranges" onchange="updateMB()"><option>Yes — published on the intranet</option><option>No — not yet published</option><option>Partially — some grades published</option></select></div>
+<div class="field"><label>Merit cycle period</label><input type="text" id="mb-cycle" placeholder="e.g. January 2027" oninput="updateMB()"></div>
+</div></div>
+<div class="section"><div class="section-title">Key messages</div><div class="grid-2">
+<div class="field"><label>What determines grade placement?</label><textarea id="mb-grade" oninput="updateMB()">Grades are set by job evaluation — we assess each role on knowledge required, problem-solving complexity, accountability, and people management scope. Title alone doesn't determine grade.</textarea></div>
+<div class="field"><label>What drives merit increase size?</label><textarea id="mb-merit" oninput="updateMB()">Merit increases reflect performance rating, current position in the salary range (compa-ratio), and the available budget. Employees below midpoint with strong performance receive priority.</textarea></div>
+<div class="field"><label>What CAN managers disclose?</label><textarea id="mb-can" oninput="updateMB()">Your own salary range (minimum, midpoint, maximum), your compa-ratio, how your grade was assessed, how your merit increase was calculated.</textarea></div>
+<div class="field"><label>What CANNOT be disclosed?</label><textarea id="mb-cannot" oninput="updateMB()">Any specific colleague's salary or merit increase amount, or performance details of anyone other than the employee you're speaking with.</textarea></div>
+</div></div>
+<div class="result-block" id="mb-preview">
+<div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.35);margin-bottom:14px;letter-spacing:1px;text-transform:uppercase">Preview — Manager Briefing Pack</div>
+<div id="mb-doc" style="background:rgba(255,255,255,.97);color:#1a2840;border-radius:8px;padding:32px 36px;font-family:var(--sans);font-size:13px;line-height:1.7"></div>
+<div class="btn-row" style="margin-top:16px"><button class="btn btn-primary" onclick="window.print()">Print Briefing Pack</button></div>
+</div></div>
+<div class="tool-panel" id="panel-t13" style="--active-c:var(--c4)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c4)">Course 4 · Pay Transparency &amp; Communication</div><div class="tool-title">Total Reward Statement — Employee Template</div><div class="tool-desc">A visual, employee-facing Total Reward Statement — designed to be printed or emailed to an individual employee as a communication document, not just an internal calculation.</div></div>
+<div class="section"><div class="section-title">Employee &amp; organisation</div><div class="grid-3">
+<div class="field"><label>Employee name</label><input type="text" id="te-name" placeholder="Amara Okafor" oninput="updateTE()"></div>
+<div class="field"><label>Role title</label><input type="text" id="te-role" placeholder="Senior HR Analyst" oninput="updateTE()"></div>
+<div class="field"><label>Organisation</label><input type="text" id="te-org" placeholder="Your Organisation" oninput="updateTE()"></div>
+<div class="field"><label>Statement period</label><input type="text" id="te-period" placeholder="January – December 2026" oninput="updateTE()"></div>
+<div class="field"><label>Prepared by</label><input type="text" id="te-by" placeholder="HR Team" oninput="updateTE()"></div>
+</div></div>
+<div class="section"><div class="section-title">Package values</div><div class="grid-3">
+<div class="field"><label>Base salary ($)</label><input type="number" id="te-base" placeholder="0" oninput="updateTE()"></div>
+<div class="field"><label>Bonus paid ($)</label><input type="number" id="te-bonus" placeholder="0" oninput="updateTE()"></div>
+<div class="field"><label>Employer pension ($)</label><input type="number" id="te-pension" placeholder="0" oninput="updateTE()"></div>
+<div class="field"><label>Health insurance ($)</label><input type="number" id="te-health" placeholder="0" oninput="updateTE()"></div>
+<div class="field"><label>Life insurance ($)</label><input type="number" id="te-life" placeholder="0" oninput="updateTE()"></div>
+<div class="field"><label>Annual leave value ($)</label><input type="number" id="te-leave" placeholder="0" oninput="updateTE()"></div>
+<div class="field"><label>Training investment ($)</label><input type="number" id="te-training" placeholder="0" oninput="updateTE()"></div>
+<div class="field"><label>Other benefits ($)</label><input type="number" id="te-other" placeholder="0" oninput="updateTE()"></div>
+</div></div>
+<div id="te-doc-wrap" style="display:none">
+<div id="te-doc" style="border:1px solid rgba(200,150,62,.3);border-radius:12px;overflow:hidden;margin-top:12px"></div>
+<div class="btn-row" style="margin-top:16px"><button class="btn btn-primary" onclick="window.print()">Print / Save as PDF</button></div>
+</div></div>
+<div class="tool-panel" id="panel-t14" style="--active-c:var(--c5)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c5)">Course 5 · HR Analytics &amp; Career Development</div><div class="tool-title">Compa-Ratio Distribution Analyser</div><div class="tool-desc">Enter salary data for a grade or team. The tool calculates each compa-ratio, assigns employees to distribution buckets, and assesses whether the shape is healthy, skewed, or bimodal.</div></div>
+<div class="section"><div class="section-title">Grade parameters</div><div class="grid-2">
+<div class="field"><label>Grade / Group label</label><input type="text" id="cr-grade" placeholder="e.g. Grade 5 — Senior Analysts" oninput="calcCR()"></div>
+<div class="field"><label>Grade midpoint ($)</label><input type="number" id="cr-mid" placeholder="90000" oninput="calcCR()"></div>
+</div></div>
+<div class="section"><div class="section-title">Employee salaries (up to 15)</div><div id="cr-rows" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px"></div></div>
+<div class="result-block colored" id="cr-result" style="display:none">
+<div class="out-grid">
+<div class="out-card"><div class="out-label">Average CR</div><div class="out-val" id="cr-avg">—</div></div>
+<div class="out-card highlight"><div class="out-label">Shape Assessment</div><div id="cr-shape" style="margin-top:6px;font-size:14px;font-weight:600"></div></div>
+<div class="out-card"><div class="out-label">% in Core (0.95–1.05)</div><div class="out-val" id="cr-core-pct">—</div></div>
+</div>
+<div id="cr-buckets" style="margin-top:16px"></div>
+<div id="cr-insight" style="margin-top:12px;font-size:13px;line-height:1.65;color:rgba(255,255,255,.6);padding:14px 16px;background:rgba(255,255,255,.03);border-radius:8px"></div>
+</div></div>
+<div class="tool-panel" id="panel-t15" style="--active-c:var(--c5)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c5)">Course 5 · HR Analytics &amp; Career Development</div><div class="tool-title">Flight-Risk Scoring Tool</div><div class="tool-desc">Score employees across four weighted risk factors. The tool calculates a composite flight-risk score, flags employees above your threshold, and ranks them by priority for intervention.</div></div>
+<div class="section"><div class="section-title">Scoring weights</div><div class="grid-3">
+<div class="field"><label>Flagging threshold (pts)</label><input type="number" id="fr-thresh" value="70" oninput="calcFR()"></div>
+<div class="field"><label>Low compa-ratio (&lt;0.90) weight</label><input type="number" id="fr-w1" value="30" oninput="calcFR()"></div>
+<div class="field"><label>Long tenure without promotion (3+ yrs)</label><input type="number" id="fr-w2" value="25" oninput="calcFR()"></div>
+<div class="field"><label>Recent manager change (&lt;6 months)</label><input type="number" id="fr-w3" value="20" oninput="calcFR()"></div>
+<div class="field"><label>Low engagement (bottom quartile)</label><input type="number" id="fr-w4" value="25" oninput="calcFR()"></div>
+</div></div>
+<div class="section"><div class="section-title">Employee risk factors</div>
+<div style="display:grid;grid-template-columns:1.4fr 0.8fr 0.8fr 1fr 1fr 0.6fr;gap:10px;margin-bottom:8px;padding:0 2px">
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Name</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Compa-ratio</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Yrs in role</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Mgr change</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Engagement</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Score</div>
+</div>
+<div id="fr-rows"></div>
+<div class="btn-row" style="margin-top:10px"><button class="btn btn-ghost" onclick="addFRRow()">+ Add employee</button></div>
+</div>
+<div class="result-block colored" id="fr-result" style="display:none">
+<div class="out-grid">
+<div class="out-card bad"><div class="out-label">Flagged</div><div class="out-val big" id="fr-flagged">0</div><div class="out-sub">Above threshold — priority for retention conversation</div></div>
+<div class="out-card"><div class="out-label">Total assessed</div><div class="out-val sm" id="fr-total-count">0</div></div>
+</div>
+<div id="fr-table" style="margin-top:16px"></div>
+</div></div>
+<div class="tool-panel" id="panel-t16" style="--active-c:var(--c5)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c5)">Course 5 · HR Analytics &amp; Career Development</div><div class="tool-title">Turnover Cost &amp; ROI Calculator</div><div class="tool-desc">Build the CFO-ready business case for a retention investment. The tool calculates cost of inaction, projects savings at three scenarios, and shows the payback period for each.</div></div>
+<div class="section"><div class="section-title">Workforce parameters</div><div class="grid-3">
+<div class="field"><label>Population size (headcount)</label><input type="number" id="tc-pop" placeholder="60" oninput="calcTC()"></div>
+<div class="field"><label>Current annual turnover (%)</label><input type="number" id="tc-rate" placeholder="28" oninput="calcTC()"></div>
+<div class="field"><label>Cost per departure ($)</label><input type="number" id="tc-cost" placeholder="42000" oninput="calcTC()"><div style="font-size:10px;color:rgba(255,255,255,.3);margin-top:4px">Recruitment + onboarding + productivity loss + ramp-up</div></div>
+</div></div>
+<div class="section"><div class="section-title">Proposed intervention</div><div class="grid-3">
+<div class="field"><label>Annual intervention cost ($)</label><input type="number" id="tc-int" placeholder="310000" oninput="calcTC()"></div>
+<div class="field"><label>Conservative: new turnover rate (%)</label><input type="number" id="tc-con" placeholder="22" oninput="calcTC()"></div>
+<div class="field"><label>Expected: new turnover rate (%)</label><input type="number" id="tc-exp" placeholder="17" oninput="calcTC()"></div>
+<div class="field"><label>Optimistic: new turnover rate (%)</label><input type="number" id="tc-opt" placeholder="12" oninput="calcTC()"></div>
+<div class="field"><label>Population label (optional)</label><input type="text" id="tc-label" placeholder="e.g. Mid-tenure production staff" oninput="calcTC()"></div>
+</div></div>
+<div class="result-block colored" id="tc-result" style="display:none">
+<div class="out-grid" style="margin-bottom:16px">
+<div class="out-card bad"><div class="out-label">Cost of Inaction (annual)</div><div class="out-val" id="tc-coi">$0</div><div class="out-sub">Current turnover × cost per departure</div></div>
+<div class="out-card"><div class="out-label">Intervention Cost</div><div class="out-val sm" id="tc-intval">$0</div></div>
+</div>
+<table class="tbl"><thead><tr><th>Scenario</th><th>New rate</th><th>Departures/yr</th><th>New cost</th><th>Gross savings</th><th>Net benefit</th><th>Payback period</th></tr></thead>
+<tbody id="tc-tbody"></tbody></table>
+</div></div>
+<div class="tool-panel" id="panel-t17" style="--active-c:var(--c5)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c5)">Course 5 · HR Analytics &amp; Career Development</div><div class="tool-title">Career Lattice Mapping Tool</div><div class="tool-desc">Define up to 8 roles with their core skills. The tool identifies skill overlaps and generates a lattice map — strong connections (direct next moves), moderate connections (require skill-building), and weak connections (need an intermediate step).</div></div>
+<div class="section"><div class="section-title">Define roles and core skills</div>
+<div style="display:grid;grid-template-columns:1.5fr 0.8fr 2fr;gap:10px;margin-bottom:8px;padding:0 2px">
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Role title</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Grade</div>
+<div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Core skills (comma-separated)</div>
+</div>
+<div id="cl-roles"></div>
+<div class="btn-row" style="margin-top:10px"><button class="btn btn-ghost" onclick="addCLRole()">+ Add role</button></div>
+</div>
+<div class="result-block colored" id="cl-result" style="display:none;margin-top:20px">
+<div class="section-title">Lattice connection map</div>
+<div id="cl-map" style="margin-top:8px"></div>
+<div style="margin-top:16px;display:flex;gap:20px;flex-wrap:wrap">
+<div style="display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.5)"><div style="width:24px;height:3px;background:#4ADE80;border-radius:2px"></div>Strong — direct next move (2+ skills overlap)</div>
+<div style="display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.5)"><div style="width:24px;height:3px;background:#FBBf24;border-radius:2px"></div>Moderate — possible with skill-building (1 skill)</div>
+<div style="display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.5)"><div style="width:24px;height:3px;background:#EF4444;border-radius:2px"></div>Weak — needs an intermediate step (no direct overlap)</div>
+</div></div></div>
+
+</div>
+<div id="toast"></div>
+<script>
+const ACTIVE_COLORS={t01:'#C8963E',t02:'#C8963E',t03:'#0C6B65',t04:'#0C6B65',t05:'#0C6B65',t06:'#0C6B65',t07:'#6B4C9A',t08:'#6B4C9A',t09:'#6B4C9A',t10:'#6B4C9A',t11:'#B84B4B',t12:'#B84B4B',t13:'#B84B4B',t14:'#3A7D44',t15:'#3A7D44',t16:'#3A7D44',t17:'#3A7D44'};
+function showTool(id){
+  document.querySelectorAll('.tool-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.sb-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  document.getElementById('nav-'+id).classList.add('active');
+  const c=ACTIVE_COLORS[id]||'#C8963E';
+  document.documentElement.style.setProperty('--active-c',c);
+  window.scrollTo(0,0);
+  if(window.innerWidth<700)document.getElementById('sidebar').classList.remove('open');
+}
+function fmt(n){if(isNaN(n)||n===null||n===undefined)return'—';return'$'+Math.round(n).toLocaleString();}
+function fmtPct(n){if(isNaN(n)||n===null)return'—';return(Math.round(n*10)/10)+'%';}
+function iStyle(){return'background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:8px 10px;font-family:var(--sans);font-size:13px;color:var(--white);outline:none;width:100%';}
+
+// T01 Five Pillars
+const PNAMES=['Compensation','Benefits','Wellbeing','Recognition','Career Dev.'];
+const PINS={1:'This pillar is actively driving attrition and should be the first investment priority.',2:'This pillar is a real weakness that shows up in your engagement data. Targeted investment will have measurable retention impact.',3:'This pillar is adequate but not a differentiator — unlikely to cause attrition on its own, but won\'t motivate employees to stay either.',4:'This pillar is a strength. Maintain investment here; it\'s unlikely to need significant additional resource this cycle.',5:'This pillar is a genuine competitive advantage. Employees cite it as a reason to stay. Protect it and highlight it in your EVP.'};
+function calcPillars(){
+  const scores=[1,2,3,4,5].map(i=>{const s=parseInt(document.getElementById('p'+i).value);document.getElementById('v'+i).textContent=s;return s;});
+  const minS=Math.min(...scores),minI=scores.indexOf(minS);
+  const avg=(scores.reduce((a,b)=>a+b,0)/5).toFixed(1);
+  document.getElementById('pillar-cards').innerHTML=scores.map((s,i)=>`<div class="out-card ${s<=2?'bad':s>=4?'good':''}"><div class="out-label">${PNAMES[i]}</div><div class="out-val sm" style="color:${s<=2?'#EF4444':s>=4?'#4ADE80':'var(--white)'}">${s}/5</div></div>`).join('')+`<div class="out-card highlight"><div class="out-label">Average</div><div class="out-val">${avg}/5</div></div>`;
+  document.getElementById('pillar-insight').innerHTML=`<strong style="color:var(--gold)">Priority pillar: ${PNAMES[minI]} (${minS}/5)</strong><br>${PINS[minS]}`;
+}
+
+// T02 TRS Builder
+function calcTRS(){
+  const base=parseFloat(document.getElementById('trs-base').value)||0;
+  if(!base){document.getElementById('trs-result').style.display='none';return;}
+  const bonus=parseFloat(document.getElementById('trs-bonus').value)||0;
+  const pp=parseFloat(document.getElementById('trs-pension').value)||0;
+  const health=parseFloat(document.getElementById('trs-health').value)||0;
+  const life=parseFloat(document.getElementById('trs-life').value)||0;
+  const leave=parseFloat(document.getElementById('trs-leave').value)||0;
+  const wd=parseFloat(document.getElementById('trs-workdays').value)||260;
+  const training=parseFloat(document.getElementById('trs-training').value)||0;
+  const other=parseFloat(document.getElementById('trs-other').value)||0;
+  const pension=base*(pp/100);
+  const leaveVal=wd>0?(base/wd)*leave:0;
+  const totalCash=base+bonus;
+  const benefits=pension+health+life+training+other;
+  const total=totalCash+leaveVal+benefits;
+  const gap=((total-base)/base*100);
+  document.getElementById('r-base').textContent=fmt(base);
+  document.getElementById('r-cash').textContent=fmt(totalCash);
+  document.getElementById('r-total').textContent=fmt(total);
+  document.getElementById('r-gap').textContent=fmtPct(gap);
+  document.getElementById('r-leave').textContent=fmt(leaveVal);
+  document.getElementById('r-benefits').textContent=fmt(benefits);
+  const name=document.getElementById('trs-name').value||'This employee';
+  document.getElementById('trs-summary').innerHTML=`<strong>${name}</strong> perceives their pay as roughly <strong>${fmt(base)}</strong> (base salary). Their actual Total Compensation is <strong>${fmt(total)}</strong> — a <strong>${fmtPct(gap)} perception gap</strong>. Making this visible is the entire mechanism behind an effective Total Reward Statement.`;
+  document.getElementById('trs-result').style.display='block';
+}
+function resetTRS(){['trs-name','trs-role','trs-base','trs-bonus','trs-pension','trs-health','trs-life','trs-leave','trs-training','trs-other'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});document.getElementById('trs-workdays').value='260';document.getElementById('trs-result').style.display='none';}
+
+// T03 Salary Range Builder
+function calcRange(){
+  const mid=parseFloat(document.getElementById('sr-mid').value)||0;
+  const spr=parseFloat(document.getElementById('sr-spread').value)||0;
+  if(!mid||!spr){document.getElementById('range-result').style.display='none';return;}
+  const min=mid*(1-spr/100),max=mid*(1+spr/100);
+  document.getElementById('rr-min').textContent=fmt(min);
+  document.getElementById('rr-mid').textContent=fmt(mid);
+  document.getElementById('rr-max').textContent=fmt(max);
+  document.getElementById('rr-width').textContent=fmt(max-min);
+  document.getElementById('range-result').style.display='block';
+  window._rm=min;window._rmid=mid;window._rmax=max;
+  calcEmpRange();
+}
+function calcEmpRange(){
+  const min=window._rm,mid=window._rmid,max=window._rmax;
+  if(!min||!max){return;}
+  const pay=parseFloat(document.getElementById('sr-emppay').value)||0;
+  const el=document.getElementById('emp-range-result');
+  if(!pay){el.style.display='none';return;}
+  const cr=(pay/mid).toFixed(2);
+  const rp=((pay-min)/(max-min)*100).toFixed(1);
+  document.getElementById('er-cr').textContent=cr;
+  document.getElementById('er-rp').textContent=rp+'%';
+  let pos,statusHTML;
+  if(pay<min){pos='Below minimum';statusHTML='<span class="pill red">Below Range</span>';}
+  else if(pay<=mid*0.95){pos='Lower third';statusHTML='<span class="pill amber">Below Midpoint</span>';}
+  else if(pay<=mid*1.05){pos='Around midpoint';statusHTML='<span class="pill green">At Midpoint</span>';}
+  else if(pay<=max){pos='Upper portion';statusHTML='<span class="pill amber">Above Midpoint</span>';}
+  else{pos='Above maximum';statusHTML='<span class="pill red">Above Range</span>';}
+  document.getElementById('er-pos').textContent=pos;
+  document.getElementById('er-status').innerHTML=statusHTML;
+  el.style.display='grid';
+}
+
+// T04 Market Pricing
+function initMPRows(){
+  const defaults=[['Senior HR Analyst','80000'],['Compensation Analyst','70000'],['Benefits Manager','90000'],['Total Rewards Director','140000']];
+  const cont=document.getElementById('mp-rows');
+  cont.innerHTML='';
+  defaults.forEach(d=>{
+    const row=document.createElement('div');
+    row.style.cssText='display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:10px;margin-bottom:8px;align-items:center';
+    row.innerHTML=`<input type="text" value="${d[0]}" placeholder="Role" oninput="calcMP()" class="mp-role" style="${iStyle()}">
+      <input type="number" value="${d[1]}" placeholder="P50 $" oninput="calcMP()" class="mp-p50" style="${iStyle()}">
+      <select onchange="calcMP()" class="mp-pct" style="${iStyle()}"><option value="1">P50 — Match market</option><option value="1.115">P65 — Slightly above</option><option value="1.25">P75 — Lead market</option><option value="0.875">P25 — Lag market</option></select>
+      <input type="text" readonly class="mp-result" style="background:rgba(200,150,62,.06);border:1px solid rgba(200,150,62,.2);border-radius:6px;padding:8px 10px;font-family:var(--sans);font-size:13px;color:var(--gold);font-weight:600;outline:none">`;
+    cont.appendChild(row);
+  });
+  calcMP();
+}
+function calcMP(){
+  const ageM=parseFloat(document.getElementById('mp-age').value)||0;
+  const move=parseFloat(document.getElementById('mp-move').value)||0;
+  const geo=parseFloat(document.getElementById('mp-geo').value)||0;
+  const ageFactor=Math.pow(1+move/100,ageM/12);
+  const geoFactor=1+geo/100;
+  document.querySelectorAll('.mp-role').forEach((_,i)=>{
+    const p50=parseFloat(document.querySelectorAll('.mp-p50')[i].value)||0;
+    const pct=parseFloat(document.querySelectorAll('.mp-pct')[i].value)||1;
+    if(!p50){document.querySelectorAll('.mp-result')[i].value='';return;}
+    document.querySelectorAll('.mp-result')[i].value='$'+Math.round(p50*ageFactor*geoFactor*pct).toLocaleString();
+  });
+  const ageAdj=((ageFactor-1)*100).toFixed(1);
+  document.getElementById('mp-notes').innerHTML=`Aging adjustment: <strong>+${ageAdj}%</strong> (${ageM} months at ${move}% annual market movement) · Geographic differential: <strong>${geo>=0?'+':''}${geo}%</strong>`;
+}
+
+// T05 Benefits Budget
+function initBBRows(){
+  const defaults=[['Health Insurance','6200','85','80'],['Life Insurance','520','100','100'],['Pension / Retirement','4000','100','100'],['Mental Health Support','1200','60','100'],['Add your benefit...','','75','100']];
+  const cont=document.getElementById('bb-rows');
+  cont.innerHTML='';
+  defaults.forEach(d=>{
+    const row=document.createElement('div');
+    row.className='bb-row';
+    row.style.cssText='display:grid;grid-template-columns:1.8fr 1fr 0.8fr 0.8fr 1fr;gap:10px;margin-bottom:8px;align-items:center';
+    const si=iStyle();
+    row.innerHTML=`<input type="text" value="${d[0]}" oninput="calcBB()" class="bb-name" style="${si}">
+      <input type="number" value="${d[1]}" placeholder="0" oninput="calcBB()" class="bb-prem" style="${si}">
+      <input type="number" value="${d[2]}" placeholder="75" oninput="calcBB()" class="bb-takeup" style="${si}">
+      <input type="number" value="${d[3]}" placeholder="100" oninput="calcBB()" class="bb-share" style="${si}">
+      <input type="text" readonly class="bb-cost" style="background:rgba(200,150,62,.06);border:1px solid rgba(200,150,62,.2);border-radius:6px;padding:8px 10px;font-family:var(--sans);font-size:13px;color:var(--gold);font-weight:600;outline:none">`;
+    cont.appendChild(row);
+  });
+  calcBB();
+}
+function calcBB(){
+  const payroll=parseFloat(document.getElementById('bb-payroll').value)||0;
+  const bench=parseFloat(document.getElementById('bb-bench').value)||27;
+  const hc=parseFloat(document.getElementById('bb-headcount').value)||1;
+  document.getElementById('bb-benchval').textContent=bench+'%';
+  let total=0;
+  document.querySelectorAll('.bb-row').forEach(row=>{
+    const prem=parseFloat(row.querySelector('.bb-prem').value)||0;
+    const tu=parseFloat(row.querySelector('.bb-takeup').value)||0;
+    const sh=parseFloat(row.querySelector('.bb-share').value)||0;
+    const cost=Math.round(hc*(tu/100))*prem*(sh/100);
+    total+=cost;
+    row.querySelector('.bb-cost').value=cost>0?'$'+Math.round(cost).toLocaleString():'';
+  });
+  document.getElementById('bb-total').textContent=fmt(total);
+  if(payroll>0){
+    const pctP=(total/payroll*100);
+    document.getElementById('bb-pct').textContent=pctP.toFixed(1)+'%';
+    const gap=pctP-bench;
+    const gEl=document.getElementById('bb-gap');
+    if(Math.abs(gap)<1)gEl.innerHTML='<span class="pill green">At benchmark</span>';
+    else if(gap<0)gEl.innerHTML=`<span class="pill amber">${Math.abs(gap).toFixed(1)}pp below</span>`;
+    else gEl.innerHTML=`<span class="pill green">${gap.toFixed(1)}pp above</span>`;
+  }else{document.getElementById('bb-pct').textContent='Enter payroll';}
+}
+
+// T06 Approval Matrix
+function calcAM(){window._am={t2:parseFloat(document.getElementById('am-t2').value)||10,t1a:document.getElementById('am-t1a').value,t2a:document.getElementById('am-t2a').value,t3a:document.getElementById('am-t3a').value};calcAMOffer();}
+function calcAMOffer(){
+  const am=window._am||{t2:10,t1a:'Hiring Manager',t2a:'Compensation Lead',t3a:'Committee'};
+  const rmax=parseFloat(document.getElementById('am-rmax').value)||0;
+  const offer=parseFloat(document.getElementById('am-offer').value)||0;
+  const res=document.getElementById('am-result');
+  if(!rmax||!offer){res.style.display='none';return;}
+  const excess=Math.max(0,offer-rmax);
+  const pct=rmax>0?(excess/rmax*100):0;
+  document.getElementById('am-excess').textContent=fmt(excess);
+  document.getElementById('am-pct').textContent=pct.toFixed(2)+'%';
+  let tier,approver,guidance;
+  if(offer<=rmax){tier='Within Range — No Exception';approver=am.t1a;guidance='This offer falls within the salary range and requires no special approval.';}
+  else if(pct<=(am.t2||10)){tier='Tier 2 Exception';approver=am.t2a;guidance=`This offer is ${pct.toFixed(2)}% above range maximum. A documented rationale is required at time of approval.`;}
+  else{tier='Tier 3 Exception';approver=am.t3a;guidance=`This offer is ${pct.toFixed(2)}% above range maximum — above the Tier 2 ceiling. Senior leadership approval is required with full documented rationale.`;}
+  document.getElementById('am-tier').textContent=tier;
+  document.getElementById('am-guidance').innerHTML=`<strong>Required approver:</strong> ${approver}<br><br>${guidance}`;
+  res.style.display='block';
+}
+
+// T07 Point-Factor
+function calcPF(){
+  const k=document.querySelector('input[name="pf-k"]:checked');
+  const ps=document.querySelector('input[name="pf-ps"]:checked');
+  const acc=document.querySelector('input[name="pf-acc"]:checked');
+  const pm=document.querySelector('input[name="pf-pm"]:checked');
+  if(!k||!ps||!acc||!pm){document.getElementById('pf-result').style.display='none';return;}
+  const ks=parseInt(k.value),pss=parseInt(ps.value),accs=parseInt(acc.value),pms=parseInt(pm.value);
+  const total=ks+pss+accs+pms;
+  document.getElementById('pf-k-score').textContent=ks+' pts';
+  document.getElementById('pf-ps-score').textContent=pss+' pts';
+  document.getElementById('pf-acc-score').textContent=accs+' pts';
+  document.getElementById('pf-pm-score').textContent=pms+' pts';
+  document.getElementById('pf-total').textContent=total+' pts';
+  const g=[1,2,3,4,5].map(i=>parseFloat(document.getElementById('g'+i+'max').value)||0);
+  let grade='Not yet configured';
+  if(g[0]&&total<=g[0])grade='Grade 1';
+  else if(g[1]&&total<=g[1])grade='Grade 2';
+  else if(g[2]&&total<=g[2])grade='Grade 3';
+  else if(g[3]&&total<=g[3])grade='Grade 4';
+  else if(g[4]&&total<=g[4])grade='Grade 5';
+  else if(g[4]&&total>g[4])grade='Grade 6+';
+  document.getElementById('pf-grade').textContent=grade;
+  document.getElementById('pf-result').style.display='block';
+}
+
+// T08 Pay Gap Calculator
+function initPGRows(){
+  const defaults=[['Amara','82000','5','F'],['Daniel','85000','5','M'],['Funmi','79000','5','F'],['Chidi','84000','5','M'],['Bola','118000','7','F'],['Eric','145000','7','M'],['Ngozi','121000','7','F'],['Tunde','148000','7','M'],['','','',''],['','','',''],['','','',''],['','','','']];
+  const cont=document.getElementById('pg-rows');cont.innerHTML='';
+  defaults.forEach(d=>{
+    const row=document.createElement('div');
+    row.style.cssText='display:grid;grid-template-columns:1.2fr 0.8fr 0.8fr 0.8fr;gap:10px;margin-bottom:8px;align-items:center';
+    const si=iStyle();
+    row.innerHTML=`<input type="text" value="${d[0]}" placeholder="Name" class="pg-name" oninput="calcPG()" style="${si}"><input type="number" value="${d[1]}" placeholder="Salary" class="pg-sal" oninput="calcPG()" style="${si}"><input type="text" value="${d[2]}" placeholder="Grade" class="pg-gr" oninput="calcPG()" style="${si}"><input type="text" value="${d[3]}" placeholder="Group" class="pg-gp" oninput="calcPG()" style="${si}">`;
+    cont.appendChild(row);
+  });
+  calcPG();
+}
+function calcPG(){
+  const thresh=parseFloat(document.getElementById('pg-thresh').value)||5;
+  const rows=[];
+  document.querySelectorAll('.pg-name').forEach((_,i)=>{
+    const sal=parseFloat(document.querySelectorAll('.pg-sal')[i].value)||0;
+    const grade=document.querySelectorAll('.pg-gr')[i].value.trim();
+    const group=document.querySelectorAll('.pg-gp')[i].value.trim();
+    if(sal&&group)rows.push({sal,grade,group});
+  });
+  if(rows.length<2){document.getElementById('pg-result').style.display='none';return;}
+  const groups=[...new Set(rows.map(r=>r.group))];
+  if(groups.length<2){document.getElementById('pg-result').style.display='none';return;}
+  const g1=rows.filter(r=>r.group===groups[0]),g2=rows.filter(r=>r.group===groups[1]);
+  const a1=g1.reduce((s,r)=>s+r.sal,0)/g1.length,a2=g2.reduce((s,r)=>s+r.sal,0)/g2.length;
+  const hi=Math.max(a1,a2),lo=Math.min(a1,a2);
+  const unadj=((hi-lo)/hi*100).toFixed(1);
+  document.getElementById('pg-unadj').textContent=unadj+'%';
+  const grades=[...new Set(rows.map(r=>r.grade).filter(Boolean))];
+  let flags=0,grHtml='<div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">Adjusted gap by grade</div>';
+  grades.forEach(g=>{
+    const gr=rows.filter(r=>r.grade===g);
+    const gg1=gr.filter(r=>r.group===groups[0]),gg2=gr.filter(r=>r.group===groups[1]);
+    if(!gg1.length||!gg2.length)return;
+    const ga1=gg1.reduce((s,r)=>s+r.sal,0)/gg1.length,ga2=gg2.reduce((s,r)=>s+r.sal,0)/gg2.length;
+    const gh=Math.max(ga1,ga2),gl=Math.min(ga1,ga2);
+    const gap=((gh-gl)/gh*100).toFixed(1);
+    const fl=parseFloat(gap)>=thresh;
+    if(fl)flags++;
+    const sm=(gg1.length===1||gg2.length===1)?' <span style="font-size:10px;color:rgba(251,191,36,.7)">(small sample)</span>':'';
+    grHtml+=`<div style="display:flex;align-items:center;gap:12px;padding:10px 14px;background:rgba(255,255,255,.025);border-radius:8px;margin-bottom:8px;border-left:3px solid ${fl?'#EF4444':'#4ADE80'}"><div style="flex:1"><strong>Grade ${g}</strong>${sm}<br><span style="font-size:12px;color:rgba(255,255,255,.45)">${groups[0]}: ${fmt(ga1)} · ${groups[1]}: ${fmt(ga2)}</span></div><div>${fl?`<span class="pill red">${gap}% — Flagged</span>`:`<span class="pill green">${gap}%</span>`}</div></div>`;
+  });
+  document.getElementById('pg-flags').textContent=flags;
+  document.getElementById('pg-flagsub').textContent=flags>0?`${flags} grade(s) above ${thresh}% threshold`:'No grades above threshold';
+  document.getElementById('pg-grade-results').innerHTML=grHtml;
+  document.getElementById('pg-result').style.display='block';
+}
+
+// T09 Remediation Budget
+let rbCount=0;
+function initRBRows(){
+  const defaults=[['Aisha','89500'],['Beatrice','91200'],['Cynthia','93800'],['Deborah','86000']];
+  defaults.forEach(d=>addRBRowWith(d[0],d[1]));
+  calcRB();
+}
+function addRBRow(){addRBRowWith('','');calcRB();}
+function addRBRowWith(name,pay){
+  const cont=document.getElementById('rb-rows');
+  const row=document.createElement('div');
+  row.style.cssText='display:grid;grid-template-columns:1.5fr 1fr;gap:10px;margin-bottom:8px';
+  const si=iStyle();
+  row.innerHTML=`<input type="text" value="${name}" placeholder="Employee name" class="rb-name" oninput="calcRB()" style="${si}"><input type="number" value="${pay}" placeholder="Current pay ($)" class="rb-pay" oninput="calcRB()" style="${si}">`;
+  cont.appendChild(row);rbCount++;
+}
+function calcRB(){
+  const target=parseFloat(document.getElementById('rb-target').value)||0;
+  const p1=((parseFloat(document.getElementById('rb-phase1').value)||60)/100);
+  const names=document.querySelectorAll('.rb-name'),pays=document.querySelectorAll('.rb-pay');
+  let total=0,rws=[];
+  names.forEach((_,i)=>{
+    const pay=parseFloat(pays[i].value)||0;
+    const name=names[i].value||`Employee ${i+1}`;
+    if(!pay||!target||pay>=target)return;
+    const corr=target-pay,p1v=corr*p1,p2v=corr*(1-p1);
+    total+=corr;rws.push({name,pay,corr,p1v,p2v});
+  });
+  if(!rws.length){document.getElementById('rb-result').style.display='none';return;}
+  const p1t=rws.reduce((s,r)=>s+r.p1v,0),p2t=rws.reduce((s,r)=>s+r.p2v,0);
+  document.getElementById('rb-lump').textContent=fmt(total);
+  document.getElementById('rb-p1total').textContent=fmt(p1t);
+  document.getElementById('rb-p2total').textContent=fmt(p2t);
+  document.getElementById('rb-count').textContent=rws.length;
+  document.getElementById('rb-table-wrap').innerHTML=`<table class="tbl"><thead><tr><th>Employee</th><th>Current Pay</th><th>Target</th><th>Correction</th><th>Phase 1 (${Math.round(p1*100)}%)</th><th>Phase 2 (${Math.round((1-p1)*100)}%)</th></tr></thead><tbody>${rws.map(r=>`<tr><td>${r.name}</td><td class="num">${fmt(r.pay)}</td><td class="num">${fmt(target)}</td><td class="num" style="color:#4ADE80">${fmt(r.corr)}</td><td class="num">${fmt(r.p1v)}</td><td class="num">${fmt(r.p2v)}</td></tr>`).join('')}<tr style="border-top:1px solid rgba(255,255,255,.12)"><td colspan="3" style="font-weight:600;color:rgba(255,255,255,.7)">TOTALS</td><td class="num" style="color:var(--gold)">${fmt(total)}</td><td class="num">${fmt(p1t)}</td><td class="num">${fmt(p2t)}</td></tr></tbody></table>`;
+  document.getElementById('rb-result').style.display='block';
+}
+
+// T10 Audit Checklist
+const CLDATA=[
+  {s:'Job Evaluation Foundation',items:['Confirm the job evaluation system\'s calibration has been reviewed within the last 12 months','Verify that benchmark roles have been re-scored if panel composition has changed','Document the point-factor system and grade boundaries applied','Confirm that grading decisions are made by a panel, not individual managers']},
+  {s:'Peer Group Definition',items:['Define peer groups by job family + grade, not job title alone','Confirm no peer group contains fewer than 3 employees per comparison group','Document the rationale for any peer group boundary decisions','Confirm that roles with different pay-setting mechanisms (e.g. union scales) are scoped separately']},
+  {s:'Control Factor Review',items:['List every control factor proposed for the adjusted gap calculation','Check each factor for genuine job-related justification','Check each factor for potential proxy risk (correlation with a protected characteristic)','Confirm no factor is included solely because it reduces the calculated gap','Document the rationale for each included and excluded factor']},
+  {s:'Methodology Confirmation',items:['Confirm whether regression or matched-pairs comparison is appropriate given peer group sizes','Set a flagging threshold and document the rationale for that specific percentage','Confirm that both unadjusted and adjusted gaps will be calculated and reported','Confirm that adjusted gaps will be disaggregated by grade, not reported as a single blended figure']},
+  {s:'Data Quality',items:['Confirm salary data is complete, current, and correctly mapped to grade and job family','Confirm demographic data is available and accurate','Confirm any experience or tenure measure used does not penalise leave-related career breaks','Document the data extraction date and payroll system used']},
+];
+let ckTotal=0;
+function initChecklist(){
+  const cont=document.getElementById('checklist-sections');cont.innerHTML='';
+  let idx=0;
+  CLDATA.forEach(sec=>{
+    const div=document.createElement('div');div.className='section';
+    div.innerHTML=`<div class="section-title">${sec.s}</div><div class="checklist">${sec.items.map(item=>{const i=idx++;return`<label class="check-item" id="cklbl-${i}"><input type="checkbox" id="ck-i-${i}" onchange="updateCL()"><div class="check-item-text">${item}</div></label>`;}).join('')}</div>`;
+    cont.appendChild(div);
+  });
+  ckTotal=idx;updateCL();
+}
+function updateCL(){
+  let done=0;
+  for(let i=0;i<ckTotal;i++){const cb=document.getElementById('ck-i-'+i);if(cb&&cb.checked){done++;const lb=document.getElementById('cklbl-'+i);if(lb)lb.classList.add('done');}else{const lb=document.getElementById('cklbl-'+i);if(lb)lb.classList.remove('done');}}
+  const pct=ckTotal?Math.round(done/ckTotal*100):0;
+  document.getElementById('ck-pct').textContent=pct+'%';
+  document.getElementById('ck-bar').style.width=pct+'%';
+  document.getElementById('ck-status').textContent=pct===100?'All items confirmed — you may proceed with the audit.':pct>=75?'Almost complete — review remaining items.':'Complete all items before proceeding.';
+}
+function resetChecklist(){for(let i=0;i<ckTotal;i++){const cb=document.getElementById('ck-i-'+i);if(cb)cb.checked=false;}updateCL();}
+
+// T11 Transparency Maturity Assessment
+const TMAQ=[
+  {q:'Do employees know their own salary range (minimum, midpoint, maximum) for their grade?',opts:['No — employees only know their individual pay','Some have been informally told, but it is not consistent','Yes — ranges are formally published and accessible to all employees']},
+  {q:'Is the grading structure published and explained to employees?',opts:['No — grading exists internally but has never been shared with employees','Partial information has been shared but it is incomplete','Yes — the grading structure and evaluation criteria are published and explained']},
+  {q:'Have managers received formal training or briefing materials on discussing pay?',opts:['No manager training or briefing exists','A few managers have been briefed informally','Yes — all managers have formal briefing packs and have been trained']},
+  {q:'Does the organisation formally report pay gap data to employees or publicly?',opts:['No pay gap data has been reported','An internal calculation exists but has never been formally reported','Yes — formal pay gap reporting is in place and accessible']},
+  {q:'Have employees been given the right to request information about how their pay compares to peers doing equivalent work?',opts:['No formal right or process exists','An informal process exists but is not consistently applied','Yes — a formal, consistent process exists for employees to request this information']},
+];
+const TMASTAGES=[
+  {n:'No Disclosure',d:'Employees know only their individual pay. No published structure, no manager training, no aggregate reporting.',actions:['Publish the grading structure — this is the single highest-leverage first step','Brief managers on how the grading system works before publishing ranges','Do not jump to range disclosure without first building process transparency']},
+  {n:'Process Transparency',d:'The grading structure is published and understood, but specific ranges and aggregate data are not yet disclosed.',actions:['Finalise and publish salary range minimums and midpoints for each grade','Ensure managers can explain how ranges were set before making them public','Consider piloting with one function first to measure the response']},
+  {n:'Range Disclosure',d:'Ranges are published. Managers may not yet be fully equipped to discuss them confidently.',actions:['Build a full manager enablement programme — briefing packs, talking points, disclosure boundaries','Prepare model answers for the 5 most common pay questions employees ask','Run sessions focused on same-team comparison scenarios, which are the hardest to handle']},
+  {n:'Manager-Enabled',d:'Managers are trained and equipped. Aggregate pay data reporting is the remaining gap.',actions:['Conduct a full pay equity audit before publishing any gap figure','Plan your first formal pay gap report — scope, methodology, and disclosure format','Communicate results honestly, including what you are doing about any gaps found']},
+  {n:'Full Transparency',d:'Operating at the most advanced maturity level. Focus shifts to maintaining quality and governance.',actions:['Establish a recurring annual audit and reporting cycle — a single report is not enough','Benchmark against regulatory developments (EU Directive, US state laws)','Use your transparency position as a talent attraction differentiator in job postings']},
+];
+function initTMA(){
+  const cont=document.getElementById('tma-questions');cont.innerHTML='';
+  TMAQ.forEach((q,i)=>{
+    const div=document.createElement('div');div.className='section';
+    div.innerHTML=`<div class="section-title" style="font-size:14px;color:rgba(255,255,255,.75);margin-bottom:12px">${i+1}. ${q.q}</div><div class="checklist">${q.opts.map((o,j)=>`<label class="check-item"><input type="radio" name="tma-${i}" value="${j}" onchange="calcTMA()"><div class="check-item-text">${o}</div></label>`).join('')}</div>`;
+    cont.appendChild(div);
+  });
+}
+function calcTMA(){
+  const sc=TMAQ.map((_,i)=>{const s=document.querySelector(`input[name="tma-${i}"]:checked`);return s?parseInt(s.value):null;});
+  if(sc.includes(null)){document.getElementById('tma-result').style.display='none';return;}
+  const stage=Math.min(...sc)+1;
+  const sd=TMASTAGES[stage-1];
+  document.getElementById('tma-stage').textContent=stage;
+  document.getElementById('tma-stagename').textContent=sd.n;
+  document.getElementById('tma-guidance').innerHTML=`<p style="font-size:14px;line-height:1.7;color:rgba(255,255,255,.65)">${sd.d}</p>`;
+  document.getElementById('tma-next-actions').innerHTML=`<div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:10px">Recommended next actions for Stage ${stage}</div>${sd.actions.map(a=>`<div style="display:flex;gap:10px;margin-bottom:8px;font-size:13px;color:rgba(255,255,255,.7)"><span style="color:var(--coral);flex-shrink:0">→</span>${a}</div>`).join('')}`;
+  document.getElementById('tma-result').style.display='block';
+}
+
+// T12 Manager Briefing Pack
+function updateMB(){
+  const org=document.getElementById('mb-org').value||'[Organisation]';
+  const by=document.getElementById('mb-by').value||'HR Team';
+  const ranges=document.getElementById('mb-ranges').value;
+  const cycle=document.getElementById('mb-cycle').value||'[upcoming]';
+  const grade=document.getElementById('mb-grade').value;
+  const merit=document.getElementById('mb-merit').value;
+  const can=document.getElementById('mb-can').value;
+  const cannot=document.getElementById('mb-cannot').value;
+  document.getElementById('mb-doc').innerHTML=`
+    <div style="border-bottom:4px solid #C8963E;padding-bottom:16px;margin-bottom:20px">
+      <div style="font-size:20px;font-weight:700;color:#07192E;font-family:var(--serif)">${org}</div>
+      <div style="font-size:13px;color:#5a7090;margin-top:4px">Manager Pay Conversation Briefing · ${by}</div>
+    </div>
+    <div style="font-size:14px;font-weight:700;color:#07192E;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #e0e8f0">How our grade structure works</div>
+    <p style="font-size:13px;color:#2a3a50;line-height:1.65;margin-bottom:16px">${grade}</p>
+    <div style="font-size:14px;font-weight:700;color:#07192E;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #e0e8f0">Merit increases — ${cycle} cycle</div>
+    <p style="font-size:13px;color:#2a3a50;line-height:1.65;margin-bottom:16px">${merit}</p>
+    <div style="font-size:14px;font-weight:700;color:#07192E;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #e0e8f0">Salary ranges</div>
+    <p style="font-size:13px;color:#2a3a50;line-height:1.65;margin-bottom:16px">${ranges}</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px">
+      <div style="background:#f0f8f4;border-left:3px solid #0C6B65;padding:14px 16px;border-radius:0 8px 8px 0"><div style="font-size:11px;font-weight:700;color:#0C6B65;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">✓ You CAN share</div><p style="font-size:12.5px;color:#1a3a30;line-height:1.6">${can}</p></div>
+      <div style="background:#fff0f0;border-left:3px solid #B84B4B;padding:14px 16px;border-radius:0 8px 8px 0"><div style="font-size:11px;font-weight:700;color:#B84B4B;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">✗ Do NOT share</div><p style="font-size:12.5px;color:#3a1a1a;line-height:1.6">${cannot}</p></div>
+    </div>
+    <div style="margin-top:16px;padding:12px 16px;background:#f8f9fb;border-radius:8px;font-size:12px;color:#5a7090">If an employee raises a concern you cannot fully address, direct them to HR rather than speculating. A clear next step is always better than an improvised answer.</div>`;
+}
+
+// T13 TRS Employee Template
+function updateTE(){
+  const base=parseFloat(document.getElementById('te-base').value)||0;
+  const name=document.getElementById('te-name').value;
+  if(!base&&!name){document.getElementById('te-doc-wrap').style.display='none';return;}
+  const bonus=parseFloat(document.getElementById('te-bonus').value)||0;
+  const pension=parseFloat(document.getElementById('te-pension').value)||0;
+  const health=parseFloat(document.getElementById('te-health').value)||0;
+  const life=parseFloat(document.getElementById('te-life').value)||0;
+  const leave=parseFloat(document.getElementById('te-leave').value)||0;
+  const training=parseFloat(document.getElementById('te-training').value)||0;
+  const other=parseFloat(document.getElementById('te-other').value)||0;
+  const total=base+bonus+pension+health+life+leave+training+other;
+  const gap=base>0?((total-base)/base*100):0;
+  const comps=[{l:'Base Salary',v:base},{l:'Annual Bonus',v:bonus},{l:'Employer Pension',v:pension},{l:'Health Insurance',v:health},{l:'Life Insurance',v:life},{l:'Annual Leave Value',v:leave},{l:'Training Investment',v:training},{l:'Other Benefits',v:other}].filter(c=>c.v>0);
+  document.getElementById('te-doc').innerHTML=`
+    <div style="background:linear-gradient(135deg,#0C2340,#07192E);padding:32px 36px;border-bottom:3px solid #C8963E">
+      <div style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C8963E;margin-bottom:8px">Total Reward Statement</div>
+      <div style="font-family:var(--serif);font-size:28px;font-weight:700;color:#fff;margin-bottom:4px">${name||'Employee Name'}</div>
+      <div style="font-size:14px;color:rgba(255,255,255,.55)">${document.getElementById('te-role').value||''} ${document.getElementById('te-org').value?'· '+document.getElementById('te-org').value:''}</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.35);margin-top:6px">${document.getElementById('te-period').value||''}</div>
+    </div>
+    <div style="padding:28px 36px;background:#fff">
+      <div style="font-size:11px;font-weight:600;color:#5a7090;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px">Your complete package value</div>
+      ${comps.map(c=>`<div style="display:flex;align-items:center;gap:14px;margin-bottom:12px"><div style="width:180px;font-size:13px;color:#2a3a50;font-weight:500">${c.l}</div><div style="flex:1;height:6px;background:#e8eef4;border-radius:3px;overflow:hidden"><div style="height:100%;width:${Math.min(100,c.v/total*100*2)}%;background:${c.l==='Base Salary'?'#C8963E':'#0C6B65'};border-radius:3px"></div></div><div style="width:110px;text-align:right;font-size:13px;font-weight:700;color:#07192E">${fmt(c.v)}</div></div>`).join('')}
+      <div style="border-top:2px solid #e8eef4;padding-top:16px;margin-top:8px;display:flex;justify-content:space-between;align-items:center">
+        <div style="font-size:15px;font-weight:700;color:#07192E">Total Compensation</div>
+        <div style="font-family:var(--serif);font-size:32px;font-weight:700;color:#C8963E">${fmt(total)}</div>
+      </div>
+      <div style="margin-top:12px;padding:14px 16px;background:#f0f9f7;border-radius:8px;font-size:13px;color:#1a4a3a;line-height:1.6">Your total package is <strong>${fmtPct(gap)} more</strong> than your base salary alone. Every element above represents a real investment made in you — beyond what appears on your payslip.</div>
+    </div>`;
+  document.getElementById('te-doc-wrap').style.display='block';
+}
+
+// T14 Compa-Ratio Distribution Analyser
+function initCRRows(){
+  const cont=document.getElementById('cr-rows');
+  const defaults=['74500','79200','82800','86400','88900','91800','96300','103500','107100','112500','','','','',''];
+  defaults.forEach((v,i)=>{
+    cont.innerHTML+=`<div><label style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.3);text-transform:uppercase">Employee ${i+1}</label><input type="number" value="${v}" placeholder="Salary ($)" class="cr-sal" oninput="calcCR()" style="${iStyle()};margin-top:4px"></div>`;
+  });
+  calcCR();
+}
+function calcCR(){
+  const mid=parseFloat(document.getElementById('cr-mid').value)||0;
+  if(!mid){document.getElementById('cr-result').style.display='none';return;}
+  const sals=[...document.querySelectorAll('.cr-sal')].map(i=>parseFloat(i.value)||0).filter(v=>v>0);
+  if(sals.length<2){document.getElementById('cr-result').style.display='none';return;}
+  const crs=sals.map(s=>s/mid);
+  const avg=(crs.reduce((a,b)=>a+b,0)/crs.length).toFixed(2);
+  const buckets=[{l:'Below 0.85',mn:0,mx:0.85,c:'#EF4444'},{l:'0.85–0.95',mn:0.85,mx:0.95,c:'#FBBf24'},{l:'0.95–1.05 ✦',mn:0.95,mx:1.05,c:'#4ADE80'},{l:'1.05–1.15',mn:1.05,mx:1.15,c:'#FBBf24'},{l:'Above 1.15',mn:1.15,mx:999,c:'#EF4444'}];
+  buckets.forEach(b=>b.count=crs.filter(cr=>cr>=b.mn&&cr<b.mx).length);
+  const corePct=Math.round(buckets[2].count/crs.length*100);
+  document.getElementById('cr-avg').textContent=avg;
+  document.getElementById('cr-core-pct').textContent=corePct+'%';
+  const lo=buckets[0].count+buckets[1].count,hi=buckets[3].count+buckets[4].count,n=crs.length;
+  let shape,sc;
+  if(corePct>=40){shape='Healthy';sc='#4ADE80';}
+  else if(lo>n*.35&&hi>n*.25){shape='Bimodal — investigate urgently';sc='#EF4444';}
+  else if(lo>n*.4){shape='Skewed low — compression risk';sc='#FBBf24';}
+  else if(hi>n*.4){shape='Skewed high — above-midpoint clustering';sc='#FBBf24';}
+  else{shape='Irregular — review individually';sc='#FBBf24';}
+  document.getElementById('cr-shape').innerHTML=`<span style="color:${sc}">${shape}</span>`;
+  document.getElementById('cr-buckets').innerHTML=buckets.map(b=>`<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px"><div style="width:160px;font-size:12px;color:rgba(255,255,255,.6)">${b.l}</div><div style="flex:1;height:20px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden"><div style="height:100%;width:${b.count?Math.max(4,b.count/n*100):0}%;background:${b.c};border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:rgba(0,0,0,.7)">${b.count>0?b.count:''}</div></div><div style="width:32px;text-align:right;font-size:12px;font-weight:600;color:rgba(255,255,255,.5)">${b.count}</div></div>`).join('');
+  let insight='';
+  if(shape.includes('Bimodal'))insight='A bimodal pattern often signals long-tenured employees whose pay has lagged market rates sitting alongside recent hires paid at current rates. Cross-tabulate by tenure and hire date to confirm compression as the root cause.';
+  else if(shape.includes('compression'))insight='A lower-skewed distribution suggests merit increases have not kept pace with market movement. Check when the last market benchmarking exercise was conducted and compare the current midpoint against survey data.';
+  else if(shape.includes('Healthy'))insight='A healthy shape has the largest cluster in the 0.95–1.05 core range with a reasonably even taper toward both extremes. Monitor at the next review cycle to confirm this pattern holds.';
+  document.getElementById('cr-insight').textContent=insight;
+  document.getElementById('cr-result').style.display='block';
+}
+
+// T15 Flight-Risk Scoring Tool
+let frCount=0;
+function initFRRows(){
+  const d=[['Chiamaka','0.87','4.2','yes','no'],['Tobias','1.08','1.5','no','yes'],['Fatima','0.91','3.8','no','no']];
+  d.forEach(r=>addFRRowWith(r[0],r[1],r[2],r[3],r[4]));
+  calcFR();
+}
+function addFRRow(){addFRRowWith('','','','no','no');calcFR();}
+function addFRRowWith(name,cr,ten,mgr,eng){
+  const cont=document.getElementById('fr-rows');
+  const i=frCount++;
+  const row=document.createElement('div');
+  row.style.cssText='display:grid;grid-template-columns:1.4fr 0.8fr 0.8fr 1fr 1fr 0.6fr;gap:10px;margin-bottom:8px;align-items:center';
+  const si=iStyle();
+  const sel=(n,v1,l1,v2,l2,def)=>`<select id="fr-${n}-${i}" onchange="calcFR()" style="${si}"><option value="${v1}"${def===v1?' selected':''}>${l1}</option><option value="${v2}"${def===v2?' selected':''}>${l2}</option></select>`;
+  row.innerHTML=`<input type="text" id="fr-nm-${i}" value="${name}" placeholder="Name" oninput="calcFR()" style="${si}">
+    <input type="number" id="fr-cr-${i}" value="${cr}" placeholder="CR (e.g. 0.87)" oninput="calcFR()" style="${si}">
+    <input type="number" id="fr-tn-${i}" value="${ten}" placeholder="Years" oninput="calcFR()" style="${si}">
+    ${sel('mg',  'no','No recent change','yes','Changed <6 months',mgr)}
+    ${sel('eg','no','Not bottom quartile','yes','Bottom quartile',eng)}
+    <div id="fr-sc-${i}" style="font-family:var(--serif);font-size:22px;font-weight:700;text-align:center;color:var(--gold)">—</div>`;
+  cont.appendChild(row);
+}
+function calcFR(){
+  const thresh=parseFloat(document.getElementById('fr-thresh').value)||70;
+  const w=[parseFloat(document.getElementById('fr-w1').value)||30,parseFloat(document.getElementById('fr-w2').value)||25,parseFloat(document.getElementById('fr-w3').value)||20,parseFloat(document.getElementById('fr-w4').value)||25];
+  let results=[];
+  for(let i=0;i<frCount;i++){
+    const nm=document.getElementById('fr-nm-'+i);if(!nm)continue;
+    const name=nm.value||`Employee ${i+1}`;
+    const cr=parseFloat(document.getElementById('fr-cr-'+i).value)||0;
+    const tn=parseFloat(document.getElementById('fr-tn-'+i).value)||0;
+    const mg=document.getElementById('fr-mg-'+i)?.value||'no';
+    const eg=document.getElementById('fr-eg-'+i)?.value||'no';
+    if(!cr&&!tn&&mg==='no'&&eg==='no'){const el=document.getElementById('fr-sc-'+i);if(el)el.textContent='—';continue;}
+    let score=0;
+    if(cr>0&&cr<0.90)score+=w[0];
+    if(tn>=3)score+=w[1];
+    if(mg==='yes')score+=w[2];
+    if(eg==='yes')score+=w[3];
+    const el=document.getElementById('fr-sc-'+i);
+    if(el){el.textContent=score;el.style.color=score>=thresh?'#EF4444':'#4ADE80';}
+    if(cr>0||tn>0)results.push({name,score,cr,tn,mg,eg,flagged:score>=thresh});
+  }
+  results.sort((a,b)=>b.score-a.score);
+  document.getElementById('fr-flagged').textContent=results.filter(r=>r.flagged).length;
+  document.getElementById('fr-total-count').textContent=results.length;
+  if(results.length>0){
+    document.getElementById('fr-table').innerHTML=`<table class="tbl"><thead><tr><th>Employee</th><th>Score</th><th>Status</th><th>Low CR</th><th>Long tenure</th><th>Mgr change</th><th>Low engagement</th></tr></thead><tbody>${results.map(r=>`<tr><td>${r.name}</td><td class="num" style="color:${r.flagged?'#EF4444':'#4ADE80'};font-size:18px">${r.score}</td><td>${r.flagged?'<span class="pill red">Flagged</span>':'<span class="pill green">Low risk</span>'}</td><td style="color:${r.cr>0&&r.cr<0.90?'#EF4444':'rgba(255,255,255,.3)'}">${r.cr>0&&r.cr<0.90?'⚠':'—'}</td><td style="color:${r.tn>=3?'#EF4444':'rgba(255,255,255,.3)'}">${r.tn>=3?'⚠':'—'}</td><td style="color:${r.mg==='yes'?'#EF4444':'rgba(255,255,255,.3)'}">${r.mg==='yes'?'⚠':'—'}</td><td style="color:${r.eg==='yes'?'#EF4444':'rgba(255,255,255,.3)'}">${r.eg==='yes'?'⚠':'—'}</td></tr>`).join('')}</tbody></table>`;
+    document.getElementById('fr-result').style.display='block';
+  }
+}
+
+// T16 Turnover Cost & ROI Calculator
+function calcTC(){
+  const pop=parseFloat(document.getElementById('tc-pop').value)||0;
+  const rate=parseFloat(document.getElementById('tc-rate').value)||0;
+  const cost=parseFloat(document.getElementById('tc-cost').value)||0;
+  const intv=parseFloat(document.getElementById('tc-int').value)||0;
+  if(!pop||!rate||!cost){document.getElementById('tc-result').style.display='none';return;}
+  const coi=pop*(rate/100)*cost;
+  document.getElementById('tc-coi').textContent=fmt(coi);
+  document.getElementById('tc-intval').textContent=fmt(intv);
+  const sc=[{l:'Conservative',r:parseFloat(document.getElementById('tc-con').value)||0},{l:'Expected',r:parseFloat(document.getElementById('tc-exp').value)||0},{l:'Optimistic',r:parseFloat(document.getElementById('tc-opt').value)||0}];
+  document.getElementById('tc-tbody').innerHTML=sc.filter(s=>s.r>0).map(s=>{
+    const newDep=Math.round(pop*s.r/100);
+    const newCost=newDep*cost;
+    const savings=coi-newCost;
+    const net=savings-intv;
+    const pb=savings>0?(intv/savings).toFixed(1)+' yrs':'Immediate';
+    return`<tr><td>${s.l}</td><td>${s.r}%</td><td>${newDep}</td><td>${fmt(newCost)}</td><td class="num" style="color:#4ADE80">${fmt(savings)}</td><td class="num" style="color:${net>=0?'#4ADE80':'#EF4444'}">${fmt(net)}</td><td style="color:${net>=0?'#4ADE80':'rgba(255,255,255,.5)'}">${pb}</td></tr>`;
+  }).join('');
+  document.getElementById('tc-result').style.display='block';
+}
+
+// T17 Career Lattice
+let clCount=0;
+function initCLRoles(){
+  const d=[['Financial Analyst','Grade 4','financial modelling, variance analysis, stakeholder communication'],['FP&A Analyst','Grade 4','financial modelling, forecasting, cross-functional communication'],['Senior Financial Analyst','Grade 5','financial modelling, variance analysis, team mentoring'],['FP&A Manager','Grade 6','forecasting, cross-functional communication, team management']];
+  d.forEach(r=>addCLRoleWith(r[0],r[1],r[2]));
+  calcCL();
+}
+function addCLRole(){addCLRoleWith('','','');calcCL();}
+function addCLRoleWith(title,grade,skills){
+  const cont=document.getElementById('cl-roles');
+  const i=clCount++;
+  const row=document.createElement('div');
+  row.style.cssText='display:grid;grid-template-columns:1.5fr 0.8fr 2fr;gap:10px;margin-bottom:10px;align-items:start';
+  const si=iStyle();
+  row.innerHTML=`<input type="text" id="cl-t-${i}" value="${title}" placeholder="Role title" oninput="calcCL()" style="${si}"><input type="text" id="cl-g-${i}" value="${grade}" placeholder="Grade" oninput="calcCL()" style="${si}"><input type="text" id="cl-s-${i}" value="${skills}" placeholder="Core skills, comma-separated" oninput="calcCL()" style="${si}">`;
+  cont.appendChild(row);
+}
+function calcCL(){
+  const roles=[];
+  for(let i=0;i<clCount;i++){
+    const t=document.getElementById('cl-t-'+i);if(!t||!t.value.trim())continue;
+    const skills=document.getElementById('cl-s-'+i).value.split(',').map(s=>s.trim().toLowerCase()).filter(Boolean);
+    roles.push({title:t.value.trim(),grade:document.getElementById('cl-g-'+i).value.trim(),skills});
+  }
+  if(roles.length<2){document.getElementById('cl-result').style.display='none';return;}
+  let html='';
+  roles.forEach((r1,i)=>{
+    roles.forEach((r2,j)=>{
+      if(i>=j)return;
+      const ov=r1.skills.filter(s=>r2.skills.includes(s));
+      const str=ov.length>=2?'strong':ov.length===1?'moderate':'weak';
+      const cols={strong:'#4ADE80',moderate:'#FBBf24',weak:'#EF4444'};
+      const labs={strong:'Direct next move',moderate:'Possible with skill-building',weak:'Needs intermediate step'};
+      html+=`<div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:rgba(255,255,255,.025);border-radius:8px;margin-bottom:8px;border-left:3px solid ${cols[str]}"><div style="flex:1"><div style="font-size:13px;font-weight:600;color:var(--white)">${r1.title} <span style="color:rgba(255,255,255,.35);margin:0 6px">→</span> ${r2.title}</div><div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:3px">${ov.length>0?'Shared skills: '+ov.join(', '):'No direct skill overlap found'}</div></div><span class="pill" style="color:${cols[str]};background:rgba(0,0,0,.2);border-color:${cols[str]}">${labs[str]}</span></div>`;
+    });
+  });
+  document.getElementById('cl-map').innerHTML=html||'<p style="color:rgba(255,255,255,.4);font-size:13px">Enter at least two roles with skills to see connections.</p>';
+  document.getElementById('cl-result').style.display='block';
+}
+
+window.onload=()=>{
+  // Hash navigation — open specific tool from URL e.g. toolkit.html#t03
+  const hash = window.location.hash.replace('#','');
+  const startTool = hash && document.getElementById('panel-'+hash) ? hash : 't01';
+  showTool(startTool);
+  calcPillars();
+  initMPRows();
+  initBBRows();
+  initPGRows();
+  initRBRows();
+  initChecklist();
+  initTMA();
+  updateMB();
+  calcRange();
+  initCRRows();
+  initFRRows();
+  initCLRoles();
+  document.getElementById('ck-date').value=new Date().toISOString().split('T')[0];
+  calcAM();
+};
+document.addEventListener('click',e=>{if(e.target.classList.contains('menu-btn')||document.getElementById('sidebar').contains(e.target))return;if(window.innerWidth<700)document.getElementById('sidebar').classList.remove('open');});
+</script>
+</body>
+</html>
