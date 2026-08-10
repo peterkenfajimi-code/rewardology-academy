@@ -18,15 +18,12 @@ import { incrementQuizFinishCount, isQuizTestimonialEligible } from "@/lib/testi
 import { BrowserVoiceBar } from "@/components/tts/BrowserVoiceBar";
 import { dispatchXpUpdated } from "@/lib/xp/dispatch";
 import { playLessonComplete } from "@/lib/audio/sounds";
-import { CertificateSharePanel } from "@/components/certificates/CertificateSharePanel";
-import type { IssueCertificatePayload } from "@/lib/certificates/types";
 import "@/styles/quiz-centre.css";
 
 const LABELS = ["A", "B", "C", "D"];
 const RING_CIRCUMFERENCE = 427;
-const QUIZ_CERT_NAME_KEY = "ra_quiz_name";
 
-type View = "lobby" | "runner" | "results" | "certificate";
+type View = "lobby" | "runner" | "results";
 
 function hexToRgba(hex: string, a: number) {
   const r = parseInt(hex.slice(1, 3), 16);
@@ -49,34 +46,7 @@ export function QuizCentre() {
   const [lastXp, setLastXp] = useState(0);
   const [arcOffset, setArcOffset] = useState(RING_CIRCUMFERENCE);
   const [confetti, setConfetti] = useState<React.CSSProperties[]>([]);
-  const [certAllDone, setCertAllDone] = useState(false);
-  const [certName, setCertName] = useState("");
-  const [certNameInput, setCertNameInput] = useState("");
   const [quizFinishCount, setQuizFinishCount] = useState(0);
-
-  useEffect(() => {
-    if (view !== "certificate") {
-      document.body.classList.remove("qc-print-certificate");
-      return;
-    }
-
-    const enablePrintMode = () => document.body.classList.add("qc-print-certificate");
-    const disablePrintMode = () => document.body.classList.remove("qc-print-certificate");
-
-    window.addEventListener("beforeprint", enablePrintMode);
-    window.addEventListener("afterprint", disablePrintMode);
-
-    return () => {
-      window.removeEventListener("beforeprint", enablePrintMode);
-      window.removeEventListener("afterprint", disablePrintMode);
-      disablePrintMode();
-    };
-  }, [view]);
-
-  const printCertificate = useCallback(() => {
-    document.body.classList.add("qc-print-certificate");
-    window.print();
-  }, []);
 
   const totalXP = useMemo(() => totalXpFromMap(completed), [completed]);
   const allQuizzesDone = useMemo(
@@ -121,43 +91,6 @@ export function QuizCentre() {
     [activeId]
   );
 
-  const quizCertPayload = useMemo<IssueCertificatePayload | null>(() => {
-    if (view !== "certificate" || !certName.trim()) return null;
-
-    if (activeQuiz && completed[activeQuiz.id] && !certAllDone) {
-      const stored = completed[activeQuiz.id];
-      const certPct = Math.round((stored.score / stored.total) * 100);
-      return {
-        certType: "quiz",
-        sourceId: String(activeQuiz.id),
-        recipientName: certName.trim(),
-        credentialName: `${activeQuiz.title} — Rewardology Academy`,
-        credentialDetail: `Scored ${certPct}% on ${activeQuiz.title}`,
-        scorePct: certPct,
-        xpEarned: stored.xp,
-      };
-    }
-
-    if (certAllDone || allQuizzesDone) {
-      const results = Object.values(completed);
-      const totalScore = results.reduce((s, r) => s + r.score, 0);
-      const totalQuestions = results.reduce((s, r) => s + r.total, 0);
-      const certPct =
-        totalQuestions > 0 ? Math.round((totalScore / totalQuestions) * 100) : 0;
-      return {
-        certType: "quiz_centre",
-        sourceId: "centre",
-        recipientName: certName.trim(),
-        credentialName: "Quiz Centre Achievement — Rewardology Academy",
-        credentialDetail: `Scored ${certPct}% across all 10 Total Rewards quizzes`,
-        scorePct: certPct,
-        xpEarned: totalXP,
-      };
-    }
-
-    return null;
-  }, [view, certName, certAllDone, allQuizzesDone, completed, activeQuiz, totalXP]);
-
   const correctCount = answers.filter(Boolean).length;
   const perQuestionXp = activeQuiz
     ? Math.round(activeQuiz.xp / activeQuiz.questions.length)
@@ -169,23 +102,6 @@ export function QuizCentre() {
     setActiveId(null);
     if (typeof window !== "undefined") window.scrollTo(0, 0);
   }, []);
-
-  const openCertificate = useCallback((allDone: boolean) => {
-    setCertAllDone(allDone);
-    const saved =
-      typeof window !== "undefined" ? localStorage.getItem(QUIZ_CERT_NAME_KEY) || "" : "";
-    setCertNameInput(saved);
-    setCertName(saved);
-    setView("certificate");
-    if (typeof window !== "undefined") window.scrollTo(0, 0);
-  }, []);
-
-  const saveCertName = useCallback(() => {
-    const name = certNameInput.trim();
-    if (!name) return;
-    localStorage.setItem(QUIZ_CERT_NAME_KEY, name);
-    setCertName(name);
-  }, [certNameInput]);
 
   const startQuiz = useCallback((id: number) => {
     setActiveId(id);
@@ -353,12 +269,10 @@ export function QuizCentre() {
               <div>
                 <div className="qc-all-cert-title">All 10 Quizzes Complete!</div>
                 <div className="qc-all-cert-sub">
-                  You&apos;ve completed the full Quiz Centre. Download your certificate.
+                  You&apos;ve completed the full Quiz Centre — {totalXP.toLocaleString()} XP earned
+                  across all quizzes.
                 </div>
               </div>
-              <button type="button" className="qc-all-cert-btn" onClick={() => openCertificate(true)}>
-                Get Certificate
-              </button>
             </div>
           )}
           <div className="qc-grid">
@@ -629,9 +543,6 @@ export function QuizCentre() {
             <button type="button" className="qc-btn-retry" onClick={() => startQuiz(activeQuiz.id)}>
               ↺ Retry Quiz
             </button>
-            <button type="button" className="qc-btn-retry" onClick={() => openCertificate(false)}>
-              🎓 Certificate
-            </button>
             {nextQuiz && (
               <button
                 type="button"
@@ -656,116 +567,11 @@ export function QuizCentre() {
     );
   }
 
-  function renderCertificate() {
-    const showDoc = Boolean(certName);
-    const certQuiz = activeQuiz;
-    const stored = certQuiz ? completed[certQuiz.id] : undefined;
-
-    let certPct = 0;
-    let certScoreLine: string;
-
-    if (certQuiz && stored) {
-      certPct = Math.round((stored.score / stored.total) * 100);
-      certScoreLine = `Scored ${certPct}% on ${certQuiz.title}`;
-    } else if (certAllDone || allQuizzesDone) {
-      const results = Object.values(completed);
-      const totalScore = results.reduce((s, r) => s + r.score, 0);
-      const totalQuestions = results.reduce((s, r) => s + r.total, 0);
-      certPct = totalQuestions > 0 ? Math.round((totalScore / totalQuestions) * 100) : 0;
-      certScoreLine = `Scored ${certPct}% across all 10 quizzes`;
-    } else {
-      certScoreLine = "—";
-    }
-
-    return (
-      <div className="qc-view active qc-cert-view">
-        <div className="qc-cert-container">
-          {!showDoc ? (
-            <div className="qc-cert-name-form">
-              <h3>Your Certificate is Ready</h3>
-              <p>Enter your name to personalise and download your Quiz Centre certificate</p>
-              <input
-                className="qc-cert-name-inp"
-                value={certNameInput}
-                onChange={(e) => setCertNameInput(e.target.value)}
-                placeholder="Your full name"
-                maxLength={60}
-              />
-              <button type="button" className="qc-cert-gen-btn" onClick={saveCertName}>
-                Generate Certificate
-              </button>
-            </div>
-          ) : (
-            <>
-              <div className="qc-no-print">
-                <div className="qc-cert-actions-row">
-                  <button type="button" className="qc-btn-retry" onClick={goLobby}>
-                    ← Back to Quizzes
-                  </button>
-                  <button type="button" className="qc-cert-print-btn" onClick={printCertificate}>
-                    🖨 Download / Print
-                  </button>
-                </div>
-                <CertificateSharePanel
-                  payload={quizCertPayload}
-                  enabled={view === "certificate" && showDoc}
-                  signedIn={Boolean(user)}
-                />
-              </div>
-              <div className="qc-cert-doc">
-                <div className="qc-cert-stripe" aria-hidden>
-                  <span className="qc-cert-stripe-teal" />
-                  <span className="qc-cert-stripe-gold" />
-                </div>
-                <div className="qc-cert-body">
-                  <div className="qc-cert-logo">
-                    <span className="qc-cert-logo-mark">R</span>
-                    <span>Rewardology Academy</span>
-                  </div>
-                  <div className="qc-cert-ey">Certificate of Achievement</div>
-                  <h1 className="qc-cert-h1">This certifies that</h1>
-                  <div className="qc-cert-name-display">{certName}</div>
-                  <div className="qc-cert-sub">
-                    has demonstrated knowledge in Total Rewards
-                  </div>
-                  <div className="qc-cert-achievement">Quiz Centre Achievement</div>
-                  <div className="qc-cert-score-title">{certScoreLine}</div>
-                  <div className="qc-cert-score-sub">Quiz Completed</div>
-                  <div className="qc-cert-ft">
-                    <div>
-                      <div className="qc-cert-date-label">Date Issued</div>
-                      <div className="qc-cert-date-val">
-                        {new Date().toLocaleDateString("en-GB", {
-                          day: "numeric",
-                          month: "long",
-                          year: "numeric",
-                        })}
-                      </div>
-                    </div>
-                    <div className="qc-cert-badge">
-                      <span>🏅</span>
-                      <div>
-                        Verified Achievement
-                        <br />
-                        <span className="qc-cert-badge-org">Rewardology Academy</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </>
-          )}
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="qc-root">
       {view === "lobby" && renderLobby()}
       {view === "runner" && renderRunner()}
       {view === "results" && renderResults()}
-      {view === "certificate" && renderCertificate()}
 
       {confetti.length > 0 && (
         <div className="qc-confetti-wrap">
