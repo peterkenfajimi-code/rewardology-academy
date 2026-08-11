@@ -36,7 +36,7 @@ export function useIssuedCertificate(
           setIssued(null);
           return;
         }
-        setIssued({ id: data.id, verifyUrl: data.verifyUrl });
+        setIssued({ id: data.id, verifyUrl: data.verifyUrl, issuedAt: data.issuedAt });
       } catch {
         if (!cancelled) setError("Network error");
       } finally {
@@ -56,6 +56,7 @@ export function useIssuedCertificate(
     payload?.credentialDetail,
     payload?.scorePct,
     payload?.xpEarned,
+    payload?.completedAt,
   ]);
 
   return { issued, loading, error };

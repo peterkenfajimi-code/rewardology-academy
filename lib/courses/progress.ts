@@ -9,8 +9,12 @@ import {
 // Earned XP per lesson, keyed `${courseId}-${lessonId}` (matches the API map).
 export type LessonXpMap = Record<string, number>;
 
+// ISO timestamps for when each lesson was first completed (local cache + server sync).
+export type LessonCompletedAtMap = Record<string, string>;
+
 // v2: key bumped to clear old-curriculum progress data (pre-June 2026 rebuild)
 export const COURSE_XP_STORAGE_KEY = "ra_course_lxp_v2";
+export const COURSE_COMPLETED_AT_STORAGE_KEY = "ra_course_completed_at_v1";
 
 export function lessonKey(courseId: number, lessonId: string): string {
   return `${courseId}-${lessonId}`;
@@ -58,6 +62,74 @@ export function mergeLessonXp(map: LessonXpMap, key: string, xp: number): Lesson
   const prev = map[key] || 0;
   if (xp <= prev) return map;
   return { ...map, [key]: xp };
+}
+
+export function readLocalLessonCompletedAt(): LessonCompletedAtMap {
+  if (typeof window === "undefined") return {};
+  try {
+    const raw = window.localStorage.getItem(COURSE_COMPLETED_AT_STORAGE_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw) as LessonCompletedAtMap;
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+export function writeLocalLessonCompletedAt(map: LessonCompletedAtMap): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(COURSE_COMPLETED_AT_STORAGE_KEY, JSON.stringify(map));
+  } catch {
+    /* ignore quota / serialization errors */
+  }
+}
+
+/** Record the first completion time for a lesson (does not overwrite). */
+export function stampLessonCompletedAt(
+  map: LessonCompletedAtMap,
+  key: string
+): LessonCompletedAtMap {
+  if (map[key]) return map;
+  return { ...map, [key]: new Date().toISOString() };
+}
+
+/** Server timestamps win on conflict; local-only keys are preserved. */
+export function mergeLessonCompletedAt(
+  local: LessonCompletedAtMap,
+  server: LessonCompletedAtMap
+): LessonCompletedAtMap {
+  return { ...local, ...server };
+}
+
+/** Latest lesson completion when every lesson has XP; null if incomplete or no timestamps. */
+export function courseCompletedAt(
+  course: Course,
+  xpMap: LessonXpMap,
+  atMap: LessonCompletedAtMap
+): Date | null {
+  if (!isCourseComplete(xpMap, course)) return null;
+
+  let maxMs = 0;
+  let any = false;
+  for (const { lesson } of allLessons(course)) {
+    const iso = atMap[lessonKey(course.id, lesson.id)];
+    if (!iso) continue;
+    const ms = new Date(iso).getTime();
+    if (Number.isNaN(ms)) continue;
+    any = true;
+    if (ms > maxMs) maxMs = ms;
+  }
+
+  return any ? new Date(maxMs) : null;
+}
+
+export function formatCertDate(date: Date): string {
+  return date.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
 }
 
 /** First lesson with no earned XP, or first lesson if the course is complete. */

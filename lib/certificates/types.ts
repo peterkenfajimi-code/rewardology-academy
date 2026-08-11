@@ -21,9 +21,11 @@ export type IssueCertificatePayload = {
   credentialDetail?: string;
   scorePct?: number;
   xpEarned?: number;
+  completedAt?: string;
 };
 
 export type IssuedCertificateResponse = {
   id: string;
   verifyUrl: string;
+  issuedAt?: string;
 };

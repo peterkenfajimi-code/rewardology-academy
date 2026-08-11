@@ -44,7 +44,8 @@ create or replace function public.issue_certificate(
   p_credential_name   text,
   p_credential_detail text default null,
   p_score_pct         integer default null,
-  p_xp_earned         integer default null
+  p_xp_earned         integer default null,
+  p_issued_at         timestamptz default null
 )
 returns text
 language plpgsql
@@ -86,7 +87,7 @@ begin
     values (
       v_id, auth.uid(), p_cert_type, p_source_id, trim(p_recipient_name),
       trim(p_credential_name), nullif(trim(p_credential_detail), ''),
-      p_score_pct, p_xp_earned, now()
+      p_score_pct, p_xp_earned, coalesce(p_issued_at, now())
     );
   else
     update public.issued_certificates set
@@ -95,7 +96,7 @@ begin
       credential_detail   = nullif(trim(p_credential_detail), ''),
       score_pct         = coalesce(p_score_pct, score_pct),
       xp_earned         = coalesce(p_xp_earned, xp_earned),
-      issued_at         = now()
+      issued_at         = coalesce(p_issued_at, issued_at)
     where id = v_id;
   end if;
 
@@ -137,5 +138,5 @@ begin
 end;
 $$;
 
-grant execute on function public.issue_certificate(text, text, text, text, text, integer, integer) to authenticated;
+grant execute on function public.issue_certificate(text, text, text, text, text, integer, integer, timestamptz) to authenticated;
 grant execute on function public.get_public_certificate(text) to anon, authenticated;

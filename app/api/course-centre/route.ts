@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/env";
 import { findLesson } from "@/lib/courses/courseData";
-import { lessonKey, type LessonXpMap } from "@/lib/courses/progress";
+import { lessonKey, type LessonCompletedAtMap, type LessonXpMap } from "@/lib/courses/progress";
 
 type ProgressRow = {
   course_id: number;
@@ -19,7 +19,24 @@ function rowsToMap(rows: ProgressRow[] | null): LessonXpMap {
   return map;
 }
 
-const UNAUTH = NextResponse.json({ authenticated: false, lxp: {} });
+function rowsToCompletedMap(rows: ProgressRow[] | null): LessonCompletedAtMap {
+  const map: LessonCompletedAtMap = {};
+  for (const r of rows ?? []) {
+    if (r.xp > 0 && r.updated_at) {
+      map[lessonKey(r.course_id, r.lesson_id)] = r.updated_at;
+    }
+  }
+  return map;
+}
+
+function progressPayload(rows: ProgressRow[] | null) {
+  return {
+    lxp: rowsToMap(rows),
+    lcompleted: rowsToCompletedMap(rows),
+  };
+}
+
+const UNAUTH = NextResponse.json({ authenticated: false, lxp: {}, lcompleted: {} });
 
 // ── Load the signed-in user's course XP (falls back to unauthenticated) ──
 export async function GET() {
@@ -41,7 +58,7 @@ export async function GET() {
 
     return NextResponse.json({
       authenticated: true,
-      lxp: rowsToMap(data as ProgressRow[]),
+      ...progressPayload(data as ProgressRow[]),
     });
   } catch {
     return UNAUTH;
@@ -67,7 +84,7 @@ export async function DELETE() {
 
     await supabase.from("course_progress").delete().eq("user_id", user.id);
 
-    return NextResponse.json({ authenticated: true, lxp: {} });
+    return NextResponse.json({ authenticated: true, lxp: {}, lcompleted: {} });
   } catch {
     return NextResponse.json({ error: "Unexpected error" }, { status: 500 });
   }
@@ -116,7 +133,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({
       authenticated: true,
-      lxp: rowsToMap(data as ProgressRow[]),
+      ...progressPayload(data as ProgressRow[]),
     });
   } catch {
     return NextResponse.json({ error: "Unexpected error" }, { status: 500 });

@@ -17,15 +17,22 @@ import { lessonPlainText } from "@/lib/courses/lessonText";
 import { getEssentialById } from "@/lib/articles/essentials";
 import { BrowserVoiceBar } from "@/components/tts/BrowserVoiceBar";
 import {
+  courseCompletedAt,
   courseXp,
+  formatCertDate,
   isCourseComplete,
   lessonKey,
   MAX_COURSE_XP,
+  mergeLessonCompletedAt,
   mergeLessonXp,
   nextLessonForCourse,
   readLocalCourseXp,
+  readLocalLessonCompletedAt,
+  stampLessonCompletedAt,
   totalCourseXp,
   writeLocalCourseXp,
+  writeLocalLessonCompletedAt,
+  type LessonCompletedAtMap,
   type LessonXpMap,
 } from "@/lib/courses/progress";
 import { useAuth } from "@/components/auth/AuthProvider";
@@ -71,6 +78,7 @@ export function CourseCentre() {
 
   const [view, setView] = useState<View>("lobby");
   const [lxp, setLxp] = useState<LessonXpMap>({});
+  const [lcompleted, setLcompleted] = useState<LessonCompletedAtMap>({});
   const [synced, setSynced] = useState(false);
   const [progressReady, setProgressReady] = useState(false);
 
@@ -125,7 +133,11 @@ export function CourseCentre() {
     (async () => {
       try {
         const res = await fetch("/api/course-centre", { cache: "no-store" });
-        const data = (await res.json()) as { authenticated: boolean; lxp: LessonXpMap };
+        const data = (await res.json()) as {
+          authenticated: boolean;
+          lxp: LessonXpMap;
+          lcompleted?: LessonCompletedAtMap;
+        };
         if (cancelled) return;
         if (data.authenticated) {
           setSynced(true);
@@ -133,7 +145,9 @@ export function CourseCentre() {
           // Reconcile: upload any lessons that exist in localStorage but not on the server.
           // This recovers progress earned while offline or before sign-in.
           const serverLxp: LessonXpMap = data.lxp ?? {};
+          const serverCompleted: LessonCompletedAtMap = data.lcompleted ?? {};
           const localLxp = readLocalCourseXp();
+          const localCompleted = readLocalLessonCompletedAt();
           const unsynced = Object.entries(localLxp).filter(
             ([k, xp]) => xp > 0 && (serverLxp[k] ?? 0) === 0
           );
@@ -141,6 +155,7 @@ export function CourseCentre() {
           if (unsynced.length > 0 && !cancelled) {
             // Upload each unsynced lesson; use the final refreshed lxp from the last call.
             let merged: LessonXpMap = serverLxp;
+            let mergedCompleted = mergeLessonCompletedAt(localCompleted, serverCompleted);
             for (const [key, xp] of unsynced) {
               const [courseIdStr, ...rest] = key.split("-");
               const lessonId = rest.join("-");
@@ -150,9 +165,17 @@ export function CourseCentre() {
                   headers: { "Content-Type": "application/json" },
                   body: JSON.stringify({ courseId: Number(courseIdStr), lessonId, xp }),
                 });
-                const syncData = (await syncRes.json()) as { authenticated: boolean; lxp: LessonXpMap };
+                const syncData = (await syncRes.json()) as {
+                  authenticated: boolean;
+                  lxp: LessonXpMap;
+                  lcompleted?: LessonCompletedAtMap;
+                };
                 if (syncData.authenticated && syncData.lxp) {
                   merged = syncData.lxp;
+                  mergedCompleted = mergeLessonCompletedAt(
+                    mergedCompleted,
+                    syncData.lcompleted ?? {}
+                  );
                 }
               } catch {
                 // Keep the merged map so far; don't abort the rest.
@@ -160,12 +183,17 @@ export function CourseCentre() {
             }
             if (!cancelled) {
               setLxp(merged);
+              setLcompleted(mergedCompleted);
               writeLocalCourseXp(merged);
+              writeLocalLessonCompletedAt(mergedCompleted);
             }
           } else {
+            const mergedCompleted = mergeLessonCompletedAt(localCompleted, serverCompleted);
             if (!cancelled) {
               setLxp(serverLxp);
+              setLcompleted(mergedCompleted);
               writeLocalCourseXp(serverLxp);
+              writeLocalLessonCompletedAt(mergedCompleted);
             }
           }
 
@@ -178,6 +206,7 @@ export function CourseCentre() {
       if (!cancelled) {
         setSynced(false);
         setLxp(readLocalCourseXp());
+        setLcompleted(readLocalLessonCompletedAt());
         setProgressReady(true);
       }
     })();
@@ -275,6 +304,13 @@ export function CourseCentre() {
       const key = lessonKey(courseId, lessonId);
       setLxp((prev) => {
         const next = mergeLessonXp(prev, key, xp);
+        if (next !== prev) {
+          setLcompleted((prevAt) => {
+            const nextAt = stampLessonCompletedAt(prevAt, key);
+            writeLocalLessonCompletedAt(nextAt);
+            return nextAt;
+          });
+        }
         writeLocalCourseXp(next);
         dispatchXpUpdated();
         return next;
@@ -287,10 +323,21 @@ export function CourseCentre() {
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ courseId, lessonId, xp }),
             });
-            const data = (await res.json()) as { authenticated: boolean; lxp: LessonXpMap };
+            const data = (await res.json()) as {
+              authenticated: boolean;
+              lxp: LessonXpMap;
+              lcompleted?: LessonCompletedAtMap;
+            };
             if (data.authenticated && data.lxp) {
               setLxp(data.lxp);
               writeLocalCourseXp(data.lxp);
+              if (data.lcompleted) {
+                setLcompleted((prev) => {
+                  const next = mergeLessonCompletedAt(prev, data.lcompleted!);
+                  writeLocalLessonCompletedAt(next);
+                  return next;
+                });
+              }
             }
           } catch {
             /* keep local result if sync fails */
@@ -464,6 +511,7 @@ export function CourseCentre() {
   const certCourse = result?.course ?? activeCourse;
   const courseCertPayload = useMemo<IssueCertificatePayload | null>(() => {
     if (view !== "certificate" || !certCourse) return null;
+    const completedAt = courseCompletedAt(certCourse, lxp, lcompleted);
     return {
       certType: "course",
       sourceId: String(certCourse.id),
@@ -471,14 +519,17 @@ export function CourseCentre() {
       credentialName: certCourse.title,
       credentialDetail: certCourse.subtitle,
       xpEarned: courseXp(lxp, certCourse.id),
+      completedAt: completedAt?.toISOString(),
     };
-  }, [view, certCourse, displayName, lxp]);
+  }, [view, certCourse, displayName, lxp, lcompleted]);
 
   // ── Reset all progress ──
   function resetProgress() {
     if (!window.confirm("Reset all course progress and XP? This cannot be undone.")) return;
     setLxp({});
+    setLcompleted({});
     writeLocalCourseXp({});
+    writeLocalLessonCompletedAt({});
     // Also wipe server-side progress
     if (user) {
       fetch("/api/course-centre", { method: "DELETE" }).catch(() => {});
@@ -1450,11 +1501,8 @@ export function CourseCentre() {
     const c = result?.course ?? activeCourse;
     if (!c) return null;
     const earned = courseXp(lxp, c.id);
-    const dateStr = new Date().toLocaleDateString("en-GB", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    });
+    const completionDate = courseCompletedAt(c, lxp, lcompleted);
+    const dateStr = formatCertDate(completionDate ?? new Date());
 
     return (
       <div className="cc-view">

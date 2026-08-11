@@ -38,6 +38,7 @@ export function CertificateSharePanel({ payload, enabled, signedIn }: Props) {
         certId={issued.id}
         verifyUrl={issued.verifyUrl}
         credentialName={payload.credentialName}
+        issuedAt={issued.issuedAt}
       />
       <p className="cert-share-hint">
         Credential ID: <strong>{issued.id}</strong>
