@@ -101,14 +101,20 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 .emp-row{display:grid;gap:10px;align-items:end;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.05)}
 #toast{position:fixed;bottom:28px;right:28px;background:var(--teal);color:var(--white);padding:10px 20px;border-radius:8px;font-size:13px;font-weight:500;display:none;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.4)}
 @media print{.sidebar{display:none}.main{overflow:visible}.tool-panel{display:block!important;padding:20px}}
-@media(max-width:700px){.sidebar{position:fixed;left:-260px;top:0;height:100vh;z-index:100;transition:left .25s}.sidebar.open{left:0}.tool-panel{padding:24px 20px 48px}.grid-2,.grid-3{grid-template-columns:1fr}.menu-btn{display:flex!important}}
+body.single-tool .sidebar{display:none!important}
+body.single-tool .menu-btn{display:none!important}
+body.single-tool .main{width:100%}
+.main-brand{display:none;padding:22px 44px 18px;border-bottom:1px solid var(--rule);background:rgba(0,0,0,.2);flex-shrink:0}
+body.single-tool .main-brand{display:block}
+@media(max-width:700px){.sidebar{position:fixed;left:-260px;top:0;height:100vh;z-index:100;transition:left .25s}.sidebar.open{left:0}.tool-panel{padding:24px 20px 48px}.grid-2,.grid-3{grid-template-columns:1fr}.menu-btn{display:flex!important}body.single-tool .menu-btn{display:none!important}.main-brand{padding:18px 20px 14px}}
 .menu-btn{display:none;position:fixed;top:16px;left:16px;z-index:200;background:rgba(7,25,46,.95);border:1px solid var(--rule);border-radius:8px;width:40px;height:40px;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:var(--white)}
 </style>
 </head>
 <body>
 <div class="menu-btn" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</div>
-<div class="sidebar" id="sidebar"><div class="sb-brand"><div class="sb-mark"><div class="sb-logo">R</div><div><div class="sb-name">Rewardology</div><div class="sb-sub">Practitioner Toolkit</div></div></div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#C8963E"></div>Course 1 · Total Rewards Foundations</div><div class="sb-item" id="nav-t01" onclick="showTool('t01')" style="--active-c:var(--c1)"><span class="sb-item-icon">🎯</span>Five Pillars Diagnostic</div><div class="sb-item" id="nav-t02" onclick="showTool('t02')" style="--active-c:var(--c1)"><span class="sb-item-icon">📋</span>Total Reward Statement Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#0C6B65"></div>Course 2 · Compensation & Benefits Essentials</div><div class="sb-item" id="nav-t03" onclick="showTool('t03')" style="--active-c:var(--c2)"><span class="sb-item-icon">📐</span>Salary Range Builder</div><div class="sb-item" id="nav-t04" onclick="showTool('t04')" style="--active-c:var(--c2)"><span class="sb-item-icon">📊</span>Market Pricing Worksheet</div><div class="sb-item" id="nav-t05" onclick="showTool('t05')" style="--active-c:var(--c2)"><span class="sb-item-icon">💰</span>Benefits Budget Calculator</div><div class="sb-item" id="nav-t06" onclick="showTool('t06')" style="--active-c:var(--c2)"><span class="sb-item-icon">✅</span>Approval Matrix Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#6B4C9A"></div>Course 3 · Pay Equity & Job Evaluation</div><div class="sb-item" id="nav-t07" onclick="showTool('t07')" style="--active-c:var(--c3)"><span class="sb-item-icon">⚖️</span>Point-Factor Evaluation Scorecard</div><div class="sb-item" id="nav-t08" onclick="showTool('t08')" style="--active-c:var(--c3)"><span class="sb-item-icon">📉</span>Pay Gap Calculator</div><div class="sb-item" id="nav-t09" onclick="showTool('t09')" style="--active-c:var(--c3)"><span class="sb-item-icon">🔧</span>Remediation Budget Calculator</div><div class="sb-item" id="nav-t10" onclick="showTool('t10')" style="--active-c:var(--c3)"><span class="sb-item-icon">📋</span>Pay Equity Audit Checklist</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#B84B4B"></div>Course 4 · Pay Transparency & Communication</div><div class="sb-item" id="nav-t11" onclick="showTool('t11')" style="--active-c:var(--c4)"><span class="sb-item-icon">🔍</span>Transparency Maturity Assessment</div><div class="sb-item" id="nav-t12" onclick="showTool('t12')" style="--active-c:var(--c4)"><span class="sb-item-icon">💬</span>Manager Briefing Pack</div><div class="sb-item" id="nav-t13" onclick="showTool('t13')" style="--active-c:var(--c4)"><span class="sb-item-icon">📄</span>Total Reward Statement Template</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#3A7D44"></div>Course 5 · HR Analytics & Career Development</div><div class="sb-item" id="nav-t14" onclick="showTool('t14')" style="--active-c:var(--c5)"><span class="sb-item-icon">📈</span>Compa-Ratio Distribution Analyser</div><div class="sb-item" id="nav-t15" onclick="showTool('t15')" style="--active-c:var(--c5)"><span class="sb-item-icon">⚠️</span>Flight-Risk Scoring Tool</div><div class="sb-item" id="nav-t16" onclick="showTool('t16')" style="--active-c:var(--c5)"><span class="sb-item-icon">💹</span>Turnover Cost & ROI Calculator</div><div class="sb-item" id="nav-t17" onclick="showTool('t17')" style="--active-c:var(--c5)"><span class="sb-item-icon">🗺️</span>Career Lattice Mapping Tool</div></div></div>
+<div class="sidebar" id="sidebar"><div class="sb-brand"><div class="sb-mark"><div class="sb-logo">R</div><div><div class="sb-name">Rewardology Academy</div><div class="sb-sub">Practitioner Toolkit</div></div></div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#C8963E"></div>Course 1 · Total Rewards Foundations</div><div class="sb-item" id="nav-t01" onclick="showTool('t01')" style="--active-c:var(--c1)"><span class="sb-item-icon">🎯</span>Five Pillars Diagnostic</div><div class="sb-item" id="nav-t02" onclick="showTool('t02')" style="--active-c:var(--c1)"><span class="sb-item-icon">📋</span>Total Reward Statement Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#0C6B65"></div>Course 2 · Compensation & Benefits Essentials</div><div class="sb-item" id="nav-t03" onclick="showTool('t03')" style="--active-c:var(--c2)"><span class="sb-item-icon">📐</span>Salary Range Builder</div><div class="sb-item" id="nav-t04" onclick="showTool('t04')" style="--active-c:var(--c2)"><span class="sb-item-icon">📊</span>Market Pricing Worksheet</div><div class="sb-item" id="nav-t05" onclick="showTool('t05')" style="--active-c:var(--c2)"><span class="sb-item-icon">💰</span>Benefits Budget Calculator</div><div class="sb-item" id="nav-t06" onclick="showTool('t06')" style="--active-c:var(--c2)"><span class="sb-item-icon">✅</span>Approval Matrix Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#6B4C9A"></div>Course 3 · Pay Equity & Job Evaluation</div><div class="sb-item" id="nav-t07" onclick="showTool('t07')" style="--active-c:var(--c3)"><span class="sb-item-icon">⚖️</span>Point-Factor Evaluation Scorecard</div><div class="sb-item" id="nav-t08" onclick="showTool('t08')" style="--active-c:var(--c3)"><span class="sb-item-icon">📉</span>Pay Gap Calculator</div><div class="sb-item" id="nav-t09" onclick="showTool('t09')" style="--active-c:var(--c3)"><span class="sb-item-icon">🔧</span>Remediation Budget Calculator</div><div class="sb-item" id="nav-t10" onclick="showTool('t10')" style="--active-c:var(--c3)"><span class="sb-item-icon">📋</span>Pay Equity Audit Checklist</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#B84B4B"></div>Course 4 · Pay Transparency & Communication</div><div class="sb-item" id="nav-t11" onclick="showTool('t11')" style="--active-c:var(--c4)"><span class="sb-item-icon">🔍</span>Transparency Maturity Assessment</div><div class="sb-item" id="nav-t12" onclick="showTool('t12')" style="--active-c:var(--c4)"><span class="sb-item-icon">💬</span>Manager Briefing Pack</div><div class="sb-item" id="nav-t13" onclick="showTool('t13')" style="--active-c:var(--c4)"><span class="sb-item-icon">📄</span>Total Reward Statement Template</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#3A7D44"></div>Course 5 · HR Analytics & Career Development</div><div class="sb-item" id="nav-t14" onclick="showTool('t14')" style="--active-c:var(--c5)"><span class="sb-item-icon">📈</span>Compa-Ratio Distribution Analyser</div><div class="sb-item" id="nav-t15" onclick="showTool('t15')" style="--active-c:var(--c5)"><span class="sb-item-icon">⚠️</span>Flight-Risk Scoring Tool</div><div class="sb-item" id="nav-t16" onclick="showTool('t16')" style="--active-c:var(--c5)"><span class="sb-item-icon">💹</span>Turnover Cost & ROI Calculator</div><div class="sb-item" id="nav-t17" onclick="showTool('t17')" style="--active-c:var(--c5)"><span class="sb-item-icon">🗺️</span>Career Lattice Mapping Tool</div></div></div>
 <div class="main" id="main">
+<div class="main-brand" id="main-brand" aria-hidden="true"><div class="sb-mark"><div class="sb-logo">R</div><div><div class="sb-name">Rewardology Academy</div><div class="sb-sub">Practitioner Toolkit</div></div></div></div>
 <div class="tool-panel" id="panel-t01" style="--active-c:var(--c1)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c1)">Course 1 · Total Rewards Foundations</div><div class="tool-title">Five Pillars Diagnostic</div><div class="tool-desc">Score each pillar 1–5 using real data from exit interviews, engagement surveys, and turnover reports. The tool identifies your weakest pillar and recommends where to focus investment first.</div></div>
 <div class="section"><div class="section-title">Rate each pillar</div>
 <div class="slider-row"><div class="slider-label">Compensation</div><input type="range" min="1" max="5" value="3" id="p1" oninput="calcPillars()"><div class="slider-val" id="v1">3</div></div>
@@ -481,11 +487,15 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <div id="toast"></div>
 <script>
 const ACTIVE_COLORS={t01:'#C8963E',t02:'#C8963E',t03:'#0C6B65',t04:'#0C6B65',t05:'#0C6B65',t06:'#0C6B65',t07:'#6B4C9A',t08:'#6B4C9A',t09:'#6B4C9A',t10:'#6B4C9A',t11:'#B84B4B',t12:'#B84B4B',t13:'#B84B4B',t14:'#3A7D44',t15:'#3A7D44',t16:'#3A7D44',t17:'#3A7D44'};
+let lockedTool=null;
 function showTool(id){
   document.querySelectorAll('.tool-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.sb-item').forEach(n=>n.classList.remove('active'));
-  document.getElementById('panel-'+id).classList.add('active');
-  document.getElementById('nav-'+id).classList.add('active');
+  const panel=document.getElementById('panel-'+id);
+  if(!panel)return;
+  panel.classList.add('active');
+  const nav=document.getElementById('nav-'+id);
+  if(nav)nav.classList.add('active');
   const c=ACTIVE_COLORS[id]||'#C8963E';
   document.documentElement.style.setProperty('--active-c',c);
   window.scrollTo(0,0);
@@ -1063,9 +1073,14 @@ function calcCL(){
 }
 
 window.onload=()=>{
-  // Hash navigation — open specific tool from URL e.g. toolkit.html#t03
-  const hash = window.location.hash.replace('#','');
-  const startTool = hash && document.getElementById('panel-'+hash) ? hash : 't01';
+  const hash=window.location.hash.replace('#','');
+  const startTool=hash&&document.getElementById('panel-'+hash)?hash:'t01';
+  if(hash&&document.getElementById('panel-'+hash)){
+    lockedTool=hash;
+    document.body.classList.add('single-tool');
+    const brand=document.getElementById('main-brand');
+    if(brand)brand.removeAttribute('aria-hidden');
+  }
   showTool(startTool);
   calcPillars();
   initMPRows();
@@ -1082,6 +1097,13 @@ window.onload=()=>{
   document.getElementById('ck-date').value=new Date().toISOString().split('T')[0];
   calcAM();
 };
+window.addEventListener('hashchange',()=>{
+  if(!lockedTool)return;
+  if(window.location.hash.replace('#','')!==lockedTool){
+    history.replaceState(null,'','#'+lockedTool);
+  }
+  showTool(lockedTool);
+});
 document.addEventListener('click',e=>{if(e.target.classList.contains('menu-btn')||document.getElementById('sidebar').contains(e.target))return;if(window.innerWidth<700)document.getElementById('sidebar').classList.remove('open');});
 </script>
 </body>
