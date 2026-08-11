@@ -1,0 +1,186 @@
+.repo-admin-shell {
+  --navy: #07192e;
+  --teal: #0c6b65;
+  --gold: #c8963e;
+  --paper: #f7f5f0;
+  --ink: #1a1a1a;
+  --ink2: #555;
+  --rule: rgba(255, 255, 255, 0.12);
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--navy) 0%, #0c2340 100%);
+  color: #fff;
+  font-family: var(--hsans, "DM Sans", system-ui, sans-serif);
+}
+
+.repo-admin-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+.repo-admin-root {
+  display: grid;
+  gap: 1rem;
+}
+
+.repo-admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.repo-admin-header h1 {
+  font-family: var(--hserif, Georgia, serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin: 0.2rem 0 0;
+}
+
+.repo-admin-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  color: var(--gold);
+  margin: 0;
+}
+
+.repo-admin-tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.repo-admin-tab {
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: #fff;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.repo-admin-tab.active {
+  background: rgba(12, 107, 101, 0.35);
+  border-color: rgba(12, 107, 101, 0.8);
+}
+
+.repo-admin-card,
+.repo-admin-login {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 1.1rem 1.2rem;
+}
+
+.repo-admin-card h2,
+.repo-admin-card h3,
+.repo-admin-login h1 {
+  font-family: var(--hserif, Georgia, serif);
+  margin: 0 0 0.75rem;
+}
+
+.repo-admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.repo-admin-grid label,
+.repo-admin-login label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.repo-admin-grid input,
+.repo-admin-grid select,
+.repo-admin-grid textarea,
+.repo-admin-login input,
+.repo-admin-textarea {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  padding: 0.55rem 0.65rem;
+  font: inherit;
+}
+
+.repo-admin-textarea {
+  margin-bottom: 0.75rem;
+  resize: vertical;
+}
+
+.repo-admin-btn {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  font: inherit;
+}
+
+.repo-admin-btn-primary {
+  background: var(--teal);
+  border-color: var(--teal);
+}
+
+.repo-admin-btn-ghost {
+  background: transparent;
+}
+
+.repo-admin-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.repo-admin-muted {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.repo-admin-alert {
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  background: rgba(12, 107, 101, 0.2);
+  border: 1px solid rgba(12, 107, 101, 0.45);
+}
+
+.repo-admin-alert.error {
+  background: rgba(180, 50, 50, 0.18);
+  border-color: rgba(248, 113, 113, 0.45);
+}
+
+.repo-admin-table-wrap {
+  overflow: auto;
+}
+
+.repo-admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.repo-admin-table th,
+.repo-admin-table td {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.55rem 0.35rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.repo-admin-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+}
+
+.repo-admin-login {
+  max-width: 420px;
+  margin: 4rem auto 0;
+  display: grid;
+  gap: 0.75rem;
+}

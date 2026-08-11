@@ -1,0 +1,98 @@
+.benefits-repo {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 0 3rem;
+}
+
+.benefits-repo-hero h1 {
+  font-family: var(--hserif, Georgia, serif);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin: 0.35rem 0 0.75rem;
+}
+
+.benefits-repo-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  color: var(--gold, #c8963e);
+}
+
+.benefits-repo-hero p {
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 62ch;
+}
+
+.benefits-repo-notice {
+  margin: 1rem 0;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(200, 150, 62, 0.35);
+  background: rgba(200, 150, 62, 0.08);
+}
+
+.benefits-repo-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0 1.5rem;
+}
+
+.benefits-repo-filters label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+}
+
+.benefits-repo-filters select,
+.benefits-repo-filters input {
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.2);
+  color: inherit;
+  padding: 0.55rem 0.65rem;
+}
+
+.benefits-repo-search {
+  grid-column: 1 / -1;
+}
+
+.benefits-repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.85rem;
+}
+
+.benefits-repo-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.benefits-repo-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.benefits-repo-field {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.benefits-repo-value {
+  font-size: 1.05rem;
+  margin: 0.35rem 0;
+}
+
+.benefits-repo-meta,
+.benefits-repo-source,
+.benefits-repo-muted {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.benefits-repo-source a {
+  color: var(--teal2, #0e8a82);
+}

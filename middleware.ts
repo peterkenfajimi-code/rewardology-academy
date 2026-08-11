@@ -5,7 +5,22 @@ import {
   isProtectedPath,
   safeNextPath,
 } from "@/lib/auth/routes";
+import { isRepositoryAdminAuthed } from "@/lib/auth/repository-admin";
 import { FAVICON_SVG } from "@/lib/brand/favicon";
+
+function isRepositoryAdminPath(pathname: string) {
+  return (
+    pathname.startsWith("/repository-admin") ||
+    pathname.startsWith("/api/repository-admin")
+  );
+}
+
+function isRepositoryAdminLoginPath(pathname: string) {
+  return (
+    pathname === "/repository-admin/login" ||
+    pathname === "/api/repository-admin/login"
+  );
+}
 
 function isFaviconPath(pathname: string) {
   return (
@@ -27,6 +42,19 @@ export async function middleware(req: NextRequest) {
         "Cache-Control": "public, max-age=86400",
       },
     });
+  }
+
+  if (isRepositoryAdminPath(pathname) && !isRepositoryAdminLoginPath(pathname)) {
+    if (!isRepositoryAdminAuthed(req)) {
+      if (pathname.startsWith("/api/")) {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      }
+      const loginUrl = req.nextUrl.clone();
+      loginUrl.pathname = "/repository-admin/login";
+      loginUrl.search = "";
+      return NextResponse.redirect(loginUrl);
+    }
+    return NextResponse.next({ request: req });
   }
 
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -91,5 +119,7 @@ export const config = {
     "/api/quiz-centre/:path*",
     "/login",
     "/signup",
+    "/repository-admin/:path*",
+    "/api/repository-admin/:path*",
   ],
 };

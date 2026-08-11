@@ -23,6 +23,7 @@
     "apply:testimonials": "node scripts/apply-testimonials.mjs",
     "apply:user-locations": "node scripts/apply-user-locations.mjs",
     "apply:certificates": "node scripts/apply-certificates.mjs",
+    "apply:benefits-repository": "node scripts/apply-benefits-repository-schema.mjs",
     "test:rss": "node scripts/test-rss-feeds.mjs"
   },
   "dependencies": {

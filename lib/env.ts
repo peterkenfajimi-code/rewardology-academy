@@ -22,3 +22,23 @@ export function isGoogleOAuthEnabled() {
 export function isResendApiKeyConfigured() {
   return Boolean(process.env.RESEND_API_KEY?.trim());
 }
+
+/** Africa Benefits Repository — separate Supabase project (never Academy prod). */
+export function isRepositorySupabaseConfigured() {
+  return Boolean(
+    process.env.NEXT_PUBLIC_REPOSITORY_SUPABASE_URL &&
+      process.env.REPOSITORY_SUPABASE_SERVICE_KEY
+  );
+}
+
+export function isRepositoryAdminConfigured() {
+  return Boolean(
+    process.env.REPOSITORY_ADMIN_USERNAME?.trim() &&
+      process.env.REPOSITORY_ADMIN_PASSWORD?.trim() &&
+      process.env.REPOSITORY_ADMIN_SESSION_TOKEN?.trim()
+  );
+}
+
+export function isAnthropicConfigured() {
+  return Boolean(process.env.ANTHROPIC_API_KEY?.trim());
+}
