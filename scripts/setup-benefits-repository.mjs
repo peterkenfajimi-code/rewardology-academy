@@ -230,14 +230,26 @@ async function main() {
     REPOSITORY_ADMIN_SESSION_TOKEN: sessionToken,
   };
 
+  const netlifyVars = { ...repositoryVars };
+  if (env.ANTHROPIC_API_KEY?.trim()) {
+    netlifyVars.ANTHROPIC_API_KEY = env.ANTHROPIC_API_KEY.trim();
+  }
+
   upsertEnvLocal(repositoryVars);
   console.log("\nUpdated .env.local with repository credentials.");
   console.log(`Admin username: ${adminUser}`);
   console.log("Admin password: see REPOSITORY_ADMIN_PASSWORD in .env.local");
 
+  if (!env.ANTHROPIC_API_KEY?.trim()) {
+    console.warn(
+      "\nANTHROPIC_API_KEY is not set — add it to .env.local for AI extraction in /repository-admin."
+    );
+    console.warn("Get a key at https://console.anthropic.com/settings/keys");
+  }
+
   await applySchema(ref);
   try {
-    await syncNetlify(repositoryVars);
+    await syncNetlify({ ...repositoryVars, ...netlifyVars });
   } catch (err) {
     console.warn("\nNetlify sync skipped or failed:", err instanceof Error ? err.message : err);
     console.warn("Add NETLIFY_AUTH_TOKEN to .env.local and re-run setup, or set vars manually in Netlify.");

@@ -418,7 +418,19 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
           <section className="repo-admin-card">
             <h2>3. Extract from source text</h2>
             {!anthropicConfigured && (
-              <p className="repo-admin-alert error">ANTHROPIC_API_KEY is not configured — extraction disabled.</p>
+              <p className="repo-admin-alert error">
+                AI extraction needs <code>ANTHROPIC_API_KEY</code> in{" "}
+                <code>.env.local</code> (local) and Netlify env vars (deploy preview). Create a
+                key at{" "}
+                <a
+                  href="https://console.anthropic.com/settings/keys"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  console.anthropic.com
+                </a>
+                , then restart <code>npm run dev</code>.
+              </p>
             )}
             <textarea
               className="repo-admin-textarea"

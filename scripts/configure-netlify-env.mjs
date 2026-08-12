@@ -69,6 +69,25 @@ if (env.NEXT_PUBLIC_ADMIN_EMAIL) {
   newVars.NEXT_PUBLIC_ADMIN_EMAIL = env.ADMIN_EMAIL;
 }
 
+// Africa Benefits Repository (separate Supabase project)
+const repositoryKeys = [
+  "NEXT_PUBLIC_REPOSITORY_SUPABASE_URL",
+  "NEXT_PUBLIC_REPOSITORY_SUPABASE_ANON_KEY",
+  "REPOSITORY_SUPABASE_SERVICE_KEY",
+  "REPOSITORY_SUPABASE_PROJECT_REF",
+  "REPOSITORY_ADMIN_USERNAME",
+  "REPOSITORY_ADMIN_PASSWORD",
+  "REPOSITORY_ADMIN_SESSION_TOKEN",
+];
+for (const key of repositoryKeys) {
+  if (env[key]) newVars[key] = env[key];
+}
+
+// Server-only — AI extraction in /repository-admin (never NEXT_PUBLIC_*)
+if (env.ANTHROPIC_API_KEY) {
+  newVars.ANTHROPIC_API_KEY = env.ANTHROPIC_API_KEY;
+}
+
 const headers = {
   Authorization: `Bearer ${token}`,
   "Content-Type": "application/json",
