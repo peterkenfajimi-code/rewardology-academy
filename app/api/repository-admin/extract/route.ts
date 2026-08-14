@@ -67,6 +67,9 @@ export async function POST(req: NextRequest) {
 
   const prompt = buildExtractionPrompt(companyName, countryModule, rawText);
 
+  const model =
+    process.env.ANTHROPIC_MODEL?.trim() || "claude-sonnet-4-5-20250929";
+
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: {
@@ -75,22 +78,20 @@ export async function POST(req: NextRequest) {
       "anthropic-version": "2023-06-01",
     },
     body: JSON.stringify({
-      model: "claude-sonnet-4-20250514",
+      model,
       max_tokens: 4096,
       messages: [{ role: "user", content: prompt }],
     }),
   });
 
   const payload = (await res.json()) as {
-    error?: { message?: string };
+    error?: { type?: string; message?: string };
     content?: { type: string; text?: string }[];
   };
 
   if (!res.ok) {
-    return NextResponse.json(
-      { error: payload.error?.message ?? "Anthropic API error" },
-      { status: 502 }
-    );
+    const detail = payload.error?.message ?? payload.error?.type ?? "Anthropic API error";
+    return NextResponse.json({ error: detail }, { status: 502 });
   }
 
   const textBlock = payload.content?.find((c) => c.type === "text");
