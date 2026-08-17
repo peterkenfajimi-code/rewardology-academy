@@ -278,7 +278,7 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
           className={tab === "automation" ? "repo-admin-tab active" : "repo-admin-tab"}
           onClick={() => setTab("automation")}
         >
-          NGX automation
+          Disclosure automation
         </button>
       </div>
 

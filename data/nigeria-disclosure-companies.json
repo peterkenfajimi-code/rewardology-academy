@@ -398,5 +398,237 @@
     "sector": "Industrial Goods",
     "website": "https://www.dunlopnigeria.com",
     "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "MTNN",
+    "name": "MTN Nigeria Communications Plc",
+    "exchange": "FMDQ",
+    "sector": "ICT",
+    "website": "https://www.mtn.ng",
+    "fmdq_issuer_path": "mtn-nigeria-communications-plc-2"
+  },
+  {
+    "ticker": "FCMB",
+    "name": "FCMB Group Plc",
+    "exchange": "FMDQ",
+    "sector": "Financial Services",
+    "website": "https://www.fcmbgroup.com",
+    "fmdq_issuer_path": "fcmb-group-plc"
+  },
+  {
+    "ticker": "STANBIC",
+    "name": "Stanbic IBTC Holdings Plc",
+    "exchange": "FMDQ",
+    "sector": "Financial Services",
+    "website": "https://www.stanbicibtcbank.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "NB",
+    "name": "Nigerian Breweries Plc",
+    "exchange": "FMDQ",
+    "sector": "Consumer Goods",
+    "website": "https://www.nbplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "DANGCEM",
+    "name": "Dangote Cement Plc",
+    "exchange": "FMDQ",
+    "sector": "Industrial Goods",
+    "website": "https://www.dangotecement.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "BUAFOODS",
+    "name": "BUA Foods Plc",
+    "exchange": "FMDQ",
+    "sector": "Consumer Goods",
+    "website": "https://www.buafoods.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "UPDC",
+    "name": "UPDC Plc",
+    "exchange": "FMDQ",
+    "sector": "Real Estate",
+    "website": "https://www.updcplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "LIVINGTRUST",
+    "name": "Living Trust Mortgage Bank Plc",
+    "exchange": "FMDQ",
+    "sector": "Financial Services",
+    "website": "https://www.livingtrustmortgagebank.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "VFD",
+    "name": "VFD Group Plc",
+    "exchange": "FMDQ",
+    "sector": "Financial Services",
+    "website": "https://www.vfdgroup.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "LOTUS",
+    "name": "Lotus Halal Fixed Income Fund",
+    "exchange": "FMDQ",
+    "sector": "Financial Services",
+    "website": "https://fmdqgroup.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SEPLAT",
+    "name": "Seplat Energy Plc",
+    "exchange": "FMDQ",
+    "sector": "Oil & Gas",
+    "website": "https://www.seplatenergy.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "GEREGU",
+    "name": "Geregu Power Plc",
+    "exchange": "FMDQ",
+    "sector": "Utilities",
+    "website": "https://www.geregupower.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "TRANSCORP",
+    "name": "Transcorp Plc",
+    "exchange": "FMDQ",
+    "sector": "Conglomerates",
+    "website": "https://www.transcorpgroup.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "UACN",
+    "name": "UAC of Nigeria Plc",
+    "exchange": "FMDQ",
+    "sector": "Conglomerates",
+    "website": "https://www.uacnplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "CUSTODIAN",
+    "name": "Custodian Investment Plc",
+    "exchange": "FMDQ",
+    "sector": "Financial Services",
+    "website": "https://www.custodianplc.com.ng",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDFCWAMCO",
+    "name": "FrieslandCampina WAMCO Nigeria Plc",
+    "exchange": "NASD",
+    "sector": "Consumer Goods",
+    "website": "https://www.frieslandcampina.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDCSCSPLC",
+    "name": "Central Securities Clearing System Plc",
+    "exchange": "NASD",
+    "sector": "Financial Services",
+    "website": "https://www.cscsgroup.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDNIPCOPLC",
+    "name": "NIPCO Plc",
+    "exchange": "NASD",
+    "sector": "Oil & Gas",
+    "website": "https://www.nipcoplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDAFRILAND",
+    "name": "Afriland Properties Plc",
+    "exchange": "NASD",
+    "sector": "Real Estate",
+    "website": "https://www.afrilandproperties.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDAGMBANK",
+    "name": "AG Mortgage Bank Plc",
+    "exchange": "NASD",
+    "sector": "Financial Services",
+    "website": "https://www.agmortgagebankplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDUBNPROP",
+    "name": "UBN Property Company Plc",
+    "exchange": "NASD",
+    "sector": "Real Estate",
+    "website": "https://www.ubnproperties.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDPURPLERE",
+    "name": "Purple Real Estate Income Plc",
+    "exchange": "NASD",
+    "sector": "Real Estate",
+    "website": "https://www.purplerealestate.com.ng",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDCAPHOTEL",
+    "name": "Capital Hotels Plc",
+    "exchange": "NASD",
+    "sector": "Hospitality",
+    "website": "https://www.capitalhotelsplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDOKITIPUPA",
+    "name": "Okitipupa Oil Palm Plc",
+    "exchange": "NASD",
+    "sector": "Agriculture",
+    "website": "https://www.okomupalm.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDINFRACREDT",
+    "name": "Infrastructure Credit Guarantee Company",
+    "exchange": "NASD",
+    "sector": "Financial Services",
+    "website": "https://www.infra-credit.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDMRS",
+    "name": "MRS Oil Nigeria Plc",
+    "exchange": "NASD",
+    "sector": "Oil & Gas",
+    "website": "https://www.mrsoil.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDACCESS",
+    "name": "Access Bank Plc",
+    "exchange": "NASD",
+    "sector": "Financial Services",
+    "website": "https://www.accessbankplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SD11PLC",
+    "name": "11 Plc",
+    "exchange": "NASD",
+    "sector": "Oil & Gas",
+    "website": "https://www.11plc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDNASDPLC",
+    "name": "NASD Plc",
+    "exchange": "NASD",
+    "sector": "Financial Services",
+    "website": "https://nasdng.com",
+    "fmdq_issuer_path": null
   }
 ]

@@ -28,6 +28,8 @@ export type PublishStatus = "published" | "pending_verification" | "superseded" 
 
 export type CompanySizeBand = "1-50" | "51-500" | "501-5000" | "5000+";
 
+export type DisclosureExchange = "NGX" | "FMDQ" | "NASD";
+
 export type ListedStatus = "listed" | "private" | "multinational_subsidiary";
 
 export type CountryModule = {
@@ -50,6 +52,7 @@ export type Company = {
   company_size_band: CompanySizeBand | null;
   listed_status: ListedStatus | null;
   exchange_ticker: string | null;
+  listing_exchange: DisclosureExchange | null;
   created_at: string;
   last_reviewed_at: string | null;
 };

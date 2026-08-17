@@ -45,34 +45,8 @@ Then run: npm run apply:benefits-repository
   process.exit(1);
 }
 
-const sqlPath = path.join(root, "supabase", "benefits-repository", "schema.sql");
-const migrationPath = path.join(root, "supabase", "benefits-repository", "migrations", "002_sustainability_and_batch.sql");
-const query = fs.readFileSync(sqlPath, "utf8");
-const migration = fs.existsSync(migrationPath) ? fs.readFileSync(migrationPath, "utf8") : "";
-
-const res = await fetch(
-  `https://api.supabase.com/v1/projects/${projectRef}/database/query`,
-  {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ query }),
-  }
-);
-
-const body = await res.text();
-if (!res.ok) {
-  console.error("Benefits repository schema failed:", res.status, body);
-  process.exit(1);
-}
-
-console.log("Benefits repository schema applied successfully.");
-console.log(body.slice(0, 500));
-
-if (migration) {
-  const migRes = await fetch(
+async function runQuery(label, query, { warnOnFail = false } = {}) {
+  const res = await fetch(
     `https://api.supabase.com/v1/projects/${projectRef}/database/query`,
     {
       method: "POST",
@@ -80,16 +54,36 @@ if (migration) {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query: migration }),
+      body: JSON.stringify({ query }),
     }
   );
-  const migBody = await migRes.text();
-  if (!migRes.ok) {
-    console.warn("Migration 002 warning (may already be applied):", migRes.status, migBody.slice(0, 300));
-  } else {
-    console.log("Migration 002 (sustainability + batch) applied.");
+  const body = await res.text();
+  if (!res.ok) {
+    if (warnOnFail) {
+      console.warn(`${label} warning (may already be applied):`, res.status, body.slice(0, 300));
+      return false;
+    }
+    console.error(`${label} failed:`, res.status, body);
+    process.exit(1);
   }
+  console.log(`${label} applied.`);
+  return true;
 }
+
+const sqlPath = path.join(root, "supabase", "benefits-repository", "schema.sql");
+const migrationPath = path.join(root, "supabase", "benefits-repository", "migrations", "002_sustainability_and_batch.sql");
+const migration003Path = path.join(root, "supabase", "benefits-repository", "migrations", "003_fmdq_nasd_disclosure_exchanges.sql");
+const query = fs.readFileSync(sqlPath, "utf8");
+const migration = fs.existsSync(migrationPath) ? fs.readFileSync(migrationPath, "utf8") : "";
+const migration003 = fs.existsSync(migration003Path) ? fs.readFileSync(migration003Path, "utf8") : "";
+
+// Migrations first — existing DBs may lack columns referenced in schema.sql inserts.
+if (migration) await runQuery("Migration 002 (sustainability + batch)", migration, { warnOnFail: true });
+if (migration003) {
+  await runQuery("Migration 003 (FMDQ/NASD disclosure exchanges)", migration003, { warnOnFail: true });
+}
+
+await runQuery("Benefits repository schema", query);
 
 const verify = await fetch(
   `https://api.supabase.com/v1/projects/${projectRef}/database/query`,
@@ -100,7 +94,8 @@ const verify = await fetch(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      query: "select count(*)::int as country_modules from country_modules;",
+      query:
+        "select country_code, listed_company_exchange, secondary_disclosure_exchanges from country_modules where country_code = 'NG';",
     }),
   }
 );
@@ -111,4 +106,4 @@ if (!verify.ok) {
   process.exit(1);
 }
 
-console.log("Verification:", verifyBody);
+console.log("Verification (NG country_module):", verifyBody);

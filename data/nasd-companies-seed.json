@@ -1,0 +1,16 @@
+[
+  { "ticker": "SDFCWAMCO", "name": "FrieslandCampina WAMCO Nigeria Plc", "exchange": "NASD", "sector": "Consumer Goods", "website": "https://www.frieslandcampina.com" },
+  { "ticker": "SDCSCSPLC", "name": "Central Securities Clearing System Plc", "exchange": "NASD", "sector": "Financial Services", "website": "https://www.cscsgroup.com" },
+  { "ticker": "SDNIPCOPLC", "name": "NIPCO Plc", "exchange": "NASD", "sector": "Oil & Gas", "website": "https://www.nipcoplc.com" },
+  { "ticker": "SDAFRILAND", "name": "Afriland Properties Plc", "exchange": "NASD", "sector": "Real Estate", "website": "https://www.afrilandproperties.com" },
+  { "ticker": "SDAGMBANK", "name": "AG Mortgage Bank Plc", "exchange": "NASD", "sector": "Financial Services", "website": "https://www.agmortgagebankplc.com" },
+  { "ticker": "SDUBNPROP", "name": "UBN Property Company Plc", "exchange": "NASD", "sector": "Real Estate", "website": "https://www.ubnproperties.com" },
+  { "ticker": "SDPURPLERE", "name": "Purple Real Estate Income Plc", "exchange": "NASD", "sector": "Real Estate", "website": "https://www.purplerealestate.com.ng" },
+  { "ticker": "SDCAPHOTEL", "name": "Capital Hotels Plc", "exchange": "NASD", "sector": "Hospitality", "website": "https://www.capitalhotelsplc.com" },
+  { "ticker": "SDOKITIPUPA", "name": "Okitipupa Oil Palm Plc", "exchange": "NASD", "sector": "Agriculture", "website": "https://www.okomupalm.com" },
+  { "ticker": "SDINFRACREDT", "name": "Infrastructure Credit Guarantee Company", "exchange": "NASD", "sector": "Financial Services", "website": "https://www.infra-credit.com" },
+  { "ticker": "SDMRS", "name": "MRS Oil Nigeria Plc", "exchange": "NASD", "sector": "Oil & Gas", "website": "https://www.mrsoil.com" },
+  { "ticker": "SDACCESS", "name": "Access Bank Plc", "exchange": "NASD", "sector": "Financial Services", "website": "https://www.accessbankplc.com" },
+  { "ticker": "SD11PLC", "name": "11 Plc", "exchange": "NASD", "sector": "Oil & Gas", "website": "https://www.11plc.com" },
+  { "ticker": "SDNASDPLC", "name": "NASD Plc", "exchange": "NASD", "sector": "Financial Services", "website": "https://nasdng.com" }
+]

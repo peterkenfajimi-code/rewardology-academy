@@ -18,6 +18,7 @@ create table if not exists country_modules (
     ('defined_contribution','defined_benefit','none_mandatory','mixed')),
   workplace_injury_body text,
   listed_company_exchange text,
+  secondary_disclosure_exchanges text[],
   listed_company_regulator text,
   labour_law_name text,
   primary_job_boards text[],
@@ -30,42 +31,42 @@ insert into country_modules (
   pension_regulator, pension_scheme_body,
   pension_statutory_employer_pct, pension_statutory_employee_pct,
   pension_scheme_law_name, pension_scheme_type,
-  workplace_injury_body, listed_company_exchange, listed_company_regulator,
+  workplace_injury_body, listed_company_exchange, secondary_disclosure_exchanges, listed_company_regulator,
   labour_law_name, primary_job_boards, notes, last_verified_date
 ) values
 ('NG','Nigeria','NGN','PenCom', null,
   10, 8, 'Pension Reform Act 2014', 'defined_contribution',
-  'NSITF','NGX','SEC Nigeria','Labour Act',
+  'NSITF','NGX',array['FMDQ','NASD'],'SEC Nigeria','Labour Act',
   array['Jobberman','MyJobMag','LinkedIn'],
-  'Reference instantiation for the schema. Group life statutory minimum: 3x annual salary.',
+  'Reference instantiation for the schema. Group life statutory minimum: 3x annual salary. Primary equity exchange: NGX. Secondary disclosure venues: FMDQ (debt/CP) and NASD (OTC equity). Commodity exchanges (NCX, AFEX) out of scope.',
   current_date),
 ('GH','Ghana','GHS','National Pensions Regulatory Authority (NPRA)','SSNIT (Tier 1)',
   5, null, 'National Pensions Act 2008 (Act 766), amended 2014 (Act 883)', 'mixed',
-  'Workmen''s Compensation (Labour Dept)','Ghana Stock Exchange (GSE)','SEC Ghana','Labour Act 2003 (Act 651)',
+  'Workmen''s Compensation (Labour Dept)','Ghana Stock Exchange (GSE)',null,'SEC Ghana','Labour Act 2003 (Act 651)',
   array['LinkedIn'],
   'Three-tier system: Tier 1 SSNIT (DB, employer-funded), Tier 2 mandatory DC (5% employer-managed), Tier 3 voluntary.',
   current_date),
 ('KE','Kenya','KES','Retirement Benefits Authority (RBA)','NSSF (Tier 1)',
   6, 6, 'NSSF Act 2013', 'mixed',
-  'Work Injury Benefits Act (WIBA) body','Nairobi Securities Exchange (NSE)','Capital Markets Authority (CMA)','Employment Act 2007',
+  'Work Injury Benefits Act (WIBA) body','Nairobi Securities Exchange (NSE)',null,'Capital Markets Authority (CMA)','Employment Act 2007',
   array['LinkedIn'],
   'Two-tier NSSF, contribution capped, contractible-out to private schemes via RBA approval.',
   current_date),
 ('ZA','South Africa','ZAR','Financial Sector Conduct Authority (FSCA)','No mandatory state scheme',
   null, null, 'Pension Funds Act', 'none_mandatory',
-  'Compensation for Occupational Injuries and Diseases Act (COIDA) body','Johannesburg Stock Exchange (JSE)','FSCA','Basic Conditions of Employment Act',
+  'Compensation for Occupational Injuries and Diseases Act (COIDA) body','Johannesburg Stock Exchange (JSE)',null,'FSCA','Basic Conditions of Employment Act',
   array['LinkedIn'],
   'STRUCTURAL OUTLIER: no statutory mandatory pension contribution.',
   current_date),
 ('EG','Egypt','EGP','National Organization for Social Insurance (NOSI)', null,
   18.75, 11, 'Social Insurance Law No. 148 of 2019', 'defined_benefit',
-  'Covered under NOSI unified scheme','Egyptian Exchange (EGX)','Financial Regulatory Authority (FRA)','Labour Law No. 12/2003',
+  'Covered under NOSI unified scheme','Egyptian Exchange (EGX)',null,'Financial Regulatory Authority (FRA)','Labour Law No. 12/2003',
   array['LinkedIn'],
   'Single consolidated scheme covering pension, sickness, disability, death, injury, and unemployment together.',
   current_date),
 ('RW','Rwanda','RWF','National Bank of Rwanda (private schemes)','Rwanda Social Security Board (RSSB)',
   8, 5, 'Law regulating labour in Rwanda; RSSB-administered', 'defined_benefit',
-  'RSSB occupational hazards branch','Rwanda Stock Exchange (RSE)','Capital Market Authority Rwanda', null,
+  'RSSB occupational hazards branch','Rwanda Stock Exchange (RSE)',null,'Capital Market Authority Rwanda', null,
   array['LinkedIn'],
   'MID-TRANSITION: rate doubled in 2025, scheduled to rise to 20% by 2030.',
   current_date)
@@ -80,6 +81,7 @@ create table if not exists companies (
   company_size_band text check (company_size_band in ('1-50','51-500','501-5000','5000+')),
   listed_status text check (listed_status in ('listed','private','multinational_subsidiary')),
   exchange_ticker text,
+  listing_exchange text check (listing_exchange is null or listing_exchange in ('NGX','FMDQ','NASD')),
   created_at timestamptz default now(),
   last_reviewed_at timestamptz
 );
@@ -133,6 +135,8 @@ create table if not exists verification_log (
 );
 
 create index if not exists idx_companies_country on companies(country);
+create index if not exists idx_companies_listing_exchange on companies(listing_exchange);
+create index if not exists idx_companies_ticker_exchange on companies(exchange_ticker, listing_exchange);
 create index if not exists idx_companies_industry on companies(industry);
 create index if not exists idx_companies_size on companies(company_size_band);
 create index if not exists idx_entries_company on benefit_entries(company_id);

@@ -1,0 +1,17 @@
+[
+  { "ticker": "MTNN", "name": "MTN Nigeria Communications Plc", "exchange": "FMDQ", "sector": "ICT", "website": "https://www.mtn.ng", "fmdq_issuer_path": "mtn-nigeria-communications-plc-2" },
+  { "ticker": "FCMB", "name": "FCMB Group Plc", "exchange": "FMDQ", "sector": "Financial Services", "website": "https://www.fcmbgroup.com", "fmdq_issuer_path": "fcmb-group-plc" },
+  { "ticker": "STANBIC", "name": "Stanbic IBTC Holdings Plc", "exchange": "FMDQ", "sector": "Financial Services", "website": "https://www.stanbicibtcbank.com" },
+  { "ticker": "NB", "name": "Nigerian Breweries Plc", "exchange": "FMDQ", "sector": "Consumer Goods", "website": "https://www.nbplc.com" },
+  { "ticker": "DANGCEM", "name": "Dangote Cement Plc", "exchange": "FMDQ", "sector": "Industrial Goods", "website": "https://www.dangotecement.com" },
+  { "ticker": "BUAFOODS", "name": "BUA Foods Plc", "exchange": "FMDQ", "sector": "Consumer Goods", "website": "https://www.buafoods.com" },
+  { "ticker": "UPDC", "name": "UPDC Plc", "exchange": "FMDQ", "sector": "Real Estate", "website": "https://www.updcplc.com" },
+  { "ticker": "LIVINGTRUST", "name": "Living Trust Mortgage Bank Plc", "exchange": "FMDQ", "sector": "Financial Services", "website": "https://www.livingtrustmortgagebank.com" },
+  { "ticker": "VFD", "name": "VFD Group Plc", "exchange": "FMDQ", "sector": "Financial Services", "website": "https://www.vfdgroup.com" },
+  { "ticker": "LOTUS", "name": "Lotus Halal Fixed Income Fund", "exchange": "FMDQ", "sector": "Financial Services", "website": "https://fmdqgroup.com" },
+  { "ticker": "SEPLAT", "name": "Seplat Energy Plc", "exchange": "FMDQ", "sector": "Oil & Gas", "website": "https://www.seplatenergy.com" },
+  { "ticker": "GEREGU", "name": "Geregu Power Plc", "exchange": "FMDQ", "sector": "Utilities", "website": "https://www.geregupower.com" },
+  { "ticker": "TRANSCORP", "name": "Transcorp Plc", "exchange": "FMDQ", "sector": "Conglomerates", "website": "https://www.transcorpgroup.com" },
+  { "ticker": "UACN", "name": "UAC of Nigeria Plc", "exchange": "FMDQ", "sector": "Conglomerates", "website": "https://www.uacnplc.com" },
+  { "ticker": "CUSTODIAN", "name": "Custodian Investment Plc", "exchange": "FMDQ", "sector": "Financial Services", "website": "https://www.custodianplc.com.ng" }
+]

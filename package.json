@@ -26,7 +26,8 @@
     "apply:benefits-repository": "node scripts/apply-benefits-repository-schema.mjs",
     "setup:benefits-repository": "node scripts/setup-benefits-repository.mjs",
     "sync:repository-netlify": "node scripts/sync-repository-netlify-env.mjs",
-    "sync:ngx-companies": "node scripts/sync-ngx-companies.mjs",
+    "sync:ngx-companies": "node scripts/sync-disclosure-companies.mjs",
+    "sync:disclosure-companies": "node scripts/sync-disclosure-companies.mjs",
     "run:benefits-repository-batch": "npx tsx scripts/run-benefits-repository-batch.ts",
     "test:rss": "node scripts/test-rss-feeds.mjs"
   },

@@ -1,10 +1,10 @@
 /**
- * Run automated NGX benefits repository batch locally.
+ * Run automated Nigeria disclosure batch locally (NGX + FMDQ + NASD).
  *
  * Usage:
  *   npx tsx scripts/run-benefits-repository-batch.ts
  *   npx tsx scripts/run-benefits-repository-batch.ts --max=5 --dry-run
- *   npx tsx scripts/run-benefits-repository-batch.ts --tickers=GTCO,DANGCEM --publish
+ *   npx tsx scripts/run-benefits-repository-batch.ts --exchanges=FMDQ,NASD --publish
  */
 import fs from "fs";
 import path from "path";
@@ -32,6 +32,7 @@ function parseArgs() {
   const config: Record<string, unknown> = {
     maxCompanies: 0,
     tickers: undefined as string[] | undefined,
+    exchanges: undefined as string[] | undefined,
     publish: false,
     dryRun: false,
     delayMs: 3000,
@@ -46,6 +47,12 @@ function parseArgs() {
     else if (arg.startsWith("--tickers=")) {
       config.tickers = arg
         .slice(10)
+        .split(",")
+        .map((t) => t.trim().toUpperCase())
+        .filter(Boolean);
+    } else if (arg.startsWith("--exchanges=")) {
+      config.exchanges = arg
+        .slice(12)
         .split(",")
         .map((t) => t.trim().toUpperCase())
         .filter(Boolean);

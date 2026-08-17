@@ -104,6 +104,6 @@ export async function POST(req: NextRequest) {
     runId,
     status: "running",
     message:
-      "Batch started. Poll GET /api/repository-admin/batch?runId=… for progress. For full NGX runs use npm run run:benefits-repository-batch locally.",
+      "Batch started. Poll GET /api/repository-admin/batch?runId=… for progress. For full NGX/FMDQ/NASD runs use npm run run:benefits-repository-batch locally.",
   });
 }

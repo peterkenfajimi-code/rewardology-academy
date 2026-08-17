@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import type { SourceType } from "@/lib/repository/types";
+import type { DisclosureExchange, SourceType } from "@/lib/repository/types";
 
 const SOURCE_TYPES: SourceType[] = [
   "annual_report",
@@ -12,6 +12,8 @@ const SOURCE_TYPES: SourceType[] = [
   "linkedin",
   "award_recognition",
 ];
+
+const EXCHANGES: DisclosureExchange[] = ["NGX", "FMDQ", "NASD"];
 
 type BatchRun = {
   run_id: string;
@@ -39,6 +41,7 @@ type Props = {
 export function RepositoryBatchPanel({ anthropicConfigured }: Props) {
   const [maxCompanies, setMaxCompanies] = useState(5);
   const [tickers, setTickers] = useState("");
+  const [exchanges, setExchanges] = useState<DisclosureExchange[]>(["NGX", "FMDQ", "NASD"]);
   const [publish, setPublish] = useState(false);
   const [dryRun, setDryRun] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -74,6 +77,12 @@ export function RepositoryBatchPanel({ anthropicConfigured }: Props) {
     return () => clearInterval(id);
   }, [activeRunId, loadRuns]);
 
+  function toggleExchange(exchange: DisclosureExchange) {
+    setExchanges((prev) =>
+      prev.includes(exchange) ? prev.filter((e) => e !== exchange) : [...prev, exchange]
+    );
+  }
+
   async function startBatch() {
     setError("");
     setMessage("");
@@ -88,6 +97,7 @@ export function RepositoryBatchPanel({ anthropicConfigured }: Props) {
             .split(",")
             .map((t) => t.trim().toUpperCase())
             .filter(Boolean),
+          exchanges: exchanges.length ? exchanges : ["NGX", "FMDQ", "NASD"],
           sourceTypes: SOURCE_TYPES,
           publish,
           dryRun,
@@ -118,13 +128,13 @@ export function RepositoryBatchPanel({ anthropicConfigured }: Props) {
 
   return (
     <section className="repo-admin-card">
-      <h2>NGX batch automation</h2>
+      <h2>Nigeria disclosure automation</h2>
       <p className="repo-admin-muted">
-        Discovers annual reports, sustainability reports, careers pages, press releases, NGX
-        filings, LinkedIn, and award pages for NGX-listed companies. Skips URLs already saved;
-        reconciliation compares and updates entries when a newer or higher-trust source differs.
-        For full market runs, use{" "}
-        <code>npm run run:benefits-repository-batch</code> locally.
+        Collects benefits data from companies with audited disclosure obligations across{" "}
+        <strong>NGX</strong> (listed equity), <strong>FMDQ</strong> (listed/quoted debt and
+        commercial paper — often private issuers), and <strong>NASD</strong> (OTC equity, NASD Blue
+        tier). Commodity exchanges (NCX, AFEX) are excluded. Skips URLs already saved;
+        reconciliation compares and updates when a newer or higher-trust source differs.
       </p>
 
       {!anthropicConfigured && (
@@ -146,12 +156,28 @@ export function RepositoryBatchPanel({ anthropicConfigured }: Props) {
         <label>
           Tickers only (optional, comma-separated)
           <input
-            placeholder="GTCO,DANGCEM,MTNN"
+            placeholder="GTCO,SDFCWAMCO,MTNN"
             value={tickers}
             onChange={(e) => setTickers(e.target.value)}
           />
         </label>
       </div>
+
+      <fieldset className="repo-admin-check-group" style={{ marginBottom: "1rem" }}>
+        <legend>Disclosure venues</legend>
+        {EXCHANGES.map((exchange) => (
+          <label key={exchange} className="repo-admin-check">
+            <input
+              type="checkbox"
+              checked={exchanges.includes(exchange)}
+              onChange={() => toggleExchange(exchange)}
+            />
+            {exchange}
+            {exchange === "FMDQ" && " — debt/CP issuers"}
+            {exchange === "NASD" && " — OTC equity (Blue tier seed)"}
+          </label>
+        ))}
+      </fieldset>
 
       <label className="repo-admin-check">
         <input type="checkbox" checked={dryRun} onChange={(e) => setDryRun(e.target.checked)} />
@@ -165,10 +191,10 @@ export function RepositoryBatchPanel({ anthropicConfigured }: Props) {
       <button
         type="button"
         className="repo-admin-btn repo-admin-btn-primary"
-        disabled={loading || !anthropicConfigured}
+        disabled={loading || !anthropicConfigured || exchanges.length === 0}
         onClick={startBatch}
       >
-        {loading ? "Starting…" : "Run NGX batch"}
+        {loading ? "Starting…" : "Run disclosure batch"}
       </button>
 
       {progress && (

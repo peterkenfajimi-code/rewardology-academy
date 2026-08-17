@@ -1,18 +1,19 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { loadDisclosureCompanies } from "@/lib/repository/disclosure-companies";
 import { extractBenefitsFromSource } from "@/lib/repository/extract-benefits";
-import { loadNgxCompanies } from "@/lib/repository/ngx-companies";
 import { saveSourceAndEntries } from "@/lib/repository/save-source";
 import {
   discoverSourcesForCompany,
   filterSourcesByTypes,
   type DiscoveredSource,
-  type NgxCompany,
+  type DisclosureCompany,
 } from "@/lib/repository/source-discovery";
-import type { CountryModule, SourceType } from "@/lib/repository/types";
+import type { CountryModule, DisclosureExchange, SourceType } from "@/lib/repository/types";
 
 export type BatchConfig = {
   maxCompanies?: number;
   tickers?: string[];
+  exchanges?: DisclosureExchange[];
   sourceTypes?: SourceType[];
   publish?: boolean;
   dryRun?: boolean;
@@ -46,31 +47,36 @@ function appendLog(log: string[], line: string) {
   log.push(`[${new Date().toISOString()}] ${line}`);
 }
 
-async function upsertNgxCompany(
+async function upsertDisclosureCompany(
   supabase: SupabaseClient,
-  ngx: NgxCompany
+  entry: DisclosureCompany
 ): Promise<{ company_id: string; name: string; country: string }> {
-  const { data: byTicker } = await supabase
+  let byTickerQuery = supabase
     .from("companies")
     .select("company_id, name, country")
-    .eq("exchange_ticker", ngx.ticker)
-    .maybeSingle();
+    .eq("exchange_ticker", entry.ticker);
 
+  if (entry.exchange) {
+    byTickerQuery = byTickerQuery.eq("listing_exchange", entry.exchange);
+  }
+
+  const { data: byTicker } = await byTickerQuery.maybeSingle();
   if (byTicker) return byTicker;
 
   const { data: byName } = await supabase
     .from("companies")
     .select("company_id, name, country")
-    .ilike("name", ngx.name)
+    .ilike("name", entry.name)
     .maybeSingle();
 
   if (byName) {
     await supabase
       .from("companies")
       .update({
-        exchange_ticker: ngx.ticker,
+        exchange_ticker: entry.ticker,
         listed_status: "listed",
-        industry: ngx.sector ?? null,
+        listing_exchange: entry.exchange,
+        industry: entry.sector ?? null,
       })
       .eq("company_id", byName.company_id);
     return byName;
@@ -79,18 +85,19 @@ async function upsertNgxCompany(
   const { data: inserted, error } = await supabase
     .from("companies")
     .insert({
-      name: ngx.name,
+      name: entry.name,
       country: "NG",
-      industry: ngx.sector ?? null,
+      industry: entry.sector ?? null,
       listed_status: "listed",
-      exchange_ticker: ngx.ticker,
+      exchange_ticker: entry.ticker,
+      listing_exchange: entry.exchange,
       last_reviewed_at: new Date().toISOString(),
     })
     .select("company_id, name, country")
     .single();
 
   if (error || !inserted) {
-    throw new Error(error?.message ?? `Could not create company ${ngx.name}`);
+    throw new Error(error?.message ?? `Could not create company ${entry.name}`);
   }
 
   return inserted;
@@ -196,7 +203,10 @@ export async function runBenefitsRepositoryBatch(
     errors: 0,
   };
 
-  let companies = await loadNgxCompanies({ preferCache: true });
+  let companies = await loadDisclosureCompanies({
+    preferCache: true,
+    exchanges: config.exchanges?.length ? config.exchanges : ["NGX", "FMDQ", "NASD"],
+  });
   if (config.tickers?.length) {
     const tickers = new Set(config.tickers.map((t) => t.toUpperCase()));
     companies = companies.filter((c) => tickers.has(c.ticker));
@@ -205,25 +215,26 @@ export async function runBenefitsRepositoryBatch(
     companies = companies.slice(0, config.maxCompanies);
   }
 
+  const exchangeLabel = (config.exchanges?.length ? config.exchanges : ["NGX", "FMDQ", "NASD"]).join("/");
   progress.companiesTotal = companies.length;
-  appendLog(log, `Starting batch for ${companies.length} NGX companies`);
+  appendLog(log, `Starting batch for ${companies.length} Nigeria disclosure companies (${exchangeLabel})`);
   await onProgress?.(progress, log.join("\n"));
 
   const delayMs = config.delayMs ?? 3000;
 
-  for (const ngx of companies) {
-    progress.currentCompany = ngx.name;
-    appendLog(log, `Company: ${ngx.name} (${ngx.ticker})`);
+  for (const entry of companies) {
+    progress.currentCompany = `${entry.name} [${entry.exchange}]`;
+    appendLog(log, `Company: ${entry.name} (${entry.ticker}, ${entry.exchange})`);
     await onProgress?.(progress, log.join("\n"));
 
     try {
-      const company = await upsertNgxCompany(supabase, ngx);
+      const company = await upsertDisclosureCompany(supabase, entry);
       const countryModule = await loadCountryModule(supabase, company.country);
 
-      let sources = await discoverSourcesForCompany(ngx);
+      let sources = await discoverSourcesForCompany(entry);
       sources = filterSourcesByTypes(sources, config.sourceTypes);
       progress.sourcesDiscovered += sources.length;
-      appendLog(log, `Discovered ${sources.length} sources for ${ngx.name}`);
+      appendLog(log, `Discovered ${sources.length} sources for ${entry.name}`);
       await onProgress?.(progress, log.join("\n"));
 
       for (const source of sources) {
@@ -242,7 +253,7 @@ export async function runBenefitsRepositoryBatch(
     } catch (e) {
       progress.errors += 1;
       const message = e instanceof Error ? e.message : "Unknown error";
-      appendLog(log, `ERROR company ${ngx.name}: ${message}`);
+      appendLog(log, `ERROR company ${entry.name}: ${message}`);
       await onProgress?.(progress, log.join("\n"));
     }
 
