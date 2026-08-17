@@ -10,6 +10,8 @@ import { extractTextFromPdf } from "@/lib/repository/pdf-text";
 import type { CountryModule, ExtractedEntry } from "@/lib/repository/types";
 import { createRepositoryAdminClient } from "@/lib/supabase/repository/admin";
 
+export const runtime = "nodejs";
+
 function unauthorized() {
   return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 }

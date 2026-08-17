@@ -1,3 +1,5 @@
+import { PDFParse } from "pdf-parse";
+
 const BENEFITS_KEYWORDS = [
   "pension",
   "pencom",
@@ -77,16 +79,20 @@ export async function extractTextFromPdf(buffer: Buffer): Promise<{
   text: string;
   pageCount: number;
 }> {
-  const pdfParse = (await import("pdf-parse")).default;
-  const data = await pdfParse(buffer);
-  const pageCount = data.numpages ?? 0;
-  const excerpt = selectBenefitsExcerpt(data.text ?? "");
+  const parser = new PDFParse({ data: new Uint8Array(buffer) });
+  try {
+    const textResult = await parser.getText();
+    const pageCount = textResult.total ?? textResult.pages.length;
+    const excerpt = selectBenefitsExcerpt(textResult.text ?? "");
 
-  if (excerpt.length < 80) {
-    throw new Error(
-      "Could not find readable benefits text in that PDF — copy the pension/benefits section and paste it below."
-    );
+    if (excerpt.length < 80) {
+      throw new Error(
+        "Could not find readable benefits text in that PDF — copy the pension/benefits section and paste it below."
+      );
+    }
+
+    return { text: excerpt, pageCount };
+  } finally {
+    await parser.destroy();
   }
-
-  return { text: excerpt, pageCount };
 }
