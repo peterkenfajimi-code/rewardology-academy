@@ -1,7 +1,11 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { isRepositoryAdminAuthed } from "@/lib/auth/repository-admin";
 import { isAnthropicConfigured, isRepositorySupabaseConfigured } from "@/lib/env";
-import { buildExtractionPrompt } from "@/lib/repository/extraction-prompt";
+import {
+  buildExtractionInstructions,
+  buildExtractionPrompt,
+} from "@/lib/repository/extraction-prompt";
+import { fetchSourceDocument } from "@/lib/repository/fetch-source-document";
 import type { CountryModule, ExtractedEntry } from "@/lib/repository/types";
 import { createRepositoryAdminClient } from "@/lib/supabase/repository/admin";
 
@@ -20,6 +24,46 @@ function parseExtractedJson(text: string): ExtractedEntry[] {
   return parsed;
 }
 
+type AnthropicContentBlock =
+  | { type: "text"; text: string }
+  | {
+      type: "document";
+      source: { type: "base64"; media_type: "application/pdf"; data: string };
+    };
+
+async function callAnthropic(
+  model: string,
+  content: AnthropicContentBlock[]
+): Promise<string> {
+  const res = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": process.env.ANTHROPIC_API_KEY!,
+      "anthropic-version": "2023-06-01",
+    },
+    body: JSON.stringify({
+      model,
+      max_tokens: 4096,
+      messages: [{ role: "user", content }],
+    }),
+  });
+
+  const payload = (await res.json()) as {
+    error?: { type?: string; message?: string };
+    content?: { type: string; text?: string }[];
+  };
+
+  if (!res.ok) {
+    const detail = payload.error?.message ?? payload.error?.type ?? "Anthropic API error";
+    throw new Error(detail);
+  }
+
+  const textBlock = payload.content?.find((c) => c.type === "text");
+  if (!textBlock?.text) throw new Error("Empty model response");
+  return textBlock.text;
+}
+
 export async function POST(req: NextRequest) {
   if (!isRepositoryAdminAuthed(req)) return unauthorized();
   if (!isAnthropicConfigured()) {
@@ -29,16 +73,24 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Repository database not configured" }, { status: 503 });
   }
 
-  let body: { companyId?: string; companyName?: string; rawText?: string };
+  let body: { companyId?: string; companyName?: string; rawText?: string; sourceUrl?: string };
   try {
     body = (await req.json()) as typeof body;
   } catch {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
-  const rawText = body.rawText?.trim();
-  if (!rawText) {
-    return NextResponse.json({ error: "rawText is required" }, { status: 400 });
+  const rawText = body.rawText?.trim() ?? "";
+  const sourceUrl = body.sourceUrl?.trim() ?? "";
+
+  if (!rawText && !sourceUrl) {
+    return NextResponse.json(
+      {
+        error:
+          "Paste source text or provide a Source URL (section 2) — PDF annual reports can be read directly from the URL.",
+      },
+      { status: 400 }
+    );
   }
 
   const supabase = createRepositoryAdminClient();
@@ -65,51 +117,57 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  const prompt = buildExtractionPrompt(companyName, countryModule, rawText);
-
-  const model =
-    process.env.ANTHROPIC_MODEL?.trim() || "claude-sonnet-4-5-20250929";
-
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": process.env.ANTHROPIC_API_KEY!,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model,
-      max_tokens: 4096,
-      messages: [{ role: "user", content: prompt }],
-    }),
-  });
-
-  const payload = (await res.json()) as {
-    error?: { type?: string; message?: string };
-    content?: { type: string; text?: string }[];
-  };
-
-  if (!res.ok) {
-    const detail = payload.error?.message ?? payload.error?.type ?? "Anthropic API error";
-    return NextResponse.json({ error: detail }, { status: 502 });
-  }
-
-  const textBlock = payload.content?.find((c) => c.type === "text");
-  if (!textBlock?.text) {
-    return NextResponse.json({ error: "Empty model response" }, { status: 502 });
-  }
+  const model = process.env.ANTHROPIC_MODEL?.trim() || "claude-sonnet-4-5-20250929";
 
   try {
-    const entries = parseExtractedJson(textBlock.text);
-    return NextResponse.json({ entries });
+    let responseText: string;
+    let sourceMode: "text" | "url-text" | "url-pdf" = "text";
+
+    if (rawText) {
+      responseText = await callAnthropic(model, [
+        { type: "text", text: buildExtractionPrompt(companyName, countryModule, rawText) },
+      ]);
+    } else {
+      const fetched = await fetchSourceDocument(sourceUrl);
+      const instructions = buildExtractionInstructions(companyName, countryModule);
+
+      if (fetched.kind === "pdf") {
+        sourceMode = "url-pdf";
+        responseText = await callAnthropic(model, [
+          {
+            type: "document",
+            source: {
+              type: "base64",
+              media_type: fetched.mediaType,
+              data: fetched.pdfBase64,
+            },
+          },
+          {
+            type: "text",
+            text: `${instructions}\n\nExtract benefits fields from the attached PDF document.`,
+          },
+        ]);
+      } else {
+        sourceMode = "url-text";
+        responseText = await callAnthropic(model, [
+          {
+            type: "text",
+            text: buildExtractionPrompt(companyName, countryModule, fetched.text),
+          },
+        ]);
+      }
+    }
+
+    const entries = parseExtractedJson(responseText);
+    return NextResponse.json({ entries, sourceMode });
   } catch (e) {
-    return NextResponse.json(
-      {
-        error: "Could not parse model JSON",
-        raw: textBlock.text.slice(0, 2000),
-        detail: e instanceof Error ? e.message : "Parse error",
-      },
-      { status: 422 }
-    );
+    if (e instanceof SyntaxError || (e instanceof Error && e.message.includes("JSON"))) {
+      return NextResponse.json(
+        { error: "Could not parse model response as JSON" },
+        { status: 422 }
+      );
+    }
+    const message = e instanceof Error ? e.message : "Extraction failed";
+    return NextResponse.json({ error: message }, { status: 502 });
   }
 }

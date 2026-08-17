@@ -139,8 +139,11 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
       setError("Select a company first");
       return;
     }
-    if (!rawText.trim()) {
-      setError("Paste source text first");
+    const sourceUrl = source.source_url?.trim() ?? "";
+    if (!rawText.trim() && !sourceUrl) {
+      setError(
+        "Add a Source URL in section 2 (PDF annual reports work) or paste an excerpt in the box below."
+      );
       return;
     }
     setError("");
@@ -153,13 +156,25 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
         body: JSON.stringify({
           companyId: selectedCompanyId,
           companyName: selectedCompany?.name,
-          rawText,
+          rawText: rawText.trim() || undefined,
+          sourceUrl: rawText.trim() ? undefined : sourceUrl,
         }),
       });
-      const data = (await res.json()) as { entries?: ExtractedEntry[]; error?: string; detail?: string };
+      const data = (await res.json()) as {
+        entries?: ExtractedEntry[];
+        error?: string;
+        detail?: string;
+        sourceMode?: string;
+      };
       if (!res.ok) throw new Error(data.error ?? data.detail ?? "Extraction failed");
       setEntries(data.entries ?? []);
-      setMessage(`Extracted ${data.entries?.length ?? 0} fields — review before saving.`);
+      const modeNote =
+        data.sourceMode === "url-pdf"
+          ? " (read from PDF URL)"
+          : data.sourceMode === "url-text"
+            ? " (read from web page URL)"
+            : "";
+      setMessage(`Extracted ${data.entries?.length ?? 0} fields${modeNote} — review before saving.`);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Extraction failed");
     } finally {
@@ -416,7 +431,11 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
           </section>
 
           <section className="repo-admin-card">
-            <h2>3. Extract from source text</h2>
+            <h2>3. Extract with AI</h2>
+            <p className="repo-admin-muted">
+              Paste a benefits excerpt below, <strong>or</strong> leave this empty and use the Source
+              URL from section 2 — PDF annual reports (e.g. GTCO) are fetched and read automatically.
+            </p>
             {!anthropicConfigured && (
               <p className="repo-admin-alert error">
                 AI extraction needs <code>ANTHROPIC_API_KEY</code> in{" "}

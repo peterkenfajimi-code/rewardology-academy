@@ -1,9 +1,8 @@
 import type { CountryModule } from "@/lib/repository/types";
 
-export function buildExtractionPrompt(
+export function buildExtractionInstructions(
   companyName: string,
-  countryModule: CountryModule | null,
-  rawText: string
+  countryModule: CountryModule | null
 ): string {
   const countryContext = countryModule
     ? `Country: ${countryModule.country_name} (${countryModule.country_code}). Statutory employer pension: ${
@@ -31,6 +30,16 @@ Rules:
 - Never invent numbers not supported by the text.
 - South Africa may legitimately have null pension contribution values.
 - Prefer high confidence only when explicitly stated in the source.
+
+Return ONLY the JSON array.`;
+}
+
+export function buildExtractionPrompt(
+  companyName: string,
+  countryModule: CountryModule | null,
+  rawText: string
+): string {
+  return `${buildExtractionInstructions(companyName, countryModule)}
 
 SOURCE TEXT:
 ${rawText.slice(0, 12000)}`;
