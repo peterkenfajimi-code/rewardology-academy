@@ -2,6 +2,7 @@ import type { ConfidenceScore, SourceType } from "@/lib/repository/types";
 
 const TRUST_WEIGHTS: Record<SourceType, number> = {
   annual_report: 5,
+  sustainability_report: 5,
   direct_confirmation: 5,
   regulatory_filing: 4,
   press_release: 3,

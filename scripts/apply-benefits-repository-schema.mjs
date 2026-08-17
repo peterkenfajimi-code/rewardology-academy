@@ -46,7 +46,9 @@ Then run: npm run apply:benefits-repository
 }
 
 const sqlPath = path.join(root, "supabase", "benefits-repository", "schema.sql");
+const migrationPath = path.join(root, "supabase", "benefits-repository", "migrations", "002_sustainability_and_batch.sql");
 const query = fs.readFileSync(sqlPath, "utf8");
+const migration = fs.existsSync(migrationPath) ? fs.readFileSync(migrationPath, "utf8") : "";
 
 const res = await fetch(
   `https://api.supabase.com/v1/projects/${projectRef}/database/query`,
@@ -68,6 +70,26 @@ if (!res.ok) {
 
 console.log("Benefits repository schema applied successfully.");
 console.log(body.slice(0, 500));
+
+if (migration) {
+  const migRes = await fetch(
+    `https://api.supabase.com/v1/projects/${projectRef}/database/query`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query: migration }),
+    }
+  );
+  const migBody = await migRes.text();
+  if (!migRes.ok) {
+    console.warn("Migration 002 warning (may already be applied):", migRes.status, migBody.slice(0, 300));
+  } else {
+    console.log("Migration 002 (sustainability + batch) applied.");
+  }
+}
 
 const verify = await fetch(
   `https://api.supabase.com/v1/projects/${projectRef}/database/query`,

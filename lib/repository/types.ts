@@ -2,6 +2,7 @@ export type CountryCode = "NG" | "GH" | "KE" | "ZA" | "EG" | "RW";
 
 export type SourceType =
   | "annual_report"
+  | "sustainability_report"
   | "careers_page"
   | "press_release"
   | "regulatory_filing"

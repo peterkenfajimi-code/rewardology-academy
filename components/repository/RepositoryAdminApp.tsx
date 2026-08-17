@@ -7,9 +7,11 @@ import type {
   ExtractedEntry,
   SourceType,
 } from "@/lib/repository/types";
+import { RepositoryBatchPanel } from "@/components/repository/RepositoryBatchPanel";
 
 const SOURCE_TYPES: SourceType[] = [
   "annual_report",
+  "sustainability_report",
   "careers_page",
   "press_release",
   "regulatory_filing",
@@ -47,7 +49,7 @@ type Props = {
 };
 
 export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
-  const [tab, setTab] = useState<"entry" | "coverage">("entry");
+  const [tab, setTab] = useState<"entry" | "coverage" | "automation">("entry");
   const [countries, setCountries] = useState<CountryModule[]>([]);
   const [companies, setCompanies] = useState<Company[]>([]);
   const [selectedCompanyId, setSelectedCompanyId] = useState("");
@@ -271,6 +273,13 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
         >
           Coverage dashboard
         </button>
+        <button
+          type="button"
+          className={tab === "automation" ? "repo-admin-tab active" : "repo-admin-tab"}
+          onClick={() => setTab("automation")}
+        >
+          NGX automation
+        </button>
       </div>
 
       {(message || error) && (
@@ -314,6 +323,8 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
             <p className="repo-admin-muted">No coverage data yet.</p>
           )}
         </section>
+      ) : tab === "automation" ? (
+        <RepositoryBatchPanel anthropicConfigured={anthropicConfigured} />
       ) : (
         <>
           <section className="repo-admin-card">

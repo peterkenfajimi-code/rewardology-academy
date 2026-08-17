@@ -1,0 +1,302 @@
+[
+  {
+    "ticker": "MOBIL",
+    "name": "11 Plc",
+    "sector": "Oil & Gas",
+    "website": "https://www.11plc.com"
+  },
+  {
+    "ticker": "ACCESSCORP",
+    "name": "Access Holdings Plc",
+    "sector": "Financial Services",
+    "website": "https://www.accessholdings.com"
+  },
+  {
+    "ticker": "AIICO",
+    "name": "AIICO Insurance Plc",
+    "sector": "Insurance",
+    "website": "https://www.aiicoplc.com"
+  },
+  {
+    "ticker": "AIRTELAFRI",
+    "name": "Airtel Africa Plc",
+    "sector": "ICT",
+    "website": "https://www.africa.airtel.com"
+  },
+  {
+    "ticker": "ARADEL",
+    "name": "Aradel Holdings Plc",
+    "sector": "Oil & Gas",
+    "website": "https://www.aradel.com"
+  },
+  {
+    "ticker": "MANSARD",
+    "name": "AXA Mansard Insurance Plc",
+    "sector": "Insurance",
+    "website": "https://www.axamansard.com"
+  },
+  {
+    "ticker": "BERGER",
+    "name": "Berger Paints Nigeria Plc",
+    "sector": "Industrial Goods",
+    "website": "https://www.bergerpaints.com"
+  },
+  {
+    "ticker": "BUACEMENT",
+    "name": "BUA Cement Plc",
+    "sector": "Industrial Goods",
+    "website": "https://www.buacement.com"
+  },
+  {
+    "ticker": "CADBURY",
+    "name": "Cadbury Nigeria Plc",
+    "sector": "Consumer Goods",
+    "website": "https://www.cadburynigeria.com"
+  },
+  {
+    "ticker": "CAP",
+    "name": "CAP Plc",
+    "sector": "Industrial Goods",
+    "website": "https://www.capplc.com"
+  },
+  {
+    "ticker": "CHAMPION",
+    "name": "Champion Breweries Plc",
+    "sector": "Consumer Goods",
+    "website": "https://www.championbreweries.com"
+  },
+  {
+    "ticker": "CONOIL",
+    "name": "Conoil Plc",
+    "sector": "Oil & Gas",
+    "website": "https://www.conoilplc.com"
+  },
+  {
+    "ticker": "CORNERST",
+    "name": "Cornerstone Insurance Plc",
+    "sector": "Insurance",
+    "website": "https://www.cornerstone.com.ng"
+  },
+  {
+    "ticker": "CUSTODIAN",
+    "name": "Custodian Investment Plc",
+    "sector": "Financial Services",
+    "website": "https://www.custodianplc.com.ng"
+  },
+  {
+    "ticker": "CUTIX",
+    "name": "Cutix Plc",
+    "sector": "Industrial Goods",
+    "website": "https://www.cutixplc.com"
+  },
+  {
+    "ticker": "CWG",
+    "name": "CWG Plc",
+    "sector": "ICT",
+    "website": "https://www.cwg-plc.com"
+  },
+  {
+    "ticker": "DANGCEM",
+    "name": "Dangote Cement Plc",
+    "sector": "Industrial Goods",
+    "website": "https://www.dangotecement.com"
+  },
+  {
+    "ticker": "DANGSUGAR",
+    "name": "Dangote Sugar Refinery Plc",
+    "sector": "Consumer Goods",
+    "website": "https://www.dangotesugar.com"
+  },
+  {
+    "ticker": "DUNLOP",
+    "name": "Dunlop Nigeria Plc",
+    "sector": "Industrial Goods",
+    "website": "https://www.dunlopnigeria.com"
+  },
+  {
+    "ticker": "ETI",
+    "name": "Ecobank Transnational Incorporated",
+    "sector": "Financial Services",
+    "website": "https://www.ecobank.com"
+  },
+  {
+    "ticker": "FBNH",
+    "name": "FBN Holdings Plc",
+    "sector": "Financial Services",
+    "website": "https://www.fbnholdings.com"
+  },
+  {
+    "ticker": "FCMB",
+    "name": "FCMB Group Plc",
+    "sector": "Financial Services",
+    "website": "https://www.fcmbgroup.com"
+  },
+  {
+    "ticker": "FIDELITYBK",
+    "name": "Fidelity Bank Plc",
+    "sector": "Financial Services",
+    "website": "https://www.fidelitybank.ng"
+  },
+  {
+    "ticker": "FLOURMILL",
+    "name": "Flour Mills of Nigeria Plc",
+    "sector": "Consumer Goods",
+    "website": "https://www.flourmillsnigeria.com"
+  },
+  {
+    "ticker": "GEREGU",
+    "name": "Geregu Power Plc",
+    "sector": "Utilities",
+    "website": "https://www.geregupower.com"
+  },
+  {
+    "ticker": "GTCO",
+    "name": "Guaranty Trust Holding Company Plc",
+    "sector": "Financial Services",
+    "website": "https://www.gtbank.com"
+  },
+  {
+    "ticker": "GUINNESS",
+    "name": "Guinness Nigeria Plc",
+    "sector": "Consumer Goods",
+    "website": "https://www.guinness-nigeria.com"
+  },
+  {
+    "ticker": "INTENEGINS",
+    "name": "International Energy Insurance Plc",
+    "sector": "Insurance",
+    "website": "https://www.ieiplc.com"
+  },
+  {
+    "ticker": "JAPAULGOLD",
+    "name": "Japaul Gold and Ventures Plc",
+    "sector": "Oil & Gas",
+    "website": "https://www.japaulgroup.com"
+  },
+  {
+    "ticker": "WAPCO",
+    "name": "Lafarge Africa Plc",
+    "sector": "Industrial Goods",
+    "website": "https://www.lafarge.com.ng"
+  },
+  {
+    "ticker": "LASACO",
+    "name": "Lasaco Assurance Plc",
+    "sector": "Insurance",
+    "website": "https://www.lasacoassurance.com"
+  },
+  {
+    "ticker": "MTNN",
+    "name": "MTN Nigeria Communications Plc",
+    "sector": "ICT",
+    "website": "https://www.mtn.ng"
+  },
+  {
+    "ticker": "NASCON",
+    "name": "Nascon Allied Industries Plc",
+    "sector": "Consumer Goods",
+    "website": "https://www.nasconplc.com"
+  },
+  {
+    "ticker": "NESTLE",
+    "name": "Nestle Nigeria Plc",
+    "sector": "Consumer Goods",
+    "website": "https://www.nestle-cwa.com"
+  },
+  {
+    "ticker": "NB",
+    "name": "Nigerian Breweries Plc",
+    "sector": "Consumer Goods",
+    "website": "https://www.nbplc.com"
+  },
+  {
+    "ticker": "OANDO",
+    "name": "Oando Plc",
+    "sector": "Oil & Gas",
+    "website": "https://www.oandoplc.com"
+  },
+  {
+    "ticker": "OKOMUOIL",
+    "name": "Okomu Oil Palm Plc",
+    "sector": "Agriculture",
+    "website": "https://www.okomupalm.com"
+  },
+  {
+    "ticker": "PRESCO",
+    "name": "Presco Plc",
+    "sector": "Agriculture",
+    "website": "https://www.presco-plc.com"
+  },
+  {
+    "ticker": "PZ",
+    "name": "PZ Cussons Nigeria Plc",
+    "sector": "Consumer Goods",
+    "website": "https://www.pzcussons.com.ng"
+  },
+  {
+    "ticker": "SEPLAT",
+    "name": "Seplat Energy Plc",
+    "sector": "Oil & Gas",
+    "website": "https://www.seplatenergy.com"
+  },
+  {
+    "ticker": "STANBIC",
+    "name": "Stanbic IBTC Holdings Plc",
+    "sector": "Financial Services",
+    "website": "https://www.stanbicibtcbank.com"
+  },
+  {
+    "ticker": "TOTAL",
+    "name": "TotalEnergies Marketing Nigeria Plc",
+    "sector": "Oil & Gas",
+    "website": "https://totalenergies.ng"
+  },
+  {
+    "ticker": "TRANSCORP",
+    "name": "Transcorp Plc",
+    "sector": "Conglomerates",
+    "website": "https://www.transcorpgroup.com"
+  },
+  {
+    "ticker": "UACN",
+    "name": "UAC of Nigeria Plc",
+    "sector": "Conglomerates",
+    "website": "https://www.uacnplc.com"
+  },
+  {
+    "ticker": "UNILEVER",
+    "name": "Unilever Nigeria Plc",
+    "sector": "Consumer Goods",
+    "website": "https://www.unilever.ng"
+  },
+  {
+    "ticker": "UNIONDICON",
+    "name": "Union Bank of Nigeria Plc",
+    "sector": "Financial Services",
+    "website": "https://www.unionbankng.com"
+  },
+  {
+    "ticker": "UBA",
+    "name": "United Bank for Africa Plc",
+    "sector": "Financial Services",
+    "website": "https://www.ubagroup.com"
+  },
+  {
+    "ticker": "VITAFOAM",
+    "name": "Vitafoam Nigeria Plc",
+    "sector": "Industrial Goods",
+    "website": "https://www.vitafoamng.com"
+  },
+  {
+    "ticker": "WEMABANK",
+    "name": "Wema Bank Plc",
+    "sector": "Financial Services",
+    "website": "https://www.wemabank.com"
+  },
+  {
+    "ticker": "ZENITHBANK",
+    "name": "Zenith Bank Plc",
+    "sector": "Financial Services",
+    "website": "https://www.zenithbank.com"
+  }
+]

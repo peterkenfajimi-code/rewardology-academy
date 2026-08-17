@@ -1,13 +1,9 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { isRepositoryAdminAuthed } from "@/lib/auth/repository-admin";
 import { isRepositorySupabaseConfigured } from "@/lib/env";
-import { saveEntriesWithReconciliation } from "@/lib/repository/reconciliation";
+import { saveSourceAndEntries } from "@/lib/repository/save-source";
 import type { ExtractedEntry, SourceRecord, SourceType } from "@/lib/repository/types";
 import { createRepositoryAdminClient } from "@/lib/supabase/repository/admin";
-
-function unauthorized() {
-  return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-}
 
 export async function POST(req: NextRequest) {
   if (!isRepositoryAdminAuthed(req)) return unauthorized();
@@ -47,43 +43,28 @@ export async function POST(req: NextRequest) {
   const supabase = createRepositoryAdminClient();
   const actor = body.actor?.trim() || "repository-admin";
 
-  const { data: source, error: sourceError } = await supabase
-    .from("sources")
-    .insert({
-      company_id: body.companyId,
-      source_type: body.source.source_type,
-      source_url: body.source.source_url?.trim() || null,
-      source_title: body.source.source_title?.trim() || null,
-      publication_date: body.source.publication_date || null,
-      date_accessed: body.source.date_accessed || new Date().toISOString().slice(0, 10),
-      country: body.source.country || null,
-    })
-    .select("source_id")
-    .single();
-
-  if (sourceError || !source) {
-    return NextResponse.json({ error: sourceError?.message ?? "Could not save source" }, { status: 500 });
-  }
-
   try {
-    const results = await saveEntriesWithReconciliation(supabase, {
+    const saved = await saveSourceAndEntries(supabase, {
       companyId: body.companyId,
-      sourceId: source.source_id,
-      sourceType: body.source.source_type,
+      source: body.source,
+      entries: body.entries,
+      publish: body.publish,
       actor,
-      entries: body.entries.map((e) => ({ ...e, publish: body.publish })),
     });
 
-    await supabase
-      .from("companies")
-      .update({ last_reviewed_at: new Date().toISOString() })
-      .eq("company_id", body.companyId);
-
-    return NextResponse.json({ sourceId: source.source_id, results });
+    return NextResponse.json({
+      sourceId: saved.sourceId,
+      skipped: saved.skipped,
+      results: saved.results,
+    });
   } catch (e) {
     return NextResponse.json(
       { error: e instanceof Error ? e.message : "Save failed" },
       { status: 500 }
     );
   }
+}
+
+function unauthorized() {
+  return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 }
