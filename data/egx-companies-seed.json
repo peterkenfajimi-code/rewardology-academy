@@ -1,0 +1,14 @@
+[
+  { "ticker": "COMI", "name": "Commercial International Bank", "exchange": "EGX", "country": "EG", "sector": "Financial Services", "website": "https://www.cibeg.com" },
+  { "ticker": "ETEL", "name": "Telecom Egypt", "exchange": "EGX", "country": "EG", "sector": "ICT", "website": "https://www.te.eg" },
+  { "ticker": "SWDY", "name": "El Sewedy Electric Company", "exchange": "EGX", "country": "EG", "sector": "Industrial", "website": "https://www.el-sewedy.com" },
+  { "ticker": "TMGH", "name": "T M G Holding", "exchange": "EGX", "country": "EG", "sector": "Real Estate", "website": "https://www.tmgholding.com" },
+  { "ticker": "ESRS", "name": "Ezz Steel", "exchange": "EGX", "country": "EG", "sector": "Industrial", "website": "https://www.ezzsteel.com" },
+  { "ticker": "PHDC", "name": "Palm Hills Developments", "exchange": "EGX", "country": "EG", "sector": "Real Estate", "website": "https://www.palmhillsdevelopments.com" },
+  { "ticker": "OCDI", "name": "Six of October Development and Investment (SODIC)", "exchange": "EGX", "country": "EG", "sector": "Real Estate", "website": "https://www.sodic.com" },
+  { "ticker": "HRHO", "name": "GB Auto", "exchange": "EGX", "country": "EG", "sector": "Automotive", "website": "https://www.gb-auto.com" },
+  { "ticker": "EAST", "name": "Eastern Company", "exchange": "EGX", "country": "EG", "sector": "Consumer Goods", "website": "https://www.easterncompany.com.eg" },
+  { "ticker": "ORWE", "name": "Oriental Weavers", "exchange": "EGX", "country": "EG", "sector": "Industrial", "website": "https://www.orientalweavers.com" },
+  { "ticker": "ABUK", "name": "Abu Qir Fertilizers", "exchange": "EGX", "country": "EG", "sector": "Industrial", "website": "https://www.abuqir.com.eg" },
+  { "ticker": "FWRY", "name": "Fawry for Banking Technology", "exchange": "EGX", "country": "EG", "sector": "Financial Services", "website": "https://www.fawry.com" }
+]

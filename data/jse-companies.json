@@ -1,0 +1,182 @@
+[
+  {
+    "ticker": "MTN",
+    "name": "MTN Group Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "ICT",
+    "website": "https://www.mtn.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "NPN",
+    "name": "Naspers Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Technology",
+    "website": "https://www.naspers.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "PRX",
+    "name": "Prosus N.V.",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Technology",
+    "website": "https://www.prosus.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SBK",
+    "name": "Standard Bank Group Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Financial Services",
+    "website": "https://www.standardbank.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "FSR",
+    "name": "FirstRand Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Financial Services",
+    "website": "https://www.firstrand.co.za",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "ABG",
+    "name": "Absa Group Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Financial Services",
+    "website": "https://www.absa.africa",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "NED",
+    "name": "Nedbank Group Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Financial Services",
+    "website": "https://www.nedbank.co.za",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "VOD",
+    "name": "Vodacom Group Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "ICT",
+    "website": "https://www.vodacom.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SOL",
+    "name": "Sasol Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Oil & Gas",
+    "website": "https://www.sasol.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "ANG",
+    "name": "Anglo American Plc",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Mining",
+    "website": "https://www.angloamerican.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "GFI",
+    "name": "Gold Fields Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Mining",
+    "website": "https://www.goldfields.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SHP",
+    "name": "Shoprite Holdings Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Consumer Goods",
+    "website": "https://www.shopriteholdings.co.za",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "BID",
+    "name": "Bid Corporation Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Consumer Goods",
+    "website": "https://www.bidcorp.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "DSY",
+    "name": "Discovery Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Financial Services",
+    "website": "https://www.discovery.co.za",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "TBS",
+    "name": "Tiger Brands Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Consumer Goods",
+    "website": "https://www.tigerbrands.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "REM",
+    "name": "Remgro Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Conglomerates",
+    "website": "https://www.remgro.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "INP",
+    "name": "Investec Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Financial Services",
+    "website": "https://www.investec.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "CFR",
+    "name": "Richemont",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Consumer Goods",
+    "website": "https://www.richemont.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "NPH",
+    "name": "Nepi Rockcastle N.V.",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Real Estate",
+    "website": "https://www.nepirockcastle.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SLM",
+    "name": "Sanlam Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Financial Services",
+    "website": "https://www.sanlam.co.za",
+    "fmdq_issuer_path": null
+  }
+]

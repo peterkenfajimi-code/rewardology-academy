@@ -33,6 +33,7 @@ function parseArgs() {
     maxCompanies: 0,
     tickers: undefined as string[] | undefined,
     exchanges: undefined as string[] | undefined,
+    countries: undefined as string[] | undefined,
     publish: false,
     dryRun: false,
     delayMs: 3000,
@@ -47,6 +48,12 @@ function parseArgs() {
     else if (arg.startsWith("--tickers=")) {
       config.tickers = arg
         .slice(10)
+        .split(",")
+        .map((t) => t.trim().toUpperCase())
+        .filter(Boolean);
+    } else if (arg.startsWith("--countries=")) {
+      config.countries = arg
+        .slice(12)
         .split(",")
         .map((t) => t.trim().toUpperCase())
         .filter(Boolean);

@@ -1,30 +1,30 @@
 /**
- * Sync Nigeria disclosure company lists (NGX + FMDQ + NASD) to data/*.json
+ * Sync disclosure company lists for all six markets to data/*.json
  *
- * Usage: node scripts/sync-disclosure-companies.mjs
- * Also: npm run sync:ngx-companies (alias)
+ * Usage: npm run sync:disclosure-companies
  */
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { getProjectRoot, loadEnvLocal, resolveProjectRoot } from "./lib/load-env-local.mjs";
 
+const EXCHANGES = [
+  { exchange: "NGX", seed: "ngx-companies-seed.json", cache: "ngx-companies.json", country: "NG" },
+  { exchange: "FMDQ", seed: "fmdq-issuers-seed.json", cache: "fmdq-issuers.json", country: "NG" },
+  { exchange: "NASD", seed: "nasd-companies-seed.json", cache: "nasd-companies.json", country: "NG" },
+  { exchange: "JSE", seed: "jse-companies-seed.json", cache: "jse-companies.json", country: "ZA" },
+  { exchange: "NSE", seed: "nse-companies-seed.json", cache: "nse-companies.json", country: "KE" },
+  { exchange: "GSE", seed: "gse-companies-seed.json", cache: "gse-companies.json", country: "GH" },
+  { exchange: "EGX", seed: "egx-companies-seed.json", cache: "egx-companies.json", country: "EG" },
+  { exchange: "RSE", seed: "rse-companies-seed.json", cache: "rse-companies.json", country: "RW" },
+];
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = resolveProjectRoot(getProjectRoot(import.meta.url));
 const env = loadEnvLocal(root);
 const dataDir = path.join(root, "data");
 
-function readSeed(name) {
-  const p = path.join(dataDir, name);
-  if (!fs.existsSync(p)) return [];
-  return JSON.parse(fs.readFileSync(p, "utf8"));
-}
-
-function writeJson(name, rows) {
-  fs.writeFileSync(path.join(dataDir, name), `${JSON.stringify(rows, null, 2)}\n`);
-}
-
-function normalize(row, exchange) {
+function normalize(row, exchange, country) {
   const ticker = (row.ticker ?? "").trim().toUpperCase();
   const name = (row.name ?? "").trim();
   if (!ticker || !name) return null;
@@ -32,6 +32,7 @@ function normalize(row, exchange) {
     ticker,
     name,
     exchange: row.exchange ?? exchange,
+    country: row.country ?? country,
     sector: row.sector ?? null,
     website: row.website ?? null,
     fmdq_issuer_path: row.fmdq_issuer_path ?? null,
@@ -59,8 +60,10 @@ async function fetchNgx(apiKey) {
           sector: row.sector,
           website: row.website ?? row.website_url,
           exchange: "NGX",
+          country: "NG",
         },
-        "NGX"
+        "NGX",
+        "NG"
       )
     )
     .filter(Boolean);
@@ -68,27 +71,34 @@ async function fetchNgx(apiKey) {
 
 async function main() {
   const apiKey = process.env.NGN_MARKET_API_KEY || env.NGN_MARKET_API_KEY;
-  let ngx = apiKey ? await fetchNgx(apiKey) : null;
-  if (!ngx?.length) {
-    ngx = readSeed("ngx-companies-seed.json").map((r) => normalize(r, "NGX")).filter(Boolean);
-    console.log(`NGX: ${ngx.length} from seed`);
-  } else {
-    console.log(`NGX: ${ngx.length} from NGN Market API`);
+  const all = [];
+
+  for (const { exchange, seed, cache, country } of EXCHANGES) {
+    let rows;
+    if (exchange === "NGX") {
+      rows = apiKey ? await fetchNgx(apiKey) : null;
+      if (!rows?.length) {
+        rows = JSON.parse(fs.readFileSync(path.join(dataDir, seed), "utf8"))
+          .map((r) => normalize(r, exchange, country))
+          .filter(Boolean);
+        console.log(`NGX: ${rows.length} from seed`);
+      } else {
+        console.log(`NGX: ${rows.length} from NGN Market API`);
+      }
+    } else {
+      rows = JSON.parse(fs.readFileSync(path.join(dataDir, seed), "utf8"))
+        .map((r) => normalize(r, exchange, country))
+        .filter(Boolean);
+      console.log(`${exchange}: ${rows.length} from seed`);
+    }
+
+    fs.mkdirSync(dataDir, { recursive: true });
+    fs.writeFileSync(path.join(dataDir, cache), `${JSON.stringify(rows, null, 2)}\n`);
+    all.push(...rows);
   }
 
-  const fmdq = readSeed("fmdq-issuers-seed.json").map((r) => normalize(r, "FMDQ")).filter(Boolean);
-  const nasd = readSeed("nasd-companies-seed.json").map((r) => normalize(r, "NASD")).filter(Boolean);
-  const all = [...ngx, ...fmdq, ...nasd];
-
-  fs.mkdirSync(dataDir, { recursive: true });
-  writeJson("ngx-companies.json", ngx);
-  writeJson("fmdq-issuers.json", fmdq);
-  writeJson("nasd-companies.json", nasd);
-  writeJson("nigeria-disclosure-companies.json", all);
-
-  console.log(`FMDQ: ${fmdq.length} issuers`);
-  console.log(`NASD: ${nasd.length} companies (NASD Blue-focused seed)`);
-  console.log(`Combined: ${all.length} → data/nigeria-disclosure-companies.json`);
+  fs.writeFileSync(path.join(dataDir, "disclosure-companies.json"), `${JSON.stringify(all, null, 2)}\n`);
+  console.log(`Combined: ${all.length} companies → data/disclosure-companies.json`);
 }
 
 main().catch((e) => {

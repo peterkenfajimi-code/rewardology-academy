@@ -1,7 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import type { DisclosureExchange, SourceType } from "@/lib/repository/types";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { COLLECTION_ROLLOUT_NOTES } from "@/lib/repository/exchange-config";
+import type { CountryCode, DisclosureExchange, SourceType } from "@/lib/repository/types";
 
 const SOURCE_TYPES: SourceType[] = [
   "annual_report",
@@ -13,7 +14,51 @@ const SOURCE_TYPES: SourceType[] = [
   "award_recognition",
 ];
 
-const EXCHANGES: DisclosureExchange[] = ["NGX", "FMDQ", "NASD"];
+type BatchPreset = {
+  id: string;
+  label: string;
+  countries: CountryCode[];
+  hint: string;
+};
+
+const PRESETS: BatchPreset[] = [
+  {
+    id: "ng",
+    label: "Nigeria (NGX + FMDQ + NASD)",
+    countries: ["NG"],
+    hint: COLLECTION_ROLLOUT_NOTES.NG,
+  },
+  {
+    id: "za",
+    label: "South Africa (JSE) — recommended #2",
+    countries: ["ZA"],
+    hint: COLLECTION_ROLLOUT_NOTES.ZA,
+  },
+  {
+    id: "ke",
+    label: "Kenya (NSE)",
+    countries: ["KE"],
+    hint: COLLECTION_ROLLOUT_NOTES.KE,
+  },
+  {
+    id: "gh",
+    label: "Ghana (GSE)",
+    countries: ["GH"],
+    hint: COLLECTION_ROLLOUT_NOTES.GH,
+  },
+  {
+    id: "eg",
+    label: "Egypt (EGX)",
+    countries: ["EG"],
+    hint: COLLECTION_ROLLOUT_NOTES.EG,
+  },
+  {
+    id: "rw",
+    label: "Rwanda (RSE) — lean on Guides 2/3/7",
+    countries: ["RW"],
+    hint: COLLECTION_ROLLOUT_NOTES.RW,
+  },
+];
 
 type BatchRun = {
   run_id: string;
@@ -39,9 +84,9 @@ type Props = {
 };
 
 export function RepositoryBatchPanel({ anthropicConfigured }: Props) {
+  const [presetId, setPresetId] = useState("ng");
   const [maxCompanies, setMaxCompanies] = useState(5);
   const [tickers, setTickers] = useState("");
-  const [exchanges, setExchanges] = useState<DisclosureExchange[]>(["NGX", "FMDQ", "NASD"]);
   const [publish, setPublish] = useState(false);
   const [dryRun, setDryRun] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -50,6 +95,11 @@ export function RepositoryBatchPanel({ anthropicConfigured }: Props) {
   const [activeRunId, setActiveRunId] = useState<string | null>(null);
   const [run, setRun] = useState<BatchRun | null>(null);
   const [recentRuns, setRecentRuns] = useState<BatchRun[]>([]);
+
+  const preset = useMemo(
+    () => PRESETS.find((p) => p.id === presetId) ?? PRESETS[0],
+    [presetId]
+  );
 
   const loadRuns = useCallback(async () => {
     const res = await fetch("/api/repository-admin/batch");
@@ -77,12 +127,6 @@ export function RepositoryBatchPanel({ anthropicConfigured }: Props) {
     return () => clearInterval(id);
   }, [activeRunId, loadRuns]);
 
-  function toggleExchange(exchange: DisclosureExchange) {
-    setExchanges((prev) =>
-      prev.includes(exchange) ? prev.filter((e) => e !== exchange) : [...prev, exchange]
-    );
-  }
-
   async function startBatch() {
     setError("");
     setMessage("");
@@ -97,7 +141,7 @@ export function RepositoryBatchPanel({ anthropicConfigured }: Props) {
             .split(",")
             .map((t) => t.trim().toUpperCase())
             .filter(Boolean),
-          exchanges: exchanges.length ? exchanges : ["NGX", "FMDQ", "NASD"],
+          countries: preset.countries,
           sourceTypes: SOURCE_TYPES,
           publish,
           dryRun,
@@ -128,13 +172,12 @@ export function RepositoryBatchPanel({ anthropicConfigured }: Props) {
 
   return (
     <section className="repo-admin-card">
-      <h2>Nigeria disclosure automation</h2>
+      <h2>Disclosure automation (6 markets)</h2>
       <p className="repo-admin-muted">
-        Collects benefits data from companies with audited disclosure obligations across{" "}
-        <strong>NGX</strong> (listed equity), <strong>FMDQ</strong> (listed/quoted debt and
-        commercial paper — often private issuers), and <strong>NASD</strong> (OTC equity, NASD Blue
-        tier). Commodity exchanges (NCX, AFEX) are excluded. Skips URLs already saved;
-        reconciliation compares and updates when a newer or higher-trust source differs.
+        All six country modules have exchanges requiring audited annual reports. Expect solid
+        IAS-19-style pension/gratuity notes almost everywhere; richer voluntary-benefit narrative
+        (wellness, HMO, DEI) concentrates in JSE-listed companies and the largest names elsewhere.
+        Outside JSE, only ~15% of large issuers publish sustainability reports beyond financials.
       </p>
 
       {!anthropicConfigured && (
@@ -142,6 +185,21 @@ export function RepositoryBatchPanel({ anthropicConfigured }: Props) {
           Batch extraction requires <code>ANTHROPIC_API_KEY</code>.
         </p>
       )}
+
+      <label>
+        Market preset
+        <select value={presetId} onChange={(e) => setPresetId(e.target.value)}>
+          {PRESETS.map((p) => (
+            <option key={p.id} value={p.id}>
+              {p.label}
+            </option>
+          ))}
+        </select>
+      </label>
+
+      <p className="repo-admin-muted" style={{ marginTop: "0.75rem" }}>
+        {preset.hint}
+      </p>
 
       <div className="repo-admin-grid">
         <label>
@@ -156,28 +214,12 @@ export function RepositoryBatchPanel({ anthropicConfigured }: Props) {
         <label>
           Tickers only (optional, comma-separated)
           <input
-            placeholder="GTCO,SDFCWAMCO,MTNN"
+            placeholder="GTCO,MTN,SCOM"
             value={tickers}
             onChange={(e) => setTickers(e.target.value)}
           />
         </label>
       </div>
-
-      <fieldset className="repo-admin-check-group" style={{ marginBottom: "1rem" }}>
-        <legend>Disclosure venues</legend>
-        {EXCHANGES.map((exchange) => (
-          <label key={exchange} className="repo-admin-check">
-            <input
-              type="checkbox"
-              checked={exchanges.includes(exchange)}
-              onChange={() => toggleExchange(exchange)}
-            />
-            {exchange}
-            {exchange === "FMDQ" && " — debt/CP issuers"}
-            {exchange === "NASD" && " — OTC equity (Blue tier seed)"}
-          </label>
-        ))}
-      </fieldset>
 
       <label className="repo-admin-check">
         <input type="checkbox" checked={dryRun} onChange={(e) => setDryRun(e.target.checked)} />
@@ -191,11 +233,16 @@ export function RepositoryBatchPanel({ anthropicConfigured }: Props) {
       <button
         type="button"
         className="repo-admin-btn repo-admin-btn-primary"
-        disabled={loading || !anthropicConfigured || exchanges.length === 0}
+        disabled={loading || !anthropicConfigured}
         onClick={startBatch}
       >
-        {loading ? "Starting…" : "Run disclosure batch"}
+        {loading ? "Starting…" : `Run batch — ${preset.label}`}
       </button>
+
+      <p className="repo-admin-muted" style={{ marginTop: "0.75rem" }}>
+        CLI: <code>npm run sync:disclosure-companies</code> then{" "}
+        <code>npm run run:benefits-repository-batch -- --countries=ZA --max=5 --dry-run</code>
+      </p>
 
       {progress && (
         <div className="repo-admin-muted" style={{ marginTop: "1rem" }}>

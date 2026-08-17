@@ -3,6 +3,7 @@
     "ticker": "MTNN",
     "name": "MTN Nigeria Communications Plc",
     "exchange": "FMDQ",
+    "country": "NG",
     "sector": "ICT",
     "website": "https://www.mtn.ng",
     "fmdq_issuer_path": "mtn-nigeria-communications-plc-2"
@@ -11,6 +12,7 @@
     "ticker": "FCMB",
     "name": "FCMB Group Plc",
     "exchange": "FMDQ",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.fcmbgroup.com",
     "fmdq_issuer_path": "fcmb-group-plc"
@@ -19,6 +21,7 @@
     "ticker": "STANBIC",
     "name": "Stanbic IBTC Holdings Plc",
     "exchange": "FMDQ",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.stanbicibtcbank.com",
     "fmdq_issuer_path": null
@@ -27,6 +30,7 @@
     "ticker": "NB",
     "name": "Nigerian Breweries Plc",
     "exchange": "FMDQ",
+    "country": "NG",
     "sector": "Consumer Goods",
     "website": "https://www.nbplc.com",
     "fmdq_issuer_path": null
@@ -35,6 +39,7 @@
     "ticker": "DANGCEM",
     "name": "Dangote Cement Plc",
     "exchange": "FMDQ",
+    "country": "NG",
     "sector": "Industrial Goods",
     "website": "https://www.dangotecement.com",
     "fmdq_issuer_path": null
@@ -43,6 +48,7 @@
     "ticker": "BUAFOODS",
     "name": "BUA Foods Plc",
     "exchange": "FMDQ",
+    "country": "NG",
     "sector": "Consumer Goods",
     "website": "https://www.buafoods.com",
     "fmdq_issuer_path": null
@@ -51,6 +57,7 @@
     "ticker": "UPDC",
     "name": "UPDC Plc",
     "exchange": "FMDQ",
+    "country": "NG",
     "sector": "Real Estate",
     "website": "https://www.updcplc.com",
     "fmdq_issuer_path": null
@@ -59,6 +66,7 @@
     "ticker": "LIVINGTRUST",
     "name": "Living Trust Mortgage Bank Plc",
     "exchange": "FMDQ",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.livingtrustmortgagebank.com",
     "fmdq_issuer_path": null
@@ -67,6 +75,7 @@
     "ticker": "VFD",
     "name": "VFD Group Plc",
     "exchange": "FMDQ",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.vfdgroup.com",
     "fmdq_issuer_path": null
@@ -75,6 +84,7 @@
     "ticker": "LOTUS",
     "name": "Lotus Halal Fixed Income Fund",
     "exchange": "FMDQ",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://fmdqgroup.com",
     "fmdq_issuer_path": null
@@ -83,6 +93,7 @@
     "ticker": "SEPLAT",
     "name": "Seplat Energy Plc",
     "exchange": "FMDQ",
+    "country": "NG",
     "sector": "Oil & Gas",
     "website": "https://www.seplatenergy.com",
     "fmdq_issuer_path": null
@@ -91,6 +102,7 @@
     "ticker": "GEREGU",
     "name": "Geregu Power Plc",
     "exchange": "FMDQ",
+    "country": "NG",
     "sector": "Utilities",
     "website": "https://www.geregupower.com",
     "fmdq_issuer_path": null
@@ -99,6 +111,7 @@
     "ticker": "TRANSCORP",
     "name": "Transcorp Plc",
     "exchange": "FMDQ",
+    "country": "NG",
     "sector": "Conglomerates",
     "website": "https://www.transcorpgroup.com",
     "fmdq_issuer_path": null
@@ -107,6 +120,7 @@
     "ticker": "UACN",
     "name": "UAC of Nigeria Plc",
     "exchange": "FMDQ",
+    "country": "NG",
     "sector": "Conglomerates",
     "website": "https://www.uacnplc.com",
     "fmdq_issuer_path": null
@@ -115,6 +129,7 @@
     "ticker": "CUSTODIAN",
     "name": "Custodian Investment Plc",
     "exchange": "FMDQ",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.custodianplc.com.ng",
     "fmdq_issuer_path": null

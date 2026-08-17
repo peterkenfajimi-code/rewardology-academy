@@ -1,0 +1,17 @@
+[
+  { "ticker": "SCOM", "name": "Safaricom PLC", "exchange": "NSE", "country": "KE", "sector": "ICT", "website": "https://www.safaricom.co.ke" },
+  { "ticker": "EQTY", "name": "Equity Group Holdings PLC", "exchange": "NSE", "country": "KE", "sector": "Financial Services", "website": "https://equitygroupholdings.com" },
+  { "ticker": "KCB", "name": "KCB Group PLC", "exchange": "NSE", "country": "KE", "sector": "Financial Services", "website": "https://www.kcbgroup.com" },
+  { "ticker": "EABL", "name": "East African Breweries PLC", "exchange": "NSE", "country": "KE", "sector": "Consumer Goods", "website": "https://www.eabl.com" },
+  { "ticker": "COOP", "name": "Co-operative Bank of Kenya Ltd", "exchange": "NSE", "country": "KE", "sector": "Financial Services", "website": "https://www.co-opbank.co.ke" },
+  { "ticker": "NCBA", "name": "NCBA Group PLC", "exchange": "NSE", "country": "KE", "sector": "Financial Services", "website": "https://www.ncbagroup.com" },
+  { "ticker": "SCBK", "name": "Standard Chartered Bank Kenya Ltd", "exchange": "NSE", "country": "KE", "sector": "Financial Services", "website": "https://www.sc.com/ke" },
+  { "ticker": "BRIT", "name": "Britam Holdings PLC", "exchange": "NSE", "country": "KE", "sector": "Insurance", "website": "https://www.britam.com" },
+  { "ticker": "BAT", "name": "British American Tobacco Kenya PLC", "exchange": "NSE", "country": "KE", "sector": "Consumer Goods", "website": "https://www.bat.com" },
+  { "ticker": "KQ", "name": "Kenya Airways PLC", "exchange": "NSE", "country": "KE", "sector": "Transport", "website": "https://www.kenya-airways.com" },
+  { "ticker": "ABSA", "name": "Absa Bank Kenya PLC", "exchange": "NSE", "country": "KE", "sector": "Financial Services", "website": "https://www.absa.co.ke" },
+  { "ticker": "DTK", "name": "Diamond Trust Bank Kenya Ltd", "exchange": "NSE", "country": "KE", "sector": "Financial Services", "website": "https://www.dtbafrica.com" },
+  { "ticker": "IMH", "name": "I&M Holdings PLC", "exchange": "NSE", "country": "KE", "sector": "Financial Services", "website": "https://www.imbank.com" },
+  { "ticker": "KPLC", "name": "Kenya Power and Lighting Company Ltd", "exchange": "NSE", "country": "KE", "sector": "Utilities", "website": "https://www.kplc.co.ke" },
+  { "ticker": "JUB", "name": "Jubilee Holdings Ltd", "exchange": "NSE", "country": "KE", "sector": "Insurance", "website": "https://www.jubileeinsurance.com" }
+]

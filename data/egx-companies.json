@@ -1,0 +1,110 @@
+[
+  {
+    "ticker": "COMI",
+    "name": "Commercial International Bank",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Financial Services",
+    "website": "https://www.cibeg.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "ETEL",
+    "name": "Telecom Egypt",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "ICT",
+    "website": "https://www.te.eg",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SWDY",
+    "name": "El Sewedy Electric Company",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Industrial",
+    "website": "https://www.el-sewedy.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "TMGH",
+    "name": "T M G Holding",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Real Estate",
+    "website": "https://www.tmgholding.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "ESRS",
+    "name": "Ezz Steel",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Industrial",
+    "website": "https://www.ezzsteel.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "PHDC",
+    "name": "Palm Hills Developments",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Real Estate",
+    "website": "https://www.palmhillsdevelopments.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "OCDI",
+    "name": "Six of October Development and Investment (SODIC)",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Real Estate",
+    "website": "https://www.sodic.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "HRHO",
+    "name": "GB Auto",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Automotive",
+    "website": "https://www.gb-auto.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "EAST",
+    "name": "Eastern Company",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Consumer Goods",
+    "website": "https://www.easterncompany.com.eg",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "ORWE",
+    "name": "Oriental Weavers",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Industrial",
+    "website": "https://www.orientalweavers.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "ABUK",
+    "name": "Abu Qir Fertilizers",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Industrial",
+    "website": "https://www.abuqir.com.eg",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "FWRY",
+    "name": "Fawry for Banking Technology",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Financial Services",
+    "website": "https://www.fawry.com",
+    "fmdq_issuer_path": null
+  }
+]

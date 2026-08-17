@@ -73,14 +73,21 @@ async function runQuery(label, query, { warnOnFail = false } = {}) {
 const sqlPath = path.join(root, "supabase", "benefits-repository", "schema.sql");
 const migrationPath = path.join(root, "supabase", "benefits-repository", "migrations", "002_sustainability_and_batch.sql");
 const migration003Path = path.join(root, "supabase", "benefits-repository", "migrations", "003_fmdq_nasd_disclosure_exchanges.sql");
+const migration004Path = path.join(root, "supabase", "benefits-repository", "migrations", "004_multi_market_exchanges.sql");
 const query = fs.readFileSync(sqlPath, "utf8");
 const migration = fs.existsSync(migrationPath) ? fs.readFileSync(migrationPath, "utf8") : "";
 const migration003 = fs.existsSync(migration003Path) ? fs.readFileSync(migration003Path, "utf8") : "";
+const migration004 = fs.existsSync(migration004Path) ? fs.readFileSync(migration004Path, "utf8") : "";
 
 // Migrations first — existing DBs may lack columns referenced in schema.sql inserts.
 if (migration) await runQuery("Migration 002 (sustainability + batch)", migration, { warnOnFail: true });
 if (migration003) {
   await runQuery("Migration 003 (FMDQ/NASD disclosure exchanges)", migration003, { warnOnFail: true });
+}
+if (migration004) {
+  await runQuery("Migration 004 (multi-market exchanges + collection priority)", migration004, {
+    warnOnFail: true,
+  });
 }
 
 await runQuery("Benefits repository schema", query);
@@ -95,7 +102,7 @@ const verify = await fetch(
     },
     body: JSON.stringify({
       query:
-        "select country_code, listed_company_exchange, secondary_disclosure_exchanges from country_modules where country_code = 'NG';",
+        "select country_code, listed_company_exchange, collection_priority from country_modules order by collection_priority;",
     }),
   }
 );

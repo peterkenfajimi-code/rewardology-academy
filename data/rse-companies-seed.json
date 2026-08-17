@@ -1,0 +1,9 @@
+[
+  { "ticker": "BK", "name": "Bank of Kigali PLC", "exchange": "RSE", "country": "RW", "sector": "Financial Services", "website": "https://www.bk.rw" },
+  { "ticker": "BRAL", "name": "Bralirwa PLC", "exchange": "RSE", "country": "RW", "sector": "Consumer Goods", "website": "https://www.bralirwa.com" },
+  { "ticker": "CTL", "name": "Crystal Telecom Ltd", "exchange": "RSE", "country": "RW", "sector": "ICT", "website": "https://www.crystaltelecom.rw" },
+  { "ticker": "EQTY", "name": "Equity Bank Rwanda PLC", "exchange": "RSE", "country": "RW", "sector": "Financial Services", "website": "https://www.equitybank.co.rw" },
+  { "ticker": "IMR", "name": "I&M Bank Rwanda PLC", "exchange": "RSE", "country": "RW", "sector": "Financial Services", "website": "https://www.imbank.rw" },
+  { "ticker": "MTNR", "name": "MTN Rwanda PLC", "exchange": "RSE", "country": "RW", "sector": "ICT", "website": "https://www.mtn.co.rw" },
+  { "ticker": "NMG", "name": "Nation Media Group Rwanda", "exchange": "RSE", "country": "RW", "sector": "Media", "website": "https://www.nation.africa" }
+]

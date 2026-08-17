@@ -1,0 +1,137 @@
+[
+  {
+    "ticker": "SCOM",
+    "name": "Safaricom PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "ICT",
+    "website": "https://www.safaricom.co.ke",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "EQTY",
+    "name": "Equity Group Holdings PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Financial Services",
+    "website": "https://equitygroupholdings.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "KCB",
+    "name": "KCB Group PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Financial Services",
+    "website": "https://www.kcbgroup.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "EABL",
+    "name": "East African Breweries PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Consumer Goods",
+    "website": "https://www.eabl.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "COOP",
+    "name": "Co-operative Bank of Kenya Ltd",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Financial Services",
+    "website": "https://www.co-opbank.co.ke",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "NCBA",
+    "name": "NCBA Group PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Financial Services",
+    "website": "https://www.ncbagroup.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SCBK",
+    "name": "Standard Chartered Bank Kenya Ltd",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Financial Services",
+    "website": "https://www.sc.com/ke",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "BRIT",
+    "name": "Britam Holdings PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Insurance",
+    "website": "https://www.britam.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "BAT",
+    "name": "British American Tobacco Kenya PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Consumer Goods",
+    "website": "https://www.bat.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "KQ",
+    "name": "Kenya Airways PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Transport",
+    "website": "https://www.kenya-airways.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "ABSA",
+    "name": "Absa Bank Kenya PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Financial Services",
+    "website": "https://www.absa.co.ke",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "DTK",
+    "name": "Diamond Trust Bank Kenya Ltd",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Financial Services",
+    "website": "https://www.dtbafrica.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "IMH",
+    "name": "I&M Holdings PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Financial Services",
+    "website": "https://www.imbank.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "KPLC",
+    "name": "Kenya Power and Lighting Company Ltd",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Utilities",
+    "website": "https://www.kplc.co.ke",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "JUB",
+    "name": "Jubilee Holdings Ltd",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Insurance",
+    "website": "https://www.jubileeinsurance.com",
+    "fmdq_issuer_path": null
+  }
+]

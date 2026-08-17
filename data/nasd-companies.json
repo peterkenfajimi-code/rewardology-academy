@@ -3,6 +3,7 @@
     "ticker": "SDFCWAMCO",
     "name": "FrieslandCampina WAMCO Nigeria Plc",
     "exchange": "NASD",
+    "country": "NG",
     "sector": "Consumer Goods",
     "website": "https://www.frieslandcampina.com",
     "fmdq_issuer_path": null
@@ -11,6 +12,7 @@
     "ticker": "SDCSCSPLC",
     "name": "Central Securities Clearing System Plc",
     "exchange": "NASD",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.cscsgroup.com",
     "fmdq_issuer_path": null
@@ -19,6 +21,7 @@
     "ticker": "SDNIPCOPLC",
     "name": "NIPCO Plc",
     "exchange": "NASD",
+    "country": "NG",
     "sector": "Oil & Gas",
     "website": "https://www.nipcoplc.com",
     "fmdq_issuer_path": null
@@ -27,6 +30,7 @@
     "ticker": "SDAFRILAND",
     "name": "Afriland Properties Plc",
     "exchange": "NASD",
+    "country": "NG",
     "sector": "Real Estate",
     "website": "https://www.afrilandproperties.com",
     "fmdq_issuer_path": null
@@ -35,6 +39,7 @@
     "ticker": "SDAGMBANK",
     "name": "AG Mortgage Bank Plc",
     "exchange": "NASD",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.agmortgagebankplc.com",
     "fmdq_issuer_path": null
@@ -43,6 +48,7 @@
     "ticker": "SDUBNPROP",
     "name": "UBN Property Company Plc",
     "exchange": "NASD",
+    "country": "NG",
     "sector": "Real Estate",
     "website": "https://www.ubnproperties.com",
     "fmdq_issuer_path": null
@@ -51,6 +57,7 @@
     "ticker": "SDPURPLERE",
     "name": "Purple Real Estate Income Plc",
     "exchange": "NASD",
+    "country": "NG",
     "sector": "Real Estate",
     "website": "https://www.purplerealestate.com.ng",
     "fmdq_issuer_path": null
@@ -59,6 +66,7 @@
     "ticker": "SDCAPHOTEL",
     "name": "Capital Hotels Plc",
     "exchange": "NASD",
+    "country": "NG",
     "sector": "Hospitality",
     "website": "https://www.capitalhotelsplc.com",
     "fmdq_issuer_path": null
@@ -67,6 +75,7 @@
     "ticker": "SDOKITIPUPA",
     "name": "Okitipupa Oil Palm Plc",
     "exchange": "NASD",
+    "country": "NG",
     "sector": "Agriculture",
     "website": "https://www.okomupalm.com",
     "fmdq_issuer_path": null
@@ -75,6 +84,7 @@
     "ticker": "SDINFRACREDT",
     "name": "Infrastructure Credit Guarantee Company",
     "exchange": "NASD",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.infra-credit.com",
     "fmdq_issuer_path": null
@@ -83,6 +93,7 @@
     "ticker": "SDMRS",
     "name": "MRS Oil Nigeria Plc",
     "exchange": "NASD",
+    "country": "NG",
     "sector": "Oil & Gas",
     "website": "https://www.mrsoil.com",
     "fmdq_issuer_path": null
@@ -91,6 +102,7 @@
     "ticker": "SDACCESS",
     "name": "Access Bank Plc",
     "exchange": "NASD",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.accessbankplc.com",
     "fmdq_issuer_path": null
@@ -99,6 +111,7 @@
     "ticker": "SD11PLC",
     "name": "11 Plc",
     "exchange": "NASD",
+    "country": "NG",
     "sector": "Oil & Gas",
     "website": "https://www.11plc.com",
     "fmdq_issuer_path": null
@@ -107,6 +120,7 @@
     "ticker": "SDNASDPLC",
     "name": "NASD Plc",
     "exchange": "NASD",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://nasdng.com",
     "fmdq_issuer_path": null

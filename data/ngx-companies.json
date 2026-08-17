@@ -3,6 +3,7 @@
     "ticker": "GTCO",
     "name": "Guaranty Trust Holding Company Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.gtbank.com",
     "fmdq_issuer_path": null
@@ -11,6 +12,7 @@
     "ticker": "ZENITHBANK",
     "name": "Zenith Bank Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.zenithbank.com",
     "fmdq_issuer_path": null
@@ -19,6 +21,7 @@
     "ticker": "ACCESSCORP",
     "name": "Access Holdings Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.accessholdings.com",
     "fmdq_issuer_path": null
@@ -27,6 +30,7 @@
     "ticker": "UBA",
     "name": "United Bank for Africa Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.ubagroup.com",
     "fmdq_issuer_path": null
@@ -35,6 +39,7 @@
     "ticker": "FBNH",
     "name": "FBN Holdings Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.fbnholdings.com",
     "fmdq_issuer_path": null
@@ -43,6 +48,7 @@
     "ticker": "STANBIC",
     "name": "Stanbic IBTC Holdings Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.stanbicibtcbank.com",
     "fmdq_issuer_path": null
@@ -51,6 +57,7 @@
     "ticker": "DANGCEM",
     "name": "Dangote Cement Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Industrial Goods",
     "website": "https://www.dangotecement.com",
     "fmdq_issuer_path": null
@@ -59,6 +66,7 @@
     "ticker": "MTNN",
     "name": "MTN Nigeria Communications Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "ICT",
     "website": "https://www.mtn.ng",
     "fmdq_issuer_path": null
@@ -67,6 +75,7 @@
     "ticker": "AIRTELAFRI",
     "name": "Airtel Africa Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "ICT",
     "website": "https://www.africa.airtel.com",
     "fmdq_issuer_path": null
@@ -75,6 +84,7 @@
     "ticker": "NESTLE",
     "name": "Nestle Nigeria Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Consumer Goods",
     "website": "https://www.nestle-cwa.com",
     "fmdq_issuer_path": null
@@ -83,6 +93,7 @@
     "ticker": "BUACEMENT",
     "name": "BUA Cement Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Industrial Goods",
     "website": "https://www.buacement.com",
     "fmdq_issuer_path": null
@@ -91,6 +102,7 @@
     "ticker": "SEPLAT",
     "name": "Seplat Energy Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Oil & Gas",
     "website": "https://www.seplatenergy.com",
     "fmdq_issuer_path": null
@@ -99,6 +111,7 @@
     "ticker": "GEREGU",
     "name": "Geregu Power Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Utilities",
     "website": "https://www.geregupower.com",
     "fmdq_issuer_path": null
@@ -107,6 +120,7 @@
     "ticker": "WAPCO",
     "name": "Lafarge Africa Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Industrial Goods",
     "website": "https://www.lafarge.com.ng",
     "fmdq_issuer_path": null
@@ -115,6 +129,7 @@
     "ticker": "NB",
     "name": "Nigerian Breweries Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Consumer Goods",
     "website": "https://www.nbplc.com",
     "fmdq_issuer_path": null
@@ -123,6 +138,7 @@
     "ticker": "GUINNESS",
     "name": "Guinness Nigeria Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Consumer Goods",
     "website": "https://www.guinness-nigeria.com",
     "fmdq_issuer_path": null
@@ -131,6 +147,7 @@
     "ticker": "FLOURMILL",
     "name": "Flour Mills of Nigeria Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Consumer Goods",
     "website": "https://www.flourmillsnigeria.com",
     "fmdq_issuer_path": null
@@ -139,6 +156,7 @@
     "ticker": "DANGSUGAR",
     "name": "Dangote Sugar Refinery Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Consumer Goods",
     "website": "https://www.dangotesugar.com",
     "fmdq_issuer_path": null
@@ -147,6 +165,7 @@
     "ticker": "NASCON",
     "name": "Nascon Allied Industries Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Consumer Goods",
     "website": "https://www.nasconplc.com",
     "fmdq_issuer_path": null
@@ -155,6 +174,7 @@
     "ticker": "PRESCO",
     "name": "Presco Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Agriculture",
     "website": "https://www.presco-plc.com",
     "fmdq_issuer_path": null
@@ -163,6 +183,7 @@
     "ticker": "OKOMUOIL",
     "name": "Okomu Oil Palm Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Agriculture",
     "website": "https://www.okomupalm.com",
     "fmdq_issuer_path": null
@@ -171,6 +192,7 @@
     "ticker": "PZ",
     "name": "PZ Cussons Nigeria Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Consumer Goods",
     "website": "https://www.pzcussons.com.ng",
     "fmdq_issuer_path": null
@@ -179,6 +201,7 @@
     "ticker": "UNILEVER",
     "name": "Unilever Nigeria Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Consumer Goods",
     "website": "https://www.unilever.ng",
     "fmdq_issuer_path": null
@@ -187,6 +210,7 @@
     "ticker": "CADBURY",
     "name": "Cadbury Nigeria Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Consumer Goods",
     "website": "https://www.cadburynigeria.com",
     "fmdq_issuer_path": null
@@ -195,6 +219,7 @@
     "ticker": "TRANSCORP",
     "name": "Transcorp Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Conglomerates",
     "website": "https://www.transcorpgroup.com",
     "fmdq_issuer_path": null
@@ -203,6 +228,7 @@
     "ticker": "UACN",
     "name": "UAC of Nigeria Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Conglomerates",
     "website": "https://www.uacnplc.com",
     "fmdq_issuer_path": null
@@ -211,6 +237,7 @@
     "ticker": "WEMABANK",
     "name": "Wema Bank Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.wemabank.com",
     "fmdq_issuer_path": null
@@ -219,6 +246,7 @@
     "ticker": "FCMB",
     "name": "FCMB Group Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.fcmbgroup.com",
     "fmdq_issuer_path": null
@@ -227,6 +255,7 @@
     "ticker": "FIDELITYBK",
     "name": "Fidelity Bank Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.fidelitybank.ng",
     "fmdq_issuer_path": null
@@ -235,6 +264,7 @@
     "ticker": "UNIONDICON",
     "name": "Union Bank of Nigeria Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.unionbankng.com",
     "fmdq_issuer_path": null
@@ -243,6 +273,7 @@
     "ticker": "ETI",
     "name": "Ecobank Transnational Incorporated",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.ecobank.com",
     "fmdq_issuer_path": null
@@ -251,6 +282,7 @@
     "ticker": "CUSTODIAN",
     "name": "Custodian Investment Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Financial Services",
     "website": "https://www.custodianplc.com.ng",
     "fmdq_issuer_path": null
@@ -259,6 +291,7 @@
     "ticker": "CORNERST",
     "name": "Cornerstone Insurance Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Insurance",
     "website": "https://www.cornerstone.com.ng",
     "fmdq_issuer_path": null
@@ -267,6 +300,7 @@
     "ticker": "AIICO",
     "name": "AIICO Insurance Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Insurance",
     "website": "https://www.aiicoplc.com",
     "fmdq_issuer_path": null
@@ -275,6 +309,7 @@
     "ticker": "MANSARD",
     "name": "AXA Mansard Insurance Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Insurance",
     "website": "https://www.axamansard.com",
     "fmdq_issuer_path": null
@@ -283,6 +318,7 @@
     "ticker": "LASACO",
     "name": "Lasaco Assurance Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Insurance",
     "website": "https://www.lasacoassurance.com",
     "fmdq_issuer_path": null
@@ -291,6 +327,7 @@
     "ticker": "CONOIL",
     "name": "Conoil Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Oil & Gas",
     "website": "https://www.conoilplc.com",
     "fmdq_issuer_path": null
@@ -299,6 +336,7 @@
     "ticker": "TOTAL",
     "name": "TotalEnergies Marketing Nigeria Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Oil & Gas",
     "website": "https://totalenergies.ng",
     "fmdq_issuer_path": null
@@ -307,6 +345,7 @@
     "ticker": "MOBIL",
     "name": "11 Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Oil & Gas",
     "website": "https://www.11plc.com",
     "fmdq_issuer_path": null
@@ -315,6 +354,7 @@
     "ticker": "OANDO",
     "name": "Oando Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Oil & Gas",
     "website": "https://www.oandoplc.com",
     "fmdq_issuer_path": null
@@ -323,6 +363,7 @@
     "ticker": "ARADEL",
     "name": "Aradel Holdings Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Oil & Gas",
     "website": "https://www.aradel.com",
     "fmdq_issuer_path": null
@@ -331,6 +372,7 @@
     "ticker": "JAPAULGOLD",
     "name": "Japaul Gold and Ventures Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Oil & Gas",
     "website": "https://www.japaulgroup.com",
     "fmdq_issuer_path": null
@@ -339,6 +381,7 @@
     "ticker": "INTENEGINS",
     "name": "International Energy Insurance Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Insurance",
     "website": "https://www.ieiplc.com",
     "fmdq_issuer_path": null
@@ -347,6 +390,7 @@
     "ticker": "CWG",
     "name": "CWG Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "ICT",
     "website": "https://www.cwg-plc.com",
     "fmdq_issuer_path": null
@@ -355,6 +399,7 @@
     "ticker": "CHAMPION",
     "name": "Champion Breweries Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Consumer Goods",
     "website": "https://www.championbreweries.com",
     "fmdq_issuer_path": null
@@ -363,6 +408,7 @@
     "ticker": "VITAFOAM",
     "name": "Vitafoam Nigeria Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Industrial Goods",
     "website": "https://www.vitafoamng.com",
     "fmdq_issuer_path": null
@@ -371,6 +417,7 @@
     "ticker": "BERGER",
     "name": "Berger Paints Nigeria Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Industrial Goods",
     "website": "https://www.bergerpaints.com",
     "fmdq_issuer_path": null
@@ -379,6 +426,7 @@
     "ticker": "CAP",
     "name": "CAP Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Industrial Goods",
     "website": "https://www.capplc.com",
     "fmdq_issuer_path": null
@@ -387,6 +435,7 @@
     "ticker": "CUTIX",
     "name": "Cutix Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Industrial Goods",
     "website": "https://www.cutixplc.com",
     "fmdq_issuer_path": null
@@ -395,6 +444,7 @@
     "ticker": "DUNLOP",
     "name": "Dunlop Nigeria Plc",
     "exchange": "NGX",
+    "country": "NG",
     "sector": "Industrial Goods",
     "website": "https://www.dunlopnigeria.com",
     "fmdq_issuer_path": null

@@ -1,7 +1,12 @@
 import fs from "fs";
 import path from "path";
+import {
+  ALL_DISCLOSURE_EXCHANGES,
+  EXCHANGE_COUNTRY,
+  exchangesForCountries,
+} from "@/lib/repository/exchange-config";
 import type { DisclosureCompany } from "@/lib/repository/source-discovery";
-import type { DisclosureExchange } from "@/lib/repository/types";
+import type { CountryCode, DisclosureExchange } from "@/lib/repository/types";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -9,9 +14,14 @@ const EXCHANGE_FILES: Record<DisclosureExchange, { seed: string; cache: string }
   NGX: { seed: "ngx-companies-seed.json", cache: "ngx-companies.json" },
   FMDQ: { seed: "fmdq-issuers-seed.json", cache: "fmdq-issuers.json" },
   NASD: { seed: "nasd-companies-seed.json", cache: "nasd-companies.json" },
+  JSE: { seed: "jse-companies-seed.json", cache: "jse-companies.json" },
+  NSE: { seed: "nse-companies-seed.json", cache: "nse-companies.json" },
+  GSE: { seed: "gse-companies-seed.json", cache: "gse-companies.json" },
+  EGX: { seed: "egx-companies-seed.json", cache: "egx-companies.json" },
+  RSE: { seed: "rse-companies-seed.json", cache: "rse-companies.json" },
 };
 
-const COMBINED_CACHE = path.join(DATA_DIR, "nigeria-disclosure-companies.json");
+const COMBINED_CACHE = path.join(DATA_DIR, "disclosure-companies.json");
 
 type NgnMarketCompany = {
   symbol?: string;
@@ -28,14 +38,19 @@ function readJsonFile<T>(filePath: string): T[] {
   return Array.isArray(raw) ? raw : [];
 }
 
-function normalizeCompany(row: Partial<DisclosureCompany>, exchange: DisclosureExchange): DisclosureCompany | null {
+function normalizeCompany(
+  row: Partial<DisclosureCompany>,
+  exchange: DisclosureExchange
+): DisclosureCompany | null {
   const ticker = row.ticker?.trim().toUpperCase() ?? "";
   const name = row.name?.trim() ?? "";
   if (!ticker || !name) return null;
+  const resolvedExchange = row.exchange ?? exchange;
   return {
     ticker,
     name,
-    exchange: row.exchange ?? exchange,
+    exchange: resolvedExchange,
+    country: row.country ?? EXCHANGE_COUNTRY[resolvedExchange],
     sector: row.sector ?? null,
     website: row.website ?? null,
     fmdq_issuer_path: row.fmdq_issuer_path ?? null,
@@ -86,6 +101,7 @@ async function fetchNgxFromNgnMarket(apiKey: string): Promise<DisclosureCompany[
           sector: row.sector,
           website: row.website ?? row.website_url,
           exchange: "NGX",
+          country: "NG",
         },
         "NGX"
       )
@@ -95,12 +111,15 @@ async function fetchNgxFromNgnMarket(apiKey: string): Promise<DisclosureCompany[
 
 export async function loadDisclosureCompanies(options?: {
   exchanges?: DisclosureExchange[];
+  countries?: CountryCode[];
   apiKey?: string;
   preferCache?: boolean;
 }): Promise<DisclosureCompany[]> {
-  const exchanges = options?.exchanges?.length
-    ? options.exchanges
-    : (["NGX", "FMDQ", "NASD"] as DisclosureExchange[]);
+  let exchanges = options?.exchanges?.length ? options.exchanges : ALL_DISCLOSURE_EXCHANGES;
+  if (options?.countries?.length) {
+    const allowed = new Set(exchangesForCountries(options.countries));
+    exchanges = exchanges.filter((e) => allowed.has(e));
+  }
 
   const companies: DisclosureCompany[] = [];
 
@@ -118,14 +137,25 @@ export async function loadDisclosureCompanies(options?: {
     companies.push(...loadExchangeCompanies(exchange, options?.preferCache ?? true));
   }
 
-  if (options?.preferCache && fs.existsSync(COMBINED_CACHE) && exchanges.length === 3) {
+  if (
+    options?.preferCache &&
+    fs.existsSync(COMBINED_CACHE) &&
+    !options.exchanges?.length &&
+    !options.countries?.length
+  ) {
     const combined = readJsonFile<Partial<DisclosureCompany>>(COMBINED_CACHE);
     if (combined.length) {
-      return combined.map((r) => normalizeCompany(r, r.exchange ?? "NGX")).filter(Boolean) as DisclosureCompany[];
+      return combined
+        .map((r) => normalizeCompany(r, r.exchange ?? "NGX"))
+        .filter(Boolean) as DisclosureCompany[];
     }
   }
 
-  return companies;
+  return companies.sort(
+    (a, b) =>
+      (EXCHANGE_COUNTRY[a.exchange] ?? "").localeCompare(EXCHANGE_COUNTRY[b.exchange] ?? "") ||
+      a.name.localeCompare(b.name)
+  );
 }
 
 export async function syncDisclosureCompaniesToFiles(apiKey?: string): Promise<DisclosureCompany[]> {
@@ -133,20 +163,24 @@ export async function syncDisclosureCompaniesToFiles(apiKey?: string): Promise<D
   let ngx = key ? await fetchNgxFromNgnMarket(key) : null;
   if (!ngx?.length) ngx = loadExchangeCompanies("NGX", false);
 
-  const fmdq = loadExchangeCompanies("FMDQ", false);
-  const nasd = loadExchangeCompanies("NASD", false);
-  const all = [...ngx, ...fmdq, ...nasd];
-
+  const all: DisclosureCompany[] = [...ngx];
   fs.mkdirSync(DATA_DIR, { recursive: true });
   fs.writeFileSync(path.join(DATA_DIR, EXCHANGE_FILES.NGX.cache), `${JSON.stringify(ngx, null, 2)}\n`);
-  fs.writeFileSync(path.join(DATA_DIR, EXCHANGE_FILES.FMDQ.cache), `${JSON.stringify(fmdq, null, 2)}\n`);
-  fs.writeFileSync(path.join(DATA_DIR, EXCHANGE_FILES.NASD.cache), `${JSON.stringify(nasd, null, 2)}\n`);
-  fs.writeFileSync(COMBINED_CACHE, `${JSON.stringify(all, null, 2)}\n`);
 
+  for (const exchange of ALL_DISCLOSURE_EXCHANGES) {
+    if (exchange === "NGX") continue;
+    const rows = loadExchangeCompanies(exchange, false);
+    all.push(...rows);
+    fs.writeFileSync(
+      path.join(DATA_DIR, EXCHANGE_FILES[exchange].cache),
+      `${JSON.stringify(rows, null, 2)}\n`
+    );
+  }
+
+  fs.writeFileSync(COMBINED_CACHE, `${JSON.stringify(all, null, 2)}\n`);
   return all;
 }
 
-/** @deprecated use loadDisclosureCompanies */
 export async function loadNgxCompanies(options?: {
   apiKey?: string;
   preferCache?: boolean;

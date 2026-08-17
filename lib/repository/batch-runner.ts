@@ -1,4 +1,5 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { EXCHANGE_COUNTRY } from "@/lib/repository/exchange-config";
 import { loadDisclosureCompanies } from "@/lib/repository/disclosure-companies";
 import { extractBenefitsFromSource } from "@/lib/repository/extract-benefits";
 import { saveSourceAndEntries } from "@/lib/repository/save-source";
@@ -8,12 +9,13 @@ import {
   type DiscoveredSource,
   type DisclosureCompany,
 } from "@/lib/repository/source-discovery";
-import type { CountryModule, DisclosureExchange, SourceType } from "@/lib/repository/types";
+import type { CountryModule, DisclosureExchange, SourceType, CountryCode } from "@/lib/repository/types";
 
 export type BatchConfig = {
   maxCompanies?: number;
   tickers?: string[];
   exchanges?: DisclosureExchange[];
+  countries?: CountryCode[];
   sourceTypes?: SourceType[];
   publish?: boolean;
   dryRun?: boolean;
@@ -82,11 +84,13 @@ async function upsertDisclosureCompany(
     return byName;
   }
 
+  const country = entry.country ?? EXCHANGE_COUNTRY[entry.exchange];
+
   const { data: inserted, error } = await supabase
     .from("companies")
     .insert({
       name: entry.name,
-      country: "NG",
+      country,
       industry: entry.sector ?? null,
       listed_status: "listed",
       exchange_ticker: entry.ticker,
@@ -122,6 +126,7 @@ async function processSource(
   params: {
     companyId: string;
     companyName: string;
+    companyCountry: CountryCode;
     countryModule: CountryModule | null;
     source: DiscoveredSource;
     config: BatchConfig;
@@ -158,7 +163,7 @@ async function processSource(
         source_url: source.source_url,
         source_title: source.source_title,
         publication_date: source.publication_date ?? null,
-        country: "NG",
+        country: params.companyCountry,
       },
       entries: extracted.entries,
       publish: config.publish ?? false,
@@ -205,8 +210,17 @@ export async function runBenefitsRepositoryBatch(
 
   let companies = await loadDisclosureCompanies({
     preferCache: true,
-    exchanges: config.exchanges?.length ? config.exchanges : ["NGX", "FMDQ", "NASD"],
+    exchanges: config.exchanges,
+    countries: config.countries,
   });
+
+  if (!config.exchanges?.length && !config.countries?.length) {
+    companies = await loadDisclosureCompanies({
+      preferCache: true,
+      countries: ["NG"],
+      exchanges: ["NGX", "FMDQ", "NASD"],
+    });
+  }
   if (config.tickers?.length) {
     const tickers = new Set(config.tickers.map((t) => t.toUpperCase()));
     companies = companies.filter((c) => tickers.has(c.ticker));
@@ -215,9 +229,13 @@ export async function runBenefitsRepositoryBatch(
     companies = companies.slice(0, config.maxCompanies);
   }
 
-  const exchangeLabel = (config.exchanges?.length ? config.exchanges : ["NGX", "FMDQ", "NASD"]).join("/");
+  const scopeLabel = config.countries?.length
+    ? config.countries.join(", ")
+    : config.exchanges?.length
+      ? config.exchanges.join(", ")
+      : "NG (NGX/FMDQ/NASD)";
   progress.companiesTotal = companies.length;
-  appendLog(log, `Starting batch for ${companies.length} Nigeria disclosure companies (${exchangeLabel})`);
+  appendLog(log, `Starting batch for ${companies.length} disclosure companies (${scopeLabel})`);
   await onProgress?.(progress, log.join("\n"));
 
   const delayMs = config.delayMs ?? 3000;
@@ -241,6 +259,7 @@ export async function runBenefitsRepositoryBatch(
         await processSource(supabase, {
           companyId: company.company_id,
           companyName: company.name,
+          companyCountry: company.country as CountryCode,
           countryModule,
           source,
           config,

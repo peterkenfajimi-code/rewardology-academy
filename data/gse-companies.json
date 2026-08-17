@@ -1,0 +1,92 @@
+[
+  {
+    "ticker": "MTNGH",
+    "name": "MTN Ghana PLC",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "ICT",
+    "website": "https://www.mtn.com.gh",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "GCB",
+    "name": "GCB Bank PLC",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "Financial Services",
+    "website": "https://www.gcbbank.com.gh",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "CAL",
+    "name": "CalBank PLC",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "Financial Services",
+    "website": "https://www.calbank.net",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "FML",
+    "name": "Fan Milk PLC",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "Consumer Goods",
+    "website": "https://www.fanmilk.danone.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "TOTAL",
+    "name": "TotalEnergies Marketing Ghana PLC",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "Oil & Gas",
+    "website": "https://totalenergies.com.gh",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "EGL",
+    "name": "Enterprise Group PLC",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "Insurance",
+    "website": "https://www.enterprisegroup.net.gh",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "UNIL",
+    "name": "Unilever Ghana PLC",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "Consumer Goods",
+    "website": "https://www.unilever.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "GOIL",
+    "name": "GOIL Company Ltd",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "Oil & Gas",
+    "website": "https://www.goil.com.gh",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SIC",
+    "name": "SIC Insurance PLC",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "Insurance",
+    "website": "https://www.sic-gh.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "BOPP",
+    "name": "BOPP PLC",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "Industrial",
+    "website": "https://www.boppghana.com",
+    "fmdq_issuer_path": null
+  }
+]

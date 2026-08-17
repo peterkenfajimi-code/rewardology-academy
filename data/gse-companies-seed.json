@@ -1,0 +1,12 @@
+[
+  { "ticker": "MTNGH", "name": "MTN Ghana PLC", "exchange": "GSE", "country": "GH", "sector": "ICT", "website": "https://www.mtn.com.gh" },
+  { "ticker": "GCB", "name": "GCB Bank PLC", "exchange": "GSE", "country": "GH", "sector": "Financial Services", "website": "https://www.gcbbank.com.gh" },
+  { "ticker": "CAL", "name": "CalBank PLC", "exchange": "GSE", "country": "GH", "sector": "Financial Services", "website": "https://www.calbank.net" },
+  { "ticker": "FML", "name": "Fan Milk PLC", "exchange": "GSE", "country": "GH", "sector": "Consumer Goods", "website": "https://www.fanmilk.danone.com" },
+  { "ticker": "TOTAL", "name": "TotalEnergies Marketing Ghana PLC", "exchange": "GSE", "country": "GH", "sector": "Oil & Gas", "website": "https://totalenergies.com.gh" },
+  { "ticker": "EGL", "name": "Enterprise Group PLC", "exchange": "GSE", "country": "GH", "sector": "Insurance", "website": "https://www.enterprisegroup.net.gh" },
+  { "ticker": "UNIL", "name": "Unilever Ghana PLC", "exchange": "GSE", "country": "GH", "sector": "Consumer Goods", "website": "https://www.unilever.com" },
+  { "ticker": "GOIL", "name": "GOIL Company Ltd", "exchange": "GSE", "country": "GH", "sector": "Oil & Gas", "website": "https://www.goil.com.gh" },
+  { "ticker": "SIC", "name": "SIC Insurance PLC", "exchange": "GSE", "country": "GH", "sector": "Insurance", "website": "https://www.sic-gh.com" },
+  { "ticker": "BOPP", "name": "BOPP PLC", "exchange": "GSE", "country": "GH", "sector": "Industrial", "website": "https://www.boppghana.com" }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "ticker": "BK",
+    "name": "Bank of Kigali PLC",
+    "exchange": "RSE",
+    "country": "RW",
+    "sector": "Financial Services",
+    "website": "https://www.bk.rw",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "BRAL",
+    "name": "Bralirwa PLC",
+    "exchange": "RSE",
+    "country": "RW",
+    "sector": "Consumer Goods",
+    "website": "https://www.bralirwa.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "CTL",
+    "name": "Crystal Telecom Ltd",
+    "exchange": "RSE",
+    "country": "RW",
+    "sector": "ICT",
+    "website": "https://www.crystaltelecom.rw",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "EQTY",
+    "name": "Equity Bank Rwanda PLC",
+    "exchange": "RSE",
+    "country": "RW",
+    "sector": "Financial Services",
+    "website": "https://www.equitybank.co.rw",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "IMR",
+    "name": "I&M Bank Rwanda PLC",
+    "exchange": "RSE",
+    "country": "RW",
+    "sector": "Financial Services",
+    "website": "https://www.imbank.rw",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "MTNR",
+    "name": "MTN Rwanda PLC",
+    "exchange": "RSE",
+    "country": "RW",
+    "sector": "ICT",
+    "website": "https://www.mtn.co.rw",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "NMG",
+    "name": "Nation Media Group Rwanda",
+    "exchange": "RSE",
+    "country": "RW",
+    "sector": "Media",
+    "website": "https://www.nation.africa",
+    "fmdq_issuer_path": null
+  }
+]

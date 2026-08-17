@@ -1,0 +1,1289 @@
+[
+  {
+    "ticker": "GTCO",
+    "name": "Guaranty Trust Holding Company Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.gtbank.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "ZENITHBANK",
+    "name": "Zenith Bank Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.zenithbank.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "ACCESSCORP",
+    "name": "Access Holdings Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.accessholdings.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "UBA",
+    "name": "United Bank for Africa Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.ubagroup.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "FBNH",
+    "name": "FBN Holdings Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.fbnholdings.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "STANBIC",
+    "name": "Stanbic IBTC Holdings Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.stanbicibtcbank.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "DANGCEM",
+    "name": "Dangote Cement Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Industrial Goods",
+    "website": "https://www.dangotecement.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "MTNN",
+    "name": "MTN Nigeria Communications Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "ICT",
+    "website": "https://www.mtn.ng",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "AIRTELAFRI",
+    "name": "Airtel Africa Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "ICT",
+    "website": "https://www.africa.airtel.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "NESTLE",
+    "name": "Nestle Nigeria Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Consumer Goods",
+    "website": "https://www.nestle-cwa.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "BUACEMENT",
+    "name": "BUA Cement Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Industrial Goods",
+    "website": "https://www.buacement.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SEPLAT",
+    "name": "Seplat Energy Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Oil & Gas",
+    "website": "https://www.seplatenergy.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "GEREGU",
+    "name": "Geregu Power Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Utilities",
+    "website": "https://www.geregupower.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "WAPCO",
+    "name": "Lafarge Africa Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Industrial Goods",
+    "website": "https://www.lafarge.com.ng",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "NB",
+    "name": "Nigerian Breweries Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Consumer Goods",
+    "website": "https://www.nbplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "GUINNESS",
+    "name": "Guinness Nigeria Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Consumer Goods",
+    "website": "https://www.guinness-nigeria.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "FLOURMILL",
+    "name": "Flour Mills of Nigeria Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Consumer Goods",
+    "website": "https://www.flourmillsnigeria.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "DANGSUGAR",
+    "name": "Dangote Sugar Refinery Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Consumer Goods",
+    "website": "https://www.dangotesugar.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "NASCON",
+    "name": "Nascon Allied Industries Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Consumer Goods",
+    "website": "https://www.nasconplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "PRESCO",
+    "name": "Presco Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Agriculture",
+    "website": "https://www.presco-plc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "OKOMUOIL",
+    "name": "Okomu Oil Palm Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Agriculture",
+    "website": "https://www.okomupalm.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "PZ",
+    "name": "PZ Cussons Nigeria Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Consumer Goods",
+    "website": "https://www.pzcussons.com.ng",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "UNILEVER",
+    "name": "Unilever Nigeria Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Consumer Goods",
+    "website": "https://www.unilever.ng",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "CADBURY",
+    "name": "Cadbury Nigeria Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Consumer Goods",
+    "website": "https://www.cadburynigeria.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "TRANSCORP",
+    "name": "Transcorp Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Conglomerates",
+    "website": "https://www.transcorpgroup.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "UACN",
+    "name": "UAC of Nigeria Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Conglomerates",
+    "website": "https://www.uacnplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "WEMABANK",
+    "name": "Wema Bank Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.wemabank.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "FCMB",
+    "name": "FCMB Group Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.fcmbgroup.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "FIDELITYBK",
+    "name": "Fidelity Bank Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.fidelitybank.ng",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "UNIONDICON",
+    "name": "Union Bank of Nigeria Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.unionbankng.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "ETI",
+    "name": "Ecobank Transnational Incorporated",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.ecobank.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "CUSTODIAN",
+    "name": "Custodian Investment Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.custodianplc.com.ng",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "CORNERST",
+    "name": "Cornerstone Insurance Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Insurance",
+    "website": "https://www.cornerstone.com.ng",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "AIICO",
+    "name": "AIICO Insurance Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Insurance",
+    "website": "https://www.aiicoplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "MANSARD",
+    "name": "AXA Mansard Insurance Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Insurance",
+    "website": "https://www.axamansard.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "LASACO",
+    "name": "Lasaco Assurance Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Insurance",
+    "website": "https://www.lasacoassurance.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "CONOIL",
+    "name": "Conoil Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Oil & Gas",
+    "website": "https://www.conoilplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "TOTAL",
+    "name": "TotalEnergies Marketing Nigeria Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Oil & Gas",
+    "website": "https://totalenergies.ng",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "MOBIL",
+    "name": "11 Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Oil & Gas",
+    "website": "https://www.11plc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "OANDO",
+    "name": "Oando Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Oil & Gas",
+    "website": "https://www.oandoplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "ARADEL",
+    "name": "Aradel Holdings Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Oil & Gas",
+    "website": "https://www.aradel.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "JAPAULGOLD",
+    "name": "Japaul Gold and Ventures Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Oil & Gas",
+    "website": "https://www.japaulgroup.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "INTENEGINS",
+    "name": "International Energy Insurance Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Insurance",
+    "website": "https://www.ieiplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "CWG",
+    "name": "CWG Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "ICT",
+    "website": "https://www.cwg-plc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "CHAMPION",
+    "name": "Champion Breweries Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Consumer Goods",
+    "website": "https://www.championbreweries.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "VITAFOAM",
+    "name": "Vitafoam Nigeria Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Industrial Goods",
+    "website": "https://www.vitafoamng.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "BERGER",
+    "name": "Berger Paints Nigeria Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Industrial Goods",
+    "website": "https://www.bergerpaints.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "CAP",
+    "name": "CAP Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Industrial Goods",
+    "website": "https://www.capplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "CUTIX",
+    "name": "Cutix Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Industrial Goods",
+    "website": "https://www.cutixplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "DUNLOP",
+    "name": "Dunlop Nigeria Plc",
+    "exchange": "NGX",
+    "country": "NG",
+    "sector": "Industrial Goods",
+    "website": "https://www.dunlopnigeria.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "MTNN",
+    "name": "MTN Nigeria Communications Plc",
+    "exchange": "FMDQ",
+    "country": "NG",
+    "sector": "ICT",
+    "website": "https://www.mtn.ng",
+    "fmdq_issuer_path": "mtn-nigeria-communications-plc-2"
+  },
+  {
+    "ticker": "FCMB",
+    "name": "FCMB Group Plc",
+    "exchange": "FMDQ",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.fcmbgroup.com",
+    "fmdq_issuer_path": "fcmb-group-plc"
+  },
+  {
+    "ticker": "STANBIC",
+    "name": "Stanbic IBTC Holdings Plc",
+    "exchange": "FMDQ",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.stanbicibtcbank.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "NB",
+    "name": "Nigerian Breweries Plc",
+    "exchange": "FMDQ",
+    "country": "NG",
+    "sector": "Consumer Goods",
+    "website": "https://www.nbplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "DANGCEM",
+    "name": "Dangote Cement Plc",
+    "exchange": "FMDQ",
+    "country": "NG",
+    "sector": "Industrial Goods",
+    "website": "https://www.dangotecement.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "BUAFOODS",
+    "name": "BUA Foods Plc",
+    "exchange": "FMDQ",
+    "country": "NG",
+    "sector": "Consumer Goods",
+    "website": "https://www.buafoods.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "UPDC",
+    "name": "UPDC Plc",
+    "exchange": "FMDQ",
+    "country": "NG",
+    "sector": "Real Estate",
+    "website": "https://www.updcplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "LIVINGTRUST",
+    "name": "Living Trust Mortgage Bank Plc",
+    "exchange": "FMDQ",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.livingtrustmortgagebank.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "VFD",
+    "name": "VFD Group Plc",
+    "exchange": "FMDQ",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.vfdgroup.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "LOTUS",
+    "name": "Lotus Halal Fixed Income Fund",
+    "exchange": "FMDQ",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://fmdqgroup.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SEPLAT",
+    "name": "Seplat Energy Plc",
+    "exchange": "FMDQ",
+    "country": "NG",
+    "sector": "Oil & Gas",
+    "website": "https://www.seplatenergy.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "GEREGU",
+    "name": "Geregu Power Plc",
+    "exchange": "FMDQ",
+    "country": "NG",
+    "sector": "Utilities",
+    "website": "https://www.geregupower.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "TRANSCORP",
+    "name": "Transcorp Plc",
+    "exchange": "FMDQ",
+    "country": "NG",
+    "sector": "Conglomerates",
+    "website": "https://www.transcorpgroup.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "UACN",
+    "name": "UAC of Nigeria Plc",
+    "exchange": "FMDQ",
+    "country": "NG",
+    "sector": "Conglomerates",
+    "website": "https://www.uacnplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "CUSTODIAN",
+    "name": "Custodian Investment Plc",
+    "exchange": "FMDQ",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.custodianplc.com.ng",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDFCWAMCO",
+    "name": "FrieslandCampina WAMCO Nigeria Plc",
+    "exchange": "NASD",
+    "country": "NG",
+    "sector": "Consumer Goods",
+    "website": "https://www.frieslandcampina.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDCSCSPLC",
+    "name": "Central Securities Clearing System Plc",
+    "exchange": "NASD",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.cscsgroup.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDNIPCOPLC",
+    "name": "NIPCO Plc",
+    "exchange": "NASD",
+    "country": "NG",
+    "sector": "Oil & Gas",
+    "website": "https://www.nipcoplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDAFRILAND",
+    "name": "Afriland Properties Plc",
+    "exchange": "NASD",
+    "country": "NG",
+    "sector": "Real Estate",
+    "website": "https://www.afrilandproperties.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDAGMBANK",
+    "name": "AG Mortgage Bank Plc",
+    "exchange": "NASD",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.agmortgagebankplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDUBNPROP",
+    "name": "UBN Property Company Plc",
+    "exchange": "NASD",
+    "country": "NG",
+    "sector": "Real Estate",
+    "website": "https://www.ubnproperties.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDPURPLERE",
+    "name": "Purple Real Estate Income Plc",
+    "exchange": "NASD",
+    "country": "NG",
+    "sector": "Real Estate",
+    "website": "https://www.purplerealestate.com.ng",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDCAPHOTEL",
+    "name": "Capital Hotels Plc",
+    "exchange": "NASD",
+    "country": "NG",
+    "sector": "Hospitality",
+    "website": "https://www.capitalhotelsplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDOKITIPUPA",
+    "name": "Okitipupa Oil Palm Plc",
+    "exchange": "NASD",
+    "country": "NG",
+    "sector": "Agriculture",
+    "website": "https://www.okomupalm.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDINFRACREDT",
+    "name": "Infrastructure Credit Guarantee Company",
+    "exchange": "NASD",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.infra-credit.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDMRS",
+    "name": "MRS Oil Nigeria Plc",
+    "exchange": "NASD",
+    "country": "NG",
+    "sector": "Oil & Gas",
+    "website": "https://www.mrsoil.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDACCESS",
+    "name": "Access Bank Plc",
+    "exchange": "NASD",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://www.accessbankplc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SD11PLC",
+    "name": "11 Plc",
+    "exchange": "NASD",
+    "country": "NG",
+    "sector": "Oil & Gas",
+    "website": "https://www.11plc.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SDNASDPLC",
+    "name": "NASD Plc",
+    "exchange": "NASD",
+    "country": "NG",
+    "sector": "Financial Services",
+    "website": "https://nasdng.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "MTN",
+    "name": "MTN Group Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "ICT",
+    "website": "https://www.mtn.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "NPN",
+    "name": "Naspers Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Technology",
+    "website": "https://www.naspers.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "PRX",
+    "name": "Prosus N.V.",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Technology",
+    "website": "https://www.prosus.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SBK",
+    "name": "Standard Bank Group Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Financial Services",
+    "website": "https://www.standardbank.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "FSR",
+    "name": "FirstRand Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Financial Services",
+    "website": "https://www.firstrand.co.za",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "ABG",
+    "name": "Absa Group Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Financial Services",
+    "website": "https://www.absa.africa",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "NED",
+    "name": "Nedbank Group Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Financial Services",
+    "website": "https://www.nedbank.co.za",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "VOD",
+    "name": "Vodacom Group Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "ICT",
+    "website": "https://www.vodacom.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SOL",
+    "name": "Sasol Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Oil & Gas",
+    "website": "https://www.sasol.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "ANG",
+    "name": "Anglo American Plc",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Mining",
+    "website": "https://www.angloamerican.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "GFI",
+    "name": "Gold Fields Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Mining",
+    "website": "https://www.goldfields.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SHP",
+    "name": "Shoprite Holdings Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Consumer Goods",
+    "website": "https://www.shopriteholdings.co.za",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "BID",
+    "name": "Bid Corporation Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Consumer Goods",
+    "website": "https://www.bidcorp.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "DSY",
+    "name": "Discovery Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Financial Services",
+    "website": "https://www.discovery.co.za",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "TBS",
+    "name": "Tiger Brands Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Consumer Goods",
+    "website": "https://www.tigerbrands.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "REM",
+    "name": "Remgro Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Conglomerates",
+    "website": "https://www.remgro.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "INP",
+    "name": "Investec Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Financial Services",
+    "website": "https://www.investec.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "CFR",
+    "name": "Richemont",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Consumer Goods",
+    "website": "https://www.richemont.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "NPH",
+    "name": "Nepi Rockcastle N.V.",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Real Estate",
+    "website": "https://www.nepirockcastle.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SLM",
+    "name": "Sanlam Ltd",
+    "exchange": "JSE",
+    "country": "ZA",
+    "sector": "Financial Services",
+    "website": "https://www.sanlam.co.za",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SCOM",
+    "name": "Safaricom PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "ICT",
+    "website": "https://www.safaricom.co.ke",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "EQTY",
+    "name": "Equity Group Holdings PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Financial Services",
+    "website": "https://equitygroupholdings.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "KCB",
+    "name": "KCB Group PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Financial Services",
+    "website": "https://www.kcbgroup.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "EABL",
+    "name": "East African Breweries PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Consumer Goods",
+    "website": "https://www.eabl.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "COOP",
+    "name": "Co-operative Bank of Kenya Ltd",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Financial Services",
+    "website": "https://www.co-opbank.co.ke",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "NCBA",
+    "name": "NCBA Group PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Financial Services",
+    "website": "https://www.ncbagroup.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SCBK",
+    "name": "Standard Chartered Bank Kenya Ltd",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Financial Services",
+    "website": "https://www.sc.com/ke",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "BRIT",
+    "name": "Britam Holdings PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Insurance",
+    "website": "https://www.britam.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "BAT",
+    "name": "British American Tobacco Kenya PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Consumer Goods",
+    "website": "https://www.bat.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "KQ",
+    "name": "Kenya Airways PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Transport",
+    "website": "https://www.kenya-airways.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "ABSA",
+    "name": "Absa Bank Kenya PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Financial Services",
+    "website": "https://www.absa.co.ke",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "DTK",
+    "name": "Diamond Trust Bank Kenya Ltd",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Financial Services",
+    "website": "https://www.dtbafrica.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "IMH",
+    "name": "I&M Holdings PLC",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Financial Services",
+    "website": "https://www.imbank.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "KPLC",
+    "name": "Kenya Power and Lighting Company Ltd",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Utilities",
+    "website": "https://www.kplc.co.ke",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "JUB",
+    "name": "Jubilee Holdings Ltd",
+    "exchange": "NSE",
+    "country": "KE",
+    "sector": "Insurance",
+    "website": "https://www.jubileeinsurance.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "MTNGH",
+    "name": "MTN Ghana PLC",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "ICT",
+    "website": "https://www.mtn.com.gh",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "GCB",
+    "name": "GCB Bank PLC",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "Financial Services",
+    "website": "https://www.gcbbank.com.gh",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "CAL",
+    "name": "CalBank PLC",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "Financial Services",
+    "website": "https://www.calbank.net",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "FML",
+    "name": "Fan Milk PLC",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "Consumer Goods",
+    "website": "https://www.fanmilk.danone.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "TOTAL",
+    "name": "TotalEnergies Marketing Ghana PLC",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "Oil & Gas",
+    "website": "https://totalenergies.com.gh",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "EGL",
+    "name": "Enterprise Group PLC",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "Insurance",
+    "website": "https://www.enterprisegroup.net.gh",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "UNIL",
+    "name": "Unilever Ghana PLC",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "Consumer Goods",
+    "website": "https://www.unilever.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "GOIL",
+    "name": "GOIL Company Ltd",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "Oil & Gas",
+    "website": "https://www.goil.com.gh",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SIC",
+    "name": "SIC Insurance PLC",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "Insurance",
+    "website": "https://www.sic-gh.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "BOPP",
+    "name": "BOPP PLC",
+    "exchange": "GSE",
+    "country": "GH",
+    "sector": "Industrial",
+    "website": "https://www.boppghana.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "COMI",
+    "name": "Commercial International Bank",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Financial Services",
+    "website": "https://www.cibeg.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "ETEL",
+    "name": "Telecom Egypt",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "ICT",
+    "website": "https://www.te.eg",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "SWDY",
+    "name": "El Sewedy Electric Company",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Industrial",
+    "website": "https://www.el-sewedy.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "TMGH",
+    "name": "T M G Holding",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Real Estate",
+    "website": "https://www.tmgholding.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "ESRS",
+    "name": "Ezz Steel",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Industrial",
+    "website": "https://www.ezzsteel.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "PHDC",
+    "name": "Palm Hills Developments",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Real Estate",
+    "website": "https://www.palmhillsdevelopments.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "OCDI",
+    "name": "Six of October Development and Investment (SODIC)",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Real Estate",
+    "website": "https://www.sodic.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "HRHO",
+    "name": "GB Auto",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Automotive",
+    "website": "https://www.gb-auto.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "EAST",
+    "name": "Eastern Company",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Consumer Goods",
+    "website": "https://www.easterncompany.com.eg",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "ORWE",
+    "name": "Oriental Weavers",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Industrial",
+    "website": "https://www.orientalweavers.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "ABUK",
+    "name": "Abu Qir Fertilizers",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Industrial",
+    "website": "https://www.abuqir.com.eg",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "FWRY",
+    "name": "Fawry for Banking Technology",
+    "exchange": "EGX",
+    "country": "EG",
+    "sector": "Financial Services",
+    "website": "https://www.fawry.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "BK",
+    "name": "Bank of Kigali PLC",
+    "exchange": "RSE",
+    "country": "RW",
+    "sector": "Financial Services",
+    "website": "https://www.bk.rw",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "BRAL",
+    "name": "Bralirwa PLC",
+    "exchange": "RSE",
+    "country": "RW",
+    "sector": "Consumer Goods",
+    "website": "https://www.bralirwa.com",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "CTL",
+    "name": "Crystal Telecom Ltd",
+    "exchange": "RSE",
+    "country": "RW",
+    "sector": "ICT",
+    "website": "https://www.crystaltelecom.rw",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "EQTY",
+    "name": "Equity Bank Rwanda PLC",
+    "exchange": "RSE",
+    "country": "RW",
+    "sector": "Financial Services",
+    "website": "https://www.equitybank.co.rw",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "IMR",
+    "name": "I&M Bank Rwanda PLC",
+    "exchange": "RSE",
+    "country": "RW",
+    "sector": "Financial Services",
+    "website": "https://www.imbank.rw",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "MTNR",
+    "name": "MTN Rwanda PLC",
+    "exchange": "RSE",
+    "country": "RW",
+    "sector": "ICT",
+    "website": "https://www.mtn.co.rw",
+    "fmdq_issuer_path": null
+  },
+  {
+    "ticker": "NMG",
+    "name": "Nation Media Group Rwanda",
+    "exchange": "RSE",
+    "country": "RW",
+    "sector": "Media",
+    "website": "https://www.nation.africa",
+    "fmdq_issuer_path": null
+  }
+]

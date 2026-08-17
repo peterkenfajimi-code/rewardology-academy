@@ -28,7 +28,15 @@ export type PublishStatus = "published" | "pending_verification" | "superseded" 
 
 export type CompanySizeBand = "1-50" | "51-500" | "501-5000" | "5000+";
 
-export type DisclosureExchange = "NGX" | "FMDQ" | "NASD";
+export type DisclosureExchange =
+  | "NGX"
+  | "FMDQ"
+  | "NASD"
+  | "JSE"
+  | "NSE"
+  | "GSE"
+  | "EGX"
+  | "RSE";
 
 export type ListedStatus = "listed" | "private" | "multinational_subsidiary";
 
@@ -41,6 +49,7 @@ export type CountryModule = {
   pension_statutory_employee_pct: number | null;
   pension_scheme_type: string | null;
   notes: string | null;
+  collection_priority?: number | null;
 };
 
 export type Company = {

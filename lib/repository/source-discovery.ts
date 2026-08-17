@@ -1,9 +1,11 @@
-import type { DisclosureExchange, SourceType } from "@/lib/repository/types";
+import type { CountryCode, DisclosureExchange, SourceType } from "@/lib/repository/types";
+import { regulatoryFilingUrl } from "@/lib/repository/exchange-config";
 
 export type DisclosureCompany = {
   ticker: string;
   name: string;
   exchange: DisclosureExchange;
+  country?: CountryCode;
   sector?: string | null;
   website?: string | null;
   /** FMDQ issuer page slug under /exchange/issuer/{slug}/ */
@@ -158,10 +160,6 @@ function investorPaths(origin: string): string[] {
   ];
 }
 
-function ngxDisclosureUrl(ticker: string): string {
-  return `https://ngxgroup.com/exchange/trade/equities/${encodeURIComponent(ticker.toLowerCase())}/`;
-}
-
 const FMDQ_COMPLIANCE_URL = "https://fmdqgroup.com/exchange/listing-quotations-compliance/";
 
 function fmdqIssuerUrl(issuerPath: string): string {
@@ -169,59 +167,49 @@ function fmdqIssuerUrl(issuerPath: string): string {
   return `https://fmdqgroup.com/exchange/issuer/${slug}/`;
 }
 
-const NASD_SECURITIES_URL = "https://nasdng.com/prices-markets/securities-categorization/";
 const NASD_PRICES_URL = "https://nasdng.com/prices-markets/companies-prices/";
 
 function exchangeRegulatorySources(company: DisclosureCompany): DiscoveredSource[] {
-  switch (company.exchange) {
-    case "NGX":
-      return company.ticker
-        ? [
-            {
-              source_type: "regulatory_filing",
-              source_url: ngxDisclosureUrl(company.ticker),
-              source_title: `NGX equity page — ${company.ticker}`,
-              publication_date: null,
-            },
-          ]
-        : [];
-    case "FMDQ": {
-      const sources: DiscoveredSource[] = [
-        {
-          source_type: "regulatory_filing",
-          source_url: FMDQ_COMPLIANCE_URL,
-          source_title: "FMDQ post-listing compliance disclosures",
-          publication_date: null,
-        },
-      ];
-      if (company.fmdq_issuer_path?.trim()) {
-        sources.push({
-          source_type: "regulatory_filing",
-          source_url: fmdqIssuerUrl(company.fmdq_issuer_path),
-          source_title: `FMDQ issuer page — ${company.name}`,
-          publication_date: null,
-        });
-      }
-      return sources;
-    }
-    case "NASD":
-      return [
-        {
-          source_type: "regulatory_filing",
-          source_url: NASD_SECURITIES_URL,
-          source_title: `NASD securities categorization — ${company.ticker}`,
-          publication_date: null,
-        },
-        {
-          source_type: "regulatory_filing",
-          source_url: NASD_PRICES_URL,
-          source_title: `NASD company prices — ${company.ticker}`,
-          publication_date: null,
-        },
-      ];
-    default:
-      return [];
+  if (!company.ticker?.trim()) return [];
+
+  const label = company.exchange;
+  const sources: DiscoveredSource[] = [
+    {
+      source_type: "regulatory_filing",
+      source_url: regulatoryFilingUrl(company.exchange, company.ticker),
+      source_title: `${label} listing — ${company.ticker}`,
+      publication_date: null,
+    },
+  ];
+
+  if (company.exchange === "FMDQ" && company.fmdq_issuer_path?.trim()) {
+    sources.push({
+      source_type: "regulatory_filing",
+      source_url: fmdqIssuerUrl(company.fmdq_issuer_path),
+      source_title: `FMDQ issuer page — ${company.name}`,
+      publication_date: null,
+    });
   }
+
+  if (company.exchange === "NASD") {
+    sources.push({
+      source_type: "regulatory_filing",
+      source_url: NASD_PRICES_URL,
+      source_title: `NASD company prices — ${company.ticker}`,
+      publication_date: null,
+    });
+  }
+
+  if (company.exchange === "FMDQ") {
+    sources[0] = {
+      source_type: "regulatory_filing",
+      source_url: FMDQ_COMPLIANCE_URL,
+      source_title: "FMDQ post-listing compliance disclosures",
+      publication_date: null,
+    };
+  }
+
+  return sources;
 }
 
 export async function discoverSourcesForCompany(company: DisclosureCompany): Promise<DiscoveredSource[]> {
@@ -233,10 +221,8 @@ export async function discoverSourcesForCompany(company: DisclosureCompany): Pro
     if (!found.has(key)) found.set(key, source);
   };
 
-  if (company.ticker || company.exchange !== "NGX") {
-    for (const source of exchangeRegulatorySources(company)) {
-      add(source);
-    }
+  for (const source of exchangeRegulatorySources(company)) {
+    add(source);
   }
 
   if (!website) {
