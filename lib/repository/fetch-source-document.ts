@@ -1,9 +1,9 @@
-const MAX_PDF_BYTES = 10 * 1024 * 1024;
+const MAX_PDF_BYTES = 20 * 1024 * 1024;
 const MAX_TEXT_CHARS = 120_000;
 
 export type FetchedSource =
   | { kind: "text"; text: string }
-  | { kind: "pdf"; pdfBase64: string; mediaType: "application/pdf" };
+  | { kind: "pdf"; buffer: Buffer; pageCount?: number };
 
 function stripHtml(html: string): string {
   return html
@@ -44,14 +44,10 @@ export async function fetchSourceDocument(url: string): Promise<FetchedSource> {
   if (looksLikePdf) {
     if (buffer.length > MAX_PDF_BYTES) {
       throw new Error(
-        "PDF is too large for automatic extraction — open the report, copy the benefits section, and paste it below."
+        "PDF is too large to download — open the report, copy the benefits section, and paste it below."
       );
     }
-    return {
-      kind: "pdf",
-      pdfBase64: buffer.toString("base64"),
-      mediaType: "application/pdf",
-    };
+    return { kind: "pdf", buffer };
   }
 
   const text = stripHtml(buffer.toString("utf-8"));

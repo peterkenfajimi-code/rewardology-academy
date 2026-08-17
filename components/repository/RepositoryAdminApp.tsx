@@ -165,15 +165,18 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
         error?: string;
         detail?: string;
         sourceMode?: string;
+        pageCount?: number;
       };
       if (!res.ok) throw new Error(data.error ?? data.detail ?? "Extraction failed");
       setEntries(data.entries ?? []);
       const modeNote =
-        data.sourceMode === "url-pdf"
-          ? " (read from PDF URL)"
-          : data.sourceMode === "url-text"
-            ? " (read from web page URL)"
-            : "";
+        data.sourceMode === "url-pdf-text"
+          ? ` (extracted benefits text from ${data.pageCount ?? "?"}-page PDF)`
+          : data.sourceMode === "url-pdf"
+            ? " (read from PDF URL)"
+            : data.sourceMode === "url-text"
+              ? " (read from web page URL)"
+              : "";
       setMessage(`Extracted ${data.entries?.length ?? 0} fields${modeNote} — review before saving.`);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Extraction failed");
@@ -434,7 +437,8 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
             <h2>3. Extract with AI</h2>
             <p className="repo-admin-muted">
               Paste a benefits excerpt below, <strong>or</strong> leave this empty and use the Source
-              URL from section 2 — PDF annual reports (e.g. GTCO) are fetched and read automatically.
+              URL from section 2. Large annual-report PDFs (100+ pages) are scanned for pension and
+              benefits sections automatically.
             </p>
             {!anthropicConfigured && (
               <p className="repo-admin-alert error">

@@ -6,6 +6,7 @@ import {
   buildExtractionPrompt,
 } from "@/lib/repository/extraction-prompt";
 import { fetchSourceDocument } from "@/lib/repository/fetch-source-document";
+import { extractTextFromPdf } from "@/lib/repository/pdf-text";
 import type { CountryModule, ExtractedEntry } from "@/lib/repository/types";
 import { createRepositoryAdminClient } from "@/lib/supabase/repository/admin";
 
@@ -24,17 +25,7 @@ function parseExtractedJson(text: string): ExtractedEntry[] {
   return parsed;
 }
 
-type AnthropicContentBlock =
-  | { type: "text"; text: string }
-  | {
-      type: "document";
-      source: { type: "base64"; media_type: "application/pdf"; data: string };
-    };
-
-async function callAnthropic(
-  model: string,
-  content: AnthropicContentBlock[]
-): Promise<string> {
+async function callAnthropic(model: string, prompt: string): Promise<string> {
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: {
@@ -45,7 +36,7 @@ async function callAnthropic(
     body: JSON.stringify({
       model,
       max_tokens: 4096,
-      messages: [{ role: "user", content }],
+      messages: [{ role: "user", content: prompt }],
     }),
   });
 
@@ -87,7 +78,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         error:
-          "Paste source text or provide a Source URL (section 2) — PDF annual reports can be read directly from the URL.",
+          "Paste source text or provide a Source URL (section 2) — large PDF annual reports are supported.",
       },
       { status: 400 }
     );
@@ -121,45 +112,40 @@ export async function POST(req: NextRequest) {
 
   try {
     let responseText: string;
-    let sourceMode: "text" | "url-text" | "url-pdf" = "text";
+    let sourceMode: "text" | "url-text" | "url-pdf-text" = "text";
+    let pageCount: number | undefined;
 
     if (rawText) {
-      responseText = await callAnthropic(model, [
-        { type: "text", text: buildExtractionPrompt(companyName, countryModule, rawText) },
-      ]);
+      responseText = await callAnthropic(
+        model,
+        buildExtractionPrompt(companyName, countryModule, rawText)
+      );
     } else {
       const fetched = await fetchSourceDocument(sourceUrl);
-      const instructions = buildExtractionInstructions(companyName, countryModule);
 
       if (fetched.kind === "pdf") {
-        sourceMode = "url-pdf";
-        responseText = await callAnthropic(model, [
-          {
-            type: "document",
-            source: {
-              type: "base64",
-              media_type: fetched.mediaType,
-              data: fetched.pdfBase64,
-            },
-          },
-          {
-            type: "text",
-            text: `${instructions}\n\nExtract benefits fields from the attached PDF document.`,
-          },
-        ]);
+        const extracted = await extractTextFromPdf(fetched.buffer);
+        pageCount = extracted.pageCount;
+        sourceMode = "url-pdf-text";
+        responseText = await callAnthropic(
+          model,
+          `${buildExtractionInstructions(companyName, countryModule)}
+
+The following text was extracted from a ${pageCount}-page PDF annual report (benefits-related sections only):
+
+${extracted.text}`
+        );
       } else {
         sourceMode = "url-text";
-        responseText = await callAnthropic(model, [
-          {
-            type: "text",
-            text: buildExtractionPrompt(companyName, countryModule, fetched.text),
-          },
-        ]);
+        responseText = await callAnthropic(
+          model,
+          buildExtractionPrompt(companyName, countryModule, fetched.text)
+        );
       }
     }
 
     const entries = parseExtractedJson(responseText);
-    return NextResponse.json({ entries, sourceMode });
+    return NextResponse.json({ entries, sourceMode, pageCount });
   } catch (e) {
     if (e instanceof SyntaxError || (e instanceof Error && e.message.includes("JSON"))) {
       return NextResponse.json(
