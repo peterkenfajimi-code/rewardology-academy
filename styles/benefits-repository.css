@@ -56,6 +56,23 @@
   grid-column: 1 / -1;
 }
 
+.benefits-repo-companies {
+  display: grid;
+  gap: 2rem;
+}
+
+.benefits-repo-company-head h2 {
+  font-family: var(--hserif, Georgia, serif);
+  font-size: 1.45rem;
+  margin: 0 0 0.35rem;
+}
+
+.benefits-repo-company-head {
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
 .benefits-repo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -95,4 +112,65 @@
 
 .benefits-repo-source a {
   color: var(--teal2, #0e8a82);
+}
+
+.benefits-repo-category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.benefits-repo-category-tabs button {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  color: inherit;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.benefits-repo-category-tabs button.is-active {
+  border-color: var(--gold, #c8963e);
+  background: rgba(200, 150, 62, 0.15);
+}
+
+.benefits-repo-confidence {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.benefits-repo-confidence-high {
+  background: rgba(14, 138, 130, 0.28);
+  border-color: rgba(95, 212, 203, 0.55);
+  color: #5fd4cb;
+}
+
+.benefits-repo-confidence-medium {
+  background: rgba(200, 150, 62, 0.28);
+  border-color: rgba(232, 192, 120, 0.55);
+  color: #e8c078;
+}
+
+.benefits-repo-confidence-low {
+  background: rgba(180, 90, 70, 0.28);
+  border-color: rgba(224, 154, 136, 0.55);
+  color: #e09a88;
+}
+
+.benefits-repo-stale {
+  color: #e8c078;
+}
+
+.benefits-repo-clamped {
+  color: rgba(255, 255, 255, 0.55);
+  font-style: italic;
 }

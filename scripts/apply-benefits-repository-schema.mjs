@@ -74,10 +74,20 @@ const sqlPath = path.join(root, "supabase", "benefits-repository", "schema.sql")
 const migrationPath = path.join(root, "supabase", "benefits-repository", "migrations", "002_sustainability_and_batch.sql");
 const migration003Path = path.join(root, "supabase", "benefits-repository", "migrations", "003_fmdq_nasd_disclosure_exchanges.sql");
 const migration004Path = path.join(root, "supabase", "benefits-repository", "migrations", "004_multi_market_exchanges.sql");
+const migration005Path = path.join(root, "supabase", "benefits-repository", "migrations", "005_enable_rls.sql");
+const migration006Path = path.join(root, "supabase", "benefits-repository", "migrations", "006_field_registry.sql");
+const migration007Path = path.join(root, "supabase", "benefits-repository", "migrations", "007_field_display_templates.sql");
+const migration008Path = path.join(root, "supabase", "benefits-repository", "migrations", "008_schema_patch_2.sql");
+const migration009Path = path.join(root, "supabase", "benefits-repository", "migrations", "009_rls_field_registry.sql");
 const query = fs.readFileSync(sqlPath, "utf8");
 const migration = fs.existsSync(migrationPath) ? fs.readFileSync(migrationPath, "utf8") : "";
 const migration003 = fs.existsSync(migration003Path) ? fs.readFileSync(migration003Path, "utf8") : "";
 const migration004 = fs.existsSync(migration004Path) ? fs.readFileSync(migration004Path, "utf8") : "";
+const migration005 = fs.existsSync(migration005Path) ? fs.readFileSync(migration005Path, "utf8") : "";
+const migration006 = fs.existsSync(migration006Path) ? fs.readFileSync(migration006Path, "utf8") : "";
+const migration007 = fs.existsSync(migration007Path) ? fs.readFileSync(migration007Path, "utf8") : "";
+const migration008 = fs.existsSync(migration008Path) ? fs.readFileSync(migration008Path, "utf8") : "";
+const migration009 = fs.existsSync(migration009Path) ? fs.readFileSync(migration009Path, "utf8") : "";
 
 // Migrations first — existing DBs may lack columns referenced in schema.sql inserts.
 if (migration) await runQuery("Migration 002 (sustainability + batch)", migration, { warnOnFail: true });
@@ -89,8 +99,24 @@ if (migration004) {
     warnOnFail: true,
   });
 }
+if (migration005) {
+  await runQuery("Migration 005 (enable RLS)", migration005, { warnOnFail: true });
+}
 
 await runQuery("Benefits repository schema", query);
+
+if (migration006) {
+  await runQuery("Migration 006 (field registry)", migration006, { warnOnFail: true });
+}
+if (migration007) {
+  await runQuery("Migration 007 (display templates)", migration007, { warnOnFail: true });
+}
+if (migration008) {
+  await runQuery("Migration 008 (schema patch 2)", migration008, { warnOnFail: true });
+}
+if (migration009) {
+  await runQuery("Migration 009 (RLS field registry)", migration009, { warnOnFail: true });
+}
 
 const verify = await fetch(
   `https://api.supabase.com/v1/projects/${projectRef}/database/query`,

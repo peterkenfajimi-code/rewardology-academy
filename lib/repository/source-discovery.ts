@@ -1,4 +1,5 @@
 import type { CountryCode, DisclosureExchange, SourceType } from "@/lib/repository/types";
+import { isSourceWithinRecencyWindow } from "@/lib/repository/collection-policy";
 import { regulatoryFilingUrl } from "@/lib/repository/exchange-config";
 
 export type DisclosureCompany = {
@@ -22,7 +23,14 @@ export type DiscoveredSource = {
   publication_date?: string | null;
 };
 
-const USER_AGENT = "Rewardology-Repository-Batch/1.0";
+const USER_AGENT =
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36";
+
+/** Bot-protected sites often block the corporate site; crawl the holdco IR site too. */
+const WEBSITE_FALLBACK_ORIGINS: Record<string, string[]> = {
+  "gtbank.com": ["https://gtcoplc.com", "https://www.gtcoplc.com"],
+  "www.gtbank.com": ["https://gtcoplc.com", "https://www.gtcoplc.com"],
+};
 
 export const AUTOMATED_SOURCE_TYPES: SourceType[] = [
   "annual_report",
@@ -145,6 +153,27 @@ async function fetchHtml(url: string): Promise<string | null> {
 }
 
 function investorPaths(origin: string): string[] {
+  let host = "";
+  try {
+    host = new URL(origin).hostname.toLowerCase();
+  } catch {
+    /* ignore */
+  }
+
+  if (host.includes("gtcoplc.com")) {
+    return [
+      origin,
+      `${origin}/who-we-are/careers`,
+      `${origin}/who-we-are/our-people`,
+      `${origin}/how-we-give-back/csr-reports`,
+      `${origin}/investor-relations`,
+      `${origin}/investor-relations/annual-reports`,
+      `${origin}/investor-relations/financial-resources`,
+      `${origin}/what-we-think/in-the-news`,
+      `${origin}/investor-relations/outlook-insights`,
+    ];
+  }
+
   return [
     origin,
     `${origin}/investors`,
@@ -158,6 +187,36 @@ function investorPaths(origin: string): string[] {
     `${origin}/sustainability`,
     `${origin}/esg`,
   ];
+}
+
+function crawlOrigins(website: string): string[] {
+  const origins: string[] = [];
+  const seen = new Set<string>();
+
+  const add = (raw: string) => {
+    try {
+      const origin = new URL(raw.startsWith("http") ? raw : `https://${raw}`).origin;
+      if (!seen.has(origin)) {
+        seen.add(origin);
+        origins.push(origin);
+      }
+    } catch {
+      /* ignore */
+    }
+  };
+
+  add(website);
+  try {
+    const host = new URL(website.startsWith("http") ? website : `https://${website}`).hostname
+      .toLowerCase();
+    for (const fallback of WEBSITE_FALLBACK_ORIGINS[host] ?? []) {
+      add(fallback);
+    }
+  } catch {
+    /* ignore */
+  }
+
+  return origins;
 }
 
 const FMDQ_COMPLIANCE_URL = "https://fmdqgroup.com/exchange/listing-quotations-compliance/";
@@ -229,17 +288,15 @@ export async function discoverSourcesForCompany(company: DisclosureCompany): Pro
     return [...found.values()];
   }
 
-  let base: URL;
-  try {
-    base = new URL(website.startsWith("http") ? website : `https://${website}`);
-  } catch {
-    return [...found.values()];
+  const visited = new Set<string>();
+  const queue: string[] = [];
+  for (const origin of crawlOrigins(website)) {
+    for (const path of investorPaths(origin)) {
+      if (!queue.includes(path)) queue.push(path);
+    }
   }
 
-  const visited = new Set<string>();
-  const queue = investorPaths(base.origin).slice(0, 12);
-
-  for (const pageUrl of queue) {
+  for (const pageUrl of queue.slice(0, 20)) {
     if (visited.has(pageUrl)) continue;
     visited.add(pageUrl);
 
@@ -262,6 +319,50 @@ export async function discoverSourcesForCompany(company: DisclosureCompany): Pro
   }
 
   return [...found.values()].filter((s) => AUTOMATED_SOURCE_TYPES.includes(s.source_type));
+}
+
+function isPdfUrl(url: string): boolean {
+  try {
+    return new URL(url).pathname.toLowerCase().endsWith(".pdf");
+  } catch {
+    return /\.pdf(?:\?|$)/i.test(url);
+  }
+}
+
+export function prioritizeDiscoveredSources(
+  sources: DiscoveredSource[],
+  maxPdfPerType = 3
+): DiscoveredSource[] {
+  function yearFrom(source: DiscoveredSource): number {
+    const haystack = `${source.publication_date ?? ""} ${source.source_url} ${source.source_title}`;
+    const years = [...haystack.matchAll(/\b(20\d{2})\b/g)].map((m) => Number(m[1]));
+    return years.length ? Math.max(...years) : 0;
+  }
+
+  const html = sources.filter((s) => !isPdfUrl(s.source_url));
+  const pdfs = sources.filter((s) => isPdfUrl(s.source_url));
+  const byType = new Map<SourceType, DiscoveredSource[]>();
+
+  for (const source of pdfs) {
+    const bucket = byType.get(source.source_type) ?? [];
+    bucket.push(source);
+    byType.set(source.source_type, bucket);
+  }
+
+  const keptPdfs: DiscoveredSource[] = [];
+  for (const list of byType.values()) {
+    list.sort((a, b) => yearFrom(b) - yearFrom(a));
+    keptPdfs.push(...list.slice(0, maxPdfPerType));
+  }
+
+  return [...html, ...keptPdfs];
+}
+
+export function filterSourcesByRecency(
+  sources: DiscoveredSource[],
+  referenceDate = new Date()
+): DiscoveredSource[] {
+  return sources.filter((s) => isSourceWithinRecencyWindow(s, referenceDate));
 }
 
 export function filterSourcesByTypes(

@@ -1,11 +1,15 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { SOURCE_RECENCY_YEARS } from "@/lib/repository/collection-policy";
 import { EXCHANGE_COUNTRY } from "@/lib/repository/exchange-config";
 import { loadDisclosureCompanies } from "@/lib/repository/disclosure-companies";
 import { extractBenefitsFromSource } from "@/lib/repository/extract-benefits";
+import { loadFieldRegistry } from "@/lib/repository/field-registry";
 import { saveSourceAndEntries } from "@/lib/repository/save-source";
 import {
   discoverSourcesForCompany,
+  filterSourcesByRecency,
   filterSourcesByTypes,
+  prioritizeDiscoveredSources,
   type DiscoveredSource,
   type DisclosureCompany,
 } from "@/lib/repository/source-discovery";
@@ -21,6 +25,7 @@ export type BatchConfig = {
   dryRun?: boolean;
   delayMs?: number;
   skipExistingSources?: boolean;
+  maxPdfPerType?: number;
   actor?: string;
 };
 
@@ -128,6 +133,7 @@ async function processSource(
     companyName: string;
     companyCountry: CountryCode;
     countryModule: CountryModule | null;
+    registryRows: Awaited<ReturnType<typeof loadFieldRegistry>>;
     source: DiscoveredSource;
     config: BatchConfig;
     progress: BatchProgress;
@@ -147,10 +153,11 @@ async function processSource(
     const extracted = await extractBenefitsFromSource({
       companyName: params.companyName,
       countryModule: params.countryModule,
+      registryRows: params.registryRows,
       sourceUrl: source.source_url,
     });
 
-    if (!extracted.entries.length) {
+    if (!extracted.entries.length && !extracted.workforceComposition.length) {
       appendLog(log, `No entries extracted for ${params.companyName} — ${source.source_type}`);
       progress.sourcesProcessed += 1;
       return;
@@ -166,6 +173,7 @@ async function processSource(
         country: params.companyCountry,
       },
       entries: extracted.entries,
+      workforceComposition: extracted.workforceComposition,
       publish: config.publish ?? false,
       actor: config.actor ?? "batch-runner",
       skipIfUrlExists: config.skipExistingSources ?? true,
@@ -238,6 +246,7 @@ export async function runBenefitsRepositoryBatch(
   appendLog(log, `Starting batch for ${companies.length} disclosure companies (${scopeLabel})`);
   await onProgress?.(progress, log.join("\n"));
 
+  const registryRows = await loadFieldRegistry(supabase);
   const delayMs = config.delayMs ?? 3000;
 
   for (const entry of companies) {
@@ -251,6 +260,21 @@ export async function runBenefitsRepositoryBatch(
 
       let sources = await discoverSourcesForCompany(entry);
       sources = filterSourcesByTypes(sources, config.sourceTypes);
+      const beforeRecency = sources.length;
+      sources = filterSourcesByRecency(sources);
+      if (beforeRecency !== sources.length) {
+        appendLog(
+          log,
+          `Recency filter (${beforeRecency - sources.length} dropped) — keeping sources from past ${SOURCE_RECENCY_YEARS} years`
+        );
+      }
+      if (sources.length > 25) {
+        sources = prioritizeDiscoveredSources(sources, config.maxPdfPerType ?? 3);
+        appendLog(
+          log,
+          `Prioritized to ${sources.length} sources (HTML + latest ${config.maxPdfPerType ?? 3} PDFs per type)`
+        );
+      }
       progress.sourcesDiscovered += sources.length;
       appendLog(log, `Discovered ${sources.length} sources for ${entry.name}`);
       await onProgress?.(progress, log.join("\n"));
@@ -261,6 +285,7 @@ export async function runBenefitsRepositoryBatch(
           companyName: company.name,
           companyCountry: company.country as CountryCode,
           countryModule,
+          registryRows,
           source,
           config,
           progress,

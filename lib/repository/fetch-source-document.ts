@@ -26,7 +26,11 @@ export async function fetchSourceDocument(url: string): Promise<FetchedSource> {
   }
 
   const res = await fetch(parsed.toString(), {
-    headers: { "User-Agent": "Rewardology-Repository-Admin/1.0" },
+    headers: {
+      "User-Agent":
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+      Accept: "text/html,application/pdf,*/*",
+    },
     redirect: "follow",
   });
 

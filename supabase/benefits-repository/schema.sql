@@ -163,3 +163,36 @@ create index if not exists idx_batch_runs_started on batch_runs(started_at desc)
 create unique index if not exists idx_sources_company_url
   on sources(company_id, source_url)
   where source_url is not null;
+
+-- Row Level Security (see migrations/005_enable_rls.sql for incremental apply)
+alter table country_modules enable row level security;
+alter table companies enable row level security;
+alter table sources enable row level security;
+alter table benefit_entries enable row level security;
+alter table verification_log enable row level security;
+alter table batch_runs enable row level security;
+
+drop policy if exists "Public read country_modules" on country_modules;
+create policy "Public read country_modules"
+  on country_modules for select to anon, authenticated using (true);
+
+drop policy if exists "Public read companies with published entries" on companies;
+create policy "Public read companies with published entries"
+  on companies for select to anon, authenticated
+  using (exists (
+    select 1 from benefit_entries be
+    where be.company_id = companies.company_id and be.publish_status = 'published'
+  ));
+
+drop policy if exists "Public read published benefit_entries" on benefit_entries;
+create policy "Public read published benefit_entries"
+  on benefit_entries for select to anon, authenticated
+  using (publish_status = 'published');
+
+drop policy if exists "Public read sources for published entries" on sources;
+create policy "Public read sources for published entries"
+  on sources for select to anon, authenticated
+  using (exists (
+    select 1 from benefit_entries be
+    where be.source_id = sources.source_id and be.publish_status = 'published'
+  ));

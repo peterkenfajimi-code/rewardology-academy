@@ -1,5 +1,9 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { isRepositoryAdminAuthed } from "@/lib/auth/repository-admin";
+import {
+  isEntryWithinRecencyWindow,
+  isExcludedBenefitField,
+} from "@/lib/repository/collection-policy";
 import { isRepositorySupabaseConfigured } from "@/lib/env";
 import { createRepositoryAdminClient } from "@/lib/supabase/repository/admin";
 
@@ -25,15 +29,31 @@ export async function GET(req: NextRequest) {
 
   const { data: entries, error: entryError } = await supabase
     .from("benefit_entries")
-    .select("entry_id, company_id, publish_status")
-    .neq("publish_status", "superseded");
+    .select(
+      `
+      entry_id, company_id, field, fiscal_year_or_effective_date, publish_status,
+      sources ( publication_date, source_url, source_title )
+    `
+    )
+    .in("publish_status", ["published", "pending_verification"]);
 
   if (entryError) {
     return NextResponse.json({ error: entryError.message }, { status: 500 });
   }
 
+  const activeEntries = (entries ?? []).filter((row) => {
+    if (isExcludedBenefitField(row.field)) return false;
+    const source = row.sources as {
+      publication_date?: string | null;
+      source_url?: string | null;
+      source_title?: string | null;
+    } | null;
+    if (!source) return true;
+    return isEntryWithinRecencyWindow(row, source);
+  });
+
   const entryCountByCompany = new Map<string, number>();
-  for (const row of entries ?? []) {
+  for (const row of activeEntries) {
     entryCountByCompany.set(row.company_id, (entryCountByCompany.get(row.company_id) ?? 0) + 1);
   }
 
@@ -63,7 +83,7 @@ export async function GET(req: NextRequest) {
   return NextResponse.json({
     summary: {
       companies: companies?.length ?? 0,
-      activeEntries: entries?.length ?? 0,
+      activeEntries: activeEntries.length,
     },
     rows,
   });

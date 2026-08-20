@@ -3,11 +3,17 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type {
   Company,
+  ConfidenceScore,
   CountryModule,
   ExtractedEntry,
   SourceType,
 } from "@/lib/repository/types";
+import { compareConfidence } from "@/lib/repository/trust-weights";
 import { RepositoryBatchPanel } from "@/components/repository/RepositoryBatchPanel";
+import {
+  formatStatutoryEmployeePct,
+  formatStatutoryEmployerPct,
+} from "@/lib/repository/country-statutory-display";
 
 const SOURCE_TYPES: SourceType[] = [
   "annual_report",
@@ -43,6 +49,13 @@ type CoverageRow = {
   entry_count: number;
 };
 
+type FieldRegistryRow = {
+  category: string;
+  field_key: string;
+  field_label: string;
+  max_confidence: ConfidenceScore;
+};
+
 type Props = {
   configured: boolean;
   anthropicConfigured: boolean;
@@ -69,6 +82,7 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
   });
   const [rawText, setRawText] = useState("");
   const [entries, setEntries] = useState<ExtractedEntry[]>([]);
+  const [fieldRegistry, setFieldRegistry] = useState<FieldRegistryRow[]>([]);
   const [publish, setPublish] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -78,6 +92,11 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
   const selectedCompany = useMemo(
     () => companies.find((c) => c.company_id === selectedCompanyId) ?? null,
     [companies, selectedCompanyId]
+  );
+
+  const selectedCountryModule = useMemo(
+    () => countries.find((c) => c.country_code === selectedCompany?.country) ?? null,
+    [countries, selectedCompany?.country]
   );
 
   const loadCountries = useCallback(async () => {
@@ -105,12 +124,20 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
     }
   }, []);
 
+  const loadFieldRegistry = useCallback(async () => {
+    const res = await fetch("/api/repository-admin/fields");
+    if (!res.ok) return;
+    const data = (await res.json()) as { fields?: FieldRegistryRow[] };
+    setFieldRegistry(data.fields ?? []);
+  }, []);
+
   useEffect(() => {
     if (!configured) return;
     loadCountries();
     loadCompanies();
     loadCoverage();
-  }, [configured, loadCountries, loadCompanies, loadCoverage]);
+    loadFieldRegistry();
+  }, [configured, loadCountries, loadCompanies, loadCoverage, loadFieldRegistry]);
 
   async function createCompany() {
     setError("");
@@ -210,9 +237,30 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
           publish,
         }),
       });
-      const data = (await res.json()) as { results?: { action: string }[]; error?: string };
+      const data = (await res.json()) as {
+        results?: {
+          action: string;
+          confidence_was_clamped?: boolean;
+          original_confidence?: ConfidenceScore;
+        }[];
+        error?: string;
+      };
       if (!res.ok) throw new Error(data.error ?? "Save failed");
-      setMessage(`Saved ${data.results?.length ?? 0} entries with reconciliation.`);
+      const clamped = data.results?.filter((r) => r.confidence_was_clamped).length ?? 0;
+      const unmapped = data.results?.filter((r) => r.action === "unmapped_skipped").length ?? 0;
+      const rejected = data.results?.filter((r) => r.action === "registry_rejected").length ?? 0;
+      const saved = data.results?.filter(
+        (r) => !["unmapped_skipped", "registry_rejected"].includes(r.action)
+      ).length ?? 0;
+      const notes = [
+        `Saved ${saved} entries with reconciliation.`,
+        clamped ? `${clamped} had confidence capped per field registry.` : "",
+        unmapped ? `${unmapped} unmapped fields skipped — add to registry or remap.` : "",
+        rejected ? `${rejected} non-registry fields rejected.` : "",
+      ]
+        .filter(Boolean)
+        .join(" ");
+      setMessage(notes);
       setEntries([]);
       setRawText("");
       await loadCoverage();
@@ -230,6 +278,22 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
 
   function updateEntry(index: number, patch: Partial<ExtractedEntry>) {
     setEntries((prev) => prev.map((row, i) => (i === index ? { ...row, ...patch } : row)));
+  }
+
+  function registryRowFor(entry: ExtractedEntry): FieldRegistryRow | undefined {
+    return fieldRegistry.find((r) => r.category === entry.category && r.field_key === entry.field);
+  }
+
+  function entryReviewWarning(entry: ExtractedEntry): string | null {
+    if (entry.field.trim().toLowerCase() === "unmapped") {
+      return "Unmapped — will not save until mapped to a registry field.";
+    }
+    const reg = registryRowFor(entry);
+    if (!reg) return "Field not in registry — will be rejected on save.";
+    if (compareConfidence(entry.confidence_score, reg.max_confidence) > 0) {
+      return `AI suggested ${entry.confidence_score}; will cap to ${reg.max_confidence} on save.`;
+    }
+    return null;
   }
 
   if (!configured) {
@@ -345,6 +409,17 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
                 </select>
               </label>
             </div>
+            {selectedCompany && selectedCountryModule ? (
+              <p className="repo-admin-muted repo-admin-country-context">
+                <strong>{selectedCountryModule.country_name}</strong> statutory baseline:{" "}
+                {formatStatutoryEmployerPct(selectedCountryModule.pension_statutory_employer_pct)}
+                {" · "}
+                {formatStatutoryEmployeePct(selectedCountryModule.pension_statutory_employee_pct)}
+                {selectedCountryModule.pension_regulator
+                  ? ` · Regulator: ${selectedCountryModule.pension_regulator}`
+                  : ""}
+              </p>
+            ) : null}
 
             <h3>Create company</h3>
             <div className="repo-admin-grid">
@@ -498,14 +573,19 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
                     </tr>
                   </thead>
                   <tbody>
-                    {entries.map((row, index) => (
-                      <tr key={`${row.field}-${index}`}>
+                    {entries.map((row, index) => {
+                      const warning = entryReviewWarning(row);
+                      const reg = registryRowFor(row);
+                      const fieldsForCategory = fieldRegistry.filter((f) => f.category === row.category);
+                      return (
+                      <tr key={`${row.field}-${index}`} className={warning ? "repo-admin-row-warn" : ""}>
                         <td>
                           <select
                             value={row.category}
                             onChange={(e) =>
                               updateEntry(index, {
                                 category: e.target.value as ExtractedEntry["category"],
+                                field: "",
                               })
                             }
                           >
@@ -517,10 +597,28 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
                           </select>
                         </td>
                         <td>
-                          <input
-                            value={row.field}
-                            onChange={(e) => updateEntry(index, { field: e.target.value })}
-                          />
+                          {fieldsForCategory.length > 0 ? (
+                            <select
+                              value={row.field}
+                              onChange={(e) => updateEntry(index, { field: e.target.value })}
+                            >
+                              <option value="">Select field…</option>
+                              <option value="unmapped">unmapped (flag for review)</option>
+                              {fieldsForCategory.map((f) => (
+                                <option key={f.field_key} value={f.field_key}>
+                                  {f.field_label}
+                                </option>
+                              ))}
+                            </select>
+                          ) : (
+                            <input
+                              value={row.field}
+                              onChange={(e) => updateEntry(index, { field: e.target.value })}
+                            />
+                          )}
+                          {reg ? (
+                            <span className="repo-admin-muted">{reg.field_key}</span>
+                          ) : null}
                         </td>
                         <td>
                           <input
@@ -559,9 +657,10 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
                               </option>
                             ))}
                           </select>
+                          {warning ? <p className="repo-admin-warn">{warning}</p> : null}
                         </td>
                       </tr>
-                    ))}
+                    );})}
                   </tbody>
                 </table>
               </div>

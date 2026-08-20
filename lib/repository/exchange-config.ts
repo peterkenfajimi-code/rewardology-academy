@@ -35,7 +35,7 @@ export function regulatoryFilingUrl(exchange: DisclosureExchange, ticker: string
   const t = encodeURIComponent(ticker.trim());
   switch (exchange) {
     case "NGX":
-      return `https://ngxgroup.com/exchange/trade/equities/${t.toLowerCase()}/`;
+      return `https://ngxgroup.com/exchange/data/company-profile/?symbol=${encodeURIComponent(ticker.trim().toUpperCase())}&directory=companydirectory`;
     case "FMDQ":
       return "https://fmdqgroup.com/exchange/listing-quotations-compliance/";
     case "NASD":

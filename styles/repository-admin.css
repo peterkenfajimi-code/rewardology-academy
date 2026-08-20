@@ -184,3 +184,13 @@
   display: grid;
   gap: 0.75rem;
 }
+
+.repo-admin-row-warn {
+  background: rgba(200, 150, 62, 0.08);
+}
+
+.repo-admin-warn {
+  margin: 0.35rem 0 0;
+  font-size: 0.78rem;
+  color: #c8963e;
+}

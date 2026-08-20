@@ -87,6 +87,13 @@ export type ExtractedEntry = {
   notes?: string | null;
 };
 
+import type { ExtractedWorkforceEntry } from "@/lib/repository/workforce-metrics";
+
+export type ExtractionPayload = {
+  benefits: ExtractedEntry[];
+  workforce_composition: ExtractedWorkforceEntry[];
+};
+
 export type BenefitEntryRow = ExtractedEntry & {
   entry_id?: string;
   company_id: string;
