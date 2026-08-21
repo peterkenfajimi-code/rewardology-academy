@@ -5,7 +5,7 @@ import { isRepositoryAdminAuthed } from "@/lib/auth/repository-admin";
 import { isAnthropicConfigured, isRepositorySupabaseConfigured } from "@/lib/env";
 
 import { isSourceWithinRecencyWindow, SOURCE_RECENCY_YEARS } from "@/lib/repository/collection-policy";
-import { extractBenefitsFromSource, parseExtractedJson } from "@/lib/repository/extract-benefits";
+import { extractBenefitsFromSource } from "@/lib/repository/extract-benefits";
 import { loadFieldRegistry } from "@/lib/repository/field-registry";
 
 import type { CountryModule } from "@/lib/repository/types";
@@ -191,8 +191,4 @@ export async function POST(req: NextRequest) {
   }
 
 }
-
-
-
-export { parseExtractedJson };
 
