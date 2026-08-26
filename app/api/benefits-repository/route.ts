@@ -7,6 +7,25 @@ import { indexRegistry, loadFieldRegistry, renderDisplayText } from "@/lib/repos
 import { isRepositorySupabaseConfigured } from "@/lib/env";
 import { createRepositoryReadClient } from "@/lib/supabase/repository/admin";
 
+type CompanyJoin = {
+  name: string;
+  country?: string;
+  industry?: string | null;
+  company_id?: string;
+};
+
+type SourceJoin = {
+  publication_date?: string | null;
+  source_url?: string | null;
+  source_title?: string | null;
+  source_type?: string;
+};
+
+function joinedOne<T>(value: T | T[] | null | undefined): T | null {
+  if (value == null) return null;
+  return Array.isArray(value) ? value[0] ?? null : value;
+}
+
 export async function GET(req: Request) {
   if (!isRepositorySupabaseConfigured()) {
     return NextResponse.json({ configured: false, entries: [] });
@@ -45,8 +64,9 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  let entries = (data ?? []).map((row) => {
-    const company = row.companies as { name: string; country?: string; industry?: string | null };
+  let entries = (data ?? []).flatMap((row) => {
+    const company = joinedOne(row.companies as CompanyJoin | CompanyJoin[] | null);
+    if (!company) return [];
     const registry = registryByKey.get(`${row.category}::${row.field}`);
     const displayText = renderDisplayText(
       registry?.display_template,
@@ -55,20 +75,20 @@ export async function GET(req: Request) {
       registry?.field_label
     );
 
-    return {
-      ...row,
-      field_label: registry?.field_label ?? null,
-      display_text: displayText,
-    };
+    return [
+      {
+        ...row,
+        companies: company,
+        field_label: registry?.field_label ?? null,
+        display_text: displayText,
+      },
+    ];
   });
 
   entries = entries.filter((row) => {
     if (isExcludedBenefitField(row.field)) return false;
-    const source = row.sources as {
-      publication_date?: string | null;
-      source_url?: string | null;
-      source_title?: string | null;
-    };
+    const source = joinedOne(row.sources as SourceJoin | SourceJoin[] | null);
+    if (!source) return false;
     return isEntryWithinRecencyWindow(
       { fiscal_year_or_effective_date: row.fiscal_year_or_effective_date },
       source
@@ -77,14 +97,14 @@ export async function GET(req: Request) {
 
   if (country) {
     entries = entries.filter((row) => {
-      const company = row.companies as { country?: string };
-      return company.country === country;
+      const company = joinedOne(row.companies as CompanyJoin | CompanyJoin[] | null);
+      return company?.country === country;
     });
   }
   if (industry) {
     entries = entries.filter((row) => {
-      const company = row.companies as { industry?: string | null };
-      return company.industry === industry;
+      const company = joinedOne(row.companies as CompanyJoin | CompanyJoin[] | null);
+      return company?.industry === industry;
     });
   }
   if (category) {
@@ -92,10 +112,10 @@ export async function GET(req: Request) {
   }
   if (q) {
     entries = entries.filter((row) => {
-      const company = row.companies as { name?: string; industry?: string | null };
+      const company = joinedOne(row.companies as CompanyJoin | CompanyJoin[] | null);
       const hay = [
-        company.name,
-        company.industry,
+        company?.name,
+        company?.industry,
         row.field,
         row.field_label,
         row.display_text,
@@ -117,11 +137,8 @@ export async function GET(req: Request) {
       published_total: (data ?? []).filter((row) => !isExcludedBenefitField(row.field)).length,
       excluded_by_recency: (data ?? []).filter((row) => {
         if (isExcludedBenefitField(row.field)) return false;
-        const source = row.sources as {
-          publication_date?: string | null;
-          source_url?: string | null;
-          source_title?: string | null;
-        };
+        const source = joinedOne(row.sources as SourceJoin | SourceJoin[] | null);
+        if (!source) return false;
         return !isEntryWithinRecencyWindow(
           { fiscal_year_or_effective_date: row.fiscal_year_or_effective_date },
           source
