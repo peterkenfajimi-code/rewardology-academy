@@ -21,6 +21,7 @@ import {
   syncDictionaryTermToAccount,
 } from "@/lib/dictionary/progress";
 import {
+  dictionaryTermIndexForDate,
   lessonHref,
   previewText,
   termCardId,
@@ -58,10 +59,6 @@ function matchesTerm(
   return true;
 }
 
-function termOfDayIndex(): number {
-  return Math.floor(Date.now() / 86400000) % DICTIONARY_TERMS.length;
-}
-
 export function DictionaryCentre() {
   const { user } = useAuth();
   const [filterLetter, setFilterLetter] = useState("all");
@@ -72,8 +69,13 @@ export function DictionaryCentre() {
   const [readSet, setReadSet] = useState<Set<string>>(() => new Set());
   const [dictXp, setDictXp] = useState(0);
   const [mounted, setMounted] = useState(false);
+  const [termOfDay, setTermOfDay] = useState(DICTIONARY_TERMS[0]);
 
   useEffect(() => {
+    setTermOfDay(
+      DICTIONARY_TERMS[dictionaryTermIndexForDate(new Date(), DICTIONARY_TERMS.length)]
+    );
+
     let cancelled = false;
 
     function refreshLocal() {
@@ -134,8 +136,6 @@ export function DictionaryCentre() {
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [expandedId]);
-
-  const totd = useMemo(() => DICTIONARY_TERMS[termOfDayIndex()], []);
 
   const visible = useMemo(
     () => DICTIONARY_TERMS.filter((t) => matchesTerm(t, filterLetter, filterCat, filterQ)),
@@ -353,13 +353,19 @@ export function DictionaryCentre() {
       </div>
 
       <div className="totd-outer">
-        <div className="totd-card" data-initial={totd.term[0]?.toUpperCase() ?? "T"}>
+        <div className="totd-card" data-initial={termOfDay.term[0]?.toUpperCase() ?? "T"}>
           <span className="totd-lbl">Term of the Day</span>
-          <div className="totd-term">{totd.term}</div>
-          {totd.abbr ? <div className="totd-abbr">Abbreviation: {totd.abbr}</div> : null}
-          <div className="totd-cat">{totd.cat}</div>
-          <div className="totd-def">{totd.definition}</div>
-          <button type="button" className="totd-btn" onClick={() => openTerm(totd.term, true)}>
+          <div className="totd-term">{termOfDay.term}</div>
+          {termOfDay.abbr ? (
+            <div className="totd-abbr">Abbreviation: {termOfDay.abbr}</div>
+          ) : null}
+          <div className="totd-cat">{termOfDay.cat}</div>
+          <div className="totd-def">{termOfDay.definition}</div>
+          <button
+            type="button"
+            className="totd-btn"
+            onClick={() => openTerm(termOfDay.term, true)}
+          >
             Explore this term →
           </button>
         </div>

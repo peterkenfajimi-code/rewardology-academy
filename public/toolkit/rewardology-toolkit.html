@@ -14,7 +14,7 @@
   --white:#fff;--rule:rgba(255,255,255,.09);
   --sans:'DM Sans','Segoe UI',sans-serif;
   --serif:'Cormorant Garamond',Georgia,serif;
-  --c1:#C8963E;--c2:#0C6B65;--c3:#6B4C9A;--c4:#B84B4B;--c5:#3A7D44;
+  --c1:#C8963E;--c2:#0C6B65;--c3:#6B4C9A;--c4:#B84B4B;--c5:#3A7D44;--c6:#0C6B65;--c7:#6B4C9A;--c8:#B84B4B;--c9:#3A7D44;--c10:#C8963E;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
@@ -101,20 +101,14 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 .emp-row{display:grid;gap:10px;align-items:end;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.05)}
 #toast{position:fixed;bottom:28px;right:28px;background:var(--teal);color:var(--white);padding:10px 20px;border-radius:8px;font-size:13px;font-weight:500;display:none;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.4)}
 @media print{.sidebar{display:none}.main{overflow:visible}.tool-panel{display:block!important;padding:20px}}
-body.single-tool .sidebar{display:none!important}
-body.single-tool .menu-btn{display:none!important}
-body.single-tool .main{width:100%}
-.main-brand{display:none;padding:22px 44px 18px;border-bottom:1px solid var(--rule);background:rgba(0,0,0,.2);flex-shrink:0}
-body.single-tool .main-brand{display:block}
-@media(max-width:700px){.sidebar{position:fixed;left:-260px;top:0;height:100vh;z-index:100;transition:left .25s}.sidebar.open{left:0}.tool-panel{padding:24px 20px 48px}.grid-2,.grid-3{grid-template-columns:1fr}.menu-btn{display:flex!important}body.single-tool .menu-btn{display:none!important}.main-brand{padding:18px 20px 14px}}
+@media(max-width:700px){.sidebar{position:fixed;left:-260px;top:0;height:100vh;z-index:100;transition:left .25s}.sidebar.open{left:0}.tool-panel{padding:24px 20px 48px}.grid-2,.grid-3{grid-template-columns:1fr}.menu-btn{display:flex!important}}
 .menu-btn{display:none;position:fixed;top:16px;left:16px;z-index:200;background:rgba(7,25,46,.95);border:1px solid var(--rule);border-radius:8px;width:40px;height:40px;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:var(--white)}
 </style>
 </head>
 <body>
 <div class="menu-btn" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</div>
-<div class="sidebar" id="sidebar"><div class="sb-brand"><div class="sb-mark"><div class="sb-logo">R</div><div><div class="sb-name">Rewardology Academy</div><div class="sb-sub">Practitioner Toolkit</div></div></div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#C8963E"></div>Course 1 · Total Rewards Foundations</div><div class="sb-item" id="nav-t01" onclick="showTool('t01')" style="--active-c:var(--c1)"><span class="sb-item-icon">🎯</span>Five Pillars Diagnostic</div><div class="sb-item" id="nav-t02" onclick="showTool('t02')" style="--active-c:var(--c1)"><span class="sb-item-icon">📋</span>Total Reward Statement Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#0C6B65"></div>Course 2 · Compensation & Benefits Essentials</div><div class="sb-item" id="nav-t03" onclick="showTool('t03')" style="--active-c:var(--c2)"><span class="sb-item-icon">📐</span>Salary Range Builder</div><div class="sb-item" id="nav-t04" onclick="showTool('t04')" style="--active-c:var(--c2)"><span class="sb-item-icon">📊</span>Market Pricing Worksheet</div><div class="sb-item" id="nav-t05" onclick="showTool('t05')" style="--active-c:var(--c2)"><span class="sb-item-icon">💰</span>Benefits Budget Calculator</div><div class="sb-item" id="nav-t06" onclick="showTool('t06')" style="--active-c:var(--c2)"><span class="sb-item-icon">✅</span>Approval Matrix Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#6B4C9A"></div>Course 3 · Pay Equity & Job Evaluation</div><div class="sb-item" id="nav-t07" onclick="showTool('t07')" style="--active-c:var(--c3)"><span class="sb-item-icon">⚖️</span>Point-Factor Evaluation Scorecard</div><div class="sb-item" id="nav-t08" onclick="showTool('t08')" style="--active-c:var(--c3)"><span class="sb-item-icon">📉</span>Pay Gap Calculator</div><div class="sb-item" id="nav-t09" onclick="showTool('t09')" style="--active-c:var(--c3)"><span class="sb-item-icon">🔧</span>Remediation Budget Calculator</div><div class="sb-item" id="nav-t10" onclick="showTool('t10')" style="--active-c:var(--c3)"><span class="sb-item-icon">📋</span>Pay Equity Audit Checklist</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#B84B4B"></div>Course 4 · Pay Transparency & Communication</div><div class="sb-item" id="nav-t11" onclick="showTool('t11')" style="--active-c:var(--c4)"><span class="sb-item-icon">🔍</span>Transparency Maturity Assessment</div><div class="sb-item" id="nav-t12" onclick="showTool('t12')" style="--active-c:var(--c4)"><span class="sb-item-icon">💬</span>Manager Briefing Pack</div><div class="sb-item" id="nav-t13" onclick="showTool('t13')" style="--active-c:var(--c4)"><span class="sb-item-icon">📄</span>Total Reward Statement Template</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#3A7D44"></div>Course 5 · HR Analytics & Career Development</div><div class="sb-item" id="nav-t14" onclick="showTool('t14')" style="--active-c:var(--c5)"><span class="sb-item-icon">📈</span>Compa-Ratio Distribution Analyser</div><div class="sb-item" id="nav-t15" onclick="showTool('t15')" style="--active-c:var(--c5)"><span class="sb-item-icon">⚠️</span>Flight-Risk Scoring Tool</div><div class="sb-item" id="nav-t16" onclick="showTool('t16')" style="--active-c:var(--c5)"><span class="sb-item-icon">💹</span>Turnover Cost & ROI Calculator</div><div class="sb-item" id="nav-t17" onclick="showTool('t17')" style="--active-c:var(--c5)"><span class="sb-item-icon">🗺️</span>Career Lattice Mapping Tool</div></div></div>
+<div class="sidebar" id="sidebar"><div class="sb-brand"><div class="sb-mark"><div class="sb-logo">R</div><div><div class="sb-name">Rewardology</div><div class="sb-sub">Practitioner Toolkit</div></div></div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#C8963E"></div>Course 1 · Total Rewards Foundations</div><div class="sb-item" id="nav-t01" onclick="showTool('t01')" style="--active-c:var(--c1)"><span class="sb-item-icon">🎯</span>Five Pillars Diagnostic</div><div class="sb-item" id="nav-t02" onclick="showTool('t02')" style="--active-c:var(--c1)"><span class="sb-item-icon">📋</span>Total Reward Statement Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#0C6B65"></div>Course 2 · Compensation & Benefits Essentials</div><div class="sb-item" id="nav-t03" onclick="showTool('t03')" style="--active-c:var(--c2)"><span class="sb-item-icon">📐</span>Salary Range Builder</div><div class="sb-item" id="nav-t04" onclick="showTool('t04')" style="--active-c:var(--c2)"><span class="sb-item-icon">📊</span>Market Pricing Worksheet</div><div class="sb-item" id="nav-t05" onclick="showTool('t05')" style="--active-c:var(--c2)"><span class="sb-item-icon">💰</span>Benefits Budget Calculator</div><div class="sb-item" id="nav-t06" onclick="showTool('t06')" style="--active-c:var(--c2)"><span class="sb-item-icon">✅</span>Approval Matrix Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#6B4C9A"></div>Course 3 · Pay Equity & Job Evaluation</div><div class="sb-item" id="nav-t07" onclick="showTool('t07')" style="--active-c:var(--c3)"><span class="sb-item-icon">⚖️</span>Point-Factor Evaluation Scorecard</div><div class="sb-item" id="nav-t08" onclick="showTool('t08')" style="--active-c:var(--c3)"><span class="sb-item-icon">📉</span>Pay Gap Calculator</div><div class="sb-item" id="nav-t09" onclick="showTool('t09')" style="--active-c:var(--c3)"><span class="sb-item-icon">🔧</span>Remediation Budget Calculator</div><div class="sb-item" id="nav-t10" onclick="showTool('t10')" style="--active-c:var(--c3)"><span class="sb-item-icon">📋</span>Pay Equity Audit Checklist</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#B84B4B"></div>Course 4 · Pay Transparency & Communication</div><div class="sb-item" id="nav-t11" onclick="showTool('t11')" style="--active-c:var(--c4)"><span class="sb-item-icon">🔍</span>Transparency Maturity Assessment</div><div class="sb-item" id="nav-t12" onclick="showTool('t12')" style="--active-c:var(--c4)"><span class="sb-item-icon">💬</span>Manager Briefing Pack</div><div class="sb-item" id="nav-t13" onclick="showTool('t13')" style="--active-c:var(--c4)"><span class="sb-item-icon">📄</span>Total Reward Statement Template</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#3A7D44"></div>Course 5 · HR Analytics & Career Development</div><div class="sb-item" id="nav-t14" onclick="showTool('t14')" style="--active-c:var(--c5)"><span class="sb-item-icon">📈</span>Compa-Ratio Distribution Analyser</div><div class="sb-item" id="nav-t15" onclick="showTool('t15')" style="--active-c:var(--c5)"><span class="sb-item-icon">⚠️</span>Flight-Risk Scoring Tool</div><div class="sb-item" id="nav-t16" onclick="showTool('t16')" style="--active-c:var(--c5)"><span class="sb-item-icon">💹</span>Turnover Cost & ROI Calculator</div><div class="sb-item" id="nav-t17" onclick="showTool('t17')" style="--active-c:var(--c5)"><span class="sb-item-icon">🗺️</span>Career Lattice Mapping Tool</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#0C6B65"></div>Course 6 · Variable Pay &amp; STI Design</div><div class="sb-item" id="nav-t18" onclick="showTool('t18')" style="--active-c:var(--c6)"><span class="sb-item-icon">🎯</span>STI Framework Planner</div><div class="sb-item" id="nav-t19" onclick="showTool('t19')" style="--active-c:var(--c6)"><span class="sb-item-icon">📈</span>Payout Curve Calculator</div><div class="sb-item" id="nav-t20" onclick="showTool('t20')" style="--active-c:var(--c6)"><span class="sb-item-icon">🔒</span>Governance Gate Checklist</div><div class="sb-item" id="nav-t21" onclick="showTool('t21')" style="--active-c:var(--c6)"><span class="sb-item-icon">💬</span>Manager Briefing Template</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#6B4C9A"></div>Course 7 · Benefits Design &amp; Administration</div><div class="sb-item" id="nav-t22" onclick="showTool('t22')" style="--active-c:var(--c7)"><span class="sb-item-icon">🔍</span>Benefits Portfolio Auditor</div><div class="sb-item" id="nav-t23" onclick="showTool('t23')" style="--active-c:var(--c7)"><span class="sb-item-icon">🏥</span>Health Plan Cost Comparison</div><div class="sb-item" id="nav-t24" onclick="showTool('t24')" style="--active-c:var(--c7)"><span class="sb-item-icon">🏦</span>Pension Contribution Modeller</div><div class="sb-item" id="nav-t25" onclick="showTool('t25')" style="--active-c:var(--c7)"><span class="sb-item-icon">⚙️</span>Flex Benefits Budget Planner</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#B84B4B"></div>Course 8 · Executive Compensation &amp; LTI</div><div class="sb-item" id="nav-t26" onclick="showTool('t26')" style="--active-c:var(--c8)"><span class="sb-item-icon">🎯</span>LTI Vehicle Selector</div><div class="sb-item" id="nav-t27" onclick="showTool('t27')" style="--active-c:var(--c8)"><span class="sb-item-icon">📊</span>PSU Vesting Schedule Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#3A7D44"></div>Course 9 · Sales Compensation Design</div><div class="sb-item" id="nav-t28" onclick="showTool('t28')" style="--active-c:var(--c9)"><span class="sb-item-icon">📋</span>TTC Benchmarking Worksheet</div><div class="sb-item" id="nav-t29" onclick="showTool('t29')" style="--active-c:var(--c9)"><span class="sb-item-icon">💰</span>Commission Payout Table Builder</div><div class="sb-item" id="nav-t30" onclick="showTool('t30')" style="--active-c:var(--c9)"><span class="sb-item-icon">📉</span>Quota Attainment Analyser</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#C8963E"></div>Course 10 · Global Compensation &amp; Mobility</div><div class="sb-item" id="nav-t31" onclick="showTool('t31')" style="--active-c:var(--c10)"><span class="sb-item-icon">🌍</span>Geographic Differential Matrix</div><div class="sb-item" id="nav-t32" onclick="showTool('t32')" style="--active-c:var(--c10)"><span class="sb-item-icon">✈️</span>Expat Balance Sheet Calculator</div></div></div>
 <div class="main" id="main">
-<div class="main-brand" id="main-brand" aria-hidden="true"><div class="sb-mark"><div class="sb-logo">R</div><div><div class="sb-name">Rewardology Academy</div><div class="sb-sub">Practitioner Toolkit</div></div></div></div>
 <div class="tool-panel" id="panel-t01" style="--active-c:var(--c1)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c1)">Course 1 · Total Rewards Foundations</div><div class="tool-title">Five Pillars Diagnostic</div><div class="tool-desc">Score each pillar 1–5 using real data from exit interviews, engagement surveys, and turnover reports. The tool identifies your weakest pillar and recommends where to focus investment first.</div></div>
 <div class="section"><div class="section-title">Rate each pillar</div>
 <div class="slider-row"><div class="slider-label">Compensation</div><input type="range" min="1" max="5" value="3" id="p1" oninput="calcPillars()"><div class="slider-val" id="v1">3</div></div>
@@ -482,20 +476,389 @@ body.single-tool .main-brand{display:block}
 <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.5)"><div style="width:24px;height:3px;background:#FBBf24;border-radius:2px"></div>Moderate — possible with skill-building (1 skill)</div>
 <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.5)"><div style="width:24px;height:3px;background:#EF4444;border-radius:2px"></div>Weak — needs an intermediate step (no direct overlap)</div>
 </div></div></div>
+<div class="tool-panel" id="panel-t18" style="--active-c:var(--c6)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c6)">Course 6 · Variable Pay &amp; STI Design</div><div class="tool-title">STI Framework Planner</div><div class="tool-desc">Define your STI eligibility tiers, target bonus levels, and metric weighting. The tool calculates total pool cost at target and maximum, and checks pool cost as a percentage of payroll.</div></div>
+<div class="section"><div class="section-title">Eligibility tiers (up to 4)</div>
+<div id="sti-tiers">
+<div class="sti-tier" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:14px;margin-bottom:10px">
+<div class="grid-3"><div class="field"><label>Tier name</label><input type="text" class="sti-tname" placeholder="Directors" oninput="calcSTI()"></div><div class="field"><label>Headcount</label><input type="number" class="sti-hc" placeholder="12" oninput="calcSTI()"></div><div class="field"><label>Avg base salary ($)</label><input type="number" class="sti-sal" placeholder="120000" oninput="calcSTI()"></div></div>
+<div class="grid-2"><div class="field"><label>Target bonus (%)</label><input type="number" class="sti-pct" placeholder="25" oninput="calcSTI()"></div><div class="field"><label>Maximum multiplier (×)</label><input type="number" class="sti-mul" placeholder="1.5" step="0.1" oninput="calcSTI()"></div></div>
+</div>
+<div class="sti-tier" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:14px;margin-bottom:10px">
+<div class="grid-3"><div class="field"><label>Tier name</label><input type="text" class="sti-tname" placeholder="Senior Managers" oninput="calcSTI()"></div><div class="field"><label>Headcount</label><input type="number" class="sti-hc" placeholder="28" oninput="calcSTI()"></div><div class="field"><label>Avg base salary ($)</label><input type="number" class="sti-sal" placeholder="85000" oninput="calcSTI()"></div></div>
+<div class="grid-2"><div class="field"><label>Target bonus (%)</label><input type="number" class="sti-pct" placeholder="15" oninput="calcSTI()"></div><div class="field"><label>Maximum multiplier (×)</label><input type="number" class="sti-mul" placeholder="1.5" step="0.1" oninput="calcSTI()"></div></div>
+</div>
+</div>
+<div class="field" style="margin-top:12px"><label>Total payroll ($) — for pool-as-% check</label><input type="number" id="sti-payroll" placeholder="5000000" oninput="calcSTI()"></div>
+</div>
+<div class="result-block colored" id="sti-result" style="display:none">
+<div class="out-grid" id="sti-tier-results"></div>
+<div class="out-grid" style="margin-top:14px">
+<div class="out-card highlight"><div class="out-label">Total pool at target</div><div class="out-val" id="sti-total-target">$0</div></div>
+<div class="out-card"><div class="out-label">Total pool at maximum</div><div class="out-val" id="sti-total-max">$0</div></div>
+<div class="out-card"><div class="out-label">Pool as % of payroll (target)</div><div class="out-val" id="sti-pool-pct">—</div></div>
+</div>
+</div></div>
+
+<div class="tool-panel" id="panel-t19" style="--active-c:var(--c6)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c6)">Course 6 · Variable Pay &amp; STI Design</div><div class="tool-title">Payout Curve Calculator</div><div class="tool-desc">Set your plan's threshold, target, and maximum anchor points. The tool generates a full payout table showing commission at each attainment level, including accelerated payouts above target.</div></div>
+<div class="section"><div class="section-title">Plan parameters</div>
+<div class="grid-3">
+<div class="field"><label>Target variable ($)</label><input type="number" id="pc-tvc" placeholder="20000" oninput="calcPC()"></div>
+<div class="field"><label>Threshold (% of quota)</label><input type="number" id="pc-thresh" placeholder="80" oninput="calcPC()"></div>
+<div class="field"><label>Max multiplier (×, e.g. 1.5)</label><input type="number" id="pc-maxmul" placeholder="1.5" step="0.1" oninput="calcPC()"></div>
+</div>
+<div class="grid-2">
+<div class="field"><label>Accelerator trigger (% of quota)</label><input type="number" id="pc-acctrig" placeholder="100" oninput="calcPC()"></div>
+<div class="field"><label>Accelerator rate (× of standard)</label><input type="number" id="pc-accrate" placeholder="1.5" step="0.1" oninput="calcPC()"></div>
+</div>
+</div>
+<div id="pc-table-wrap" style="display:none;margin-top:18px">
+<div class="section-title" style="margin-bottom:10px">Payout table</div>
+<table style="width:100%;border-collapse:collapse;font-size:13px" id="pc-table"></table>
+</div></div>
+
+<div class="tool-panel" id="panel-t20" style="--active-c:var(--c6)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c6)">Course 6 · Variable Pay &amp; STI Design</div><div class="tool-title">Governance Gate Checklist</div><div class="tool-desc">Work through each governance layer for your STI plan. The tool scores your design and identifies which governance features are missing or incomplete.</div></div>
+<div class="section" id="gate-items"></div>
+<div class="result-block colored" id="gate-result" style="display:none">
+<div class="out-grid">
+<div class="out-card highlight"><div class="out-label">Governance Score</div><div class="out-val" id="gate-score">—</div></div>
+<div class="out-card"><div class="out-label">Rating</div><div class="out-val sm" id="gate-rating">—</div></div>
+</div>
+<div style="margin-top:14px;padding:14px 16px;background:rgba(255,255,255,.03);border-radius:8px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.65)" id="gate-notes"></div>
+</div></div>
+
+<div class="tool-panel" id="panel-t21" style="--active-c:var(--c6)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c6)">Course 6 · Variable Pay &amp; STI Design</div><div class="tool-title">Manager Briefing Template</div><div class="tool-desc">Fill in your plan's key parameters. The tool generates a pre-populated manager briefing document with answers to the five questions participants most commonly ask.</div></div>
+<div class="section"><div class="section-title">Plan parameters</div>
+<div class="grid-2">
+<div class="field"><label>Plan year</label><input type="text" id="mb-year" placeholder="2026" oninput="buildBrief()"></div>
+<div class="field"><label>Payout date</label><input type="text" id="mb-date" placeholder="15 March 2027" oninput="buildBrief()"></div>
+<div class="field"><label>Target bonus (%)</label><input type="number" id="mb-pct" placeholder="15" oninput="buildBrief()"></div>
+<div class="field"><label>Threshold (% of target)</label><input type="number" id="mb-thresh" placeholder="80" oninput="buildBrief()"></div>
+<div class="field"><label>Primary metric (e.g. revenue)</label><input type="text" id="mb-metric" placeholder="company revenue growth" oninput="buildBrief()"></div>
+<div class="field"><label>Max payout multiplier (×)</label><input type="number" id="mb-max" placeholder="1.5" step="0.1" oninput="buildBrief()"></div>
+</div>
+<div class="field"><label>Below-expectations modifier (e.g. 0.0 = zero payout)</label><input type="number" id="mb-zero" placeholder="0.0" step="0.1" oninput="buildBrief()"></div>
+</div>
+<div id="mb-doc" style="display:none;margin-top:18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:20px;font-size:13px;line-height:1.8;color:rgba(255,255,255,.8)"></div>
+</div>
+
+<div class="tool-panel" id="panel-t22" style="--active-c:var(--c7)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c7)">Course 7 · Benefits Design &amp; Administration</div><div class="tool-title">Benefits Portfolio Auditor</div><div class="tool-desc">Score up to 6 benefit categories on employee preference and awareness. The tool identifies where your spend is most and least efficient, and ranks priorities for the next budget cycle.</div></div>
+<div class="section"><div class="section-title">Benefit categories</div>
+<div class="field"><label>Total annual benefits spend ($)</label><input type="number" id="ba-spend" placeholder="800000" oninput="calcBA()"></div>
+<div id="ba-rows">
+<div class="ba-row" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;align-items:end;margin-bottom:8px">
+<div class="field"><label>Benefit</label><input type="text" class="ba-name" placeholder="Health Insurance" oninput="calcBA()"></div>
+<div class="field"><label>Annual spend ($)</label><input type="number" class="ba-amt" placeholder="400000" oninput="calcBA()"></div>
+<div class="field"><label>Preference (1-5)</label><input type="number" class="ba-pref" min="1" max="5" placeholder="4" oninput="calcBA()"></div>
+<div class="field"><label>Awareness (1-5)</label><input type="number" class="ba-aware" min="1" max="5" placeholder="3" oninput="calcBA()"></div>
+</div>
+<div class="ba-row" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;align-items:end;margin-bottom:8px">
+<div class="field"><label>Benefit</label><input type="text" class="ba-name" placeholder="Pension (above statutory)" oninput="calcBA()"></div>
+<div class="field"><label>Annual spend ($)</label><input type="number" class="ba-amt" placeholder="180000" oninput="calcBA()"></div>
+<div class="field"><label>Preference (1-5)</label><input type="number" class="ba-pref" min="1" max="5" placeholder="3" oninput="calcBA()"></div>
+<div class="field"><label>Awareness (1-5)</label><input type="number" class="ba-aware" min="1" max="5" placeholder="2" oninput="calcBA()"></div>
+</div>
+<div class="ba-row" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;align-items:end;margin-bottom:8px">
+<div class="field"><label>Benefit</label><input type="text" class="ba-name" placeholder="Mental health support" oninput="calcBA()"></div>
+<div class="field"><label>Annual spend ($)</label><input type="number" class="ba-amt" placeholder="50000" oninput="calcBA()"></div>
+<div class="field"><label>Preference (1-5)</label><input type="number" class="ba-pref" min="1" max="5" placeholder="5" oninput="calcBA()"></div>
+<div class="field"><label>Awareness (1-5)</label><input type="number" class="ba-aware" min="1" max="5" placeholder="2" oninput="calcBA()"></div>
+</div>
+</div>
+</div>
+<div class="result-block colored" id="ba-result" style="display:none">
+<div class="section-title" style="margin-bottom:10px">Audit results</div>
+<div id="ba-table-wrap"></div>
+<div style="margin-top:14px;padding:14px;background:rgba(255,255,255,.03);border-radius:8px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.65)" id="ba-notes"></div>
+</div></div>
+
+<div class="tool-panel" id="panel-t23" style="--active-c:var(--c7)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c7)">Course 7 · Benefits Design &amp; Administration</div><div class="tool-title">Health Plan Cost Comparison</div><div class="tool-desc">Compare two health plan options side by side. Enter premiums, take-up rates, and employer cost shares — the tool calculates total annual employer cost and per-employee cost for each option.</div></div>
+<div class="section"><div class="section-title">Common parameters</div>
+<div class="grid-2">
+<div class="field"><label>Eligible headcount</label><input type="number" id="hp-hc" placeholder="280" oninput="calcHP()"></div>
+</div>
+</div>
+<div class="section"><div class="section-title">Option A</div>
+<div class="grid-3">
+<div class="field"><label>Premium per enrolled ($/yr)</label><input type="number" id="hp-a-prem" placeholder="5400" oninput="calcHP()"></div>
+<div class="field"><label>Assumed take-up (%)</label><input type="number" id="hp-a-tu" placeholder="72" oninput="calcHP()"></div>
+<div class="field"><label>Employer share (%)</label><input type="number" id="hp-a-emp" placeholder="75" oninput="calcHP()"></div>
+</div>
+</div>
+<div class="section"><div class="section-title">Option B</div>
+<div class="grid-3">
+<div class="field"><label>Premium per enrolled ($/yr)</label><input type="number" id="hp-b-prem" placeholder="4800" oninput="calcHP()"></div>
+<div class="field"><label>Assumed take-up (%)</label><input type="number" id="hp-b-tu" placeholder="68" oninput="calcHP()"></div>
+<div class="field"><label>Employer share (%)</label><input type="number" id="hp-b-emp" placeholder="80" oninput="calcHP()"></div>
+</div>
+</div>
+<div class="result-block colored" id="hp-result" style="display:none">
+<div class="out-grid">
+<div class="out-card highlight"><div class="out-label">Option A — Employer cost/yr</div><div class="out-val" id="hp-a-cost">$0</div></div>
+<div class="out-card highlight"><div class="out-label">Option B — Employer cost/yr</div><div class="out-val" id="hp-b-cost">$0</div></div>
+<div class="out-card"><div class="out-label">Cost difference</div><div class="out-val" id="hp-diff">$0</div></div>
+<div class="out-card"><div class="out-label">Cheaper option</div><div class="out-val sm" id="hp-winner">—</div></div>
+</div>
+<div class="out-grid" style="margin-top:14px">
+<div class="out-card"><div class="out-label">A — Employee annual cost</div><div class="out-val" id="hp-a-emp-cost">$0</div></div>
+<div class="out-card"><div class="out-label">B — Employee annual cost</div><div class="out-val" id="hp-b-emp-cost">$0</div></div>
+<div class="out-card"><div class="out-label">A — Enrolled employees</div><div class="out-val" id="hp-a-enr">0</div></div>
+<div class="out-card"><div class="out-label">B — Enrolled employees</div><div class="out-val" id="hp-b-enr">0</div></div>
+</div>
+</div></div>
+
+<div class="tool-panel" id="panel-t24" style="--active-c:var(--c7)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c7)">Course 7 · Benefits Design &amp; Administration</div><div class="tool-title">DC Pension Contribution Modeller</div><div class="tool-desc">Compare flat versus matching employer contribution structures. See total annual employer cost, per-employee pension pot contribution, and the equity implications of each approach.</div></div>
+<div class="section"><div class="section-title">Workforce parameters</div>
+<div class="grid-3">
+<div class="field"><label>Total headcount</label><input type="number" id="dc-hc" placeholder="140" oninput="calcDC()"></div>
+<div class="field"><label>Average annual salary ($)</label><input type="number" id="dc-sal" placeholder="72000" oninput="calcDC()"></div>
+</div>
+</div>
+<div class="section"><div class="section-title">Option A — Flat contribution</div>
+<div class="grid-2">
+<div class="field"><label>Employer flat rate (%)</label><input type="number" id="dc-a-rate" placeholder="8" oninput="calcDC()"></div>
+</div>
+</div>
+<div class="section"><div class="section-title">Option B — Matching contribution</div>
+<div class="grid-3">
+<div class="field"><label>Employer match rate (%)</label><input type="number" id="dc-b-match" placeholder="3" oninput="calcDC()"></div>
+<div class="field"><label>Employee take-up (%)</label><input type="number" id="dc-b-tu" placeholder="55" oninput="calcDC()"></div>
+</div>
+</div>
+<div class="result-block colored" id="dc-result" style="display:none">
+<div class="out-grid">
+<div class="out-card highlight"><div class="out-label">Option A — Annual employer cost</div><div class="out-val" id="dc-a-cost">$0</div></div>
+<div class="out-card highlight"><div class="out-label">Option B — Annual employer cost</div><div class="out-val" id="dc-b-cost">$0</div></div>
+<div class="out-card"><div class="out-label">Annual saving (A vs B)</div><div class="out-val" id="dc-saving">$0</div></div>
+<div class="out-card"><div class="out-label">Employees with zero employer pension (B)</div><div class="out-val" id="dc-zero">0</div></div>
+</div>
+<div class="out-grid" style="margin-top:14px">
+<div class="out-card"><div class="out-label">Per-employee pension (A)</div><div class="out-val" id="dc-a-per">$0</div><div class="out-sub">All employees receive this</div></div>
+<div class="out-card"><div class="out-label">Per-employee pension (B, contributor)</div><div class="out-val" id="dc-b-per-y">$0</div><div class="out-sub">For those who contribute</div></div>
+<div class="out-card"><div class="out-label">Per-employee pension (B, non-contributor)</div><div class="out-val" id="dc-b-per-n">$0</div><div class="out-sub">For those who don't contribute</div></div>
+</div>
+<div style="margin-top:14px;padding:14px;background:rgba(255,255,255,.03);border-radius:8px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.65)" id="dc-notes"></div>
+</div></div>
+
+<div class="tool-panel" id="panel-t25" style="--active-c:var(--c7)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c7)">Course 7 · Benefits Design &amp; Administration</div><div class="tool-title">Flex Benefits Budget Planner</div><div class="tool-desc">Set an annual allowance per employee and configure up to 6 benefit options. The tool tracks your budget allocation, calculates projected total cost, and flags over-budget selections.</div></div>
+<div class="section"><div class="section-title">Allowance parameters</div>
+<div class="grid-2">
+<div class="field"><label>Allowance per employee ($/yr)</label><input type="number" id="fb-allow" placeholder="600" oninput="calcFB()"></div>
+<div class="field"><label>Total eligible employees</label><input type="number" id="fb-hc" placeholder="200" oninput="calcFB()"></div>
+</div>
+</div>
+<div class="section"><div class="section-title">Benefit options (enter costs to see budget impact)</div>
+<div id="fb-options">
+<div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;align-items:end;margin-bottom:8px">
+<div class="field"><label>Option</label><input type="text" class="fb-oname" placeholder="Additional pension" oninput="calcFB()"></div>
+<div class="field"><label>Cost per employee ($/yr)</label><input type="number" class="fb-ocost" placeholder="300" oninput="calcFB()"></div>
+<div class="field"><label>Est. take-up (%)</label><input type="number" class="fb-otu" placeholder="60" oninput="calcFB()"></div>
+</div>
+<div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;align-items:end;margin-bottom:8px">
+<div class="field"><label>Option</label><input type="text" class="fb-oname" placeholder="Dental top-up" oninput="calcFB()"></div>
+<div class="field"><label>Cost per employee ($/yr)</label><input type="number" class="fb-ocost" placeholder="180" oninput="calcFB()"></div>
+<div class="field"><label>Est. take-up (%)</label><input type="number" class="fb-otu" placeholder="45" oninput="calcFB()"></div>
+</div>
+<div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;align-items:end;margin-bottom:8px">
+<div class="field"><label>Option</label><input type="text" class="fb-oname" placeholder="Childcare vouchers" oninput="calcFB()"></div>
+<div class="field"><label>Cost per employee ($/yr)</label><input type="number" class="fb-ocost" placeholder="600" oninput="calcFB()"></div>
+<div class="field"><label>Est. take-up (%)</label><input type="number" class="fb-otu" placeholder="25" oninput="calcFB()"></div>
+</div>
+<div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;align-items:end;margin-bottom:8px">
+<div class="field"><label>Option</label><input type="text" class="fb-oname" placeholder="Gym stipend" oninput="calcFB()"></div>
+<div class="field"><label>Cost per employee ($/yr)</label><input type="number" class="fb-ocost" placeholder="200" oninput="calcFB()"></div>
+<div class="field"><label>Est. take-up (%)</label><input type="number" class="fb-otu" placeholder="55" oninput="calcFB()"></div>
+</div>
+</div>
+</div>
+<div class="result-block colored" id="fb-result" style="display:none">
+<div class="out-grid">
+<div class="out-card highlight"><div class="out-label">Total allowance pool</div><div class="out-val" id="fb-pool">$0</div></div>
+<div class="out-card"><div class="out-label">Projected utilisation cost</div><div class="out-val" id="fb-util">$0</div></div>
+<div class="out-card"><div class="out-label">Average cost per employee</div><div class="out-val" id="fb-avg">$0</div></div>
+</div>
+<div id="fb-option-detail" style="margin-top:14px"></div>
+<div style="margin-top:14px;padding:14px;background:rgba(255,255,255,.03);border-radius:8px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.65)" id="fb-notes"></div>
+</div></div>
+
+<div class="tool-panel" id="panel-t26" style="--active-c:var(--c8)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c8)">Course 8 · Executive Compensation &amp; LTI</div><div class="tool-title">LTI Vehicle Selector</div><div class="tool-desc">Answer four questions about your organisation's context. The tool recommends the most appropriate LTI vehicle and explains why, with the key trade-offs of each option.</div></div>
+<div class="section" id="lti-questions"></div>
+<div class="result-block colored" id="lti-result" style="display:none">
+<div class="out-card highlight" style="margin-bottom:14px"><div class="out-label">Recommended vehicle</div><div class="out-val" id="lti-rec">—</div></div>
+<div style="padding:14px;background:rgba(255,255,255,.03);border-radius:8px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.65)" id="lti-rationale"></div>
+</div></div>
+
+<div class="tool-panel" id="panel-t27" style="--active-c:var(--c8)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c8)">Course 8 · Executive Compensation &amp; LTI</div><div class="tool-title">PSU Vesting Schedule Builder</div><div class="tool-desc">Define your peer group and performance conditions. The tool builds a vesting schedule and calculates actual share and cash value delivered at each performance level.</div></div>
+<div class="section"><div class="section-title">Award parameters</div>
+<div class="grid-3">
+<div class="field"><label>Target award (% of base salary)</label><input type="number" id="psu-pct" placeholder="150" oninput="calcPSU()"></div>
+<div class="field"><label>Executive base salary ($)</label><input type="number" id="psu-sal" placeholder="250000" oninput="calcPSU()"></div>
+<div class="field"><label>Current share price ($)</label><input type="number" id="psu-price" placeholder="12.50" step="0.01" oninput="calcPSU()"></div>
+</div>
+</div>
+<div class="section"><div class="section-title">Performance conditions (relative TSR)</div>
+<div class="grid-3">
+<div class="field"><label>Peer group size</label><input type="number" id="psu-peers" placeholder="20" oninput="calcPSU()"></div>
+<div class="field"><label>Threshold percentile (e.g. 50)</label><input type="number" id="psu-thresh" placeholder="50" oninput="calcPSU()"></div>
+<div class="field"><label>Maximum percentile (e.g. 75)</label><input type="number" id="psu-max" placeholder="75" oninput="calcPSU()"></div>
+</div>
+<div class="grid-2">
+<div class="field"><label>Threshold vesting (%)</label><input type="number" id="psu-thresh-vest" placeholder="25" oninput="calcPSU()"></div>
+<div class="field"><label>Maximum vesting (%)</label><input type="number" id="psu-max-vest" placeholder="200" oninput="calcPSU()"></div>
+</div>
+</div>
+<div class="result-block colored" id="psu-result" style="display:none">
+<div class="section-title" style="margin-bottom:10px">Vesting schedule</div>
+<table style="width:100%;border-collapse:collapse;font-size:13px" id="psu-table"></table>
+</div></div>
+
+<div class="tool-panel" id="panel-t28" style="--active-c:var(--c9)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c9)">Course 9 · Sales Compensation Design</div><div class="tool-title">TTC Benchmarking Worksheet</div><div class="tool-desc">Compare up to three sales roles by base salary, target variable, and TTC. The tool shows pay mix, TTC benchmark gap, and which roles may be uncompetitive on total package.</div></div>
+<div class="section"><div class="section-title">Sales roles</div>
+<div id="ttc-roles">
+<div class="ttc-row" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:14px;margin-bottom:10px">
+<div class="grid-3">
+<div class="field"><label>Role title</label><input type="text" class="ttc-rname" placeholder="Account Executive" oninput="calcTTC()"></div>
+<div class="field"><label>Base salary ($)</label><input type="number" class="ttc-base" placeholder="65000" oninput="calcTTC()"></div>
+<div class="field"><label>Target variable ($)</label><input type="number" class="ttc-var" placeholder="45000" oninput="calcTTC()"></div>
+</div>
+<div class="grid-2">
+<div class="field"><label>Market TTC benchmark ($)</label><input type="number" class="ttc-bench" placeholder="110000" oninput="calcTTC()"></div>
+</div>
+</div>
+<div class="ttc-row" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:14px;margin-bottom:10px">
+<div class="grid-3">
+<div class="field"><label>Role title</label><input type="text" class="ttc-rname" placeholder="Account Manager" oninput="calcTTC()"></div>
+<div class="field"><label>Base salary ($)</label><input type="number" class="ttc-base" placeholder="58000" oninput="calcTTC()"></div>
+<div class="field"><label>Target variable ($)</label><input type="number" class="ttc-var" placeholder="22000" oninput="calcTTC()"></div>
+</div>
+<div class="grid-2">
+<div class="field"><label>Market TTC benchmark ($)</label><input type="number" class="ttc-bench" placeholder="80000" oninput="calcTTC()"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="result-block colored" id="ttc-result" style="display:none">
+<div id="ttc-role-cards"></div>
+</div></div>
+
+<div class="tool-panel" id="panel-t29" style="--active-c:var(--c9)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c9)">Course 9 · Sales Compensation Design</div><div class="tool-title">Commission Payout Table Builder</div><div class="tool-desc">Set commission rates, threshold, accelerator, and cap. The tool generates a complete payout table showing dollar commission and TTC at seven attainment levels.</div></div>
+<div class="section"><div class="section-title">Plan parameters</div>
+<div class="grid-3">
+<div class="field"><label>Annual quota ($)</label><input type="number" id="cpt-quota" placeholder="480000" oninput="calcCPT()"></div>
+<div class="field"><label>Base salary ($)</label><input type="number" id="cpt-base" placeholder="58000" oninput="calcCPT()"></div>
+<div class="field"><label>Target variable ($)</label><input type="number" id="cpt-tvc" placeholder="32000" oninput="calcCPT()"></div>
+</div>
+<div class="grid-3">
+<div class="field"><label>Threshold (% of quota)</label><input type="number" id="cpt-thresh" placeholder="75" oninput="calcCPT()"></div>
+<div class="field"><label>Accelerator trigger (% of quota)</label><input type="number" id="cpt-acctrig" placeholder="100" oninput="calcCPT()"></div>
+<div class="field"><label>Accelerator rate (×)</label><input type="number" id="cpt-accrate" placeholder="1.5" step="0.1" oninput="calcCPT()"></div>
+</div>
+<div class="field"><label>Cap (% of TVC — e.g. 200 for 200%)</label><input type="number" id="cpt-cap" placeholder="200" oninput="calcCPT()"></div>
+</div>
+<div id="cpt-table-wrap" style="display:none;margin-top:18px">
+<div class="section-title" style="margin-bottom:10px">Payout table</div>
+<table style="width:100%;border-collapse:collapse;font-size:13px" id="cpt-table"></table>
+</div></div>
+
+<div class="tool-panel" id="panel-t30" style="--active-c:var(--c9)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c9)">Course 9 · Sales Compensation Design</div><div class="tool-title">Quota Attainment Distribution Analyser</div><div class="tool-desc">Enter attainment percentages for your sales team. The tool applies the 60/30/10 calibration rule, diagnoses whether your quotas are too easy, well-calibrated, or too hard, and gives guidance.</div></div>
+<div class="section"><div class="section-title">Rep attainment (% of quota achieved)</div>
+<div class="field"><label>Enter attainment % for each rep, comma-separated</label><textarea id="qa-data" rows="3" placeholder="e.g. 145, 120, 105, 98, 95, 88, 82, 75, 68, 55" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:10px;color:#fff;font-size:13px;resize:vertical" oninput="calcQA()"></textarea></div>
+</div>
+<div class="result-block colored" id="qa-result" style="display:none">
+<div class="out-grid">
+<div class="out-card highlight"><div class="out-label">At or above 100%</div><div class="out-val" id="qa-above">—</div></div>
+<div class="out-card"><div class="out-label">80–99%</div><div class="out-val" id="qa-mid">—</div></div>
+<div class="out-card"><div class="out-label">Below 80%</div><div class="out-val" id="qa-below">—</div></div>
+<div class="out-card"><div class="out-label">Median attainment</div><div class="out-val" id="qa-median">—</div></div>
+</div>
+<div class="out-card highlight" style="margin-top:14px"><div class="out-label">Calibration diagnosis</div><div class="out-val" id="qa-diagnosis">—</div></div>
+<div style="margin-top:14px;padding:14px;background:rgba(255,255,255,.03);border-radius:8px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.65)" id="qa-guidance"></div>
+</div></div>
+
+<div class="tool-panel" id="panel-t31" style="--active-c:var(--c10)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c10)">Course 10 · Global Compensation &amp; Mobility</div><div class="tool-title">Geographic Differential Matrix</div><div class="tool-desc">Enter P50 market rates in local currency for up to four markets. The tool converts to a reference currency, applies your spread policy, and builds a comparison matrix for governance reporting.</div></div>
+<div class="section"><div class="section-title">Reference currency &amp; spread</div>
+<div class="grid-2">
+<div class="field"><label>Reference currency label</label><input type="text" id="gd-ref" placeholder="GBP" oninput="calcGD()"></div>
+<div class="field"><label>Spread policy (± %)</label><input type="number" id="gd-spread" placeholder="20" oninput="calcGD()"></div>
+</div>
+</div>
+<div class="section"><div class="section-title">Markets (up to 4)</div>
+<div id="gd-markets">
+<div class="gd-mkt" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:12px;margin-bottom:8px">
+<div class="grid-3">
+<div class="field"><label>Market</label><input type="text" class="gd-mname" placeholder="Lagos, Nigeria" oninput="calcGD()"></div>
+<div class="field"><label>Local currency</label><input type="text" class="gd-curr" placeholder="NGN" oninput="calcGD()"></div>
+<div class="field"><label>P50 (local)</label><input type="number" class="gd-p50" placeholder="18500000" oninput="calcGD()"></div>
+</div>
+<div class="field"><label>Exchange rate to reference (e.g. 2000 NGN = 1 GBP → enter 2000)</label><input type="number" class="gd-rate" placeholder="2000" oninput="calcGD()"></div>
+</div>
+<div class="gd-mkt" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:12px;margin-bottom:8px">
+<div class="grid-3">
+<div class="field"><label>Market</label><input type="text" class="gd-mname" placeholder="Nairobi, Kenya" oninput="calcGD()"></div>
+<div class="field"><label>Local currency</label><input type="text" class="gd-curr" placeholder="KES" oninput="calcGD()"></div>
+<div class="field"><label>P50 (local)</label><input type="number" class="gd-p50" placeholder="4200000" oninput="calcGD()"></div>
+</div>
+<div class="field"><label>Exchange rate to reference</label><input type="number" class="gd-rate" placeholder="150" oninput="calcGD()"></div>
+</div>
+<div class="gd-mkt" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:12px;margin-bottom:8px">
+<div class="grid-3">
+<div class="field"><label>Market</label><input type="text" class="gd-mname" placeholder="London, UK" oninput="calcGD()"></div>
+<div class="field"><label>Local currency</label><input type="text" class="gd-curr" placeholder="GBP" oninput="calcGD()"></div>
+<div class="field"><label>P50 (local)</label><input type="number" class="gd-p50" placeholder="72000" oninput="calcGD()"></div>
+</div>
+<div class="field"><label>Exchange rate to reference</label><input type="number" class="gd-rate" placeholder="1" oninput="calcGD()"></div>
+</div>
+</div>
+</div>
+<div id="gd-matrix-wrap" style="display:none;margin-top:18px">
+<div class="section-title" style="margin-bottom:10px">Differential matrix</div>
+<table style="width:100%;border-collapse:collapse;font-size:12px" id="gd-table"></table>
+<div style="margin-top:12px;padding:12px 14px;background:rgba(255,255,255,.03);border-radius:8px;font-size:12px;color:rgba(255,255,255,.4)">Reference currency columns are for governance reporting only — pay decisions should always be made in local currency.</div>
+</div></div>
+
+<div class="tool-panel" id="panel-t32" style="--active-c:var(--c10)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c10)">Course 10 · Global Compensation &amp; Mobility</div><div class="tool-title">Expat Balance Sheet Calculator</div><div class="tool-desc">Calculate the core components of a long-term international assignment package using the balance sheet approach. Enter home and host parameters — the tool estimates COLA, housing allowance, and total package cost.</div></div>
+<div class="section"><div class="section-title">Home country position</div>
+<div class="grid-3">
+<div class="field"><label>Gross annual salary ($)</label><input type="number" id="ex-gross" placeholder="120000" oninput="calcEX()"></div>
+<div class="field"><label>Home income tax rate (%)</label><input type="number" id="ex-htax" placeholder="24" oninput="calcEX()"></div>
+<div class="field"><label>Annual home rent ($)</label><input type="number" id="ex-hrent" placeholder="18000" oninput="calcEX()"></div>
+</div>
+<div class="field"><label>Annual home non-housing spending ($)</label><input type="number" id="ex-hspend" placeholder="24000" oninput="calcEX()"></div>
+</div>
+<div class="section"><div class="section-title">Host country parameters</div>
+<div class="grid-3">
+<div class="field"><label>Host annual market-rate housing ($)</label><input type="number" id="ex-hhousing" placeholder="30000" oninput="calcEX()"></div>
+<div class="field"><label>COLA index (host goods vs home, %)</label><input type="number" id="ex-cola" placeholder="18" oninput="calcEX()"></div>
+<div class="field"><label>Host income tax rate (%)</label><input type="number" id="ex-htaxx" placeholder="30" oninput="calcEX()"></div>
+</div>
+<div class="grid-2">
+<div class="field"><label>Number of school-age children</label><input type="number" id="ex-kids" placeholder="2" oninput="calcEX()"></div>
+<div class="field"><label>Annual school fees per child ($)</label><input type="number" id="ex-school" placeholder="18000" oninput="calcEX()"></div>
+</div>
+</div>
+<div class="result-block colored" id="ex-result" style="display:none">
+<div class="out-grid">
+<div class="out-card"><div class="out-label">Home net salary</div><div class="out-val" id="ex-home-net">$0</div></div>
+<div class="out-card"><div class="out-label">COLA allowance</div><div class="out-val" id="ex-cola-out">$0</div></div>
+<div class="out-card"><div class="out-label">Housing allowance</div><div class="out-val" id="ex-housing-out">$0</div></div>
+<div class="out-card"><div class="out-label">School fees</div><div class="out-val" id="ex-school-out">$0</div></div>
+</div>
+<div class="out-grid" style="margin-top:14px">
+<div class="out-card highlight"><div class="out-label">Estimated additional employer cost</div><div class="out-val" id="ex-extra">$0</div><div class="out-sub">Above home salary (excl. tax equalization)</div></div>
+<div class="out-card"><div class="out-label">Tax equalization (approx.)</div><div class="out-val" id="ex-tax-eq">$0</div><div class="out-sub">Host tax − Hypothetical home tax</div></div>
+</div>
+<div style="margin-top:14px;padding:12px 14px;background:rgba(255,255,255,.03);border-radius:8px;font-size:12px;color:rgba(255,255,255,.4)">⚠️ Tax equalization is an estimate only. Engage an international tax advisor for an accurate gross-up calculation before approving assignment cost.</div>
+</div></div>
+
 
 </div>
 <div id="toast"></div>
 <script>
 const ACTIVE_COLORS={t01:'#C8963E',t02:'#C8963E',t03:'#0C6B65',t04:'#0C6B65',t05:'#0C6B65',t06:'#0C6B65',t07:'#6B4C9A',t08:'#6B4C9A',t09:'#6B4C9A',t10:'#6B4C9A',t11:'#B84B4B',t12:'#B84B4B',t13:'#B84B4B',t14:'#3A7D44',t15:'#3A7D44',t16:'#3A7D44',t17:'#3A7D44'};
-let lockedTool=null;
 function showTool(id){
   document.querySelectorAll('.tool-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.sb-item').forEach(n=>n.classList.remove('active'));
-  const panel=document.getElementById('panel-'+id);
-  if(!panel)return;
-  panel.classList.add('active');
-  const nav=document.getElementById('nav-'+id);
-  if(nav)nav.classList.add('active');
+  document.getElementById('panel-'+id).classList.add('active');
+  document.getElementById('nav-'+id).classList.add('active');
   const c=ACTIVE_COLORS[id]||'#C8963E';
   document.documentElement.style.setProperty('--active-c',c);
   window.scrollTo(0,0);
@@ -1073,14 +1436,9 @@ function calcCL(){
 }
 
 window.onload=()=>{
-  const hash=window.location.hash.replace('#','');
-  const startTool=hash&&document.getElementById('panel-'+hash)?hash:'t01';
-  if(hash&&document.getElementById('panel-'+hash)){
-    lockedTool=hash;
-    document.body.classList.add('single-tool');
-    const brand=document.getElementById('main-brand');
-    if(brand)brand.removeAttribute('aria-hidden');
-  }
+  // Hash navigation — open specific tool from URL e.g. toolkit.html#t03
+  const hash = window.location.hash.replace('#','');
+  const startTool = hash && document.getElementById('panel-'+hash) ? hash : 't01';
   showTool(startTool);
   calcPillars();
   initMPRows();
@@ -1097,14 +1455,433 @@ window.onload=()=>{
   document.getElementById('ck-date').value=new Date().toISOString().split('T')[0];
   calcAM();
 };
-window.addEventListener('hashchange',()=>{
-  if(!lockedTool)return;
-  if(window.location.hash.replace('#','')!==lockedTool){
-    history.replaceState(null,'','#'+lockedTool);
-  }
-  showTool(lockedTool);
-});
 document.addEventListener('click',e=>{if(e.target.classList.contains('menu-btn')||document.getElementById('sidebar').contains(e.target))return;if(window.innerWidth<700)document.getElementById('sidebar').classList.remove('open');});
+
+// ─── t18: STI Framework Planner ───────────────────────────────────────────────
+function calcSTI(){
+  const tiers=document.querySelectorAll('.sti-tier');
+  let totalTarget=0,totalMax=0,rows='';
+  tiers.forEach(t=>{
+    const n=t.querySelector('.sti-tname')?.value||'Tier';
+    const hc=parseFloat(t.querySelector('.sti-hc')?.value)||0;
+    const sal=parseFloat(t.querySelector('.sti-sal')?.value)||0;
+    const pct=parseFloat(t.querySelector('.sti-pct')?.value)||0;
+    const mul=parseFloat(t.querySelector('.sti-mul')?.value)||1.5;
+    const target=hc*sal*(pct/100);
+    const max=target*mul;
+    totalTarget+=target;totalMax+=max;
+    rows+=`<div class="out-card"><div class="out-label">${n}</div><div class="out-val sm">$${fmt(target)}</div><div class="out-sub">Target pool | Max $${fmt(max)}</div></div>`;
+  });
+  const payroll=parseFloat(document.getElementById('sti-payroll')?.value)||0;
+  const pct=payroll>0?((totalTarget/payroll)*100).toFixed(1)+'%':'—';
+  document.getElementById('sti-tier-results').innerHTML=rows;
+  document.getElementById('sti-total-target').textContent='$'+fmt(totalTarget);
+  document.getElementById('sti-total-max').textContent='$'+fmt(totalMax);
+  document.getElementById('sti-pool-pct').textContent=pct;
+  document.getElementById('sti-result').style.display='block';
+}
+
+// ─── t19: Payout Curve Calculator ─────────────────────────────────────────────
+function calcPC(){
+  const tvc=parseFloat(document.getElementById('pc-tvc')?.value)||0;
+  const thresh=parseFloat(document.getElementById('pc-thresh')?.value)||80;
+  const maxmul=parseFloat(document.getElementById('pc-maxmul')?.value)||1.5;
+  const acctrig=parseFloat(document.getElementById('pc-acctrig')?.value)||100;
+  const accrate=parseFloat(document.getElementById('pc-accrate')?.value)||1.5;
+  if(!tvc)return;
+  const levels=[60,70,75,80,90,100,110,120,130,150];
+  // Standard rate = TVC / (target% - threshold%) of quota band
+  const stdRate=tvc/((acctrig-thresh)/100);
+  let rows='<tr style="color:rgba(255,255,255,.5);font-size:11px"><th style="padding:6px 10px;text-align:left">Attainment</th><th style="padding:6px 10px;text-align:right">Commission</th><th style="padding:6px 10px;text-align:right">TTC context</th><th style="padding:6px 10px;text-align:left">Note</th></tr>';
+  const maxPay=tvc*maxmul;
+  levels.forEach(lvl=>{
+    let pay=0,note='';
+    if(lvl<thresh){pay=0;note='Below threshold';}
+    else if(lvl<=acctrig){pay=(lvl-thresh)/100*stdRate;note='Standard rate';}
+    else{const base=tvc;const above=(lvl-acctrig)/100*stdRate*accrate;pay=Math.min(base+above,maxPay);note=pay>=maxPay?'🔴 Capped':'Accelerated';}
+    const bg=lvl===100?'background:rgba(255,255,255,.06)':'';
+    rows+=`<tr style="${bg}"><td style="padding:6px 10px">${lvl}%</td><td style="padding:6px 10px;text-align:right;font-weight:${lvl===100?'600':'400'}">$${fmt(pay)}</td><td style="padding:6px 10px;text-align:right;color:rgba(255,255,255,.5)">—</td><td style="padding:6px 10px;color:rgba(255,255,255,.45);font-size:12px">${note}</td></tr>`;
+  });
+  document.getElementById('pc-table').innerHTML=rows;
+  document.getElementById('pc-table-wrap').style.display='block';
+}
+
+// ─── t20: Governance Gate Checklist ───────────────────────────────────────────
+const GATE_ITEMS=[
+  {id:'g1',label:'Financial floor gate defined',q:'Is there a minimum profitability level below which no payout occurs?'},
+  {id:'g2',label:'Compliance gate defined',q:'Are participants under investigation excluded from payout?'},
+  {id:'g3',label:'Minimum performance gate',q:'Do participants on PIPs or below expectations receive zero payout?'},
+  {id:'g4',label:'Clawback clause documented',q:'Is a clawback clause explicitly stated in the plan document?'},
+  {id:'g5',label:'Compensation committee moderation',q:'Does a committee review and approve final payouts before communication?'},
+  {id:'g6',label:'Mid-year governance check',q:'Is there a documented mid-year data integrity and gate check?'},
+  {id:'g7',label:'Plan document issued',q:'Was a formal plan document distributed to all participants before plan year start?'},
+];
+function initGates(){
+  const wrap=document.getElementById('gate-items');
+  if(!wrap||wrap.innerHTML.trim())return;
+  let h='<div class="section-title">Governance features</div>';
+  GATE_ITEMS.forEach(g=>{
+    h+=`<div style="display:flex;align-items:flex-start;gap:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)">
+    <div style="flex:1"><div style="font-size:13px;font-weight:500;margin-bottom:2px">${g.label}</div><div style="font-size:12px;color:rgba(255,255,255,.5)">${g.q}</div></div>
+    <select id="${g.id}" onchange="calcGates()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:6px;color:#fff;padding:6px 10px;font-size:13px">
+    <option value="">—</option><option value="yes">✅ Yes</option><option value="partial">⚠️ Partial</option><option value="no">❌ No</option>
+    </select></div>`;
+  });
+  wrap.innerHTML=h;
+}
+function calcGates(){
+  let score=0,issues=[];
+  GATE_ITEMS.forEach(g=>{
+    const v=document.getElementById(g.id)?.value;
+    if(v==='yes')score+=2;else if(v==='partial'){score+=1;issues.push(`${g.label}: partial — needs strengthening`);}else if(v==='no'){issues.push(`${g.label}: missing — high risk`);}
+  });
+  const max=GATE_ITEMS.length*2;
+  const pct=Math.round((score/max)*100);
+  const rating=pct>=85?'Strong':'pct>=65?'Adequate':'Needs work';
+  document.getElementById('gate-score').textContent=pct+'%';
+  document.getElementById('gate-rating').textContent=pct>=85?'Strong':pct>=65?'Adequate':'Needs work';
+  document.getElementById('gate-notes').innerHTML=issues.length?'<strong>Items to address:</strong><br>'+issues.map(i=>`• ${i}`).join('<br>'):'All governance features in place.';
+  document.getElementById('gate-result').style.display='block';
+}
+
+// ─── t21: Manager Briefing Template ───────────────────────────────────────────
+function buildBrief(){
+  const yr=document.getElementById('mb-year')?.value||'[Year]';
+  const dt=document.getElementById('mb-date')?.value||'[Date TBC]';
+  const pct=parseFloat(document.getElementById('mb-pct')?.value)||15;
+  const thresh=document.getElementById('mb-thresh')?.value||80;
+  const metric=document.getElementById('mb-metric')?.value||'company performance';
+  const mul=parseFloat(document.getElementById('mb-max')?.value)||1.5;
+  const zero=document.getElementById('mb-zero')?.value||'0.0';
+  const doc=document.getElementById('mb-doc');
+  doc.style.display='block';
+  doc.innerHTML=`<div style="font-size:15px;font-weight:700;margin-bottom:16px;color:var(--c6)">STI Manager Briefing — ${yr} Plan Year</div>
+<div style="margin-bottom:14px"><strong>Q1. What is my team member's target bonus?</strong><br>It depends on their base salary. Their target bonus is ${pct}% of their base salary. For example, someone earning $80,000 has a target of $${Math.round(80000*pct/100).toLocaleString()}. I can share individual amounts privately — let's book time to discuss.</div>
+<div style="margin-bottom:14px"><strong>Q2. What happens if we miss the threshold?</strong><br>If ${metric} falls below ${thresh}% of target, there is no payout for anyone — this is a company-wide gate. Individual performance cannot offset a threshold miss.</div>
+<div style="margin-bottom:14px"><strong>Q3. What is the maximum I can earn?</strong><br>The plan is capped at ${mul}× the target bonus amount. For someone with a $${Math.round(80000*pct/100).toLocaleString()} target bonus, the maximum is $${Math.round(80000*pct/100*mul).toLocaleString()}.</div>
+<div style="margin-bottom:14px"><strong>Q4. What if I'm rated Below Expectations?</strong><br>An individual modifier of ${zero}× applies to Below Expectations ratings — meaning no payout, even if company targets are met. This is stated in the plan document.</div>
+<div><strong>Q5. When do I receive my bonus?</strong><br>Payouts are processed on ${dt}, following final accounts confirmation and compensation committee approval.</div>
+<div style="margin-top:16px;padding:10px 14px;background:rgba(255,255,255,.04);border-radius:6px;font-size:12px;color:rgba(255,255,255,.4)">⚠️ Do not share colleague bonus amounts. Redirect any questions about others to HR.</div>`;
+}
+
+// ─── t22: Benefits Portfolio Auditor ──────────────────────────────────────────
+function calcBA(){
+  const rows=document.querySelectorAll('.ba-row');
+  const total=parseFloat(document.getElementById('ba-spend')?.value)||0;
+  let items=[],issues=[];
+  rows.forEach(r=>{
+    const n=r.querySelector('.ba-name')?.value;
+    const amt=parseFloat(r.querySelector('.ba-amt')?.value)||0;
+    const pref=parseFloat(r.querySelector('.ba-pref')?.value)||0;
+    const aware=parseFloat(r.querySelector('.ba-aware')?.value)||0;
+    if(n&&amt>0)items.push({n,amt,pref,aware});
+  });
+  if(!items.length)return;
+  let tbl='<table style="width:100%;border-collapse:collapse;font-size:12px"><tr style="color:rgba(255,255,255,.4)"><th style="padding:6px;text-align:left">Benefit</th><th style="padding:6px;text-align:right">Spend</th><th style="padding:6px;text-align:right">% of total</th><th style="padding:6px;text-align:center">Pref</th><th style="padding:6px;text-align:center">Aware</th><th style="padding:6px;text-align:left">Signal</th></tr>';
+  items.forEach(it=>{
+    const pctSpend=total>0?((it.amt/total)*100).toFixed(1)+'%':'—';
+    let sig='';
+    if(it.pref>=4&&it.aware<=2)sig='⚠️ High preference, low awareness — communicate';
+    else if(it.pref<=2&&it.amt>0)sig='💡 Low preference — review allocation';
+    else if(it.pref>=4&&it.aware>=4)sig='✅ Strong';
+    tbl+=`<tr style="border-top:1px solid rgba(255,255,255,.06)"><td style="padding:6px">${it.n}</td><td style="padding:6px;text-align:right">$${fmt(it.amt)}</td><td style="padding:6px;text-align:right">${pctSpend}</td><td style="padding:6px;text-align:center">${it.pref}/5</td><td style="padding:6px;text-align:center">${it.aware}/5</td><td style="padding:6px;font-size:11px">${sig}</td></tr>`;
+    if(sig.includes('awareness'))issues.push(`${it.n}: high preference but employees may not know about it`);
+  });
+  tbl+='</table>';
+  document.getElementById('ba-table-wrap').innerHTML=tbl;
+  document.getElementById('ba-notes').innerHTML=issues.length?'<strong>Top recommendations:</strong><br>'+issues.map(i=>`• ${i}`).join('<br>'):'No immediate issues flagged.';
+  document.getElementById('ba-result').style.display='block';
+}
+
+// ─── t23: Health Plan Cost Comparison ─────────────────────────────────────────
+function calcHP(){
+  const hc=parseFloat(document.getElementById('hp-hc')?.value)||0;
+  const ap=parseFloat(document.getElementById('hp-a-prem')?.value)||0;
+  const atu=parseFloat(document.getElementById('hp-a-tu')?.value)||0;
+  const aemp=parseFloat(document.getElementById('hp-a-emp')?.value)||0;
+  const bp=parseFloat(document.getElementById('hp-b-prem')?.value)||0;
+  const btu=parseFloat(document.getElementById('hp-b-tu')?.value)||0;
+  const bemp=parseFloat(document.getElementById('hp-b-emp')?.value)||0;
+  if(!hc||!ap||!bp)return;
+  const aEnr=Math.round(hc*atu/100),bEnr=Math.round(hc*btu/100);
+  const aCost=aEnr*ap*(aemp/100),bCost=bEnr*bp*(bemp/100);
+  const diff=Math.abs(aCost-bCost);
+  document.getElementById('hp-a-cost').textContent='$'+fmt(aCost);
+  document.getElementById('hp-b-cost').textContent='$'+fmt(bCost);
+  document.getElementById('hp-diff').textContent='$'+fmt(diff);
+  document.getElementById('hp-winner').textContent=aCost<bCost?'Option A (cheaper)':bCost<aCost?'Option B (cheaper)':'Equal';
+  document.getElementById('hp-a-emp-cost').textContent='$'+fmt(ap*(1-aemp/100));
+  document.getElementById('hp-b-emp-cost').textContent='$'+fmt(bp*(1-bemp/100));
+  document.getElementById('hp-a-enr').textContent=aEnr;
+  document.getElementById('hp-b-enr').textContent=bEnr;
+  document.getElementById('hp-result').style.display='block';
+}
+
+// ─── t24: DC Pension Contribution Modeller ────────────────────────────────────
+function calcDC(){
+  const hc=parseFloat(document.getElementById('dc-hc')?.value)||0;
+  const sal=parseFloat(document.getElementById('dc-sal')?.value)||0;
+  const aRate=parseFloat(document.getElementById('dc-a-rate')?.value)||0;
+  const bMatch=parseFloat(document.getElementById('dc-b-match')?.value)||0;
+  const bTu=parseFloat(document.getElementById('dc-b-tu')?.value)||0;
+  if(!hc||!sal)return;
+  const aCost=hc*sal*(aRate/100);
+  const bContributors=Math.round(hc*bTu/100);
+  const bCost=bContributors*sal*(bMatch/100);
+  const saving=aCost-bCost;
+  const zero=hc-bContributors;
+  document.getElementById('dc-a-cost').textContent='$'+fmt(aCost);
+  document.getElementById('dc-b-cost').textContent='$'+fmt(bCost);
+  document.getElementById('dc-saving').textContent=(saving>=0?'+':'')+fmt(saving,true);
+  document.getElementById('dc-zero').textContent=zero;
+  document.getElementById('dc-a-per').textContent='$'+fmt(sal*aRate/100);
+  document.getElementById('dc-b-per-y').textContent='$'+fmt(sal*bMatch/100);
+  document.getElementById('dc-b-per-n').textContent='$0';
+  const warn=zero>0?`⚠️ ${zero} employees (${Math.round(zero/hc*100)}% of workforce) receive no employer pension contribution under Option B.`:'';
+  document.getElementById('dc-notes').innerHTML=warn||(bCost<aCost?`Option B saves $${fmt(saving)} annually vs Option A.`:'');
+  document.getElementById('dc-result').style.display='block';
+}
+
+// ─── t25: Flex Benefits Budget Planner ────────────────────────────────────────
+function calcFB(){
+  const allow=parseFloat(document.getElementById('fb-allow')?.value)||0;
+  const hc=parseFloat(document.getElementById('fb-hc')?.value)||0;
+  const opts=document.querySelectorAll('#fb-options>div');
+  const pool=allow*hc;
+  let utilCost=0,detail='';
+  opts.forEach(o=>{
+    const n=o.querySelector('.fb-oname')?.value;
+    const cost=parseFloat(o.querySelector('.fb-ocost')?.value)||0;
+    const tu=parseFloat(o.querySelector('.fb-otu')?.value)||0;
+    if(n&&cost>0){
+      const enrolled=Math.round(hc*tu/100);
+      const amt=enrolled*cost;
+      utilCost+=amt;
+      const flag=cost>allow?'⚠️ Exceeds full allowance':'';
+      detail+=`<div style="display:flex;justify-content:space-between;padding:6px 0;border-top:1px solid rgba(255,255,255,.05);font-size:12px"><span>${n} ${flag}</span><span style="color:rgba(255,255,255,.7)">$${fmt(amt)} (${Math.round(tu)}% take-up)</span></div>`;
+    }
+  });
+  document.getElementById('fb-pool').textContent='$'+fmt(pool);
+  document.getElementById('fb-util').textContent='$'+fmt(utilCost);
+  document.getElementById('fb-avg').textContent=hc>0?'$'+fmt(utilCost/hc):'—';
+  document.getElementById('fb-option-detail').innerHTML=detail;
+  const diff=pool-utilCost;
+  document.getElementById('fb-notes').innerHTML=diff>=0?`Budget surplus: $${fmt(diff)} — consider adding options or increasing allowance.`:`Budget overrun: $${fmt(Math.abs(diff))} — reduce take-up assumptions or lower individual option costs.`;
+  document.getElementById('fb-result').style.display='block';
+}
+
+// ─── t26: LTI Vehicle Selector ────────────────────────────────────────────────
+const LTI_QS=[
+  {id:'lq1',q:'Is the company listed on a public stock exchange?'},
+  {id:'lq2',q:'Is shareholder dilution a primary concern?'},
+  {id:'lq3',q:'Is performance alignment more important than retention simplicity?'},
+  {id:'lq4',q:'Is the company private with illiquid shares?'},
+];
+const LTI_LOGIC=(a)=>{
+  const[listed,dilution,perf,private_]=a;
+  if(!listed&&private_&&dilution){return{rec:'Phantom Equity',rat:'Private company with dilution concerns: phantom equity replicates equity alignment through cash settlement without issuing actual shares. No cap table impact, practical settlement without a liquid market.'};} 
+  if(!listed&&private_&&!dilution){return{rec:'Management Equity Participation',rat:'Private company without dilution constraints: structured equity participation (or options) tied to an exit event creates the strongest possible alignment with the outcome that drives the company\'s value.'};} 
+  if(listed&&perf){return{rec:'Performance Share Units (PSUs)',rat:'Listed company with performance alignment priority: PSUs with transparent, independently verifiable metrics (TSR, EPS, ESG) are the current market standard and meet institutional investor governance expectations.'};} 
+  if(listed&&!perf){return{rec:'Restricted Stock Units (RSUs)',rat:'Listed company prioritising retention over complex performance conditions: time-vested RSUs are simpler to communicate, create a clear ownership stake, and are appropriate where simpler retention is the primary goal.'};} 
+  return{rec:'Review context',rat:'Your combination of answers suggests a bespoke structure. Engage an executive compensation specialist to design the appropriate vehicle for your specific stage and constraints.'};
+};
+function initLTI(){
+  const wrap=document.getElementById('lti-questions');
+  if(!wrap||wrap.innerHTML.trim())return;
+  let h='';
+  LTI_QS.forEach(q=>{
+    h+=`<div style="display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)">
+    <div style="flex:1;font-size:13px">${q.q}</div>
+    <select id="${q.id}" onchange="calcLTI()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:6px;color:#fff;padding:6px 10px;font-size:13px">
+    <option value="">—</option><option value="1">Yes</option><option value="0">No</option>
+    </select></div>`;
+  });
+  wrap.innerHTML=h;
+}
+function calcLTI(){
+  const answers=LTI_QS.map(q=>document.getElementById(q.id)?.value);
+  if(answers.some(a=>!a))return;
+  const a=answers.map(v=>v==='1');
+  const{rec,rat}=LTI_LOGIC(a);
+  document.getElementById('lti-rec').textContent=rec;
+  document.getElementById('lti-rationale').innerHTML=rat;
+  document.getElementById('lti-result').style.display='block';
+}
+
+// ─── t27: PSU Vesting Schedule Builder ────────────────────────────────────────
+function calcPSU(){
+  const pct=parseFloat(document.getElementById('psu-pct')?.value)||150;
+  const sal=parseFloat(document.getElementById('psu-sal')?.value)||0;
+  const price=parseFloat(document.getElementById('psu-price')?.value)||1;
+  const peers=parseFloat(document.getElementById('psu-peers')?.value)||20;
+  const threshPct=parseFloat(document.getElementById('psu-thresh')?.value)||50;
+  const maxPct=parseFloat(document.getElementById('psu-max')?.value)||75;
+  const threshVest=parseFloat(document.getElementById('psu-thresh-vest')?.value)||25;
+  const maxVest=parseFloat(document.getElementById('psu-max-vest')?.value)||200;
+  if(!sal)return;
+  const targetAward=sal*(pct/100);
+  const targetShares=Math.round(targetAward/price);
+  // Build vesting schedule
+  const levels=[
+    {label:'Below P'+threshPct+' (below median)',vest:0,note:'Zero vesting'},
+    {label:'P'+threshPct+' (threshold)',vest:threshVest,note:'Threshold'},
+    {label:'Between P'+threshPct+'–P'+maxPct,vest:Math.round((threshVest+maxVest)/2),note:'Linear interpolation midpoint'},
+    {label:'P'+maxPct+' (maximum)',vest:maxVest,note:'Maximum vesting'},
+    {label:'Above P'+maxPct,vest:maxVest,note:'Capped at maximum'},
+  ];
+  let rows='<tr style="color:rgba(255,255,255,.45);font-size:11px"><th style="padding:6px 10px;text-align:left">Performance level</th><th style="padding:6px 10px;text-align:right">Vesting %</th><th style="padding:6px 10px;text-align:right">Shares vested</th><th style="padding:6px 10px;text-align:right">Value ($)</th><th style="padding:6px 10px;text-align:left">Note</th></tr>';
+  levels.forEach(l=>{
+    const shares=Math.round(targetShares*l.vest/100);
+    const val=shares*price;
+    const bg=l.vest===100?'background:rgba(255,255,255,.05)':'';
+    rows+=`<tr style="${bg}"><td style="padding:6px 10px;font-size:12px">${l.label}</td><td style="padding:6px 10px;text-align:right;font-weight:${l.vest===100?'600':'400'}">${l.vest}%</td><td style="padding:6px 10px;text-align:right">$${fmt(shares,true)} units</td><td style="padding:6px 10px;text-align:right">$${fmt(val)}</td><td style="padding:6px 10px;font-size:11px;color:rgba(255,255,255,.4)">${l.note}</td></tr>`;
+  });
+  document.getElementById('psu-table').innerHTML=rows;
+  document.getElementById('psu-result').style.display='block';
+}
+
+// ─── t28: TTC Benchmarking Worksheet ──────────────────────────────────────────
+function calcTTC(){
+  const rows=document.querySelectorAll('.ttc-row');
+  let cards='';
+  rows.forEach(r=>{
+    const n=r.querySelector('.ttc-rname')?.value;
+    const base=parseFloat(r.querySelector('.ttc-base')?.value)||0;
+    const varb=parseFloat(r.querySelector('.ttc-var')?.value)||0;
+    const bench=parseFloat(r.querySelector('.ttc-bench')?.value)||0;
+    if(!n||!base)return;
+    const ttc=base+varb;
+    const mixBase=varb>0?Math.round(base/ttc*100):100;
+    const mixVar=100-mixBase;
+    const gap=bench>0?ttc-bench:null;
+    const gapPct=bench>0?((gap/bench)*100).toFixed(1):null;
+    let signal=gap===null?'':(gap>=0?'✅ At/above benchmark':'⚠️ Below benchmark by $'+fmt(Math.abs(gap)));
+    cards+=`<div class="out-card" style="margin-bottom:10px"><div class="out-label">${n}</div><div class="out-val">$${fmt(ttc)} TTC</div><div class="out-sub">Base $${fmt(base)} · Var $${fmt(varb)} · Mix ${mixBase}:${mixVar}</div>${bench?`<div style="margin-top:4px;font-size:12px;color:rgba(255,255,255,.5)">${signal}</div>`:''}</div>`;
+  });
+  document.getElementById('ttc-role-cards').innerHTML=cards||'Enter role data above.';
+  document.getElementById('ttc-result').style.display='block';
+}
+
+// ─── t29: Commission Payout Table Builder ─────────────────────────────────────
+function calcCPT(){
+  const quota=parseFloat(document.getElementById('cpt-quota')?.value)||0;
+  const base=parseFloat(document.getElementById('cpt-base')?.value)||0;
+  const tvc=parseFloat(document.getElementById('cpt-tvc')?.value)||0;
+  const thresh=parseFloat(document.getElementById('cpt-thresh')?.value)||75;
+  const acctrig=parseFloat(document.getElementById('cpt-acctrig')?.value)||100;
+  const accrate=parseFloat(document.getElementById('cpt-accrate')?.value)||1.5;
+  const capPct=parseFloat(document.getElementById('cpt-cap')?.value)||200;
+  if(!quota||!tvc)return;
+  const threshRev=quota*thresh/100;
+  const targRev=quota*acctrig/100;
+  // Commissionable revenue band
+  const stdRate=tvc/(targRev-threshRev);
+  const capAmt=tvc*capPct/100;
+  const levels=[65,75,80,90,100,110,120,130];
+  let rows='<tr style="color:rgba(255,255,255,.45);font-size:11px"><th style="padding:6px 10px;text-align:left">Attainment</th><th style="padding:6px 10px;text-align:right">Revenue ($)</th><th style="padding:6px 10px;text-align:right">Commission ($)</th><th style="padding:6px 10px;text-align:right">TTC ($)</th><th style="padding:6px 10px;text-align:left">Note</th></tr>';
+  levels.forEach(lvl=>{
+    const rev=quota*lvl/100;
+    let comm=0,note='';
+    if(rev<threshRev){comm=0;note='Below threshold';}
+    else if(rev<=targRev){comm=(rev-threshRev)*stdRate;note='Standard rate';}
+    else{const std=tvc;const above=(rev-targRev)*stdRate*accrate;comm=Math.min(std+above,capAmt);note=comm>=capAmt?'🔴 Capped':'Accelerated';}
+    const ttc=base+comm;
+    const bg=lvl===100?'background:rgba(255,255,255,.06)':'';
+    rows+=`<tr style="${bg}"><td style="padding:6px 10px">${lvl}%</td><td style="padding:6px 10px;text-align:right">$${fmt(rev)}</td><td style="padding:6px 10px;text-align:right;font-weight:${lvl===100?'600':'400'}">$${fmt(comm)}</td><td style="padding:6px 10px;text-align:right">$${fmt(ttc)}</td><td style="padding:6px 10px;font-size:11px;color:rgba(255,255,255,.4)">${note}</td></tr>`;
+  });
+  document.getElementById('cpt-table').innerHTML=rows;
+  document.getElementById('cpt-table-wrap').style.display='block';
+}
+
+// ─── t30: Quota Attainment Distribution Analyser ──────────────────────────────
+function calcQA(){
+  const raw=document.getElementById('qa-data')?.value||'';
+  const vals=raw.split(/[,\n\s]+/).map(v=>parseFloat(v)).filter(v=>!isNaN(v));
+  if(vals.length<2)return;
+  const n=vals.length;
+  const above=vals.filter(v=>v>=100).length;
+  const mid=vals.filter(v=>v>=80&&v<100).length;
+  const below=vals.filter(v=>v<80).length;
+  const sorted=[...vals].sort((a,b)=>a-b);
+  const med=n%2===0?(sorted[n/2-1]+sorted[n/2])/2:sorted[Math.floor(n/2)];
+  document.getElementById('qa-above').textContent=above+' ('+Math.round(above/n*100)+'%)';
+  document.getElementById('qa-mid').textContent=mid+' ('+Math.round(mid/n*100)+'%)';
+  document.getElementById('qa-below').textContent=below+' ('+Math.round(below/n*100)+'%)';
+  document.getElementById('qa-median').textContent=med.toFixed(0)+'%';
+  const abovePct=above/n*100;
+  let diag,guid;
+  if(abovePct>80){diag='Quotas likely too easy';guid='Over 80% of reps at or above quota. Targets appear loose — calibrate using bottom-up territory analysis. Consider tightening thresholds for next cycle.';}
+  else if(abovePct>=55&&abovePct<=75){diag='Well calibrated ✅';guid='Distribution is in the healthy 60/30/10 range. Continue monitoring — check whether any specific territory types consistently underperform.';}
+  else if(abovePct>=40&&abovePct<55){diag='Slightly tough — monitor';guid='Fewer reps at target than ideal. Review whether territory differences or new hire ramp are driving below-target results before tightening further.';}
+  else{diag='Quotas likely too hard';guid='Under 40% at or above quota. Significant calibration issue — check for systematic territory imbalances, over-aggressive top-down allocation, or inadequate ramp for new hires.';}
+  document.getElementById('qa-diagnosis').textContent=diag;
+  document.getElementById('qa-guidance').textContent=guid;
+  document.getElementById('qa-result').style.display='block';
+}
+
+// ─── t31: Geographic Differential Matrix ──────────────────────────────────────
+function calcGD(){
+  const ref=document.getElementById('gd-ref')?.value||'Ref';
+  const spread=parseFloat(document.getElementById('gd-spread')?.value)||20;
+  const mkts=document.querySelectorAll('.gd-mkt');
+  let rows='<tr style="color:rgba(255,255,255,.4);font-size:11px"><th style="padding:5px 8px;text-align:left">Market</th><th style="padding:5px 8px;text-align:left">Curr</th><th style="padding:5px 8px;text-align:right">Min (local)</th><th style="padding:5px 8px;text-align:right">Mid (local)</th><th style="padding:5px 8px;text-align:right">Max (local)</th><th style="padding:5px 8px;text-align:right">Mid ('+ref+')</th></tr>';
+  let hasData=false;
+  mkts.forEach(m=>{
+    const n=m.querySelector('.gd-mname')?.value;
+    const curr=m.querySelector('.gd-curr')?.value||'?';
+    const p50=parseFloat(m.querySelector('.gd-p50')?.value)||0;
+    const rate=parseFloat(m.querySelector('.gd-rate')?.value)||1;
+    if(!n||!p50)return;
+    hasData=true;
+    const f=spread/100;
+    const min=Math.round(p50*(1-f));
+    const max=Math.round(p50*(1+f));
+    const refMid=Math.round(p50/rate);
+    rows+=`<tr style="border-top:1px solid rgba(255,255,255,.06)"><td style="padding:5px 8px;font-size:12px">${n}</td><td style="padding:5px 8px;font-size:12px">${curr}</td><td style="padding:5px 8px;text-align:right;font-size:12px">${curr} ${fmtN(min)}</td><td style="padding:5px 8px;text-align:right;font-size:12px;font-weight:600">${curr} ${fmtN(p50)}</td><td style="padding:5px 8px;text-align:right;font-size:12px">${curr} ${fmtN(max)}</td><td style="padding:5px 8px;text-align:right;font-size:12px;color:rgba(255,255,255,.55)">${ref} ${fmtN(refMid)}</td></tr>`;
+  });
+  if(hasData){document.getElementById('gd-table').innerHTML=rows;document.getElementById('gd-matrix-wrap').style.display='block';}
+}
+function fmtN(n){return n.toLocaleString();}
+
+// ─── t32: Expat Balance Sheet Calculator ──────────────────────────────────────
+function calcEX(){
+  const gross=parseFloat(document.getElementById('ex-gross')?.value)||0;
+  const htax=parseFloat(document.getElementById('ex-htax')?.value)||0;
+  const hrent=parseFloat(document.getElementById('ex-hrent')?.value)||0;
+  const hspend=parseFloat(document.getElementById('ex-hspend')?.value)||0;
+  const hhousing=parseFloat(document.getElementById('ex-hhousing')?.value)||0;
+  const cola=parseFloat(document.getElementById('ex-cola')?.value)||0;
+  const htaxx=parseFloat(document.getElementById('ex-htaxx')?.value)||0;
+  const kids=parseFloat(document.getElementById('ex-kids')?.value)||0;
+  const school=parseFloat(document.getElementById('ex-school')?.value)||0;
+  if(!gross)return;
+  const homeNet=gross*(1-htax/100);
+  const colaAmt=hspend*cola/100;
+  const housingAllow=hhousing;
+  const schoolFees=kids*school;
+  const hypotheticalTax=gross*(htax/100);
+  const fullPackage=gross+colaAmt+housingAllow+schoolFees;
+  const actualTax=fullPackage*(htaxx/100);
+  const taxEq=Math.max(0,actualTax-hypotheticalTax);
+  const extraCost=colaAmt+housingAllow+schoolFees;
+  document.getElementById('ex-home-net').textContent='$'+fmt(homeNet);
+  document.getElementById('ex-cola-out').textContent='$'+fmt(colaAmt);
+  document.getElementById('ex-housing-out').textContent='$'+fmt(housingAllow);
+  document.getElementById('ex-school-out').textContent='$'+fmt(schoolFees);
+  document.getElementById('ex-extra').textContent='$'+fmt(extraCost);
+  document.getElementById('ex-tax-eq').textContent='~$'+fmt(taxEq);
+  document.getElementById('ex-result').style.display='block';
+}
+
+// Initialise panels that need JS setup on show
+const _origShow=window.showTool;
+window.showTool=function(id){
+  if(typeof _origShow==='function')_origShow(id);
+  if(id==='t20')initGates();
+  if(id==='t26')initLTI();
+};
+
+function fmt(n,noSign){const v=Math.round(Math.abs(n)).toLocaleString();return noSign?v:(n<0?'-'+v:v);}
 </script>
 </body>
 </html>

@@ -267,7 +267,9 @@ export function QuizCentre() {
             <div className="qc-all-cert-wrap">
               <div className="qc-all-cert-icon">🏅</div>
               <div>
-                <div className="qc-all-cert-title">All 10 Quizzes Complete!</div>
+                <div className="qc-all-cert-title">
+                  All {QUIZ_CENTRE.length} Quizzes Complete!
+                </div>
                 <div className="qc-all-cert-sub">
                   You&apos;ve completed the full Quiz Centre — {totalXP.toLocaleString()} XP earned
                   across all quizzes.

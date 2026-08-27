@@ -22,6 +22,21 @@ export const TOOLKIT_MAP: Record<string, ToolkitEntry> = {
   "5-2-2": { toolId: "t15", label: "Open: Flight-Risk Scoring Tool" },
   "5-3-2": { toolId: "t16", label: "Open: Turnover Cost & ROI Calculator" },
   "5-4-2": { toolId: "t17", label: "Open: Career Lattice Mapping Tool" },
+  "6-1-2": { toolId: "t18", label: "Open: STI Framework Planner" },
+  "6-2-2": { toolId: "t19", label: "Open: Payout Curve Calculator" },
+  "6-3-2": { toolId: "t20", label: "Open: Governance Gate Checklist" },
+  "6-4-2": { toolId: "t21", label: "Open: Manager Briefing Template" },
+  "7-1-2": { toolId: "t22", label: "Open: Benefits Portfolio Auditor" },
+  "7-2-2": { toolId: "t23", label: "Open: Health Plan Cost Comparison" },
+  "7-3-2": { toolId: "t24", label: "Open: DC Pension Contribution Modeller" },
+  "7-4-2": { toolId: "t25", label: "Open: Flex Benefits Budget Planner" },
+  "8-2-2": { toolId: "t26", label: "Open: LTI Vehicle Selector" },
+  "8-3-2": { toolId: "t27", label: "Open: PSU Vesting Schedule Builder" },
+  "9-1-2": { toolId: "t28", label: "Open: TTC Benchmarking Worksheet" },
+  "9-2-2": { toolId: "t29", label: "Open: Commission Payout Table Builder" },
+  "9-3-2": { toolId: "t30", label: "Open: Quota Attainment Distribution Analyser" },
+  "10-2-2": { toolId: "t31", label: "Open: Geographic Differential Matrix" },
+  "10-3-2": { toolId: "t32", label: "Open: Expat Balance Sheet Calculator" },
 };
 
 export const TOOLKIT_HTML_PATH = "/toolkit/rewardology-toolkit.html";

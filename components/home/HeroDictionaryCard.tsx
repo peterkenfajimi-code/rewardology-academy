@@ -3,16 +3,14 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { DICTIONARY_TERMS } from "@/lib/dictionary/terms";
-import { slugifyTerm, previewText } from "@/lib/dictionary/utils";
+import {
+  dictionaryTermIndexForDate,
+  previewText,
+  slugifyTerm,
+} from "@/lib/dictionary/utils";
 
 function getTodaysTerm() {
-  // Uses the client's local calendar date so the term rotates at midnight local time,
-  // independent of any server-side or CDN caching of the page.
-  const now = new Date();
-  const dayIndex =
-    (now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate()) %
-    DICTIONARY_TERMS.length;
-  return DICTIONARY_TERMS[dayIndex];
+  return DICTIONARY_TERMS[dictionaryTermIndexForDate(new Date(), DICTIONARY_TERMS.length)];
 }
 
 export function HeroDictionaryCard() {

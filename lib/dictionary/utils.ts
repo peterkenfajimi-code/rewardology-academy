@@ -15,6 +15,15 @@ export function previewText(text: string | undefined, max = 155): string {
   return `${text.slice(0, max)}…`;
 }
 
+/** Stable daily index based on the viewer's local calendar date. */
+export function dictionaryTermIndexForDate(date: Date, termCount: number): number {
+  if (termCount <= 0) return 0;
+  const localCalendarDay = Math.floor(
+    Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) / 86400000
+  );
+  return localCalendarDay % termCount;
+}
+
 export function lessonHref(lessonId: string): string {
   const courseId = lessonId.split("-")[0];
   return `/courses?course=${courseId}&lesson=${encodeURIComponent(lessonId)}`;

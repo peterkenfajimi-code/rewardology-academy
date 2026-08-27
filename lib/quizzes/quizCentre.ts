@@ -1237,5 +1237,615 @@ export const QUIZ_CENTRE: QuizCentreQuiz[] = [
         "exp": "Project exposure helps build practical rewards experience."
       }
     ]
+  },
+  {
+    "id": 11,
+    "title": "Variable Pay & Incentive Design",
+    "category": "Variable Pay & Incentive Design",
+    "color": "#0C6B65",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "xp": 150,
+    "desc": "Test your practical knowledge of variable pay & incentive design.",
+    "questions": [
+      {
+        "q": "What is 'line of sight' in incentive plan design?",
+        "opts": [
+          "The maximum visible range a manager can supervise their direct reports from.",
+          "The degree to which an employee can connect their daily decisions to the incentive metric.",
+          "The administrative distance between a participant's grade and the plan's target bonus.",
+          "A formal escalation path used when an incentive payout is disputed."
+        ],
+        "ans": 1,
+        "exp": "Line of sight is the core test of whether an incentive plan will actually change behaviour — without it, the plan functions as a lottery rather than a motivational tool."
+      },
+      {
+        "q": "An STI plan pays out 95% of maximum in a year when company revenue missed target by 4%. The remuneration committee used upward discretion to override the formula. What is required for this to be defensible?",
+        "opts": [
+          "No additional justification is needed since remuneration committees have absolute discretion.",
+          "A documented exceptional circumstances justification and specific shareholder engagement before implementation.",
+          "Approval from the company's statutory auditors before the payout is distributed.",
+          "A binding shareholder vote at an extraordinary general meeting."
+        ],
+        "ans": 1,
+        "exp": "Upward discretion on formula outcomes requires documented justification and ideally proactive shareholder engagement — undocumented upward overrides are a common source of AGM opposition."
+      },
+      {
+        "q": "A threshold in an STI plan is best described as:",
+        "opts": [
+          "The maximum bonus payable in any single plan year.",
+          "The minimum performance level before any payout occurs.",
+          "The performance level at which 100% of target bonus is paid.",
+          "The midpoint between the minimum and maximum payout levels."
+        ],
+        "ans": 1,
+        "exp": "The threshold is the minimum performance gate — below this level, no payout occurs regardless of other performance, protecting the plan from paying out in genuinely poor performance years."
+      },
+      {
+        "q": "'Gain-sharing' differs from 'profit-sharing' primarily because:",
+        "opts": [
+          "Gain-sharing distributes profit to all employees while profit-sharing is limited to senior roles.",
+          "Gain-sharing ties payouts to specific measurable operational improvements rather than overall company profit.",
+          "Gain-sharing is legally required in most jurisdictions while profit-sharing is entirely voluntary.",
+          "Gain-sharing has no threshold while profit-sharing always requires a minimum performance gate."
+        ],
+        "ans": 1,
+        "exp": "Gain-sharing focuses on specific, proximate metrics (cost reduction, productivity, quality) that team members can directly influence — creating stronger line of sight than a broad profit-sharing plan."
+      },
+      {
+        "q": "A rolling quarterly commission cap addresses which specific problem caused by an annual cap?",
+        "opts": [
+          "It prevents reps from earning more than the organisation can budget annually.",
+          "It prevents reps who reach the annual cap mid-year from losing financial motivation for the remaining quarters.",
+          "It allows reps to carry forward unused commission capacity from one quarter to the next.",
+          "It synchronises the commission calculation with the quarterly financial reporting cycle."
+        ],
+        "ans": 1,
+        "exp": "Reps who hit an annual cap by September have no incentive to sell for the rest of the year — a quarterly rolling cap resets the ceiling each quarter, preserving year-round motivation."
+      },
+      {
+        "q": "A clawback clause in a bonus plan allows the organisation to:",
+        "opts": [
+          "Defer payment of the bonus for up to 24 months after it would otherwise be due.",
+          "Recover bonuses already paid if the underlying performance was subsequently found to be misstated.",
+          "Reduce future bonus targets for participants who received above-target payouts in prior years.",
+          "Withhold bonus payments pending completion of a formal performance review."
+        ],
+        "ans": 1,
+        "exp": "Clawbacks operate retroactively — they allow recovery of an already-paid bonus when the performance basis for it is later found to be invalid, such as through discovered fraud or material misstatement."
+      },
+      {
+        "q": "The 60/30/10 distribution rule in quota calibration refers to:",
+        "opts": [
+          "60% of revenue from top performers, 30% from mid-performers, 10% from below-average performers.",
+          "In a good performance year, 60% at or above quota, 30% between 80-100%, and 10% below 80%.",
+          "60% commission paid quarterly, 30% annually, and 10% deferred for 2 years.",
+          "A target pay mix of 60% base salary, 30% target variable, and 10% benefits allocation."
+        ],
+        "ans": 1,
+        "exp": "The 60/30/10 distribution is the primary calibration diagnostic for quota-setting — consistently outside this range signals either quotas are too easy or too hard."
+      },
+      {
+        "q": "In a balance sheet approach to expatriate compensation, the employer covers the cost-of-living allowance (COLA). COLA specifically covers:",
+        "opts": [
+          "The total cost of housing in the host country.",
+          "The difference in non-housing goods and services costs between host and home country.",
+          "The employee's income tax liability in both the home and host countries.",
+          "The cost of international school fees for dependent children."
+        ],
+        "ans": 1,
+        "exp": "COLA is specifically the differential on non-housing spending — housing is addressed separately through a housing allowance, so the two components don't overlap."
+      },
+      {
+        "q": "A commission plan with a pay mix of 40:60 (base:variable) is most appropriate for which type of role?",
+        "opts": [
+          "An account manager focused primarily on renewing existing customer contracts.",
+          "A pure new-business sales role with direct, individually attributable revenue outcomes.",
+          "A customer success manager focused on retention and relationship management.",
+          "A sales director with primary responsibility for coaching and developing a team of reps."
+        ],
+        "ans": 1,
+        "exp": "A lower base/higher variable pay mix is appropriate for roles with direct, individual revenue attribution — pure new-business roles typically justify the highest variable weighting."
+      },
+      {
+        "q": "Which of the following is a 'gate' rather than a 'modifier' in STI plan governance?",
+        "opts": [
+          "An individual performance factor that scales payout between 0.8x and 1.2x based on rating.",
+          "A quality metric that adjusts the payout percentage by up to 20% based on defect rates.",
+          "A profitability requirement below which no payout occurs regardless of other metrics.",
+          "A weighting adjustment that reduces the revenue component from 70% to 60% in loss years."
+        ],
+        "ans": 2,
+        "exp": "A gate is binary — it either blocks payout (if breached) or doesn't. A modifier continuously scales the payout. The profitability requirement that produces zero payout is a gate; the adjustments in the other options are modifiers."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Benefits Design & Administration",
+    "category": "Benefits Design & Administration",
+    "color": "#6B4C9A",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "xp": 150,
+    "desc": "Test your practical knowledge of benefits design & administration.",
+    "questions": [
+      {
+        "q": "A 'paternalistic' benefits philosophy means:",
+        "opts": [
+          "The organisation requires employees to contribute a minimum percentage to receive any employer benefit.",
+          "The organisation decides what employees need and provides it uniformly to all eligible employees.",
+          "Benefits are provided primarily through voluntary contribution schemes that employees fund themselves.",
+          "The organisation offers benefits only in response to statutory requirements in each jurisdiction."
+        ],
+        "ans": 1,
+        "exp": "Paternalistic benefits philosophy: the organisation makes the decisions about what employees need and provides it uniformly — high consistency, lower personalisation than flex approaches."
+      },
+      {
+        "q": "Why should benefits spend be tracked as a percentage of payroll rather than as a total dollar amount?",
+        "opts": [
+          "Employment law in most jurisdictions requires payroll-percentage reporting for benefits.",
+          "It normalises for organisational size and allows meaningful comparison against industry benchmarks.",
+          "Total dollar amounts are too volatile year-on-year to be used as a reliable management metric.",
+          "The payroll percentage is the only format that salary survey providers report benefits data in."
+        ],
+        "ans": 1,
+        "exp": "Tracking benefits as a % of payroll creates a size-normalised metric that can be compared across organisations and against published industry benchmarks — unlike total dollar amounts which vary simply with headcount."
+      },
+      {
+        "q": "In an insured health plan, who bears the primary risk of high-cost claims?",
+        "opts": [
+          "The employer, since they pay the premium regardless of actual claims.",
+          "The insurance carrier, who pools risk across all their insured groups.",
+          "The employee, since their premium contributions increase following high-claim years.",
+          "A government health fund that backstops private insurance claims above a threshold."
+        ],
+        "ans": 1,
+        "exp": "Under an insured plan, the carrier pools risk — the employer pays a fixed premium and the carrier absorbs claims risk. A self-insured plan reverses this, with the employer bearing claims risk directly."
+      },
+      {
+        "q": "An Employee Assistance Programme (EAP) first-year utilisation rate of 11% is:",
+        "opts": [
+          "A sign the benefit was the wrong choice and should be replaced.",
+          "Within the typical range for a new EAP launch — the relevant metric is whether utilisation trends upward over subsequent periods.",
+          "Evidence that the programme needs significant marketing investment to reach an adequate utilisation level.",
+          "Below the minimum threshold required for the employer to retain the benefit without renegotiation."
+        ],
+        "ans": 1,
+        "exp": "EAP programmes are accessed during specific life moments, not routinely — first-year utilisation of 10-15% is the expected range, and improving trend over time is the meaningful success indicator."
+      },
+      {
+        "q": "A 'core plus choice' benefits model differs from a full cafeteria plan primarily in that:",
+        "opts": [
+          "It is available only to organisations with more than 500 employees.",
+          "It provides a universal employer-funded core tier with a defined flexible allowance above it, rather than fully open choice.",
+          "Employees make their benefits selections annually rather than during a defined enrolment window.",
+          "Tax-advantaged benefits cannot be included in core plus choice plans."
+        ],
+        "ans": 1,
+        "exp": "Core plus choice provides baseline protection universally (core) with personalisation through a capped allowance (choice) — capturing most of the flex benefit's personalisation value with significantly lower administrative complexity than a full cafeteria."
+      },
+      {
+        "q": "The primary purpose of a family needs assessment before an international assignment is:",
+        "opts": [
+          "To verify the employee's family members are eligible for the host-country visa category.",
+          "To identify family-related risks — spouse employment, schooling, social networks — that could cause the assignment to fail.",
+          "To calculate the housing allowance amount by assessing the family's accommodation requirements.",
+          "To confirm the number of dependants for school fees calculation and cost modelling."
+        ],
+        "ans": 1,
+        "exp": "Family adjustment difficulties are the leading cause of international assignment failure — the family needs assessment is specifically designed to identify these risks before the assignment is agreed, not after they become mid-assignment crises."
+      },
+      {
+        "q": "Nigeria's Pension Reform Act sets the minimum employer pension contribution at:",
+        "opts": [
+          "5% of monthly basic salary.",
+          "8% of monthly emoluments.",
+          "10% of monthly emoluments.",
+          "15% of total annual compensation."
+        ],
+        "ans": 2,
+        "exp": "The Pension Reform Act sets the minimum employer contribution at 10% of monthly emoluments. Many competitive employers contribute 12% or more, but 10% is the statutory floor."
+      },
+      {
+        "q": "A matching pension contribution structure (employer matches employee contributions) disadvantages which employees most?",
+        "opts": [
+          "High earners who prefer to save through other vehicles rather than pension contributions.",
+          "Employees with high financial literacy who contribute above the employer matching cap.",
+          "Employees who cannot afford to contribute themselves and therefore receive no employer contribution.",
+          "Part-time employees whose pro-rated contributions fall below the minimum match threshold."
+        ],
+        "ans": 2,
+        "exp": "The matching structure requires employee contribution to activate employer contribution — employees who can't afford to contribute get nothing, while employees who can contribute get full matching, creating unequal outcomes by financial capacity."
+      },
+      {
+        "q": "Auto-enrolment's primary governance design question is:",
+        "opts": [
+          "Whether to include part-time employees in the enrolled population.",
+          "What the default contribution rate and default investment fund are, since most employees never change these.",
+          "Whether to require employee consent before enrolment is completed.",
+          "How frequently to run the annual re-enrolment process for the eligible population."
+        ],
+        "ans": 1,
+        "exp": "Auto-enrolment's effectiveness rests on inertia — the same inertia that drives participation means most employees stay on defaults forever, making the default contribution rate and default fund the most consequential design decisions."
+      },
+      {
+        "q": "A self-certification approach to benefit eligibility (e.g., for childcare vouchers) balances accuracy with practicality by:",
+        "opts": [
+          "Eliminating all false eligibility claims through automated cross-referencing with government records.",
+          "Requiring employees to declare eligibility, with a stated audit process to deter false claims, rather than requiring documentary proof at selection.",
+          "Limiting eligibility to employees who have provided documentary proof in previous enrolment cycles.",
+          "Using a random sampling approach to verify eligibility across 25% of all claimants each year."
+        ],
+        "ans": 1,
+        "exp": "Self-certification with a stated audit deters misselection without creating the friction and delay of requiring documentary proof at the point of selection — the balance of accuracy versus enrolment simplicity."
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Executive Compensation & Long-Term Incentives",
+    "category": "Executive Compensation & Long-Term Incentives",
+    "color": "#B84B4B",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "xp": 150,
+    "desc": "Test your practical knowledge of executive compensation & long-term incentives.",
+    "questions": [
+      {
+        "q": "The primary purpose of a remuneration committee's independence from executive management is:",
+        "opts": [
+          "To reduce the cost of external compensation advisor fees through arm's-length negotiation.",
+          "To remove the conflict of interest that would arise if executives were involved in setting their own pay.",
+          "To provide legal protection for the board if executive pay decisions are later challenged.",
+          "To ensure salary decisions are made on a quarterly rather than annual basis."
+        ],
+        "ans": 1,
+        "exp": "The remuneration committee's independence is specifically designed to resolve the inherent conflict of interest in executive pay: the people who benefit most from generous pay should not be setting it."
+      },
+      {
+        "q": "A Performance Share Unit (PSU) differs from a time-vested RSU in that:",
+        "opts": [
+          "PSUs are only available to employees above a specified grade threshold.",
+          "The number of PSU shares vesting depends on performance outcomes, not just continued employment.",
+          "PSUs always settle in cash rather than actual shares.",
+          "PSUs have a shorter vesting period than RSUs by convention."
+        ],
+        "ans": 1,
+        "exp": "PSUs have variable vesting based on performance — the actual shares delivered can range from 0% to 200% of the target award depending on how the company performs against defined metrics."
+      },
+      {
+        "q": "Stock options are 'underwater' when:",
+        "opts": [
+          "The exercise price exceeds the current market share price, making the option worthless to exercise.",
+          "The vesting conditions have not yet been satisfied by the executive.",
+          "The option has not been formally accepted by the grantee within the acceptance window.",
+          "The option life has expired without the executive exercising it."
+        ],
+        "ans": 0,
+        "exp": "An underwater option has an exercise price above market — exercising it would mean buying shares above their current market value, which is economically irrational."
+      },
+      {
+        "q": "Which equity vehicle is most appropriate for a PE-backed company approaching a planned exit?",
+        "opts": [
+          "Time-vested RSUs linked to a fixed 4-year vesting schedule.",
+          "Stock options with a 10-year exercise window from grant date.",
+          "Management equity participation structured to pay out at the exit event.",
+          "Phantom equity settled annually based on estimated enterprise value."
+        ],
+        "ans": 2,
+        "exp": "PE-backed equity structures should align with the exit event that drives the PE owner's own return — management equity participation that pays at IPO, trade sale, or fund realisation creates the strongest possible alignment."
+      },
+      {
+        "q": "Tax equalization in an expatriate package means:",
+        "opts": [
+          "The employer and employee split all tax liabilities 50/50 regardless of which country they arise in.",
+          "The employee pays hypothetical home-country tax; the employer bears any actual tax above this in the host country.",
+          "Both home and host country tax rates are averaged to produce a single blended rate.",
+          "Tax is waived for expatriates in most host countries under bilateral tax treaty provisions."
+        ],
+        "ans": 1,
+        "exp": "Tax equalization holds the employee to their home-country tax position — they pay what they would have paid at home, and the employer bears any additional host-country liability above that amount."
+      },
+      {
+        "q": "A post-employment shareholding requirement is designed to:",
+        "opts": [
+          "Prevent executives from selling shares during their notice period.",
+          "Extend alignment and retention beyond the vesting date by requiring executives to hold shares for a period after leaving.",
+          "Replace the post-vesting holding period that applies during employment.",
+          "Ensure executives maintain a minimum share ownership to qualify for future LTI grants."
+        ],
+        "ans": 1,
+        "exp": "Post-employment holding requirements solve the 'vest and leave' problem — they extend the alignment mechanism beyond the vesting date and beyond the executive's tenure, maintaining skin in the game after they leave."
+      },
+      {
+        "q": "The CEO pay ratio in the UK compares the CEO's single figure of remuneration to:",
+        "opts": [
+          "The median pay of the top 10% of the UK workforce.",
+          "The P25, P50, and P75 pay of the company's UK employee population.",
+          "The average pay of the company's five highest-paid employees below the CEO.",
+          "The median pay of the CEO's direct reports."
+        ],
+        "ans": 1,
+        "exp": "The UK requires three ratios — CEO single figure versus the P25, P50, and P75 of the UK workforce — providing three reference points rather than a single comparison."
+      },
+      {
+        "q": "A 'double trigger' acceleration provision for equity awards means:",
+        "opts": [
+          "The award vests at twice the normal rate once both performance conditions are met.",
+          "Full vesting occurs only if both a qualifying exit event AND termination without cause (or resignation for good reason) occur.",
+          "The vesting period doubles if the grantee changes roles within the organisation.",
+          "Two consecutive performance period results are required before any vesting begins."
+        ],
+        "ans": 1,
+        "exp": "Double trigger protection is standard in PE and VC-backed equity: it protects executives from being acquired and dismissed without reward while preserving retention incentives through the post-exit transition period."
+      },
+      {
+        "q": "IFRS2 requires equity-based compensation to be:",
+        "opts": [
+          "Disclosed in footnotes only, without impacting the income statement.",
+          "Expensed through the income statement at fair value over the vesting period.",
+          "Capitalised as an asset and amortised over the employee's expected service life.",
+          "Recorded only when options are exercised or RSUs vest, not at grant date."
+        ],
+        "ans": 1,
+        "exp": "IFRS2 requires the fair value of equity awards to be recognised as a compensation expense in the income statement over the vesting period — making equity compensation have a real P&L impact even without cash changing hands."
+      },
+      {
+        "q": "Institutional investors typically expect non-financial performance conditions in LTI plans to use externally benchmarked data primarily because:",
+        "opts": [
+          "External data sources are legally required by securities regulations in most listed company jurisdictions.",
+          "It prevents the company from meeting the condition by changing internal methodology rather than achieving genuine improvement.",
+          "Third-party data sources produce more favourable performance outcomes for executives.",
+          "External benchmarks reduce the administrative cost of tracking and reporting LTI performance."
+        ],
+        "ans": 1,
+        "exp": "Non-financial conditions measured using internal data that management controls can be gamed — an external benchmark (industry survey norm, third-party ESG rating) ensures the condition measures genuine improvement."
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Sales Compensation Design",
+    "category": "Sales Compensation Design",
+    "color": "#3A7D44",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "xp": 150,
+    "desc": "Test your practical knowledge of sales compensation design.",
+    "questions": [
+      {
+        "q": "Target Total Compensation (TTC) is the preferred benchmarking unit for sales roles because:",
+        "opts": [
+          "It is the only metric reported by major salary surveys for sales functions.",
+          "It captures both base salary and target variable, reflecting total expected earnings at target performance.",
+          "It is a legally required disclosure for any role with commission-based pay.",
+          "TTC is equivalent to the 75th percentile of base salary for comparable sales roles."
+        ],
+        "ans": 1,
+        "exp": "Sales roles have significant variable components — benchmarking base salary alone misses the variable portion that can account for 30-50%+ of total earnings, making TTC the only accurate competitive comparison."
+      },
+      {
+        "q": "A pay mix of 70:30 (base:variable) is most appropriate for which sales role type?",
+        "opts": [
+          "A pure new-business hunter with direct, individually attributable deal revenue.",
+          "An account manager focused on renewals and relationship management with lower revenue attribution volatility.",
+          "A regional sales director managing a team of eight inside sales representatives.",
+          "A channel partnerships manager developing indirect sales through reseller relationships."
+        ],
+        "ans": 1,
+        "exp": "Renewal-focused account management has lower revenue attribution volatility — a higher base reflects the more consistent, relationship-oriented nature of the role and attracts the talent profile suited to it."
+      },
+      {
+        "q": "The 'cliff effect' in a threshold-based commission plan occurs when:",
+        "opts": [
+          "The commission rate doubles abruptly at the target level, creating an unsustainable budget exposure.",
+          "A rep tracking clearly below threshold has no realistic chance of reaching commission territory, removing their motivation.",
+          "The annual commission cap is reached before year-end, eliminating Q4 selling incentive.",
+          "Multiple commission plans with different thresholds apply simultaneously, creating conflicting incentives."
+        ],
+        "ans": 1,
+        "exp": "The cliff effect describes the demotivation when below-threshold reps see no realistic path to earning commission in the current period — no financial motivation exists to continue selling when the threshold cannot be reached."
+      },
+      {
+        "q": "A SPIF (Short-Term Performance Incentive Fund) is most effective when:",
+        "opts": [
+          "Applied as a permanent addition to the commission plan to reward consistent performance.",
+          "Used sparingly for a defined behaviour over a brief, named period — creating a specific, temporary incentive.",
+          "Deployed broadly across all sales roles simultaneously during quarterly revenue shortfalls.",
+          "Offered as an alternative to commission for reps who prefer immediate cash over variable pay."
+        ],
+        "ans": 1,
+        "exp": "SPIFs lose their motivational power when overused — their value is in feeling exceptional and specific, targeting a defined behaviour change over a brief period before becoming expected income."
+      },
+      {
+        "q": "A draw arrangement for a new sales hire is best described as:",
+        "opts": [
+          "A guaranteed base salary paid for the first 6 months before commission becomes available.",
+          "An advance against future commission earnings, which may or may not require repayment.",
+          "A temporary commission rate reduction while the rep builds their pipeline.",
+          "A discretionary bonus paid at manager approval during the ramp period."
+        ],
+        "ans": 1,
+        "exp": "A draw is an advance against future commissions — a recoverable draw must be repaid from future earnings, while an unrecoverable draw does not create a repayment obligation."
+      },
+      {
+        "q": "Territory equalisation in quota-setting is designed to ensure:",
+        "opts": [
+          "All reps receive identical quotas regardless of their assigned territory or account base.",
+          "The difficulty of achieving quota is comparable across reps with different territory opportunity characteristics.",
+          "Territory assignments are rotated annually to prevent over-reliance on established account relationships.",
+          "Quota achievement is measured relative to territory peer groups rather than in absolute revenue terms."
+        ],
+        "ans": 1,
+        "exp": "Without equalisation, quota attainment becomes a function of territory quality rather than individual rep performance — equalisation creates comparable degrees of difficulty so the metrics reflect actual effort."
+      },
+      {
+        "q": "The annual sales compensation planning cycle should ideally begin:",
+        "opts": [
+          "In January of the plan year, once prior-year results are confirmed.",
+          "In the first week of December, allowing 3-4 weeks before the plan year start.",
+          "In Q3 of the prior year, allowing time for design, modelling, and stakeholder review.",
+          "After the company's annual budget process is finalised in November."
+        ],
+        "ans": 2,
+        "exp": "Starting in Q3 of the prior year allows adequate time for strategy alignment, plan design, modelling, stakeholder approvals, manager briefings, and rep communication before the plan year begins."
+      },
+      {
+        "q": "When an acquired sales team is integrated mid-year, the bridge plan approach is preferred over immediate plan transition because:",
+        "opts": [
+          "It satisfies employment law requirements in most jurisdictions for acquired employees.",
+          "It protects income continuity and commits to a clear transition date, reducing attrition risk during the highest-risk post-acquisition window.",
+          "It allows Finance to maintain separate accounting for the acquired team's commission expense.",
+          "It gives HR time to complete job evaluations for all acquired sales roles before assigning them to the standard plan."
+        ],
+        "ans": 1,
+        "exp": "The bridge plan specifically addresses the two primary attrition triggers: income shock at transition and uncertainty about when full integration will happen — making it the lowest-risk approach despite higher design complexity."
+      },
+      {
+        "q": "Revenue attribution disputes most commonly arise in which scenario?",
+        "opts": [
+          "When a rep changes territories mid-year and prior-territory deals close after the move.",
+          "When two reps both had meaningful involvement in bringing a deal to close.",
+          "When a deal closes in the final week of a quarter and the booking date is uncertain.",
+          "When a product that generates commission is discontinued mid-year."
+        ],
+        "ans": 1,
+        "exp": "Multi-rep attribution is the most frequent and contentious source of commission disputes — the plan document should specify primary rep designation and overlay commission splits before disputes arise, not during them."
+      },
+      {
+        "q": "New hire ramp schedules (50% → 75% → 100% of quota over defined periods) prevent which specific problem?",
+        "opts": [
+          "High-performing new hires from earning commission before their probation period is complete.",
+          "New hires from being held to standards they cannot realistically meet during initial pipeline building, causing early attrition.",
+          "New hires from undercutting incumbents' quota attainment through aggressive pricing.",
+          "The organisation from paying commission on deals closed primarily through inherited pipeline."
+        ],
+        "ans": 1,
+        "exp": "New hires in B2B sales cannot realistically achieve full quota from day one — without a ramp, they are assessed against a standard that makes failure nearly inevitable, producing early demotivation and the attrition that follows."
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Global Compensation & Mobility",
+    "category": "Global Compensation & Mobility",
+    "color": "#C8963E",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "xp": 150,
+    "desc": "Test your practical knowledge of global compensation & mobility.",
+    "questions": [
+      {
+        "q": "A 'glocal' pay philosophy is best described as:",
+        "opts": [
+          "Paying all employees globally the same amount for comparable grades.",
+          "A common global framework with locally calibrated pay ranges, balancing internal equity with market competitiveness.",
+          "Paying employees local market rates with no global framework or common grading architecture.",
+          "Using global salary survey data as the primary reference for all markets regardless of local conditions."
+        ],
+        "ans": 1,
+        "exp": "Glocal combines a consistent global architecture (grades, governance, philosophy) with local market calibration of actual pay levels — the practical balance between consistency and competitive accuracy."
+      },
+      {
+        "q": "Cost-of-living data is the appropriate input for which compensation decision?",
+        "opts": [
+          "Setting the base salary range for locally hired software engineers in a new market.",
+          "Designing the cost-of-living allowance for an executive relocating from London to Lagos.",
+          "Calibrating merit increase budgets for a high-inflation emerging market.",
+          "Benchmarking the total compensation of remote employees hired globally."
+        ],
+        "ans": 1,
+        "exp": "Cost-of-living data measures what's needed to maintain purchasing power parity — the correct input for expatriate COLA allowances. Local hire pay should be set using labour market survey data."
+      },
+      {
+        "q": "At 28% annual inflation, an employee whose NGN salary has not been reviewed in 12 months has experienced:",
+        "opts": [
+          "No change in compensation — their nominal pay is unchanged.",
+          "A real-terms reduction in purchasing power of approximately 22%.",
+          "A statutory entitlement to an inflation-linked pay increase under Nigerian labour law.",
+          "An improvement in their position relative to peers who accepted new jobs at current market rates."
+        ],
+        "ans": 1,
+        "exp": "28% inflation over 12 months means the same Naira buys approximately 22% less than at the last review — identical in practical effect to a nominal pay cut of the same magnitude."
+      },
+      {
+        "q": "A geographic differential matrix converts local pay ranges to a reference currency for which purpose?",
+        "opts": [
+          "For making pay offers to candidates in each market.",
+          "For governance reporting and budget consolidation — pay decisions are always made in local currency.",
+          "For calculating the cost-of-living allowance for international assignments.",
+          "For determining which market positioning percentile to target in each geography."
+        ],
+        "ans": 1,
+        "exp": "The reference currency conversion is a reporting and governance tool — it shows the organisation its total payroll cost in a consistent unit. Individual pay decisions are always made in the employee's local currency."
+      },
+      {
+        "q": "Shadow payroll is a compliance requirement when:",
+        "opts": [
+          "An employee is paid above the local statutory maximum salary threshold.",
+          "An employee works in a host country while remaining on home-country payroll.",
+          "A company expands into a new country for the first time and lacks a local payroll infrastructure.",
+          "Employees in the same country are paid through different legal entities."
+        ],
+        "ans": 1,
+        "exp": "Shadow payroll ensures host-country tax authority reporting and any employer payroll taxes are handled when actual payment flows through a different country's payroll — it's a compliance obligation triggered by the employment location, not the payroll location."
+      },
+      {
+        "q": "USD-indexed pay for locally-hired Lagos employees is generally not the appropriate solution to NGN inflation primarily because:",
+        "opts": [
+          "US dollar indexation is legally prohibited for Nigerian employment contracts under CBN regulations.",
+          "It creates regulatory compliance risk and signals a two-tier workforce structure, with complexity risks that outweigh the exchange rate certainty benefit.",
+          "Most Lagos employees have USD bank accounts that make USD payment technically possible but administratively complex.",
+          "USD-indexed pay makes the compensation benchmarking process more complex without solving the underlying retention problem."
+        ],
+        "ans": 1,
+        "exp": "Regulatory compliance (NGN payroll is generally required for locally-hired employees), HR complexity (exchange rate risk shifts in complex ways), and workforce culture signals make USD-indexed local pay generally inappropriate."
+      },
+      {
+        "q": "A documented assumption log for a data-scarce market (like Accra) should include:",
+        "opts": [
+          "Actuarial projections for future salary movement based on GDP growth forecasts.",
+          "The sources, dates, methodology, and specific assumptions underlying each pay range set without commercial survey data.",
+          "Management's stated belief about appropriate pay levels for the relevant roles.",
+          "A commitment not to adjust the ranges until commercial survey data becomes available."
+        ],
+        "ans": 1,
+        "exp": "A documented assumption log is what makes gap-filling defensible in a pay equity audit — every source, date, and assumption explicitly recorded so the methodology can be reviewed and verified."
+      },
+      {
+        "q": "The balance sheet approach to expatriate compensation aims to ensure:",
+        "opts": [
+          "The expatriate earns significantly more than at home as compensation for relocation disruption.",
+          "The expatriate is financially held harmless — neither better nor worse off than had they stayed at home.",
+          "The host-country entity bears all assignment costs since the employee is working in their market.",
+          "The employee's pay is set at the host-country market rate for the duration of the assignment."
+        ],
+        "ans": 1,
+        "exp": "The balance sheet principle is financial neutrality — the employer covers all incremental host-country costs so the expatriate's effective standard of living matches their home position, no more and no less."
+      },
+      {
+        "q": "Why must a global job architecture precede local market pricing in a multinational expansion?",
+        "opts": [
+          "Employment law in most African jurisdictions requires a global architecture before local hiring can proceed.",
+          "Without a common classification framework, locally priced roles in different markets have no shared basis for internal equity comparison or governance.",
+          "A global architecture reduces the number of salary surveys needed, making benchmarking cheaper.",
+          "Local market pricing is technically impossible without global grade definitions to match survey jobs against."
+        ],
+        "ans": 1,
+        "exp": "The architecture provides the shared language — without it, a Grade 5 in Lagos and a Grade 5 in London may describe genuinely different levels of work, making any cross-market equity comparison meaningless."
+      },
+      {
+        "q": "The UAE's End of Service Gratuity (ESG) must be included in total employment cost modelling because:",
+        "opts": [
+          "It is a voluntary benefit that most UAE employers provide to remain competitive.",
+          "It is a statutory entitlement for expatriate employees that accrues as a legal obligation and must be settled on separation.",
+          "The UAE government administers ESG through a mandatory fund similar to Nigeria's pension system.",
+          "ESG is negotiated individually as part of the executive compensation package for senior roles."
+        ],
+        "ans": 1,
+        "exp": "ESG is a statutory entitlement — employers must accrue and pay it on employee separation. It is a mandatory cost that must be included in total employment cost modelling, not an optional benefit."
+      }
+    ]
   }
 ];

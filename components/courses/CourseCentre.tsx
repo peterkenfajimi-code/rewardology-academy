@@ -704,6 +704,11 @@ export function CourseCentre() {
                     >
                       {c.level}
                     </span>
+                    {c.pro && (
+                      <span className="cc-badge" style={{ color: "#E2AC50", position: "relative", zIndex: 1 }}>
+                        PRO
+                      </span>
+                    )}
                     {done && (
                       <span className="cc-badge" style={{ color: "#4ADE80", position: "relative", zIndex: 1 }}>
                         ✓ Complete
@@ -773,6 +778,7 @@ export function CourseCentre() {
                 <p className="cc-cvh-sub">{c.subtitle}</p>
                 <div className="cc-cvh-info">
                   <span className="cc-cvh-badge">🎓 {c.level}</span>
+                  {c.pro && <span className="cc-cvh-badge" style={{ color: "#E2AC50" }}>PRO</span>}
                   <span className="cc-cvh-badge">⏱ {c.duration}</span>
                   <span className="cc-cvh-badge">📚 {c.lessons_count} lessons</span>
                   <span className="cc-cvh-badge" style={{ color: c.color }}>⚡ {c.total_xp} XP</span>
