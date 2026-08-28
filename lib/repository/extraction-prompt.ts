@@ -10,8 +10,18 @@ export function buildExtractionInstructions(
   const countryContext = countryModule
     ? `Country: ${countryModule.country_name} (${countryModule.country_code}). Statutory employer pension: ${
         countryModule.pension_statutory_employer_pct ?? "null (no mandated rate — do not invent a number)"
-      }. Notes: ${countryModule.notes ?? "none"}.`
+      }. Pension scheme type (country baseline): ${countryModule.pension_scheme_type ?? "unknown"}. Notes: ${countryModule.notes ?? "none"}.`
     : "Country context unknown — do not invent statutory rates.";
+
+  const kenyaTierNote =
+    countryModule?.country_code === "KE"
+      ? `
+KENYA MULTI-TIER PENSION — critical:
+- NSSF Tier 1 is capped (not a flat % of full salary). Do NOT collapse NSSF into one flat employer/employee percentage unless the source states a single uncapped rate.
+- Use pension_scheme_type for scheme structure (e.g. mixed, defined contribution, occupational scheme) — not force-fit to a single-tier DC label when NSSF + private/Occupational Retirement Benefit Scheme (ORBS) coexist.
+- If the source mentions a contracted-out or company occupational scheme alongside NSSF, capture it via pension_administrator_type, voluntary_contribution_program, or additional_exit_benefit_scheme as appropriate — do not merge tiers into one contribution %.
+- employer_contribution_pct / employee_contribution_pct should reflect what the source explicitly states per tier or scheme; note caps in the value or notes field when disclosed.`
+      : "";
 
   const registryBlock =
     registryRows.length > 0
@@ -26,7 +36,7 @@ If nothing in this list fits a genuine employee benefit fact in the source text,
   return `You extract structured employer benefits data for the Africa Benefits Repository.
 
 Company: ${companyName}
-${countryContext}${registryBlock}
+${countryContext}${kenyaTierNote}${registryBlock}
 
 Return ONLY a JSON object (no markdown, no commentary) with two arrays:
 

@@ -105,3 +105,64 @@ export function indexRegistry(rows: FieldRegistryRow[]): Map<string, FieldRegist
   }
   return map;
 }
+
+export type ValueTypeValidation = {
+  matches: boolean;
+  reason: string | null;
+};
+
+/** Compare extracted value shape against the registry's declared value_type before save. */
+export function validateExtractedValueType(
+  registryValueType: string,
+  extractedValueType: string,
+  field: string,
+  value: string | null | undefined
+): ValueTypeValidation {
+  const v = (value ?? "").trim();
+  if (!v) return { matches: true, reason: null };
+
+  if (extractedValueType !== registryValueType) {
+    return {
+      matches: false,
+      reason: `Extracted value_type "${extractedValueType}" does not match registry "${registryValueType}" for ${field}.`,
+    };
+  }
+
+  switch (registryValueType) {
+    case "quantified": {
+      const hasNumber = /\d/.test(v);
+      const looksNarrative =
+        v.length > 80 ||
+        /\b(recognized|recorded|liability|included in|expenses|accrued leave)\b/i.test(v);
+      if (!hasNumber || looksNarrative) {
+        return {
+          matches: false,
+          reason: `Quantified field ${field} value does not look numeric: "${v.slice(0, 80)}".`,
+        };
+      }
+      break;
+    }
+    case "compliance_status": {
+      if (!/^(yes|no)\.?$/i.test(v)) {
+        return {
+          matches: false,
+          reason: `Compliance field ${field} should be Yes/No, got "${v.slice(0, 80)}".`,
+        };
+      }
+      break;
+    }
+    case "named_program": {
+      if (/^(yes|no)\.?$/i.test(v)) {
+        return {
+          matches: false,
+          reason: `Named-program field ${field} should name/describe a scheme, not Yes/No alone.`,
+        };
+      }
+      break;
+    }
+    default:
+      break;
+  }
+
+  return { matches: true, reason: null };
+}

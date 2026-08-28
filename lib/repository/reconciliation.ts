@@ -14,6 +14,8 @@ import {
 
   loadFieldRegistry,
 
+  validateExtractedValueType,
+
 } from "@/lib/repository/field-registry";
 
 import { requiresLegalReview } from "@/lib/repository/legal-review";
@@ -80,7 +82,9 @@ export type SaveEntryResult = {
 
     | "unmapped_skipped"
 
-    | "registry_rejected";
+    | "registry_rejected"
+
+    | "value_type_mismatch";
 
   confidence_was_clamped?: boolean;
 
@@ -94,6 +98,11 @@ function normalizeValue(value: string | null | undefined): string {
 
   return (value ?? "").trim().toLowerCase();
 
+}
+
+function appendNote(notes: string | null | undefined, extra: string | null): string | null {
+  if (!extra) return notes ?? null;
+  return notes?.trim() ? `${notes.trim()} ${extra}` : extra;
 }
 
 
@@ -191,6 +200,18 @@ export async function saveEntriesWithReconciliation(
     );
     const entryValue = normalizedValue;
 
+    const valueTypeCheck = validateExtractedValueType(
+      registryRow.value_type,
+      entry.value_type,
+      entry.field,
+      entryValue
+    );
+
+    let valueTypeNote: string | null = null;
+    if (!valueTypeCheck.matches) {
+      valueTypeNote = valueTypeCheck.reason;
+    }
+
 
 
     const { data: existingRows } = await supabase
@@ -232,6 +253,10 @@ export async function saveEntriesWithReconciliation(
 
 
     let publishStatus: PublishStatus = entry.publish ? "published" : "pending_verification";
+
+    if (valueTypeNote) {
+      publishStatus = "pending_verification";
+    }
 
     const legalReview = requiresLegalReview(
 
@@ -297,7 +322,7 @@ export async function saveEntriesWithReconciliation(
 
             publish_status: "pending_verification",
 
-            notes: clamped.notes,
+            notes: appendNote(clamped.notes, valueTypeNote),
 
             verified_by: params.actor,
 
@@ -401,7 +426,7 @@ export async function saveEntriesWithReconciliation(
 
         publish_status: publishStatus,
 
-        notes: clamped.notes,
+        notes: appendNote(clamped.notes, valueTypeNote),
 
         verified_by: params.actor,
 
@@ -469,6 +494,15 @@ export async function saveEntriesWithReconciliation(
 
     }
 
+    if (valueTypeNote) {
+      await supabase.from("verification_log").insert({
+        entry_id: inserted.entry_id,
+        action: "value_type_mismatch",
+        actor: params.actor,
+        detail: valueTypeNote,
+      });
+    }
+
 
 
     if (existing) {
@@ -523,7 +557,7 @@ export async function saveEntriesWithReconciliation(
 
         publish_status: inserted.publish_status as PublishStatus,
 
-        action: "superseded_conflict",
+        action: valueTypeNote ? "value_type_mismatch" : "superseded_conflict",
 
         confidence_was_clamped: clamped.confidence_was_clamped,
 
@@ -539,7 +573,7 @@ export async function saveEntriesWithReconciliation(
 
         publish_status: inserted.publish_status as PublishStatus,
 
-        action: "inserted",
+        action: valueTypeNote ? "value_type_mismatch" : "inserted",
 
         confidence_was_clamped: clamped.confidence_was_clamped,
 
