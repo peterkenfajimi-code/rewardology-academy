@@ -27,7 +27,7 @@ async function main() {
   const { data } = await supabase
     .from("benefit_entries")
     .select(
-      "entry_id, category, field, fiscal_year_or_effective_date, companies(name), sources(publication_date, source_url, source_title)"
+      "entry_id, category, field, value_type, fiscal_year_or_effective_date, companies(name), sources(publication_date, source_url, source_title)"
     )
     .eq("publish_status", "published");
 
@@ -40,7 +40,11 @@ async function main() {
       source_title?: string | null;
     };
     const ok = isEntryWithinRecencyWindow(
-      { fiscal_year_or_effective_date: row.fiscal_year_or_effective_date },
+      {
+        fiscal_year_or_effective_date: row.fiscal_year_or_effective_date,
+        field: row.field,
+        value_type: row.value_type,
+      },
       source
     );
     if (ok) visible++;

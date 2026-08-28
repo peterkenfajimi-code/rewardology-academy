@@ -44,7 +44,7 @@ async function main() {
     .from("benefit_entries")
     .select(
       `
-      entry_id, field, fiscal_year_or_effective_date, publish_status,
+      entry_id, field, value_type, fiscal_year_or_effective_date, publish_status,
       companies ( name, exchange_ticker ),
       sources ( publication_date, source_url, source_title )
     `

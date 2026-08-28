@@ -1,4 +1,4 @@
-import { BenefitsRepositoryBrowser } from "@/components/repository/BenefitsRepositoryBrowser";
+import { BenefitsRepositoryIndex } from "@/components/repository/BenefitsRepositoryIndex";
 
 export const metadata = {
   title: "Africa Benefits Repository",
@@ -7,5 +7,5 @@ export const metadata = {
 };
 
 export default function BenefitsRepositoryPage() {
-  return <BenefitsRepositoryBrowser />;
+  return <BenefitsRepositoryIndex />;
 }

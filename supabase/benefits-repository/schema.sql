@@ -86,7 +86,8 @@ create table if not exists companies (
     'NGX','FMDQ','NASD','JSE','NSE','GSE','EGX','RSE'
   )),
   created_at timestamptz default now(),
-  last_reviewed_at timestamptz
+  last_reviewed_at timestamptz,
+  slug text
 );
 
 create table if not exists sources (

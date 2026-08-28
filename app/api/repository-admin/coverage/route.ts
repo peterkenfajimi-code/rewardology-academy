@@ -31,7 +31,7 @@ export async function GET(req: NextRequest) {
     .from("benefit_entries")
     .select(
       `
-      entry_id, company_id, field, fiscal_year_or_effective_date, publish_status,
+      entry_id, company_id, field, value_type, fiscal_year_or_effective_date, publish_status,
       sources ( publication_date, source_url, source_title )
     `
     )

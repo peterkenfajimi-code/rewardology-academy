@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
 .benefits-repo {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 0 3rem;
 }
@@ -30,21 +32,96 @@
   background: rgba(200, 150, 62, 0.08);
 }
 
-.benefits-repo-filters {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 0.75rem;
-  margin: 1.25rem 0 1.5rem;
+.benefits-repo-muted {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.65);
 }
 
-.benefits-repo-filters label {
-  display: grid;
+.benefits-repo-mono {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+.benefits-repo-filter-section {
+  margin: 1.25rem 0 1rem;
+}
+
+.benefits-repo-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.benefits-repo-chip {
+  display: inline-flex;
+  align-items: center;
   gap: 0.35rem;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.76rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 0.35rem 0.55rem 0.35rem 0.75rem;
+  background: rgba(0, 0, 0, 0.2);
+  color: inherit;
+}
+
+.benefits-repo-chip-add {
+  border-style: dashed;
+  color: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  background: transparent;
+}
+
+.benefits-repo-chip-x {
+  width: 1.1rem;
+  height: 1.1rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+  line-height: 1;
   font-size: 0.85rem;
 }
 
-.benefits-repo-filters select,
-.benefits-repo-filters input {
+.benefits-repo-filter-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+}
+
+.benefits-repo-filter-picker button {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  color: inherit;
+  border-radius: 8px;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.benefits-repo-filter-cancel {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+.benefits-repo-filter-note,
+.benefits-repo-stats-line {
+  margin: 0.5rem 0 1rem;
+  padding-left: 0.15rem;
+}
+
+.benefits-repo-search-standalone {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.benefits-repo-search-standalone input {
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: rgba(0, 0, 0, 0.2);
@@ -52,25 +129,147 @@
   padding: 0.55rem 0.65rem;
 }
 
-.benefits-repo-search {
-  grid-column: 1 / -1;
+.benefits-repo-index-wrap {
+  overflow-x: auto;
 }
 
-.benefits-repo-companies {
-  display: grid;
-  gap: 2rem;
+.benefits-repo-index {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.benefits-repo-company-head h2 {
-  font-family: var(--hserif, Georgia, serif);
-  font-size: 1.45rem;
-  margin: 0 0 0.35rem;
-}
-
-.benefits-repo-company-head {
-  margin-bottom: 0.85rem;
-  padding-bottom: 0.65rem;
+.benefits-repo-index th {
+  text-align: left;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 500;
+  padding: 0 0.85rem 0.65rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.benefits-repo-index-row td {
+  padding: 1rem 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  vertical-align: middle;
+}
+
+.benefits-repo-index-link {
+  display: grid;
+  gap: 0.15rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.benefits-repo-index-link:hover .benefits-repo-index-name {
+  color: var(--gold, #c8963e);
+}
+
+.benefits-repo-index-name {
+  font-family: var(--hserif, Georgia, serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.benefits-repo-index-meta {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.benefits-repo-confidence-mix {
+  display: flex;
+  width: 120px;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.benefits-repo-confidence-mix span {
+  display: block;
+  height: 100%;
+}
+
+.benefits-repo-mix-high {
+  background: #2e6e6b;
+}
+
+.benefits-repo-mix-medium {
+  background: var(--gold, #c8963e);
+}
+
+.benefits-repo-mix-low {
+  background: #a65d3f;
+}
+
+.benefits-repo-confidence-legend {
+  margin: 0.35rem 0 0;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.benefits-repo-methodology-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+}
+
+.benefits-repo-methodology-link:hover {
+  color: var(--gold, #c8963e);
+}
+
+.benefits-repo-breadcrumb {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 1rem;
+}
+
+.benefits-repo-breadcrumb a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.benefits-repo-profile-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.benefits-repo-profile-head h1 {
+  font-family: var(--hserif, Georgia, serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin: 0.25rem 0;
+}
+
+.benefits-repo-category-section {
+  margin-top: 3rem;
+}
+
+.benefits-repo-section-label {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  color: #2e6e6b;
+  margin: 0 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.benefits-repo-section-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .benefits-repo-grid {
@@ -84,6 +283,21 @@
   border-radius: 12px;
   padding: 0.9rem 1rem;
   background: rgba(255, 255, 255, 0.03);
+}
+
+.benefits-repo-card-enter {
+  animation: benefits-repo-fade-in 0.2s ease both;
+}
+
+@keyframes benefits-repo-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .benefits-repo-card-top {
@@ -103,37 +317,75 @@
   margin: 0.35rem 0;
 }
 
+.benefits-repo-stat-hero {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.benefits-repo-stat-number {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.benefits-repo-stat-unit {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.benefits-repo-stat-caption {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 0.35rem;
+}
+
 .benefits-repo-meta,
-.benefits-repo-source,
-.benefits-repo-muted {
+.benefits-repo-source {
   font-size: 0.82rem;
   color: rgba(255, 255, 255, 0.65);
 }
 
 .benefits-repo-source a {
-  color: var(--teal2, #0e8a82);
+  color: #2e6e6b;
 }
 
-.benefits-repo-category-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-bottom: 1rem;
+.benefits-repo-source-wrap {
+  position: relative;
+  display: inline;
 }
 
-.benefits-repo-category-tabs button {
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.04);
+.benefits-repo-source-trigger {
+  border: none;
+  background: none;
+  padding: 0;
   color: inherit;
-  border-radius: 999px;
-  padding: 0.35rem 0.75rem;
-  font-size: 0.82rem;
-  cursor: pointer;
+  font: inherit;
+  cursor: help;
+  text-align: left;
 }
 
-.benefits-repo-category-tabs button.is-active {
-  border-color: var(--gold, #c8963e);
-  background: rgba(200, 150, 62, 0.15);
+.benefits-repo-source-popover {
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  top: calc(100% + 0.35rem);
+  min-width: 220px;
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #0e2444;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  font-size: 0.78rem;
+}
+
+.benefits-repo-source-popover a {
+  color: #2e6e6b;
 }
 
 .benefits-repo-confidence {
@@ -149,8 +401,8 @@
 }
 
 .benefits-repo-confidence-high {
-  background: rgba(14, 138, 130, 0.28);
-  border-color: rgba(95, 212, 203, 0.55);
+  background: rgba(46, 110, 107, 0.28);
+  border-color: rgba(95, 212, 203, 0.45);
   color: #5fd4cb;
 }
 
@@ -161,7 +413,7 @@
 }
 
 .benefits-repo-confidence-low {
-  background: rgba(180, 90, 70, 0.28);
+  background: rgba(166, 93, 63, 0.28);
   border-color: rgba(224, 154, 136, 0.55);
   color: #e09a88;
 }
@@ -173,4 +425,65 @@
 .benefits-repo-clamped {
   color: rgba(255, 255, 255, 0.55);
   font-style: italic;
+}
+
+.benefits-repo-empty {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.benefits-repo-empty-mark {
+  font-size: 1.75rem;
+  line-height: 1;
+  color: #2e6e6b;
+  margin-bottom: 0.65rem;
+  /* Static diamond mark — must not resemble a loading spinner (see mockup item 5). */
+}
+
+.benefits-repo-empty h2 {
+  font-family: var(--hserif, Georgia, serif);
+  font-size: 1.35rem;
+  margin: 0 0 0.5rem;
+}
+
+.benefits-repo-empty p {
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 48ch;
+  margin: 0 auto 1rem;
+}
+
+.benefits-repo-empty-cta {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  color: inherit;
+  border-radius: 8px;
+  padding: 0.5rem 0.85rem;
+  cursor: pointer;
+}
+
+.benefits-repo-empty-cta:hover {
+  border-color: var(--gold, #c8963e);
+}
+
+.benefits-repo-methodology-section {
+  margin: 2rem 0;
+}
+
+.benefits-repo-methodology-section h2 {
+  font-family: var(--hserif, Georgia, serif);
+  font-size: 1.35rem;
+  margin: 0 0 0.65rem;
+}
+
+.benefits-repo-methodology-section p,
+.benefits-repo-methodology-section li {
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 68ch;
+}
+
+.benefits-repo-methodology-section ul {
+  padding-left: 1.25rem;
 }

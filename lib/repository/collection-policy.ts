@@ -26,6 +26,32 @@ export const EXCLUDED_BENEFIT_FIELDS = new Set<string>([
 
 export const SOURCE_RECENCY_YEARS = 3;
 
+/**
+ * named_program fields describing scheme structure or existence (not time-sensitive amounts).
+ * These bypass the hard 3-year exclusion and rely on the 24-month staleness badge instead.
+ */
+export const STRUCTURAL_NAMED_PROGRAM_FIELDS = new Set<string>([
+  "pension_scheme_type",
+  "pension_administrator_type",
+  "gratuity_scheme_type",
+]);
+
+/** compliance_status and selected structural named_program fields — staleness badge only, no hard cutoff. */
+export function isStructuralExistenceEntry(entry: {
+  field?: string;
+  value_type?: string | null;
+}): boolean {
+  if (entry.value_type === "compliance_status") return true;
+  if (
+    entry.value_type === "named_program" &&
+    entry.field &&
+    STRUCTURAL_NAMED_PROGRAM_FIELDS.has(entry.field)
+  ) {
+    return true;
+  }
+  return false;
+}
+
 export function isExcludedBenefitField(field: string): boolean {
   return EXCLUDED_BENEFIT_FIELDS.has(field.trim());
 }
@@ -109,6 +135,8 @@ export function isSourceWithinRecencyWindow(
 export function isEntryWithinRecencyWindow(
   entry: {
     fiscal_year_or_effective_date?: string | null;
+    field?: string;
+    value_type?: string | null;
   },
   source: {
     publication_date?: string | null;
@@ -117,6 +145,8 @@ export function isEntryWithinRecencyWindow(
   },
   referenceDate = new Date()
 ): boolean {
+  if (isStructuralExistenceEntry(entry)) return true;
+
   if (entry.fiscal_year_or_effective_date) {
     const y = Number.parseInt(entry.fiscal_year_or_effective_date.slice(0, 4), 10);
     if (!Number.isNaN(y) && y < recencyCutoffYear(referenceDate)) return false;
