@@ -174,6 +174,16 @@ function investorPaths(origin: string): string[] {
     ];
   }
 
+  if (host.includes("gcbbank.com.gh")) {
+    return [
+      origin,
+      `${origin}/downloadable-reports`,
+      `${origin}/downloads/reports`,
+      `${origin}/group-results-and-reporting`,
+      `${origin}/careers`,
+    ];
+  }
+
   return [
     origin,
     `${origin}/investors`,

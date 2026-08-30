@@ -8,6 +8,7 @@ node_modules
 *.log
 build-log.txt
 data/quiz-docx/*.docx
+data/gcb-downloads/
 assets/comics-source/*
 !assets/comics-source/README.md
 scripts/git-history-replacements.txt

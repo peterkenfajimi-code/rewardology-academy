@@ -40,6 +40,15 @@ export async function fetchSourceDocument(url: string): Promise<FetchedSource> {
 
   const contentType = (res.headers.get("content-type") ?? "").toLowerCase();
   const buffer = Buffer.from(await res.arrayBuffer());
+
+  if (
+    contentType.includes("html") &&
+    buffer.toString("utf-8", 0, Math.min(buffer.length, 2000)).includes("sucuri_cloudproxy")
+  ) {
+    throw new Error(
+      "Source URL is behind bot protection (Sucuri) — download the PDF in a browser, save to data/gcb-downloads/, or paste the benefits section in the admin tool."
+    );
+  }
   const looksLikePdf =
     contentType.includes("pdf") ||
     parsed.pathname.toLowerCase().endsWith(".pdf") ||

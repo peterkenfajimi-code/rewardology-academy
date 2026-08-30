@@ -19,8 +19,22 @@ export function buildExtractionInstructions(
 KENYA MULTI-TIER PENSION — critical:
 - NSSF Tier 1 is capped (not a flat % of full salary). Do NOT collapse NSSF into one flat employer/employee percentage unless the source states a single uncapped rate.
 - Use pension_scheme_type for scheme structure (e.g. mixed, defined contribution, occupational scheme) — not force-fit to a single-tier DC label when NSSF + private/Occupational Retirement Benefit Scheme (ORBS) coexist.
-- If the source mentions a contracted-out or company occupational scheme alongside NSSF, capture it via pension_administrator_type, voluntary_contribution_program, or additional_exit_benefit_scheme as appropriate — do not merge tiers into one contribution %.
-- employer_contribution_pct / employee_contribution_pct should reflect what the source explicitly states per tier or scheme; note caps in the value or notes field when disclosed.`
+- If the source mentions a contracted-out or company occupational scheme alongside NSSF, capture Tier 2 rates via tier2_employer_contribution_pct / tier2_employee_contribution_pct when disclosed — do not merge tiers into one contribution %.
+- employer_contribution_pct / employee_contribution_pct should reflect Tier 1 NSSF rates only when the source states them explicitly per tier; note caps in notes when disclosed.
+- voluntary_contribution_program is only for optional employee-initiated extra contributions, not mandatory occupational tier rates.`
+      : "";
+
+  const ghanaTierNote =
+    countryModule?.country_code === "GH"
+      ? `
+GHANA THREE-TIER SSNIT PENSION — critical:
+- Tier 1: SSNIT — employer-funded defined benefit (baseline statutory). Tier 2: mandatory occupational/DC scheme. Tier 3: voluntary provident fund / additional contributions.
+- Do NOT collapse all tiers into one flat employer/employee percentage or a single "defined contribution" label.
+- Use pension_scheme_type for overall structure (expect mixed, not single-tier DC). Use pension_administrator_type for SSNIT vs corporate trustee/PFA roles per tier.
+- Tier 1 primary rates: employer_contribution_pct / employee_contribution_pct (only when the source states Tier 1 / SSNIT rates explicitly).
+- Tier 2 mandatory occupational rates: tier2_employer_contribution_pct / tier2_employee_contribution_pct — NOT voluntary_contribution_program (that field is for optional employee-initiated extra contributions only, e.g. AVC).
+- Tier 3 voluntary extras: voluntary_contribution_program only when the source describes optional additional employee contributions.
+- Post-retirement medical care for former employees: post_retirement_medical_care — NOT health.hmo_scope (active-employee coverage) or additional_exit_benefit_scheme (exit/severance payout).`
       : "";
 
   const registryBlock =
@@ -36,7 +50,7 @@ If nothing in this list fits a genuine employee benefit fact in the source text,
   return `You extract structured employer benefits data for the Africa Benefits Repository.
 
 Company: ${companyName}
-${countryContext}${kenyaTierNote}${registryBlock}
+${countryContext}${kenyaTierNote}${ghanaTierNote}${registryBlock}
 
 Return ONLY a JSON object (no markdown, no commentary) with two arrays:
 

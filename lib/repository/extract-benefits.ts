@@ -240,6 +240,8 @@ export async function extractBenefitsFromSource(params: {
 
   sourceUrl?: string;
 
+  localPdfPath?: string;
+
 }): Promise<ExtractBenefitsResult> {
 
   const registryRows = params.registryRows ?? [];
@@ -248,11 +250,13 @@ export async function extractBenefitsFromSource(params: {
 
   const sourceUrl = params.sourceUrl?.trim() ?? "";
 
+  const localPdfPath = params.localPdfPath?.trim() ?? "";
 
 
-  if (!rawText && !sourceUrl) {
 
-    throw new Error("Provide rawText or sourceUrl for extraction");
+  if (!rawText && !sourceUrl && !localPdfPath) {
+
+    throw new Error("Provide rawText, sourceUrl, or localPdfPath for extraction");
 
   }
 
@@ -274,6 +278,21 @@ export async function extractBenefitsFromSource(params: {
 
     return buildResult(parseExtractionPayload(responseText), "text");
 
+  }
+
+  if (localPdfPath) {
+    const fs = await import("fs");
+    const buffer = fs.readFileSync(localPdfPath);
+    const extracted = await extractTextFromPdf(buffer);
+    const responseText = await callAnthropicExtraction(
+      model,
+      `${buildExtractionInstructions(params.companyName, params.countryModule ?? null, registryRows)}
+
+The following text was extracted from a ${extracted.pageCount}-page PDF (benefits-related sections only):
+
+${extracted.text}`
+    );
+    return buildResult(parseExtractionPayload(responseText), "url-pdf-text", extracted.pageCount);
   }
 
 

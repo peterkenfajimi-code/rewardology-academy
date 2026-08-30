@@ -21,6 +21,12 @@ const BENEFITS_KEYWORDS = [
   "contributory",
   "scheme",
   "human capital",
+  "ssnit",
+  "tier 1",
+  "tier 2",
+  "tier 3",
+  "npra",
+  "provident fund",
   "personnel",
 ];
 
