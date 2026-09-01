@@ -130,6 +130,12 @@ export function RepositoryBatchPanel({ anthropicConfigured }: Props) {
   async function startBatch() {
     setError("");
     setMessage("");
+    if (publish && !dryRun) {
+      const ok = window.confirm(
+        "Publish immediately can replace existing published facts without per-field confirmation. Continue?"
+      );
+      if (!ok) return;
+    }
     setLoading(true);
     try {
       const res = await fetch("/api/repository-admin/batch", {

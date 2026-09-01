@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { isRepositoryAdminAuthed } from "@/lib/auth/repository-admin";
 import { isRepositorySupabaseConfigured } from "@/lib/env";
-import { saveSourceAndEntries } from "@/lib/repository/save-source";
+import { previewSavePublishedSupersedes, saveSourceAndEntries } from "@/lib/repository/save-source";
 import type { ExtractedEntry, SourceRecord, SourceType } from "@/lib/repository/types";
 import { createRepositoryAdminClient } from "@/lib/supabase/repository/admin";
 
@@ -16,6 +16,7 @@ export async function POST(req: NextRequest) {
     source?: Omit<SourceRecord, "company_id"> & { source_type: SourceType };
     entries?: ExtractedEntry[];
     publish?: boolean;
+    preview?: boolean;
     actor?: string;
   };
 
@@ -33,6 +34,25 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "At least one entry is required" }, { status: 400 });
   }
 
+  const supabase = createRepositoryAdminClient();
+
+  if (body.preview) {
+    try {
+      const supersedes = await previewSavePublishedSupersedes(supabase, {
+        companyId: body.companyId,
+        source: body.source,
+        entries: body.entries,
+        publish: body.publish,
+      });
+      return NextResponse.json({ supersedes });
+    } catch (e) {
+      return NextResponse.json(
+        { error: e instanceof Error ? e.message : "Preview failed" },
+        { status: 500 }
+      );
+    }
+  }
+
   if (!body.source.source_url?.trim() && !body.source.source_title?.trim()) {
     return NextResponse.json(
       { error: "Source URL or title is required before saving" },
@@ -40,7 +60,6 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const supabase = createRepositoryAdminClient();
   const actor = body.actor?.trim() || "repository-admin";
 
   try {

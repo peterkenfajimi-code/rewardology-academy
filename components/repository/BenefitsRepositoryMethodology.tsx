@@ -72,6 +72,9 @@ export function BenefitsRepositoryMethodology() {
           When a new extraction disagrees with an existing published value from a comparable or
           lower-trust source, the conflict is saved as pending verification rather than silently
           replacing the published row. Reviewers decide whether to publish, supersede, or discard.
+          Publishing a higher-trust value asks for confirmation showing the current published figure
+          next to the incoming one before the unique published fact is replaced. Rows outranked by a
+          newer, higher-trust source are marked superseded so they leave the review queue.
         </p>
       </section>
 

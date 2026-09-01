@@ -6,9 +6,9 @@ Prioritized follow-up items. Smallest concrete fixes first.
 
 1. ~~**Safaricom Kenya tier2 retrofit**~~ — **Done (Aug 2026).** Published `pension_administrator_type` scoped to `NSSF (Tier 1)` only; FY2024 duplicate administrator row superseded; `employer_contribution_pct=6` annotated as Tier 1 NSSF (still held pending cap review). `tier2_*` contribution fields remain empty until source confirms occupational scheme rates (`reconcile-safaricom-tier2-retrofit.ts`).
 
-2. **`uq_one_published_fact` UX toast** — Reviewer publishing a new entry can silently supersede an existing published row with no on-screen confirmation. Cheap fix, real risk to reviewer confidence.
+2. ~~**`uq_one_published_fact` UX toast**~~ — **Done (Sep 2026).** Entry-tool save with Publish checked previews existing published facts and asks for confirmation (old value → new value) before replacing the unique published row. After save, the status line reports how many facts were replaced. Batch publish still uses a coarser confirm because it has no per-field review list.
 
-3. **Historical-duplicate status decision** — Rows that lose to a newer source sit in `pending_verification` forever, conflating "needs review" with "permanently superseded." Needs a real status value or explicit decision to leave as-is.
+3. ~~**Historical-duplicate status decision**~~ — **Done (Sep 2026).** No fifth `publish_status`. Outranked pending rows are marked `superseded` (already in the enum) when a newer, higher-trust source wins. `pending_verification` is reserved for rows that still need a human decision — lower-trust conflicts that did not win. Saving as pending no longer unpublishes the live fact; publishing still replaces it (after confirmation).
 
 ## Content review (no code urgency)
 

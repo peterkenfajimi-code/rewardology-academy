@@ -24,6 +24,7 @@ export type ValueType = "quantified" | "named_program" | "compliance_status" | "
 
 export type ConfidenceScore = "high" | "medium" | "low";
 
+/** published = one live public fact per company+field. pending_verification = still needs a human decision. superseded = outranked or replaced (not in the review queue). rejected = discarded. */
 export type PublishStatus = "published" | "pending_verification" | "superseded" | "rejected";
 
 export type CompanySizeBand = "1-50" | "51-500" | "501-5000" | "5000+";

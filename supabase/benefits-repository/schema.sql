@@ -121,6 +121,10 @@ create table if not exists benefit_entries (
   source_trust_weight int,
   publish_status text check (publish_status in
     ('published','pending_verification','superseded','rejected')) not null default 'pending_verification',
+  -- published: one live public fact per company+field (see uq_one_published_fact).
+  -- pending_verification: still needs a human decision.
+  -- superseded: outranked or replaced; not in the review queue.
+  -- rejected: discarded.
   superseded_by_entry_id uuid references benefit_entries(entry_id),
   verified_by text,
   date_collected date not null default current_date,
