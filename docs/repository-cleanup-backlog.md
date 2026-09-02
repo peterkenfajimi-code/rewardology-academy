@@ -4,7 +4,7 @@ Prioritized follow-up items. Smallest concrete fixes first.
 
 ## Small, concrete fixes (code / schema alignment)
 
-1. ~~**Safaricom Kenya tier2 retrofit**~~ — **Done (Aug 2026).** Published `pension_administrator_type` scoped to `NSSF (Tier 1)` only; FY2024 duplicate administrator row superseded; `employer_contribution_pct=6` annotated as Tier 1 NSSF (still held pending cap review). `tier2_*` contribution fields remain empty until source confirms occupational scheme rates (`reconcile-safaricom-tier2-retrofit.ts`).
+1. ~~**Safaricom Kenya tier2 retrofit**~~ — **Done (Aug 2026).** Published `pension_administrator_type` scoped to `NSSF (Tier 1)` only; FY2024 duplicate administrator row superseded. `employer_contribution_pct=6` later rejected after AR source-read (item 4). `tier2_*` contribution fields remain empty — source does not disclose occupational scheme rates.
 
 2. ~~**`uq_one_published_fact` UX toast**~~ — **Done (Sep 2026).** Entry-tool save with Publish checked previews existing published facts and asks for confirmation (old value → new value) before replacing the unique published row. After save, the status line reports how many facts were replaced. Batch publish still uses a coarser confirm because it has no per-field review list.
 
@@ -12,7 +12,7 @@ Prioritized follow-up items. Smallest concrete fixes first.
 
 ## Content review (no code urgency)
 
-4. **Safaricom 6% Kenya NSSF cap language** — Read the actual pension note for cap mechanics and employee-side figure before `employer_contribution_pct` can publish. Tier 2 occupational rates (for `tier2_employer_contribution_pct` / `tier2_employee_contribution_pct`) also need source confirmation when disclosed.
+4. ~~**Safaricom 6% Kenya NSSF cap language**~~ — **Done (Sep 2026).** FY26 AR note 2(s) (p.172) and FY25 note 2(s) confirm NSSF + a Group defined-contribution plan; they do not state 6%, a cap, an employee-side %, or a Tier 2 occupational rate. Note 10 splits expense only (FY26 Group NSSF KShs 295.8m vs DC plan KShs 1,229.3m). `employer_contribution_pct=6` was country-module leakage — rejected, not published. `tier2_*` rates stay empty (`reconcile-safaricom-nssf-cap-review.ts`).
 
 5. **GCB `defined_benefit_plan_exists`** — Interim string patch held pending (`Yes (closed legacy scheme, discontinued 1985)`). Proper `defined_benefit_plan_status` field would be cleaner but not blocking.
 
