@@ -13,7 +13,11 @@ import { SourceRatingBadge } from "@/components/testimonials/SourceRatingBadge";
 import { fetchTabNews } from "@/lib/news/fetchFeeds";
 import { fetchSourceRatings } from "@/lib/testimonials/fetchRatings";
 import { getSourceRating } from "@/lib/testimonials/ratings";
-import { getEssentialById, type EssentialArticle } from "@/lib/articles/essentials";
+import {
+  ESSENTIALS_ARTICLES,
+  getEssentialById,
+  type EssentialArticle,
+} from "@/lib/articles/essentials";
 import { COURSES as COURSE_CENTRE } from "@/lib/courses/courseData";
 import { DAILY_QUIZ_HREF, DAILY_QUIZ_SECTION_ID } from "@/lib/site";
 
@@ -217,12 +221,13 @@ export default async function HomePage() {
                 Essential <em>Reading</em>
               </h2>
               <p className="section-sub">
-                25 practitioner-written articles covering every pillar of modern Total Rewards
+                {ESSENTIALS_ARTICLES.length} practitioner-written articles covering every pillar of
+                modern Total Rewards
                 strategy.
               </p>
             </div>
             <Link href="/articles/all" className="section-link">
-              View all 25 articles →
+              View all {ESSENTIALS_ARTICLES.length} articles →
             </Link>
           </div>
           <div className="articles-grid">
@@ -360,7 +365,8 @@ export default async function HomePage() {
               <em>Rewards Expertise</em> Today.
             </h2>
             <p className="cta-desc">
-              25 free articles, daily quizzes, structured courses, a dictionary, and comics —
+              {ESSENTIALS_ARTICLES.length} free articles, daily quizzes, structured courses, a
+              dictionary, and comics —
               everything you need to become the most capable person in the room.
             </p>
             <div className="cta-actions">
