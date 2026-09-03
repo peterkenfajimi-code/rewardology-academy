@@ -51,7 +51,10 @@ export function formatRegistryForPrompt(rows: FieldRegistryRow[]): string {
   for (const [category, fields] of byCategory) {
     lines.push(`\n${category}:`);
     for (const field of fields) {
-      lines.push(`  - ${field.field_key} (${field.field_label}) [max confidence: ${field.max_confidence}]`);
+      const desc = field.description?.trim() ? ` — ${field.description.trim()}` : "";
+      lines.push(
+        `  - ${field.field_key} (${field.field_label}) [max confidence: ${field.max_confidence}]${desc}`
+      );
     }
   }
   return lines.join("\n");

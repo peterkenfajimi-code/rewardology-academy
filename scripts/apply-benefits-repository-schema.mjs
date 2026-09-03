@@ -81,6 +81,7 @@ const migration008Path = path.join(root, "supabase", "benefits-repository", "mig
 const migration009Path = path.join(root, "supabase", "benefits-repository", "migrations", "009_rls_field_registry.sql");
 const migration010Path = path.join(root, "supabase", "benefits-repository", "migrations", "010_company_slug.sql");
 const migration011Path = path.join(root, "supabase", "benefits-repository", "migrations", "011_tier2_and_post_retirement_fields.sql");
+const migration012Path = path.join(root, "supabase", "benefits-repository", "migrations", "012_statutory_vs_company_rate.sql");
 const query = fs.readFileSync(sqlPath, "utf8");
 const migration = fs.existsSync(migrationPath) ? fs.readFileSync(migrationPath, "utf8") : "";
 const migration003 = fs.existsSync(migration003Path) ? fs.readFileSync(migration003Path, "utf8") : "";
@@ -92,6 +93,7 @@ const migration008 = fs.existsSync(migration008Path) ? fs.readFileSync(migration
 const migration009 = fs.existsSync(migration009Path) ? fs.readFileSync(migration009Path, "utf8") : "";
 const migration010 = fs.existsSync(migration010Path) ? fs.readFileSync(migration010Path, "utf8") : "";
 const migration011 = fs.existsSync(migration011Path) ? fs.readFileSync(migration011Path, "utf8") : "";
+const migration012 = fs.existsSync(migration012Path) ? fs.readFileSync(migration012Path, "utf8") : "";
 
 // Migrations first — existing DBs may lack columns referenced in schema.sql inserts.
 if (migration) await runQuery("Migration 002 (sustainability + batch)", migration, { warnOnFail: true });
@@ -126,6 +128,9 @@ if (migration010) {
 }
 if (migration011) {
   await runQuery("Migration 011 (tier2 + post-retirement fields)", migration011, { warnOnFail: true });
+}
+if (migration012) {
+  await runQuery("Migration 012 (statutory vs company-disclosed rate)", migration012, { warnOnFail: true });
 }
 
 const verify = await fetch(

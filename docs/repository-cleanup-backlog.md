@@ -14,6 +14,10 @@ Prioritized follow-up items. Smallest concrete fixes first.
 
 4. ~~**Safaricom 6% Kenya NSSF cap language**~~ — **Done (Sep 2026).** FY26 AR note 2(s) (p.172) and FY25 note 2(s) confirm NSSF + a Group defined-contribution plan; they do not state 6%, a cap, an employee-side %, or a Tier 2 occupational rate. Note 10 splits expense only (FY26 Group NSSF KShs 295.8m vs DC plan KShs 1,229.3m). `employer_contribution_pct=6` was country-module leakage — rejected, not published. `tier2_*` rates stay empty (`reconcile-safaricom-nssf-cap-review.ts`).
 
+4b. ~~**GTCO 10%/8% provenance**~~ — **Done (Sep 2026).** Published rates retargeted to 2024 Annual Report p.155, "Defined contribution plans" (`The rate of contribution by the Bank and its employee is 10% and 8% respectively of basic salary, housing and transport allowance.`). Old "extracted from metadata notes" provenance replaced, not silently overwritten (`reconcile-gtco-pra-citation.ts`). Equals PRA minimum; that match is not leakage.
+
+4c. ~~**Statutory vs company-disclosed rate (extraction guidance)**~~ — **Done (Sep 2026).** One canonical test in `lib/repository/statutory-vs-disclosure.ts`, used by the extraction prompt, field-registry descriptions (migration 012), and `formatRegistryForPrompt`. Lockstep covered by `statutory-vs-disclosure.test.ts`.
+
 5. **GCB `defined_benefit_plan_exists`** — Interim string patch held pending (`Yes (closed legacy scheme, discontinued 1985)`). Proper `defined_benefit_plan_status` field would be cleaner but not blocking.
 
 ## Deliberate next sessions (do not fold into current work)
