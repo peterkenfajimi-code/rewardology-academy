@@ -12,10 +12,10 @@ export function ComicsCoverPage() {
           <Image
             src={COMIC_SERIES.coverImage}
             alt={`${COMIC_SERIES.title} — Issue 1 cover`}
-            width={960}
-            height={1240}
+            width={800}
+            height={1200}
             priority
-            sizes="(max-width: 960px) 100vw, 960px"
+            sizes="(max-width: 840px) 100vw, 800px"
             className="cm-series-cover-img"
           />
           <div className="cm-series-hero-copy">

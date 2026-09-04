@@ -60,10 +60,10 @@ export function ComicIssueView({ issue }: Props) {
                   key={page}
                   src={page}
                   alt={`${issue.title} — page ${index + 1} of ${issue.pages.length}`}
-                  width={928}
+                  width={800}
                   height={1200}
                   priority={index < 2}
-                  sizes="(max-width: 960px) 100vw, 928px"
+                  sizes="(max-width: 840px) 100vw, 800px"
                   className="cm-comic-page"
                 />
               ))}
