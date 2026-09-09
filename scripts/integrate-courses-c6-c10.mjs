@@ -1,8 +1,8 @@
 /**
- * Merge the Courses 6–10 handoff HTML into the Next.js data modules.
+ * Merge a course-batch handoff HTML into the Next.js data modules.
  *
  * Usage:
- *   node scripts/integrate-courses-c6-c10.mjs <courses-html> <toolkit-html>
+ *   node scripts/integrate-courses-c6-c10.mjs <courses-html> [toolkit-html]
  */
 import fs from "fs";
 import path from "path";
@@ -11,8 +11,8 @@ import { fileURLToPath } from "url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const [sourceArg, toolkitArg] = process.argv.slice(2);
 
-if (!sourceArg || !toolkitArg) {
-  throw new Error("Pass the courses handoff HTML and toolkit HTML paths");
+if (!sourceArg) {
+  throw new Error("Pass the courses handoff HTML path");
 }
 
 function extractLiteral(text, marker) {
@@ -253,16 +253,21 @@ function mergeById(existing, additions) {
 }
 
 const sourcePath = path.resolve(sourceArg);
-const toolkitPath = path.resolve(toolkitArg);
 const source = fs.readFileSync(sourcePath, "utf8");
-
-const rawCourses = parseLiteral(source, "const COURSES =");
-const newCourses = rawCourses.filter((course) => numericId(course.id) >= 6).map(normalizeCourse);
-if (newCourses.length !== 5) throw new Error(`Expected 5 new courses; found ${newCourses.length}`);
 
 const courseDataPath = path.join(root, "lib", "courses", "courseData.ts");
 let courseData = fs.readFileSync(courseDataPath, "utf8");
 const existingCourses = parseLiteral(courseData, "export const COURSES: Course[] =");
+const existingCourseIds = new Set(existingCourses.map((course) => course.id));
+const rawCourses = parseLiteral(source, "const COURSES =");
+const newCourses = rawCourses
+  .filter((course) => !existingCourseIds.has(numericId(course.id)))
+  .map(normalizeCourse);
+if (!newCourses.length) throw new Error("The handoff contains no courses that are not already integrated");
+const firstCourseId = Math.min(...newCourses.map((course) => course.id));
+const lastCourseId = Math.max(...newCourses.map((course) => course.id));
+const batchSuffix = `C${firstCourseId}_C${lastCourseId}`;
+
 courseData = replaceLiteral(courseData, "export const COURSES: Course[] =", mergeById(existingCourses, newCourses));
 courseData = courseData.replace(
   /  modules: CourseModule\[\];\r?\n};/,
@@ -270,9 +275,9 @@ courseData = courseData.replace(
 );
 fs.writeFileSync(courseDataPath, courseData);
 
-const rawArticles = parseLiteral(source, "const NEW_ARTICLES_C6_C10 =");
+const rawArticles = parseLiteral(source, `const NEW_ARTICLES_${batchSuffix} =`);
 const newArticles = rawArticles.map((article) => normalizeArticle(article, newCourses));
-if (newArticles.length !== 14) throw new Error(`Expected 14 new articles; found ${newArticles.length}`);
+if (!newArticles.length) throw new Error(`No articles found for ${batchSuffix}`);
 
 const articlesPath = path.join(root, "lib", "articles", "essentials.ts");
 let articlesData = fs.readFileSync(articlesPath, "utf8");
@@ -287,9 +292,9 @@ articlesData = articlesData
   .replace("  practical: { title: string; steps: string[] };", "  practical: { title: string; steps: string[] } | null;");
 fs.writeFileSync(articlesPath, articlesData);
 
-const rawQuizzes = parseLiteral(source, "const NEW_QUIZZES_C6_C10 =");
+const rawQuizzes = parseLiteral(source, `const NEW_QUIZZES_${batchSuffix} =`);
 const newQuizzes = rawQuizzes.map(normalizeQuiz);
-if (newQuizzes.length !== 5) throw new Error(`Expected 5 new quizzes; found ${newQuizzes.length}`);
+if (!newQuizzes.length) throw new Error(`No quizzes found for ${batchSuffix}`);
 
 const quizzesPath = path.join(root, "lib", "quizzes", "quizCentre.ts");
 let quizzesData = fs.readFileSync(quizzesPath, "utf8");
@@ -301,8 +306,10 @@ quizzesData = replaceLiteral(
 );
 fs.writeFileSync(quizzesPath, quizzesData);
 
-const toolkitTarget = path.join(root, "public", "toolkit", "rewardology-toolkit.html");
-fs.copyFileSync(toolkitPath, toolkitTarget);
-
 console.log(`Integrated ${newCourses.length} courses, ${newArticles.length} articles, and ${newQuizzes.length} quizzes.`);
-console.log(`Installed toolkit: ${toolkitTarget}`);
+if (toolkitArg) {
+  const toolkitPath = path.resolve(toolkitArg);
+  const toolkitTarget = path.join(root, "public", "toolkit", "rewardology-toolkit.html");
+  fs.copyFileSync(toolkitPath, toolkitTarget);
+  console.log(`Installed toolkit: ${toolkitTarget}`);
+}

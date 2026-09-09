@@ -1847,5 +1847,621 @@ export const QUIZ_CENTRE: QuizCentreQuiz[] = [
         "exp": "ESG is a statutory entitlement — employers must accrue and pay it on employee separation. It is a mandatory cost that must be included in total employment cost modelling, not an optional benefit."
       }
     ]
+  },
+  {
+    "id": 16,
+    "title": "Job Evaluation and Grade Architecture",
+    "category": "Job Evaluation and Grade Architecture",
+    "color": "#2D6A9F",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "xp": 150,
+    "desc": "Test your practical knowledge of job evaluation and grade architecture.",
+    "questions": [
+      {
+        "q": "Point-factor evaluation is preferred over whole-job ranking for large organisations primarily because:",
+        "opts": [
+          "The points-factor method requires less panel training than whole-job ranking.",
+          "It produces documented, defensible factor-by-factor scoring rather than subjective relative rankings, making it more consistent and legally defensible.",
+          "Point-factor evaluations can be completed faster than whole-job ranking for large role populations.",
+          "Regulatory requirements mandate point-factor evaluation for organisations above 250 employees."
+        ],
+        "ans": 1,
+        "exp": "Point-factor evaluation's defensibility comes from its documentation — every factor, level, and score is explicit and auditable, making it far more robust than holistic ranking judgements in equal pay challenges."
+      },
+      {
+        "q": "A compa-ratio of 92% means the employee is:",
+        "opts": [
+          "Earning 92% of the external market median for their role.",
+          "In the lower portion of their grade range — 92% of the grade midpoint.",
+          "Below the minimum of their salary grade.",
+          "Eligible for an immediate market adjustment to bring them to the midpoint."
+        ],
+        "ans": 1,
+        "exp": "Compa-ratio = salary ÷ midpoint × 100. A compa-ratio of 92% means the employee earns 92% of the grade midpoint — in the lower-middle portion of the range, not below minimum."
+      },
+      {
+        "q": "The 60/30/10 quota attainment distribution rule states that in a well-calibrated quota system:",
+        "opts": [
+          "60% of revenue comes from the top 30% of reps, and 10% from the bottom.",
+          "Approximately 60% of reps are at or above quota, 30% between 80-100%, and 10% below 80%.",
+          "60% of quota is achievable in the first half of the year, 30% in Q3, and 10% in Q4.",
+          "60% of the quota is based on new business, 30% on renewals, and 10% on expansion."
+        ],
+        "ans": 1,
+        "exp": "The 60/30/10 rule is the calibration diagnostic for quota-setting — consistently outside this distribution signals quotas that are too easy or too hard."
+      },
+      {
+        "q": "Grade drift is almost always upward because:",
+        "opts": [
+          "Organisations systematically overpay relative to the market, inflating all grade placements over time.",
+          "Managers and employees advocate for higher grades",
+          " no equivalent advocacy mechanism pushes grades downward.",
+          "Job evaluation schemes systematically over-score roles at higher grades.",
+          "Performance management processes reward grade progression regardless of role evolution."
+        ],
+        "ans": 1,
+        "exp": "Grade inflation is driven by decisions that each seem reasonable locally — retaining an employee, filling a critical role, rewarding good work — but accumulate upward without any countervailing governance force."
+      },
+      {
+        "q": "An IC (Individual Contributor) track in a career framework exists to:",
+        "opts": [
+          "Provide an alternative compensation structure for employees who refuse management responsibility.",
+          "Create a recognised progression path for technical specialists that doesn't require them to move into people management.",
+          "Reduce the number of management positions in the organisation by redirecting aspiring managers into technical roles.",
+          "Comply with employment law requirements for dual career path disclosure."
+        ],
+        "ans": 1,
+        "exp": "The IC track solves the specialist career ceiling problem — without it, technical expertise has no recognised progression beyond a certain level unless the specialist becomes a manager, which many neither want nor are suited to."
+      },
+      {
+        "q": "A no-regrade-without-evaluation policy during an architecture remediation serves primarily to:",
+        "opts": [
+          "Prevent all promotions during the remediation period.",
+          "Stop further grade drift while the review is underway — controlling the ongoing flow without retroactive changes.",
+          "Require Finance approval for all grade changes above Grade 3.",
+          "Satisfy the governance requirements of the PE investor committee."
+        ],
+        "ans": 1,
+        "exp": "The policy is a forward-looking governance control — it prevents new drift from accumulating during the remediation period while the existing drift is being assessed and addressed."
+      },
+      {
+        "q": "Grade overlap between adjacent grades is:",
+        "opts": [
+          "A structural error indicating the grades are too similar to be meaningfully distinct.",
+          "Deliberate — it allows tenured employees in a lower grade to earn more than new starters in the grade above without a forced regrade.",
+          "A governance finding that requires immediate correction in the annual architecture review.",
+          "Only acceptable in broad-band structures, not in traditional multi-grade frameworks."
+        ],
+        "ans": 1,
+        "exp": "Deliberate overlap prevents the structural anomaly where the only way to give a well-compensated Grade 3 employee a market-rate increase is to promote them to Grade 4, even if their role scope hasn't changed."
+      },
+      {
+        "q": "An employee whose role's evaluated score falls at a grade boundary during a calibration disagreement should:",
+        "opts": [
+          "Be placed at the higher grade to minimise retention risk.",
+          "Have the disagreement resolved through reasoned discussion against the factor definitions — not by averaging the two scores.",
+          "Be evaluated again by a fresh panel with no knowledge of the previous scores.",
+          "Receive a salary at the midpoint between the two grades' midpoints as a compromise position."
+        ],
+        "ans": 1,
+        "exp": "Calibration resolves disagreements through reasoned engagement with the factor definitions — averaging scores is not calibration, it produces a number that neither panel could defend."
+      },
+      {
+        "q": "The primary risk of running compensation analysis on unreconciled data from multiple sources is:",
+        "opts": [
+          "The analysis will take longer than planned, delaying the pay review.",
+          "Decisions are made with false precision — confidently wrong conclusions are worse than acknowledged uncertainty.",
+          "The payroll system will flag the discrepancy and refuse to process increases.",
+          "HRIS providers charge additional fees for unreconciled data reports."
+        ],
+        "ans": 1,
+        "exp": "Confidently wrong decisions, made on the basis of unverified data and presented with analytical precision, are the highest-risk outcome — they prevent the sceptical scrutiny that would otherwise catch errors."
+      },
+      {
+        "q": "What distinguishes a job family from a career level?",
+        "opts": [
+          "A job family defines salary ranges",
+          " a career level defines reporting lines.",
+          "A job family groups roles by functional domain and progression logic",
+          " career levels are the progression rungs within and across families.",
+          "Career levels are used in public sector organisations",
+          " job families are a private sector concept.",
+          "A job family determines grade",
+          " a career level determines the title."
+        ],
+        "ans": 1,
+        "exp": "Job families group by function (Finance, Technology, HR); career levels define seniority and scope across functions. Both are needed; neither substitutes for the other."
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Pay Equity Analysis and Reporting",
+    "category": "Pay Equity Analysis and Reporting",
+    "color": "#7B3FA0",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "xp": 150,
+    "desc": "Test your practical knowledge of pay equity analysis and reporting.",
+    "questions": [
+      {
+        "q": "The adjusted gender pay gap controls for which variables to isolate unexplained pay differences?",
+        "opts": [
+          "Job title and department only.",
+          "Grade, tenure, performance rating, role type, location, and contract type — all legitimate pay factors.",
+          "Gender, age, and ethnicity — all protected characteristics simultaneously.",
+          "Base salary only, excluding bonus and benefits from the comparison."
+        ],
+        "ans": 1,
+        "exp": "The adjusted gap controls for all legitimate pay factors so that the residual coefficient on the gender variable represents genuinely unexplained differences — not differences explained by grade or experience."
+      },
+      {
+        "q": "A bonus participation gap (men 78% vs women 61%) most likely indicates:",
+        "opts": [
+          "Women perform below the bonus threshold more often than men.",
+          "A structural eligibility issue — women may be concentrated in roles or grades not included in the bonus scheme.",
+          "The bonus scheme has different payout formulas for women and men.",
+          "Women are more likely to voluntarily opt out of bonus scheme participation."
+        ],
+        "ans": 1,
+        "exp": "Participation gaps almost always reflect structural eligibility differences — which roles or grades are included in the scheme — rather than individual performance differences."
+      },
+      {
+        "q": "An employee on maternity leave who misses a salary review cycle should receive:",
+        "opts": [
+          "The average grade increase applied at their return from leave, with no retrospective application.",
+          "The review increase applied retrospectively from the review date, with any arrears paid — a legal requirement, not discretionary.",
+          "A goodwill payment equivalent to 50% of the expected merit increase.",
+          "No adjustment — maternity leave is a valid reason for missing a scheduled review."
+        ],
+        "ans": 1,
+        "exp": "UK law requires that employees on maternity leave receive any pay increases as if they were present — missing a review cycle is a breach, not an administrative choice."
+      },
+      {
+        "q": "Publishing an ethnicity pay gap report with 42% self-identification completion should:",
+        "opts": [
+          "Be deferred until 80% completion is achieved.",
+          "Be published with explicit disclosure of the completion rate and a committed improvement programme.",
+          "Be published using the available data as if it were complete.",
+          "Be limited to internal reporting only."
+        ],
+        "ans": 1,
+        "exp": "Transparent publication with explicit limitation disclosure is more credible than both non-publication and publication without disclosure — the completion rate is itself a finding requiring action."
+      },
+      {
+        "q": "A pay equity remediation budget is most effectively presented to a CFO as:",
+        "opts": [
+          "A DEI investment with employer brand return on investment.",
+          "Risk mitigation — quantified legal claim exposure, regulatory risk, and talent attrition cost that exceeds the remediation amount.",
+          "A statutory compliance obligation with fixed costs.",
+          "A goodwill gesture that demonstrates the organisation's values."
+        ],
+        "ans": 1,
+        "exp": "CFOs respond to quantified risk — framing remediation as risk mitigation (legal exposure + regulatory + talent cost > remediation cost) is more fundable than a values argument."
+      },
+      {
+        "q": "The primary purpose of a pay equity governance assessment is:",
+        "opts": [
+          "To satisfy statutory reporting requirements in the jurisdiction.",
+          "To provide a structured red/amber/green evaluation of policy, process, data, analysis, remediation, and disclosure — with named owners for gaps.",
+          "To determine the annual budget required for pay equity analysis.",
+          "To assess the HR team's capability in conducting equity analysis."
+        ],
+        "ans": 1,
+        "exp": "The six-domain governance assessment provides a complete picture of the pay equity programme's maturity — from policy through disclosure — with actionable gaps and ownership."
+      },
+      {
+        "q": "The most common cause of low ethnicity self-identification completion is:",
+        "opts": [
+          "Technical difficulties with HR system self-identification workflows.",
+          "A trust deficit — employees don't complete forms when they fear the data may be used against them or don't believe it will be used constructively.",
+          "Most employees believing their ethnicity is already correctly recorded.",
+          "Self-identification forms being too long and complex to complete easily."
+        ],
+        "ans": 1,
+        "exp": "Trust is the primary driver — addressing it requires communication about data use, privacy protections, and visible evidence that the data produces constructive outcomes."
+      },
+      {
+        "q": "An adjusted pay gap of 2.1% with an unadjusted gap of 20% describes:",
+        "opts": [
+          "An organisation that has effectively resolved its pay equity problem.",
+          "Broadly consistent pay decision processes (2.1% adjusted) alongside significant representation under-representation at senior levels (20% unadjusted) — both requiring different interventions.",
+          "A calculation error — the two figures cannot both be accurate simultaneously.",
+          "An organisation that is legally compliant because the adjusted gap is below 5%."
+        ],
+        "ans": 1,
+        "exp": "Adjusted gap (pay decisions) and unadjusted gap (representation) measure different problems requiring different solutions — both being present simultaneously is not contradictory."
+      },
+      {
+        "q": "A pay gap narrative that qualifies the headline number before explaining it reads as:",
+        "opts": [
+          "Appropriately contextualised — providing the full picture before the specific number.",
+          "Defensive — qualifying the number signals reluctance to own it, which reduces credibility with sophisticated audiences.",
+          "Legally required — certain jurisdictions require context before the headline figure.",
+          "Best practice — framing the number first prevents misinterpretation."
+        ],
+        "ans": 1,
+        "exp": "Leading with the number without qualification signals confidence and transparency — qualification before the number signals defensiveness and reduces narrative credibility."
+      },
+      {
+        "q": "Cohort analysis is preferred over regression for organisations with fewer than 100 employees because:",
+        "opts": [
+          "Cohort analysis is legally required for organisations below the statutory reporting threshold.",
+          "Sample sizes below 100 are too small for regression to reliably distinguish genuine patterns from random variation.",
+          "Regression analysis is only available through external consultants who are too expensive for smaller organisations.",
+          "Cohort analysis produces more actionable findings for small populations than regression."
+        ],
+        "ans": 1,
+        "exp": "Statistical significance tests in regression account for sample size — small samples produce wide confidence intervals that make it impossible to distinguish real patterns from noise. Cohort analysis with disclosed sample limitations is more honest."
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Reward Communication and Employee Experience",
+    "category": "Reward Communication and Employee Experience",
+    "color": "#1A7A4A",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "xp": 150,
+    "desc": "Test your practical knowledge of reward communication and employee experience.",
+    "questions": [
+      {
+        "q": "The most common reason employees underestimate their total compensation value is:",
+        "opts": [
+          "Employers deliberately understate compensation to manage expectations.",
+          "Most reward programmes are communicated once (at onboarding) and in aggregate, rather than personally and at moments of maximum employee receptivity.",
+          "Employees compare their pay to senior colleagues rather than the market.",
+          "Total reward statements are too complex for most employees to interpret."
+        ],
+        "ans": 1,
+        "exp": "Timing, specificity, and personalisation are the three communication variables most responsible for the perception gap — all addressable without changing pay levels."
+      },
+      {
+        "q": "Annual leave value is calculated as:",
+        "opts": [
+          "Annual leave days × statutory national minimum wage rate.",
+          "Annual salary ÷ 260 working days × leave entitlement in days.",
+          "Annual salary ÷ 52 weeks × leave entitlement in weeks.",
+          "Leave days × daily average market rate for the role."
+        ],
+        "ans": 1,
+        "exp": "Salary ÷ 260 × leave days converts the entitlement into a personally meaningful monetary equivalent — the most consistently eye-opening TRS element for employees who have never calculated it."
+      },
+      {
+        "q": "'HR decided' language in a pay conversation is problematic because:",
+        "opts": [
+          "It is inaccurate — HR does not make individual pay allocation decisions.",
+          "It positions the manager as a passive messenger rather than an informed decision-maker, eroding their credibility and creating resentment toward HR without providing useful information.",
+          "It reveals the existence of a centralised HR function to employees who may not be aware of its role.",
+          "It implies the decision cannot be appealed, which creates legal risk."
+        ],
+        "ans": 1,
+        "exp": "'HR decided' deflects ownership the manager should hold — managers who understand the rationale own the decision; those who don't understand it deflect to HR."
+      },
+      {
+        "q": "The EU Pay Transparency Directive's pre-interview disclosure requirement means:",
+        "opts": [
+          "Employers must publish all employee salaries on a public website before conducting interviews.",
+          "Employers must inform candidates of the salary range for the role before the first interview and cannot ask about salary history.",
+          "Employers must obtain written candidate consent before sharing salary information with interviewers.",
+          "Candidates must disclose their current salary before the employer is required to share the role range."
+        ],
+        "ans": 1,
+        "exp": "The directive requires proactive disclosure (salary range before interview) and prohibits reactive disclosure (asking about salary history) — reversing the traditional dynamic."
+      },
+      {
+        "q": "A post-pay-review survey that tracks 'did you receive a pay conversation?' serves primarily to:",
+        "opts": [
+          "Allow employees to formally appeal their pay outcomes.",
+          "Provide a leading indicator of manager enablement effectiveness that can be tracked year-on-year and used to intervene before issues escalate to grievances.",
+          "Satisfy legal documentation requirements for pay communications.",
+          "Measure employee satisfaction with pay outcomes rather than process quality."
+        ],
+        "ans": 1,
+        "exp": "The conversation quality metric leads pay satisfaction by 6-12 months — tracking it allows early intervention that catches systemic manager enablement failures before they become grievances."
+      },
+      {
+        "q": "A salary range posting that includes both the full range and the expected offer range for qualified candidates is most effective because:",
+        "opts": [
+          "It satisfies two separate legal requirements in different jurisdictions simultaneously.",
+          "The full range provides compliance",
+          " the expected offer range provides useful candidate information that reduces mismatched applications and increases trust.",
+          "Both ranges are required by EU Pay Transparency legislation for all employers globally.",
+          "Only the expected offer range is needed — the full range creates unnecessary negotiation."
+        ],
+        "ans": 1,
+        "exp": "The full range satisfies regulatory requirements; the expected offer range is voluntary but commercially beneficial — it filters out mismatched candidates and signals genuine transparency."
+      },
+      {
+        "q": "Proactive total reward statement delivery at the moment of external compensation pressure is described as:",
+        "opts": [
+          "Too late — the employee has already made their decision when they raise an external comparison.",
+          "The highest-return communication action — it reframes the comparison before the employee has committed to a decision.",
+          "Ineffective because employees focus on base salary rather than total reward value.",
+          "A retention strategy that signals the employer is aware of the employee's external interest."
+        ],
+        "ans": 1,
+        "exp": "The TRS delivered before the employee has made a decision changes the reference frame for the comparison — it makes visible the invisible elements of the package that are not captured in a base salary comparison."
+      },
+      {
+        "q": "Manager certification before receiving the team data pack is more effective than optional briefings because:",
+        "opts": [
+          "Optional attendance violates equal treatment obligations for managers.",
+          "Mandatory certification creates a consistent knowledge floor across all managers — optional briefings guarantee a two-tier system of pay conversation quality.",
+          "Mandatory certification reduces the HR resource required to conduct briefings.",
+          "Optional briefings are not legally recognised as adequate manager notification."
+        ],
+        "ans": 1,
+        "exp": "Optionality guarantees that the managers who most need the briefing are the ones least likely to attend it — mandatory certification is the only mechanism that ensures consistent quality across the organisation."
+      },
+      {
+        "q": "The loss aversion principle in benefits communication means:",
+        "opts": [
+          "Employees always prefer more benefits to a salary increase of equivalent value.",
+          "Benefits reductions are perceived as disproportionately large losses relative to equivalent cash reductions, requiring more careful communication framing.",
+          "Employees who lose a benefit will immediately leave for an employer offering that benefit.",
+          "Loss aversion means employees resist all changes to their existing benefits package regardless of improvements."
+        ],
+        "ans": 1,
+        "exp": "Benefits loss aversion is well-evidenced — a £500 benefits reduction is experienced more negatively than a £500 salary reduction of equivalent cost, making context and framing essential for benefits communication."
+      },
+      {
+        "q": "The 'individual narrative' layer of integration communication is delivered by:",
+        "opts": [
+          "The Head of Total Rewards — who has the technical knowledge to explain pay decisions accurately.",
+          "The direct manager — equipped by HR to deliver personalised information about each employee's specific grade, salary, benefits, and career path.",
+          "The CEO — to signal the strategic importance of each employee to the combined organisation.",
+          "A centralised HR communication team — ensuring consistency across all employees simultaneously."
+        ],
+        "ans": 1,
+        "exp": "The individual narrative requires the credibility and relationship trust that the direct manager holds — HR equips the manager with the information and language; the manager delivers the personalised conversation."
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Compensation Analytics and Workforce Modelling",
+    "category": "Compensation Analytics and Workforce Modelling",
+    "color": "#C25B20",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "xp": 150,
+    "desc": "Test your practical knowledge of compensation analytics and workforce modelling.",
+    "questions": [
+      {
+        "q": "The payroll system is the authoritative source for:",
+        "opts": [
+          "Grade assignments — payroll links grade to salary for tax processing.",
+          "Current gross salary — what the employee actually receives after final payroll processing.",
+          "Performance ratings — used to calculate merit increases in the payroll cycle.",
+          "Hire date — required for statutory entitlement calculations in payroll."
+        ],
+        "ans": 1,
+        "exp": "Payroll is authoritative for what was actually paid — the final, processed amount that the employee receives. HRIS is typically more accurate for grade, performance, and tenure."
+      },
+      {
+        "q": "A merit matrix budget model shows that below-expectations employees receiving 0% creates a 25% underspend relative to the headline pool percentage. This means:",
+        "opts": [
+          "The matrix cells for non-zero employees must average significantly above the headline percentage to produce the right total spend.",
+          "The below-expectations population should be reduced to bring the model into balance.",
+          "The approved merit pool percentage should be reduced to reflect the actual expected spend.",
+          "The organisation is systematically over-budgeting its merit pool and should reduce the approved percentage."
+        ],
+        "ans": 0,
+        "exp": "The zero-increase population reduces the weighted average — the remaining cells must compensate by averaging higher than the headline percentage to produce the correct total budget spend."
+      },
+      {
+        "q": "R-squared of 0.71 in a salary regression means:",
+        "opts": [
+          "71% of employees are within £1,000 of the model's predicted salary.",
+          "71% of salary variation across the population is explained by the included variables — a reasonable result for a compensation model.",
+          "The model correctly predicts 71% of individual salary levels.",
+          "71% of pay decisions were made consistently with the stated pay philosophy."
+        ],
+        "ans": 1,
+        "exp": "R-squared measures explanatory power — how much of the variation in salaries the model's variables account for. 0.71 is reasonable; above 0.90 often indicates over-fitting."
+      },
+      {
+        "q": "The highest-risk attrition profile in a technology company combines:",
+        "opts": [
+          "Below-expectations performance and long tenure in the current grade.",
+          "High performer + low compa-ratio + high-mobility role type + 2+ consecutive zero merit cycles.",
+          "Above-median compa-ratio with a recent promotion and unchanged performance rating.",
+          "Short tenure with frequent external networking activity."
+        ],
+        "ans": 1,
+        "exp": "This combination maximises all four primary risk signals simultaneously — the employee is performing well, compensated below market, has been denied investment, and works in a role with abundant external alternatives."
+      },
+      {
+        "q": "A gender coefficient of -£2,100 with p=0.03 in a Software Engineer regression analysis requires:",
+        "opts": [
+          "Immediate disclosure to all affected employees and a public apology from the CEO.",
+          "Urgent investigation to determine causation (hire gap, merit gap, or grade placement) before any remediation communication.",
+          "Acceptance as an industry-normal finding requiring no specific action.",
+          "A full organisation-wide salary freeze pending a comprehensive pay review."
+        ],
+        "ans": 1,
+        "exp": "Statistical significance is not the same as established causation — investigation identifies which pay decision point(s) created the gap, which determines the appropriate remediation."
+      },
+      {
+        "q": "Merit budget utilisation of 88% (against a 5% approved pool) primarily warrants investigation because:",
+        "opts": [
+          "88% is below the minimum acceptable utilisation rate required by employment law.",
+          "A gap of more than 5% between approved and actual spend indicates likely implementation failures — missed increases, vacant positions, or untracked exceptions — not financial discipline.",
+          "The HR team should return unused merit budget to Finance at year end.",
+          "Below-target utilisation indicates the merit pool was over-sized and should be reduced next cycle."
+        ],
+        "ans": 1,
+        "exp": "Significant underspend means legitimate reward investment wasn't made — this is a governance concern (who was missed, why) rather than a financial virtue."
+      },
+      {
+        "q": "An attrition risk score is best described as:",
+        "opts": [
+          "A prediction of which employees will resign within the next 6 months.",
+          "A prioritisation tool that identifies where HR and managers should direct proactive retention conversations — not a definitive prediction.",
+          "A performance assessment that identifies employees who should be managed out before they self-select to leave.",
+          "An actuarial calculation of expected employee tenure based on historical attrition rates."
+        ],
+        "ans": 1,
+        "exp": "Risk scores prioritise attention — they focus proactive conversations where the probability of need is highest. They do not predict individual decisions."
+      },
+      {
+        "q": "The role type mobility factor in an attrition risk model should carry the highest weight for Software Engineers because:",
+        "opts": [
+          "Software engineers are the highest-paid employees and therefore most expensive to replace.",
+          "Software engineering skills have the highest density of external job opportunities and the shortest time-to-offer in most markets — meaning a motivated exit decision can be acted on very quickly.",
+          "Technology departments have higher headcount attrition than other functions by industry norm.",
+          "Role type is a stronger predictor than compa-ratio for all employee populations."
+        ],
+        "ans": 1,
+        "exp": "Mobility reflects how quickly an employee can convert an exit decision into an external offer — high mobility means the window for proactive intervention is shorter."
+      },
+      {
+        "q": "Proactive investor disclosure of a known adjusted pay gap (with a remediation plan) is preferred over non-disclosure because:",
+        "opts": [
+          "Disclosure is legally required before any investment due diligence process.",
+          "Issues discovered by investors without prior disclosure cause significantly more trust and valuation damage than disclosed issues with credible remediation plans.",
+          "Investors will not fund organisations with any documented pay equity gap.",
+          "The remediation cost is immaterial relative to the Series B investment amount."
+        ],
+        "ans": 1,
+        "exp": "Due diligence is thorough — undisclosed material issues will be found. Proactive disclosure demonstrates governance maturity; concealment demonstrates the opposite."
+      },
+      {
+        "q": "A compensation dashboard that tracks grade coverage (86% of employees have a confirmed grade assignment) is including data quality metrics because:",
+        "opts": [
+          "Data quality reporting is required by employment law in jurisdictions with pay transparency legislation.",
+          "The reliability of all grade-based analytics (compa-ratio, equity, merit) depends on how complete the grade data is — metrics without quality context may be misleading.",
+          "Finance requires data quality reporting as a condition of merit budget approval.",
+          "Data quality metrics replace the need for external salary survey validation."
+        ],
+        "ans": 1,
+        "exp": "Analytics built on incomplete data produce confidently incomplete results — showing the quality indicators alongside the metrics helps users interpret findings with appropriate confidence."
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Mergers, Acquisitions and Reward Integration",
+    "category": "Mergers, Acquisitions and Reward Integration",
+    "color": "#6B3A2A",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "xp": 150,
+    "desc": "Test your practical knowledge of mergers, acquisitions and reward integration.",
+    "questions": [
+      {
+        "q": "HR due diligence must cover employment contracts for which employees?",
+        "opts": [
+          "Senior employees only — junior contracts rarely contain material provisions.",
+          "All employees — material provisions including change-of-control clauses and non-standard terms appear at any level.",
+          "Only equity-holding employees — others' contracts are standard and require no specific review.",
+          "Employees above a defined salary threshold matching the HR due diligence scope."
+        ],
+        "ans": 1,
+        "exp": "Limiting the review to senior employees creates unidentified liability — change-of-control provisions and unusual bonus commitments appear throughout the workforce."
+      },
+      {
+        "q": "A defined benefit pension deficit discovered during acquisition due diligence:",
+        "opts": [
+          "Transfers to the acquirer on completion — they inherit the full actuarial liability.",
+          "Remains with the target company's original shareholders as a ring-fenced obligation.",
+          "Is extinguished on completion — the scheme resets to a zero-deficit position.",
+          "Only transfers if the sale and purchase agreement specifically includes pension liabilities."
+        ],
+        "ans": 0,
+        "exp": "In a share acquisition, the acquirer purchases the full legal entity including its pension obligations. A DB deficit is a real financial liability that must be funded."
+      },
+      {
+        "q": "The minimum principle in compensation harmonisation is:",
+        "opts": [
+          "All employees receive a minimum 3% increase as an integration goodwill gesture.",
+          "No employee's salary is reduced as a direct result of the harmonisation process.",
+          "All employees are immediately moved to the acquirer's pay structure on day one post-close.",
+          "Acquired employees must receive a minimum of 6 months' notice before any pay changes."
+        ],
+        "ans": 1,
+        "exp": "The minimum principle is absolute — salary reductions directly resulting from harmonisation are legally problematic and commercially self-defeating."
+      },
+      {
+        "q": "Grade mapping for an acquired workforce should be conducted through:",
+        "opts": [
+          "Title matching — Partner to Director, Consultant to Manager.",
+          "Job evaluation against the acquirer's point-factor scheme using the same calibration as existing grades.",
+          "Salary matching — placing employees in the grade whose range includes their current salary.",
+          "A seniority mapping agreed with the acquired company's management team."
+        ],
+        "ans": 1,
+        "exp": "Only job evaluation against a consistent methodology produces defensible, equitable placements — title and salary matching both invert the compensation logic and produce inconsistencies that surface as equity complaints."
+      },
+      {
+        "q": "Post-acquisition attrition of junior employees citing 'uncertainty about the future' is most commonly caused by:",
+        "opts": [
+          "Pay reductions implemented too quickly during harmonisation.",
+          "Absence of clear day-one communication about salary protection, harmonisation timeline, and individual outcomes.",
+          "Junior employees being more attrition-prone than senior employees in stable environments.",
+          "The acquired company's culture being fundamentally incompatible with the acquirer's."
+        ],
+        "ans": 1,
+        "exp": "Uncertainty-driven attrition is almost always a communication failure — employees who know their salary is protected and have a specific timeline for their individual outcome are significantly less likely to resign."
+      },
+      {
+        "q": "A benefits comparison matrix before any integration design decision ensures:",
+        "opts": [
+          "Legal compliance with employment transfer regulations.",
+          "Integration decisions are based on a complete, objective picture of both programmes rather than assumptions about which is more generous.",
+          "Both organisations' benefits providers are notified simultaneously of the planned changes.",
+          "The due diligence data room is complete before the deal closes."
+        ],
+        "ans": 1,
+        "exp": "Integration decisions made without a full comparison matrix produce either unnecessary costs or unexpected reductions — the matrix is the foundation for defensible design decisions."
+      },
+      {
+        "q": "The communication principle for benefits changes involving reductions is:",
+        "opts": [
+          "Lead with the cost saving to demonstrate financial stewardship.",
+          "Lead with the total package value, then explain changes in context — loss aversion makes reductions feel disproportionately large without the full picture.",
+          "Communicate reductions first to avoid burying bad news under positive announcements.",
+          "Communicate reductions only after positive changes have been in place for 3 months."
+        ],
+        "ans": 1,
+        "exp": "Benefits loss aversion is well-evidenced — a benefit reduction feels disproportionately large relative to its financial cost, making total package context essential before the specific change is explained."
+      },
+      {
+        "q": "The integration communication FAQ document primarily reduces conflicting information by:",
+        "opts": [
+          "Providing a single authoritative source that gives all managers identical answers to the same questions.",
+          "Replacing all manager conversations with a written document that employees access themselves.",
+          "Satisfying the legal requirement for consistent information provision under employment transfer regulations.",
+          "Eliminating the need for individual manager briefings during the integration period."
+        ],
+        "ans": 0,
+        "exp": "Conflicting information is produced when managers answer questions from personal knowledge — the FAQ provides the common reference that coordinates answers across all managers."
+      },
+      {
+        "q": "Manager personal integration outcomes should be communicated before team conversations because:",
+        "opts": [
+          "This is legally required under employment law — managers must be informed before their teams.",
+          "Managers who are uncertain about their own outcome communicate their anxiety rather than the structured message, undermining communication quality.",
+          "It is administratively simpler to process managers before other employees.",
+          "Managers need longer to process their outcomes than other employees do."
+        ],
+        "ans": 1,
+        "exp": "Manager anxiety about their own situation is the most common source of poor integration communication — personal certainty enables them to deliver team conversations from a position of security rather than shared uncertainty."
+      },
+      {
+        "q": "An 'integration disruption' risk factor in a post-acquisition attrition model captures:",
+        "opts": [
+          "The financial cost of the integration process relative to the deal value.",
+          "The specific attrition risk created by role, team, and reporting line changes since close — not captured by standard compensation-based risk factors.",
+          "The probability of deal terms being renegotiated post-close based on integration performance.",
+          "The extent to which the acquired company's culture differs from the acquirer's."
+        ],
+        "ans": 1,
+        "exp": "Standard risk models capture compensation signals. Integration disruption captures the acquisition-specific experience of employees whose working context has fundamentally changed — a real attrition driver that compa-ratio data does not reflect."
+      }
+    ]
   }
 ];

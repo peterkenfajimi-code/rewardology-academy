@@ -5,6 +5,7 @@ import {
   DICTIONARY_CATEGORIES,
   DICTIONARY_TERM_COUNT,
 } from "@/lib/dictionary/terms";
+import { QUIZ_CENTRE } from "@/lib/quizzes/quizCentre";
 import {
   MAX_PLATFORM_XP,
   PLATFORM_LESSON_COUNT,
@@ -18,7 +19,12 @@ export function PlatformStatsStrip() {
     { num: COURSES.length, suffix: "", label: "Expert Courses", sub: "Beginner to Advanced" },
     { num: PLATFORM_LESSON_COUNT, suffix: "", label: "Structured Lessons", sub: "Across all courses" },
     { num: ESSENTIALS_ARTICLES.length, suffix: "", label: "Practitioner Articles", sub: "Published 2026" },
-    { num: PLATFORM_QUIZ_QUESTIONS, suffix: "", label: "Quiz Questions", sub: "Across 10 topics" },
+    {
+      num: PLATFORM_QUIZ_QUESTIONS,
+      suffix: "",
+      label: "Quiz Questions",
+      sub: `Across ${QUIZ_CENTRE.length} topics`,
+    },
     {
       num: DICTIONARY_TERM_COUNT,
       suffix: "",

@@ -14719,6 +14719,7172 @@ export const COURSES: Course[] =
         ]
       }
     ]
+  },
+  {
+    "id": 11,
+    "title": "Job Evaluation and Grade Architecture",
+    "subtitle": "Build, calibrate, and govern a defensible job architecture — from point-factor evaluation and grade structure design to career frameworks, IC tracks, and the governance needed to prevent structural erosion. Includes worked evaluations, a grade compression case study, and a full acquisition integration capstone.",
+    "color": "#2D6A9F",
+    "color2": "#2D6A9F",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "level": "Advanced",
+    "duration": "4h 10m",
+    "lessons_count": 18,
+    "total_xp": 3030,
+    "desc": "Build, calibrate, and govern a defensible job architecture — from point-factor evaluation and grade structure design to career frameworks, IC tracks, and the governance needed to prevent structural erosion. Includes worked evaluations, a grade compression case study, and a full acquisition integration capstone.",
+    "outcomes": [
+      "Apply point-factor job evaluation methodology and conduct an evaluation calibration session",
+      "Build a grade structure from evaluation scores and market data using the scatter plot method",
+      "Design a career framework with job families, level descriptors, and a dual management/IC track",
+      "Diagnose and remediate grade drift, job creep, and red-circle accumulation",
+      "Design an acquisition integration approach for mapping, evaluating, and salary-integrating an acquired workforce"
+    ],
+    "pro": true,
+    "modules": [
+      {
+        "id": "11-1",
+        "title": "Job Evaluation Fundamentals",
+        "color": "#2D6A9F",
+        "lessons": [
+          {
+            "id": "11-1-1",
+            "title": "Job Evaluation Fundamentals",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Job evaluation is the systematic process of assessing the relative worth of roles in an organisation. It underpins every pay structure decision: without it, salary decisions are made on intuition, negotiation leverage, and historical accident — producing structures that are inconsistent, inequitable, and impossible to defend."
+              },
+              {
+                "t": "h",
+                "v": "Why Organisations Evaluate Jobs"
+              },
+              {
+                "t": "p",
+                "v": "The core problem job evaluation solves: in any organisation with more than one role type, some basis must exist for determining how much each role is worth relative to others. Without a systematic basis, pay becomes a function of the incumbent's negotiating power and the manager's generosity rather than the nature of the work. This creates pay inequity, legal risk, budget unpredictability, and the internal resentment that follows when employees discover they are paid substantially differently for work of comparable complexity. Job evaluation provides that systematic basis: it separates the assessment of the job from the performance of the person in it."
+              },
+              {
+                "t": "h",
+                "v": "The Four Main Methodologies"
+              },
+              {
+                "t": "p",
+                "v": "Whole-job ranking: jobs are ranked against each other in order of overall worth, from the simplest to the most complex. Simple to administer; highly subjective; breaks down beyond 50-60 roles. Job classification: roles are matched to a series of pre-defined grade descriptions. Common in public sector (civil service grade frameworks). Point-factor evaluation: roles are scored against a set of compensable factors (skill, effort, responsibility, working conditions) with defined levels and point values. Most defensible methodology for large organisations; produces a numerical score that can be plotted against a pay line. Market pricing: roles are benchmarked directly against salary survey data without internal evaluation. Fast and externally grounded but produces no internal equity framework. Most organisations use a hybrid: point-factor for the evaluation framework, market data for calibrating the pay line."
+              },
+              {
+                "t": "h",
+                "v": "Compensable Factors"
+              },
+              {
+                "t": "p",
+                "v": "A compensable factor is any dimension of a job that the organisation values and is therefore willing to pay more for. Typical factors include: knowledge and expertise (education, experience, specialist skill required); problem-solving complexity (the nature and novelty of challenges the role must resolve); accountability (the scale of impact, budget, or team the role is responsible for); and communication (the audience, purpose, and influence the role must exercise through communication). Each factor has defined levels — usually 4 to 8 — with point values assigned to each level. The total points for a role are its job evaluation score, and that score determines its grade."
+              },
+              {
+                "t": "h",
+                "v": "Panel Evaluation and Calibration"
+              },
+              {
+                "t": "p",
+                "v": "Job evaluation should always be conducted by a trained panel, not a single evaluator. The panel brings multiple perspectives to each role — a Finance representative, an HR representative, a senior business leader — and reaches a consensus score through structured discussion. Without calibration — agreed definitions of each factor level, worked examples, and an anchor role set — different panels will score the same job differently, undermining the methodology's internal consistency and creating exactly the inequity it was designed to prevent."
+              },
+              {
+                "t": "box",
+                "label": "Methodology Comparison",
+                "v": "Whole-job ranking: simple, subjective, max ~50 roles\nJob classification: pre-defined grades, public sector fit\nPoint-factor: defensible, numerical, industry standard\nMarket pricing: externally grounded, no internal equity\nHybrid (point-factor + market): most common in practice"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Meridian Group's Inconsistent Scores",
+                "v": "Meridian Group has 280 employees across three offices and is building its first formal job evaluation framework. Two trained evaluation panels have independently scored the same six roles using the same point-factor scheme. The results differ significantly — in one case by 40 points, which would place the role in a different grade. The Head of Total Rewards must diagnose and resolve the inconsistency before any salary structure decisions are made."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Job evaluation assesses the job, not the person — this distinction must be communicated and reinforced throughout any evaluation process.",
+                  "Point-factor evaluation is the most defensible methodology for organisations where internal equity is a governance priority.",
+                  "Panel calibration — agreed factor definitions and anchor role scoring — is the prerequisite for consistent evaluation results."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "Two panels scoring the same role 40 points apart using the same factor scheme indicates which primary problem?",
+              "opts": [
+                "The point-factor scheme itself is technically flawed and needs redesigning.",
+                "Panel calibration is inadequate — the factor level definitions and/or anchor roles are not sufficiently clear to produce consistent evaluation.",
+                "The role being scored genuinely sits between two grades and the disagreement is legitimate.",
+                "One panel has evaluated the role's current incumbent rather than the job itself."
+              ],
+              "ans": 1,
+              "exp": "Inconsistent scores from different panels using the same scheme almost always indicate a calibration problem — factor level definitions are ambiguous, anchor roles are not established, or panels have not reached shared understanding of what each factor level means in practice."
+            }
+          },
+          {
+            "id": "11-1-2",
+            "title": "Applying Point-Factor Evaluation to Meridian Group Roles",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Point-factor evaluation converts qualitative job information into a quantitative score. The discipline is in matching the role to the factor level — not to the incumbent, not to the salary, and not to the job title."
+              },
+              {
+                "t": "box",
+                "label": "Meridian Group — Simplified Evaluation Brief",
+                "v": "Meridian Group uses a 4-factor point-factor scheme:\n1. Knowledge & Expertise (max 200 pts): L1=50, L2=100, L3=150, L4=200\n2. Problem-Solving Complexity (max 150 pts): L1=40, L2=80, L3=120, L4=150\n3. Accountability & Impact (max 200 pts): L1=50, L2=100, L3=150, L4=200\n4. Communication & Influence (max 100 pts): L1=25, L2=50, L3=75, L4=100\nMaximum total: 650 points. Grade bands: G1=50-200, G2=201-320, G3=321-440, G4=441-550, G5=551+"
+              },
+              {
+                "t": "h",
+                "v": "Role 1 — Payroll Administrator"
+              },
+              {
+                "t": "p",
+                "v": "Processes monthly payroll for 280 employees using established procedures. Resolves standard queries. Escalates complex cases. No budget responsibility. Reports to HR Manager."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal evaluation",
+                "v": "Knowledge: L2 (100) — functional payroll knowledge, system proficiency, no specialist qualification required\nProblem-solving: L1 (40) — applies established procedures; novel problems are escalated\nAccountability: L2 (100) — process accuracy impacts payroll for 280 employees; error correction available\nCommunication: L2 (50) — routine employee and manager queries; no external influence\nTotal: 290 pts → Grade 2\n\nCommon error: evaluating at L3 for accountability because 280 employees are affected. The test is accountability scope and reversibility — payroll errors are corrected next cycle; this is operational execution, not strategic impact."
+              },
+              {
+                "t": "h",
+                "v": "Role 2 — Senior Compensation Analyst"
+              },
+              {
+                "t": "p",
+                "v": "Leads benchmarking, builds salary ranges, advises HR Business Partners. Manages compensation survey participation. Designs pay review process. Influence over pay decisions for 280 employees. No direct reports."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal evaluation",
+                "v": "Knowledge: L3 (150) — specialist compensation expertise, methodology application, survey data interpretation\nProblem-solving: L3 (120) — designs approaches to novel situations; compensation decisions often context-specific with no established precedent\nAccountability: L3 (150) — influences pay decisions affecting all employees; errors in range design or benchmarking have significant cost and equity consequences\nCommunication: L3 (75) — advises and influences senior HR and business leaders; requires persuasion and technical explanation\nTotal: 495 pts → Grade 4\n\nCommon error: evaluating communication at L4 because the role advises directors. L4 is reserved for roles with external stakeholder influence or board-level communication responsibility."
+              },
+              {
+                "t": "h",
+                "v": "Role 3 — Head of People"
+              },
+              {
+                "t": "p",
+                "v": "Leads HR function of 8 people. Owns people strategy, employer brand, and all people programmes. Member of leadership team. P&L accountability for HR budget of £1.2M. External spokesperson on people matters."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal evaluation",
+                "v": "Knowledge: L4 (200) — broad HR expertise across all specialisms plus commercial and strategic leadership\nProblem-solving: L4 (150) — navigates novel organisational challenges with no playbook; strategic ambiguity is the norm\nAccountability: L4 (200) — owns function budget, team delivery, and organisational-level people outcomes\nCommunication: L4 (100) — external spokesperson, board presentation, leadership team peer\nTotal: 650 pts → Grade 5\n\nThis is a maximum-score evaluation. If you evaluated at less than L4 on any factor, review your reasoning against the factor level definitions — the brief describes each factor at maximum level."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Evaluate the job as it is documented, not the person currently in it — strong incumbent performance is a merit decision, not an evaluation input.",
+                  "The accountability factor is assessed on scope and reversibility of impact, not on the raw number of people the role touches.",
+                  "Maximum-score evaluations (all factors at L4) should be rare — if many roles score at maximum, the factor scheme may need a fifth level or the grade bands need widening."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "11-1-3",
+            "title": "Meridian Group's Calibration Challenge — Full Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Real job evaluation and pay architecture problems are rarely clean. This case works through the ambiguity practitioners actually face."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Meridian Group — Panel Disagreement",
+                "v": "Meridian Group's two evaluation panels have been trained on the same factor scheme and have each independently scored six roles. Three roles scored identically. Three show significant divergence: the Senior Legal Counsel scores differ by 45 points (Panel A: 410 / Panel B: 455); the Regional Operations Director differs by 60 points (A: 490 / B: 550); the Data & Analytics Lead differs by 35 points (A: 280 / B: 315). The Head of Total Rewards must facilitate a calibration session to resolve the differences and establish consistent anchor role scores."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "What is the most likely source of the divergence on the Senior Legal Counsel role? How should the calibration session address it?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The Senior Legal Counsel divergence (45 pts) almost certainly reflects different interpretations of the accountability or communication factor at the boundary between L3 and L4. Legal roles generate definitional disagreement: Panel A may evaluate the role as primarily internal advisory (L3 accountability, L3 communication); Panel B may view the external regulatory exposure and organisation-wide risk implications as L4 territory. The calibration session should: (1) re-read the factor level definitions aloud against the role's actual documented responsibilities; (2) identify the specific factor(s) on which the panels scored differently; (3) apply the agreed factor definition to resolve the specific disagreement, not to split the difference. Splitting the difference (scoring at 432) is not calibration — it produces a score that neither panel could defend."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The Regional Operations Director 60-point divergence (490 vs 550) spans a grade boundary. What are the governance implications?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "A 60-point divergence that puts one evaluation in Grade 4 and the other in Grade 5 is a high-stakes disagreement with direct salary and grading consequences. The governance implication: this specific role cannot be graded until the divergence is resolved. Grading it at Grade 4 without resolving the calibration issue means Panel B's L4 evaluation is suppressed without substantiation; grading at Grade 5 risks over-grading without Panel A's L3 reasoning being addressed. The resolution process: both panels should independently write their factor-by-factor reasoning for the specific factors where they diverged, share their reasoning before the calibration session, and then resolve the disagreement through discussion of the factor definitions — not by averaging. If the panels cannot reach consensus, a senior evaluator (or an external job evaluation specialist) should be brought in to review the documented reasoning and make a determination."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "The Data & Analytics Lead (35-point divergence, 280 vs 315) falls within Grade 2 on both scores. Should this divergence be treated as less urgent?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The salary consequences are less immediate, but the calibration implication is equally important. A 35-point divergence on a role that both panels grade consistently (Grade 2) may feel like a lower priority — but it signals that the panels are applying factor levels differently, and that same divergence pattern will recur on every role these panels evaluate. The calibration session should address this role's divergence with the same rigour, because the goal is not just to agree on this role's score — it is to establish shared factor-level interpretation that produces consistent results for all future evaluations. The anchor role set produced by this calibration session becomes the reference library against which all future evaluations are checked."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 4"
+              },
+              {
+                "t": "p",
+                "v": "What documentation should be produced at the end of the calibration session?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Three outputs are required. First: agreed scores for each of the six roles, with factor-by-factor justification documented in writing — not just the total points, but the level assigned on each factor and the reasoning. Second: an anchor role library — these six calibrated roles become the reference set against which all future evaluation panel disagreements are resolved. Third: a calibration note identifying which factor definitions produced the most divergence and whether the factor level descriptions need clarification or examples added. This last output improves the scheme itself, not just the immediate scores."
+              },
+              {
+                "t": "box",
+                "label": "Calibration Principles",
+                "v": "Resolve divergence by reasoning, not averaging\nDocument factor-by-factor justification for every agreed score\nBuild an anchor role library from calibrated evaluations\nRefine factor definitions where panels consistently diverge"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Calibration is not a one-time event — it is an ongoing process that should precede every new wave of evaluation.",
+                  "Grade-boundary divergences require full resolution before grading decisions are made — splitting the difference is not an acceptable calibration outcome.",
+                  "The anchor role library produced through calibration is the organisation's most valuable job evaluation artefact — it should be maintained, referenced, and updated as roles evolve."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "11-1-Q",
+            "title": "Module Quiz: Job Evaluation Fundamentals",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "Which job evaluation methodology produces a numerical score by assessing roles against compensable factors with defined levels?",
+                "opts": [
+                  "Whole-job ranking",
+                  "Job classification",
+                  "Point-factor evaluation",
+                  "Market pricing"
+                ],
+                "ans": 2,
+                "exp": "Point-factor evaluation assigns point values to compensable factor levels and sums them to produce a total score — the numerical basis for grade placement."
+              },
+              {
+                "q": "A compensable factor is best described as:",
+                "opts": [
+                  "Any factor that determines the salary of the role's incumbent.",
+                  "A dimension of the job that the organisation values and is therefore willing to pay more for.",
+                  "A statutory requirement for job evaluation under equal pay legislation.",
+                  "A benchmark used to compare roles against external salary survey data."
+                ],
+                "ans": 1,
+                "exp": "Compensable factors are the dimensions of work the organisation has decided are worth more at higher levels — they are the organisation's explicit statement of what it values and therefore rewards."
+              },
+              {
+                "q": "Job evaluation should assess:",
+                "opts": [
+                  "The performance of the person currently in the role.",
+                  "The market salary paid for comparable roles externally.",
+                  "The relative worth of the job as documented, independent of the incumbent.",
+                  "The organisation's current financial ability to pay for the role."
+                ],
+                "ans": 2,
+                "exp": "Job evaluation assesses the job, not the person — this principle is fundamental to its equity and legal defensibility. Incumbent performance is a merit and reward decision, not an evaluation input."
+              },
+              {
+                "q": "Two panels score the same role 50 points apart using an identical point-factor scheme. The most likely cause is:",
+                "opts": [
+                  "The role genuinely sits at a grade boundary and both scores are defensible.",
+                  "The factor scheme is mathematically incorrect.",
+                  "Panel calibration is inadequate — factor level definitions are ambiguous or anchor roles are not established.",
+                  "One panel has included market data in its evaluation."
+                ],
+                "ans": 2,
+                "exp": "Large divergences between panels using the same scheme almost always indicate calibration failure — the factor definitions are not specific enough to produce consistent application across different evaluators."
+              },
+              {
+                "q": "The primary purpose of an anchor role library is:",
+                "opts": [
+                  "To list all roles in the organisation and their current salary ranges.",
+                  "To provide calibrated reference scores that future evaluation panels use to check consistency.",
+                  "To document the market benchmarks for each grade in the pay structure.",
+                  "To record the names of all evaluation panel members and their training dates."
+                ],
+                "ans": 1,
+                "exp": "Anchor roles are fully calibrated, factor-by-factor documented reference points — future panels compare new evaluations against them to test for consistency."
+              },
+              {
+                "q": "A Payroll Administrator role is evaluated at L1 for problem-solving despite resolving payroll queries daily. This is correct because:",
+                "opts": [
+                  "Payroll roles are always evaluated at minimum level for problem-solving.",
+                  "The role applies established procedures and escalates novel cases — L1 reflects procedural application, not the absence of complexity.",
+                  "Problem-solving is not a relevant factor for operational roles.",
+                  "The administrator has less than five years' experience, which limits their problem-solving level."
+                ],
+                "ans": 1,
+                "exp": "L1 problem-solving reflects roles where the work follows established procedures and genuinely novel problems are escalated — not that no thinking is required, but that the thinking operates within a defined framework."
+              },
+              {
+                "q": "Which statement about the whole-job ranking methodology is accurate?",
+                "opts": [
+                  "It is the most defensible methodology for organisations with more than 200 employees.",
+                  "It produces a numerical score that can be directly plotted against market salary data.",
+                  "It ranks jobs against each other in order of overall worth — simple to apply but highly subjective.",
+                  "It requires a trained external evaluator for each ranking decision."
+                ],
+                "ans": 2,
+                "exp": "Whole-job ranking is the simplest methodology but the most subjective — it breaks down in large organisations where consistent comparisons across many diverse roles become impossible."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "11-2",
+        "title": "Building Pay Structures and Grade Bands",
+        "color": "#2D6A9F",
+        "lessons": [
+          {
+            "id": "11-2-1",
+            "title": "From Evaluation Scores to Salary Bands",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Job evaluation produces scores. A pay structure converts those scores into salary ranges that can be used for hiring, pay reviews, and promotion decisions. The design of the structure — how many grades, how wide the bands, where the midpoints sit — has as much impact on pay equity and cost as the evaluation itself."
+              },
+              {
+                "t": "h",
+                "v": "The Scatter Plot Method"
+              },
+              {
+                "t": "p",
+                "v": "The standard approach to building a salary structure from evaluation data uses three inputs: the evaluated score for each role, the current salary of each role's incumbent, and market salary data for benchmarked roles. When plotted with evaluation score on the x-axis and salary on the y-axis, the distribution of incumbent salaries against evaluation scores produces a scatter diagram. A trend line drawn through this scatter (typically a linear or slightly curved regression line) represents the organisation's current pay line — what the organisation is actually paying, on average, for work at each evaluated level. The distance between each data point and the trend line shows which roles are above or below the line relative to their evaluated worth."
+              },
+              {
+                "t": "h",
+                "v": "Setting the Policy Line"
+              },
+              {
+                "t": "p",
+                "v": "The trend line shows what the organisation is paying. The policy line shows what the organisation intends to pay. If the organisation's philosophy is P50 (median competitive positioning), the policy line is set at the market P50 for each evaluation score level, informed by salary survey benchmarks for the roles whose market data is available. The distance between the trend line and the policy line shows the gap between current practice and intended positioning — large gaps indicate systemic over- or under-payment relative to the organisation's stated philosophy that must be addressed through the structure."
+              },
+              {
+                "t": "h",
+                "v": "Number of Grades"
+              },
+              {
+                "t": "p",
+                "v": "Grade number is a design choice with real trade-offs. More grades (10-15) create finer distinctions between roles and clearer promotion ladders, but require more frequent regrading as roles evolve and create more scope for grade inflation. Fewer, wider grades (5-8, often called broad bands) accommodate more variation within each grade and require fewer regrading decisions, but make it harder to differentiate roles meaningfully and can compress recognition within a band. Most organisations with 100-500 employees settle on 6-9 grades. Public sector and large multinationals tend toward 8-12."
+              },
+              {
+                "t": "h",
+                "v": "Band Width and Spread"
+              },
+              {
+                "t": "p",
+                "v": "Each grade has a minimum, midpoint, and maximum — the band. The spread (the difference between minimum and maximum as a percentage of the midpoint) defines how much pay variation is acceptable within a grade. A 50% spread (midpoint ±25%) means a Grade 3 role with a £40,000 midpoint could range from £30,000 to £50,000. Wider spreads (60-80%) accommodate more individual variation — tenure, performance, specialist expertise — but create larger within-grade gaps that employees notice. Narrower spreads (30-40%) keep grades tighter and more equitable but require more frequent grade changes to reward progression. Grade overlap — where the top of Grade 3 exceeds the bottom of Grade 4 — is normal and expected; it means a highly experienced Grade 3 employee can earn more than a new Grade 4 starter."
+              },
+              {
+                "t": "box",
+                "label": "Pay Structure Design Summary",
+                "v": "Trend line: what the organisation actually pays\nPolicy line: what it intends to pay (at chosen percentile)\nNumber of grades: 6-9 typical for mid-size organisations\nBand spread: 50% midpoint range is common (±25%)\nOverlap between adjacent grades: expected and normal"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Almont Solutions' Compressed Structure",
+                "v": "Almont Solutions has grown from 80 to 210 employees over three years, hiring rapidly into new roles without a formal grade structure. A scatter plot of current salaries against recently completed evaluation scores reveals that 40% of employees fall above the P50 policy line — 22 of them significantly so. The Head of People must present a structural redesign to the CEO that addresses the compression without creating a budget shock."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The scatter plot is the diagnostic tool that shows the gap between current practice and intended pay positioning — it should precede any structural redesign.",
+                  "Red-circle employees (above policy line) require a management strategy — immediate cuts are almost never appropriate; a pay freeze pending structure alignment is standard.",
+                  "Band spread is a design decision that reflects the organisation's philosophy on within-grade variation — there is no universally correct spread percentage."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The scatter plot shows many employees above the policy line. This is primarily a signal that:",
+              "opts": [
+                "The evaluation methodology has significantly under-scored most roles.",
+                "Historical hiring decisions and pay rises have created upward salary drift that is inconsistent with a structured pay philosophy.",
+                "The policy line is set too low and should be moved to P75.",
+                "The organisation is in a good financial position and can afford above-market pay."
+              ],
+              "ans": 1,
+              "exp": "Employees above the policy line ('red circle' employees) typically result from a combination of: offers made above structure during periods of rapid hiring; pay rises granted without a framework; and tenure-based increases without a formal structure. This is pay drift, not structure error."
+            }
+          },
+          {
+            "id": "11-2-2",
+            "title": "Building Almont Solutions' Grade Structure",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Building a grade structure requires converting evaluation score ranges into salary bands, anchoring them to market data, and validating that the resulting structure accommodates the current population sensibly."
+              },
+              {
+                "t": "box",
+                "label": "Almont Solutions — Structure Design Brief",
+                "v": "Evaluation score range: 50 to 580 points (5 factors, maximum 580)\nHeadcount: 210 employees across all roles\nMarket positioning philosophy: P50 for most roles; P65 for technology and specialist roles\nCurrent salary range (all employees): £22,000 to £145,000\nKey market benchmarks available: 35 roles with P25/P50/P75 data\nDesign target: 6 grades with logical midpoints and a 50% spread"
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — Define Grade Boundaries from Evaluation Scores"
+              },
+              {
+                "t": "p",
+                "v": "Divide the 530-point evaluation range (50-580) into 6 grades, allowing for some overlap at boundaries."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "Divide the score range into 6 roughly equal segments, adjusted for natural breakpoints in the population:\nG1: 50-150 | G2: 130-260 | G3: 240-360 | G4: 340-450 | G5: 430-530 | G6: 510-580\n\nNote the deliberate overlaps at boundaries (G1 top 150 / G2 bottom 130; G2 top 260 / G3 bottom 240, etc.). These overlaps mean that a role scoring 145 could legitimately be placed in G1 or G2 depending on its market positioning — evaluation score creates the framework; market data resolves edge cases. The overlaps also mean that re-evaluation at the margin produces grade movement, not cliff-edge transitions."
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Set Grade Midpoints Using Market Data"
+              },
+              {
+                "t": "p",
+                "v": "Use the 35 benchmarked roles and their P50 data to calibrate a midpoint for each grade."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "Plot the P50 market salary for each benchmarked role against its evaluation score. Fit a trend line through these points — this becomes the market reference line. Read off the salary at the midpoint of each grade's score range:\nG1 midpoint score ≈100 → Market P50 ≈ £26,000 | Midpoint: £26,000\nG2 midpoint score ≈195 → Market P50 ≈ £36,000 | Midpoint: £36,000\nG3 midpoint score ≈300 → Market P50 ≈ £48,000 | Midpoint: £48,000\nG4 midpoint score ≈395 → Market P50 ≈ £64,000 | Midpoint: £64,000\nG5 midpoint score ≈480 → Market P50 ≈ £84,000 | Midpoint: £84,000\nG6 midpoint score ≈545 → Market P50 ≈ £108,000 | Midpoint: £108,000\n\nFor technology and specialist roles, apply P65 — interpolate between P50 and P75 for the relevant grade midpoint."
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Apply 50% Spread and Build Full Ranges"
+              },
+              {
+                "t": "p",
+                "v": "Apply a ±25% spread to each midpoint to create min/max ranges."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "Formula: Min = Midpoint × 0.75 | Max = Midpoint × 1.25\nG1: £19,500 – £26,000 – £32,500\nG2: £27,000 – £36,000 – £45,000\nG3: £36,000 – £48,000 – £60,000\nG4: £48,000 – £64,000 – £80,000\nG5: £63,000 – £84,000 – £105,000\nG6: £81,000 – £108,000 – £135,000\n\nValidation: 40% of employees currently above the P50 line. With these ranges, they will be above the midpoint of their grade but within the band — this is acceptable (it represents high-tenured, high-performing employees positioned appropriately in the upper half of their range). The 22 significantly above the policy line will be red-circled at the band maximum and their pay frozen pending the next pay review."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Evaluation score ranges produce grade boundaries; market data calibrates the salary midpoints — both inputs are required to build a defensible structure.",
+                  "Red-circle employees (above the band maximum) are managed through a pay freeze plus a communication explaining the structure and the timeline — not through immediate reduction.",
+                  "Grade overlap is structurally deliberate — it accommodates edge-case evaluations and allows experienced employees in lower grades to earn more than new starters in the grade above."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "11-2-3",
+            "title": "Almont Solutions' Grade Compression Crisis — Full Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Real job evaluation and pay architecture problems are rarely clean. This case works through the ambiguity practitioners actually face."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Almont Solutions — The Compression Problem",
+                "v": "Twelve months after implementing the grade structure, Almont Solutions faces a new problem: 34 employees have been hired into Grades 2 and 3 at salaries that cluster within £3,000 of each other, regardless of their evaluated level within the grade. Senior employees in Grade 3 with 5+ years' tenure are earning only marginally more than new hires in the same grade. Three experienced employees have raised formal complaints about pay compression, and one has resigned citing pay as a factor."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "What has caused the compression within Grade 3?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Pay compression within a grade occurs when: (1) external hiring rates for Grade 3 roles have risen faster than the internal pay review budget, pulling new hire salaries toward the upper part of the range; (2) annual pay review budgets have been insufficient to maintain the relative gap between tenured and new employees; or (3) both. The result: a new hire enters at £47,000 and a 5-year employee is at £49,500 — a 5% difference for roles that, in most markets, would show a 20-25% premium for the tenured employee. This isn't a structural failure — the range is correctly designed. It is a pay management failure: individual salaries have not been moved through the range with sufficient intentionality."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The resigned employee cited pay as a factor. What information should be gathered before drawing conclusions?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Before concluding that pay compression drove the resignation, gather: (1) the employee's exit interview data — was pay specifically cited as primary, or as one of several factors? (2) the employee's compa-ratio (their salary as a percentage of their grade midpoint) — where were they in the range? (3) the salary at the new role they accepted — did they move for a significant increase or a modest one? (4) their performance rating history — were they a high performer whose pay had lagged despite strong reviews? An employee earning at 95% of midpoint who resigned for a 5% increase likely had a pay complaint; an employee at 75% of midpoint who resigned for a significantly higher salary at a different grade level is a different problem. These distinctions matter for the remediation response."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "Three employees have raised formal pay compression complaints. What process should govern the response?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "A formal pay compression complaint should be responded to with: (1) a documented review of the employee's compa-ratio and their position in the grade relative to comparably-tenured colleagues; (2) a comparison against the current hiring rate for their role type — if new hires are entering above them, this is a factual finding that requires action; (3) a written response within a defined timeframe (typically 10 working days) that either (a) confirms a pay adjustment with a specific date, or (b) explains why no adjustment will be made at this time with a clear statement of the review timeline. Leaving complaints unacknowledged is the fastest route to further attrition. The worst outcome is a general pay review triggered by three complaints without a structured process — this rewards complaint and creates precedent for the same behaviour to recur."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 4"
+              },
+              {
+                "t": "p",
+                "v": "What structural change would reduce compression risk in future pay review cycles?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Two tools address compression structurally. First, a position-in-range (compa-ratio) modifier in the annual merit review: employees below the midpoint receive a higher merit percentage than employees above the midpoint, all other things being equal. This moves low-in-range employees toward the midpoint over time without requiring individual negotiations. Second, a minimum gap policy: no new hire offer in a grade should be made within a defined percentage (typically 10-15%) of the salary of existing employees in the same role and grade without a compensation review of the existing team. This forces the pay decision to be made proactively rather than reactively after the compression has already occurred."
+              },
+              {
+                "t": "box",
+                "label": "Managing Within-Grade Compression",
+                "v": "Compression cause: new hire rates outpacing internal review budgets\nCompa-ratio tool: measures individual position in range (salary ÷ midpoint)\nCompa-ratio modifier in merit: moves low-in-range employees toward midpoint\nMinimum gap policy: prevents new hires landing too close to tenured employees"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Pay compression within a grade is a pay management failure, not a structural failure — the range is correct; the annual merit process has not been moving people through it intentionally.",
+                  "Formal compression complaints require a documented, timely process response — not a case-by-case negotiation and not a general pay review triggered by complaint.",
+                  "A compa-ratio modifier in the annual merit matrix is the most effective structural tool for managing within-grade compression over time."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "11-2-Q",
+            "title": "Module Quiz: Building Pay Structures and Grade Bands",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The trend line on a salary scatter plot represents:",
+                "opts": [
+                  "The organisation's intended pay positioning at the chosen market percentile.",
+                  "What the organisation is actually paying on average for work at each evaluated level.",
+                  "The midpoint of each salary band as specified in the grade structure design.",
+                  "The market P50 data from the most recent salary survey."
+                ],
+                "ans": 1,
+                "exp": "The trend line is drawn through actual incumbent salaries plotted against evaluation scores — it shows current practice, not intended policy. The policy line is a separate, deliberate design decision."
+              },
+              {
+                "q": "Red-circle employees are those whose salaries:",
+                "opts": [
+                  "Fall below the minimum of their grade band.",
+                  "Sit at or above the maximum of their grade band.",
+                  "Are within the normal range for their grade but significantly above the midpoint.",
+                  "Have been frozen pending a formal performance review outcome."
+                ],
+                "ans": 1,
+                "exp": "Red-circle status means the employee's salary exceeds the maximum of their evaluated grade — the standard management approach is a pay freeze and a communication explaining the structure."
+              },
+              {
+                "q": "A 50% band spread (minimum to maximum) with a midpoint of £48,000 produces which range?",
+                "opts": [
+                  "£24,000 – £48,000 – £72,000",
+                  "£36,000 – £48,000 – £60,000",
+                  "£38,400 – £48,000 – £57,600",
+                  "£33,600 – £48,000 – £62,400"
+                ],
+                "ans": 1,
+                "exp": "A 50% spread means ±25% from the midpoint: £48,000 × 0.75 = £36,000 (min); £48,000 × 1.25 = £60,000 (max). This is the standard interpretation."
+              },
+              {
+                "q": "Grade overlap between adjacent grades is:",
+                "opts": [
+                  "A structural error that should be eliminated in well-designed pay structures.",
+                  "Deliberate — it allows experienced employees in a lower grade to earn more than new starters in the grade above.",
+                  "A sign that the grade boundaries are incorrectly positioned.",
+                  "Only acceptable in broad-band structures, not in traditional grade structures."
+                ],
+                "ans": 1,
+                "exp": "Grade overlap is intentional and expected — it prevents the structural anomaly where a high-performing tenured employee in Grade 3 must be regraded to Grade 4 just to receive a competitive salary, even if their role hasn't changed."
+              },
+              {
+                "q": "Pay compression within a grade most commonly results from:",
+                "opts": [
+                  "The grade structure being designed with too wide a band spread.",
+                  "New hire rates rising faster than internal pay review budgets, pulling new salaries close to those of tenured employees.",
+                  "The evaluation methodology over-scoring junior roles relative to senior ones.",
+                  "Employees being promoted into a grade without a corresponding salary increase."
+                ],
+                "ans": 1,
+                "exp": "Compression is primarily a pay management issue — the structure may be correct but new hire market rates have moved faster than internal merit budgets, erasing the gap between new and tenured employees."
+              },
+              {
+                "q": "A compa-ratio of 115% means the employee's salary is:",
+                "opts": [
+                  "15% below the midpoint of their grade.",
+                  "15% above the midpoint of their grade.",
+                  "At the 115th percentile of the external market for their role.",
+                  "Above the maximum of their grade band."
+                ],
+                "ans": 1,
+                "exp": "Compa-ratio = actual salary ÷ grade midpoint × 100. A compa-ratio of 115% means the employee earns 15% above the grade midpoint — they are in the upper portion of the range but not necessarily above the maximum (which depends on the band spread)."
+              },
+              {
+                "q": "The policy line in a salary structure differs from the trend line in that:",
+                "opts": [
+                  "The policy line is based on evaluation scores; the trend line is based on market data.",
+                  "The policy line represents intended pay positioning; the trend line represents what the organisation actually pays.",
+                  "The policy line is drawn for all roles; the trend line only covers benchmarked roles.",
+                  "The trend line changes annually; the policy line is fixed for three years."
+                ],
+                "ans": 1,
+                "exp": "The trend line describes current reality; the policy line is a design decision about where the organisation wants to be positioned in the market. The gap between them is the remediation agenda."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "11-3",
+        "title": "Career Frameworks and Job Families",
+        "color": "#2D6A9F",
+        "lessons": [
+          {
+            "id": "11-3-1",
+            "title": "Career Frameworks — Job Families and Career Levels",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "A grade structure answers the question: what is this role worth? A career framework answers a different question: what does career progression look like in this organisation, and what does it take to move from one level to the next? Both are necessary. An organisation that has only a grade structure has a pay tool. One that has a career framework alongside it has a talent development tool."
+              },
+              {
+                "t": "h",
+                "v": "Job Families"
+              },
+              {
+                "t": "p",
+                "v": "A job family is a group of roles that share a common functional domain and a common progression logic — Finance, Technology, Operations, Commercial, HR/People, Legal. Within each job family, roles at each career level share similar scope, decision-making authority, and expertise requirements, even if their specific content differs. A Finance Analyst and a Technology Analyst are in different job families but at the same career level — they face comparable complexity, require comparable expertise, and are compensated similarly. The job family architecture is what makes cross-functional comparisons possible without requiring a new job evaluation for every new role."
+              },
+              {
+                "t": "h",
+                "v": "Career Levels and Level Descriptors"
+              },
+              {
+                "t": "p",
+                "v": "Career levels are the rungs of the progression ladder within a job family. Common level names: Analyst, Senior Analyst, Manager, Senior Manager, Director, Senior Director, VP/Head. Each level has a descriptor — a written definition of what distinguishes work at that level from the level above and below, across dimensions like scope, decision authority, expertise depth, stakeholder complexity, and team leadership. The level descriptor does two things simultaneously: it defines the role for job evaluation purposes (the evaluation should match the descriptor) and it creates a transparent progression standard for employees to understand what moving up requires."
+              },
+              {
+                "t": "h",
+                "v": "Technical vs Management Tracks"
+              },
+              {
+                "t": "p",
+                "v": "One of the most consequential design decisions in a career framework is whether to provide separate tracks for technical advancement and management advancement. The problem a dual track solves: without it, the only way for a highly skilled specialist to progress in seniority and salary is to become a manager — even if management is not their strength and not what the organisation needs them to do. The result is either technical experts leaving because they cannot progress, or bad managers created because specialisation had no other recognised path. A technical track (Individual Contributor track, IC track) provides specialist levels — Senior Engineer, Principal Engineer, Distinguished Engineer — that carry equivalent status and compensation to management levels. The transition from management to IC track or vice versa should be explicitly designed and governable."
+              },
+              {
+                "t": "h",
+                "v": "Linking Career Framework to Pay"
+              },
+              {
+                "t": "p",
+                "v": "The career framework connects to the grade structure through a mapping: each career level maps to one or two grades. A Senior Analyst might map to Grade 3; a Manager to Grades 3-4 (depending on scope); a Director to Grades 4-5. This mapping is not a one-size-fits-all rule — a Manager in a small market subsidiary and a Manager in the group headquarters may both carry the Manager title but sit in different grades based on evaluated scope. The level descriptor defines the expected work; the evaluation determines the actual grade; the grade determines the salary range."
+              },
+              {
+                "t": "box",
+                "label": "Career Framework vs Grade Structure",
+                "v": "Grade structure: assigns a salary range to evaluated job worth\nCareer framework: defines progression expectations and paths\nJob family: groups roles by functional domain and progression logic\nLevel descriptors: written definitions of what each level requires\nDual track: management + technical/IC progression paths\nLink: career level maps to grade; grade determines salary range"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Nova Tech's Technical Talent Problem",
+                "v": "Nova Tech's 60 software engineers are organised on a single track. The most senior engineers are titled 'Senior Engineer' and mapped to Grade 4. Above Grade 4 is Engineering Manager, which requires people management. Three of Nova Tech's best engineers have declined promotion to Engineering Manager ('I'm an engineer, not a manager') and are now earning at the maximum of their grade with nowhere to progress. One has resigned. The Head of People must design an IC track that provides genuine progression without requiring management responsibility."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "A dual career track is a talent retention tool as much as a pay structure — it signals that technical expertise has genuine organisational value at the highest levels.",
+                  "Level descriptors must be written with enough specificity that employees can self-assess their progress toward the next level without needing a manager to interpret them.",
+                  "The mapping between career levels and grades should accommodate the reality that the same level title may sit in different grades depending on scope — this is a feature, not a bug."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The core problem the IC track solves for Nova Tech's engineers is:",
+              "opts": [
+                "Engineers earning too little compared to external market rates for their skill level.",
+                "The absence of a recognised progression path that doesn't require becoming a manager — forcing a career trade-off that some specialists are unwilling to make.",
+                "The engineering grade structure having too few grades to accommodate salary variation.",
+                "Management roles being poorly compensated relative to individual contributor roles."
+              ],
+              "ans": 1,
+              "exp": "The IC track exists to solve a structural career problem, not a compensation problem alone — although compensation follows from the structure. Without an IC track, technical progression is blocked unless specialists become managers."
+            }
+          },
+          {
+            "id": "11-3-2",
+            "title": "Designing Nova Tech's IC Engineering Track",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Designing an IC track requires writing level descriptors that genuinely distinguish expert from distinguished work — vague descriptors produce grade inflation disputes and undermine the track's credibility."
+              },
+              {
+                "t": "box",
+                "label": "Nova Tech — IC Track Design Brief",
+                "v": "Current engineering structure: Engineer (G2) → Senior Engineer (G4). Management track: Engineering Manager (G4) → Head of Engineering (G5).\nProblem: Senior Engineers hit G4 maximum with no progression path unless they move to management.\nDesign requirement: Create an IC track with at least 2 levels above Senior Engineer that map to G5 and G6, with level descriptors and salary anchors."
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — Define the New IC Levels"
+              },
+              {
+                "t": "p",
+                "v": "Above Senior Engineer, create two IC levels that map to the management grades without requiring people management."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "Principal Engineer (G5 — equivalent to Head of Engineering):\n• Sets technical direction for a domain or product area\n• Solves the hardest technical problems the team faces; creates new approaches where none exist\n• Influences architecture and tooling choices across multiple teams\n• Recognised externally (conference talks, open source contributions, technical writing) as an expert\n• Requires no people management; may mentor senior engineers informally\n• Salary range: same as Head of Engineering grade (G5)\n\nDistinguished Engineer (G6 — equivalent to VP Engineering or above):\n• Defines technical strategy at the company level\n• Work has multi-year impact on the product or technical platform\n• Influences industry-level technical discussion\n• Fewer than 1% of engineers reach this level — it is a recognition of extraordinary impact, not a standard promotion destination\n• Salary range: G6 (or negotiated above structure for exceptional cases)"
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Write the Promotion Criteria"
+              },
+              {
+                "t": "p",
+                "v": "The transition from Senior Engineer to Principal Engineer must be clearly described so promotion decisions are defensible and consistent."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "Principal Engineer promotion criteria (all three must be met):\n1. Evidence of scope: has led or co-led a project or technical initiative that materially changed the team's approach, not just executed within it. The scope must be visible to stakeholders outside the immediate team.\n2. Evidence of impact: a shipped system, tool, or architecture that has measurably improved performance, reliability, or developer productivity — with documented metrics.\n3. Evidence of influence: has changed how at least three other engineers approach their work, through technical leadership, review, or advocacy — without managing them.\n\nWhat the criteria deliberately exclude: years of service (time is not a proxy for Principal-level work); performance ratings alone (consistently strong ratings at Senior Engineer don't automatically qualify for Principal); and management responsibility (the IC track explicitly removes this requirement)."
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Manage the Dual Track Interface"
+              },
+              {
+                "t": "p",
+                "v": "The dual track only works if movement between tracks is governed — otherwise it becomes a back door for grade inflation or a source of confusion."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "Track transfer governance:\n• Engineer → Senior Engineer: single track, standard progression\n• Senior Engineer → Engineering Manager OR Principal Engineer: deliberate choice, documented conversation with manager, based on career goals and organisational need\n• Principal Engineer → Head of Engineering: possible, but requires management track criteria to be met — the IC track grade equivalence does not grant automatic management promotion\n• Engineering Manager → Principal Engineer: possible where a manager wants to return to IC work; requires meeting Principal Engineer criteria, not just having previously been at an equivalent grade\n\nThe dual track works when it is governed explicitly. It fails when it becomes a way to give senior engineers a pay increase without the associated rigour of a promotion process."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "IC track level descriptors must describe genuinely distinguishable work — vague descriptors produce inconsistent promotion decisions and grade inflation.",
+                  "Promotion criteria for IC levels should focus on scope, impact, and influence — not years of service or performance ratings alone.",
+                  "Track transfer governance prevents the IC track from becoming a pay increase mechanism without a genuine promotion process."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "11-3-3",
+            "title": "Nova Tech's IC Track Launch — Full Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Real job evaluation and pay architecture problems are rarely clean. This case works through the ambiguity practitioners actually face."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Nova Tech — First Promotion Cycle Under the IC Track",
+                "v": "Nova Tech launches the Principal Engineer and Distinguished Engineer levels. In the first promotion cycle, eight Senior Engineers are nominated by their managers for Principal Engineer. The Head of People and Head of Engineering must calibrate the nominations, apply the criteria, and manage the outcome — including communicating with unsuccessful candidates."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The calibration panel reviews eight nominations. Five meet all three criteria clearly. Two are borderline. One is significantly below criteria. How should the panel approach the borderline cases?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Borderline cases require the panel to apply the criteria with precision, not to split the difference. For each borderline candidate: document specifically which of the three criteria they meet and which they partially or do not meet. If scope evidence is absent, the question is whether any upcoming work could provide that evidence in 6-12 months — if so, a development plan with a defined reassessment date is more appropriate than a borderline promotion. If impact evidence is present but insufficient scale, the question is whether the candidate can articulate a clear path to the next qualifying project. The panel should never promote to resolve ambiguity — the level descriptors exist to create clarity. A borderline promotion sends the message that the criteria are negotiable, which is the fastest route to grade inflation."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The below-criteria candidate is one of Nova Tech's highest performers by delivery metrics. Their manager has lobbied strongly for their promotion. How should this be handled?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "This is the most common and most challenging calibration scenario. The candidate's delivery metrics reflect outstanding work at Senior Engineer level — which is exactly what should be rewarded within the Senior Engineer grade through merit increases and positioning toward the top of the range. The IC track promotion to Principal Engineer requires scope, impact, and influence beyond strong individual delivery. The manager's advocacy, while understandable, conflates performance in the current level with readiness for the next. The correct response: acknowledge the outstanding performance explicitly, explain specifically which Principal Engineer criteria are not yet met with evidence, commit to a 6-month development conversation with clear targets, and ensure the candidate is positioned at or near the top of the Senior Engineer range through the merit review. What must not happen: a promotion made to retain a high performer before the criteria are met. This sets precedent that persistence and advocacy override criteria."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "Five promotions are confirmed. How should the communication to unsuccessful candidates be designed?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Unsuccessful candidates need three things: respect, specificity, and a path. Respect means the conversation happens privately, promptly, and with the manager present — not through a list or a group announcement. Specificity means the candidate hears exactly which criteria they met and which they did not, with examples. Generic feedback ('you're not quite ready') is worse than a clear gap statement because it gives the candidate nothing to work with. A path means a specific development plan with named milestones: 'You have strong impact evidence but need scope evidence — here is a project opportunity that would provide it, with a reassessment in Q4.' The IC track's credibility is built as much in these conversations as in the promotions themselves. Candidates who understand why they weren't promoted and what to do next are far less likely to disengage or leave than candidates who receive an unexplained no."
+              },
+              {
+                "t": "box",
+                "label": "IC Track Promotion Principles",
+                "v": "Apply criteria precisely — promote on evidence, not on potential or advocacy\nBorderline: development plan with dated reassessment, not a borderline promotion\nBelow criteria but high performer: reward within grade, explain the distinction clearly\nUnsuccessful communication: respect + specificity + path"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "A borderline promotion under pressure from an advocate sets precedent that the criteria are negotiable — this is the origin of grade inflation.",
+                  "Outstanding performance at the current level should be rewarded through merit positioning within the grade, not through promotion to the next level before criteria are met.",
+                  "The credibility of a new career framework is established as much through the rigour of unsuccessful promotion communications as through the quality of the level descriptors."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "11-3-Q",
+            "title": "Module Quiz: Career Frameworks and Job Families",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The primary purpose of a career framework is:",
+                "opts": [
+                  "To define the salary range for each role in the organisation.",
+                  "To define progression expectations and paths — what career advancement looks like and what it requires.",
+                  "To replace the job evaluation methodology for roles that are hard to evaluate.",
+                  "To manage headcount levels within each job family."
+                ],
+                "ans": 1,
+                "exp": "Career frameworks answer the progression question: what does it take to move from one level to the next? Grade structures answer the pay question. Both are necessary; neither substitutes for the other."
+              },
+              {
+                "q": "An Individual Contributor (IC) track solves which specific problem?",
+                "opts": [
+                  "Technical specialists earning less than managers at the same grade.",
+                  "The absence of a career progression path for specialists who do not want to move into people management.",
+                  "Senior engineers receiving fewer performance benefits than managers.",
+                  "The grade structure having insufficient grades to accommodate technical roles."
+                ],
+                "ans": 1,
+                "exp": "The IC track removes the forced trade-off between technical expertise and career progression — specialists can advance in level and compensation without becoming managers."
+              },
+              {
+                "q": "A Principal Engineer level descriptor requires 'evidence of scope beyond the immediate team.' This criterion is designed to:",
+                "opts": [
+                  "Ensure Principal Engineers have managed teams in previous roles.",
+                  "Distinguish Principal-level work from strong delivery at Senior Engineer level — scope beyond the team is a genuine differentiator.",
+                  "Allow managers to include stretch projects as evidence for borderline candidates.",
+                  "Confirm the candidate has been externally recognised by a professional body."
+                ],
+                "ans": 1,
+                "exp": "The scope criterion distinguishes the level of impact, not the quality of delivery — a Senior Engineer can deliver excellent work within a team; a Principal's work must visibly influence beyond it."
+              },
+              {
+                "q": "A borderline promotion candidate in an IC track calibration should receive:",
+                "opts": [
+                  "A promotion, because borderline candidates are likely ready within a year.",
+                  "A development plan with named milestones and a defined reassessment date, not a borderline promotion.",
+                  "A performance improvement plan to address the gaps identified during calibration.",
+                  "An automatic reassessment at the next cycle, with no specific development guidance."
+                ],
+                "ans": 1,
+                "exp": "A borderline promotion signals that criteria are negotiable and establishes grade inflation precedent. A development plan with specifics is more respectful and more useful for the candidate."
+              },
+              {
+                "q": "What distinguishes a job family from a career level?",
+                "opts": [
+                  "A job family defines salary ranges; career levels define reporting lines.",
+                  "A job family groups roles by functional domain; career levels define progression rungs within and across job families.",
+                  "A career level determines the evaluation score; a job family determines the grade band.",
+                  "Job families are used in public sector organisations; career levels are a private sector concept."
+                ],
+                "ans": 1,
+                "exp": "Job families group roles by functional domain and progression logic (Finance, Technology, HR). Career levels (Analyst, Manager, Director) are the progression rungs that apply across all families at equivalent scope and complexity."
+              },
+              {
+                "q": "The same career level title (e.g. 'Manager') may map to different grades depending on:",
+                "opts": [
+                  "The employee's tenure at that level and their performance rating history.",
+                  "The scope of the specific role — a Manager in a small subsidiary may sit in a different grade than a Manager at group level.",
+                  "The job family — Manager in Finance is always graded higher than Manager in Operations.",
+                  "The organisation's financial performance in the year the grade mapping is reviewed."
+                ],
+                "ans": 1,
+                "exp": "Grade mapping from career level should reflect actual evaluated scope, not title alone — the same level title at different organisational scales genuinely represents different evaluation outcomes."
+              },
+              {
+                "q": "Which statement about dual track interface governance is accurate?",
+                "opts": [
+                  "Engineers promoted to Principal Engineer automatically qualify for Engineering Manager roles at the same grade.",
+                  "Track transfer is possible in both directions but requires meeting the criteria for the destination level, not just having an equivalent grade.",
+                  "The IC track and management track should have no financial interface — salaries must diverge significantly to reflect different contributions.",
+                  "Once an employee chooses the IC track, they cannot transfer to the management track without a full re-evaluation."
+                ],
+                "ans": 1,
+                "exp": "Track transfer is possible but must be governed — an IC track grade equivalence does not grant automatic management promotion, and a management background doesn't grant automatic IC level recognition."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "11-4",
+        "title": "Architecture Governance",
+        "color": "#2D6A9F",
+        "lessons": [
+          {
+            "id": "11-4-1",
+            "title": "Architecture Governance — Managing Grade Drift and Creep",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Job architecture is not a one-time project. Without active governance, grade structures and career frameworks erode over time through a predictable set of forces: grade inflation, job title proliferation, red-circle accumulation, and the gradual disconnection of evaluated roles from their documented grade. Most organisations discover this five to seven years after a structure implementation, when the grade structure bears little relationship to the original design."
+              },
+              {
+                "t": "h",
+                "v": "Grade Drift"
+              },
+              {
+                "t": "p",
+                "v": "Grade drift is the progressive upward movement of roles and salaries over time, disconnected from genuine increases in role complexity. It occurs through: regrading without a full evaluation (a manager upgrades a role's title and grade to retain an employee or make a hire); role complexity genuinely increasing but evaluations not being updated to reflect it; and performance increases that push salaries above the grade maximum, creating pressure to upgrade the grade to accommodate the salary. Grade drift is almost always upward — roles rarely drift downward. The cumulative effect over five years can be a structure where 40-50% of roles are graded one level higher than their evaluated complexity warrants."
+              },
+              {
+                "t": "h",
+                "v": "Job Creep"
+              },
+              {
+                "t": "p",
+                "v": "Job creep is the informal expansion of a role's scope and responsibility over time, without a formal evaluation review. A Finance Analyst hired to process invoices gradually takes on month-end close responsibilities, then payroll reconciliation, then becomes the de facto budget controller for two departments — but remains a Finance Analyst in Grade 2. Job creep runs in both directions for grade integrity: upward creep (underpaying a role whose scope has genuinely grown) creates retention risk; but the expectation of an automatic regrade following any scope addition creates grade inflation risk. The governance solution is a clear policy: scope additions trigger an evaluation review, not an automatic regrade. The review may confirm the existing grade, recommend a regrade, or identify that the expansion represents a new role rather than an evolved version of the current one."
+              },
+              {
+                "t": "h",
+                "v": "Red-Circle Accumulation"
+              },
+              {
+                "t": "p",
+                "v": "Red-circle employees — those earning above the maximum of their grade — tend to accumulate over time in organisations without active pay management. The primary drivers: above-maximum hires made to secure scarce talent; counter-offers that push salaries above the band maximum; and annual increases applied without compa-ratio awareness. A healthy grade structure should have fewer than 5% of employees red-circled at any time. When red-circle rates rise above 10-15%, the signal is either that the market has moved the grade midpoints significantly (requiring a market review and band adjustment) or that pay management discipline has been insufficient (requiring a compa-ratio audit and a pay freeze for the most significantly above-maximum cases)."
+              },
+              {
+                "t": "h",
+                "v": "The Annual Architecture Review"
+              },
+              {
+                "t": "p",
+                "v": "An annual architecture review is the governance mechanism that prevents drift. The review covers: (1) all new roles created since the last review — have they been evaluated and graded? (2) all roles where scope has changed significantly — do their evaluations still reflect current job content? (3) the red-circle population — what is the trend, and does it indicate a band adjustment need? (4) grade distribution — has the proportion of employees in each grade shifted significantly, and does this shift reflect genuine organisational change or grade drift? The output of the annual review is a small set of specific actions: evaluations to conduct, bands to adjust, and pay management interventions to make. It is not a wholesale redesign."
+              },
+              {
+                "t": "box",
+                "label": "Architecture Erosion Signals",
+                "v": "Grade drift: 40%+ of roles graded above evaluated complexity\nJob creep: scope additions assumed to require regrading\nRed-circle rate: >10% signals market movement or pay management failure\nTitle proliferation: multiple unofficial titles within one grade\nAnnual review: prevents small drift from becoming structural overhaul"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Meridian Group — Five Years On",
+                "v": "Five years after implementing their grade structure, Meridian Group's HR team is preparing for a people audit requested by their new private equity investors. The audit reveals: 34% of roles are graded one level above their evaluated complexity; 18% of employees are red-circled; 12 unofficial job titles are in use that don't exist in the framework; and the grade 3 to grade 4 promotion rate has averaged 22% per year, compared to a planned 8-10%. The Head of People must present a remediation plan."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Grade drift is almost always upward and almost always accelerates over time if not actively governed — annual reviews are preventive; major remediation programmes are the consequence of skipping them.",
+                  "The red-circle rate is the most sensitive leading indicator of structural erosion — tracking it quarterly allows early intervention before it becomes a significant population.",
+                  "Title proliferation (unofficial titles outside the framework) is a symptom of a governance failure in a different dimension — it usually accompanies grade inflation."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "A 22% per year grade 3 to grade 4 promotion rate (against a planned 8-10%) over five years is most likely evidence of:",
+              "opts": [
+                "The organisation has grown rapidly and created many new roles that genuinely sit at Grade 4.",
+                "Grade inflation driven by managers upgrading roles and titles to reward or retain employees without a full evaluation process.",
+                "The Grade 3 to Grade 4 criteria being set too generously at the initial framework design.",
+                "Natural career progression producing a compressed grade distribution at the more senior level."
+              ],
+              "ans": 1,
+              "exp": "A promotion rate consistently double the planned level, sustained over five years, is almost always structural grade inflation — not genuine progression. Genuine progression at that rate would produce a dramatic skew in the grade distribution (everyone moving to Grade 4) that would be visible in the headcount data."
+            }
+          },
+          {
+            "id": "11-4-2",
+            "title": "Auditing Grade Inflation in Meridian Group",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Grade inflation audits work by comparing actual distribution to the designed distribution, then investigating the specific roles and promotion decisions that produced the divergence."
+              },
+              {
+                "t": "box",
+                "label": "Meridian Group — Grade Distribution Audit",
+                "v": "Meridian Group has 280 employees. The designed grade distribution at launch: G1=15%, G2=30%, G3=30%, G4=15%, G5=8%, G6=2%.\nActual current distribution: G1=8%, G2=18%, G3=25%, G4=32%, G5=12%, G6=5%.\nRed-circle rate: 18% (50 employees).\nYear-5 data: 34% of roles last evaluated more than 3 years ago."
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — Identify the Divergence"
+              },
+              {
+                "t": "p",
+                "v": "Compare designed vs actual distribution to identify which grades have grown beyond expectation."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "Grade distribution divergence:\n| Grade | Designed % | Designed N | Actual % | Actual N | Divergence |\n|---|---|---|---|---|---|\n| G1 | 15% | 42 | 8% | 22 | -20 |\n| G2 | 30% | 84 | 18% | 50 | -34 |\n| G3 | 30% | 84 | 25% | 70 | -14 |\n| G4 | 15% | 42 | 32% | 90 | +48 |\n| G5 | 8% | 22 | 12% | 34 | +12 |\n| G6 | 2% | 6 | 5% | 14 | +8 |\n\nThe pattern is classic grade inflation: significant depletion of G1-G3, significant over-population of G4-G6. The organisation has 48 more G4 employees than the designed structure anticipated — equivalent to adding a full Grade 4 cohort above design."
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Disaggregate by Promotion Type"
+              },
+              {
+                "t": "p",
+                "v": "Not all G4 growth is grade inflation — some may reflect genuine organisational change. Disaggregate the G4 growth by promotion pathway."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "Of the 48 'excess' G4 employees:\n• 12 are in genuinely new roles created for the expanded business (these are legitimate — the distribution design didn't anticipate them)\n• 9 were promoted following full evaluation that confirmed G4 scope (legitimate)\n• 14 were promoted via manager nomination without evaluation ('approved by MD, no formal process')\n• 8 were regraded to retain employees or match counter-offers without evaluation\n• 5 received automatic Grade 3→4 transitions following title changes with no evaluation\n\nLegitimate G4 growth: 21 (44%). Potentially inflated: 27 (56%).\nThe 27 should be prioritised for evaluation review in the architecture audit — not for automatic demotion (which would be punitive and contractually complex) but to establish the correct grade going forward and to inform the pay management approach for each employee."
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Design the Remediation Plan"
+              },
+              {
+                "t": "p",
+                "v": "Remediation must be proportionate, legally defensible, and structured over a realistic timeline."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "Recommended remediation plan:\n1. Evaluation review (immediate): all 34% of roles not evaluated in 3+ years reviewed over the next 6 months; evaluation panel convened monthly.\n2. No-regrade period (immediate): no grading decisions without full evaluation for 12 months. This stops further drift while the audit is underway.\n3. Red-circle management (immediate): the 50 red-circle employees placed on a pay freeze; their managers briefed on the structure and the reason. Pay freeze does not mean a reduction — it means no further increases until the market review determines whether the band should move.\n4. Market review (months 3-6): assess whether G4 midpoint has moved significantly in the market since the original structure. If market data supports a band adjustment, adjust the midpoint and maximum — this may legitimise some currently-red-circled salaries.\n5. PE investor reporting (ongoing): provide quarterly grade distribution and red-circle rate as governance KPIs. Target: G4 at 22% (between designed 15% and actual 32%) over 24 months through attrition and structural management, not forced demotions."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Grade inflation audits should separate legitimate structural growth from governance-bypassed promotions before any remediation decisions are made.",
+                  "Immediate corrective action is a no-further-grading-without-evaluation policy — this stops drift without triggering the contractual and legal complexity of retroactive demotions.",
+                  "The red-circle rate is both a symptom (pay drift) and a tool (it identifies where the market may have moved the bands, requiring a market review rather than a pay freeze alone)."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "11-4-3",
+            "title": "Meridian Group's Architecture Reset — Full Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Real job evaluation and pay architecture problems are rarely clean. This case works through the ambiguity practitioners actually face."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Meridian Group — The PE Investor Architecture Review",
+                "v": "The PE investor's audit findings are presented to Meridian Group's board. The investors are concerned about the grade inflation, the red-circle population, and the absence of a formal governance process. They request a 24-month remediation roadmap that restores structural integrity, provides quarterly governance reporting, and costs no more than a 3% payroll increase above the planned annual merit budget."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The investors have set a 3% additional payroll envelope for remediation. How should this be allocated across the four remediation needs?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The 3% additional envelope (on top of planned annual merit) must be allocated strategically. Likely needs: (1) Pay increases for genuinely under-evaluated roles whose scope has grown but whose salary hasn't kept pace with the re-evaluation — this is the legitimate growth spend. (2) Band adjustments where the market has moved above the current structure — this is a structural correction, not a favour to individuals. (3) Merit acceleration for any high-performing employees in low compa-ratio positions — these are retention risks whose pay compression predates the structure. What the 3% should NOT fund: increases to red-circle employees whose salaries already exceed the band maximum; pay adjustments for employees regraded through an informal process if the re-evaluation places them back in their original grade; or across-the-board increases to address the grade inflation narrative. Prioritisation: re-evaluation uplifts first, band adjustments second, targeted merit acceleration third."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The Head of People recommends establishing an Architecture Governance Committee. The PE investor asks: who should sit on it, what decisions does it make, and how often does it meet?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Recommended committee: CEO or COO (chair), CFO, Head of People, and one independent non-executive director. HR Total Rewards lead is a standing presenter, not a voting member. The committee owns three decisions: approval of all new grade placements above Grade 3 (decisions below Grade 3 are delegated to the Head of People with quarterly reporting); approval of any exception to the no-regrade-without-evaluation policy; and approval of any pay increase that would create or worsen a red-circle position. Meeting cadence: quarterly (coinciding with board reporting). Between meetings, a monthly email report covers the red-circle rate, evaluation queue, and any exception requests pending approval. This structure removes grading authority from line managers and business leaders who don't have grade inflation consequences — those consequences now sit with the committee and flow to the investor report."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "27 employees may be in the wrong grade as a result of informal promotions. How should this be communicated to the employees affected by the re-evaluation process?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Communication requires honesty without panic. The framing: 'We are conducting a comprehensive evaluation review of all roles as part of our governance improvement programme. The outcomes of this review will inform the pay and grade structure going forward.' Critical: never communicate before the review is complete for a specific employee's role, and never communicate the possibility of a grade outcome reduction before the review is concluded. If the re-evaluation confirms a lower grade than the employee's current grade, the situation is: (a) the employee retains their current salary (no reduction); (b) their grade is corrected; (c) their future pay increases are managed within the correct grade's range. The employee whose role is re-evaluated downward should be told directly and privately: 'The evaluation confirmed your role sits in Grade 3. Your salary is not affected — we are not reducing your pay. Future merit increases will be managed within the Grade 3 range.' This conversation requires a manager present and an HR partner available for follow-up. It will be difficult; it should not be avoided."
+              },
+              {
+                "t": "box",
+                "label": "Architecture Reset Principles",
+                "v": "Remediation envelope: re-evaluation uplifts first, band adjustments second, targeted merit third\nGovernance committee: senior, specific decision authority, quarterly cadence\nRe-evaluation communication: complete the review before communicating outcomes\nRe-evaluated downward: grade corrected, salary protected, future increases within range"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "PE investor reporting requirements create accountability that prevents architecture governance from being de-prioritised — quarterly grade distribution and red-circle rate reporting is a governance discipline, not an overhead.",
+                  "A re-evaluation outcome that confirms a lower grade than the employee's current grade does not require a salary reduction — it requires a pay freeze and future management within the correct range.",
+                  "Architecture governance committees should have explicit decision authority, not just advisory roles — accountability requires the authority to approve or reject."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "11-4-Q",
+            "title": "Module Quiz: Architecture Governance",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "Grade drift is primarily caused by:",
+                "opts": [
+                  "The job evaluation methodology systematically over-scoring senior roles.",
+                  "Managers regrading roles to retain or reward employees without a full evaluation process, accumulating over time.",
+                  "Annual merit increases consistently exceeding the upper range of each grade.",
+                  "The market moving faster than annual band review cycles can accommodate."
+                ],
+                "ans": 1,
+                "exp": "Grade drift is a governance failure — it accumulates through a series of individual decisions that each seem reasonable at the time but collectively produce a structure disconnected from the original evaluation."
+              },
+              {
+                "q": "A healthy red-circle rate for a well-governed grade structure is approximately:",
+                "opts": [
+                  "Less than 5% of employees.",
+                  "Between 10% and 15% of employees.",
+                  "Less than 15% of employees.",
+                  "No more than 20% of employees."
+                ],
+                "ans": 0,
+                "exp": "A red-circle rate consistently above 5% is an early warning signal — either the market has moved the bands (requiring a band adjustment) or pay management discipline has eroded (requiring a compa-ratio audit and intervention)."
+              },
+              {
+                "q": "Job creep differs from grade drift in that:",
+                "opts": [
+                  "Job creep is planned; grade drift is accidental.",
+                  "Job creep refers to informal scope expansion without evaluation review; grade drift refers to the upward movement of formal grade placements beyond evaluation evidence.",
+                  "Grade drift only affects senior roles; job creep affects all roles equally.",
+                  "Job creep is always managed by the HR team; grade drift is managed by Finance."
+                ],
+                "ans": 1,
+                "exp": "Job creep is the informal evolution of a role's scope; grade drift is the formal but evaluation-bypassed movement of grade placements. Both erode structural integrity but through different mechanisms."
+              },
+              {
+                "q": "During an architecture remediation, an employee is re-evaluated and confirmed at a lower grade than their current grade. The correct immediate action is:",
+                "opts": [
+                  "Reduce the employee's salary to the midpoint of the correct grade.",
+                  "Correct the grade while protecting the employee's current salary, with future merit managed within the correct grade range.",
+                  "Offer the employee the choice of accepting the lower grade or being made redundant.",
+                  "Freeze the employee's grade pending further review and defer the grade correction for 12 months."
+                ],
+                "ans": 1,
+                "exp": "Salary protection during a grade correction is both standard practice and ethically necessary — the employee was not responsible for the governance failure. The grade is corrected; the salary is managed within the correct range going forward."
+              },
+              {
+                "q": "The annual architecture review primarily serves to:",
+                "opts": [
+                  "Redesign the grade structure when it no longer reflects organisational reality.",
+                  "Provide a regular governance check that identifies drift, evaluates unevaluated roles, and maintains structural integrity without requiring a major redesign.",
+                  "Determine annual merit increase budgets for each grade.",
+                  "Replace the job evaluation panel for the following year."
+                ],
+                "ans": 1,
+                "exp": "The annual review is preventive maintenance — it catches small drift before it becomes structural overhaul. Its output is a small set of specific actions, not a redesign."
+              },
+              {
+                "q": "Which combination of indicators most clearly signals grade inflation rather than genuine organisational growth?",
+                "opts": [
+                  "High red-circle rate and rapid headcount increase.",
+                  "Upward grade distribution shift combined with high promotion rates achieved through informal processes rather than full evaluation.",
+                  "Increasing average salary without a corresponding increase in grade distribution.",
+                  "Rapid growth in the number of Grades 1 and 2 employees relative to Grade 4 and above."
+                ],
+                "ans": 1,
+                "exp": "The grade inflation signal is the combination of distribution shift AND governance bypass — roles moving upward in grade without evaluation. Genuine growth produces grade distribution shift too, but with evaluation evidence supporting each placement."
+              },
+              {
+                "q": "A no-regrade-without-evaluation policy during an architecture remediation serves to:",
+                "opts": [
+                  "Prevent any salary changes during the remediation period.",
+                  "Stop further grade drift while the review is underway, without requiring retroactive changes.",
+                  "Require all promotions to be approved by the PE investor committee.",
+                  "Freeze the grade structure permanently at the post-audit distribution."
+                ],
+                "ans": 1,
+                "exp": "The no-regrade-without-evaluation policy is a forward-looking governance control — it stops drift from continuing during the remediation period while the back-catalogue of informal promotions is reviewed. It does not affect salaries or existing grades."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "c11-cap",
+        "title": "Capstone Project",
+        "color": "#2D6A9F",
+        "lessons": [
+          {
+            "id": "c11-cap-l",
+            "title": "Capstone: Meridian Group's Acquisition Integration Architecture",
+            "duration": "10 min",
+            "xp": 250,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Meridian Group is undergoing a significant expansion — three new offices, 85 new hires, and a full acquisition of a 60-person boutique consulting firm. The Head of Total Rewards must design a complete job architecture for the combined 350-person organisation, built on the foundation of the existing grade structure while absorbing the acquired firm's roles and people."
+              },
+              {
+                "t": "box",
+                "label": "Combined Organisation Context",
+                "v": "Meridian Group (legacy): 290 employees, 6 grades, 4 job families (Consulting, Finance, Operations, People)\nAcquired firm (Bridgeway Advisory): 60 employees, no formal grade structure, informal seniority titles (Associate, Consultant, Principal, Partner)\nNew offices: Lagos, Nairobi, Dubai — each with a mix of client-facing and operational roles\nPE investor requirement: single architecture for all entities, implemented within 6 months"
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — Map Bridgeway Advisory Roles to Meridian Architecture"
+              },
+              {
+                "t": "p",
+                "v": "Before any evaluation, what is the process for mapping an acquired company's informal titles to the Meridian grade structure?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach",
+                "v": "Mapping process:\n1. Collect all Bridgeway role documentation (job descriptions, if they exist; if not, interview holders and document current responsibilities)\n2. Match each Bridgeway title category to the Meridian factor scheme — apply the scheme as if evaluating a new role, not as a title-to-title comparison\n3. Conduct an integration calibration panel with Meridian and Bridgeway representatives — this surfaces different work practices and ensures the evaluation reflects actual scope, not assumed equivalence from title\n4. Produce a provisional mapping: Bridgeway Associate → Meridian G2 (typical); Bridgeway Consultant → G3; Bridgeway Principal → G3-G4 (scope dependent); Bridgeway Partner → G4-G5 (scope dependent)\n5. Identify the roles that don't fit cleanly — these are the most important to evaluate carefully, because they represent genuine structural decisions about where the combined organisation places equivalent responsibility\n\nKey risk: 'Partner' at Bridgeway may carry different accountability than 'Director' at Meridian despite the implied equivalence of seniority. Evaluate on scope, not on title prestige."
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Extend Job Families for the Combined Organisation"
+              },
+              {
+                "t": "p",
+                "v": "Meridian has 4 job families. The combined organisation needs at least 5. Design the job family structure for the 350-person entity."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach",
+                "v": "Recommended job families for combined organisation:\n1. Consulting & Advisory (merged from both organisations — client delivery roles)\n2. Finance & Commercial (Meridian Finance + Bridgeway commercial roles)\n3. Technology & Data (new family needed for Lagos/Nairobi tech hires)\n4. Operations & Delivery (Meridian Operations + shared services)\n5. People & Culture (Meridian People team + culture/talent roles)\n\nFor each family: write a family charter (what the family covers, what distinguishes it from adjacent families, which grades it spans) and a level descriptor for each grade within the family. The Technology & Data family warrants a dual track from the outset given the scaling tech hire plan — write IC levels for Senior Data Engineer and above at launch, rather than designing the track reactively after the first IC retention crisis."
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Salary Integration for Bridgeway Employees"
+              },
+              {
+                "t": "p",
+                "v": "Bridgeway employees earn salaries that were set in an unstructured market. Some will fall below, within, or above the Meridian band for their mapped grade. Design the integration approach."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach",
+                "v": "Integration salary approach:\n1. Calculate each Bridgeway employee's compa-ratio against the Meridian band for their mapped grade\n2. Employees below the Meridian minimum: bring to minimum immediately on the integration date — this is a legal and ethical requirement (you cannot knowingly pay below your own stated minimum)\n3. Employees within the band: no change required; map to the band and manage through normal merit cycles\n4. Employees above the Meridian maximum (red circle): protect salary, flag for PE governance committee review; assess whether the Meridian band maximum should be adjusted (market review) or whether the employee's grade mapping should be reviewed (re-evaluation)\n5. Communication: all Bridgeway employees receive a letter on integration day confirming their mapped grade, their position in the band, and the pay review timeline. No one learns their compa-ratio from a colleague — all communications are individual.\n\nBudget the cost of bringing below-minimum employees up before the integration date — this is a non-negotiable cost of the acquisition."
+              },
+              {
+                "t": "h",
+                "v": "Step 4 — Governance Architecture for the Expanded Organisation"
+              },
+              {
+                "t": "p",
+                "v": "Design the governance model for a 350-person, three-continent organisation with a PE investor architecture requirement."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach",
+                "v": "Governance model:\n- Global Architecture Committee: Head of People, CFO, one PE investor observer (quarterly meetings, approves G5+ grade placements, all new job family additions, all band adjustments)\n- Regional HR: approved to grade roles G1-G4 against the global architecture; escalates G5+ and all exceptions\n- Monthly reporting: grade distribution by country, red-circle count, evaluation queue, and any exception decisions made since last report\n- Annual architecture review: full distribution analysis, market review for band calibration, re-evaluation of all roles not evaluated in 24+ months\n- One-time first-year exception: Bridgeway integration generates a volume of evaluations that requires a dedicated integration panel meeting monthly for the first 6 months, separate from the normal annual cadence"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Acquisition integration requires evaluating acquired roles on their actual scope, not mapping titles to titles — the evaluation is where integration decisions are made, not in a spreadsheet of title equivalences.",
+                  "Employees below the post-mapping minimum must be brought to minimum immediately — this is not a budget option, it is a legal and ethical requirement of operating a formal grade structure.",
+                  "A new job family (Technology & Data) should be designed with a dual track from launch when the hiring plan makes an IC track predictably necessary — designing it reactively is always more expensive than designing it proactively."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "c11-cap-q",
+            "title": "Capstone Assessment: Job Evaluation and Grade Architecture",
+            "duration": "15 min",
+            "xp": 300,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "When mapping an acquired company's informal titles to a formal grade structure, the correct starting point is:",
+                "opts": [
+                  "Matching job titles directly — Consultant at the acquired firm = Senior Analyst at the acquirer.",
+                  "Evaluating each role against the acquirer's point-factor scheme based on documented current responsibilities.",
+                  "Using the acquired firm's salary as a proxy for grade — higher salaries indicate higher grades.",
+                  "Asking the acquired firm's leadership to self-select grades for their team members."
+                ],
+                "ans": 1,
+                "exp": "Title matching produces false equivalences — an evaluation against the factor scheme produces a defensible, consistent result."
+              },
+              {
+                "q": "A Bridgeway employee's salary falls below the Meridian band minimum for their mapped grade. The correct action is:",
+                "opts": [
+                  "Explain the structure and plan to bring them to minimum at the next merit cycle.",
+                  "Bring the salary to the band minimum on the integration date — paying below your own stated minimum is legally and ethically indefensible.",
+                  "Negotiate a timeline for the uplift based on the integration budget envelope.",
+                  "Re-evaluate the role to see if it can be mapped to a lower grade where the salary fits."
+                ],
+                "ans": 1,
+                "exp": "You cannot knowingly pay an employee below the minimum of the grade structure you have introduced — the uplift to minimum is a non-negotiable cost of the acquisition integration."
+              },
+              {
+                "q": "The Technology & Data job family should include a dual IC track from launch because:",
+                "opts": [
+                  "Technology professionals always refuse to become managers.",
+                  "The scaling tech hire plan makes an IC retention problem predictably necessary to solve — designing the track reactively is more expensive than proactively.",
+                  "All job families are required to have dual tracks under the global architecture governance model.",
+                  "The Lagos and Nairobi tech markets require IC tracks to comply with local employment law."
+                ],
+                "ans": 1,
+                "exp": "Proactive IC track design prevents the reactive crisis (talent loss, ad hoc compensation exceptions) that follows when technical specialists have no progression path."
+              },
+              {
+                "q": "The monthly governance reporting for the expanded organisation should include:",
+                "opts": [
+                  "The names and salaries of all employees at G5 and above.",
+                  "Grade distribution by country, red-circle count, evaluation queue, and exception decisions made since the last report.",
+                  "A full scatter plot of all employee salaries against evaluation scores.",
+                  "The proposed annual merit budget for the following year."
+                ],
+                "ans": 1,
+                "exp": "These four metrics are the minimum governance information needed to detect drift, monitor exceptions, and track the evaluation pipeline — they are leading indicators of architectural integrity."
+              },
+              {
+                "q": "An acquired firm's 'Partner' title is provisionally mapped to G4-G5. The evaluation confirms G4 scope. The employee earned a salary that sits above the G4 maximum. The correct approach is:",
+                "opts": [
+                  "Remap the role to G5 to accommodate the salary.",
+                  "Protect the salary, flag as red-circle, escalate to the governance committee for market review and/or band assessment.",
+                  "Reduce the salary to the G4 maximum effective immediately.",
+                  "Freeze all salary decisions for this employee for 24 months pending a full market review."
+                ],
+                "ans": 1,
+                "exp": "Red-circle management is always salary protection plus governance escalation — never an immediate reduction, and never an automatic regrade to make the salary fit the band."
+              },
+              {
+                "q": "The one-time integration panel for Bridgeway evaluations is recommended to meet monthly for the first 6 months. This is separate from the annual architecture review because:",
+                "opts": [
+                  "Bridgeway evaluations use a different point-factor scheme than Meridian.",
+                  "The volume of integration evaluations would overload the annual governance cycle — a dedicated panel maintains velocity without disrupting the normal cadence.",
+                  "Integration evaluations require external validation that the annual committee cannot provide.",
+                  "Monthly meetings are required by the PE investor's governance agreement."
+                ],
+                "ans": 1,
+                "exp": "Integration generates a time-concentrated volume of evaluation work — a dedicated panel processes it without creating a backlog in the normal annual cycle."
+              },
+              {
+                "q": "A job family charter should include:",
+                "opts": [
+                  "The salary ranges for every grade within the family.",
+                  "What the family covers, what distinguishes it from adjacent families, and which grades it spans.",
+                  "The names of all current employees in the family.",
+                  "The annual headcount budget for the family."
+                ],
+                "ans": 1,
+                "exp": "The charter defines the family's boundaries and scope — it is the reference document for deciding which family a new or ambiguous role belongs to."
+              },
+              {
+                "q": "Five years after an architecture implementation, a 35% upward shift in the grade distribution relative to the original design is most likely evidence of:",
+                "opts": [
+                  "Strong organisational performance and rapid genuine career progression.",
+                  "Grade inflation driven by governance bypass — promotions approved without full evaluation.",
+                  "Overly conservative initial grade boundaries that systematically under-placed roles.",
+                  "A market correction that required the midpoints to shift upward."
+                ],
+                "ans": 1,
+                "exp": "Genuine performance-driven progression does shift grade distributions over time, but a 35% shift in 5 years sustained over the whole population is a grade inflation signal — evaluate the promotion decision trail to distinguish the two."
+              },
+              {
+                "q": "Which statement accurately describes grade overlap between adjacent grades?",
+                "opts": [
+                  "Grade overlap is a structural error that should be minimised to less than 5% of the band range.",
+                  "Grade overlap is deliberate — it allows tenured employees in a lower grade to earn more than new starters in the grade above without a forced regrade.",
+                  "Grade overlap should not exist in a well-designed structure because it creates internal equity problems.",
+                  "Grade overlap is only appropriate in broad-band structures, not in traditional multi-grade frameworks."
+                ],
+                "ans": 1,
+                "exp": "Deliberate overlap prevents the structural anomaly where an experienced, well-performing employee must be regraded just to receive a market-competitive salary increase."
+              },
+              {
+                "q": "The primary benefit of writing level descriptors as part of a career framework is:",
+                "opts": [
+                  "They allow managers to bypass the job evaluation process for clear cases.",
+                  "They create a transparent progression standard that employees can use to self-assess and that promotion decisions can be tested against.",
+                  "They eliminate the need for annual salary surveys by defining performance expectations for each level.",
+                  "They replace the compa-ratio as the primary tool for pay positioning decisions."
+                ],
+                "ans": 1,
+                "exp": "Level descriptors serve two audiences: employees who use them to understand what the next level requires, and decision-makers who use them to test whether a promotion is genuinely warranted."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Pay Equity Analysis and Reporting",
+    "subtitle": "A practitioner-grade course in pay equity audits, gender and ethnicity pay gap calculation and reporting, and remediation strategy — from the statistical methods used to identify gaps through to the governance architecture needed to close them permanently. Includes worked calculations, a full pay gap narrative, and a global programme design capstone.",
+    "color": "#7B3FA0",
+    "color2": "#7B3FA0",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "level": "Advanced",
+    "duration": "4h 05m",
+    "lessons_count": 18,
+    "total_xp": 3030,
+    "desc": "A practitioner-grade course in pay equity audits, gender and ethnicity pay gap calculation and reporting, and remediation strategy — from the statistical methods used to identify gaps through to the governance architecture needed to close them permanently. Includes worked calculations, a full pay gap narrative, and a global programme design capstone.",
+    "outcomes": [
+      "Distinguish equal pay, pay equity, and pay gap — and explain the different analytical and remediation implications of each",
+      "Calculate UK statutory gender pay gap figures including median and mean gaps, bonus gaps, and quartile distributions",
+      "Design and conduct a pay equity audit using both cohort and regression-based methodologies",
+      "Build a pay gap report narrative that states findings clearly, explains drivers, and commits to specific time-bound actions",
+      "Design a remediation plan covering salary corrections, process changes, and pipeline investment with appropriate sequencing and legal governance",
+      "Build a global pay equity programme architecture across multiple markets with different data availability and statutory requirements"
+    ],
+    "pro": true,
+    "modules": [
+      {
+        "id": "12-1",
+        "title": "Pay Equity Fundamentals and the Legal Framework",
+        "color": "#7B3FA0",
+        "lessons": [
+          {
+            "id": "12-1-1",
+            "title": "Pay Equity Fundamentals and the Legal Framework",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Pay equity analysis is one of the fastest-growing areas in total rewards, driven by three forces simultaneously: new legislation requiring disclosure, investor and ESG pressure for transparency, and employee expectations that pay is demonstrably fair. Getting this right requires distinguishing between several related but different concepts that are routinely conflated in public debate."
+              },
+              {
+                "t": "h",
+                "v": "Equal Pay vs Pay Equity vs Pay Gap"
+              },
+              {
+                "t": "p",
+                "v": "Equal pay: the legal principle that employees doing equal work, work of equal value, or like work must be paid the same, regardless of protected characteristics. In most jurisdictions with equal pay law, this is a legal obligation, not a voluntary commitment. Pay equity: a broader concept encompassing fairness in all pay decisions — hiring rates, merit increases, bonus amounts, promotion rates, and grade placement — across all protected characteristics and intersectionalities. The equal pay test asks: 'are these two people doing comparable work paid the same?' The pay equity question asks: 'are all pay decisions made consistently across the organisation, free from systemic bias?' The pay gap: a descriptive statistic — the difference in median or mean pay between two groups (e.g. women and men) expressed as a percentage. A pay gap is not the same as an equal pay violation: a gender pay gap can coexist with full equal pay legal compliance if, for example, women are concentrated in lower-graded roles for reasons unrelated to pay decisions."
+              },
+              {
+                "t": "h",
+                "v": "The Legislative Landscape"
+              },
+              {
+                "t": "p",
+                "v": "Nigeria: Equal Pay for Equal Work provisions exist under the Labour Act, though enforcement mechanisms and specific reporting requirements are less developed than in European jurisdictions. UK: Gender Pay Gap Reporting is mandatory for employers with 250+ UK employees since 2017. The EU Pay Transparency Directive (2023) requires employers to publish pay information, respond to employee pay information requests, and conduct joint pay assessments when gender gaps exceed 5% — this applies to all EU member states by 2026. US: Equal Pay Act (1963) prohibits pay discrimination based on sex; the NLRA protects employees' rights to discuss pay. Several US states have enacted pay transparency laws requiring salary ranges in job postings."
+              },
+              {
+                "t": "h",
+                "v": "Why a Pay Gap May Not Indicate Pay Discrimination"
+              },
+              {
+                "t": "p",
+                "v": "The unadjusted pay gap compares average or median pay across two groups without controlling for any differences in grade, tenure, performance, or role type. A large unadjusted gap can exist even when every individual pay decision was made without bias — if women are disproportionately represented in lower grades, the unadjusted gap will be large even if women and men at the same grade are paid identically. This distinction matters enormously for diagnosis and remediation: an unadjusted gap requires different interventions than a within-grade pay gap or an equal pay violation. Conflating them leads to both incorrect diagnosis and ineffective solutions."
+              },
+              {
+                "t": "h",
+                "v": "The Adjusted vs Unadjusted Gap"
+              },
+              {
+                "t": "p",
+                "v": "The adjusted pay gap controls for grade, role type, tenure, performance, and other legitimate pay factors — it asks: among people doing comparable work with comparable experience and performance, do we see unexplained pay differences correlated with a protected characteristic? A large unadjusted gap with a near-zero adjusted gap indicates a representation problem (women are concentrated in lower-grade roles) rather than a pay decision problem. A large adjusted gap indicates a pay decision problem — unexplained pay differences for comparable work. Both are important. The adjusted gap is more legally significant; the unadjusted gap is more publicly visible and reputationally significant."
+              },
+              {
+                "t": "box",
+                "label": "Pay Equity Concepts",
+                "v": "Equal pay: same pay for equal work (legal requirement)\nPay equity: fairness across all pay decisions and protected characteristics\nPay gap: descriptive statistic, not the same as a legal violation\nUnadjusted gap: differences in workforce composition\nAdjusted gap: unexplained pay differences for comparable work\nBoth require different diagnoses and different remediation approaches"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Driftwood Media's Investor Inquiry",
+                "v": "Driftwood Media's largest institutional investor has submitted a formal ESG questionnaire asking for the company's unadjusted gender pay gap, adjusted gender pay gap, and a description of the pay equity review process. The Head of Total Rewards has never conducted a formal pay equity review. Before responding, they need to understand what each number means and what the legal and reputational implications are."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Equal pay (legal) and pay equity (broader fairness) are distinct concepts that require different analysis and different remediation approaches.",
+                  "A large unadjusted gender pay gap can coexist with full equal pay legal compliance — but is still a reputational and talent risk.",
+                  "The adjusted pay gap is the more legally significant metric; the unadjusted gap is the more publicly visible one."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "An investor requesting both the unadjusted and adjusted gender pay gap is asking for what two different pieces of information?",
+              "opts": [
+                "The pay gap for men and the pay gap for women, calculated separately.",
+                "The overall workforce composition gap (unadjusted) and the unexplained pay decision gap for comparable roles (adjusted).",
+                "The pay gap before and after annual merit increases.",
+                "The pay gap at median and at mean, to show the distributional impact."
+              ],
+              "ans": 1,
+              "exp": "The unadjusted gap reflects the full difference in average pay between genders including grade and role differences. The adjusted gap controls for those factors to isolate unexplained pay differences — these are two different diagnostics requiring different responses."
+            }
+          },
+          {
+            "id": "12-1-2",
+            "title": "Calculating Driftwood Media's Gender Pay Gap",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "UK gender pay gap reporting requires specific calculations. Working through them precisely prevents reporting errors that create legal exposure."
+              },
+              {
+                "t": "box",
+                "label": "Driftwood Media — Pay Gap Calculation Brief",
+                "v": "Driftwood Media has 280 UK employees. Headcount by gender: 162 women (57.9%), 118 men (42.1%).\nMedian hourly rate: Women = £18.40, Men = £24.20\nMean hourly rate: Women = £21.80, Men = £29.60\nBonus participation: Women 61%, Men 78%\nMedian bonus: Women = £3,200, Men = £5,800\nGrade distribution: Women are 71% of Grades 1-3 combined; men are 58% of Grades 4-6 combined."
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — Calculate the Median and Mean Hourly Pay Gaps"
+              },
+              {
+                "t": "p",
+                "v": "The headline gender pay gap figures are the median and mean pay gaps expressed as a percentage of men's pay."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "Median pay gap = (Men's median − Women's median) ÷ Men's median × 100\n= (£24.20 − £18.40) ÷ £24.20 × 100\n= £5.80 ÷ £24.20 × 100\n= 23.97% ≈ 24.0%\n\nMean pay gap = (Men's mean − Women's mean) ÷ Men's mean × 100\n= (£29.60 − £21.80) ÷ £29.60 × 100\n= £7.80 ÷ £29.60 × 100\n= 26.35% ≈ 26.4%\n\nFor context: the UK national median gender pay gap for all employees has been in the 14-18% range in recent years. Driftwood's 24% is significantly above this — a headline that will attract scrutiny in both the report narrative and any investor response."
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Calculate the Bonus Pay Gap"
+              },
+              {
+                "t": "p",
+                "v": "The UK report also requires bonus gap figures and bonus participation rates."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "Median bonus gap = (£5,800 − £3,200) ÷ £5,800 × 100 = 44.8%\nMean bonus gap (not provided — would require full individual data): not calculated here\n\nBonus participation gap: Men 78% vs Women 61% — a 17 percentage point difference. This is a significant finding: not only are women earning lower bonuses where eligible, a meaningfully smaller proportion of women are participating in the bonus scheme at all. This could indicate: different eligibility criteria by grade (women concentrated in non-bonus-eligible grades), different performance rating distributions, or a specific design issue in which roles are included in the bonus plan.\n\nNote: bonus participation and bonus amount gaps require separate narrative in the UK report — both must be disclosed."
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Diagnose the Primary Driver"
+              },
+              {
+                "t": "p",
+                "v": "Before deciding on remediation, identify whether the gap is primarily a representation problem or a pay decision problem."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "Grade distribution: Women are 71% of G1-G3 and men are 58% of G4-G6. This is the first-order diagnosis: Driftwood has a representation imbalance, with women disproportionately concentrated in lower-grade roles. This structure would produce a significant pay gap even if every within-grade pay decision was completely fair.\n\nTo test the adjusted gap, you would need: all 280 employees' salaries, grades, tenure, and performance ratings to run a regression controlling for grade. The regression output coefficient on the gender variable would be the adjusted gap — the unexplained pay difference after controlling for grade.\n\nFor the investor response: report the unadjusted gap (24%) with a clear explanation that the primary driver appears to be grade representation, and commit to calculating the adjusted gap and publishing the findings in the full pay equity review."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The UK gender pay gap calculation uses a specific formula (male median minus female median, divided by male median) — precision in the formula prevents reporting errors.",
+                  "The bonus participation gap is as diagnostically important as the bonus amount gap — a participation gap indicates structural eligibility differences, not just pay decision differences.",
+                  "Diagnosing representation vs pay decision root causes requires different data and different remediation — the grade distribution analysis is the first-order diagnostic."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "12-1-3",
+            "title": "Driftwood Media's Pay Equity Narrative — Full Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Real job evaluation and pay architecture problems are rarely clean. This case works through the ambiguity practitioners actually face."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Driftwood Media — The 24% Gap",
+                "v": "Driftwood Media's 24% median gender pay gap must be reported publicly. The Head of Total Rewards must prepare the statutory narrative and the investor response simultaneously. The CEO has asked whether 'there's anything we can do to improve the number before we publish.'"
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The CEO's question — 'can we improve the number before we publish' — requires a careful response. What options exist and what are their implications?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The statutory report uses a specific snapshot date (5 April in the UK). If that date has passed, the number is fixed. If it hasn't passed, four legitimate levers could move the reported figure: (1) accelerating planned salary increases for women below the median — legitimate if the increases reflect genuine market or performance grounds; (2) hiring women into senior roles before the snapshot date — possible if recruiting was already planned; (3) ensuring all women eligible for the bonus scheme are enrolled — if women are being missed, this should be corrected immediately regardless of the report; (4) reviewing and correcting any within-grade pay gaps before the snapshot. What is not appropriate: artificial pay changes designed solely to move a reported metric, or any action that would create an equal pay risk by paying women above their grade maximum without the same treatment for men in equivalent roles. The honest answer to the CEO: some legitimate actions may be available; all should be actions the organisation would make regardless of the reporting date."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The investor letter must explain a 24% gap without appearing defensive. What is the structure of an honest, credible narrative?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "A credible investor narrative has four components. First, the number: state it clearly and without qualification — '24% median gender pay gap in the [year] report.' Second, the diagnosis: explain what the data shows about the driver — 'Our analysis indicates the gap is primarily driven by the representation of women in lower-grade roles (71% of Grades 1-3 vs 29% of Grades 4-6). We are conducting an adjusted pay analysis to identify any within-grade pay differences.' Third, the commitment: specific, time-bound actions — 'By Q2 [year+1] we will publish an adjusted pay equity analysis, implement a representation review for our senior grade hiring pipeline, and introduce a compa-ratio review in the annual merit process.' Fourth, the trajectory: if there is a trend (gap improving or worsening year-on-year), show it. A gap that is large but improving is a better ESG story than one that is stagnant or worsening. What the narrative must not do: explain away the number as 'industry standard' (this reads as complacent), blame external factors without commitment, or promise vague aspirations rather than specific actions."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "What is the adjusted pay gap analysis that the letter commits to, and what does it require technically?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The adjusted pay gap analysis — often called a regression-based pay equity analysis — runs a statistical regression with individual salary as the dependent variable and legitimate pay factors (grade, tenure, performance rating, role type, location, part-time status) as independent variables, plus gender as an independent variable. The coefficient on the gender variable, if statistically significant, represents the adjusted pay gap — the unexplained pay difference for employees with comparable grades, tenure, and performance. If the adjusted gap is near zero (< 1-2%), this confirms the overall gap is a representation issue. If the adjusted gap is significant (>3-5%), this indicates a pay decision problem that requires urgent remediation. The analysis requires clean, complete individual-level data: every employee's salary, grade, tenure in role and organisation, last performance rating, part-time status, location, and gender. In practice, data quality is often the primary constraint on running this analysis — incomplete performance data, inconsistent grade records, and missing tenure data are common starting points."
+              },
+              {
+                "t": "box",
+                "label": "Pay Equity Narrative Principles",
+                "v": "State the number clearly — no qualification\nDiagnose the driver — representation vs pay decision\nCommit to specific, time-bound actions\nShow the trajectory — improving gap is a better story than a static one\nAdjusted gap analysis: regression controlling for grade, tenure, performance, role"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "A pay gap narrative that qualifies the number before explaining it reads as defensive — lead with the number, then explain the driver.",
+                  "Adjusted pay gap analysis requires clean, complete individual-level data — data quality is the most common constraint on the analysis, not the statistical method.",
+                  "Legitimate pre-snapshot actions (correcting missing bonus enrolment, accelerating planned increases) should be taken regardless of the reporting date — actions taken only for the report are a governance risk."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "12-1-Q",
+            "title": "Module Quiz: Pay Equity Fundamentals and the Legal Framework",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The unadjusted pay gap differs from the adjusted pay gap in that:",
+                "opts": [
+                  "The unadjusted gap uses median; the adjusted gap uses mean.",
+                  "The unadjusted gap reflects all differences in average pay including grade and role composition; the adjusted gap controls for those factors to isolate unexplained pay differences.",
+                  "The adjusted gap is required by law; the unadjusted gap is voluntary disclosure.",
+                  "The unadjusted gap covers all employees; the adjusted gap covers only full-time employees."
+                ],
+                "ans": 1,
+                "exp": "The two gaps answer different questions — the unadjusted gap reflects everything (including representation); the adjusted gap controls for legitimate factors to isolate unexplained pay differences correlated with a protected characteristic."
+              },
+              {
+                "q": "A company with a 22% unadjusted gender pay gap and a 0.8% adjusted gender pay gap most likely has:",
+                "opts": [
+                  "A serious equal pay legal violation that requires immediate remediation.",
+                  "A representation problem — women concentrated in lower-grade roles — rather than a pay decision problem.",
+                  "A calculation error in the adjusted gap, since the two figures cannot be so different.",
+                  "A pay decision problem that is understated by the adjusted gap methodology."
+                ],
+                "ans": 1,
+                "exp": "A large unadjusted gap with a near-zero adjusted gap is the classic representation pattern — women and men at the same grade are paid similarly, but women are concentrated in lower grades."
+              },
+              {
+                "q": "The UK gender pay gap median formula is:",
+                "opts": [
+                  "(Women's median − Men's median) ÷ Women's median × 100",
+                  "(Men's median − Women's median) ÷ Men's median × 100",
+                  "(Men's mean − Women's mean) ÷ Men's mean × 100",
+                  "(Women's mean − Men's mean) ÷ Women's mean × 100"
+                ],
+                "ans": 1,
+                "exp": "The UK statutory formula uses men's median as the denominator — the gap is expressed as a percentage of men's pay, not women's pay."
+              },
+              {
+                "q": "A bonus participation gap (78% of men vs 61% of women participate in the bonus scheme) most likely indicates:",
+                "opts": [
+                  "Women are performing worse than men and therefore not qualifying for bonuses.",
+                  "A structural eligibility issue — women may be concentrated in roles or grades that are not bonus-eligible.",
+                  "The bonus scheme is intentionally designed to favour men.",
+                  "A data reporting error that inflates the men's participation figure."
+                ],
+                "ans": 1,
+                "exp": "Participation gaps usually reflect structural eligibility differences (which grades or roles are included in the bonus scheme) rather than individual performance differences — the diagnostic question is which roles are eligible, not which individuals performed well."
+              },
+              {
+                "q": "An adjusted pay equity regression analysis controls for which variables to isolate the unexplained gap?",
+                "opts": [
+                  "Job title, department, and office location only.",
+                  "Grade, tenure, performance rating, role type, location, and part-time status — legitimate pay factors.",
+                  "Age, educational qualification, and years of external experience.",
+                  "All compensation components including bonus, benefits, and equity."
+                ],
+                "ans": 1,
+                "exp": "The regression controls for all legitimate, documented pay factors so that the residual coefficient on the protected characteristic variable represents unexplained differences — not differences explained by grade or performance."
+              },
+              {
+                "q": "Which action is appropriate to take before a gender pay gap reporting snapshot date?",
+                "opts": [
+                  "Increasing women's salaries by a flat percentage to reduce the reported gap.",
+                  "Correcting any missing bonus scheme enrolment for eligible women — an action that should be taken regardless of the reporting date.",
+                  "Regrading senior women's roles to higher grades specifically to move the distribution metric.",
+                  "Delaying the departure of senior women employees until after the snapshot date."
+                ],
+                "ans": 1,
+                "exp": "Actions taken that would be appropriate regardless of the reporting date are legitimate. Actions taken purely to move the reported metric — and that would not otherwise be taken — are not."
+              },
+              {
+                "q": "The primary legal principle in equal pay law is:",
+                "opts": [
+                  "All employees must be paid the same salary regardless of their role or grade.",
+                  "Employees doing equal work, work of equal value, or like work must receive equal pay regardless of protected characteristics.",
+                  "Pay gaps exceeding 15% trigger an automatic legal review.",
+                  "Bonus pay is excluded from equal pay legislation and assessed separately."
+                ],
+                "ans": 1,
+                "exp": "Equal pay law requires comparable pay for comparable work — not identical pay for all employees, but equitable pay for those doing work of equivalent value as determined by job evaluation or other assessment."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "12-2",
+        "title": "Conducting a Pay Equity Audit",
+        "color": "#7B3FA0",
+        "lessons": [
+          {
+            "id": "12-2-1",
+            "title": "Conducting a Pay Equity Audit",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "A pay equity audit is a structured investigation into whether pay decisions across the organisation are free from unexplained differences correlated with protected characteristics. Done well, it identifies genuine problems and provides the evidence base for targeted remediation. Done poorly, it produces numbers that are misunderstood internally, mislead externally, and expose the organisation to more risk than no audit at all."
+              },
+              {
+                "t": "h",
+                "v": "Audit Scope and Protected Characteristics"
+              },
+              {
+                "t": "p",
+                "v": "A comprehensive pay equity audit covers more than gender. Protected characteristics under most employment legislation include: gender, race/ethnicity, age, disability, religion, and in some jurisdictions sexual orientation, marital status, and pregnancy/maternity history. The decision about which characteristics to include in the audit depends on: data availability (you can only analyse characteristics you have data on, and collecting this data may itself require employee consent processes); the organisation's specific risk exposure (an organisation in a sector with documented race pay gaps should prioritise ethnicity analysis); and regulatory requirements (gender is mandatory for UK organisations over 250 employees; ethnicity is not currently mandated but is subject to increasing political and investor pressure). A minimum scope: gender pay equity analysis. An aspirational scope: gender, ethnicity, age, and disability."
+              },
+              {
+                "t": "h",
+                "v": "Data Requirements and Quality"
+              },
+              {
+                "t": "p",
+                "v": "The audit data set requires, for every employee: unique employee ID; grade or job evaluation score; salary (base pay, at minimum; ideally total cash including bonus and benefits value); gender; any other protected characteristics for which analysis is planned; continuous service tenure; performance rating from the most recent cycle; contract type (full-time, part-time, fixed-term); office location; and job family. Data quality problems that are common and must be addressed before analysis: missing or inconsistent grade records (especially common in organisations without formal grade structures); performance ratings not recorded in HR systems for all employees; tenure recorded in different formats across acquired businesses; self-identification data on ethnicity or disability that has low completion rates. An audit data set with more than 10% missing values in any key variable requires the missing data to be explicitly acknowledged and its potential impact assessed before any conclusions are drawn."
+              },
+              {
+                "t": "h",
+                "v": "Statistical Methods"
+              },
+              {
+                "t": "p",
+                "v": "Two primary methods are used in pay equity analysis. Cohort analysis (the simpler method): compare the average or median pay of a protected group against the comparison group within defined cohorts — typically grade and role type. A cohort analysis shows 'within Grade 4, women earn £X less than men on average.' It is easy to explain but does not control for multiple factors simultaneously. Regression analysis (the more rigorous method): run a multivariate regression with salary as the dependent variable and all legitimate pay factors plus protected characteristics as independent variables. The coefficient on the protected characteristic variable, if statistically significant, represents the unexplained pay gap after controlling for all included factors. Regression is more rigorous but requires sufficient sample size (typically 50+ employees per analysis group) and should be conducted by or reviewed by a statistician before conclusions are drawn."
+              },
+              {
+                "t": "h",
+                "v": "Statistical Significance and Sample Size"
+              },
+              {
+                "t": "p",
+                "v": "One of the most common audit errors is drawing conclusions from small samples. A 5% pay difference between 3 women and 4 men in a single grade is statistically meaningless — it could be the result of random variation rather than systematic bias. Statistical significance (typically a p-value of <0.05) confirms that a finding is unlikely to be due to chance given the sample size. For regression analysis, results should be considered robust only when: the full analysis group has at least 100 employees; and the protected characteristic group being analysed has at least 30 employees. Where samples are too small for regression, cohort analysis with a clear disclosure of sample limitations is more appropriate than a regression with insufficiently small groups."
+              },
+              {
+                "t": "box",
+                "label": "Audit Methodologies",
+                "v": "Cohort analysis: compare within defined grade/role groups — simple, explainable\nRegression: controls for multiple factors simultaneously — more rigorous, requires volume\nSample minimum: 100+ total, 30+ in protected characteristic group for regression\nData quality: 10%+ missing values in key variables requires disclosure\nScope: gender minimum; ethnicity, age, disability where data and capacity allow"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Driftwood Media — Audit Data Quality",
+                "v": "Driftwood Media's Head of Total Rewards begins assembling the audit data set. The HR system contains salary, grade, and gender for all 280 employees. Performance ratings are available for 214 employees (76.4%). Ethnicity is available for 118 employees (42.1%) — self-identification completion is low. Tenure is available in the HR system but shows different formats between the legacy system and the system used for the post-acquisition headcount."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Audit data quality investigation is not a preliminary step — it is part of the analysis. Systematic data gaps are themselves audit findings.",
+                  "Statistical significance thresholds (p<0.05) and minimum sample sizes (100+ total, 30+ protected group) should be documented before the analysis is run.",
+                  "Ethnicity pay equity analysis with 42% data completion is insufficient for robust conclusions — the completion rate is an audit finding requiring a remediation plan before the next analysis."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "Before running any pay equity analysis, the Head of Total Rewards discovers that performance ratings are missing for 23.6% of employees. The most appropriate next step is:",
+              "opts": [
+                "Run the analysis without performance ratings and note the limitation in the report.",
+                "Investigate why 23.6% of employees have missing ratings before deciding whether to include performance as a control variable.",
+                "Exclude all employees without a performance rating from the analysis.",
+                "Include performance rating as a variable only in the regression, not in the cohort analysis."
+              ],
+              "ans": 1,
+              "exp": "Missing data requires investigation before methodological choices are made. If ratings are missing systematically (e.g. missing more often for women, or for a specific grade) the missing data itself may reflect a bias that affects the audit's conclusions. Random missingness is different from systematic missingness."
+            }
+          },
+          {
+            "id": "12-2-2",
+            "title": "Running Driftwood Media's Cohort Pay Equity Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Cohort analysis identifies within-grade pay gaps without requiring a statistical model. The findings directly indicate where pay decisions may have produced unexplained differences."
+              },
+              {
+                "t": "box",
+                "label": "Driftwood Media — Cohort Analysis Brief",
+                "v": "Available clean data: 267 employees (13 excluded due to irreconcilable data issues).\nGrade × gender cohorts: G1 (F=38, M=12), G2 (F=52, M=18), G3 (F=42, M=22), G4 (F=22, M=38), G5 (F=8, M=26), G6 (F=0, M=4).\nMedian salaries by gender and grade:\nG1: F=£23,400, M=£23,600\nG2: F=£32,800, M=£33,200\nG3: F=£46,200, M=£48,400\nG4: F=£61,800, M=£65,200\nG5: F=£82,000, M=£87,500\nG6: M only (4 employees, no F comparison possible)"
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — Calculate Within-Grade Gaps"
+              },
+              {
+                "t": "p",
+                "v": "For each grade with sufficient data (both genders represented), calculate the within-grade pay gap."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "Within-grade median pay gap (expressed as % of male median):\nG1: (£23,600 − £23,400) ÷ £23,600 = 0.8% (M>F)\nG2: (£33,200 − £32,800) ÷ £33,200 = 1.2% (M>F)\nG3: (£48,400 − £46,200) ÷ £48,400 = 4.5% (M>F)\nG4: (£65,200 − £61,800) ÷ £65,200 = 5.2% (M>F)\nG5: (£87,500 − £82,000) ÷ £87,500 = 6.3% (M>F)\nG6: insufficient data (no female comparators)\n\nPattern: within-grade gaps increase with grade level. This is diagnostically significant: G1 and G2 gaps (0.8%, 1.2%) are within typical noise range; G3 and G4 gaps (4.5%, 5.2%) warrant investigation; the G5 gap (6.3%) at a senior level is a materially significant finding."
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Assess Statistical Reliability"
+              },
+              {
+                "t": "p",
+                "v": "Not all cohort sizes are large enough to draw reliable conclusions from."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "Sample size assessment:\nG1: F=38, M=12 — M sample borderline small; interpret with caution\nG2: F=52, M=18 — M sample small; gap finding (1.2%) should be noted but not overstated\nG3: F=42, M=22 — both adequate; 4.5% gap is a reliable finding\nG4: F=22, M=38 — F sample borderline small; 5.2% finding should be reported with confidence interval caveat\nG5: F=8, M=26 — F sample insufficient for robust conclusions; 6.3% finding is directionally concerning but statistically unreliable\nG6: no female comparators — impossible to assess\n\nKey finding: the most senior grades (G5, G6) have the smallest female representation and therefore the least statistically reliable analysis — precisely where the gaps are largest and the reputational risk is highest. This is a common audit pattern and requires a specific narrative response."
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Produce the Audit Summary"
+              },
+              {
+                "t": "p",
+                "v": "Summarise findings in a format suitable for executive and board presentation."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "Audit summary:\n\nRepresentation finding (confirmed, high confidence): Women represent 57.9% of the workforce but 28% of G4+ employees. This is the primary driver of the 24% unadjusted pay gap.\n\nWithin-grade pay gap findings:\n• G1-G2: within-grade gaps of 0.8-1.2% — within normal variation range; no remediation indicated at this time\n• G3: within-grade gap of 4.5% — statistically reliable, materially significant; requires individual case review of the 42 female G3 employees against male comparators in the same role type\n• G4: within-grade gap of 5.2% — statistically borderline but directionally concerning; requires review\n• G5: within-grade gap of 6.3% — high-concern finding, insufficient female sample for statistical reliability; recommend qualitative review of all 8 female G5 salary histories\n• G6: no female representation — itself a diversity finding\n\nImmediately actionable findings: the G3, G4, and G5 within-grade gaps require individual case reviews before the next salary review cycle."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Within-grade gap analysis separates the representation story from the pay decision story — G1-G2 findings tell a different story from G4-G5 findings.",
+                  "Statistical reliability varies by cohort size — findings from small samples (G5 with F=8) should be reported as directionally concerning, not as confirmed conclusions.",
+                  "The most senior grades typically have the smallest female samples and the largest reported gaps — this common pattern requires a specific narrative response that acknowledges both the finding and its statistical limitations."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "12-2-3",
+            "title": "Driftwood Media's G3 Pay Equity Remediation — Full Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Real job evaluation and pay architecture problems are rarely clean. This case works through the ambiguity practitioners actually face."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Driftwood Media — G3 Individual Case Review",
+                "v": "The G3 audit finding (4.5% within-grade gender pay gap, F=42, M=22) triggers an individual case review. The HR team reviews the salary history and context for each of the 42 female G3 employees against their male comparators. The review surfaces three patterns: 14 women hired at lower starting salaries than male counterparts for comparable roles (hire date within 6 months of each other); 9 women who received below-average merit increases over 3+ consecutive years; and 4 women on parental leave who missed a pay review cycle entirely."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The 14 women hired at lower starting salaries than male comparators represent what type of pay equity finding, and what is the appropriate remediation?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "This is a point-of-hire equal pay finding: employees who were hired into comparable roles at comparable times were offered different starting salaries, with lower offers consistently going to women. This is the most legally significant finding type — if challenged, the organisation would need to demonstrate a legitimate, non-discriminatory reason for the salary difference (a specific qualification, a market supply shortage for a narrow skill, a direct counter-offer situation). If no such reason exists, this is a potential equal pay claim. Remediation: for each of the 14 employees, calculate the pay that should have been offered (using the male comparator's starting salary as the reference), calculate the cumulative underpayment since the hire date (the gap between what was paid and what should have been paid), and design a catch-up payment that addresses both the current salary gap and considers whether back-pay is appropriate. Legal counsel should be involved before any catch-up offers are made — the disclosure and offer process has legal implications for future litigation exposure."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "Nine women who received below-average merit increases over 3+ consecutive years — what does this pattern indicate and how should it be investigated?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Three consecutive years of below-average merit for a group of women with the same gender pattern is a significant pay equity finding. The investigation needs to establish: were the below-average increases correlated with below-average performance ratings (if so, this is a performance rating equity issue, not a merit process issue)? Or were the below-average increases made despite adequate performance ratings (which would indicate a merit allocation bias)? If the performance ratings are also below average for these employees, the investigation extends to the performance management process: are women receiving lower performance ratings at comparable output levels? This is harder to assess but can be explored by examining the correlation between performance ratings and observable output metrics (where available) by gender. If the merit increases are below average despite adequate ratings, the manager decision data should be reviewed — do the managers involved show a consistent pattern across the three years?"
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "Four women on parental leave who missed a pay review cycle — what is the legal position and what is the remediation?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "In the UK, employees on maternity leave are entitled to receive any pay increases that apply to their role as if they were present — they should not miss a pay review cycle simply because they were on leave. Failure to apply a pay review to employees on maternity leave is a breach of the Equality Act 2010 in the UK context. Remediation: calculate the merit increase each employee should have received (using the average increase for their grade and performance rating as a proxy if individual ratings are unavailable), apply it retrospectively from the date of the missed review, and pay any arrears. This is not discretionary — it is a legal obligation. The Head of Total Rewards should also audit whether this pattern is isolated to these four cases or whether it reflects a process failure that has affected others in prior years (requiring a more extensive look-back)."
+              },
+              {
+                "t": "box",
+                "label": "Pay Equity Remediation Principles",
+                "v": "Point-of-hire gap: legal counsel required before catch-up offers; consider back-pay\nMerit allocation gap: investigate performance rating equity first, then merit allocation\nParental leave pay review miss: legal obligation to apply review retrospectively\nSystem failure vs individual decision: remediation scope depends on which it is"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Point-of-hire salary differences with no documented legitimate reason are the most legally significant pay equity finding — legal counsel must be involved before any remediation offer is made.",
+                  "Below-average merit for a gender-correlated group requires two-stage investigation: performance rating equity first, then merit allocation process.",
+                  "Missing pay review for employees on maternity leave is a legal breach in the UK, not a discretionary oversight — retrospective application with arrears is the required response."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "12-2-Q",
+            "title": "Module Quiz: Conducting a Pay Equity Audit",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The minimum data requirements for a regression-based pay equity analysis include:",
+                "opts": [
+                  "Salary and gender only — all other variables introduce complexity that reduces the value of the analysis.",
+                  "Salary, grade, tenure, performance rating, contract type, location, and protected characteristics — all legitimate pay factors plus the characteristic being analysed.",
+                  "Salary, job title, and years of service — the three factors most correlated with pay.",
+                  "Salary, performance rating, and bonus eligibility — the three components of total cash compensation."
+                ],
+                "ans": 1,
+                "exp": "Regression analysis controls for all legitimate pay factors to isolate the unexplained gap. Missing legitimate factors (grade, tenure, performance) will produce a biased coefficient on the protected characteristic variable."
+              },
+              {
+                "q": "A cohort analysis of a 280-person organisation finds an 8% within-grade gender pay gap in Grade 5, where F=6 and M=24. The correct reporting approach is:",
+                "opts": [
+                  "Report the 8% gap as a confirmed pay equity finding requiring immediate remediation.",
+                  "Report the finding as directionally concerning but statistically unreliable due to the small female sample (F=6 is below the minimum for robust conclusions); note it as a priority for qualitative review.",
+                  "Exclude Grade 5 from the analysis because the sample is too small to include.",
+                  "Average the Grade 5 gap into the overall adjusted gap without disclosing the sample size."
+                ],
+                "ans": 1,
+                "exp": "A female sample of 6 is well below the minimum for robust statistical conclusions — the finding is important directionally but must be disclosed with its reliability limitation."
+              },
+              {
+                "q": "A pattern of 14 women hired at lower starting salaries than male comparators in comparable roles within 6 months of each other is best described as:",
+                "opts": [
+                  "A representation finding that can be addressed through the annual merit process.",
+                  "A potential point-of-hire equal pay finding that requires individual case review and legal counsel involvement before remediation.",
+                  "An inconclusive finding because starting salary differences can be explained by many legitimate factors.",
+                  "A pay equity finding that requires a full audit of all historical hires before any action is taken."
+                ],
+                "ans": 1,
+                "exp": "Point-of-hire salary differences with a gender pattern are the most legally significant finding type — they may constitute equal pay violations and require legal counsel before any remediation offer."
+              },
+              {
+                "q": "An employee on maternity leave who misses a salary review cycle should receive:",
+                "opts": [
+                  "The average increase for their grade applied at their return from leave, with no retrospective application.",
+                  "The review increase applied retrospectively from the review date, with any arrears paid — this is a legal obligation in jurisdictions with maternity equality provisions, not a discretionary action.",
+                  "A goodwill payment equivalent to half the average merit increase for their grade.",
+                  "No adjustment — maternity leave is a valid reason for missing a review cycle."
+                ],
+                "ans": 1,
+                "exp": "In the UK, employees on maternity leave are entitled to receive salary increases as if they were present — missing a review cycle due to leave is not lawful and requires retrospective remediation."
+              },
+              {
+                "q": "When audit data has 15% of performance ratings missing, the most appropriate initial response is:",
+                "opts": [
+                  "Exclude performance rating from all regression models and note the limitation.",
+                  "Investigate whether the missing data is random or systematic before deciding on methodology.",
+                  "Replace missing ratings with the mean rating across the cohort.",
+                  "Conduct the audit without performance rating and disclose the limitation in the summary."
+                ],
+                "ans": 1,
+                "exp": "Systematic missingness (ratings missing more often for a specific gender or grade) is itself a finding that affects the audit's conclusions. Random missingness has different implications. The investigation must come first."
+              },
+              {
+                "q": "The primary difference between cohort analysis and regression analysis in pay equity is:",
+                "opts": [
+                  "Cohort analysis is legally required; regression is voluntary best practice.",
+                  "Cohort analysis compares within defined groups; regression controls for multiple factors simultaneously across the full population.",
+                  "Regression is used for gender analysis; cohort analysis is used for ethnicity analysis.",
+                  "Cohort analysis requires external consultants; regression can be conducted by internal HR teams."
+                ],
+                "ans": 1,
+                "exp": "Cohort analysis is more explainable and appropriate for smaller populations; regression is more rigorous but requires sufficient volume and statistical expertise — both are valid methodological choices with different use cases."
+              },
+              {
+                "q": "An ethnicity pay equity analysis with 40% self-identification completion is best described as:",
+                "opts": [
+                  "Sufficient for a preliminary analysis if the 40% is representative of the workforce.",
+                  "Insufficient for robust conclusions and itself an audit finding requiring a self-identification data improvement programme.",
+                  "Legally compliant because ethnicity data collection is voluntary.",
+                  "Usable if the analysis is limited to grades with more than 50% completion."
+                ],
+                "ans": 1,
+                "exp": "40% completion makes any analytical conclusions unreliable — the 60% gap means the data may not be representative. The completion rate is itself an audit finding requiring action before meaningful ethnicity analysis is possible."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "12-3",
+        "title": "Gender and Ethnicity Pay Gap Reporting",
+        "color": "#7B3FA0",
+        "lessons": [
+          {
+            "id": "12-3-1",
+            "title": "Gender and Ethnicity Pay Gap Reporting",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Pay gap reporting has evolved from a compliance obligation into a strategic communication — the way an organisation reports its gap, and the narrative it builds around the numbers, is now as scrutinised by investors, employees, and candidates as the numbers themselves. Getting the reporting right requires understanding both the mechanics and the communication."
+              },
+              {
+                "t": "h",
+                "v": "UK Statutory Gender Pay Gap Reporting"
+              },
+              {
+                "t": "p",
+                "v": "UK employers with 250 or more UK employees must publish annually: mean and median gender pay gap; mean and median bonus pay gap; the proportion of men and women receiving bonuses; and the proportion of men and women in each of four pay quartiles (lower, lower middle, upper middle, upper). The statutory report uses 5 April as the snapshot date and must be published by 4 April of the following year. The report is submitted to the government's online reporting service and becomes publicly searchable. The report requires no analysis of root causes — it simply requires the numbers. The narrative that accompanies it (which is voluntary, not statutory) is where the organisation explains the drivers and describes actions being taken."
+              },
+              {
+                "t": "h",
+                "v": "Ethnicity Pay Gap Reporting"
+              },
+              {
+                "t": "p",
+                "v": "At the time of writing, ethnicity pay gap reporting is not statutory in the UK, but the government has committed to making it mandatory for employers of 250+ employees. Many large employers report voluntarily, driven by investor pressure and the visible business case for ethnic diversity. The methodology mirrors gender pay gap reporting but faces additional complexity: ethnic categories are more numerous than binary gender categories, requiring decisions about how to aggregate (e.g. whether to compare 'White' vs 'all other ethnicities' or to report by specific ethnic group); self-identification rates are typically lower for ethnicity than gender, creating data quality challenges; and intersectionality (the overlapping effects of gender, ethnicity, and other characteristics) requires more sophisticated analysis than single-characteristic reporting."
+              },
+              {
+                "t": "h",
+                "v": "The Pay Quartile Analysis"
+              },
+              {
+                "t": "p",
+                "v": "The quartile analysis divides all employees by pay into four equal groups (lower, lower middle, upper middle, upper) and calculates the proportion of each gender in each quartile. This is often more diagnostic than the headline gap numbers: an organisation where women are 70% of the lower quartile and 20% of the upper quartile has a clear pipeline problem that the gap numbers alone may not make visible. The quartile analysis is the closest the statutory report gets to a representation diagnostic — it shows whether the distribution of men and women across pay levels is skewed, and by how much. For the narrative, the quartile analysis is also the most actionable: interventions to improve the female proportion in the upper quartile (succession planning, sponsorship programmes, flexible working at senior levels) are more specific than interventions directed at the headline gap."
+              },
+              {
+                "t": "h",
+                "v": "Year-on-Year Trend and Benchmark"
+              },
+              {
+                "t": "p",
+                "v": "A single year's gap is a snapshot; a multi-year trend is a story. Organisations that show a consistent downward trend in their pay gap — even if the gap remains large — communicate a qualitatively different message than those whose gap is static or worsening. For investor reporting and public narrative, the trend matters as much as the absolute number. The external benchmark provides context: a 22% median gender pay gap in a sector where the median is 28% is a meaningfully different position than 22% in a sector where the median is 12%. Sector benchmarks are available from the UK government reporting service and allow organisations to contextualise their numbers without appearing to excuse them."
+              },
+              {
+                "t": "box",
+                "label": "UK Gender Pay Gap Report Requirements",
+                "v": "Statutory (mandatory): mean and median pay gap; mean and median bonus gap; bonus participation %; lower/lower middle/upper middle/upper quartile gender split\nSnapshot date: 5 April\nPublication deadline: 4 April following year\nNarrative: voluntary but strategically important\nQuartile analysis: closest statutory indicator of representation\nTrend: multi-year trajectory is as important as the current figure"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Driftwood Media's Reporting Strategy",
+                "v": "Driftwood Media's board must approve the gender pay gap report before publication. The CFO notes that the 24% gap 'looks bad and we should delay publication.' The Head of Total Rewards and General Counsel must explain why delay is not appropriate and what the reporting strategy should be."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The quartile analysis is more diagnostically powerful than the headline gap — use it as the basis for the narrative and the intervention strategy.",
+                  "Year-on-year trend and sector benchmarking provide context that allows a large gap to be presented as part of a credible improvement story.",
+                  "The narrative accompanying the statutory report is voluntary but strategically essential — it is the organisation's only opportunity to explain the numbers before others interpret them."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The CFO's suggestion to delay the UK statutory gender pay gap report publication to improve the numbers first is problematic because:",
+              "opts": [
+                "The report must be published within 24 hours of the snapshot date.",
+                "The statutory deadline is 4 April — delay beyond this date is a legal breach that creates additional reputational and legal exposure far worse than a 24% gap.",
+                "Pay gap reports cannot be changed once submitted to the government service.",
+                "The government automatically publishes all pay gap data regardless of employer submission."
+              ],
+              "ans": 1,
+              "exp": "Late publication of a statutory report is a legal breach and in the UK is listed on the government's reporting service — making the delay itself a public finding in addition to the gap number. Proactive, on-time publication with a strong narrative is always preferable."
+            }
+          },
+          {
+            "id": "12-3-2",
+            "title": "Building Driftwood Media's Pay Gap Report Narrative",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "The statutory report communicates what; the narrative communicates why and what we're doing about it. The narrative is the organisation's voice on its own numbers."
+              },
+              {
+                "t": "box",
+                "label": "Driftwood Media — Report Narrative Brief",
+                "v": "2026 statutory data: median gap 24%, mean gap 26.4%, bonus gap 44.8%, bonus participation (M=78%, F=61%).\nQuartile data: Lower (F=74%, M=26%), Lower Middle (F=68%, M=32%), Upper Middle (F=46%, M=54%), Upper (F=22%, M=78%).\nPrior year: median gap was 26% (improved by 2 points).\nSector median gap (media industry): 19%."
+              },
+              {
+                "t": "h",
+                "v": "Section 1 — The Numbers and What They Show"
+              },
+              {
+                "t": "p",
+                "v": "Present the statutory data clearly, then provide immediate diagnostic context."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal draft narrative",
+                "v": "'Driftwood Media's 2026 median gender pay gap is 24% — an improvement from 26% in 2025, and our third consecutive year of reduction. Our mean gap is 26.4%. We acknowledge that both figures remain above the media industry median of 19% and that further progress is needed.\n\nThe primary driver of our gap is the distribution of women and men across pay levels: women represent 74% of our lower pay quartile and 22% of our upper pay quartile. This means women are significantly under-represented at senior levels in our organisation, which is the core structural reason our average pay is lower than men's average pay. Within each pay grade, our analysis shows much smaller differences — indicating that our pay decision processes are more consistent than the headline gap suggests, though we have identified specific areas for remediation.\n\nWe are committed to transparency on this data and have published our full methodology and cohort-level findings in our pay equity report, available on our website.'\n\nKey principles applied: state the number without qualification; explain the driver (quartile distribution) immediately; compare to sector without using it to excuse the gap; point to the adjusted analysis."
+              },
+              {
+                "t": "h",
+                "v": "Section 2 — Actions Taken and Planned"
+              },
+              {
+                "t": "p",
+                "v": "Specific, time-bound commitments. No vague aspirations."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal draft narrative",
+                "v": "'Actions completed in 2025-26:\n• Conducted our first full pay equity audit, identifying within-grade pay gaps in Grades 3-5 that we have committed to addressing in the 2026 pay review\n• Corrected pay review process for employees on parental leave — ensuring no employee misses a review cycle due to leave status\n• Implemented compa-ratio reporting in the annual merit matrix so hiring managers can see whether women and men in their teams are positioned equivalently in their grade ranges\n\nActions committed for 2026-27:\n• Address within-grade pay gaps identified in the audit for Grade 3 and Grade 4 employees, with a targeted remediation budget confirmed in the 2026 pay review cycle\n• Introduce structured hiring panels with gender-balanced interviewers for all Grade 4+ recruitment — targeting improvement in the upper quartile representation\n• Publish our adjusted (regression-based) pay equity analysis alongside next year's statutory report\n• Introduce a sponsorship programme for high-potential women in Grades 3-4, targeting promotion readiness into Grade 5+'\n\nNote: every action has a named time frame, not a vague 'we will work towards.'"
+              },
+              {
+                "t": "h",
+                "v": "Section 3 — Five-Year Target"
+              },
+              {
+                "t": "p",
+                "v": "State an aspiration with a realistic trajectory."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal draft narrative",
+                "v": "'Our target: a median gender pay gap of 15% by 2030 — below the current media industry median — achieved primarily through improving the representation of women at senior grades. This target is ambitious but based on our current improvement trajectory of 2-3 percentage points per year.\n\nWe recognise that sustainable gap reduction requires structural change — not one-off pay corrections — and we are committed to reporting our progress transparently, including in years where we do not make the progress we planned.'"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "A strong pay gap narrative leads with the number, explains the driver immediately, avoids qualifications and excuses, and commits to specific time-bound actions.",
+                  "The quartile analysis provides the most actionable narrative material — it connects the gap to the specific structural problem (upper quartile under-representation) that interventions must target.",
+                  "A five-year target with a realistic trajectory is more credible than an aspirational commitment with no timeline — and publicly stated targets create accountability."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "12-3-3",
+            "title": "Driftwood Media's Ethnicity Pay Gap — Full Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Real job evaluation and pay architecture problems are rarely clean. This case works through the ambiguity practitioners actually face."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Driftwood Media — Voluntary Ethnicity Gap Reporting",
+                "v": "Driftwood Media's board has agreed to publish a voluntary ethnicity pay gap report alongside the statutory gender report. The Head of Total Rewards discovers: ethnicity self-identification completion is 42% (118 of 280 employees). Of those who have completed, the breakdown is White=71%, Black=12%, Asian=10%, Mixed=5%, Other=2%. The ethnicity median pay gap (White vs Black employees) is 31% — the largest gap in any analysis."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "Should Driftwood Media publish an ethnicity pay gap report with only 42% data completion?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "This is a genuine governance dilemma. Publishing with 42% completion risks producing numbers that are misleading — if the 58% who haven't completed are disproportionately from specific ethnic groups or grades, the reported gap may be significantly different from the real gap. Not publishing at all avoids the misleading number but misses an opportunity to demonstrate commitment and may be perceived as concealment. The recommended approach: publish, but with explicit disclosure of the data limitation. The report should state clearly: 'This analysis is based on 42% of employee self-identification data. Our results should be interpreted with caution, and we are committed to improving self-identification completion to 80%+ before publishing our next ethnicity pay gap report.' This is more honest and more credible than either publishing without disclosure or not publishing at all. The 42% completion rate is itself a finding that should be disclosed and actioned."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The White vs Black ethnicity median pay gap is 31%. How should this be diagnosed and communicated?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The 31% gap is alarming as a headline. The diagnostic process mirrors gender: first check the quartile distribution (are Black employees concentrated in lower grades?), then assess within-grade differences. Given the 42% completion limitation, the analysis should focus on directional findings rather than precise claims. For communication: the gap is published with the data limitation disclosure; it is described as requiring a representation diagnostic (are Black employees under-represented in senior grades?) and a within-grade diagnostic (do Black employees earn less than comparators at the same grade?). The narrative should not minimise the finding — a 31% gap is a significant finding even with data limitations — but should explain that the causes and remediation plan will be developed once better data is available. The commitment: improve self-identification to 80%+ within 12 months, then conduct a full analysis and publish a specific remediation plan."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "How should Driftwood Media improve ethnicity self-identification completion from 42% to 80%+?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Low ethnicity self-identification rates almost always reflect a trust deficit, not a technical problem. Employees don't complete self-identification forms when they don't trust how the data will be used or when they fear it may disadvantage them. The improvement programme must address the trust question directly: senior leadership statements that data is used only for pay equity monitoring and aggregated, never to identify individuals; a published privacy notice explaining specifically what happens to the data; evidence of use — the fact that Driftwood is publishing a pay equity report is itself evidence that the data is used constructively, and this should be communicated; and making completion part of an actively managed process (e.g. team managers aware of their team's completion rate and supported to encourage completion) rather than a passive form. Target: 80% within 12 months of publishing the first report, with quarterly completion rate tracking reported to the board."
+              },
+              {
+                "t": "box",
+                "label": "Ethnicity Pay Gap Reporting Principles",
+                "v": "Publish with low completion: yes, but disclose limitation explicitly and clearly\n42% completion: itself a finding requiring a remediation programme\nDiagnosis: representation diagnostic first, then within-grade gaps\nTrust: low self-identification rates are trust deficits, not technical problems\nTarget: 80%+ completion before publishing analysis with confident conclusions"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Publishing an ethnicity pay gap report with low data completion is preferable to not publishing — but the limitation must be disclosed clearly and prominently.",
+                  "A 31% gap with 42% data completion is a direction-setting finding, not a precise conclusion — communicate it as such, with a commitment to better data.",
+                  "Improving self-identification completion requires addressing the trust question directly — employees complete forms when they believe the data will be used constructively and will not be used against them."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "12-3-Q",
+            "title": "Module Quiz: Gender and Ethnicity Pay Gap Reporting",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The UK statutory gender pay gap report pay quartiles divide employees into:",
+                "opts": [
+                  "Four groups by job grade — the four lowest and four highest grades.",
+                  "Four equal groups by pay level — lower, lower middle, upper middle, upper — showing the gender split within each.",
+                  "Four groups by bonus amount — zero bonus, low, medium, and high.",
+                  "Four groups by tenure — 0-2 years, 2-5 years, 5-10 years, and 10+ years."
+                ],
+                "ans": 1,
+                "exp": "The quartile analysis divides the full pay population into four equal groups by hourly pay rate and shows the proportion of each gender in each group — providing a representation diagnostic alongside the headline gap numbers."
+              },
+              {
+                "q": "A three-year trend showing a gender pay gap reducing from 28% to 24% to 22% is best used in the narrative to:",
+                "opts": [
+                  "Argue that the gap is no longer a significant concern because it is improving.",
+                  "Demonstrate that structural actions are producing measurable progress — providing a credible trajectory and accountability for further improvement.",
+                  "Explain why no further action is needed until the gap reaches the industry median.",
+                  "Show that the current year's number should be compared to 28% rather than the industry median."
+                ],
+                "ans": 1,
+                "exp": "A consistent improvement trend is one of the strongest narrative assets in a pay gap report — it shows that stated actions are producing results and creates a credible accountability framework for future commitments."
+              },
+              {
+                "q": "Publishing a gender pay gap report late (after the 4 April deadline) in the UK results in:",
+                "opts": [
+                  "A fine proportional to the size of the gap.",
+                  "The late submission being recorded on the government's reporting service — itself a public finding — in addition to the gap data.",
+                  "An automatic gender pay gap investigation by HMRC.",
+                  "No consequence — the deadline is aspirational rather than enforceable."
+                ],
+                "ans": 1,
+                "exp": "Late submission is listed publicly on the government reporting service, meaning the lateness itself becomes a reputational finding on top of the gap data. On-time submission with a strong narrative is always preferable."
+              },
+              {
+                "q": "An ethnicity pay gap report published with 42% self-identification completion should:",
+                "opts": [
+                  "Not be published — insufficient data makes any numbers misleading.",
+                  "Be published with explicit disclosure of the completion rate and a commitment to improve data quality before the next report.",
+                  "Be published using the available data as if it were complete, since self-identification is voluntary.",
+                  "Be restricted to internal reporting only, not published externally."
+                ],
+                "ans": 1,
+                "exp": "Transparent publication with explicit limitation disclosure is more credible than non-publication — the 42% completion rate is itself a finding that demonstrates the organisation's work in progress."
+              },
+              {
+                "q": "The primary reason for low ethnicity self-identification completion rates is typically:",
+                "opts": [
+                  "Employees forgetting to complete the form — a communication and reminder problem.",
+                  "A trust deficit — employees don't complete forms when they don't trust how the data will be used or fear it may disadvantage them.",
+                  "Technical problems with HR system self-identification workflows.",
+                  "Employees' belief that their ethnicity is already recorded correctly in the HR system."
+                ],
+                "ans": 1,
+                "exp": "Trust is the primary driver of self-identification completion — addressing it requires explicit communication about data use, privacy protections, and evidence that the data is used constructively."
+              },
+              {
+                "q": "The pay quartile analysis is more diagnostically useful than the headline gap because:",
+                "opts": [
+                  "It shows the number of employees in each grade, which the headline gap does not capture.",
+                  "It shows the distribution of men and women across pay levels, directly indicating representation imbalances that drive the gap.",
+                  "It is required by law while the headline gap is voluntary.",
+                  "It controls for grade differences and therefore shows the adjusted gap."
+                ],
+                "ans": 1,
+                "exp": "The quartile analysis is the closest the statutory report gets to a representation diagnostic — it shows where in the pay distribution the gender imbalance is concentrated, which directly informs the intervention strategy."
+              },
+              {
+                "q": "A sector benchmark showing a 19% median gender pay gap, compared to Driftwood's 24%, is best used in the narrative to:",
+                "opts": [
+                  "Argue that Driftwood's gap is not significantly worse than the sector and requires no special action.",
+                  "Provide context for the absolute number without using it to excuse the gap — 'we are above sector median and committed to closing this gap.'",
+                  "Set the target as reaching the sector median — which would reduce the obligation to act beyond a 19% gap.",
+                  "Demonstrate that the sector norm is more relevant than the national benchmark."
+                ],
+                "ans": 1,
+                "exp": "Benchmarking provides context, not justification — the narrative should reference the sector median as a reference point while making clear the organisation's commitment goes beyond simply matching the sector average."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "12-4",
+        "title": "Remediation Strategy and Communication",
+        "color": "#7B3FA0",
+        "lessons": [
+          {
+            "id": "12-4-1",
+            "title": "Remediation Strategy and Pay Equity Communication",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Identifying a pay equity gap is the beginning, not the end, of the work. Remediation requires a specific strategy for how gaps will be closed, how progress will be tracked, and how the process and outcomes will be communicated to employees, investors, and the public. The strategy choices made here determine whether pay equity work produces lasting structural change or generates short-term numbers that erode again within three years."
+              },
+              {
+                "t": "h",
+                "v": "Remediation Principles"
+              },
+              {
+                "t": "p",
+                "v": "Three principles govern effective pay equity remediation. First, target the root cause, not the symptom: a representation problem requires different interventions than a pay decision problem, and a hiring process problem requires different interventions than a merit allocation problem. Treating all gaps with pay corrections produces one-time improvement without structural change. Second, prioritise the most legally significant findings first: equal pay violations — specific individuals doing comparable work paid less for no documented legitimate reason — represent legal liability that must be addressed before strategic diversity initiatives. Third, track at the individual level: pay equity is not just an aggregate metric — it is the experience of specific employees in specific roles. Remediation plans that only track aggregate numbers lose sight of the individuals whose pay remains inequitable while the average improves."
+              },
+              {
+                "t": "h",
+                "v": "Types of Remediation"
+              },
+              {
+                "t": "p",
+                "v": "Salary adjustment for identified individuals: where a specific employee is found to be paid less than a comparator for no documented legitimate reason, a salary correction is required. The correction should bring the salary to the comparator's level, not to the midpoint of the gap — and the decision about whether back-pay is owed requires legal advice. Structural process change: changing the hiring process (structured interviews, blind sifting, defined salary offer frameworks) to prevent future gaps from being created. Merit process change: introducing compa-ratio reporting so managers can see whether protected groups are systematically offered lower merit increases; introducing a sign-off requirement for merit decisions that fall significantly below the average for a group. Pipeline investment: sponsorship, mentoring, flexible working, and succession planning changes that improve the representation of under-represented groups at senior levels over time."
+              },
+              {
+                "t": "h",
+                "v": "The Remediation Budget"
+              },
+              {
+                "t": "p",
+                "v": "Pay equity remediation costs money. The budget question — how much is appropriate — has no universal answer, but the framing matters. The cost of pay equity correction is a fraction of the cost of an equal pay tribunal claim, a regulatory investigation, or the talent attrition produced by a reputation for inequitable pay. The remediation budget should be presented to the CFO and board as risk mitigation spend, not as a diversity initiative. The risk being mitigated is: legal claim exposure, regulatory enforcement, reputational damage, and talent retention loss in an increasingly transparent market. Presented in these terms, a remediation budget of 0.5-1.0% of payroll to address material equity findings is typically supportable."
+              },
+              {
+                "t": "h",
+                "v": "Communication to Affected Employees"
+              },
+              {
+                "t": "p",
+                "v": "When an employee's pay is being corrected because an equity gap was identified, the communication must be honest without creating unnecessary legal exposure. The standard approach: communicate the outcome ('your salary is being increased to £X effective [date]'), explain that the organisation conducted a pay equity review and identified opportunities to improve pay alignment, and invite the employee to discuss the review with HR if they have questions. What to avoid: language that admits an equal pay violation before legal counsel has confirmed the liability; language that implies the employee was underpaid 'because of' their protected characteristic specifically, before the causation has been legally established; and mass communications before individual conversations. The individual conversation comes first."
+              },
+              {
+                "t": "box",
+                "label": "Remediation Strategy Framework",
+                "v": "Root cause first: representation, pay decision, hiring process, or merit allocation\nLegal priority: equal pay violations before strategic DEI initiatives\nIndividual tracking: aggregate metrics alone miss specific employees\nBudget framing: risk mitigation, not DEI spend\nCommunication: outcome first, careful language, individual before mass"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Driftwood Media's Remediation Budget Request",
+                "v": "The Head of Total Rewards must present a remediation budget request to the CFO for the findings from the pay equity audit. The request covers: salary corrections for 14 identified point-of-hire gaps (estimated cost £42,000 in annual salary increases), merit acceleration for 9 employees with persistent below-average merit (estimated cost £28,000 per year for 2 years), and retrospective pay review adjustments for 4 parental leave cases (estimated one-off arrears payment of £11,000)."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Remediation must target the root cause of each finding type — salary corrections address symptoms; process changes prevent recurrence.",
+                  "The remediation communication to individual employees should describe the outcome first, with careful language that does not admit legal liability before it has been legally established.",
+                  "A remediation budget framed as risk mitigation — with estimated legal, regulatory, and talent cost exposure quantified — is more fundable than a DEI investment framing."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The most effective framing of the remediation budget request to a cost-focused CFO is:",
+              "opts": [
+                "A diversity and inclusion investment that improves employee satisfaction and Glassdoor ratings.",
+                "Risk mitigation spend — the identified findings represent legal exposure from equal pay claims, regulatory risk from UK pay gap enforcement, and retention risk from an inequitable pay reputation that exceeds the remediation cost.",
+                "A one-time exceptional cost that will not recur once the current gaps are closed.",
+                "A gesture of goodwill to affected employees that demonstrates the organisation's values."
+              ],
+              "ans": 1,
+              "exp": "CFOs respond to risk, not values aspirations. The legal exposure from unaddressed equal pay findings, the regulatory risk from a large unadjusted gap, and the talent cost of an inequitable pay reputation are all quantifiable risks that make the remediation budget a rational financial decision."
+            }
+          },
+          {
+            "id": "12-4-2",
+            "title": "Designing Driftwood Media's Remediation Plan",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Remediation planning requires sequencing (what comes first), individual vs systemic intervention design, and a tracking framework."
+              },
+              {
+                "t": "box",
+                "label": "Driftwood Media — Remediation Plan Design Brief",
+                "v": "Four finding types requiring remediation:\n1. 14 point-of-hire salary gaps (estimated annual correction cost: £42,000)\n2. 9 persistent below-average merit recipients (estimated cost: £28,000/year for 2 years)\n3. 4 parental leave pay review misses (one-off arrears: £11,000)\n4. Structural process gaps (hiring salary framework absent, merit compa-ratio reporting absent, parental leave pay review process absent)"
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — Legal Priority: Parental Leave Cases"
+              },
+              {
+                "t": "p",
+                "v": "Why must the parental leave pay review cases be addressed before any other remediation action?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "The parental leave cases are the most legally urgent because they are not a gap finding — they are an identified breach of UK maternity equality provisions. Every day that passes without the pay review being applied and arrears paid extends the legal exposure. These four cases should be resolved within the same pay cycle as the audit conclusion — not at the next scheduled pay review date.\n\nProcess: calculate the review increase each employee should have received (use grade average as proxy where individual ratings are unavailable); apply retrospectively from the review date; calculate and pay arrears (salary increase × months missed × 1/12 of annual rate per month); notify each employee individually before the payslip arrives; note on each file that the correction has been made and the date.\n\nSystem fix (simultaneous): update the parental leave pay review process documentation to require confirmation sign-off that all employees on leave have been included in each pay review cycle. This is a process failure, not a manager failure — the system didn't have a check."
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Pay Corrections: Point-of-Hire and Merit Gaps"
+              },
+              {
+                "t": "p",
+                "v": "Design the salary correction approach for the 14 point-of-hire gaps and the 9 persistent below-average merit recipients."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "Point-of-hire corrections (14 employees):\n• Reference point: the comparable male hire's starting salary at the time of the female hire\n• Correction: bring each female employee's salary to the comparator's starting salary level, with merit increases applied from hire date forward (this may not equal the exact current male salary if the male employee has had above-average merit, but it corrects the starting position)\n• Back-pay: requires legal advice — back-pay for equal pay claims has a 6-year limitation period in the UK. The decision to pay vs not pay back-pay is a legal and financial one that cannot be made by HR alone\n• Sequence: individual conversations before any payslip change; General Counsel present or briefed for each conversation\n\nPersistent below-average merit (9 employees):\n• Determine whether below-average merit is correlated with below-average performance ratings — if yes, the investigation extends to the performance process\n• Where merit is below average despite adequate ratings: implement merit acceleration for 2 years to bring compa-ratios toward grade midpoint\n• Process fix: introduce compa-ratio display in the annual merit system so managers can see where each employee sits in the range before submitting an increase"
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Build the Tracking Framework"
+              },
+              {
+                "t": "p",
+                "v": "Define how progress against the remediation plan will be tracked and reported."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "Tracking framework:\n\nIndividual tracking: maintain a remediation tracker with one row per affected employee, showing: finding type, correction amount, effective date, communication date, and status (pending / implemented / closed). Updated monthly.\n\nAggregate metrics (quarterly board reporting):\n• Number of individual remediation actions completed vs total identified\n• Within-grade gender pay gap for G3, G4, G5 (the three grades with material findings) — tracked quarterly\n• Overall unadjusted median gap — annual (statutory report) plus mid-year estimate\n• Red-flag: any merit decision in the next 3 annual reviews that produces a within-grade gender pay gap >3% triggers an automatic review before the cycle closes\n\nProcess controls: parental leave process documentation updated and signed off by Head of People by [date]; hiring salary framework published and communicated to recruiting managers by [date]; merit compa-ratio reporting live in next pay review system by [date]."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Legal priority sequencing means parental leave breaches are fixed first — they are not findings to manage; they are ongoing legal breaches to stop.",
+                  "Back-pay decisions for equal pay findings require legal advice before any commitment is made to affected employees.",
+                  "A tracking framework that covers both individual completion status and aggregate metrics catches cases where the aggregate improves while specific individuals remain unresolved."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "12-4-3",
+            "title": "Driftwood Media's Full Pay Equity Review — Closure Case",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Real job evaluation and pay architecture problems are rarely clean. This case works through the ambiguity practitioners actually face."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Driftwood Media — 12 Months After the First Audit",
+                "v": "Twelve months after the initial pay equity audit, Driftwood Media publishes its second gender pay gap report. The median gap has reduced from 24% to 20%. The adjusted gap (now calculable after process improvements) is 2.1%. The parental leave breach has been corrected. The point-of-hire corrections have been implemented for 11 of the 14 cases (3 declined or are under legal review). The hiring salary framework and merit compa-ratio reporting are live. The board requests a pay equity governance assessment."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The adjusted gap is 2.1%. How should this be interpreted and communicated?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "An adjusted gap of 2.1% means that after controlling for grade, tenure, performance rating, and role type, women at Driftwood earn 2.1% less than men on average. A gap of this size is: below the threshold considered material in most pay equity frameworks (3-5%); potentially within statistical noise depending on the sample size and methodology; and significantly better than the unadjusted 20%. The communication approach: report the adjusted gap alongside the unadjusted gap with an explanation — 'Our adjusted pay gap, which controls for grade and experience factors, is 2.1%. This indicates that our pay decision processes are broadly consistent, while our remaining gap reflects the under-representation of women at senior levels — an issue we are addressing through our hiring and succession pipeline.' Do not declare victory: 2.1% adjusted + 20% unadjusted is a partial success story. The representation problem (20% unadjusted) is still material."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "Three of the 14 point-of-hire cases are unresolved. What are the likely reasons and how should these be managed?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The three unresolved cases most likely fall into: (1) active legal dispute — the employee has raised a formal grievance or claim and the correction is subject to legal proceedings; (2) employee decline — the employee declined the correction offer (rare but possible if the offer terms were seen as inadequate, particularly on back-pay); (3) employment ended — the employee has left the organisation since the audit, and the question of whether retrospective correction or back-pay is owed is now a legal question about former employees. Each category requires a specific management approach. Active legal disputes: no direct pay action until legally resolved; legal counsel leads. Employee declines: review the offer terms against what is legally owed (not what is convenient) and return to the employee with a revised offer if the original was insufficient. Former employees: legal advice on limitation period and exposure before any outreach."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "The board requests a pay equity governance assessment. What should this cover?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "A pay equity governance assessment covers six domains: (1) Policy: does the organisation have a documented pay equity policy, approved at board level, that states its commitment, scope, methodology, and remediation principles? (2) Process: are the key pay decision processes (hiring, merit, promotion, grading) embedded with equity checks (compa-ratio reporting, structured hiring panels, grade placement approval)? (3) Data: is the data required for annual pay equity analysis complete, clean, and maintained? (4) Analysis cadence: is a pay equity analysis conducted annually at minimum, with results reviewed by the board? (5) Remediation: is there an active, tracked remediation plan with named owners and completion dates? (6) External disclosure: is the organisation meeting all statutory obligations and publishing voluntary disclosures at the appropriate level of transparency? Rate each domain red/amber/green, assign owners to amber and red domains, and commit to a re-assessment timeline."
+              },
+              {
+                "t": "box",
+                "label": "Pay Equity Governance Assessment",
+                "v": "Policy: documented, board-approved, scope and methodology defined\nProcess: equity checks embedded in hiring, merit, promotion, grading\nData: complete, clean, annually maintained\nAnalysis: annual minimum, board reviewed\nRemediation: active, tracked, named owners\nDisclosure: statutory compliant, voluntary at appropriate transparency level"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "An adjusted gap of 2.1% with an unadjusted gap of 20% describes a partial success — the pay decision processes are broadly consistent, but the representation problem is still material and still requires action.",
+                  "Unresolved remediation cases require individual management by category — active legal disputes, declined offers, and former employees each require a different approach.",
+                  "Pay equity governance assessment should cover all six domains — policy, process, data, analysis, remediation, and disclosure — and produce a red/amber/green rating with named owners for each."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "12-4-Q",
+            "title": "Module Quiz: Remediation Strategy and Communication",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The correct sequencing of pay equity remediation priorities is:",
+                "opts": [
+                  "Strategic DEI initiatives first, then legal compliance findings.",
+                  "Equal pay violations and legal breaches first, then pay decision gaps, then structural process changes, then pipeline investment.",
+                  "Salary corrections for the highest-paid affected employees first.",
+                  "Communications to affected employees before any pay changes are made."
+                ],
+                "ans": 1,
+                "exp": "Legal breaches (parental leave, equal pay violations) have the most urgent and quantifiable liability — they must be addressed before strategic or structural work."
+              },
+              {
+                "q": "A pay equity remediation budget is most effectively presented to a CFO as:",
+                "opts": [
+                  "A diversity and inclusion investment with expected returns in employer brand value.",
+                  "Risk mitigation spend — legal claim exposure, regulatory risk, and talent attrition costs that exceed the remediation amount.",
+                  "A goodwill gesture to affected employees that demonstrates organisational values.",
+                  "A statutory requirement under pay transparency legislation."
+                ],
+                "ans": 1,
+                "exp": "CFOs respond to quantified risk, not values statements. Legal exposure, regulatory risk, and talent cost are all quantifiable and typically exceed the cost of remediation."
+              },
+              {
+                "q": "The communication to an employee whose salary is being corrected after an equity audit should:",
+                "opts": [
+                  "Explicitly state that the employee was underpaid because of their protected characteristic.",
+                  "Describe the outcome (salary increase amount and effective date) and explain it follows a pay equity review, with careful language that does not admit legal liability before it is legally established.",
+                  "Provide a full written explanation of the audit methodology and all findings across the organisation.",
+                  "Be made via a payslip note, with no prior individual conversation required."
+                ],
+                "ans": 1,
+                "exp": "Individual conversation before the payslip change; outcome-first language; no liability admission before legal counsel confirms — these are the three communication principles."
+              },
+              {
+                "q": "An adjusted gender pay gap of 2.1% with an unadjusted gap of 20% indicates:",
+                "opts": [
+                  "The organisation has effectively resolved its pay equity problem.",
+                  "Pay decision processes are broadly consistent, but significant representation under-representation at senior levels remains — both must be addressed.",
+                  "The adjusted gap calculation has an error — the two figures cannot both be correct.",
+                  "The organisation is legally compliant because the adjusted gap is below 5%."
+                ],
+                "ans": 1,
+                "exp": "Adjusted gap (pay decisions) and unadjusted gap (representation) are two different problems requiring two different intervention strategies — both being present simultaneously is not a contradiction."
+              },
+              {
+                "q": "A pay equity governance assessment covers which domains?",
+                "opts": [
+                  "Legal compliance and statutory reporting only.",
+                  "Policy, process, data, analysis cadence, remediation, and external disclosure.",
+                  "HR team capability and training in pay equity methodology.",
+                  "Budget allocated to pay equity remediation and diversity initiatives."
+                ],
+                "ans": 1,
+                "exp": "Governance assessment covers the full pay equity system — from policy to data to disclosure — not just compliance or budget."
+              },
+              {
+                "q": "When an employee declines a pay equity correction offer, the appropriate response is:",
+                "opts": [
+                  "Accept the decline and note the case as closed.",
+                  "Review the offer terms against what is legally owed, and return with a revised offer if the original was insufficient.",
+                  "Escalate to the employee's manager to encourage acceptance.",
+                  "Close the case after 30 days of non-response."
+                ],
+                "ans": 1,
+                "exp": "A decline may indicate the offer was insufficient relative to legal entitlement — particularly if back-pay is in dispute. The offer should be reviewed, not accepted as final without scrutiny."
+              },
+              {
+                "q": "A pay equity tracking framework must monitor which two levels simultaneously?",
+                "opts": [
+                  "Departmental and company-wide.",
+                  "Individual completion status and aggregate metrics — to prevent cases where the aggregate improves while specific individuals remain unresolved.",
+                  "Monthly and annual time periods.",
+                  "Salary and bonus equity separately."
+                ],
+                "ans": 1,
+                "exp": "Aggregate improvement can mask individuals who remain at inequitable pay levels — tracking both prevents the aggregate metric from obscuring individual cases that need resolution."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "c12-cap",
+        "title": "Capstone Project",
+        "color": "#7B3FA0",
+        "lessons": [
+          {
+            "id": "c12-cap-l",
+            "title": "Capstone: Driftwood Media's Global Pay Equity Programme",
+            "duration": "10 min",
+            "xp": 250,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Driftwood Media has expanded from its first pay equity audit (focused on UK gender) to planning a comprehensive global pay equity programme. The programme must cover gender and ethnicity pay gaps across its UK (280 employees), Nigeria (45 employees), and Kenya (30 employees) operations. The Head of Total Rewards must design the programme architecture, data strategy, analysis approach, reporting framework, and remediation governance for all three markets simultaneously."
+              },
+              {
+                "t": "box",
+                "label": "Global Context",
+                "v": "UK: statutory gender pay gap reporting required (250+ UK employees). Gender self-identification complete. Ethnicity: 42% completion (improvement programme underway).\nNigeria (Lagos): no statutory pay gap reporting requirement. Gender data available. Ethnicity data not collected (all employees are Nigerian — within-ethnicity analysis not meaningful for gender equity purposes but ethnic group composition within Nigeria is not collected).\nKenya (Nairobi): no statutory reporting. Gender data available. 30-person operation is below minimum for statistical regression — cohort analysis only.\nAll markets: one global grade structure applied locally with market-calibrated ranges."
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — Data Strategy by Market"
+              },
+              {
+                "t": "p",
+                "v": "What data does Driftwood need to collect and maintain for each market to support an annual global pay equity programme?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach",
+                "v": "UK:\n• Gender: complete — maintain\n• Ethnicity: improve self-ID from 42% to 80%+ within 12 months\n• Grade, tenure, performance, contract type: complete — maintain\n• Analysis type: regression (sufficient volume) + quartile reporting\n\nNigeria (45 employees):\n• Gender: already available — maintain\n• Grade, tenure, performance: collect and standardise in HRIS\n• Analysis type: cohort analysis only (below regression minimum); gender gap by grade; bonus participation by gender\n• Note: 45 employees is below the UK statutory threshold — reporting is voluntary and primarily for internal governance\n\nKenya (30 employees):\n• Gender: available — maintain\n• Analysis type: descriptive only — grade distribution by gender, median salary by gender, bonus participation by gender. No cohort analysis (too small per grade). Used directionally, not for conclusions.\n• This market's equity is managed primarily through the global grade structure compliance review — are locally-calibrated salary ranges applied consistently by gender?"
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Analysis Approach and Reporting Framework"
+              },
+              {
+                "t": "p",
+                "v": "Design the annual analysis and reporting structure across all three markets."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach",
+                "v": "Annual global pay equity report structure:\n\n1. UK (statutory + voluntary):\n• Statutory: gender pay gap report (5 April snapshot, 4 April publication deadline)\n• Voluntary: adjusted (regression) gender pay gap; ethnicity pay gap (with completion rate disclosure); quartile analysis by gender and ethnicity\n\n2. Nigeria (voluntary internal + selective external):\n• Internal: gender pay gap by grade (cohort analysis); bonus participation by gender; upper quartile representation\n• External: publish gender pay gap data in company ESG report (investor disclosure level, not public statutory level)\n\n3. Kenya (voluntary internal):\n• Internal: grade distribution by gender; median salary by gender; directional note on trends\n• Not published externally — sample too small for meaningful external disclosure\n\n4. Global consolidated (board report):\n• Three-market combined: overall gender pay gap across all operations; grade distribution by gender for all markets; remediation status by market and finding type\n• Published annually in ESG report with market-by-market breakdown"
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Remediation Governance Structure"
+              },
+              {
+                "t": "p",
+                "v": "Design the governance structure for a three-market, multi-characteristic pay equity programme."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach",
+                "v": "Global Pay Equity Committee:\n• Chair: Chief People Officer\n• Members: Group CFO, General Counsel (or Deputy), one non-executive board member with a diversity mandate\n• Meets: quarterly\n• Approves: all remediation budgets >£10,000; all individual corrections involving back-pay; any audit finding classified as 'equal pay risk'; annual programme scope and methodology\n\nMarket HR Leads (Lagos, Nairobi, London):\n• Implement approved remediation plans in their markets\n• Maintain data quality to agreed standards\n• Report status monthly to Head of Total Rewards\n• Escalate all equal pay risk findings immediately (no waiting for quarterly cycle)\n\nHead of Total Rewards:\n• Owns global programme architecture, methodology, and reporting\n• Presents quarterly to Global Pay Equity Committee\n• Annual board presentation: full audit findings, remediation status, and next-year programme plan\n\nLegal (General Counsel):\n• Advises on all equal pay risk findings before any corrective offer is made\n• Reviews all employee communications related to pay equity remediation before they are sent"
+              },
+              {
+                "t": "h",
+                "v": "Step 4 — Five-Year Targets"
+              },
+              {
+                "t": "p",
+                "v": "Set measurable five-year targets for the global pay equity programme."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach",
+                "v": "UK targets (by 2031):\n• Unadjusted gender pay gap: ≤12% (from 20% in 2026) — requires sustained upper quartile representation improvement\n• Adjusted gender pay gap: ≤1% (from 2.1% in 2026) — continued process improvement\n• Ethnicity self-ID completion: 85%+\n• Unadjusted ethnicity pay gap (White vs ethnic minority): ≤15% (from 31% in 2026)\n\nNigeria targets:\n• Within-grade gender pay gap: ≤3% across all grades\n• Bonus participation gender gap: ≤5% (from current gap)\n\nKenya targets:\n• Grade distribution: ≥40% female representation in Grades 4+ (from a current position requiring assessment)\n\nGlobal targets:\n• All identified equal pay risk findings resolved within 3 months of identification\n• Pay equity governance assessment: all domains at green status by 2028"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "A global pay equity programme requires a market-specific data and analysis strategy — regression is not available for sub-50-person operations, but cohort and descriptive analysis can still produce actionable findings.",
+                  "Remediation governance requires a committee with genuine decision authority — advisory roles without approval power produce slow and inconsistent remediation.",
+                  "Five-year targets should cover both the unadjusted gap (representation outcomes) and the adjusted gap (pay decision outcomes) — one without the other produces a partial picture.",
+                  "Legal counsel must be embedded in the governance structure, not consulted ad hoc — equal pay risk findings require immediate legal review, not a quarterly committee cycle."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "c12-cap-q",
+            "title": "Capstone Assessment: Pay Equity Analysis and Reporting",
+            "duration": "15 min",
+            "xp": 300,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "For Driftwood Media's Kenya operation (30 employees), the appropriate pay equity analysis type is:",
+                "opts": [
+                  "Regression analysis — controlling for grade, tenure, and performance.",
+                  "Descriptive analysis only — grade distribution by gender, median salary by gender, directional trends. Too small for cohort or regression conclusions.",
+                  "Cohort analysis by grade — comparing median pay for women and men within each grade.",
+                  "No analysis — below 50 employees no meaningful pay equity assessment is possible."
+                ],
+                "ans": 1,
+                "exp": "30 employees is too small for any statistical conclusions — descriptive figures inform governance without creating false precision."
+              },
+              {
+                "q": "The Global Pay Equity Committee requires General Counsel as a standing member primarily because:",
+                "opts": [
+                  "Legal counsel must approve all pay data for compliance purposes.",
+                  "All equal pay risk findings require legal advice before any corrective offer is made — embedding legal in the committee ensures this happens at governance level, not ad hoc.",
+                  "The committee chair is legally required to have a legal background.",
+                  "General Counsel represents the board's financial interests in remediation budget decisions."
+                ],
+                "ans": 1,
+                "exp": "Legal advice before corrective offers is a non-negotiable process requirement — embedding it in the committee architecture ensures it happens systematically."
+              },
+              {
+                "q": "Nigeria's 45-person operation should have its pay equity findings reported to the board:",
+                "opts": [
+                  "Not reported — below the UK statutory threshold, no board-level reporting is required.",
+                  "In the global consolidated board report alongside UK and Kenya, at an appropriate level of detail for the operation's size.",
+                  "In a separate board paper from the UK report, to ensure the Nigeria findings are not conflated with statutory UK obligations.",
+                  "Only when a specific equal pay finding is identified — otherwise annual reporting is not necessary."
+                ],
+                "ans": 1,
+                "exp": "All operations should be included in global pay equity governance — size determines the depth of analysis, not whether the findings reach the board."
+              },
+              {
+                "q": "An ethnicity pay gap target of ≤15% by 2031 (from 31% in 2026) primarily requires:",
+                "opts": [
+                  "Salary corrections for identified ethnicity pay gap findings within the next 12 months.",
+                  "Structural improvements in the ethnic minority representation at senior grades over five years — the gap is primarily a representation problem.",
+                  "Regrading ethnic minority employees to higher grades to improve the distribution metric.",
+                  "A change in the ethnicity pay gap calculation methodology."
+                ],
+                "ans": 1,
+                "exp": "If the gap is driven by representation (ethnic minority employees concentrated in lower grades), only sustained representation improvement — hiring, progression, succession — will close the gap structurally."
+              },
+              {
+                "q": "A 'pay equity risk finding' should be escalated to the governance committee:",
+                "opts": [
+                  "Within the quarterly committee cycle — not more urgently, since the committee has a defined cadence.",
+                  "Immediately — not waiting for the quarterly cycle — because equal pay risk has time-sensitive legal implications.",
+                  "After the annual pay review cycle, when the full context of the finding is available.",
+                  "When the affected employee has been notified of the finding."
+                ],
+                "ans": 1,
+                "exp": "Equal pay risk findings have a legal limitation clock — delay increases exposure. Immediate escalation is the only defensible governance standard."
+              },
+              {
+                "q": "Publishing Driftwood Media's Nigeria pay equity data in the ESG report (rather than as a statutory report) is appropriate because:",
+                "opts": [
+                  "Nigerian pay equity law requires ESG-level disclosure rather than statutory reporting.",
+                  "Nigeria has no statutory pay gap reporting requirement — voluntary disclosure at ESG level provides investor transparency without creating a statutory compliance obligation.",
+                  "ESG reporting has more flexible methodology standards than statutory reporting.",
+                  "The 45-person Nigeria operation is too small for statutory disclosure requirements to apply."
+                ],
+                "ans": 1,
+                "exp": "Voluntary ESG disclosure provides investor and public transparency in markets where no statutory obligation exists — it demonstrates the programme's genuine scope rather than compliance minimum."
+              },
+              {
+                "q": "The five-year adjusted gap target (≤1% from 2.1%) is pursued through which primary intervention?",
+                "opts": [
+                  "Across-the-board salary increases for all female employees.",
+                  "Embedding process controls in hiring, merit, and promotion decisions — structured salary offers, compa-ratio reporting in merit, and promotion calibration — that prevent new gaps from being created.",
+                  "Replacing individual merit increases with a grade-wide standard increase for all employees.",
+                  "Changing the regression methodology to control for additional variables that would reduce the measured adjusted gap."
+                ],
+                "ans": 1,
+                "exp": "Adjusted gap reduction requires process control changes — the gap is created in pay decisions, so pay decision processes must change to prevent its recurrence."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Reward Communication and Employee Experience",
+    "subtitle": "Build a reward communication strategy that converts invisible spend into perceived value — from pay philosophy and total reward statements through manager enablement, pay conversations, and pay transparency. Includes TRS design, manager briefing pack development, and a full communication transformation programme capstone.",
+    "color": "#1A7A4A",
+    "color2": "#1A7A4A",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "level": "Advanced",
+    "duration": "3h 50m",
+    "lessons_count": 18,
+    "total_xp": 3030,
+    "desc": "Build a reward communication strategy that converts invisible spend into perceived value — from pay philosophy and total reward statements through manager enablement, pay conversations, and pay transparency. Includes TRS design, manager briefing pack development, and a full communication transformation programme capstone.",
+    "outcomes": [
+      "Diagnose the gap between actual pay positioning and employee pay perception, and design a communication strategy to close it",
+      "Build a Total Reward Statement that converts employer cost into employee perceived value using correct inclusions, calculations, and narrative",
+      "Design and deliver a manager enablement programme that equips managers to handle the five core pay conversation scenarios",
+      "Implement pay transparency communication — internally first, then externally — including salary range posting and EU Directive compliance",
+      "Measure reward communication effectiveness through specific perception metrics and use year-on-year tracking to drive programme improvement"
+    ],
+    "pro": true,
+    "modules": [
+      {
+        "id": "13-1",
+        "title": "Reward Communication Strategy",
+        "color": "#1A7A4A",
+        "lessons": [
+          {
+            "id": "13-1-1",
+            "title": "Reward Communication Strategy",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Most organisations spend more time designing their reward programmes than communicating them. The result is that employees consistently undervalue what they receive — surveys regularly show employees estimate their total reward value at 60-70% of its actual cost to the employer. The communication gap is not a minor inefficiency; it is the mechanism by which significant reward spend generates almost no engagement or retention return."
+              },
+              {
+                "t": "h",
+                "v": "Why Reward Communication Fails"
+              },
+              {
+                "t": "p",
+                "v": "The three most common failure modes: first, communication happens only once — during onboarding or at the annual pay review — rather than at the moments when employees are most receptive (life events, market comparison moments, promotion decisions). Second, communication is about what the organisation provides rather than what the employee specifically receives — a benefits brochure that lists every programme without personalisation is less effective than a statement that says 'you received £4,200 in pension contributions this year.' Third, the language is administrative rather than conversational — reward communications written to cover legal bases produce documents that employees file without reading. Effective reward communication is specific, timely, and framed in terms of what it means to the employee."
+              },
+              {
+                "t": "h",
+                "v": "The Communication Hierarchy"
+              },
+              {
+                "t": "p",
+                "v": "Not all reward messages carry equal weight. The communication hierarchy places the highest-impact messages at the foundation: pay philosophy (why we pay the way we pay) must be communicated and understood before individual pay decisions make sense; grade structure and career framework create the context in which progression and promotion decisions are interpreted; individual pay positioning (where I am in my range and why) is the most personally relevant message; total reward value (everything I receive in addition to base pay) converts invisible spend into perceived value. Building from philosophy down to individual value is the sequence that creates lasting comprehension — skipping to the personal without the context produces confusion and mistrust."
+              },
+              {
+                "t": "h",
+                "v": "Segmenting the Audience"
+              },
+              {
+                "t": "p",
+                "v": "Different employee populations have different reward communication needs and different channels. Early-career employees prioritise career development clarity, learning investment, and progression timelines — reward communication that emphasises base salary positioning and pension mechanics will not resonate as strongly. Mid-career employees with families prioritise benefits (particularly health and childcare), flexibility, and pay security. Senior professionals and executives prioritise equity, total package context, and market positioning. Communication that is not segmented by career stage and life situation wastes content on audiences it will not reach. The minimum segmentation: new joiners, mid-tenure employees, senior professionals, and managers (who need to communicate reward decisions to their teams)."
+              },
+              {
+                "t": "h",
+                "v": "Channel Strategy"
+              },
+              {
+                "t": "p",
+                "v": "Reward communication uses multiple channels for a reason: different employees consume information differently, and different content types suit different channels. Annual total reward statements: best delivered digitally with interactive functionality (calculators, link-through to enrolment), backed by a printed version for employees without reliable digital access. Manager briefings: always delivered in-person or via live video — managers who learn about pay decisions from a document alone will communicate them less effectively than those who have been briefed, questioned, and practised the language. Intranet/portal: suitable for evergreen content (benefits guide, FAQs, grade framework). Direct manager conversation: the highest-trust channel for individual pay messages — nothing replaces a direct conversation between a manager and an employee about their specific pay."
+              },
+              {
+                "t": "box",
+                "label": "Communication Hierarchy",
+                "v": "1. Pay philosophy — why we pay the way we pay\n2. Grade structure and career framework — context for progression\n3. Individual pay positioning — where I am and why\n4. Total reward value — everything I receive\nBuild from foundation to personal; skipping context produces confusion"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Kestrel Group's Communication Gap",
+                "v": "Kestrel Group's annual engagement survey reveals that 58% of employees believe they are paid below market, despite salary survey data showing the organisation pays at P55 on average — above median. The Head of Total Rewards is asked to explain the discrepancy and propose a remedy."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The most expensive reward spend is invisible spend — investment that employees don't know they receive generates no engagement or retention return.",
+                  "Reward communication must be specific and personal — aggregate programme descriptions do not create the perception of value that individual statements do.",
+                  "The communication hierarchy ensures context is established before individual messages are delivered — without context, individual pay messages are interpreted in a vacuum."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The gap between Kestrel's P55 positioning and 58% of employees believing they are below market most likely indicates:",
+              "opts": [
+                "The salary survey data is incorrect and Kestrel is actually paying below median.",
+                "Employees are comparing their base salary to total compensation figures they see externally — a perception gap driven by lack of communication about total reward value and market positioning.",
+                "Employees' managers are telling them they are underpaid.",
+                "The engagement survey question is poorly designed and the result is not meaningful."
+              ],
+              "ans": 1,
+              "exp": "Perception gaps between actual pay positioning and employee beliefs almost always result from insufficient communication — employees who don't know where they sit in the market and what their total package is worth will default to assuming the worst."
+            }
+          },
+          {
+            "id": "13-1-2",
+            "title": "Designing Kestrel Group's Communication Strategy",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "A reward communication strategy needs to be practical for the organisation's current maturity. Perfect is the enemy of functional — a consistent, clear approach with existing tools delivers more value than a sophisticated platform that never gets implemented."
+              },
+              {
+                "t": "box",
+                "label": "Kestrel Group — Communication Brief",
+                "v": "340 employees. Mix of: financial analysts (35%), operations/admin (40%), technology (15%), leadership (10%).\nCurrent channels: annual pay letter (base salary only), benefits guide (PDF, last updated 2 years ago), manager Q&A deck (optional, rarely used).\nPrimary problem: 58% believe they are paid below market despite P55 positioning.\nBudget: moderate — no new technology platform in year 1."
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — Define the Core Messages by Audience Segment"
+              },
+              {
+                "t": "p",
+                "v": "Before choosing channels, decide what each segment needs to hear and in what order."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "Financial analysts (35%): Primary concern is market competitiveness for their skills (high mobility, active LinkedIn users). Core messages: (1) Kestrel pays above market median for financial analyst roles — state the percentile explicitly; (2) progression from Analyst to Senior Analyst to Manager is grade-gated with clear criteria — the career framework exists and applies to them; (3) their total package including pension is worth £X more than their base salary alone.\n\nOperations/admin (40%): More stable population, benefits-focused, less likely to be actively looking. Core messages: (1) benefits portfolio value — health cover, pension, holiday, and any flex benefits stated in personal terms; (2) job security and stability messaging alongside pay context; (3) career pathways within operations.\n\nTechnology (15%): Highest mobility, most likely to have external offers. Core messages: (1) Kestrel's tech pay positioning specifically — this segment needs to see tech-sector benchmarks, not general market data; (2) IC track awareness — Principal Engineer level exists; (3) equity or LTI if applicable.\n\nLeadership (10%): Need to be equipped to communicate reward to their teams, not just receive their own messaging. Core messages: (1) the pay philosophy they should be able to articulate; (2) what each employee in their team receives and how to talk about it; (3) how to handle the 'am I paid fairly?' conversation."
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Map Messages to Channels and Timing"
+              },
+              {
+                "t": "p",
+                "v": "Practical channel design for an organisation without a new technology budget."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "Channel plan:\n\n1. Enhanced pay letter (immediate, zero additional cost): Add to the existing annual pay letter — current salary, position in grade (e.g. 'you are positioned in the upper third of your salary band'), market context (e.g. 'your role benchmarks at the [X]th percentile of the [role type] market'), and a summary line of total package value. This single change — adding four lines to a document that already exists — is the highest-return communication improvement available.\n\n2. Personalised total reward statement (year 1: Excel-generated, year 2: digital): Calculate and present each employee's total package value — base pay, pension, health cover estimated value, life cover, annual leave value, and any variable pay. Send with the pay letter, not separately. The timing is right: the pay letter moment is when employees are thinking about pay.\n\n3. Manager briefing (before pay letters go out): A 60-minute live session for all people managers. Covers: what the pay review decided and why, how to explain grade positioning and market context, how to answer the five questions employees always ask. Attendance is mandatory — not optional. Managers who don't attend don't lead pay conversations for their teams until they've received the briefing via a catch-up session.\n\n4. Pay philosophy page (intranet): A single, well-written page that states Kestrel's pay philosophy in plain language — what we pay to, why, and how grades work. Linked from every pay-related communication. Updated annually. Not a PDF — a live page that is always current."
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Measure the Gap"
+              },
+              {
+                "t": "p",
+                "v": "How do you know if the communication strategy is working?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "Year 1 baseline measurement (before strategy launches): extract the 58% perception figure from the engagement survey item verbatim and track it as a KPI going forward. Also extract: 'I understand how my pay is determined' (a separate engagement item if available).\n\nYear 1 target: reduce 'paid below market' belief from 58% to <40%, increase 'understand pay determination' from baseline to >60%.\n\nYear 2 target: <30% below market belief; >70% understand pay determination.\n\nLead indicator (quarterly): manager confidence survey — 'I feel confident explaining pay decisions to my team.' This leads the employee perception change by 6-12 months. Managers who are confident communicate better; better communication changes employee perception. Track the lead indicator to intervene early."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The highest-return communication improvement is usually the simplest: adding market context and total package value to the existing pay letter costs almost nothing and immediately increases perceived value.",
+                  "Manager briefings must be mandatory — optional briefings produce a two-tier system where some employees receive informed pay conversations and others do not.",
+                  "Measuring communication effectiveness requires before-and-after tracking of specific perception metrics, not just satisfaction with communications generally."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "13-1-3",
+            "title": "Kestrel Group's Pay Communication Crisis — Full Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Real reward communication challenges involve competing priorities — cost, candour, legal risk, and employee trust. This case works through the trade-offs."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Kestrel Group — The Below-Market Conversation",
+                "v": "Three weeks before the annual pay letter is sent, a Senior Financial Analyst shares in a team meeting that she has an external offer 'paying 20% more.' Four other analysts immediately say they've been approached too. The Head of Total Rewards is asked to intervene before the pay letters go out and propose an immediate response."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The 20% external offer claim needs to be verified before any response is designed. What is the verification process?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "External offer claims are real retention data points but must be verified carefully. The verification questions: (1) Is the offer real and in writing? Verbal offers from recruiters should be treated as directional, not definitive — a signed written offer is the only basis for a specific counter-offer consideration. (2) Is the comparison valid? A 20% base salary increase at a firm with no pension, no bonus, and no health cover may represent a smaller total package increase than 20%. (3) What is the leaving motivation? Pay is frequently cited but often secondary — if the employee is leaving for career development, autonomy, or manager issues, a pay adjustment will not retain them for more than 3-6 months. (4) Is the external rate itself reflective of the market? Recruiters systematically over-state package value. Before making any pay adjustment, check the external salary figure against survey data for the role and level. A verified external offer that genuinely reflects market movement is the strongest evidence for an immediate pay review. An unverified verbal claim from a recruiter is not."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "Assuming the offer is verified and genuine, what are the options and what should Kestrel do?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The options: (1) Counter-offer: match or approach the external offer. The retention benefit is real but temporary — employees who accept counter-offers typically leave within 12-18 months, and counter-offers create precedent that others will seek to replicate. (2) Immediate market review for the analyst role: run a targeted salary survey check for the Financial Analyst grade, confirm whether Kestrel's range midpoint needs adjustment, and if so adjust the range and bring this analyst (and any others in the role) to the appropriate position. This is more defensible and avoids the perception of rewarding job-shopping specifically. (3) Accelerate the pending pay review: if the analyst is already due a merit increase in the next pay cycle, bring it forward. This is the most defensible option when the review is imminent. (4) Let her go and reconsider the grade benchmark for future hiring. This is appropriate only if the market check confirms Kestrel is genuinely paying below market and cannot close the gap within budget — a deliberate choice, not a passive default. For a Financial Analyst where the role is high-value and the departure would be costly, option 2 (market review for the cohort) is the most defensible both commercially and legally."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "The four other analysts who mentioned external approaches in the team meeting present a different situation. How should this be handled?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Mentions of external approaches in a team meeting are a signal, not a resignation. The correct response: (1) the line manager has a one-to-one conversation with each analyst — not about the meeting comment, but about career development, engagement, and whether there's anything they want to discuss about their role or compensation. This surfaces the underlying motivation without making a compensation commitment. (2) The total reward statement that was going to be sent in three weeks goes out now — targeted to the analyst cohort first, with a cover note from the line manager. (3) The manager briefing is delivered immediately for the line manager of this team, not in three weeks. The immediate goal: give the manager the tools to have an informed pay conversation before the external approaches become active decisions. What must not happen: a group pay increase for all five analysts in response to the team meeting comment. This rewards the expression of external interest rather than individual contribution and creates the precedent that public expression of salary concerns produces pay increases."
+              },
+              {
+                "t": "box",
+                "label": "External Offer Response Principles",
+                "v": "Verify: real offer, valid comparison, real motivation\nCounter-offer: retention is real but temporary; creates precedent\nCohort market review: more defensible than individual counter-offer\nGroup pay increase triggered by team meeting comment: sets wrong precedent\nProactive TRS delivery: turn the communication lever before the decision is made"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Verifying an external offer before responding prevents both under-reaction (ignoring a genuine market signal) and over-reaction (rewarding unverified job-shopping).",
+                  "A cohort-level market review is more legally and commercially defensible than an individual counter-offer, and addresses the underlying pricing problem rather than the immediate retention risk.",
+                  "Proactive total reward statement delivery at the moment of external pressure is the highest-return communication action — it reframes the comparison before the employee makes a decision."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "13-1-Q",
+            "title": "Module Quiz: Reward Communication Strategy",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "Employees consistently underestimate their total reward value primarily because:",
+                "opts": [
+                  "HR teams deliberately understate reward value to manage expectations.",
+                  "Most reward programmes are communicated only once and in aggregate rather than personally and at moments of maximum relevance.",
+                  "Employees compare their pay to senior colleagues rather than market data.",
+                  "Total reward statements are too complex for most employees to interpret accurately."
+                ],
+                "ans": 1,
+                "exp": "Timing, specificity, and personalisation are the three communication variables most responsible for the perception gap — all three are addressable without increasing reward spend."
+              },
+              {
+                "q": "The correct order of the reward communication hierarchy is:",
+                "opts": [
+                  "Individual pay, total reward value, grade structure, pay philosophy.",
+                  "Pay philosophy, grade structure and career framework, individual pay positioning, total reward value.",
+                  "Total reward value, pay philosophy, individual pay, grade structure.",
+                  "Grade structure, pay philosophy, total reward value, individual pay."
+                ],
+                "ans": 1,
+                "exp": "Context must precede personal messages — employees who understand why the organisation pays the way it pays and how grades work interpret their individual pay positioning more accurately than those who receive individual messages without context."
+              },
+              {
+                "q": "Manager reward communication briefings should be:",
+                "opts": [
+                  "Optional — managers who want to lead pay conversations should be supported; others should not be required to participate.",
+                  "Mandatory and delivered before pay letters go out — optional briefings create a two-tier system of communication quality across the organisation.",
+                  "Delivered via email or document briefing to maximise efficiency.",
+                  "Led by the employee's HR Business Partner rather than their line manager."
+                ],
+                "ans": 1,
+                "exp": "Optional briefings guarantee some employees receive well-informed pay conversations and others receive uninformed or inconsistent ones — mandatory briefings ensure baseline quality across the organisation."
+              },
+              {
+                "q": "An employee who believes they are paid 20% below market when the organisation actually pays at P55 is experiencing:",
+                "opts": [
+                  "A legitimate grievance that indicates a pay equity problem requiring investigation.",
+                  "A communication gap — without personalised market context and total reward information, employees default to assuming the worst.",
+                  "Evidence that the P55 positioning is insufficient and the organisation should move to P65.",
+                  "A common misunderstanding that resolves itself once employees have been in the organisation for several years."
+                ],
+                "ans": 1,
+                "exp": "The gap between actual positioning and perceived positioning is almost always a communication problem, not a pay problem — organisations that communicate positioning well typically have significantly lower 'underpaid' perception rates."
+              },
+              {
+                "q": "A total reward statement should be delivered:",
+                "opts": [
+                  "As a separate annual mailing in Q3, to spread out reward communications across the year.",
+                  "Together with the annual pay letter — the moment when employees are most receptive to pay-related information.",
+                  "During onboarding only — employees are most receptive to benefit information when they are new.",
+                  "On request — making them available on the intranet is sufficient for employees who want to check."
+                ],
+                "ans": 1,
+                "exp": "The pay letter moment is the highest-attention reward communication moment of the year — delivering the TRS at the same time maximises the readership it receives."
+              },
+              {
+                "q": "When an employee shares an external offer in a team meeting, the most appropriate immediate response is:",
+                "opts": [
+                  "An across-the-board pay increase for all employees in the team who raised external offers.",
+                  "Individual one-to-one conversations from the line manager to understand underlying motivation, combined with immediate delivery of personalised total reward statements.",
+                  "A formal salary review panel convened within 48 hours to assess the external offer.",
+                  "A senior HR leader conversation with the employee to verify the external offer before any manager involvement."
+                ],
+                "ans": 1,
+                "exp": "Group responses reward public expression of external interest; individual conversations address underlying motivation and give the manager tools to reframe the comparison before the employee makes a decision."
+              },
+              {
+                "q": "The highest-return reward communication improvement for an organisation on a limited budget is typically:",
+                "opts": [
+                  "Redesigning the benefits portal with improved UX and search functionality.",
+                  "Adding four lines to the existing pay letter — market context, grade positioning, and total package value summary.",
+                  "Commissioning a full Total Reward Statement platform with employee self-service access.",
+                  "Increasing the frequency of reward-related all-hands communications from quarterly to monthly."
+                ],
+                "ans": 1,
+                "exp": "The existing pay letter already reaches every employee at the highest-attention moment — adding specific, personal context costs almost nothing and immediately reduces the perception gap."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "13-2",
+        "title": "Total Reward Statements",
+        "color": "#1A7A4A",
+        "lessons": [
+          {
+            "id": "13-2-1",
+            "title": "Total Reward Statements — Design and Content",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "A Total Reward Statement (TRS) is the primary tool for making invisible reward spend visible. Done well, it converts employer cost into employee perceived value. Done poorly, it produces a confusing document that employees distrust and discard. The design decisions that determine which outcome occurs are mostly made in the content and structure phase, not in the technology selection phase."
+              },
+              {
+                "t": "h",
+                "v": "What to Include — and What Not To"
+              },
+              {
+                "t": "p",
+                "v": "The core principle: include everything the employer genuinely pays for that the employee might not be aware of, and exclude anything that the employee funds themselves. A TRS that includes employee pension contributions in the headline 'total reward value' inflates the number in a way that erodes trust when employees realise their own money is being counted as employer generosity. Standard inclusions: base salary; employer pension contribution; health insurance premium value; life assurance cover value; dental and optical (if employer-funded); annual leave value (days × daily rate — surprising to employees who have never calculated it); any bonus or variable pay (paid in period, not target); and any other employer-funded benefit with a calculable annual value. Possible inclusions (depending on context): the employer's National Insurance contribution (adds significant value but feels abstract); cost of employer-provided equipment or remote working allowance; training and development spend. Do not include: employee-funded flexible benefits; employee pension contribution; anything that could be perceived as inflated to produce a higher total."
+              },
+              {
+                "t": "h",
+                "v": "Calculating Annual Leave Value"
+              },
+              {
+                "t": "p",
+                "v": "Annual leave is consistently the most eye-opening element of a TRS for employees who have never calculated it. The calculation: annual salary ÷ 52 weeks ÷ 5 days × leave entitlement in days. An employee earning £40,000 with 28 days annual leave holds a leave entitlement worth £40,000 ÷ 260 working days × 28 = £4,308. Most employees have never calculated this figure, and seeing it for the first time — alongside their pension and health cover — substantially increases their perceived total reward value relative to base salary alone. The calculation is also a useful illustration of the compound effect: a move from 25 to 28 days annual leave increases the total reward value by over £460 at £40,000 base salary — a cost to the employer that employees rarely perceive as meaningful without the statement to make it concrete."
+              },
+              {
+                "t": "h",
+                "v": "Format and Presentation"
+              },
+              {
+                "t": "p",
+                "v": "Three presentation formats are in common use. Print/PDF: easier to control visually; suitable for organisations with a significant proportion of deskless or non-computer employees; produced annually with limited interactivity. Digital interactive: allows employees to model alternative scenarios (pension contribution increase, holiday purchase, flex benefit changes) and immediately see the impact on their total value; higher engagement where technology access is good. Hybrid: a simple digital TRS delivered via email or HR portal link, with a print backup for those who need it. Format selection should follow the employee population — a 90% office-based organisation with strong digital literacy is a poor match for a print-only TRS. The content quality matters more than the format sophistication; a well-written print TRS outperforms a poorly-constructed digital one."
+              },
+              {
+                "t": "h",
+                "v": "Narrative and Language"
+              },
+              {
+                "t": "p",
+                "v": "The language of a TRS determines whether it is read and understood. Key principles: use the employee's name throughout (it's a personal statement, not a brochure); write in plain English — avoid HR and legal terminology; show comparisons (not just 'your pension contribution is £4,200 per year' but 'your pension — employer contributes £4,200 and you contribute £2,800 each year — will build a pot that, at current growth rates, could provide income of approximately £X per year in retirement'); and end with a clear next step or call to action. A TRS that simply states numbers without context or narrative is less effective than one that helps the employee understand what the numbers mean for their life."
+              },
+              {
+                "t": "box",
+                "label": "TRS Content Principles",
+                "v": "Include: employer-funded elements only — salary, employer pension, health, life, leave, employer NI, training\nDo not include: employee contributions — inflates numbers and erodes trust\nAnnual leave calculation: salary ÷ 260 working days × leave days = leave value\nFormat: match to population — digital where possible, print backup where needed\nLanguage: personal, plain English, contextualised numbers"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Kestrel Group's First TRS",
+                "v": "Kestrel Group is designing its first TRS for 340 employees. The Head of Total Rewards wants to include employer NI contributions in the total value figure. A board member attending the design review objects: 'Employees don't see NI as part of their reward — it feels like padding.' The Head of HR disagrees."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Annual leave value is the most consistently eye-opening TRS element — calculate it and show it prominently.",
+                  "Employee-funded elements must be excluded from the TRS total — including them conflates employer cost with employee contribution and erodes trust when employees notice.",
+                  "Language and context transform numbers into meaning — a TRS that shows a pension number without explaining what it means for retirement income is less effective than one that provides both."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The decision about whether to include employer National Insurance in the TRS total figure should be made on which basis?",
+              "opts": [
+                "Always include it — the employer pays it and it is a genuine employment cost.",
+                "Never include it — employees universally perceive it as a tax rather than a benefit.",
+                "Test with a sample of employees — if they understand it as a genuine employer cost and it increases perceived value without feeling misleading, include it; if it produces confusion or distrust, exclude it.",
+                "Include it in the detailed breakdown but exclude it from the headline total figure."
+              ],
+              "ans": 2,
+              "exp": "Employee perception should determine the inclusion decision — the purpose of the TRS is to increase perceived value, not to maximise a number. If including NI produces confusion or feels like inflation, it defeats the TRS's purpose."
+            }
+          },
+          {
+            "id": "13-2-2",
+            "title": "Building Kestrel Group's TRS",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Build the TRS for this employee step by step, making the inclusion decisions and calculating each element."
+              },
+              {
+                "t": "box",
+                "label": "Kestrel Group — Senior Financial Analyst TRS Data",
+                "v": "Employee: Senior Financial Analyst, Grade 4\nBase salary: £52,000\nEmployer pension contribution: 8% of salary\nEmployee pension contribution: 5% of salary (employee-funded)\nHealth insurance: employer premium £1,840/year (family cover)\nLife assurance: 4× salary cover (employer-funded)\nDental insurance: employer-funded, £380/year\nAnnual leave: 26 days\nPerformance bonus paid this year: £6,200\nLearning & development spend this year: £1,200\nEmployer NI: ~13.8% of salary above £12,570 threshold"
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — Base and Variable Pay"
+              },
+              {
+                "t": "p",
+                "v": "Calculate the direct pay elements."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "Base salary: £52,000\nBonus paid this year: £6,200\nTotal direct pay: £58,200\n\nNote: show bonus as 'paid this year' not as 'target' — employees should see what they actually received, not a theoretical amount. If the bonus varies year to year, note that last year's figure was £X to provide context for the range."
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Benefits Value Calculation"
+              },
+              {
+                "t": "p",
+                "v": "Calculate the employer-funded benefits elements."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "Employer pension (8% × £52,000): £4,160\nHealth insurance (employer premium): £1,840\nDental insurance: £380\nLife assurance (4× £52,000 = £208,000 of cover — show as cover value, not cost): stated as 'life cover of £208,000' — the annual premium cost is typically not disclosed on a TRS because it creates misleading comparisons, but the cover value is meaningful to the employee\nL&D investment: £1,200\n\nDo NOT include: employee pension contribution (£2,600) — this is the employee's own money\n\nBenefits subtotal (excl. life cover cost): £7,580"
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Annual Leave Value and Total"
+              },
+              {
+                "t": "p",
+                "v": "Calculate leave value and build the final total."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "Annual leave value: £52,000 ÷ 260 working days × 26 days = £5,200\n\nEmployer NI decision: calculate (13.8% × (£52,000 − £12,570)) = 13.8% × £39,430 = £5,441. Decision: include in the detailed breakdown as a line item with a brief explanation ('employer NI — a statutory contribution Kestrel makes to fund UK public services on your behalf'), but show the total both with and without it to allow the employee to understand the figure.\n\nTRS Summary:\nBase salary: £52,000\nBonus (paid 2026): £6,200\nEmployer pension: £4,160\nHealth insurance: £1,840\nDental insurance: £380\nAnnual leave value: £5,200\nL&D investment: £1,200\nTotal visible reward: £71,380\n\n(Plus employer NI of £5,441 and life cover of £208,000 — disclosed in the detail section)\n\nThe £71,380 figure is 37.3% above the employee's base salary of £52,000 — the most important number to highlight in the TRS header, because it is the clearest demonstration of invisible reward becoming visible."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Show 'total visible reward' as a percentage above base salary — this is the most immediately comprehensible indicator of the TRS's core message.",
+                  "Life assurance is better presented as cover value (£208,000) than as employer premium — the cover amount is meaningful to the employee; the premium cost is not.",
+                  "L&D investment belongs in the TRS — it makes tangible the employer's commitment to development, which engagement data consistently shows employees underestimate."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "13-2-3",
+            "title": "Kestrel Group's TRS Response — Full Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Real reward communication challenges involve competing priorities — cost, candour, legal risk, and employee trust. This case works through the trade-offs."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Kestrel Group — TRS Launch",
+                "v": "Kestrel Group sends its first TRS to all 340 employees. The reception is generally positive, but two unexpected responses emerge: (1) twelve employees notice that their TRS shows a different bonus amount than they expected, creating confusion and several formal queries; (2) five employees contact HR to say the TRS 'feels like Kestrel is trying to convince us our pay is higher than it is' — a trust complaint."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "Twelve employees have a different bonus figure on their TRS than they expected. What has likely gone wrong and how should it be resolved?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Several possible causes: (1) the TRS reflects the bonus paid in the period, but some employees are comparing it to their target bonus or a bonus they expected to receive; (2) the data extract was made before the final bonus upload to payroll, capturing an earlier version of the amounts; (3) the bonus figure includes only one component (e.g. team bonus) and excludes another (individual bonus or LTIP element) that the employee was expecting to see. The immediate response: acknowledge the queries within 24 hours and commit to investigating each case individually. Do not send a mass correction — this amplifies the error. The investigation should cross-reference the TRS data with the payroll record and the bonus calculation sheet for each affected employee. If the TRS is wrong, correct it and resend individually with an explanation. If the TRS is correct and the employee's expectation was wrong, explain the discrepancy clearly — this may surface a separate pay communication problem about how bonus outcomes are communicated."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "Five employees say the TRS 'feels like Kestrel is trying to convince us our pay is higher than it is.' What is the underlying concern and how should it be addressed?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "This is the trust complaint that every TRS risks — employees who are already cynical about their pay may perceive the TRS as a management communication tool designed to make them feel better rather than as genuine information. The response requires honesty rather than defensiveness. First, take the complaint seriously — dismiss it and the relationship with these employees worsens. Second, understand the specific concern: are they objecting to specific inclusions (NI, leave value) that feel artificial? Or is the concern more general ('I don't feel well-paid and you're telling me I should')? If specific elements feel inflated, acknowledge the feedback and consider whether those elements should be redesigned (e.g. present leave value as 'the market value of your leave entitlement' rather than as cash). If the concern is more general, the conversation is about pay satisfaction, not TRS design — and that conversation requires a human response, not a document one. The Head of Total Rewards should personally follow up with each of the five employees."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "Based on these responses, what changes should be made to year 2's TRS design?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Year 2 improvements: (1) Data validation: a two-stage review of all TRS data against payroll before distribution — one HR review and one payroll sign-off. The bonus figure specifically should be reconciled to the final payroll run, not pulled from an earlier data extract. (2) Inclusion audit: review the NI and leave value inclusions against the trust complaints — consider presenting these as 'additional context' sections clearly labelled as 'information about the full cost of your employment' rather than including them in the headline total. (3) Manager pre-briefing: managers should receive the TRS for their team members before distribution, so they can anticipate questions and address them directly when the TRS lands rather than after. (4) A feedback mechanism: include a one-question survey with the TRS ('Was this statement helpful? Yes/No/Tell us more') — tracks perception improvement year-on-year and catches problems early."
+              },
+              {
+                "t": "box",
+                "label": "TRS Design Improvement Loop",
+                "v": "Data validation: payroll reconciliation before distribution, not after\nTrust complaint response: personal conversation, not a defensive document reply\nYear 2 improvements: validation, inclusion audit, manager pre-briefing, feedback mechanism\nThe TRS is a living document — improve it annually based on actual response"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Bonus data errors on a TRS are the most damaging single mistake — reconcile TRS bonus figures to final payroll before any document is distributed.",
+                  "Trust complaints about TRS 'inflation' require personal follow-up, not defensive communications — they surface underlying pay dissatisfaction that a document cannot resolve.",
+                  "Manager pre-briefing before TRS distribution turns the statement into a conversation starter, not a surprise — managers who have read their team's TRS can respond to questions immediately."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "13-2-Q",
+            "title": "Module Quiz: Total Reward Statements",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "Which of the following should NOT be included in the headline total reward figure on a TRS?",
+                "opts": [
+                  "Employer pension contribution",
+                  "Employee pension contribution",
+                  "Health insurance employer premium",
+                  "Annual leave value"
+                ],
+                "ans": 1,
+                "exp": "Employee pension contributions are the employee's own money — including them in the TRS total conflates employer cost with employee contribution and erodes trust when employees realise this."
+              },
+              {
+                "q": "Annual leave value is calculated as:",
+                "opts": [
+                  "Annual leave days × statutory national minimum wage rate",
+                  "Annual salary ÷ 260 working days × leave entitlement in days",
+                  "Annual salary ÷ 52 weeks × leave entitlement in weeks",
+                  "Leave days × daily average market rate for the role"
+                ],
+                "ans": 1,
+                "exp": "The calculation converts the leave entitlement into a monetary equivalent based on the employee's own salary — producing a figure that is personally meaningful rather than a generic estimate."
+              },
+              {
+                "q": "Life assurance on a TRS is most usefully presented as:",
+                "opts": [
+                  "The annual employer premium cost for the cover.",
+                  "The cover value (e.g. £208,000 of life assurance) — meaningful to the employee.",
+                  "The actuarial expected value of the insurance.",
+                  "The cost per month deducted from the employer's benefit budget."
+                ],
+                "ans": 1,
+                "exp": "The cover amount is the number that is meaningful to the employee — it represents what their family would receive. The premium cost is meaningful to Finance, not to the employee."
+              },
+              {
+                "q": "The decision about whether to include employer National Insurance on a TRS should be based on:",
+                "opts": [
+                  "Always include it — it is a genuine employer cost.",
+                  "Testing employee perception — include only if it increases perceived value without creating confusion or distrust.",
+                  "Never include it — NI is a tax, not a benefit.",
+                  "The legal requirement in the jurisdiction — some jurisdictions mandate its inclusion."
+                ],
+                "ans": 1,
+                "exp": "The TRS purpose is to increase perceived value — any element that produces confusion or is seen as 'padding' undermines that purpose, regardless of its genuine cost to the employer."
+              },
+              {
+                "q": "The most common cause of data errors on a TRS is:",
+                "opts": [
+                  "Employees providing incorrect personal information during onboarding.",
+                  "TRS data being extracted before final payroll runs are complete, capturing earlier versions of variable pay amounts.",
+                  "HR systems not integrating correctly with benefits platforms.",
+                  "Employees sharing TRS documents with colleagues and comparing incorrect figures."
+                ],
+                "ans": 1,
+                "exp": "Early data extraction — before bonus uploads or pay changes are finalised in payroll — is the most consistent source of discrepancies between TRS figures and what employees see on their payslips."
+              },
+              {
+                "q": "'Total visible reward' as a percentage above base salary is highlighted in a TRS header because:",
+                "opts": [
+                  "It is required by statutory reward reporting regulations.",
+                  "It is the clearest single demonstration that the employee's total package is materially more than their base salary alone.",
+                  "It allows HR to benchmark total reward value against competitor organisations.",
+                  "It replaces the need to itemise individual benefit values in the detailed breakdown."
+                ],
+                "ans": 1,
+                "exp": "The percentage above base is the most immediately comprehensible comparison point for an employee — it answers 'how much more than my salary am I receiving?' in a single number."
+              },
+              {
+                "q": "A manager who receives their team's TRS data before the statements are distributed is better equipped because:",
+                "opts": [
+                  "They can make corrections before the TRS reaches employees.",
+                  "They can anticipate questions and address them directly when the TRS lands, rather than being caught unprepared.",
+                  "They can adjust their merit recommendations based on where employees feel their total reward is positioned.",
+                  "They have greater authority to discuss pay decisions than an HR partner would."
+                ],
+                "ans": 1,
+                "exp": "Manager pre-briefing converts the TRS from a document employees receive in isolation into a conversation starter — managers who are prepared respond better than those who are surprised by employee questions."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "13-3",
+        "title": "Manager Enablement and Pay Conversations",
+        "color": "#1A7A4A",
+        "lessons": [
+          {
+            "id": "13-3-1",
+            "title": "Manager Enablement — The Pay Conversation",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "The line manager is the most important communication channel in total rewards. No document, portal, or email reaches employees with the credibility, trust, and personalisation that a well-equipped manager can bring to a pay conversation. The problem: most managers are not equipped. They receive a pay decision to communicate without the context, language, or practice to communicate it well."
+              },
+              {
+                "t": "h",
+                "v": "Why Managers Fail Pay Conversations"
+              },
+              {
+                "t": "p",
+                "v": "The failure modes are consistent: the manager doesn't know the pay philosophy well enough to explain it, so they default to 'HR decided'; the manager knows the outcome but not the reasoning, so they can't answer 'why not more'; the manager is uncomfortable with conflict and underplays the message, leaving the employee uncertain about whether the conversation is over; or the manager over-promises ('I'm going to push for more for you') and then fails to deliver. Each of these failures erodes trust — not just in the manager, but in the reward system the manager was supposed to represent. The root cause is almost always insufficient preparation, not manager incapacity."
+              },
+              {
+                "t": "h",
+                "v": "The Five Questions"
+              },
+              {
+                "t": "p",
+                "v": "Regardless of the size of the organisation or the sophistication of the pay system, managers field the same five questions in pay conversations: (1) Why did I get this amount? (2) Am I paid fairly compared to my colleagues? (3) Am I paid fairly compared to the market? (4) What do I need to do to earn more? (5) What happens to my pay if I get promoted? Managers who have clear, specific, honest answers to these five questions can handle any pay conversation. Managers who cannot answer them will either bluff (creating distrust) or deflect to HR (failing their management responsibility). The briefing framework should give managers the answers to all five questions for their team, not a generic script."
+              },
+              {
+                "t": "h",
+                "v": "Preparing Managers for the Conversation"
+              },
+              {
+                "t": "p",
+                "v": "Effective manager enablement has four components. Information: the manager receives, before the pay conversation, each direct report's current salary, their position in the grade range (compa-ratio), their merit increase amount and percentage, and the market context for their role type. Context: the manager understands the pay philosophy, the grade structure, and the merit budget and how individual increases were determined within it. Language: the manager has a clear, honest way to explain each decision — not a script, but a set of principles for structuring the conversation. Practice: the manager has rehearsed the most difficult version of the conversation, typically with their HR Business Partner, before the real one."
+              },
+              {
+                "t": "h",
+                "v": "Handling the Difficult Conversations"
+              },
+              {
+                "t": "p",
+                "v": "Three difficult scenarios arise most frequently. The no-increase conversation: an employee receives no merit increase because performance was below expectations or the budget was exhausted. The language must be honest about the reason, specific about what would change the outcome, and delivered by the manager as an owner of the decision ('I' language) rather than a messenger ('HR decided'). The below-expectation increase conversation: the employee expected more and is disappointed. The manager must hold the message while being empathetic — 'I understand this is less than you hoped' followed by a specific explanation, not an apology that implies the decision was wrong. The 'I have an offer' conversation: covered in the communications case study — the manager needs the tools to reframe total reward before the employee has committed to leaving."
+              },
+              {
+                "t": "box",
+                "label": "The Five Pay Questions",
+                "v": "1. Why did I get this amount?\n2. Am I paid fairly vs colleagues?\n3. Am I paid fairly vs the market?\n4. What do I need to do to earn more?\n5. What happens to my pay if I get promoted?\nManagers equipped to answer all five can handle any pay conversation"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Kestrel Group's Manager Confidence Crisis",
+                "v": "Kestrel Group's post-pay-review employee survey reveals that 41% of employees felt their pay conversation was 'unsatisfactory' — they either didn't receive one or left it without understanding the outcome. The Head of People must diagnose the root cause and design a manager enablement intervention."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Manager enablement is a prerequisite for effective reward communication — no document reaches employees with the same credibility as a well-prepared direct manager.",
+                  "The five pay questions are universal — a briefing framework that equips managers to answer all five handles the vast majority of pay conversation scenarios.",
+                  "Practice (rehearsal with HR) is the most commonly skipped component of manager enablement — and the one that most directly determines how the difficult conversation is handled."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "A 41% unsatisfactory pay conversation rate most likely indicates a failure in which component of manager enablement?",
+              "opts": [
+                "Information — managers did not receive the data about their direct reports.",
+                "All four components — information, context, language, and practice — are typically deficient when the failure rate is this high, indicating systemic rather than individual manager failure.",
+                "Individual manager capability — some managers are not suited to pay conversations.",
+                "Language — managers had the right information but expressed it poorly."
+              ],
+              "ans": 1,
+              "exp": "A 41% failure rate affecting the majority of managers is a systemic problem, not a selection problem — it indicates the enabling infrastructure (information, context, language, practice) was not provided."
+            }
+          },
+          {
+            "id": "13-3-2",
+            "title": "Designing Kestrel Group's Manager Briefing Pack",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "A manager briefing pack has two components: the data sheet (specific to each manager) and the guidance document (shared across all managers). Both must be ready before the pay letters go out."
+              },
+              {
+                "t": "box",
+                "label": "Kestrel Group — Manager Briefing Brief",
+                "v": "Post-review data per manager: each manager receives a spreadsheet with their direct reports' names, current salary, merit increase %, new salary, compa-ratio, and grade. Market context: salary survey percentile by role type available in the HR portal. Merit pool: 4.5% average, range 0-8%. Budget narrative: board approved 4.5% pool; individual increases reflect performance rating and position in range."
+              },
+              {
+                "t": "h",
+                "v": "Component 1 — Manager Data Sheet"
+              },
+              {
+                "t": "p",
+                "v": "What does the manager data sheet contain and how should it be presented?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Component 1",
+                "v": "Manager data sheet (one per manager, individual to their team):\n• Column A: Employee name\n• Column B: Current salary\n• Column C: Merit increase % awarded\n• Column D: New salary (effective date)\n• Column E: Compa-ratio (new salary ÷ grade midpoint × 100) — expressed as a percentage, not explained in technical terms. Label it 'Position in range: XX%' with a note: '<85% = lower range, 85-115% = mid-range, >115% = upper range'\n• Column F: Market context — 'Your role benchmarks at the [Xth] percentile of the [role type] market'\n• Column G: Manager notes field — pre-populated by Total Rewards with any specific context the manager should know before the conversation (e.g. 'this employee raised a pay query in January — context in HR portal')\n\nFormat: not a raw export from the HRIS. Formatted clearly, colour-coded by compa-ratio band, and accompanied by a cover page summarising the team's merit pool usage and average increase. The manager should be able to read their team's data in under 3 minutes."
+              },
+              {
+                "t": "h",
+                "v": "Component 2 — Guidance Document"
+              },
+              {
+                "t": "p",
+                "v": "What does the all-manager guidance document contain?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Component 2",
+                "v": "Guidance document structure:\n\n1. What we decided and why (1 page):\n'The 2026 merit pool is 4.5%. Individual increases were determined by two factors: performance rating and position in the salary range. Employees at the lower end of their range received higher increases (up to 8%); employees already at the top of the range received lower increases (typically 1-3%) to support pay equity within grades. Employees with a below-expectations rating received no increase this year.'\n\n2. The five answers (the page managers use most):\nQ1 Why this amount? 'Your increase reflects your [performance rating] rating this year and your current position in the salary range for your grade.'\nQ2 Fair vs colleagues? 'I can't share colleagues' salaries, but I can confirm all increases were set consistently, using the same criteria across the team.'\nQ3 Fair vs market? 'Your role benchmarks at [percentile]. Your salary positions you [above/at/below] that level.' [Manager personalises from data sheet]\nQ4 What to do to earn more? 'The clearest path to a higher increase is [sustained high performance / reaching the next grade / developing [specific skill]]. Here's what that looks like...'\nQ5 Promotion? 'A move to [Grade X] comes with a salary range of [£X-£X]. The criteria for that move are [level descriptor summary].'\n\n3. Difficult conversation guidance (1 page each for: no increase, below expectation, 'I have an offer')\n\n4. What NOT to say: 'HR decided', 'I tried to get you more but couldn't', 'I'm not allowed to tell you why'"
+              },
+              {
+                "t": "h",
+                "v": "Component 3 — Pre-Brief Rehearsal"
+              },
+              {
+                "t": "p",
+                "v": "How should the manager rehearsal be structured?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Component 3",
+                "v": "Rehearsal format: a 30-minute session with each manager and their HR Business Partner before the pay letter sends. Not a group session — individual, because the conversations are individual.\n\nRehearsed scenarios: (1) The manager practices Q1 and Q4 with their actual data — saying the words out loud, not just reading them. (2) The HBP plays the employee for one difficult scenario specific to the manager's team (e.g. the high performer who received a below-average increase, or the employee who has been vocal about feeling underpaid). (3) At the end: the manager should be able to say, without prompting, 'If [employee name] asks why they received X%, I'll say...' and complete the sentence accurately.\n\nManagers who don't complete the rehearsal before the pay letter sends are required to complete it before their first pay conversation — no conversations without the rehearsal."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The manager data sheet must be readable in under 3 minutes — formatted, colour-coded, and manager-friendly, not a raw HRIS export.",
+                  "The guidance document's highest-value page is the five answers — this is what managers reach for during the conversation and what they practice in rehearsal.",
+                  "Rehearsal is the most consistently skipped component — making it mandatory and individual (not a group briefing) produces managers who can handle the actual conversation, not just read about it."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "13-3-3",
+            "title": "Kestrel Group's Pay Conversation Failure — Full Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Real reward communication challenges involve competing priorities — cost, candour, legal risk, and employee trust. This case works through the trade-offs."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Kestrel Group — The Difficult Conversation",
+                "v": "A senior financial analyst at Kestrel (Grade 4, compa-ratio 112%, consistently high performer) received a 2% merit increase against the 4.5% average. Her manager communicated this in a two-minute meeting with the words: 'HR allocated 2% for you this year. I know it's not much, but it's what they gave me to work with.' The analyst has now raised a formal grievance, claiming she was not given a satisfactory explanation for why she received below-average treatment despite strong performance."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "What did the manager do wrong and what was the correct approach?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The manager made three distinct errors. First, they used 'HR decided' language — deflecting ownership of a decision that the manager should own or at least represent. 'HR allocated' positions the manager as a passive messenger rather than an informed participant. The correct language: 'Your increase this year is 2%. Here's why: your salary is already at 112% of the range midpoint — the upper third of your grade range — which means your pay is already positioned above the mid-market level for your role. In years where the merit pool is limited, the allocation methodology prioritises employees who are lower in their range to support internal equity.' Second, the manager didn't explain the compa-ratio logic — 'it's not much' acknowledges the inadequacy without explaining the rationale. An employee who leaves the conversation knowing the rationale (high compa-ratio = lower merit in a constrained pool) may still be dissatisfied, but they have the information to understand and decide whether to act on it. An employee who leaves knowing only '2%' is certain to be dissatisfied. Third, the conversation was two minutes. A 2% increase for a high performer is a relationship-sensitive message that requires time — the brevity signals that the manager didn't consider this conversation important."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The analyst has raised a formal grievance. How should this be managed?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The grievance is about the process (inadequate explanation) more than the outcome (2% increase). The investigation should establish: did the analyst receive a pay conversation that met the standard the organisation committed to? The answer is clearly no — the manager used deflecting language, provided no rationale, and allocated two minutes to a significant pay message. The grievance response should acknowledge the inadequacy of the original conversation explicitly: 'We reviewed the pay conversation you received and we agree it did not meet the standard we have committed to.' It should then provide the missing explanation: the compa-ratio rationale, the merit pool methodology, and the market context for her role. It should also assess whether the 2% outcome itself is correct — a high performer at 112% compa-ratio receiving 2% when the pool average is 4.5% is defensible under the methodology (upper-range employees typically receive lower merit), but this should be verified against the methodology document and confirmed or adjusted if the methodology was not applied correctly. The grievance does not automatically mean the 2% was wrong — it means the explanation was inadequate. These are different issues with different remedies."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "What systemic change does this incident indicate is necessary?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "This incident indicates the manager briefing and rehearsal programme was either absent, optional, or ineffective. A manager who uses 'HR decided' language after a pay briefing has either not attended the briefing or has not internalised the guidance about language and ownership. The systemic change: (1) Mandatory rehearsal for all managers before pay letters go out — with specific practice of the compa-ratio rationale for high-in-range employees, which is consistently the most mishandled conversation type. (2) An audit of manager conversations: a post-pay-review employee survey asking 'did you receive a pay conversation?' and 'did the conversation explain the rationale for your increase?' — tracking the answer year-on-year to measure manager enablement effectiveness. (3) Manager accountability: the quality of pay conversations is included in manager performance conversations, not just the quality of the pay outcome. A manager whose team consistently receives poor pay conversation experiences should have that reflected in their own performance assessment."
+              },
+              {
+                "t": "box",
+                "label": "Manager Conversation Failure Analysis",
+                "v": "'HR decided' language: deflects ownership, erodes both manager and system credibility\nTwo-minute high-stakes conversation: signals the manager didn't consider it important\nGrievance response: acknowledge inadequate process, provide missing explanation, then verify the outcome separately\nSystemic fix: mandatory rehearsal, post-review audit, manager accountability for conversation quality"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "'HR decided' language is the single most trust-eroding phrase in a pay conversation — managers must be trained out of it before their first conversation, not after a grievance.",
+                  "A formal grievance following a poor pay conversation is typically about the process, not the outcome — investigating and acknowledging the process failure is the first step, before assessing whether the outcome is also correct.",
+                  "Post-review employee surveys that track conversation quality (not just satisfaction) provide the leading indicator needed to catch manager enablement failures before they become grievances."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "13-3-Q",
+            "title": "Module Quiz: Manager Enablement and Pay Conversations",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The most important reward communication channel for individual employees is:",
+                "opts": [
+                  "A well-designed digital total reward statement.",
+                  "The line manager — who reaches employees with credibility, trust, and personalisation that documents cannot replicate.",
+                  "A pay philosophy page on the company intranet.",
+                  "The annual all-hands meeting where the CEO explains the pay review outcomes."
+                ],
+                "ans": 1,
+                "exp": "Manager trust is the highest-credibility channel — no document reaches employees with the same personal impact as a direct conversation with their manager."
+              },
+              {
+                "q": "The five questions that all managers must be able to answer in a pay conversation are:",
+                "opts": [
+                  "Why now? Why me? Why this much? What next? What if I leave?",
+                  "Why this amount? Am I paid fairly vs colleagues? Am I paid fairly vs market? What earns more? What happens at promotion?",
+                  "What was my rating? What was the pool? What were others given? What can I appeal? What is HR's view?",
+                  "What is my salary? What is my bonus? What is my pension? What are my benefits? What is my total reward?"
+                ],
+                "ans": 1,
+                "exp": "These five questions cover the full range of information employees seek in a pay conversation — managers who can answer all five can handle the vast majority of scenarios without escalating to HR."
+              },
+              {
+                "q": "'I tried to get you more but couldn't' is an example of problematic manager language because:",
+                "opts": [
+                  "It is inaccurate — managers do not negotiate individual pay amounts.",
+                  "It positions the manager as an unsuccessful advocate for the employee, eroding their authority and creating resentment toward HR.",
+                  "It reveals confidential information about the merit pool allocation.",
+                  "It implies the employee deserved a higher increase, which creates a legal risk."
+                ],
+                "ans": 1,
+                "exp": "This language makes the manager an unsuccessful advocate rather than an informed decision-maker — it erodes manager credibility and creates resentment toward HR without providing any useful information to the employee."
+              },
+              {
+                "q": "A manager who uses 'HR decided' language in a pay conversation is most likely indicating:",
+                "opts": [
+                  "HR made the decision unilaterally without manager input.",
+                  "The manager was not adequately briefed or rehearsed and is deflecting ownership they don't feel equipped to hold.",
+                  "The organisation's pay governance is centralised to the point that managers have no input.",
+                  "The employee has raised pay questions beyond the manager's authority to answer."
+                ],
+                "ans": 1,
+                "exp": "HR decided language is almost always a preparation failure — a manager who understands the rationale and has rehearsed the conversation owns it; one who doesn't understand it deflects to HR."
+              },
+              {
+                "q": "Manager rehearsal before pay conversations is most effective when:",
+                "opts": [
+                  "Conducted as a group session for all managers simultaneously to maximise efficiency.",
+                  "Conducted individually with each manager and their HR Business Partner, using scenarios specific to their actual team.",
+                  "Provided as a written guide that managers read before their conversations.",
+                  "Conducted after the pay letters go out, using the actual employee reactions as practice cases."
+                ],
+                "ans": 1,
+                "exp": "Individual rehearsal with specific scenarios from the manager's actual team produces managers who can handle the real conversations — group sessions and written guides produce managers who are theoretically informed but practically unprepared."
+              },
+              {
+                "q": "The 2% merit increase for a high performer at 112% compa-ratio is defensible under a standard merit methodology because:",
+                "opts": [
+                  "High performers should receive lower increases to prevent them from becoming complacent.",
+                  "Employees at the upper end of their range (>110% compa-ratio) typically receive lower merit increases in constrained pools to support internal equity — the compa-ratio factor, not the performance factor, drives the lower increase.",
+                  "2% is the minimum increase required under the organisation's pay policy.",
+                  "High-in-range employees have already been recognised through previous increases and their current salary reflects their performance."
+                ],
+                "ans": 1,
+                "exp": "Compa-ratio-adjusted merit is standard practice — employees already at the upper range of their grade receive lower merit increases than lower-in-range colleagues at the same performance level, to avoid exacerbating within-grade compression."
+              },
+              {
+                "q": "A post-pay-review employee survey that tracks 'did you receive a pay conversation?' serves primarily to:",
+                "opts": [
+                  "Replace the manager rehearsal requirement by identifying managers who haven't had conversations yet.",
+                  "Provide a leading indicator of manager enablement effectiveness that can be tracked year-on-year and used to intervene before issues escalate to grievances.",
+                  "Satisfy the legal requirement to document that all employees received pay notifications.",
+                  "Measure employee satisfaction with their pay outcomes rather than the quality of the process."
+                ],
+                "ans": 1,
+                "exp": "The conversation quality metric leads the pay satisfaction metric by 6-12 months — tracking it identifies systemic problems early enough to intervene before they become formal grievances."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "13-4",
+        "title": "Pay Transparency Communication",
+        "color": "#1A7A4A",
+        "lessons": [
+          {
+            "id": "13-4-1",
+            "title": "Pay Transparency — Communication in a Changing Landscape",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Pay transparency is shifting from a voluntary commitment to a legal requirement in an increasing number of jurisdictions — and from a legal requirement into a hiring market expectation. Total Rewards professionals who treat transparency as a compliance exercise will be reactive to each new regulation. Those who treat it as a communication strategy will be better positioned for every regulatory development that follows."
+              },
+              {
+                "t": "h",
+                "v": "The Spectrum of Pay Transparency"
+              },
+              {
+                "t": "p",
+                "v": "Pay transparency is not binary. It exists on a spectrum from full opacity (salaries are completely private, never discussed) to full transparency (everyone knows everyone's salary). Between the extremes lie the positions most organisations actually occupy: internal transparency (employees know their own grade and range, but not colleagues' salaries); band transparency (salary bands are published by grade, allowing employees to understand their range and progression); and posting transparency (salary ranges are published in job postings, visible externally as well as internally). Each position on the spectrum has different implications for recruitment, internal equity conversations, manager enablement, and the organisation's ability to make market-driven pay decisions without public scrutiny."
+              },
+              {
+                "t": "h",
+                "v": "Regulatory Developments"
+              },
+              {
+                "t": "p",
+                "v": "Three regulatory frameworks are accelerating the move toward greater transparency. The EU Pay Transparency Directive (effective 2026 in member states): requires employers to provide salary range information before interviews, requires employers to respond to employee requests for pay information within 5 working days, and requires a joint pay assessment when gender gaps exceed 5%. US state pay transparency laws (Colorado 2021, California 2023, New York 2023, and growing): require salary ranges in job postings for roles that could be performed in the state, regardless of where the employer is headquartered. UK: currently no mandatory pay range posting, but the government has signalled intent; voluntary commitments are increasingly expected by candidates. Nigerian employers are not currently subject to comparable statutory transparency requirements, but expectations from international employers and diaspora talent are rising."
+              },
+              {
+                "t": "h",
+                "v": "The Candidate Expectation"
+              },
+              {
+                "t": "p",
+                "v": "In most markets where salary range posting has become common, candidate behaviour has shifted: job postings without salary information receive significantly fewer applications from experienced candidates, and candidates report higher trust in employers who post ranges. The expectation is now self-reinforcing — as more employers post, non-posting employers are interpreted as having something to hide. For Total Rewards teams, the practical question is not whether to post ranges but how: a range that is too wide (£30,000-£80,000) is perceived as meaningless; a range that is accurately calibrated and accompanied by clarity about where in the range a specific candidate would likely land is both legally compliant and commercially effective."
+              },
+              {
+                "t": "h",
+                "v": "Internal Pay Transparency Communication"
+              },
+              {
+                "t": "p",
+                "v": "Before any external transparency commitment is made, the internal state must be managed. Employees who learn about their employer's salary ranges from a job posting (rather than from an internal communication) experience a trust shock that is very difficult to recover from. The sequence: (1) confirm or refresh internal grade structure and ranges; (2) communicate grade ranges to all employees with context (where you sit, why, and the progression criteria); (3) then expand to external posting. Organisations that skip step 2 produce employees who discover their range from a LinkedIn posting of a job for their own role — and who then discover they are at the bottom of a range they didn't know existed."
+              },
+              {
+                "t": "box",
+                "label": "Pay Transparency Spectrum",
+                "v": "Opacity → internal transparency → band transparency → posting transparency → full transparency\nEU directive: pre-interview range, 5-day employee request, 5% gap triggers assessment\nUS state laws: growing list requiring range posting for in-state roles\nCandidate expectation: ranges without context seen as meaningless; no range increasingly suspicious\nSequence: internal communication before external posting — always"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Kestrel Group's Transparency Decision",
+                "v": "Kestrel Group is hiring a Senior Financial Analyst in London. The recruiter recommends posting a salary range to increase applications. The HR Director is concerned that existing employees will see the range and make comparisons. The Head of Total Rewards must advise."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Internal communication of grade ranges must precede external salary posting — the sequence is not optional.",
+                  "Posting transparency that is mandated by regulation is the minimum; how the organisation communicates it to existing employees before it appears publicly determines whether it builds or erodes trust.",
+                  "A salary range in a job posting that is accurate and specific enough to be useful is both legally effective and commercially better than a meaninglessly wide range."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The HR Director's concern about existing employees seeing the posted salary range is best addressed by:",
+              "opts": [
+                "Not posting the salary range — the recruitment benefit does not outweigh the internal risk.",
+                "Posting a deliberately wide range (e.g. £35,000-£70,000) to avoid meaningful comparison.",
+                "Communicating the grade range to all existing employees before the posting goes live, so they learn about it in context rather than from a job posting.",
+                "Posting the range only on the company career page and not on external job boards."
+              ],
+              "ans": 2,
+              "exp": "The sequence matters: employees who learn their grade range from an internal communication before it appears externally experience it as transparency; employees who discover it from a job posting experience it as a trust breach. Solve the internal communication problem first."
+            }
+          },
+          {
+            "id": "13-4-2",
+            "title": "Designing Kestrel Group's Transparency Communication",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Communicating salary ranges to existing employees requires a carefully designed message that answers 'where am I?' before they need to ask."
+              },
+              {
+                "t": "box",
+                "label": "Kestrel Group — Transparency Communication Brief",
+                "v": "Decision made: post salary ranges for all external job postings. Existing employees: 340, all receive pay letters but most have never been told their grade range explicitly.\nGrade structure: 6 grades. Each grade has a min, midpoint, and max.\nTarget timeline: external posting starts in 8 weeks. Internal communication required first."
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — Communicate the Grade Range to All Employees"
+              },
+              {
+                "t": "p",
+                "v": "Design the employee-facing grade range communication."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "Communication format: a short letter or email from the Head of People (not from HR admin — this should feel like a leadership communication), sent to each employee at least two weeks before the first external posting appears.\n\nContent structure:\n• Header: 'Understanding your salary range'\n• Opening: 'As part of our commitment to pay transparency, we are publishing salary ranges in all our job postings from [date]. Before that happens, we want to make sure you have the full context for what this means for you.'\n• Your grade: 'You are in [Grade X], which covers roles at [level description in one sentence].'\n• Your range: 'The salary range for Grade [X] is £[min] to £[max], with a midpoint of £[mid]. Your current salary of £[X] places you at [compa-ratio]% of the midpoint — [below/at/above] the middle of your range.'\n• What this means: 'Your position in the range reflects [your tenure, your performance, your specific role within the grade — personalise based on actual situation]. [If above midpoint: You are positioned in the upper half of your range, reflecting strong performance and tenure.] [If below midpoint: You are in the lower half of your range — your salary will move toward the midpoint through merit increases as you continue to develop in the role.]'\n• What we are posting externally: 'Job postings for Grade [X] roles will show a range of approximately £[min]-£[max]. The exact amount offered to any new hire will depend on their experience and market context at the time of hiring.'"
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Design the Manager Briefing for Range Communication"
+              },
+              {
+                "t": "p",
+                "v": "Managers will receive questions when the letter lands. Equip them."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "Manager briefing: a 45-minute session (live or video, not a document) held before the letters go out, covering:\n\n1. What the letter says and what it doesn't say (5 mins): the letter shows each employee their own range and position. It does NOT show colleagues' ranges or salaries.\n\n2. The five questions they will receive (20 mins, with suggested answers):\n'Why am I at [X]% of midpoint?' → 'Your compa-ratio reflects [tenure, performance, starting salary, role]. Your next merit review will move it toward the midpoint if your performance continues at its current level.'\n'Is [colleague] in the same grade as me?' → 'I'm not able to share colleagues' grades or salaries. But I can tell you that all grades were set using consistent evaluation criteria.'\n'Will new hires get paid what I earn?' → 'New hire salaries depend on their experience. The range we post shows the full band — not the salary we necessarily offer. Most experienced hires are placed at or near the midpoint of the range.'\n\n3. What they must not say: they should not speculate about colleague salaries, should not say 'I don't know' without committing to find out, and should not express their own opinion about whether the range is fair or unfair.\n\n4. Escalation: any question about a specific colleague's salary → escalate to HR immediately."
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Draft the Job Posting Range"
+              },
+              {
+                "t": "p",
+                "v": "How should the external salary posting be worded to be useful without being over-committing?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "External posting wording for a Grade 4 Senior Financial Analyst role:\n'Salary: £48,000-£68,000 depending on experience. Most candidates with the required experience will be offered between £52,000 and £60,000.'\n\nTwo elements: (1) the full range — legally compliant in jurisdictions that require it; (2) the expected offer range for qualified candidates — this is voluntary and significantly more useful to candidates than the full range alone. It reduces applications from candidates who would not accept below £60,000 and reassures candidates who fear being offered the minimum. The 'depending on experience' qualifier is standard and legally appropriate — it does not negate the transparency.\n\nWording to avoid: 'competitive salary' (meaningless); 'up to £68,000' (implies most offers are at maximum); 'from £48,000' (implies most offers are at minimum)."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The internal communication letter must be personal and specific — including each employee's compa-ratio in the letter answers 'where am I?' before the employee asks.",
+                  "Manager briefing before grade range communication lands must include the exact questions they will receive and the exact language they should use — not general principles.",
+                  "External salary postings are most effective when they include both the full range (for compliance) and the expected offer range for qualified candidates (for candidate quality)."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "13-4-3",
+            "title": "Kestrel Group's Pay Transparency Consequences — Full Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Real reward communication challenges involve competing priorities — cost, candour, legal risk, and employee trust. This case works through the trade-offs."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Kestrel Group — Six Months After Range Publication",
+                "v": "Six months after Kestrel Group begins posting salary ranges and communicating grades internally, three consequences have emerged: (1) a senior employee discovers that a new hire in the same grade was offered £4,000 more than her current salary; (2) two employees discover they are positioned below 80% of their range midpoint ('low in range') and ask why; (3) the volume of pay-related questions to HR has increased by 40% in six months."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The senior employee discovering a new hire in the same grade was offered more than her current salary — how should this be handled?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "This is one of the most predictable consequences of salary range transparency and one of the most difficult conversations to handle well. The situation: a tenured employee earns £52,000 in Grade 4. A new hire in the same grade was offered £56,000. The new hire's higher offer may be entirely legitimate — the market rate for the specific role or skill set within Grade 4 has moved, the new hire had a particularly strong background, or the offer was necessary to secure them against a competing offer. It may also indicate that the tenured employee has been under-managed through the range. The response: (1) acknowledge the conversation — do not deflect. (2) Confirm whether the new hire's salary is in fact higher (HR should not confirm other employees' salaries directly, but can confirm that starting salaries for new hires are set based on current market conditions and individual experience). (3) Assess whether the tenured employee's salary is below market for her specific skills — run a targeted benchmark check. If it is below market, address it in the next merit cycle with a market adjustment. If it is at market, explain the compa-ratio rationale: new hires are often offered toward the midpoint of the range; tenured employees progress through merit. This conversation is less about the specific number and more about whether the tenured employee is valued — the conversation itself signals that value, or the lack of it."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "Two employees discover they are below 80% of their range midpoint. What is the appropriate response?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "A compa-ratio below 80% means the employee is in the lower portion of their grade range. This is a legitimate and common position for employees who are: (a) relatively new to the grade (recently promoted); (b) in roles where specific experience is still being built; or (c) in positions where the starting salary was below the range midpoint. The response depends on which of these applies. For recently promoted employees: below-80% compa-ratio is expected in the first 12-18 months and is explicitly managed through the merit process. Explain this clearly — 'you were promoted to Grade 3 eight months ago. Starting below the midpoint is the normal starting position; merit reviews will move you toward the midpoint as your performance at this grade continues.' For long-tenure employees below 80%: this is a pay management problem — an employee who has been in a grade for 3+ years and is still below 80% compa-ratio has not been moved through the range with sufficient intentionality. This requires a merit acceleration plan, not just an explanation."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "The 40% increase in HR pay questions — is this a problem or a success metric?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Both, in sequence. In the first 6 months after a major pay transparency communication, a significant increase in pay-related HR questions is expected and is a success indicator — it means employees are engaging with information they previously didn't have access to. The relevant question is not whether questions have increased but what the questions are: (a) comprehension questions ('I don't understand what my compa-ratio means') indicate the communication needs to be clearer; (b) equity questions ('why is my colleague higher in the range?') indicate transparency is surfacing previously invisible comparison data that was always there; (c) grievance questions ('I think my pay is wrong') indicate potential pay equity or pay management problems that existed before transparency surfaced them. A 40% increase in HR workload that resolves most questions within one conversation cycle is temporary and expected. A sustained elevated HR question volume 12+ months after the transparency launch indicates the underlying pay management infrastructure (grade positioning, merit management, compa-ratio management) has not yet caught up with the transparency commitment."
+              },
+              {
+                "t": "box",
+                "label": "Pay Transparency Consequence Management",
+                "v": "New hire premium vs tenured employee: acknowledge, benchmark, address in next merit cycle if below market\nBelow-80% compa-ratio: context-dependent — new-to-grade vs long-tenure require different responses\n40% HR question increase: expected in first 6 months, a success indicator; sustained beyond 12 months indicates underlying pay management gap"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Pay transparency makes previously invisible comparisons visible — the conversations that follow are not transparency problems, they are pay management problems that transparency has surfaced.",
+                  "A tenured employee earning less than a new hire in the same grade requires a benchmark check before any response — the new hire's salary may be correct (market has moved), the tenured employee's may need addressing, or both may be true.",
+                  "A sustained increase in HR pay questions beyond 12 months post-transparency indicates the pay management infrastructure (compa-ratio management, merit acceleration) has not caught up with the transparency commitment."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "13-4-Q",
+            "title": "Module Quiz: Pay Transparency Communication",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The EU Pay Transparency Directive requires employers to:",
+                "opts": [
+                  "Publish the exact salary of every employee on their website.",
+                  "Provide salary range information before interviews, respond to employee pay information requests within 5 working days, and conduct joint pay assessments when gender gaps exceed 5%.",
+                  "Pay all employees the same salary within each job grade regardless of performance.",
+                  "Report all pay decisions to a national pay regulatory body."
+                ],
+                "ans": 1,
+                "exp": "The directive creates specific procedural obligations — pre-interview disclosure, response timelines, and gap-triggered assessments — rather than requiring full salary publication."
+              },
+              {
+                "q": "The correct sequence for implementing salary range transparency is:",
+                "opts": [
+                  "External posting first, then internal communication to explain what candidates are seeing.",
+                  "Internal communication of grade ranges to existing employees, then external posting — employees should never learn about their range from a job posting.",
+                  "Simultaneous internal and external communication on the same day.",
+                  "External posting only — internal employees already have access to their salary and don't need a separate communication."
+                ],
+                "ans": 1,
+                "exp": "Employees who discover their grade range from an external job posting experience it as a trust breach — the internal communication must precede any external publication."
+              },
+              {
+                "q": "A salary range posting that reads 'up to £68,000' is problematic because:",
+                "opts": [
+                  "It understates the maximum salary available for the role.",
+                  "It implies most offers are at the maximum, which is typically not the case and may attract candidates with higher expectations than the organisation can meet.",
+                  "It does not comply with EU pay transparency requirements.",
+                  "It discloses the Grade 6 maximum, which should only be communicated internally."
+                ],
+                "ans": 1,
+                "exp": "Positioning language ('up to', 'from', 'starting at') shapes candidate expectations — 'up to £68,000' implies the maximum is standard, while 'from £48,000' implies the minimum is standard. Neither is useful. The expected offer range for qualified candidates is more informative."
+              },
+              {
+                "q": "A new hire in Grade 4 is offered £56,000 when a tenured employee in the same grade earns £52,000. The tenured employee raises a pay concern. The appropriate first step is:",
+                "opts": [
+                  "Immediately increase the tenured employee's salary to match the new hire.",
+                  "Investigate whether the new hire's salary reflects a legitimate market-driven offer and benchmark the tenured employee's salary before deciding on any action.",
+                  "Decline the conversation on the grounds that employee salaries are confidential.",
+                  "Reduce the new hire's starting salary to match the tenured employee's rate."
+                ],
+                "ans": 1,
+                "exp": "The comparison may be legitimate (market has moved for this skill) or may indicate the tenured employee is below market — benchmarking establishes which is true before any pay decision is made."
+              },
+              {
+                "q": "A 40% increase in HR pay questions in the six months following a pay transparency initiative is best described as:",
+                "opts": [
+                  "A failure of the transparency communication — the questions indicate employees were confused by the information provided.",
+                  "An expected and positive indicator that employees are engaging with newly accessible information; the nature and duration of the increase determines whether it indicates a problem.",
+                  "Evidence that pay transparency has created an adversarial employment relationship.",
+                  "A sign that the organisation's pay management infrastructure is inadequate."
+                ],
+                "ans": 1,
+                "exp": "First-6-months question volume increase is expected and healthy — transparency surfaces previously invisible information. The concern arises only if high question volume is sustained beyond 12 months, indicating underlying pay management gaps."
+              },
+              {
+                "q": "An employee who has been in Grade 3 for four years and has a compa-ratio of 76% is experiencing:",
+                "opts": [
+                  "Normal progression — compa-ratios below 80% are expected for all employees in any grade.",
+                  "A pay management failure — a four-year tenure with a 76% compa-ratio indicates insufficient movement through the range.",
+                  "A market positioning choice — some organisations deliberately keep long-tenure employees below the midpoint.",
+                  "A temporary position that will be corrected at the next annual merit review without specific intervention."
+                ],
+                "ans": 1,
+                "exp": "76% compa-ratio after four years in grade indicates the merit process has not moved the employee toward the midpoint with sufficient intentionality — this requires a merit acceleration plan, not just the next standard review."
+              },
+              {
+                "q": "Posting both the full salary range and the expected offer range for qualified candidates is effective because:",
+                "opts": [
+                  "It satisfies two separate legal requirements simultaneously.",
+                  "The full range provides legal compliance; the expected offer range provides useful candidate information that reduces mismatched applications and increases trust.",
+                  "Only the expected offer range is required — the full range creates unnecessary salary negotiation.",
+                  "Both ranges are required by EU pay transparency legislation for all employers."
+                ],
+                "ans": 1,
+                "exp": "The full range satisfies regulatory requirements; the expected offer range is voluntary and commercially beneficial — it filters applications from candidates outside the realistic offer range and signals transparency to qualified candidates."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "c13-cap",
+        "title": "Capstone Project",
+        "color": "#1A7A4A",
+        "lessons": [
+          {
+            "id": "c13-cap-l",
+            "title": "Capstone: Kestrel Group's Reward Communication Transformation",
+            "duration": "10 min",
+            "xp": 250,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Kestrel Group is 18 months into a reward communication transformation programme. The board has requested a full audit of the programme's impact and a design for year 3, which will include implementing the EU Pay Transparency Directive requirements for its European operations, publishing ethnicity pay gap data voluntarily for the first time, and redesigning the manager enablement programme following the pay conversation grievance in year 1."
+              },
+              {
+                "t": "box",
+                "label": "Kestrel Group Audit Results (after 18 months)",
+                "v": "'I am paid below market': 58% → 31% ✅\n'I understand how my pay is determined': 24% → 62% ✅\n'My pay conversation was satisfactory': 59% → 74% ✅\n'I know my grade and where I sit in the range': 11% → 89% ✅\nFormal pay grievances: 8 (year 0) → 3 (year 1) → 1 (year 2) ✅\nTRS readership rate: 91% opened, 68% engaged (clicked through)\nEU operations: 3 countries, 85 employees requiring Directive compliance"
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — EU Pay Transparency Directive Implementation"
+              },
+              {
+                "t": "p",
+                "v": "For Kestrel's 85 EU-based employees, design the implementation of the three key directive requirements: pre-interview range disclosure, employee pay information requests, and joint pay assessment."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach for Step 1",
+                "v": "Pre-interview range disclosure: all job offer processes in EU countries must disclose the salary range before the first interview. Process change: update the applicant tracking system to require the hiring manager to confirm the salary range before an interview slot can be booked. The range shown must be the grade range for the role, not a narrowed 'expected offer' range — the directive requires the full range. Documentation: create a range disclosure template (one sentence: 'This role is graded at [X] with a salary range of [min-max]. The salary offered will depend on your experience.') and embed it in interview invitation emails.\n\nEmployee information requests: the directive requires response within 5 working days to any employee request for information about pay levels for comparable roles. Process: create a formal pay information request form on the intranet; assign a named responder (Head of Total Rewards or designated deputy); establish a 5-day response SLA; maintain a log of all requests and responses. Response content: the average pay for comparator group (by grade and job family) — not individual salaries. Statistical ranges (percentile distribution) are permitted; individual disclosure is not required.\n\nJoint pay assessment trigger: if the gender pay gap in EU operations exceeds 5%, the directive requires a joint assessment with employee representatives. Prepare: calculate the current EU gender pay gap by country; if any country shows >5%, initiate the assessment process immediately rather than waiting for a formal trigger notice."
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Year 3 Manager Enablement Redesign"
+              },
+              {
+                "t": "p",
+                "v": "Following the pay conversation grievance in year 1 (compa-ratio-adjusted increase not explained adequately), redesign the manager enablement programme to prevent recurrence."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach for Step 2",
+                "v": "Year 3 programme redesign:\n\n1. Pre-review certification: all managers must complete a 45-minute online module on 'explaining merit decisions' and pass a 5-question assessment before they receive their team's pay data. No data access without certification. This replaces the optional pre-review briefing that was insufficiently attended.\n\n2. Enhanced data pack: add to the manager data sheet a 'conversation guide' column — for each team member, a one-line suggested opening that addresses their specific situation (e.g. 'For [name]: open with compa-ratio context — they are at 112% midpoint, which explains the lower-than-average increase despite strong performance').\n\n3. Difficult conversation rehearsal: mandatory 20-minute individual session with the HBP for any manager who has a team member receiving (a) no increase, (b) below-average increase despite above-average performance rating, or (c) an increase that puts them below 80% compa-ratio. These are the three highest-risk conversation types.\n\n4. Post-conversation audit: a 3-question survey sent to each employee one week after the pay letter (not linked to the manager conversation formally, but capturing quality indicators): 'Did you receive a pay conversation?', 'Did you understand the reason for your increase?', 'Do you know what would change your pay outcome in the next review?' Results reported to each manager's own HBP within two weeks.\n\n5. Manager accountability: the post-conversation audit results are shared with each manager and discussed in their next performance conversation — not as a punitive metric but as a development indicator."
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Voluntary Ethnicity Pay Gap Disclosure"
+              },
+              {
+                "t": "p",
+                "v": "Kestrel Group has 72% ethnicity self-identification completion. Plan the voluntary ethnicity pay gap disclosure for year 3."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach for Step 3",
+                "v": "Voluntary disclosure design:\n\n72% self-identification completion is above the threshold for meaningful analysis (target was 80% — this is close enough for a preliminary report with disclosed methodology).\n\nAnalysis: run cohort analysis (regression may be feasible depending on numbers per ethnic group — check sample sizes before committing). Report the unadjusted gap (all employees) and the within-grade gap (by grade and ethnic group where sample size allows).\n\nNarrative principles:\n• Report the number clearly and first, without qualification\n• Explain the methodology and its limitations (72% completion — note that 28% non-response means results are directional)\n• Identify the primary driver (representation vs pay decision — using the same framework as the gender analysis)\n• Commit to specific actions with timelines\n• Show the self-identification completion improvement trajectory (72% vs 42% for Driftwood Media at the same stage — Kestrel is ahead)\n\nPublishing approach: include in the annual ESG report alongside gender. Do not create a separate ethnicity pay gap document — combining them signals that equity is one programme, not separate initiatives.\n\nComms timing: announce internally first, one week before external publication. Board sign-off required before any external publication."
+              },
+              {
+                "t": "h",
+                "v": "Step 4 — Year 4 Programme Vision"
+              },
+              {
+                "t": "p",
+                "v": "What does a mature reward communication programme look like at year 4? Set the targets and design principles."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach for Step 4",
+                "v": "Year 4 programme vision:\n\nEmployee experience:\n• 'I am paid below market': <20%\n• 'My pay conversation was satisfactory': >85%\n• 'I understand my total reward value': >80%\n• Formal pay grievances: <1 per year\n\nInfrastructure:\n• Digital TRS with interactive calculator (employees can model pension contribution changes, holiday purchase, and flex benefit elections in real time)\n• Manager certification: annual, not optional\n• Salary range posted for all external roles in all markets\n\nTransparency:\n• All employees know their grade, their range, and their compa-ratio — updated in real time in the HR portal\n• EU Directive fully implemented and documented for all EU operations\n• Voluntary ethnicity pay gap report published annually\n\nGlobal consistency:\n• Nigeria and Kenya operations integrated into the global reward communication calendar: TRS adapted for local benefit mix, manager briefing in local market context, pay philosophy page available in English and Yoruba/Swahili where applicable"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Programme measurement — tracking the same questions year-on-year — is what converts reward communication from a task into a programme with demonstrable impact.",
+                  "EU Directive implementation requires process changes embedded in existing workflows (ATS, HR portal, pay review), not standalone compliance documents.",
+                  "Voluntary ethnicity pay gap disclosure at 72% self-identification completion is publishable with methodology disclosure — waiting for 80% means waiting indefinitely.",
+                  "Year 4 vision should include real-time compa-ratio access for all employees — the transparency infrastructure that makes the annual TRS a complement rather than the primary information source."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "c13-cap-q",
+            "title": "Capstone Assessment: Reward Communication and Employee Experience",
+            "duration": "15 min",
+            "xp": 300,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "Kestrel's improvement from 58% to 31% 'paid below market' belief in 18 months demonstrates:",
+                "opts": [
+                  "That the organisation's pay positioning has improved from P50 to P65 during this period.",
+                  "That targeted reward communication interventions — TRS, manager briefing, grade range disclosure — can substantially change employee pay perception without changing pay levels.",
+                  "That the annual pay review increased salaries sufficiently for employees to recognise their market position.",
+                  "That employee perception surveys are unreliable as they can be influenced by any organisational communication."
+                ],
+                "ans": 1,
+                "exp": "The perception change was driven by communication improvements, not pay level changes — demonstrating that communication investment has a measurable return on employee perception."
+              },
+              {
+                "q": "The EU Pay Transparency Directive's 5-working-day response requirement applies to:",
+                "opts": [
+                  "All pay review decisions that must be communicated within 5 days of board approval.",
+                  "Employee requests for information about pay levels for comparable roles.",
+                  "Job posting publication — ranges must be posted within 5 days of a role being approved.",
+                  "Gender pay gap calculation — employers must update their reported gap within 5 days of any pay change."
+                ],
+                "ans": 1,
+                "exp": "The directive creates a right for employees to request pay information and requires a prompt, specific response — not a general commitment to transparency."
+              },
+              {
+                "q": "Making manager certification mandatory before data pack access is preferable to optional briefings because:",
+                "opts": [
+                  "Optional briefings produce a two-tier system — some employees receive informed conversations and others receive unprepared deflections.",
+                  "Mandatory certification satisfies a legal requirement for manager training before pay communications.",
+                  "Optional briefings require more HR resource to prepare than a mandatory module.",
+                  "Managers who attend optional briefings perform identically to those who don't, making the optional format less efficient."
+                ],
+                "ans": 0,
+                "exp": "Optionality guarantees uneven quality — managers who skip briefings are the ones most likely to handle conversations poorly."
+              },
+              {
+                "q": "Voluntary ethnicity pay gap disclosure at 72% self-identification completion should be:",
+                "opts": [
+                  "Deferred until 80% completion is achieved for methodological rigour.",
+                  "Published with explicit disclosure of the 72% completion rate and its implications for the findings — directional results with disclosed methodology are more credible than no disclosure.",
+                  "Published without disclosing the completion rate to avoid undermining confidence in the findings.",
+                  "Limited to internal reporting until full completion is achieved."
+                ],
+                "ans": 1,
+                "exp": "Methodological transparency — disclosing completion rates and their implications — is more credible than either withholding or concealing limitations."
+              },
+              {
+                "q": "Real-time compa-ratio access in the HR portal for all employees changes the TRS from a primary information source to:",
+                "opts": [
+                  "A compliance document that satisfies statutory reporting requirements.",
+                  "A periodic summary that contextualises the continuously accessible real-time data — complementing rather than replacing the ongoing visibility.",
+                  "An unnecessary document once real-time access is available.",
+                  "A manager-only tool no longer relevant to individual employees."
+                ],
+                "ans": 1,
+                "exp": "Real-time data access changes the TRS's role — instead of being the first time an employee sees their range position, it becomes the annual context document for a fact they already know."
+              },
+              {
+                "q": "The post-conversation audit survey (sent to employees one week after pay letters) serves which primary purpose?",
+                "opts": [
+                  "To allow employees to formally appeal their pay outcomes.",
+                  "To measure pay conversation quality and provide managers with individual feedback they can develop from.",
+                  "To collect data for the statutory gender pay gap report.",
+                  "To identify employees at resignation risk following pay decisions."
+                ],
+                "ans": 1,
+                "exp": "The audit measures quality (did the conversation happen, was it understood) rather than satisfaction with outcomes — it is a manager development tool, not an appeals mechanism."
+              },
+              {
+                "q": "Combining gender and ethnicity pay gap reporting in one ESG section rather than separate documents signals:",
+                "opts": [
+                  "That the organisation has not conducted separate analyses for each characteristic.",
+                  "That equity is one integrated programme rather than separate DEI initiatives — a coherent governance signal.",
+                  "That the ethnicity analysis is less rigorous than the gender analysis.",
+                  "That regulatory requirements for both characteristics are met in a single document."
+                ],
+                "ans": 1,
+                "exp": "Structural coherence in reporting reflects structural coherence in the programme — separated documents imply separate, disconnected initiatives."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Compensation Analytics and Workforce Modelling",
+    "subtitle": "Build an analytical compensation practice — from data quality and core metrics through statistical pay analysis, merit matrix modelling, and predictive attrition analytics. Includes regression interpretation, merit budget validation, a complete attrition risk model, and a Series B investor-readiness capstone.",
+    "color": "#C25B20",
+    "color2": "#C25B20",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "level": "Advanced",
+    "duration": "4h 00m",
+    "lessons_count": 18,
+    "total_xp": 3030,
+    "desc": "Build an analytical compensation practice — from data quality and core metrics through statistical pay analysis, merit matrix modelling, and predictive attrition analytics. Includes regression interpretation, merit budget validation, a complete attrition risk model, and a Series B investor-readiness capstone.",
+    "outcomes": [
+      "Establish a clean compensation data foundation including authoritative source mapping, core metric calculation, and a governance-grade dashboard",
+      "Interpret regression-based pay analysis outputs including coefficients, p-values, and R-squared — and identify when a finding is actionable",
+      "Design, validate, and recalibrate a merit matrix against actual population distribution and approved budget",
+      "Build a spreadsheet-based attrition risk model with risk-differentiated action protocols and ROI-based business case",
+      "Present a compensation programme to investor-standard, including proactive equity gap disclosure, analytics maturity roadmap, and retention programme ROI"
+    ],
+    "pro": true,
+    "modules": [
+      {
+        "id": "14-1",
+        "title": "Data Foundations for Compensation",
+        "color": "#C25B20",
+        "lessons": [
+          {
+            "id": "14-1-1",
+            "title": "Data Foundations for Compensation",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Compensation decisions that are not grounded in data are expensive in two directions simultaneously: they overpay where data would have revealed a lower market rate, and they underpay where data would have flagged a market premium — producing budget waste and talent loss at the same time. The foundation of analytical compensation practice is not statistical sophistication; it is data discipline — knowing what data you have, what it means, and what it cannot tell you."
+              },
+              {
+                "t": "h",
+                "v": "The Compensation Data Ecosystem"
+              },
+              {
+                "t": "p",
+                "v": "Compensation practitioners draw from three types of data. Internal data: the organisation's own payroll, grade, performance, and attrition records. This is the most contextually accurate data available — it is about this organisation's actual employees, decisions, and outcomes. External data: salary surveys, labour market intelligence, economic indicators, and competitor intelligence. This is the reference data that calibrates internal practice against market reality. Blended data: analyses that combine internal and external data to produce specific insights — a compa-ratio analysis (internal salary against external benchmark) is a blended output. Each type has different reliability, latency, and coverage characteristics, and using them appropriately requires understanding which questions each can and cannot answer."
+              },
+              {
+                "t": "h",
+                "v": "Common Data Quality Problems"
+              },
+              {
+                "t": "p",
+                "v": "Four data quality problems recur in compensation analytics. Inconsistent grade data: especially in post-acquisition organisations, the same employee may be graded differently in different systems, making any grade-based analysis unreliable. Missing performance data: as discussed in the pay equity context, missing performance ratings — particularly if they are missing systematically rather than randomly — introduce bias into any analysis that uses performance as a variable. Salary currency inconsistencies: in multinational organisations, salary data in multiple currencies must be converted for comparison — using inconsistent exchange rates (or inconsistent conversion dates) produces misleading results. Tenure recording errors: tenure is frequently stored as a date (hire date), and analysts must calculate it as a continuous variable — errors in hire date data produce systematic tenure errors that distort compa-ratio and attrition analyses."
+              },
+              {
+                "t": "h",
+                "v": "Key Compensation Metrics"
+              },
+              {
+                "t": "p",
+                "v": "Every compensation practitioner should be able to calculate, explain, and use four core metrics. Compa-ratio: actual salary ÷ grade midpoint × 100. Measures position in range. Below 85%: low in range. 85-115%: mid-range. Above 115%: high in range. Range penetration: (actual salary − range minimum) ÷ (range maximum − range minimum) × 100. Measures position in range as a percentage of the full range width (as opposed to compa-ratio which measures against the midpoint). Merit increase budget utilisation: total actual increase spend ÷ total approved merit budget. Should be at 95-105% — significantly below indicates distribution failures; significantly above indicates an exception approval problem. Salary ratio (for pay equity): average salary of one group ÷ average salary of comparison group. Used in cohort pay equity analysis."
+              },
+              {
+                "t": "h",
+                "v": "Data Governance for Compensation"
+              },
+              {
+                "t": "p",
+                "v": "Compensation data is among the most sensitive data an organisation holds — individual salary data, combined with performance ratings, bonus amounts, and equity awards, creates a profile that is protected under data privacy law in most jurisdictions. Compensation data governance requires: role-based access controls (only those with a specific business need access specific salary data); audit trails (every access to individual salary data is logged); data retention policies (how long compensation data is held and how it is disposed of); and cross-border data transfer compliance (salary data sent from a European entity to a US parent for analysis may require specific legal safeguards). Data governance is not an IT function — it is a Total Rewards function that must be embedded in how the team works."
+              },
+              {
+                "t": "box",
+                "label": "Core Compensation Metrics",
+                "v": "Compa-ratio = actual salary ÷ midpoint × 100\n<85%: low in range | 85-115%: mid-range | >115%: high in range\nRange penetration = (salary − min) ÷ (max − min) × 100\nMerit budget utilisation = actual spend ÷ approved budget\nSalary ratio = group A average ÷ group B average (pay equity)"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Nova Tech's Data Chaos",
+                "v": "Nova Tech has grown from 60 to 140 employees in 18 months. The Head of People has salary data in three different systems: the original HRIS, a spreadsheet maintained by the CFO, and the payroll system. The three sources disagree on salary figures for 23 employees. Before any compensation analysis can be conducted, the data must be reconciled."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The payroll system is typically the most accurate for current salary data — but may not reflect grade, tenure, or performance information accurately.",
+                  "Data governance for compensation requires role-based access, audit trails, retention policies, and cross-border transfer compliance — it is a Total Rewards function, not an IT function.",
+                  "Compa-ratio and range penetration answer different questions about position in range — both should be tracked, as they diverge for roles at the extremes of wide bands."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The primary risk of running compensation analysis on unreconciled data from three different sources is:",
+              "opts": [
+                "The analysis will take longer than planned, affecting the pay review timeline.",
+                "Any insights drawn from the analysis will be built on potentially incorrect data — producing decisions that are confidently wrong, which is worse than acknowledging data uncertainty.",
+                "The payroll system is always the most accurate source and should simply be used alone.",
+                "Data reconciliation is an IT function that should be resolved before the data reaches the Total Rewards team."
+              ],
+              "ans": 1,
+              "exp": "Confidently wrong decisions are worse than acknowledged uncertainty — analysis built on bad data produces a false sense of precision that discourages the healthy scepticism that would catch errors before they drive decisions."
+            }
+          },
+          {
+            "id": "14-1-2",
+            "title": "Building Nova Tech's Compensation Data Foundation",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "A compensation data audit establishes the ground truth before any analysis is run. It is not glamorous; it is the work that makes everything else reliable."
+              },
+              {
+                "t": "box",
+                "label": "Nova Tech — Data Reconciliation Brief",
+                "v": "Three sources to reconcile for 140 employees: HRIS (salary for 140, grade for 121, tenure from hire date), CFO spreadsheet (salary for 117, bonus payments for 98, no grade), payroll (gross salary for 140, deductions, pay frequency).\nKey reconciliation issues: 23 employees have salary discrepancies between sources; hire dates are inconsistent for 14 employees; grade data missing for 19 employees in HRIS."
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — Establish the Authoritative Source for Each Data Element"
+              },
+              {
+                "t": "p",
+                "v": "Not every source is authoritative for every data element."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "Authoritative source mapping:\n• Current gross salary: payroll system — this is what the employee actually receives and what has been processed through tax calculations. Use as the primary reference.\n• Grade: HRIS — where it exists (121 of 140). For the 19 without grade: check offer letters, promotion letters, or line manager confirmation. Grade cannot be inferred from salary alone.\n• Hire date/tenure: cross-reference HRIS and employment contracts. Where they disagree, the signed employment contract is authoritative.\n• Bonus paid (year to date): CFO spreadsheet corroborated by payroll records. Where they disagree, payroll is authoritative for what was actually paid.\n• Performance rating: HRIS (if stored) or performance management system — not salary spreadsheets.\n\nReconciliation process for the 23 salary discrepancies: pull all three figures for each discrepant employee, cross-reference to the payroll payslip for the most recent month, and use the payroll figure as the ground truth. Document each discrepancy with its resolution in a reconciliation log — this log is the audit trail that confirms the analysis is based on verified data."
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Calculate Core Metrics for All 140 Employees"
+              },
+              {
+                "t": "p",
+                "v": "Once data is reconciled, calculate the four core metrics across the population."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "For each employee in the master data set:\n\nCompa-ratio:\n• Requires: salary (from payroll) and grade midpoint (from grade structure)\n• Calculation: salary ÷ midpoint × 100\n• Output: one number per employee; flag <85% (low) and >115% (high)\n\nRange penetration:\n• Requires: salary, range minimum, range maximum\n• Calculation: (salary − min) ÷ (max − min) × 100\n• Output: 0-100% (below minimum = negative; above maximum = >100%)\n\nTenure:\n• From hire date (verified): calculate years and months from hire date to analysis date\n• Flag: employees with tenure > 2 years in grade who are still below 85% compa-ratio — this is the population most likely to be retention risks from within-grade under-management\n\nMerit budget utilisation:\n• Requires: approved merit budget total and actual increase costs from payroll\n• Calculation: total actual increase spend ÷ approved budget × 100\n• Output: Nova Tech's last cycle (from CFO spreadsheet): £580,000 approved, £541,000 spent = 93.3% utilisation — slightly low, suggesting some planned increases were not implemented or some positions were unfilled during the review"
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Produce the Compensation Dashboard"
+              },
+              {
+                "t": "p",
+                "v": "What does the first compensation dashboard for Nova Tech's leadership contain?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "Dashboard summary (one page, updated monthly):\n\n1. Population overview: 140 employees by grade distribution (bar chart)\n2. Compa-ratio distribution: heat map — % of employees in each compa-ratio band (<85%, 85-100%, 100-115%, >115%) by grade\n3. Red flags: employees >115% compa-ratio (currently red-circled or approaching maximum) — 8 employees flagged\n4. Retention risk: employees <85% compa-ratio with >2 years tenure — 12 employees flagged\n5. Merit utilisation: 93.3% (prior cycle); note on the 6.7% gap with explanation\n6. Data quality indicators: grade coverage (121/140 = 86.4%); performance rating coverage (112/140 = 80%); self-ID completion if applicable\n\nThe dashboard serves two audiences: the Head of People (who needs the retention risk and red-flag data for immediate decisions) and the CFO (who needs budget utilisation and headcount cost summary). One document, two sections."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The authoritative source mapping is the most important step in data reconciliation — analytics run on the wrong source produce confidently wrong insights.",
+                  "Compa-ratio and range penetration both measure position in range but from different reference points — both should be included in the compensation dashboard to catch edge cases that one metric misses.",
+                  "A compensation dashboard that flags retention risks (low compa-ratio, long tenure) and budget anomalies (low merit utilisation) creates actionable insight, not just descriptive statistics."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "14-1-3",
+            "title": "Nova Tech's First Compensation Audit — Full Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Real reward communication challenges involve competing priorities — cost, candour, legal risk, and employee trust. This case works through the trade-offs."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Nova Tech — Audit Findings",
+                "v": "Nova Tech's compensation data audit reveals six significant findings: (1) 8 employees are above 115% compa-ratio; (2) 12 employees are below 85% compa-ratio with >2 years tenure; (3) 3 Software Engineers have been paid identical salaries for 3 years with no merit increase; (4) merit utilisation of 93.3% leaves £39,000 of the approved budget unspent; (5) bonus payments are not tracked in the HRIS — only in the CFO's spreadsheet; (6) 29 employees have no grade assignment in any system."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The 8 employees above 115% compa-ratio present what risks and what is the management approach?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Above-115% compa-ratio (red circle risk) presents: budget risk (employees approaching or above the band maximum whose future merit increases would push them further above structure); structural risk (if these employees are managing teams, their direct reports' grade placements may also be inflated through grade drift); and communication risk (when salary transparency increases, these employees will notice they are paid above structure, which may create questions the organisation is not prepared to answer). Management approach: (1) confirm whether any are formally above the band maximum — if so, apply the pay freeze and compa-ratio management approach. (2) For those above 115% but below maximum: no pay reduction; merit increases reduced or zero for 1-2 cycles to allow the range to catch up through any market-driven band adjustment. (3) Check each employee's role against grade criteria — above-115% for a long-tenured employee in a role that has grown may indicate a regrade is warranted rather than a pay freeze."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "Three Software Engineers with identical salaries for 3 years — what does this indicate and what should be done?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Identical salaries for 3 years almost certainly indicates one of two things: (1) merit increases were applied as a flat amount that left these three employees unchanged (a merit process failure where their increases matched exactly and were not adjusted for compa-ratio); or (2) they were simply missed in one or more pay review cycles. Investigation: check the merit data in the CFO spreadsheet for each of the three employees across the three prior cycles. If they received increases that happened to be identical each year, this is coincidental but worth flagging. If one or more received zero increases in one or more cycles without a documented reason (below-expectations rating or no-increase decision), this is a pay administration failure requiring immediate correction. Given Nova Tech's 18-month growth period, the most likely explanation is that these three engineers were deprioritised or overlooked in a chaotic merit process. Correction: calculate what each should have received under the standard merit methodology, apply a catch-up adjustment, and document the correction."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "29 employees with no grade assignment — how should this be resolved and what are the implications for future analysis?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "29 employees without grades (21% of the workforce) means any grade-based analysis is incomplete and potentially misleading — compa-ratio calculations, grade distribution metrics, and equity analyses all produce biased results when 21% of the population is excluded. Resolution: (1) grade assignment through job evaluation or documented role matching, prioritised by seniority (more senior ungrouped roles are more analytically significant). (2) In the interim, any analysis that uses grade as a variable should explicitly state that 21% of the population is excluded and that results should be interpreted accordingly. (3) Timeline: all 29 employees should be graded within 60 days of the audit conclusion. Without grade data, the organisation cannot run defensible pay equity analysis, compa-ratio reporting, or merit allocation modelling. This is the highest-priority data quality fix."
+              },
+              {
+                "t": "box",
+                "label": "Compensation Audit Priority Sequence",
+                "v": "Highest priority: grade assignment for ungrouped employees (blocks all grade-based analysis)\nSecond: correction of missed/zero merit increases (pay administration failure)\nThird: red-circle management plan (budget and structural risk)\nFourth: bonus data integration into HRIS (audit trail and analysis access)\nOngoing: data quality indicators in monthly dashboard"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Grade data completeness is the prerequisite for all grade-based compensation analysis — ungrouped employees make compa-ratio, pay equity, and merit allocation analyses incomplete and potentially misleading.",
+                  "Identical salaries across 3 years almost always indicate a pay administration failure, not coincidence — investigation before correction is required to determine whether a catch-up adjustment is appropriate.",
+                  "The compensation dashboard's data quality indicators (grade coverage, performance rating coverage) are as analytically important as the compensation metrics — they tell you how much to trust the other numbers."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "14-1-Q",
+            "title": "Module Quiz: Data Foundations for Compensation",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The payroll system is the authoritative source for which compensation data element?",
+                "opts": [
+                  "Grade assignments — payroll links grade to salary for tax purposes.",
+                  "Current gross salary — it reflects what the employee actually receives and what has been processed through payroll.",
+                  "Performance ratings — payroll calculates merit increases from performance outcomes.",
+                  "Hire date — payroll tracks continuous service for statutory entitlement purposes."
+                ],
+                "ans": 1,
+                "exp": "Payroll is authoritative for what has actually been paid — salary, bonus, and deductions. Grade, performance, and hire date are typically more accurate in HR systems or employment records."
+              },
+              {
+                "q": "A compa-ratio of 87% means the employee is:",
+                "opts": [
+                  "Below the minimum of their salary grade.",
+                  "In the lower portion of their range, 87% of the grade midpoint.",
+                  "Earning 87% of the market median for their role.",
+                  "Below the threshold for a merit increase in the current cycle."
+                ],
+                "ans": 1,
+                "exp": "Compa-ratio = salary ÷ midpoint × 100. A compa-ratio of 87% means the employee earns 87% of the grade midpoint — in the lower portion of the range, but not necessarily below the minimum."
+              },
+              {
+                "q": "Merit budget utilisation of 93% (£541K spent vs £580K approved) primarily suggests:",
+                "opts": [
+                  "The organisation has over-budgeted merit by 7% and should reduce next year's pool.",
+                  "Some planned increases were not implemented, positions were unfilled during the review, or some increases were deprioritised — the gap warrants investigation.",
+                  "The HR team redistributed 7% of the merit pool to retention bonuses.",
+                  "The CFO instructed managers to underspend the merit budget by approximately 7%."
+                ],
+                "ans": 1,
+                "exp": "Significant underspend on merit budget (>5% gap) warrants investigation — it may indicate implementation failures, unfilled roles, or decisions not tracked in the system. It is not automatically good news."
+              },
+              {
+                "q": "29 employees without grade assignment in any system means:",
+                "opts": [
+                  "These employees are paid on a fixed national minimum wage scale and grade is not applicable.",
+                  "All grade-based analysis (compa-ratio, equity, merit allocation) is incomplete and results should be treated as directional until grades are assigned.",
+                  "These employees were hired as contractors and will be graded when they convert to permanent status.",
+                  "Grade data is maintained in the payroll system rather than the HRIS for these employees."
+                ],
+                "ans": 1,
+                "exp": "Without grade data, the denominator for compa-ratio and the comparison group for equity analysis are missing — the analysis cannot be complete or fully defensible."
+              },
+              {
+                "q": "Compensation data governance is primarily a responsibility of:",
+                "opts": [
+                  "The IT department — data governance is a technology and security function.",
+                  "The Total Rewards team — compensation data access, audit trails, retention, and cross-border transfer compliance must be embedded in how the team works.",
+                  "The Legal team — data governance is driven by employment and privacy law.",
+                  "HR Operations — who manage the HRIS and therefore control data access."
+                ],
+                "ans": 1,
+                "exp": "Data governance for compensation must be owned by the people who use and access the data — the Total Rewards team. IT, Legal, and HR Ops are implementation partners, not owners."
+              },
+              {
+                "q": "Range penetration differs from compa-ratio in that it measures:",
+                "opts": [
+                  "Salary against the external market benchmark rather than the internal midpoint.",
+                  "Position in range as a percentage of the full range width (min to max), rather than against the midpoint.",
+                  "The organisation's pay range relative to the industry range for the same grade.",
+                  "The employee's performance rating relative to others in the same grade."
+                ],
+                "ans": 1,
+                "exp": "Range penetration = (salary − min) ÷ (max − min) × 100. It shows how far through the full range the employee is. Compa-ratio measures against the midpoint. Both are useful; they diverge significantly for roles at the extremes of wide bands."
+              },
+              {
+                "q": "Three employees in the same role with identical salaries for three years most likely indicates:",
+                "opts": [
+                  "A deliberate pay policy to ensure pay equity within the role by standardising to one salary.",
+                  "A pay administration failure — one or more pay review cycles in which their increases were not correctly calculated or implemented.",
+                  "The employees have reached the maximum of their grade and cannot receive further increases.",
+                  "The employees are on individual contracts that specify a fixed salary for three years."
+                ],
+                "ans": 1,
+                "exp": "Identical salaries across three years in an organisation with annual merit reviews is almost always a data or process failure — investigation is required before any conclusion or correction."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "14-2",
+        "title": "Statistical Analysis in Pay Decisions",
+        "color": "#C25B20",
+        "lessons": [
+          {
+            "id": "14-2-1",
+            "title": "Statistical Analysis in Pay Decisions",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Statistical literacy is increasingly essential for Total Rewards practitioners — not because HR teams need to become statisticians, but because the decisions that affect thousands of employees should not be made on gut instinct when better analytical tools are available. The goal is informed use of statistics, not advanced academic analysis: knowing what a regression can and cannot tell you, understanding what a confidence interval means, and being able to interpret an output without producing it from scratch."
+              },
+              {
+                "t": "h",
+                "v": "Measures of Central Tendency and Dispersion"
+              },
+              {
+                "t": "p",
+                "v": "The foundational statistical concepts for compensation analysis: mean (average), median (middle value), and percentile (the value below which a given percentage of observations fall). The mean is sensitive to outliers — a single very high salary pulls the mean up significantly. The median is more robust — a few very high salaries don't change the middle value as dramatically. This is why salary survey data almost always reports P50 (median) rather than mean. Standard deviation measures how spread out the salary distribution is — a high standard deviation means salaries vary widely within a group; a low standard deviation means they cluster closely. For within-grade analysis, standard deviation tells you whether the grade is being managed tightly (low SD) or whether there is significant variation (high SD) that needs investigation."
+              },
+              {
+                "t": "h",
+                "v": "Correlation and Regression Basics"
+              },
+              {
+                "t": "p",
+                "v": "Correlation measures the relationship between two variables — how much does salary change when tenure increases, for example? Correlation ranges from -1 (perfect negative relationship: as one increases, the other always decreases) to +1 (perfect positive: as one increases, so does the other). Correlation of 0 means no linear relationship. Important caveat: correlation does not imply causation. A positive correlation between tenure and salary may reflect the legitimate effect of merit increases over time, or it may reflect that the organisation hires at higher rates over time — the correlation alone cannot distinguish these explanations. Regression analysis takes correlation further: it models the predicted salary given a set of input variables (grade, tenure, performance) and produces a coefficient for each variable showing how much salary changes for a one-unit change in that variable, holding all other variables constant."
+              },
+              {
+                "t": "h",
+                "v": "P-Values and Statistical Significance"
+              },
+              {
+                "t": "p",
+                "v": "A p-value answers the question: if there were truly no relationship between these variables, how likely is it that we would observe a result this extreme by chance? A p-value below 0.05 is conventionally considered statistically significant — meaning the observed result is unlikely (less than 5% likely) to have occurred by chance alone. In the context of pay equity analysis: if the regression coefficient on gender is £1,200 (women earn £1,200 less than comparably-graded men) and the p-value is 0.03, this means the finding is unlikely to be due to random variation and is a genuine pattern in the data. If the p-value is 0.42, the apparent difference could easily be due to chance and the finding is not statistically meaningful."
+              },
+              {
+                "t": "h",
+                "v": "Practical Analysis Cautions"
+              },
+              {
+                "t": "p",
+                "v": "Three analytical errors are common in compensation analytics. Over-fitting: using too many variables in a regression model, such that the model describes the historical data very precisely but is poor at predicting new data. For compensation purposes, the relevant variables are those with genuine causal relationships to pay — grade, tenure, performance, role type — not every variable in the dataset. Small sample fallacy: drawing confident conclusions from analyses of 10-15 employees, where random variation is high. Any finding from a sample smaller than 30 should be treated as directional only. Confounding variables: an analysis that shows tenure is strongly correlated with salary may be confounded by grade — senior employees are both more tenured and in higher grades, and grade is the real driver of salary. Including both tenure and grade in the regression allows the model to separate the effects."
+              },
+              {
+                "t": "box",
+                "label": "Statistical Concepts for Compensation",
+                "v": "Mean: sensitive to outliers; less useful for salary summary\nMedian (P50): robust to outliers; the standard salary survey reference\nStandard deviation: spread of salaries within a group\nCorrelation: relationship strength between two variables (not causation)\nRegression: models salary as a function of multiple input variables\nP-value <0.05: statistically significant finding; not a guarantee of practical significance"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Nova Tech's Engineer Salary Analysis",
+                "v": "Nova Tech runs a regression of Software Engineer salaries against grade, tenure, and performance rating. The output shows: Grade coefficient = £8,200 (p=0.001); Tenure coefficient = £1,400 (p=0.023); Performance coefficient = £950 (p=0.18). The Head of People asks whether performance is associated with higher salaries."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "P-value significance and practical significance are different — a statistically significant coefficient may represent a small practical effect, and a large coefficient with a non-significant p-value should not be acted on.",
+                  "Correlation is a description, not a cause — salary correlation with tenure may reflect merit increases over time or higher-grade hiring over time, and the regression cannot distinguish them without additional variables.",
+                  "Standard deviation of salaries within a grade is a governance metric — high within-grade SD indicates wide variation that may indicate inconsistent pay management."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The performance coefficient of £950 with a p-value of 0.18 means:",
+              "opts": [
+                "Performance has a strong positive effect on salary — £950 per rating point is commercially significant.",
+                "The apparent relationship between performance and salary is not statistically significant — it could easily be due to random variation in this sample rather than a genuine pattern.",
+                "Performance is less important than grade in determining salary — the coefficient is smaller.",
+                "The sample size is too small to include performance in the regression."
+              ],
+              "ans": 1,
+              "exp": "A p-value of 0.18 means there is an 18% chance the observed coefficient occurred by chance — well above the 5% threshold for statistical significance. The finding is not reliable enough to act on."
+            }
+          },
+          {
+            "id": "14-2-2",
+            "title": "Regression-Based Pay Analysis for Nova Tech",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Interpreting a regression output requires understanding each coefficient in context — what it means, whether it is reliable, and what it implies for action."
+              },
+              {
+                "t": "box",
+                "label": "Nova Tech — Regression Analysis Brief",
+                "v": "Sample: 89 Software Engineers (grades SE1-SE4). Variables available: annual salary (£), grade (1-4), tenure in role (years), last performance rating (1-4 scale, 1=below, 4=exceeds), gender (binary for this illustration), location (London=1, Lagos=0).\nR-squared: 0.71 (the model explains 71% of salary variation).\nCoefficients: Grade=£9,400 (p=0.000); Tenure=£1,100 (p=0.009); Performance=£800 (p=0.11); Gender=−£2,100 (p=0.03); Location=£12,200 (p=0.000)"
+              },
+              {
+                "t": "h",
+                "v": "Interpreting the Grade Coefficient"
+              },
+              {
+                "t": "p",
+                "v": "What does a grade coefficient of £9,400 (p=0.000) mean in practical terms?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Interpretation",
+                "v": "Each step up in grade (from SE1 to SE2, or SE2 to SE3) is associated with £9,400 higher salary, holding tenure, performance, gender, and location constant. The p=0.000 indicates extremely high statistical significance — this is a very reliable finding. In practical terms: grade is the dominant legitimate determinant of salary, as expected in a well-structured pay system. The grade coefficient is the parameter we would expect to be largest. An SE4 is associated with £9,400 × 3 = £28,200 more salary than an SE1 of equivalent tenure, performance, gender, and location — consistent with the grade structure design."
+              },
+              {
+                "t": "h",
+                "v": "Interpreting the Gender Coefficient"
+              },
+              {
+                "t": "p",
+                "v": "What does a gender coefficient of −£2,100 (p=0.03) mean and what action does it imply?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Interpretation",
+                "v": "The gender coefficient of −£2,100 with p=0.03 means that, after controlling for grade, tenure, performance, and location, women Software Engineers earn £2,100 less than men on average. The p=0.03 is statistically significant (below 0.05) — this finding is unlikely to be due to chance. This is a pay equity finding requiring investigation. Next steps: (1) verify the analysis — run it again on a confirmed clean data set; (2) identify which specific employees are driving the coefficient — is the difference concentrated in a specific grade or location? (3) assess the potential causes — were women hired at lower rates? Did they receive lower merit increases? Were they in grades that have narrower market rates for women? (4) engage legal counsel before any communication — a statistically significant adjusted pay gap is a legal finding, not just an HR finding."
+              },
+              {
+                "t": "h",
+                "v": "Interpreting R-squared and Limitations"
+              },
+              {
+                "t": "p",
+                "v": "The model explains 71% of salary variation. What does this mean and what does the remaining 29% represent?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Interpretation",
+                "v": "R-squared of 0.71 means the five variables in the model (grade, tenure, performance, gender, location) together explain 71% of the variation in Software Engineer salaries. The remaining 29% is unexplained by these variables — it includes: individual negotiation differences at hire; specific technical skill premiums not captured by grade alone; recent market adjustments applied to some but not all employees; and genuine random variation in pay decisions. 71% is a respectable R-squared for a compensation regression — models with R-squared above 0.85 in compensation are typically over-fitted (too many variables for the sample size). The 29% unexplained variation is not automatically a problem — compensation is not fully deterministic, and some variation reflects legitimate individual differences. The concern arises when the unexplained variation correlates with protected characteristics (as the gender coefficient suggests)."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "A statistically significant gender coefficient in a pay regression is a legal finding — it triggers legal review and may require pay corrections before any broader disclosure.",
+                  "R-squared of 0.70-0.80 in a compensation regression is healthy — higher values may indicate over-fitting rather than better model quality.",
+                  "The grade coefficient should be the largest coefficient in a well-structured pay system — if another variable (e.g. tenure or location) has a larger coefficient than grade, the pay structure may not be the primary determinant of pay decisions."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "14-2-3",
+            "title": "Nova Tech's Analytical Pay Decision — Full Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Real reward communication challenges involve competing priorities — cost, candour, legal risk, and employee trust. This case works through the trade-offs."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Nova Tech — The Engineer Salary Model",
+                "v": "The regression analysis reveals a −£2,100 gender gap for Software Engineers. The Head of People presents this to the CEO, who responds: 'Women are 12% of our engineering team — the sample is only 11 people. Isn't this too small to draw any conclusions?' The Head of People must respond and advise on next steps."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The CEO's point about sample size is partially valid. How should this be addressed analytically?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The CEO's concern is methodologically relevant. With only 11 female Software Engineers, the analysis has a relatively small sample for the protected characteristic group. However: (1) the p-value of 0.03 accounts for sample size — the regression model calculates statistical significance based on the actual sample size available, so a p=0.03 with 11 women is genuinely significant, not an artefact of ignoring the small sample. (2) The finding is consistent — a £2,100 gap that is statistically significant with n=11 in a well-specified model is a real signal. It may not be precisely £2,100; the confidence interval around that estimate might be wide (perhaps £200-£4,000). But the direction is reliable. (3) The small sample is itself a finding: Nova Tech has a very low representation of female Software Engineers (12%), which is both a diversity and a risk issue. If the company grows its female engineering proportion, the analysis will become more precise — but the current finding is not invalidated by the small sample. Recommended response to CEO: 'The small sample does mean we should treat the precise figure with caution. But a statistically significant finding with this sample size in a well-specified model is reliable enough to investigate — and the investigation will tell us more than the number alone can.'"
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The CEO asks what the likely cause of the gap is. What are the hypotheses and how are they investigated?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Three primary hypotheses: (1) Point-of-hire gap: women were offered lower starting salaries than men for comparable roles. Investigation: pull the starting salaries for all Software Engineers by gender and compare by grade and cohort (same-year hires). (2) Merit allocation gap: women received lower merit increases over time. Investigation: pull merit increase percentages by gender and performance rating for the last three cycles. (3) Grade placement gap: women are disproportionately placed in lower grades despite comparable experience. Investigation: compare grade distribution by gender and by tenure — do women take longer to progress from SE1 to SE2 for comparable performance? Each hypothesis has a different remediation. A point-of-hire gap is addressed through starting salary correction; a merit allocation gap through merit process intervention; a grade placement gap through promotion calibration review."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "Legal counsel advises that the finding should be investigated quietly before any disclosure. The Head of People disagrees and wants to be transparent. How should this tension be resolved?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Both positions contain valid concerns. Legal counsel's concern: early disclosure before causation is established may prompt claims that are more difficult to defend if the organisation later establishes a legitimate explanation for part of the gap. The Head of People's concern: silence on a known pay equity issue creates both an ethical problem and, if the issue subsequently surfaces through other means (a claim, a transparency law requirement), a much larger trust and reputational problem. The resolution: the investigation proceeds immediately and confidentially — not publicly disclosed before it is complete. The investigation establishes causation. The results are reviewed by legal counsel. The correction plan is approved. Then the organisation communicates proactively: 'We conducted a pay equity analysis, identified a gap, investigated it, found [cause], and have corrected it.' This sequence — investigate, correct, then communicate — is more defensible than either 'we discovered and said nothing' or 'we announced a gap before understanding it.' The timeline for the investigation should be short — 4-6 weeks — to prevent the confidential period from being used as a reason to defer action indefinitely."
+              },
+              {
+                "t": "box",
+                "label": "Analytical Pay Decision Framework",
+                "v": "Statistical significance with small n: valid finding; confidence interval may be wide; investigate\nHypothesis testing: hire gap, merit gap, grade placement gap — each needs specific data\nLegal-HR tension on disclosure: investigate first, correct, then communicate proactively\nSmall n as a finding: low female representation is itself an analytically significant observation"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "A statistically significant p-value in a regression accounts for sample size — the CEO's intuition about small samples is reasonable but the statistical test already incorporates it.",
+                  "Three primary hypotheses explain any adjusted pay gap: point-of-hire, merit allocation, and grade placement — each requires different data to investigate and different remediation to address.",
+                  "The investigation-correction-communication sequence is more defensible than both silence and premature disclosure — the timeline for investigation must be defined and short."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "14-2-Q",
+            "title": "Module Quiz: Statistical Analysis in Pay Decisions",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "In salary analysis, the median (P50) is preferred over the mean because:",
+                "opts": [
+                  "The median is easier to calculate without a spreadsheet.",
+                  "The median is robust to outliers — extreme high salaries distort the mean significantly more than the median.",
+                  "The median is required by salary survey providers for standardised reporting.",
+                  "The median always equals the mode, making it the most representative central tendency measure."
+                ],
+                "ans": 1,
+                "exp": "A small number of very high salaries pulls the mean upward significantly while having minimal effect on the median — this is why salary surveys consistently report P50 rather than mean."
+              },
+              {
+                "q": "A performance coefficient of £800 with a p-value of 0.18 in a salary regression means:",
+                "opts": [
+                  "Performance has a positive but moderate effect on salary — £800 per rating point.",
+                  "The performance-salary relationship is not statistically significant and should not be acted on without further investigation.",
+                  "Performance is the least important of the variables included in the regression model.",
+                  "The sample size is insufficient to include performance as a regression variable."
+                ],
+                "ans": 1,
+                "exp": "P=0.18 means there is an 18% probability the observed coefficient occurred by chance — well above the 5% significance threshold. The finding is not reliable enough for a compensation decision."
+              },
+              {
+                "q": "R-squared of 0.71 in a salary regression means:",
+                "opts": [
+                  "71% of employees' salaries are within £1,000 of the predicted value.",
+                  "The included variables explain 71% of the variation in salaries — a reasonable result for a compensation model.",
+                  "71% of employees are positioned correctly in their salary range.",
+                  "The model is 71% accurate — 29% of predictions will be incorrect."
+                ],
+                "ans": 1,
+                "exp": "R-squared is a measure of explanatory power, not prediction accuracy. 0.71 means the model's variables account for 71% of salary variation — the remaining 29% is unexplained by the included variables."
+              },
+              {
+                "q": "A gender coefficient of −£2,100 with p=0.03 in a Software Engineer salary regression is best described as:",
+                "opts": [
+                  "A correlation that requires causal investigation before conclusions are drawn, but is statistically reliable enough to investigate urgently.",
+                  "A small finding that falls within normal variation and does not require action.",
+                  "A definitive proof of gender pay discrimination requiring immediate legal action.",
+                  "An expected finding in technology companies that reflects market supply differences."
+                ],
+                "ans": 0,
+                "exp": "The finding is statistically significant and should be investigated urgently — but statistical significance alone does not establish causation or legal liability, which require the investigation to determine."
+              },
+              {
+                "q": "The three primary hypotheses for an adjusted gender pay gap in a regression are:",
+                "opts": [
+                  "Illegal pay discrimination, market supply differences, and performance rating bias.",
+                  "Point-of-hire salary differences, merit allocation differences, and grade placement differences.",
+                  "Manager pay decision bias, HR system errors, and performance review inconsistency.",
+                  "Gender concentration in specific job families, geographic location differences, and contract type differences."
+                ],
+                "ans": 1,
+                "exp": "These three hypotheses cover the three points in the compensation process where unexplained differences can accumulate — hire, merit, and promotion — each requiring specific data to investigate and specific remediation."
+              },
+              {
+                "q": "The 'small sample fallacy' in compensation analytics refers to:",
+                "opts": [
+                  "Using survey data from a sample that is smaller than the organisation's headcount.",
+                  "Drawing confident conclusions from analyses of very small groups, where random variation makes findings unreliable.",
+                  "Running a regression with fewer variables than the standard model requires.",
+                  "Using median rather than mean for small populations where outliers are not present."
+                ],
+                "ans": 1,
+                "exp": "Findings from groups of fewer than 30 should be treated as directional — the sample is too small for the statistical tests to reliably distinguish genuine patterns from random variation."
+              },
+              {
+                "q": "Standard deviation of salaries within a grade is useful as a governance metric because:",
+                "opts": [
+                  "It determines the midpoint of the salary range for the grade.",
+                  "High standard deviation within a grade signals wide salary variation that may indicate inconsistent pay management or a grade that is too broad.",
+                  "Standard deviation is the primary input for calculating the merit increase budget.",
+                  "Low standard deviation indicates that all employees in the grade are paid at the same level, confirming internal equity."
+                ],
+                "ans": 1,
+                "exp": "A high standard deviation within a grade (wide salary spread among employees at the same grade level) is a signal worth investigating — it may reflect appropriate variation for different roles within a broad grade, or inconsistent pay management that has accumulated over time."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "14-3",
+        "title": "Merit Matrix Design and Budget Modelling",
+        "color": "#C25B20",
+        "lessons": [
+          {
+            "id": "14-3-1",
+            "title": "Merit Matrix Design and Budget Modelling",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "The merit matrix is the most operationally consequential output of the annual compensation review — it translates a budget and a philosophy into a specific set of salary changes for hundreds or thousands of individuals. A well-designed merit matrix is transparent, equitable, and budget-accurate. A poorly designed one wastes budget on employees who don't need it, under-invests in those who do, and produces internal equity problems that take years to unwind."
+              },
+              {
+                "t": "h",
+                "v": "Merit Matrix Principles"
+              },
+              {
+                "t": "p",
+                "v": "A merit matrix distributes the merit budget across two dimensions: performance rating and position in salary range (compa-ratio or range penetration). The core logic: employees who perform well but are paid below the midpoint (low compa-ratio) should receive higher merit increases than employees who perform equally well but are already paid above the midpoint. This produces two outcomes simultaneously — it rewards performance and manages internal equity within the grade. Without the compa-ratio dimension, a merit increase applied uniformly by performance rating reinforces existing pay inequities: a high performer paid above the midpoint gets the same increase as a high performer paid below it, despite the very different equity and retention implications."
+              },
+              {
+                "t": "h",
+                "v": "Matrix Design Parameters"
+              },
+              {
+                "t": "p",
+                "v": "Four parameters define a merit matrix: the performance dimension (typically 3-5 rating levels); the compa-ratio dimension (typically 3 bands: below 85%, 85-115%, above 115%); the range of increase percentages (typically 0% at the minimum to 8-10% at the maximum cell); and the budget constraint (the average of the matrix weighted by the population distribution must equal the approved merit budget). The budget constraint is what most matrix designs underestimate — the population distribution across compa-ratio bands significantly affects what the matrix costs in aggregate. A matrix designed assuming 50% of employees are below midpoint when in fact 70% are will significantly over-budget."
+              },
+              {
+                "t": "h",
+                "v": "Budget Modelling"
+              },
+              {
+                "t": "p",
+                "v": "Accurate budget modelling requires: the merit matrix showing increase percentage by cell; the number of employees in each cell (the population distribution); and the average salary in each cell. The cost of the matrix is the sum across all cells of (increase % × average salary × headcount in cell). Most organisations model several matrix scenarios before approving one: a baseline (the designed matrix), a sensitivity for +/- 10% change in population distribution, and a high-performer retention scenario (higher increases in the top-performance / low-compa-ratio cell specifically). These scenarios help leadership understand the budget implications of different philosophical choices."
+              },
+              {
+                "t": "h",
+                "v": "Budget Allocation Governance"
+              },
+              {
+                "t": "p",
+                "v": "Once the matrix is designed and approved, governance specifies how managers allocate within it. Three governance models: formulaic (the matrix output is the exact increase for every employee — no manager discretion); guideline (the matrix output is the recommended increase, with manager discretion to adjust within a defined range); and discretionary (the matrix provides a budget envelope, and managers allocate freely within it). Most organisations use a guideline model — it balances the equity of a formula with the contextual judgement that managers bring. The governance also specifies the exception approval process: any increase above the matrix maximum requires HR or Total Rewards sign-off; any zero increase requires a documented performance rating."
+              },
+              {
+                "t": "box",
+                "label": "Merit Matrix Design Logic",
+                "v": "Two dimensions: performance rating × compa-ratio band\nHigher increase: high performer at low compa-ratio\nLower increase: high performer at high compa-ratio\nZero increase: below-expectations performance (regardless of compa-ratio)\nBudget constraint: weighted average of all cells must equal approved pool\nGovernance: formulaic / guideline / discretionary — most use guideline"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Nova Tech's First Merit Matrix",
+                "v": "Nova Tech is designing its first formal merit matrix for 140 employees. The approved merit pool is 5% of total salary cost (£3.2M payroll = £160,000 budget). The Head of People must design a 3×3 matrix (3 performance levels × 3 compa-ratio bands) and validate that it costs exactly £160,000 at the actual population distribution."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The merit budget is a constraint, not a target — a matrix that produces an actual spend of 5.3% on a 5% budget is a governance failure, not a result of employee over-performance.",
+                  "Compa-ratio bands in the merit matrix create internal equity management within the performance reward decision — without the compa-ratio dimension, high performers above the midpoint receive the same reward signal as high performers below it.",
+                  "Exception approval processes are the governance mechanism that prevents managers from overriding the matrix without accountability — they should be defined before the matrix is communicated to managers."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The most important validation step before finalising the merit matrix is:",
+              "opts": [
+                "Reviewing the matrix with all line managers to confirm they find it intuitive.",
+                "Running the population distribution through the matrix to confirm the weighted average increase equals the approved budget percentage.",
+                "Confirming that the highest increase cell is at least twice the lowest non-zero increase cell.",
+                "Reviewing all previous year merit data to confirm the matrix represents an improvement."
+              ],
+              "ans": 1,
+              "exp": "A merit matrix that looks philosophically sound may over- or under-budget significantly depending on the actual population distribution — the modelling step is the only way to confirm budget accuracy before the review begins."
+            }
+          },
+          {
+            "id": "14-3-2",
+            "title": "Building and Validating Nova Tech's Merit Matrix",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Merit matrix design requires both philosophical logic (higher increase for high performers lower in range) and mathematical validation (weighted average must equal budget)."
+              },
+              {
+                "t": "box",
+                "label": "Nova Tech — Merit Matrix Design Brief",
+                "v": "Population: 140 employees. Average salary: £22,857 (£3.2M ÷ 140).\nApproved pool: 5% = £160,000.\nPerformance distribution: Exceeds=22% (31 employees), Meets=61% (85 employees), Below=17% (24 employees).\nCompa-ratio distribution: <85%=28% (39 employees), 85-115%=52% (73 employees), >115%=20% (28 employees).\nNote: below-expectations employees receive 0% regardless of compa-ratio."
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — Design the Matrix Cells"
+              },
+              {
+                "t": "p",
+                "v": "Fill in the 9 matrix cells (3 performance × 3 compa-ratio) with increase percentages that reflect the philosophy."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "Design principles: below-expectations = 0% always; exceeds performance in low compa-ratio band gets the highest increase; high compa-ratio limits increase regardless of performance.\n\n| | <85% CR | 85-115% CR | >115% CR |\n|---|---|---|---|\n| Exceeds | 8% | 5.5% | 2.5% |\n| Meets | 5% | 3.5% | 1.5% |\n| Below Expectations | 0% | 0% | 0% |\n\nDesign rationale: Exceeds + <85%CR: maximum increase — top performer, lowest in range. Exceeds + >115%CR: minimum non-zero increase — top performer already at top of range. Meets + <85%CR: meaningful increase — solid performer who is low in range, retention risk. Below + any: zero — performance must improve before pay investment is made."
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Model the Budget"
+              },
+              {
+                "t": "p",
+                "v": "Validate that this matrix costs the right amount given the actual population distribution."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "Budget modelling (each cell: employees × % × average salary):\nAssuming the population distributes proportionally across compa-ratio bands within each performance tier:\n\nExceeds (31 employees): <85%=9, 85-115%=16, >115%=6\n• 9 × 8% × £22,857 = £16,457\n• 16 × 5.5% × £22,857 = £20,114\n• 6 × 2.5% × £22,857 = £3,429\nExceeds subtotal: £40,000\n\nMeets (85 employees): <85%=24, 85-115%=44, >115%=17\n• 24 × 5% × £22,857 = £27,428\n• 44 × 3.5% × £22,857 = £35,200\n• 17 × 1.5% × £22,857 = £5,829\nMeets subtotal: £68,457\n\nBelow (24 employees): all cells = 0%\n\nTotal: £40,000 + £68,457 = £108,457\n\nThis is £51,543 short of the £160,000 budget. The matrix is under-budgeted. The distribution of 17% below-expectations means 24 employees receive zero — their zero reduces the weighted average significantly. The matrix needs recalibration."
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Recalibrate to Hit Budget"
+              },
+              {
+                "t": "p",
+                "v": "Adjust the matrix cells to bring the total spend to £160,000."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "The shortfall occurs because 17% of employees (24 people) receive 0% — their exclusion reduces the weighted average dramatically. To recalibrate:\n\nOption A: Increase the percentages in all non-zero cells proportionally. Target: £160,000 / £108,457 = 1.476× uplift to all cells. This would produce Exceeds + <85%CR = 11.8%, which exceeds the band maximum we would want for any single cell.\n\nOption B: Add a 'minimum above 0' for Meets + >115%CR and adjust the matrix more moderately. With 17% below-expectations receiving zero, the achievable pool for the remaining 83% must average 5% ÷ 0.83 = 6.02% to hit the full budget. Recalibrated matrix:\n| | <85% CR | 85-115% CR | >115% CR |\n|---|---|---|---|\n| Exceeds | 10% | 7% | 4% |\n| Meets | 6.5% | 5% | 3% |\n| Below | 0% | 0% | 0% |\n\nRevalidate: Exceeds (£40,000×1.476≈£59K) + Meets (£68,457×1.476≈£101K) ≈ £160K ✅\n\nLesson: always model the budget before finalising the matrix — the below-expectations exclusion has a dramatic effect on what the remaining cells must be to hit the total budget."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Merit matrix budget validation is not optional — a philosophically sound matrix that misses the budget by 30% will require mid-cycle corrections that undermine manager confidence.",
+                  "The below-expectations zero creates a significant budget impact — the remaining employees must average a higher percentage than the headline budget to produce the correct total spend.",
+                  "Multiple budget scenarios (baseline, sensitivity, high-performer focus) give leadership the information to make deliberate philosophical choices rather than inheriting whatever the first matrix design produces."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "14-3-3",
+            "title": "Nova Tech's Merit Review — Full Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Real reward communication challenges involve competing priorities — cost, candour, legal risk, and employee trust. This case works through the trade-offs."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Nova Tech — First Formal Merit Review",
+                "v": "Nova Tech runs its first formal merit review using the new matrix. Post-review analysis shows: actual spend was £157,200 (98.3% of budget); 89% of increases were within the matrix guidelines; 11% required exceptions. The exceptions included: 4 counter-offer matches (above matrix maximum); 3 market adjustments for roles found to be below benchmark mid-cycle; 2 retrospective corrections from the earlier pay audit. Separately, two managers allocated their full team to the 'Meets' category despite one having a team with 40% 'Exceeds' ratings in the prior year."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "98.3% merit budget utilisation — is this an acceptable outcome?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "98.3% utilisation is an excellent first-year outcome — it indicates the matrix was reasonably well-calibrated to the population and that managers used their budgets appropriately. The 1.7% underspend (£2,800) is well within normal — it reflects rounding on individual increases and a small number of roles that were vacant during the review and excluded from the calculation. A healthy range for merit utilisation is 95-105% — outside this range indicates either structural modelling errors or significant exception activity. The 11% exception rate is worth monitoring: if it grows, it indicates the matrix is not calibrated correctly for the market or for manager expectations, and the philosophy/budget needs to be revisited."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The two managers who rated their full teams as 'Meets' despite prior-year evidence of high performance — what governance response is appropriate?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "This is a rating calibration problem. A manager who rates a team with 40% prior-year Exceeds all as Meets is either: (1) applying a more rigorous standard in the new formal system (which may be legitimate); or (2) managing downward to control the budget (which is not legitimate); or (3) avoiding difficult conversations about differentiated performance (also not legitimate). The governance response: the manager's ratings and merit allocations should be reviewed by their own manager and the HBP before the review is closed. The review should specifically ask: has performance genuinely declined for this team, or is there a rating calibration issue? If the manager has applied a more rigorous standard: have a calibration conversation — the standard should be consistent across the organisation, and a dramatic rating shift without performance change typically indicates a definitional issue rather than a genuine performance story. If the manager is managing-down to control budget: this is a governance failure — the merit allocation is the manager's responsibility, not a budget reduction mechanism, and the HBP should escalate to the manager's manager."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "The 4 counter-offer matches and 3 market adjustments processed as exceptions — what does this indicate about the merit matrix design?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Four counter-offer matches and 3 market adjustments in a single review cycle is a signal that the merit matrix, while internally calibrated, may not be sufficiently responsive to market movements. Counter-offer matches are expensive and reactive — they represent market adjustment done urgently at the point of an exit risk, rather than proactively through the review. Market adjustments mid-cycle represent the same problem: roles found to be below benchmark mid-cycle should have been identified and corrected in the review, not discovered later. Both signals indicate the need for a stronger market calibration input at the review design stage — specifically, checking the current market benchmark for high-mobility roles (Software Engineers, in Nova Tech's case) before finalising the matrix maximums, to ensure the top cells are genuinely competitive. This is the 'technical roles P65 positioning' lesson applied to the merit process: the standard matrix may not produce competitive outcomes for the roles most at risk."
+              },
+              {
+                "t": "box",
+                "label": "Merit Review Governance Principles",
+                "v": "Utilisation 95-105%: healthy range; outside this range investigate the cause\nException rate >10%: indicates matrix miscalibration or exception process weakness\nRating calibration: dramatic rating shifts without performance change need investigation\nCounter-offer exceptions: symptom of insufficient proactive market calibration in the matrix"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "A first-year merit review with 98.3% utilisation and 89% in-matrix compliance is a strong outcome — the priority for year 2 is addressing the market calibration signals from the exception activity.",
+                  "Rating calibration reviews should be embedded in the merit governance process, not conducted reactively when a specific manager's distribution looks suspicious.",
+                  "Counter-offer matches and market adjustments as merit exceptions are symptoms of the same underlying problem: the merit matrix was not calibrated against current market movement for high-risk roles."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "14-3-Q",
+            "title": "Module Quiz: Merit Matrix Design and Budget Modelling",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The primary advantage of including compa-ratio in the merit matrix (in addition to performance rating) is:",
+                "opts": [
+                  "It reduces the total merit budget by ensuring high-in-range employees receive lower increases.",
+                  "It manages internal equity within grades by directing higher investment toward high performers who are low in range.",
+                  "It allows managers to adjust increases based on each employee's market value.",
+                  "It simplifies the matrix to one dimension — range position — rather than requiring performance data."
+                ],
+                "ans": 1,
+                "exp": "The compa-ratio dimension directs higher merit to employees who are both high-performing and low in range — the population with the highest retention risk and the most internal equity need."
+              },
+              {
+                "q": "A merit matrix that is philosophically sound but under-budgets by 30% most likely results from:",
+                "opts": [
+                  "The matrix cells being set too low across all performance levels.",
+                  "The actual below-expectations population being higher than assumed in the design — their zero allocations reduce the weighted average total spend significantly.",
+                  "Managers systematically applying the minimum cell rather than the recommended cell.",
+                  "The merit pool being approved at too low a percentage relative to market movement."
+                ],
+                "ans": 1,
+                "exp": "Below-expectations employees receiving zero increases dramatically reduces the total spend — a 17% below-expectations rate means 17% of payroll receives no increase, requiring the remaining cells to be set proportionally higher to hit the budget."
+              },
+              {
+                "q": "A merit exception approval process is required for increases above the matrix maximum primarily to:",
+                "opts": [
+                  "Ensure Finance is involved in all individual salary decisions above a defined threshold.",
+                  "Create an accountability mechanism that prevents managers from routinely overriding the matrix without documented justification.",
+                  "Ensure that above-maximum increases trigger a grade review.",
+                  "Comply with statutory requirements for salary change documentation."
+                ],
+                "ans": 1,
+                "exp": "Exception processes are governance mechanisms — they don't prevent above-maximum increases but require that each one is documented and approved, creating accountability and visibility for the pattern of exceptions."
+              },
+              {
+                "q": "Four counter-offer matches in a single merit cycle as exceptions indicate:",
+                "opts": [
+                  "The organisation has a culture of rewarding employees who threaten to leave.",
+                  "The merit matrix maximums may not be calibrated to current market rates for high-mobility roles — the counter-offers reveal a market gap that the review process failed to address proactively.",
+                  "The exception approval process has been too lenient in approving above-matrix requests.",
+                  "Managers are using counter-offers as a management tool to avoid difficult performance conversations."
+                ],
+                "ans": 1,
+                "exp": "Counter-offer matches are expensive reactive corrections — their frequency in a review cycle is a signal that the proactive market calibration in the matrix design was insufficient for high-mobility roles."
+              },
+              {
+                "q": "Merit budget utilisation of 88% is most likely to indicate:",
+                "opts": [
+                  "Exceptional financial discipline by the HR team.",
+                  "A structural problem — either population distribution modelling was incorrect, significant positions were vacant, or some increases were not implemented as planned.",
+                  "The merit pool was over-budgeted relative to what the organisation actually needed.",
+                  "All employees in the below-expectations category, producing a lower weighted average than planned."
+                ],
+                "ans": 1,
+                "exp": "Significant underspend (>5% gap) warrants investigation — the most common causes are modelling errors, unfilled positions, or implementation failures where approved increases were not processed."
+              },
+              {
+                "q": "A manager who rates a team with 40% prior-year Exceeds all as Meets in the first formal review is most likely:",
+                "opts": [
+                  "Applying a more rigorous standard that is consistent with the organisation's new formal rating criteria.",
+                  "Either applying a more rigorous standard (requires calibration conversation) or managing-down to control budget (requires governance escalation) — investigation is required to distinguish the two.",
+                  "Following organisation guidance to reduce the proportion of Exceeds ratings across the workforce.",
+                  "Avoiding the higher merit costs associated with Exceeds ratings in their team."
+                ],
+                "ans": 1,
+                "exp": "A dramatic rating shift without obvious performance change needs investigation before a conclusion is drawn — the two most common causes (rigour vs budget management) require different responses."
+              },
+              {
+                "q": "The merit matrix weighted average must equal the approved pool percentage because:",
+                "opts": [
+                  "The matrix is a legal document that must precisely distribute the approved budget.",
+                  "The budget constraint is what the board approved — overspend is a governance failure, and underspend means legitimate reward investment was not made.",
+                  "Salary increases that exceed the matrix average create tax complications.",
+                  "The weighted average is the external market benchmark the matrix must match."
+                ],
+                "ans": 1,
+                "exp": "The approved pool is a finite resource allocated by the board — the matrix is the mechanism for distributing it equitably and precisely. Significant over- or under-spend indicates a design or implementation failure."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "14-4",
+        "title": "Predictive Analytics and Attrition Modelling",
+        "color": "#C25B20",
+        "lessons": [
+          {
+            "id": "14-4-1",
+            "title": "Predictive Analytics and Attrition Modelling",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Reactive compensation practice fixes problems after they cost money — counter-offers made after an exit decision, above-market adjustments to retain employees who are already disengaged. Predictive compensation analytics shifts the intervention point earlier — identifying the signals that precede attrition before the resignation is submitted, and providing the data needed to intervene when intervention is still cost-effective."
+              },
+              {
+                "t": "h",
+                "v": "Why Attrition Is a Compensation Problem"
+              },
+              {
+                "t": "p",
+                "v": "Not all attrition is compensation-driven. Employees leave for management quality, career development, flexibility, and cultural fit — and compensation is often cited as a secondary factor even when the primary reason is elsewhere. However, compensation is the easiest of these factors to measure, and the relationship between below-market pay and attrition is well-established: employees who believe they are paid below market are significantly more likely to be actively job-seeking than those who believe they are paid at or above market. The Total Rewards team can directly influence the compensation dimension of attrition risk — making it the most analytically tractable starting point for an attrition modelling programme."
+              },
+              {
+                "t": "h",
+                "v": "Leading Indicators of Voluntary Attrition"
+              },
+              {
+                "t": "p",
+                "v": "Several data signals consistently precede voluntary resignation and can be tracked in real time. Compa-ratio below 80% + tenure above 24 months: employees who are long-tenured but low in their range have been under-managed through the merit process — they represent the population most at risk from a pay-driven external comparison. Missed merit increases in 2+ consecutive cycles: regardless of the reason (budget, performance), consecutive zero increases are strongly correlated with subsequent voluntary exit, particularly for employees rated Meets or above. Pay-to-performance misalignment: high-performance employees with below-median pay positioning, particularly in high-mobility roles (technology, finance, sales). Benefit uptake decline: employees who stop engaging with benefits programmes (opting out of schemes they previously used) are sometimes a signal of disengagement, though this is a weaker indicator."
+              },
+              {
+                "t": "h",
+                "v": "Building an Attrition Risk Score"
+              },
+              {
+                "t": "p",
+                "v": "An attrition risk model combines multiple leading indicators into a single risk score per employee. The inputs typically include: compa-ratio (low = higher risk); performance rating relative to compa-ratio (high performer, low compa-ratio = highest risk); consecutive zero merit cycles; tenure in grade (long tenure without promotion = higher risk if the role has a progression expectation); and role type (high-mobility roles weighted more heavily). The output is a risk score (e.g. low/medium/high) for each employee, updated monthly or quarterly. The risk score is not a prediction — it is a prioritisation tool that tells the Head of People and the HBPs where to direct retention conversations and compensation reviews."
+              },
+              {
+                "t": "h",
+                "v": "The ROI of Retention vs Replacement"
+              },
+              {
+                "t": "p",
+                "v": "The business case for predictive attrition analytics rests on the cost differential between retention and replacement. Voluntary turnover is expensive: recruiting, onboarding, and training a replacement typically costs 50-150% of the departing employee's annual salary, depending on seniority and role type. The lower this cost estimate, the more targeted the retention intervention needs to be — not every low-risk employee who might leave warrants a significant pay adjustment. But for a £60,000 Senior Software Engineer where replacement costs £60,000-90,000, a proactive £3,000-5,000 salary adjustment that retains the employee is 10-30× more cost-effective than a recruitment cycle after the resignation."
+              },
+              {
+                "t": "box",
+                "label": "Attrition Risk Indicators",
+                "v": "Highest risk: high performer + low compa-ratio + high-mobility role\nSignificant risk: 2+ consecutive zero merit increases\nElevated risk: long tenure + low compa-ratio + no grade progression\nBusiness case: retention cost is 10-30× lower than replacement cost for senior roles\nOutput: risk score per employee — prioritisation tool, not prediction"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Nova Tech's Attrition Spike",
+                "v": "Nova Tech loses 6 Software Engineers in a 3-month period. Post-exit interviews reveal three cited 'better opportunities' and two cited 'underpaid relative to the market.' The Head of People must determine whether the attrition was predictable using available data."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Attrition risk modelling shifts the intervention point from reactive (post-resignation) to proactive (pre-decision) — the value is entirely in the timing of the intervention.",
+                  "The ROI of proactive retention investments is straightforward: replacement cost (50-150% of salary) vs retention adjustment cost (typically 3-8% of salary) — the arithmetic almost always favours proactive investment.",
+                  "Risk scores are prioritisation tools, not predictions — they tell HR where to direct conversations, not which employees will definitely leave."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "To determine whether the 6 departures were predictable from compensation data, the Head of People should first:",
+              "opts": [
+                "Survey the remaining Software Engineers to understand their satisfaction levels.",
+                "Pull the compa-ratio and merit history for the 6 departed engineers and compare to the overall Software Engineer population.",
+                "Commission a new salary survey to determine current market rates for Software Engineers.",
+                "Review the job descriptions of the roles the departed engineers moved into."
+              ],
+              "ans": 1,
+              "exp": "Retrospective analysis of the departed employees' compensation data against the population identifies whether there was a detectable pattern (low compa-ratio, missed merit, high performance) that could have been caught proactively."
+            }
+          },
+          {
+            "id": "14-4-2",
+            "title": "Building Nova Tech's Attrition Risk Model",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Attrition risk modelling for a 140-person organisation can be done in a spreadsheet — it doesn't require advanced ML tools. The goal is a defensible, understandable score that HR and managers can act on."
+              },
+              {
+                "t": "box",
+                "label": "Nova Tech — Attrition Model Design Brief",
+                "v": "Available data: 140 employees with compa-ratio, performance rating, tenure in grade, consecutive zero merit cycles, role type (engineer/PM/ops/other). Historical attrition: 11 voluntary departures in the last 12 months (7.9% voluntary attrition rate). Role: model the risk of each Software Engineer (60 employees) using available inputs."
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — Define the Risk Factors and Weights"
+              },
+              {
+                "t": "p",
+                "v": "Assign each risk factor a score contribution based on its predictive strength."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "Risk factor scoring (simple additive model):\n\n| Factor | Low Risk (0 pts) | Medium Risk (1 pt) | High Risk (2 pts) |\n|---|---|---|---|\n| Compa-ratio | >105% | 85-105% | <85% |\n| Performance vs compa | Meets/low CR | Exceeds/mid CR | Exceeds/low CR |\n| Consecutive zero merit | 0 | 1 | 2+ |\n| Tenure in grade | <18 months | 18-36 months | >36 months with no promo |\n| Role type mobility | Ops/admin | PM/Finance | Software Engineer |\n\nMaximum score: 10 points\nRisk bands: Low = 0-3 | Medium = 4-6 | High = 7-10\n\nThe Software Engineer role type modifier (2 points) reflects that this role's external mobility is significantly higher than most others — an SWE at 87% compa-ratio is at substantially higher exit risk than an Operations Manager at 87% compa-ratio, because the SWE has more and faster external alternatives."
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Score the Example Population"
+              },
+              {
+                "t": "p",
+                "v": "Apply the model to 5 representative Software Engineers to demonstrate output."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "Representative scoring:\n\nEngineer A: CR=78%, Rating=Exceeds, Zero merit=2 consecutive, Tenure=38 months in SE2, SWE\nScore: 2+2+2+2+2 = 10/10 → High Risk\n\nEngineer B: CR=96%, Rating=Meets, Zero merit=0, Tenure=14 months in SE2, SWE\nScore: 1+0+0+0+2 = 3/10 → Low Risk\n\nEngineer C: CR=83%, Rating=Meets, Zero merit=1, Tenure=28 months, SWE\nScore: 2+1+1+1+2 = 7/10 → High Risk\n\nEngineer D: CR=108%, Rating=Exceeds, Zero merit=0, Tenure=20 months, SWE\nScore: 0+1+0+1+2 = 4/10 → Medium Risk\n\nEngineer E: CR=89%, Rating=Below, Zero merit=0, Tenure=12 months, SWE\nScore: 1+0+0+0+2 = 3/10 → Low Risk (below-expectations rating lowers risk — they may leave but are not a high-priority retention target)"
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Define Retention Actions by Risk Band"
+              },
+              {
+                "t": "p",
+                "v": "What does the Head of People do with the risk scores?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "Risk-differentiated action protocol:\n\nHigh Risk (7-10): immediate HBP conversation with the employee's manager to assess whether the risk signal matches observed behaviour (active job searching, disengagement, complaints). If confirmed, trigger: (a) targeted salary review within 30 days — not waiting for the annual cycle; (b) career conversation with the employee focused on progression timeline and next opportunity; (c) if the salary is below market for their specific role and level, bring to minimum market position immediately.\n\nMedium Risk (4-6): quarterly HBP conversation with manager; include in priority consideration in the next merit cycle; ensure merit allocation is at the matrix maximum for their performance/compa combination.\n\nLow Risk (0-3): standard merit cycle management; no special action required unless manager flags a concern.\n\nCost modelling: Engineer A (High Risk, £55,000 salary) → cost to retain: £55,000 × 3-5% = £1,650-2,750 salary adjustment. Cost to replace: £55,000 × 50-100% = £27,500-55,000 recruitment and onboarding. ROI of proactive action: 10-33×."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "A simple additive attrition risk model built in a spreadsheet is more useful than a complex ML model that no one trusts or acts on — usability drives value more than methodological sophistication.",
+                  "The role type mobility factor is critical for tech-sector attrition modelling — Software Engineers have dramatically higher external mobility than most other roles and should carry a significant risk weight.",
+                  "Risk-differentiated action protocols ensure the highest-risk employees receive proactive intervention — without the protocol, the risk score is interesting data that produces no action."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "14-4-3",
+            "title": "Nova Tech's Post-Attrition Analysis — Full Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Real reward communication challenges involve competing priorities — cost, candour, legal risk, and employee trust. This case works through the trade-offs."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Nova Tech — Retrospective Attrition Analysis",
+                "v": "Retrospective analysis of the 6 departed Software Engineers reveals: average compa-ratio at departure = 79%; 4 of 6 had Exceeds or Meets ratings; 3 had 2+ consecutive zero merit cycles; all 6 had tenure of 24+ months in their grade; all 6 were in the SWE role family. Under the risk model designed above, all 6 would have scored 7+ (High Risk). The Head of People presents this to the CEO with a proposal for a proactive retention programme."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The CEO asks: if the risk model would have flagged all 6, why didn't it catch them? The model didn't exist. How should the Head of People respond to build the case for implementing it?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The response requires both honesty and advocacy. Honest answer: the data to build this model existed — compa-ratio, performance, and merit history were all in the system. The analysis was not conducted because no one was tasked with running it and no governance process required it. The retrospective analysis demonstrates that the signal was available — the decision not to act on it was made by default, not by design. Advocacy for the model: 'The 6 departures cost us an estimated £165,000-330,000 in recruitment and onboarding costs. The model would have identified all 6 as high risk. Addressing their compensation at the point of identification would have cost approximately £15,000-25,000. The model is not a guarantee of zero attrition — it is a prioritisation tool that shifts intervention from reactive to proactive, and the cost arithmetic strongly supports implementing it.'"
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The CEO approves the model but asks: 'What if we score an employee as high risk, intervene with a salary increase, and they still leave?' How should this be addressed?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "This is a valid concern — the model is not a guarantee, and some high-risk employees will leave regardless of a salary intervention. The response: (1) Acknowledge directly that the model will not have a 100% retention success rate. Some departures are not compensation-driven; the model will flag some employees whose departure is actually motivated by management, career development, or personal factors that salary cannot address. (2) The arithmetic still holds: if a proactive salary adjustment retains even 50% of high-risk employees who would otherwise leave, the cost savings significantly exceed the investment in both the salary adjustments and the programme administration. (3) The salary intervention should not be the only action for high-risk employees — it should accompany a genuine career conversation. Retention interventions that address only pay without addressing the underlying engagement or development concern are both less effective and more likely to produce the 'counter-offer retained but still left within 12 months' outcome. The most effective retention response combines a pay correction with a genuine conversation about the employee's future in the organisation."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "The Head of People proposes running the model quarterly and presenting the high-risk list to business leaders. The CEO raises a privacy concern. How should this be addressed?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The privacy concern is legitimate. Sharing a named list of employees assessed as 'high attrition risk' with business leaders raises data privacy and relationship trust concerns — if employees discovered that their employer had assessed them as likely to leave, this could itself damage the employment relationship. Design principles for managing the privacy concern: (1) The named risk list is restricted to HR (HBP for the relevant team) and the direct manager — not shared with the leadership team in aggregate. (2) The leadership team receives aggregate data (e.g. '15% of the Software Engineering population is currently rated high risk — this is our primary retention priority for the next quarter') without names. (3) Actions based on the risk score are framed as 'proactive compensation reviews' and 'career development conversations' — the risk score is an internal tool, not disclosed to the employee. (4) The risk score data is subject to the same data governance controls as salary data — role-based access, audit trail, and defined retention period."
+              },
+              {
+                "t": "box",
+                "label": "Attrition Analytics Programme Governance",
+                "v": "Build the case: cost of 6 departures (£165K-330K) vs cost of proactive action (£15K-25K) — the arithmetic is the advocacy\nModel limitations: acknowledge imperfect retention; intervention + career conversation > pay correction alone\nPrivacy: named risk list restricted to HBP + direct manager; leadership receives aggregate only\nGovernance: risk score subject to same controls as salary data"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The business case for attrition analytics builds on concrete cost data — recruitment and onboarding costs are estimable, and the comparison to proactive retention investment is the most effective leadership argument.",
+                  "Pay correction alone is less effective than pay correction combined with a career conversation — counter-offer retention without the engagement conversation produces the '12-month cliff' pattern where the retained employee leaves within a year regardless.",
+                  "Privacy governance for attrition risk data is essential — the named risk list should never reach aggregate leadership without appropriate access controls and governance."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "14-4-Q",
+            "title": "Module Quiz: Predictive Analytics and Attrition Modelling",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The most analytically potent attrition risk combination for a Software Engineer is:",
+                "opts": [
+                  "Below-median compa-ratio and 6 months' tenure in the role.",
+                  "High performer + low compa-ratio + high-mobility role + 2+ consecutive zero merit cycles.",
+                  "Below-expectations performance and long tenure in the current grade.",
+                  "Above-median compa-ratio with a recent promotion to a new grade."
+                ],
+                "ans": 1,
+                "exp": "This combination maximises four risk signals simultaneously — the engineer is performing well, is below market, has been denied investment, and can readily find alternatives."
+              },
+              {
+                "q": "Attrition risk scores are best described as:",
+                "opts": [
+                  "Predictions of which employees will resign in the next 6 months.",
+                  "Prioritisation tools that indicate where HR and managers should direct proactive retention conversations.",
+                  "Definitive assessments of employee engagement and satisfaction.",
+                  "HR compliance records that document salary risk for each employee."
+                ],
+                "ans": 1,
+                "exp": "Risk scores are prioritisation tools — they focus intervention effort, not guarantee predictions. Some high-risk employees will leave regardless; some low-risk employees will leave for non-compensation reasons."
+              },
+              {
+                "q": "The ROI of proactive retention investment versus replacement is most accurately estimated using:",
+                "opts": [
+                  "The employee's current salary as a proxy for replacement cost.",
+                  "Replacement cost estimated at 50-150% of annual salary (recruiting, onboarding, productivity gap) versus retention intervention cost of 3-8% of salary.",
+                  "The average merit increase percentage as a proxy for retention investment cost.",
+                  "The recruitment agency fee as the primary component of replacement cost."
+                ],
+                "ans": 1,
+                "exp": "Replacement cost has three components: recruitment (agency or internal cost), onboarding time and management investment, and the productivity gap while the new hire reaches full effectiveness — together these typically represent 50-150% of annual salary."
+              },
+              {
+                "q": "A proactive salary adjustment for a high-risk employee is most effective when:",
+                "opts": [
+                  "Offered before the employee has received an external offer, so it does not feel like a counter-offer.",
+                  "Made in response to a specific external offer the employee has received.",
+                  "Applied as a flat percentage increase regardless of the employee's compa-ratio.",
+                  "Communicated as a market correction to avoid implying the employee was underpaid previously."
+                ],
+                "ans": 0,
+                "exp": "Proactive intervention at the risk signal stage — before the employee has an external offer and made a decision — is significantly more effective than reactive counter-offering, which is associated with 12-18 month post-offer exit patterns."
+              },
+              {
+                "q": "Sharing a named attrition risk list with the full leadership team is problematic because:",
+                "opts": [
+                  "Leadership teams are not authorised to have salary data under GDPR.",
+                  "Discovery of the risk assessment could damage the employment relationship with the assessed employees and the wider workforce.",
+                  "Leadership teams cannot take compensation actions based on risk assessments.",
+                  "Named risk lists require employee consent under data protection law."
+                ],
+                "ans": 1,
+                "exp": "Employees who discover they have been assessed as 'likely to leave' by their employer may experience this as a trust breach — confidentiality of the risk list at the named employee level is essential."
+              },
+              {
+                "q": "The 'role type mobility' factor in an attrition risk model for a Technology company should carry the highest weight because:",
+                "opts": [
+                  "Software engineers are the highest-paid employees and therefore most expensive to replace.",
+                  "Software engineering roles have the most external job opportunities and the shortest time-to-offer in most labour markets — meaning a low-compa-ratio engineer can act on an exit decision faster than almost any other role type.",
+                  "Technology departments have the highest headcount and therefore produce the most attrition by volume.",
+                  "Role type is a stronger predictor of attrition than compa-ratio or performance rating in all organisations."
+                ],
+                "ans": 1,
+                "exp": "Role type mobility reflects how quickly an employee can convert an exit decision into an external offer — high mobility means the window for proactive intervention is shorter, making early identification more urgent."
+              },
+              {
+                "q": "The most effective retention response for a high-risk employee combines:",
+                "opts": [
+                  "An immediate pay increase and a transfer to a new team.",
+                  "A pay correction to market and a genuine career conversation addressing development and progression.",
+                  "A counter-offer matching the estimated external offer and a performance review.",
+                  "A recognition programme and a line manager change."
+                ],
+                "ans": 1,
+                "exp": "Pay correction without career conversation produces temporary retention — the employee stays for the money but the underlying disengagement remains. The career conversation addresses the motivation to leave; the pay correction removes the financial justification."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "c14-cap",
+        "title": "Capstone Project",
+        "color": "#C25B20",
+        "lessons": [
+          {
+            "id": "c14-cap-l",
+            "title": "Capstone: Nova Tech's Series B Compensation Programme",
+            "duration": "10 min",
+            "xp": 250,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Nova Tech has grown to 280 employees and is preparing for a Series B funding round. The Head of People must present a data-driven compensation programme to investors that demonstrates pay is managed strategically, equitably, and with attention to both talent retention and cost efficiency."
+              },
+              {
+                "t": "box",
+                "label": "Nova Tech Series B Context",
+                "v": "Headcount: 280 employees across Lagos, Nairobi, and London. Role mix: 40% Software Engineering, 20% Product, 25% Operations, 15% Commercial/Finance/HR.\nKey metrics (current): Voluntary attrition 8.1% (target <6%). Compa-ratio distribution: <85%=31%, 85-115%=51%, >115%=18%. Gender pay gap (adjusted): −£2,800 (p=0.04). Merit budget utilisation: 96.2%. Compensation analytics maturity: basic dashboard only."
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — Investor-Ready Compensation Dashboard"
+              },
+              {
+                "t": "p",
+                "v": "Design the metrics and narrative that demonstrate compensation governance to Series B investors."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach for Step 1",
+                "v": "Investor compensation presentation: 5 slides or sections.\n\n1. Pay philosophy and structure: 'Nova Tech pays at P65 for Software Engineering and Product roles, and P50 for all other functions. We use a formal grade structure (6 grades) with a ±20% band spread applied consistently across all markets. Market calibration is annual.'\n\n2. Internal equity metrics: compa-ratio distribution, red-circle rate (18% is high — acknowledge and explain the improvement plan: reducing to <10% over 24 months through pay freeze and band adjustment). Pay equity: adjusted gender gap of −£2,800 — disclose proactively, explain the investigation and remediation in progress. 'We identified a £2,800 adjusted gap in our Software Engineering population. We have investigated the cause (point-of-hire differences for female engineers hired in 2022-2023), implemented corrections for 8 affected employees, and embedded a structured offer framework to prevent recurrence.'\n\n3. Compensation analytics: dashboard including compa-ratio distribution, red-circle rate, merit utilisation, and attrition risk profile. 'We track 4 attrition risk indicators for 100% of our engineering population and present the risk profile quarterly to the board.'\n\n4. Cost efficiency: merit utilisation 96.2% (on-target); total compensation as % of revenue vs comparator companies (if available); cost-per-hire and time-to-hire trends.\n\n5. Roadmap: 12-month plan — resolve gender gap, reduce red-circle rate, implement predictive attrition model, move to digital TRS."
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Resolving the Adjusted Gender Pay Gap"
+              },
+              {
+                "t": "p",
+                "v": "The −£2,800 adjusted gap requires a complete investigation and remediation plan before investor due diligence."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach for Step 2",
+                "v": "Investigation findings (retrospective offer analysis, 2022-2023 female SE hires):\n• 8 female Software Engineers hired in 2022-2023 were offered £2,400-3,200 below male engineers hired for the same role type within 3 months of each other\n• No documented justification for the differences in offer letters or manager notes\n• Merit since hire has not closed the gap — merit allocation was proportional but did not include catch-up\n\nRemediation:\n• Salary corrections: bring each of the 8 engineers to the salary that a comparably-hired male engineer received at the same offer date, plus merit increases applied forward from hire date\n• Average correction: £2,800 × 8 employees = £22,400 annual cost (ongoing)\n• Process fix: structured offer framework — offers are set at the grade benchmark (P65 for SWE) with documented deviations only for specific, justified factors (counter-offer match, verified above-benchmark prior salary). No discretionary below-benchmark offers.\n• Legal counsel review before corrections are communicated — ensure the communication does not create additional legal exposure\n• Re-run the regression after corrections to confirm the adjusted gap resolves to <1%"
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Attrition Reduction Programme"
+              },
+              {
+                "t": "p",
+                "v": "Design a 12-month attrition reduction programme targeting <6% voluntary attrition from the current 8.1%."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach for Step 3",
+                "v": "Attrition reduction programme:\n\n1. Risk model deployment (month 1): implement the attrition risk model across all 280 employees. Initial high-risk count: estimated 28 employees (10% of workforce) based on compa-ratio distribution.\n\n2. High-risk intervention (months 1-3): HBP-led conversations for all 28 high-risk employees; salary review for any below 80% compa-ratio with Meets+ performance; career conversation for all 28 regardless of pay position.\n\n3. Estimated cost of intervention: average adjustment for low-compa high-risk = £2,200 per employee × estimated 18 employees = £39,600. ROI: preventing 50% of estimated high-risk departures (14 employees) saves 14 × £55,000 (avg SWE salary) × 75% (avg replacement cost) = £577,500. ROI: 14.6×.\n\n4. Merit matrix recalibration (annual review): increase the Exceeds + <85%CR cell from 10% to 12% to create stronger investment signal for the highest-risk population.\n\n5. Tracking: monthly attrition rate by risk band. Target: high-risk attrition rate below 20% (industry benchmark for proactively managed high-risk populations)."
+              },
+              {
+                "t": "h",
+                "v": "Step 4 — Compensation Data Infrastructure Roadmap"
+              },
+              {
+                "t": "p",
+                "v": "Nova Tech's current analytics maturity is 'basic dashboard only.' Design the 24-month infrastructure roadmap to investor-presentation standard."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach for Step 4",
+                "v": "24-month analytics infrastructure roadmap:\n\nMonths 1-6 (Data foundation):\n• Single source of truth: HRIS is authoritative for grade, tenure, performance; payroll is authoritative for salary\n• Data quality: 100% grade coverage; 95%+ performance rating coverage; monthly data quality report\n• Core dashboard: compa-ratio distribution, red-circle rate, merit utilisation, attrition risk profile — updated monthly\n\nMonths 7-12 (Analytics development):\n• Attrition risk model live for all employees, not just SWE\n• Pay equity regression: annual run for gender; biannual for ethnicity (when self-ID reaches 70%+)\n• Merit matrix modelling tool: spreadsheet model that allows 'what-if' scenarios before the review design is finalised\n\nMonths 13-24 (Maturity):\n• Digital TRS: interactive, updated annually, linked to HRIS\n• Attrition model: validated against actual attrition data from the prior 12 months; recalibrate weights based on observed predictive accuracy\n• Board compensation dashboard: one-page quarterly summary for NED/investor reporting\n• Real-time compa-ratio in HRIS employee portal: employees can see their own compa-ratio at any time"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Investor-grade compensation governance requires proactive disclosure of known issues (gender gap, red-circle rate) with remediation plans — undisclosed issues discovered in due diligence are significantly more damaging than disclosed ones with credible fixes.",
+                  "The gender pay gap remediation must be completed and the regression re-run before the investor presentation — investors need to see the resolved figure, not the open finding.",
+                  "Attrition ROI arithmetic (14.6× return on proactive intervention) is the most compelling business case for compensation analytics investment — frame it in financial terms, not HR terms.",
+                  "Analytics infrastructure should be built incrementally — 6-month foundation (data quality), 12-month development (model deployment), 24-month maturity (real-time access) — rather than as a single large platform investment."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "c14-cap-q",
+            "title": "Capstone Assessment: Compensation Analytics and Workforce Modelling",
+            "duration": "15 min",
+            "xp": 300,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "Proactively disclosing the adjusted gender pay gap to Series B investors (with a remediation plan) is preferred over non-disclosure because:",
+                "opts": [
+                  "Disclosure is legally required before any investor due diligence process.",
+                  "Issues discovered by investors in due diligence without prior disclosure cause significantly more damage to trust and valuation than disclosed issues with credible remediation plans.",
+                  "Investors will not fund organisations with any gender pay gap.",
+                  "The remediation cost (£22,400) is immaterial relative to the Series B investment and investors will appreciate the transparency."
+                ],
+                "ans": 1,
+                "exp": "Investor due diligence is thorough — undisclosed material issues will be found. Proactive disclosure with a remediation plan demonstrates governance maturity; discovery of concealed issues demonstrates the opposite."
+              },
+              {
+                "q": "The ROI of 14.6× on the attrition reduction programme is calculated from:",
+                "opts": [
+                  "The total value of all Software Engineer salaries retained in the organisation.",
+                  "14 prevented departures × average replacement cost (£55,000 × 75%) relative to the intervention cost (£39,600 in salary adjustments).",
+                  "The difference between the Series B valuation with and without the attrition programme.",
+                  "The merit matrix total budget multiplied by the expected attrition reduction percentage."
+                ],
+                "ans": 1,
+                "exp": "The ROI calculation compares the cost of intervention (salary adjustments) to the cost of replacement (replacement cost × estimated prevented departures) — a straightforward but compelling financial case."
+              },
+              {
+                "q": "The 24-month analytics infrastructure roadmap sequences the work as:",
+                "opts": [
+                  "Platform investment first, then data quality, then model development.",
+                  "Data quality foundation first, then model development, then maturity features including real-time access.",
+                  "Model deployment first, then data quality, then platform selection.",
+                  "All components simultaneously to maximise speed to full maturity."
+                ],
+                "ans": 1,
+                "exp": "Analytics built on poor data quality produces confidently wrong insights — the foundation (data quality) must precede the models (which need clean data to be reliable), which precede the advanced features (real-time access) that the models support."
+              },
+              {
+                "q": "Real-time compa-ratio access in the employee HR portal (in the 24-month roadmap) changes the annual TRS into:",
+                "opts": [
+                  "An unnecessary document once employees can see their compa-ratio at any time.",
+                  "A periodic context document — the annual narrative around compensation decisions — complementing the ongoing visibility of real-time data.",
+                  "A compliance document that satisfies statutory disclosure requirements.",
+                  "A manager-only tool since employees already have their individual data."
+                ],
+                "ans": 1,
+                "exp": "Real-time data access doesn't replace the TRS — it changes its role from primary information source to annual contextual narrative, with the ongoing portal serving the factual reference function."
+              },
+              {
+                "q": "The structured offer framework introduced to prevent future point-of-hire gender gaps should specify:",
+                "opts": [
+                  "That all offers must be made at exactly the P65 market benchmark with no deviations.",
+                  "That offers are set at the grade benchmark with documented, justified deviations only — no discretionary below-benchmark offers without recorded rationale.",
+                  "That all offers must be reviewed and approved by the Board before they are made.",
+                  "That offers are set by HR rather than hiring managers to remove individual bias from the process."
+                ],
+                "ans": 1,
+                "exp": "The framework prevents undocumented discretion — the source of the 2022-2023 offer gap — while maintaining flexibility for legitimate, documented deviations (counter-offer matches, verified above-benchmark candidates)."
+              },
+              {
+                "q": "A board compensation dashboard for NED/investor reporting should include:",
+                "opts": [
+                  "Individual salary data for all employees above a defined grade threshold.",
+                  "Compa-ratio distribution, red-circle rate, merit utilisation, attrition risk profile, and gender pay gap trend — one-page quarterly summary.",
+                  "Full pay equity regression output and individual case details for identified gaps.",
+                  "The complete merit matrix and all exception approvals from the prior quarter."
+                ],
+                "ans": 1,
+                "exp": "Board reporting should provide governance-level indicators — aggregate trends and risk indicators — not individual data or detailed analytics that belong in the HR management layer."
+              },
+              {
+                "q": "'Analytics maturity: basic dashboard only' is improved to investor-presentation standard by:",
+                "opts": [
+                  "Purchasing an advanced HR analytics platform in month 1.",
+                  "Building incrementally from data quality foundation, to model deployment, to real-time access over 24 months — with each phase validated before the next begins.",
+                  "Outsourcing compensation analytics to an external provider for the Series B period.",
+                  "Adding more metrics to the existing dashboard to demonstrate breadth of analysis."
+                ],
+                "ans": 1,
+                "exp": "Incremental maturity development — foundation, then development, then advanced features — produces reliable, trustworthy analytics. A sophisticated platform built on poor data produces sophisticated but unreliable outputs."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Mergers, Acquisitions and Reward Integration",
+    "subtitle": "A practitioner course in M&A reward — from due diligence identification of change-of-control provisions and pension liabilities through compensation harmonisation, benefits integration, and the communication programme that determines whether acquired employees stay or leave. Two-deal sequential case study: Bridgeway acquisition and its lessons applied to the Vantage capstone.",
+    "color": "#6B3A2A",
+    "color2": "#6B3A2A",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "level": "Advanced",
+    "duration": "3h 55m",
+    "lessons_count": 18,
+    "total_xp": 3030,
+    "desc": "A practitioner course in M&A reward — from due diligence identification of change-of-control provisions and pension liabilities through compensation harmonisation, benefits integration, and the communication programme that determines whether acquired employees stay or leave. Two-deal sequential case study: Bridgeway acquisition and its lessons applied to the Vantage capstone.",
+    "outcomes": [
+      "Conduct HR due diligence covering all six domains: workforce, contracts, compensation, compliance, key person risk, and culture — and produce a red/amber/green findings report",
+      "Identify and quantify change-of-control provisions, equity plan vesting costs, and pension liabilities as deal-model inputs",
+      "Design a compensation harmonisation plan using grade mapping through job evaluation, the minimum principle, and a red-circle management approach",
+      "Build an integrated benefits programme using a comparison matrix, provider contract review, and a communication sequence that leads with package value",
+      "Design a day-1 integration communication programme that prevents uncertainty-driven attrition — including FAQ, cadence, manager enablement, and acquired-employee risk model"
+    ],
+    "pro": true,
+    "modules": [
+      {
+        "id": "15-1",
+        "title": "HR Due Diligence in M&A",
+        "color": "#6B3A2A",
+        "lessons": [
+          {
+            "id": "15-1-1",
+            "title": "HR Due Diligence in M&A",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Most M&A deals that destroy value do so through people problems that were visible during due diligence and ignored, or invisible because the due diligence process was too narrow. HR due diligence — specifically reward due diligence — identifies the liabilities, the cost surprises, and the cultural fault lines that determine whether the deal's financial model survives contact with reality."
+              },
+              {
+                "t": "h",
+                "v": "What HR Due Diligence Covers"
+              },
+              {
+                "t": "p",
+                "v": "HR due diligence reviews six domains. Workforce and headcount: the composition, location, and cost of the acquired workforce — including contractors, temporary workers, and any workers whose employment status is uncertain. Employment contracts and terms: change-of-control provisions, notice periods, restrictive covenants, and any promises made outside the standard contract (side letters, verbal commitments). Compensation and benefits: salary structures, bonus plans, equity schemes, pension liabilities, and any deferred compensation. Employment law compliance: pending claims, tribunal history, wage and hour compliance, and any jurisdiction-specific obligations. Key person risk: employees whose departure following the deal would materially damage the business value being acquired. Cultural and engagement data: turnover rates, engagement scores, and any publicly available Glassdoor or employer review data that signals cultural fit or risk."
+              },
+              {
+                "t": "h",
+                "v": "Change-of-Control Provisions"
+              },
+              {
+                "t": "p",
+                "v": "Change-of-control clauses in employment contracts and equity plans are among the most financially material HR due diligence findings. A change-of-control provision may allow: employees to resign with immediate effect and receive their full notice period pay if the acquirer materially changes their role or terms; equity awards to vest immediately on completion of the deal regardless of the normal vesting schedule; and bonus plans to pay out at target or maximum on the deal close date. For a 100-person acquired company where 40 employees hold unvested equity, a deal trigger that vests all outstanding awards at current value could add significant cost to the transaction that was not reflected in the deal model. Every equity plan, executive contract, and bonus plan document must be reviewed for change-of-control provisions before the deal is signed."
+              },
+              {
+                "t": "h",
+                "v": "Pension Liabilities"
+              },
+              {
+                "t": "p",
+                "v": "Pension liabilities represent one of the most significant and most commonly underestimated HR due diligence findings. For organisations with defined benefit pension schemes — increasingly rare in the private sector but still significant in some sectors and geographies — the acquirer inherits the full actuarial liability on completion. The funding position (assets vs liabilities) at the acquisition date determines whether the acquirer is taking on a surplus (an asset) or a deficit (a liability that must be funded over time). For defined contribution schemes, the key due diligence questions are: are employer contribution obligations correctly calculated and paid? Are there any arrears of contributions that represent an unpaid liability? And are there any employees who should be enrolled but have not been — creating a retrospective enrolment and contribution liability?"
+              },
+              {
+                "t": "h",
+                "v": "The Due Diligence Report"
+              },
+              {
+                "t": "p",
+                "v": "The HR due diligence report summarises findings under three headings. Red flags: material liabilities or risks that affect deal pricing or structure — pension deficit, change-of-control vesting costs, pending employment tribunal claims, significant pay equity liabilities. Amber findings: issues that require integration planning but do not affect deal pricing — misaligned grading, duplicate benefit programmes, above-market executive salaries in the acquired company. Green confirmations: areas reviewed and found to be clean — no pending claims, correctly structured pension, employment contracts reviewed and compliant. Each finding should include an estimated financial impact range, a recommended response, and a responsibility for post-deal resolution."
+              },
+              {
+                "t": "box",
+                "label": "HR Due Diligence Coverage",
+                "v": "Workforce and headcount: composition, location, contractor status\nContracts: change-of-control provisions, notice periods, side letters\nCompensation: salary structures, bonus plans, equity, pension liabilities\nCompliance: claims, tribunal history, wage compliance\nKey person risk: employees whose departure damages acquired value\nReport: red flags (deal-affecting), amber (integration), green (clean)"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Castleton Partners Acquires Bridgeway Advisory",
+                "v": "Castleton Partners has agreed to acquire Bridgeway Advisory, a 60-person professional services firm, for £8.5M. The deal is expected to close in 8 weeks. The Head of People has been given 3 weeks to complete HR due diligence. The virtual data room contains employment contracts for senior employees only, a pension scheme booklet, and a single-page benefits summary."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Change-of-control provisions in equity plans and executive contracts can add significant unmodelled cost to the transaction — they must be identified before the deal is signed.",
+                  "Pension scheme funding position is one of the most financially material HR due diligence findings — a deficit transfers to the acquirer on completion.",
+                  "The due diligence report must distinguish between deal-affecting findings (red flags) and integration planning findings (amber) — these require different responses and different urgencies."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The data room contains employment contracts for senior employees only. The most important immediate action is:",
+              "opts": [
+                "Review only the senior employee contracts — junior employees' contracts rarely contain material provisions.",
+                "Request the full set of employment contracts for all 60 employees and any side letters or supplemental agreements before proceeding with the diligence review.",
+                "Ask Bridgeway's HR Director for a verbal summary of the main contract terms across the workforce.",
+                "Proceed with the available data and note the gap in the due diligence report."
+              ],
+              "ans": 1,
+              "exp": "Material change-of-control provisions, non-standard bonus commitments, and restrictive covenants can appear at any level — limiting the review to senior contracts misses the majority of the workforce and creates unidentified liability."
+            }
+          },
+          {
+            "id": "15-1-2",
+            "title": "Castleton's HR Due Diligence Review",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Working through a data room systematically prevents key findings from being missed. Each document category has a specific set of questions to answer."
+              },
+              {
+                "t": "box",
+                "label": "Castleton Partners — Due Diligence Data Room Contents",
+                "v": "Documents available: 8 senior employee contracts; pension scheme actuarial report (18 months old); benefits booklet; Bridgeway's employee handbook; 2 bonus plan documents (one expired, one current); equity plan rules for a share option scheme (25 employees hold options); one side letter for the CEO providing 18 months' notice and a deal bonus of 2× salary on transaction close."
+              },
+              {
+                "t": "h",
+                "v": "Employment Contracts and Side Letters"
+              },
+              {
+                "t": "p",
+                "v": "What are the key findings from the 8 senior contracts and the CEO side letter?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Findings",
+                "v": "Senior contracts: review each for: (1) notice periods — Bridgeway's CEO has 18 months' notice per the side letter (exceptionally long; acquirer inherits this unless renegotiated pre-close or the employee signs a new contract). Three other senior employees have 12-month notice periods. Amber finding: Castleton's standard notice for equivalent grades is 6 months — a harmonisation discussion will be required. (2) Change-of-control provisions: two senior contracts contain change-of-control clauses allowing immediate resignation with full notice pay if role or location changes materially within 12 months of close. Red flag: financial exposure of up to 24 months' senior salary if both individuals exercise this right. (3) Restrictive covenants: all 8 senior contracts contain non-solicitation of clients for 12 months post-termination — this is a material asset protection provision that Castleton's legal team should confirm is enforceable under applicable law.\n\nCEO side letter: 18-month notice + 2× salary deal bonus on completion = Bridgeway CEO earns approximately £280,000 in deal bonus alone at close. Red flag: this is unmodelled cost that must be added to the deal financial model immediately. Also requires consideration of whether the CEO is essential post-close or whether the deal bonus effectively funds their departure."
+              },
+              {
+                "t": "h",
+                "v": "Equity Plan"
+              },
+              {
+                "t": "p",
+                "v": "25 employees hold share options. What are the key due diligence questions?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Findings",
+                "v": "Share option due diligence questions: (1) Exercise price vs current fair market value: are the options in the money (current value > exercise price) or out of the money (exercise price > current value)? If in the money, options may vest on deal close under the plan rules — acquirer must understand the value and the cash-out mechanism. (2) Change-of-control vesting: read the equity plan rules specifically for the change-of-control clause. Common outcomes: (a) full immediate vesting on close (cost = all unvested option value at deal price); (b) substitution — acquirer issues replacement awards over an earn-out period; (c) cash settlement — options settled for cash at deal close. Each has a different cost and retention implication. (3) HMRC-approved status: UK share options may be granted under Enterprise Management Incentive (EMI) schemes with tax-advantaged status — check whether this applies, as it affects both the employee tax treatment and the acquirer's structuring options. Red flag if any: immediate vesting of significant unvested option value at deal close that inflates the effective deal price above the £8.5M headline."
+              },
+              {
+                "t": "h",
+                "v": "Pension Scheme"
+              },
+              {
+                "t": "p",
+                "v": "The actuarial report is 18 months old. What due diligence is required?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Findings",
+                "v": "Pension due diligence: (1) Scheme type: is this a defined benefit (DB) or defined contribution (DC) scheme? The booklet suggests DC — confirm. A DC scheme does not create an actuarial liability on acquisition; the employer's obligation is the ongoing contribution rate. (2) Funding position: if DB, request a current actuarial valuation — the 18-month-old report may not reflect current interest rate and investment return movements that significantly affect pension liabilities. A DB deficit transfers to the acquirer at close. (3) Contribution arrears: has the employer paid all required contributions on time? Any arrears represent a liability. (4) Auto-enrolment compliance: has the employer enrolled all eligible employees and made required contributions? Non-compliance creates retrospective liability for the acquirer. (5) If DC: verify the contribution rate (employer and employee), confirm it is applied to all eligible employees, and check the provider — the acquirer may choose to consolidate pension providers post-integration, but this requires employee communication and re-enrolment."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "A side letter for the CEO with 18 months' notice and a 2× deal bonus represents significant unmodelled cost that must be added to the deal model — missing this finding has direct financial consequences for the transaction.",
+                  "Equity plan change-of-control provisions must be read in full before any cost assumption about the transaction is finalised — immediate vesting can add material cost to the effective deal price.",
+                  "An 18-month-old actuarial report is insufficient for DB pension due diligence — the funding position may have changed materially with interest rate and investment return movements in that period."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "15-1-3",
+            "title": "Castleton's Due Diligence Surprises — Full Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "M&A reward integration problems are almost always foreseeable — and almost always discovered too late. This case works through what happens when due diligence is incomplete."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Castleton Partners — Deal Week Surprises",
+                "v": "One week before expected close, three due diligence findings emerge simultaneously: (1) the full set of employment contracts (finally obtained) reveals that 14 additional employees (beyond the 2 senior cases identified) have change-of-control clauses; (2) the equity plan review confirms full immediate vesting on close — 25 employees hold options worth approximately £1.2M in aggregate at the deal price; (3) a pending employment tribunal claim for unfair dismissal (£85,000 estimated liability) was not disclosed in the data room."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The 14 additional change-of-control clauses mean the acquirer's exposure is significantly larger than modelled. What options are available one week before close?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "One week before close, the options narrow significantly. The deal is too far advanced to withdraw for a well-functioning change-of-control clause alone — these are typically disclosed risk items, not deal-breakers. The realistic options: (1) Seek a price reduction from Bridgeway's shareholders to reflect the additional liability — this is the standard mechanism when a material financial risk is identified late in due diligence. The price reduction should reflect the expected cost of the change-of-control clauses being exercised (probability × payout). (2) Seek representations and warranties from the sellers that the clauses will not be exercised for a defined period post-close — binding the sellers to indemnify Castleton if the clauses are exercised. (3) Negotiate with the 14 employees pre-close to waive the change-of-control right in exchange for a retention bonus — this requires their consent and adds cost but removes the contingent liability. (4) Accept the risk as priced into the deal and plan for it. Option 1 (price adjustment) is the most commercially standard response to a late-disclosed financial liability."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The £1.2M option vesting cost — was this in the deal model and how should it affect the transaction?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The £1.2M option vesting cost must be assessed against what was in the deal model. If the deal model assumed options would be rolled into Castleton awards (substitution) rather than immediately vested (cash-out), the £1.2M represents an unmodelled cash outflow at close. This is material relative to the £8.5M deal price (14% of deal value). The response: (1) confirm the option value calculation — market value at deal price minus exercise price, for all 25 holders; (2) confirm whether the plan rules require cash settlement or allow substitution — if substitution is possible, negotiate with option holders and Bridgeway's shareholders for a substitution structure that defers some of the cost over an earn-out period; (3) if cash settlement is required, the deal price should be adjusted downward by the option settlement amount, or the sellers should fund the option settlement from the deal proceeds rather than the acquirer paying it separately. The £1.2M is a value transfer question, not simply an additional cost — it depends entirely on how the deal is structured."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "The undisclosed tribunal claim — what are the immediate legal and deal implications?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "An undisclosed pending tribunal claim is a data room integrity issue — Bridgeway had an obligation to disclose material pending claims in the data room, and failure to do so constitutes a breach of the disclosure letter that accompanies the deal documents. The immediate response: (1) notify Castleton's legal counsel immediately; (2) require Bridgeway's legal team to provide full documentation of the claim, its history, and any settlement discussions; (3) assess whether the claim was a deliberate non-disclosure or a genuine oversight — deliberate non-disclosure has significantly more serious legal implications; (4) seek an indemnity from the sellers specifically covering the tribunal claim liability, backed by retention of part of the purchase price in escrow pending resolution of the claim. The £85,000 estimated liability is not material to the £8.5M deal in isolation — but the non-disclosure raises a question about what else may have been omitted from the data room."
+              },
+              {
+                "t": "box",
+                "label": "Late Due Diligence Finding Responses",
+                "v": "Change-of-control exposure: price reduction, representations and warranties, pre-close negotiation with employees, or accept as priced risk\nOption vesting: confirm value, explore substitution, adjust deal price if cash settlement required\nUndisclosed claim: notify legal counsel immediately, require full documentation, seek specific indemnity\nAll three require legal counsel — HR advises on substance, legal advises on deal mechanics"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Late due diligence findings require legal counsel for deal mechanics — HR identifies and quantifies the finding; legal determines the contractual response.",
+                  "An undisclosed material liability is a disclosure breach — the response goes beyond the specific liability to the question of what else may have been omitted.",
+                  "Option vesting costs represent a value transfer question, not simply an additional deal cost — the deal structure (cash-out vs substitution vs earn-out) determines who bears it and when."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "15-1-Q",
+            "title": "Module Quiz: HR Due Diligence in M&A",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "HR due diligence must cover employment contracts for which employees?",
+                "opts": [
+                  "Senior employees only — junior employees' contracts rarely contain material provisions.",
+                  "All employees — material provisions including change-of-control clauses, non-standard notice periods, and side letters can appear at any level.",
+                  "Only employees above a defined salary threshold.",
+                  "Only the top 10% of earners and any employees holding equity."
+                ],
+                "ans": 1,
+                "exp": "Limiting the contract review to senior employees creates unidentified liability — change-of-control provisions, unusual bonus commitments, and non-solicitation covenants appear throughout the workforce."
+              },
+              {
+                "q": "A change-of-control clause in an employment contract that allows immediate resignation with full notice pay if the role materially changes is best described as:",
+                "opts": [
+                  "A standard employment term with no financial materiality for the acquirer.",
+                  "A contingent liability that must be quantified and reflected in the deal model or covered by seller warranties.",
+                  "A clause that becomes void on completion of the acquisition.",
+                  "A provision that only applies to equity-holding employees."
+                ],
+                "ans": 1,
+                "exp": "Change-of-control provisions represent real contingent financial exposure — if the employee exercises the right, the acquirer is contractually obligated to pay. Unquantified, they are an unmodelled risk in the deal."
+              },
+              {
+                "q": "A defined benefit pension deficit discovered during HR due diligence:",
+                "opts": [
+                  "Transfers to the acquirer on completion — the acquirer inherits the full actuarial liability.",
+                  "Remains with the target company's original shareholders as a ring-fenced liability.",
+                  "Is extinguished on completion — the pension scheme resets to a zero-liability position.",
+                  "Only transfers if the acquirer specifically agrees to assume it in the sale and purchase agreement."
+                ],
+                "ans": 0,
+                "exp": "In a share acquisition, the acquirer purchases the entire legal entity — including its pension liabilities. A DB deficit is a real financial obligation that must be funded."
+              },
+              {
+                "q": "The correct structure of an HR due diligence report categorises findings as:",
+                "opts": [
+                  "Urgent, non-urgent, and informational.",
+                  "Red flags (deal-affecting), amber (integration planning), and green (confirmed clean).",
+                  "Legal, financial, and operational.",
+                  "Pre-close, day-one, and post-close."
+                ],
+                "ans": 1,
+                "exp": "The red/amber/green structure communicates both urgency (red flags require deal-level response; amber requires integration planning) and nature (deal-affecting vs operational)."
+              },
+              {
+                "q": "A CEO side letter providing 18 months' notice and a 2× salary deal bonus represents which type of due diligence finding?",
+                "opts": [
+                  "An amber finding requiring integration planning but not affecting deal pricing.",
+                  "A red flag requiring immediate addition to the deal financial model and legal review of the cost structure.",
+                  "A standard executive compensation arrangement that does not require disclosure.",
+                  "A green confirmation that the CEO is appropriately incentivised to support the deal."
+                ],
+                "ans": 1,
+                "exp": "Unmodelled deal-close costs (the deal bonus) and above-standard notice periods (18 months vs typical 6-12) are material financial findings that must be reflected in the deal model."
+              },
+              {
+                "q": "An 18-month-old actuarial report is insufficient for defined benefit pension due diligence because:",
+                "opts": [
+                  "Actuarial reports must be produced annually under pension legislation.",
+                  "Interest rate and investment return movements over 18 months may significantly change the funding position — the current deficit or surplus may be materially different from the report's figures.",
+                  "The previous actuaries may no longer be engaged and the report may not be transferable.",
+                  "Actuarial reports have a 12-month validity period after which they are automatically invalidated."
+                ],
+                "ans": 1,
+                "exp": "DB pension liabilities are sensitive to interest rates and investment returns — 18 months of movement in either can materially change the funding position, making a current valuation essential for accurate deal pricing."
+              },
+              {
+                "q": "An undisclosed pending employment tribunal claim discovered one week before deal close requires:",
+                "opts": [
+                  "Immediate notification to the acquirer's legal counsel, full documentation from the target, and a specific indemnity from sellers backed by escrow.",
+                  "Withdrawal from the deal — non-disclosure of material claims is an automatic deal-breaker.",
+                  "A price reduction equivalent to the full estimated liability.",
+                  "Deferral of due diligence findings to post-close integration — the claim is too minor to delay close."
+                ],
+                "ans": 0,
+                "exp": "Non-disclosure of a material claim is a breach of the disclosure letter — the response involves legal counsel, full documentation, and contractual protection (indemnity/escrow) rather than either withdrawal or simple deferral."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "15-2",
+        "title": "Compensation Harmonisation",
+        "color": "#6B3A2A",
+        "lessons": [
+          {
+            "id": "15-2-1",
+            "title": "Compensation Harmonisation After an Acquisition",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Compensation harmonisation is the process of moving two previously separate pay structures toward a common framework after an acquisition. It is one of the most complex post-deal integration tasks — it affects every employee simultaneously, has direct cost implications, and generates the internal comparisons that most often produce post-deal attrition. Getting the sequencing right is as important as getting the technical design right."
+              },
+              {
+                "t": "h",
+                "v": "The Harmonisation Spectrum"
+              },
+              {
+                "t": "p",
+                "v": "Three approaches to compensation harmonisation. Full harmonisation: all acquired employees move to the acquirer's pay structure on a defined date. Highest consistency, highest disruption — employees whose pay falls outside the new ranges face either a pay freeze (if above) or an immediate increase (if below). Partial harmonisation: a common grade structure and philosophy is adopted, but local pay ranges are preserved for a transitional period. More manageable for large acquisitions but creates a two-tier internal market if the transition period extends too long. Retention of separate structures: the acquired company continues operating with its own structure under the acquirer's ownership. Common in portfolio company acquisitions where each entity operates independently. Creates complexity for employees who transfer between entities and for the group-level reporting of compensation data."
+              },
+              {
+                "t": "h",
+                "v": "The Minimum Principle"
+              },
+              {
+                "t": "p",
+                "v": "One principle is non-negotiable in harmonisation: no employee's salary should be reduced as a direct result of the harmonisation process. Employees whose pay falls above the maximum of their mapped grade in the new structure are red-circled — their salary is protected and managed through a pay freeze until the structure catches up (via market adjustment) or their role is regraded. Employees whose pay falls below the minimum of their mapped grade must be brought to the minimum immediately. Reducing an employee's pay as a result of an acquisition is both legally problematic in most jurisdictions and commercially self-defeating — the employees most likely to leave following an acquisition are the same employees the acquirer most needs to retain."
+              },
+              {
+                "t": "h",
+                "v": "Grade Mapping Methodology"
+              },
+              {
+                "t": "p",
+                "v": "Grade mapping converts the acquired company's roles (whether formally graded or informally tiered) into the acquirer's grade structure. The mapping must be done through job evaluation — not through title matching, not through salary matching, and not through a simple seniority mapping. The same evaluation methodology used to grade the acquirer's roles must be applied to the acquired roles, using the same calibration panel and the same anchor roles as reference. This produces defensible, consistent grade placements that can be explained to employees. Grade mapping that bypasses evaluation produces placements that are inconsistent, inequitable, and difficult to defend when employees compare notes."
+              },
+              {
+                "t": "h",
+                "v": "Timeline and Sequencing"
+              },
+              {
+                "t": "p",
+                "v": "Compensation harmonisation has a recommended sequence. Day 1 to month 3: communication of intent — tell acquired employees that their pay and benefits are protected during the integration period, and that a structured harmonisation process will be completed by a defined date. Months 1-6: job evaluation of all acquired roles and grade mapping. Months 4-8: salary adjustment for below-minimum employees (immediate on grade mapping completion); red-circle identification; market review to confirm the acquirer's ranges are appropriate for the combined organisation. Month 9-12: full harmonisation — all employees on the combined grade structure with their grade communicated formally. Beyond 12 months: red-circle management, which may extend for 2-3 years depending on market movement."
+              },
+              {
+                "t": "box",
+                "label": "Harmonisation Principles",
+                "v": "No salary reductions: ever, as a direct result of harmonisation\nBelow minimum: bring to minimum immediately on grade mapping\nAbove maximum: red-circle — pay freeze, not reduction\nGrade mapping: job evaluation method — not title or salary matching\nSequence: protect → evaluate → map → adjust → communicate → harmonise\nTimeline: full harmonisation by month 9-12"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Castleton's Harmonisation Challenge",
+                "v": "Castleton Partners has completed the acquisition of Bridgeway Advisory. Bridgeway's 60 employees have no formal grade structure — they use informal titles (Associate, Consultant, Principal, Partner). The Head of People must design the harmonisation approach and present it to the combined leadership team within 30 days of close."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The minimum principle is non-negotiable — no salary reductions directly resulting from harmonisation, ever.",
+                  "Grade mapping through job evaluation produces defensible, consistent, and legally robust placements — mapping through title or salary produces inconsistencies that surface as equity complaints within months.",
+                  "The harmonisation timeline (protect → evaluate → map → adjust → communicate → harmonise) is the structure that prevents the twin risks of rushed decisions and indefinite delay."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "When mapping Bridgeway's 'Partner' title to Castleton's grade structure, the correct methodology is:",
+              "opts": [
+                "Match Partner to Director grade — both titles imply equivalent seniority.",
+                "Match Partner to whatever grade produces a salary that fits within the existing Castleton ranges.",
+                "Evaluate each Partner role against Castleton's point-factor scheme and place it in the grade determined by the evaluation score.",
+                "Ask Castleton's senior partners to recommend the appropriate grade based on their interactions with Bridgeway Partners."
+              ],
+              "ans": 2,
+              "exp": "Grade mapping must be done through evaluation against the same scheme used for all other roles — title equivalence is unreliable and salary-based mapping inverts the logic (grade should determine range, not vice versa)."
+            }
+          },
+          {
+            "id": "15-2-2",
+            "title": "Castleton's Grade Mapping Exercise",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Grade mapping produces a range of outcomes — employees above maximum, within range, and below minimum — each requiring a specific management response."
+              },
+              {
+                "t": "box",
+                "label": "Castleton Partners — Harmonisation Data",
+                "v": "Bridgeway's 60 employees across 4 informal tiers:\nAssociate (18 employees): avg salary £34,200, range £28K-£40K\nConsultant (22 employees): avg salary £52,400, range £44K-£62K\nPrincipal (14 employees): avg salary £76,800, range £65K-£89K\nPartner (6 employees): avg salary £118,500, range £95K-£145K\n\nCastleton's grade structure:\nG2: £26K-£38K (mid £32K) | G3: £35K-£53K (mid £44K) | G4: £48K-£70K (mid £59K) | G5: £66K-£94K (mid £80K) | G6: £88K-£128K (mid £108K) | G7: £120K+ (mid £140K)\n\nEvaluation has been completed — provisional mapping: Associate → G2/G3, Consultant → G3/G4, Principal → G4/G5, Partner → G5/G6/G7 (scope-dependent)."
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — Identify Below-Minimum and Above-Maximum Employees"
+              },
+              {
+                "t": "p",
+                "v": "Apply the grade mapping to identify the three populations requiring immediate action."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "Associate → G2/G3 mapping:\n• Associates earning below G2 minimum (£26K): review individual data — any below £26K must be brought to £26K immediately\n• Associates mapped to G3 (those with broader scope): G3 range is £35K-£53K. Associates earning below £35K need uplift to G3 minimum if mapped there.\n• Associates earning above G3 maximum (£53K): would be red-circled if mapped to G3. Flag for review — these may need re-evaluation to confirm if G4 mapping is more appropriate.\n\nConsultant → G3/G4 mapping:\n• G3 max = £53K; G4 max = £70K. Consultants earning above £62K (the observed range max) but below £70K: within G4 range — no action needed.\n• Consultants mapped to G3 earning above £53K: red-circle candidates.\n\nPrincipal → G4/G5 mapping:\n• Some Principals (those at £65K-£88K range) map to G5 (£66K-£94K): mostly within range.\n• Principals earning below £66K who map to G5: bring to G5 minimum of £66K.\n\nPartner → G5/G6/G7 (scope-dependent evaluation):\n• G6 max = £128K; observed Partner range max = £145K. Partners earning above £128K mapped to G6: red-circle.\n• Partners mapped to G7: £145K is within or near the G7 range.\n\nEstimated cost of below-minimum uplifts: preliminary estimate £45K-£65K in annual salary increases — confirm once individual data is reviewed against grade placement."
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Manage the Red-Circle Population"
+              },
+              {
+                "t": "p",
+                "v": "Several employees will land above the maximum of their mapped grade. Design the management approach."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "Red-circle management for Castleton-Bridgeway integration:\n\nIdentification: all employees whose salary exceeds the maximum of their mapped grade. Estimated population: 4-6 employees based on the observed salary ranges and grade mapping. Primary risk group: senior Principals and Partners mapped to G5 or G6 whose historical Bridgeway salaries exceed Castleton's range maxima.\n\nManagement approach:\n• Pay protection: salary is not reduced. No exceptions.\n• Pay freeze: no merit increase for red-circled employees until the range maximum is either adjusted (through market review) or the employee's salary falls below the maximum through range adjustment.\n• Communication: individual letter from the Head of People explaining the grade placement, the current salary position, and the pay management approach. Key message: 'Your salary is fully protected. Your grade placement reflects the evaluated scope of your role. Your salary will be reviewed when the market data supports a band adjustment that accommodates your current pay level.'\n• Timeline: conduct a market review for G5 and G6 by month 6 of integration. If market data supports adjusting the range maximum upward, implement the adjustment and remove the pay freeze for employees whose salary falls within the adjusted range."
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Model the Total Harmonisation Cost"
+              },
+              {
+                "t": "p",
+                "v": "Estimate the total cost of the harmonisation for the Castleton-Bridgeway integration."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "Harmonisation cost components:\n1. Below-minimum uplifts (confirmed in Step 1 individual review): estimated £45K-£65K/year in permanent salary increases\n2. Red-circle administration: no direct cost (pay freeze) but management overhead\n3. Market review for G5/G6 band adjustment: if adjusting G5 max from £94K to £100K and G6 max from £128K to £140K, model the impact on Castleton's existing employees in those grades — band adjustment may require corresponding merit investment for Castleton employees approaching the old maximum\n4. Integration HBP resource: an integration of this scale (60 people, 9-12 months) requires dedicated HR Business Partner time — estimate 0.5 FTE for 9 months = approximately £35K-£45K in HR resource cost\n\nTotal harmonisation cost estimate: £80K-£110K in year 1, reducing to £45K-£65K ongoing (the permanent below-minimum uplift cost). Present to CFO as a percentage of the deal value: £80K-£110K on an £8.5M deal = 0.9-1.3% of deal value — standard for an integration of this complexity."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The below-minimum uplift cost must be estimated in due diligence and confirmed in the first 30 days post-close — it is a non-discretionary cost that should be modelled into the deal financial plan.",
+                  "Red-circle communication must be clear, respectful, and specific — employees need to understand that their salary is protected, why their grade was placed as it was, and what will change their pay management going forward.",
+                  "Market review for affected grade bands is the most practical route to resolving red-circle positions over time — it adjusts the structure to the market rather than forcing the employee back into a range that no longer reflects market rates."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "15-2-3",
+            "title": "Castleton's Harmonisation Crisis — Full Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "M&A reward integration problems are almost always foreseeable — and almost always discovered too late. This case works through what happens when due diligence is incomplete."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Castleton Partners — Month 4 Post-Close",
+                "v": "Four months after the Bridgeway acquisition closes, three harmonisation problems have emerged: (1) a former Bridgeway Principal (mapped to G4 at £72,000) discovers that a Castleton G4 colleague with comparable tenure and performance earns £61,000 — and raises a formal pay equity concern; (2) six Bridgeway Associates have resigned in month 3, all citing 'uncertainty about the future'; (3) the harmonisation timeline has slipped — grade mapping was supposed to be complete by month 3 but is only 60% done."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The Bridgeway Principal at £72K compared to the Castleton G4 at £61K — who is right?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Both are within their grade, but the comparison illustrates a common post-acquisition pay dynamic. The Bridgeway Principal at £72K is red-circled (above the G4 maximum of £70K — assuming £70K is the G4 max) or very high in range. The Castleton G4 at £61K is at 103% compa-ratio — well-positioned within the range. The Bridgeway employee's higher salary reflects their pre-acquisition market and negotiating history, not necessarily a higher evaluated scope. The correct response: explain to the Bridgeway Principal that grade mapping was done through evaluation, and their grade placement reflects the evaluated scope of their role — the same evaluation applied to all Castleton roles. Their salary is protected (red-circle) and will be managed as the market review determines appropriate range adjustment. The Castleton employee's lower salary does not indicate inequity — it indicates a different negotiating history and a different entry point into the range. What cannot happen: reducing the Castleton employee's grade, inflating the Bridgeway employee's grade, or increasing the Castleton employee's salary to match, for reasons of appearance rather than market evidence."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "Six Bridgeway Associates resigned in month 3 citing 'uncertainty about the future.' What could have prevented this?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Post-acquisition attrition of junior employees citing 'uncertainty' is almost always a communication failure, not a compensation failure. The six Bridgeway Associates who resigned were in the population that had received the least information about what the acquisition meant for them: their grade placement was in progress but not communicated; their salary review status was unclear; their career prospects under Castleton's framework had not been articulated. The prevention: on day 1 post-close, every Bridgeway employee should have received a clear, personalised communication covering: (1) their salary is protected — no reductions; (2) the harmonisation process has a specific timeline and they will hear their individual outcome by a named date; (3) their role and team structure on day 1 and what changes are planned; (4) a named HR contact for any questions. The absence of this communication leaves employees to assume the worst — which 'uncertainty' resignations consistently reflect. The cost of the six Associate resignations (recruitment, onboarding) likely exceeds the cost of the day-1 communication programme by a significant multiple."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "The harmonisation timeline has slipped to 60% completion at month 4. What are the consequences and how should it be managed?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Timeline slippage on grade mapping has two main consequences: employees remain in limbo (their grade is not confirmed, their salary review is deferred, their career framework is unclear) — extending the uncertainty that drove the Associate resignations; and the below-minimum uplift payments are delayed, creating a period where the acquirer is knowingly paying some employees below their grade minimum — which is both a governance issue and potentially a legal one. Management: (1) immediately communicate a revised timeline with a firm commitment — 'grade mapping for all remaining roles will be complete by [specific date].' Vague timelines create more anxiety than a slightly extended but specific commitment. (2) Assess whether the delay is a resource problem (need another evaluator) or a data problem (role documentation is incomplete for some Bridgeway roles). Resource problems are solvable quickly; data problems require a targeted data collection sprint. (3) Prioritise the remaining 40% by risk — employees with compensation at or near the G minimum boundary should be mapped first to prevent below-minimum exposure from extending. (4) Report the timeline status weekly to the combined leadership team — integration momentum is a cultural signal, not just an operational metric."
+              },
+              {
+                "t": "box",
+                "label": "Post-Close Harmonisation Governance",
+                "v": "Pay equity comparison (Bridgeway vs Castleton employee): explain evaluation basis; the comparison is valid but the explanation must be proactive\nPost-close attrition: almost always a communication failure — day-1 personalised communication prevents most uncertainty-driven exits\nTimeline slippage: revised firm date + resource diagnosis + risk-prioritised completion"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Day-1 post-close communication to acquired employees is the single most important integration action for preventing uncertainty-driven attrition — it costs almost nothing and its absence is very expensive.",
+                  "Post-acquisition pay comparisons between acquired and existing employees are inevitable — the explanation must be proactive, specific, and based on evaluation methodology, not defensive deflection.",
+                  "Timeline slippage on grade mapping must be corrected immediately with a firm revised commitment — indefinite process delays extend the uncertainty that drives post-acquisition attrition."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "15-2-Q",
+            "title": "Module Quiz: Compensation Harmonisation",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The minimum principle in compensation harmonisation states:",
+                "opts": [
+                  "All employees must receive a minimum 3% salary increase as a harmonisation gesture.",
+                  "No employee's salary should be reduced as a direct result of the harmonisation process.",
+                  "Employees below the new structure minimum receive the minimum immediately; others receive no change.",
+                  "The minimum salary offered to new hires must match the minimum of the acquired company's pay structure."
+                ],
+                "ans": 1,
+                "exp": "The minimum principle is absolute — salary reductions as a result of harmonisation are both legally problematic and commercially self-defeating, producing attrition in exactly the population the acquirer needs to retain."
+              },
+              {
+                "q": "Grade mapping for an acquired company should be conducted using:",
+                "opts": [
+                  "Title matching — Partner to Director, Consultant to Manager, etc.",
+                  "Salary matching — place each employee in the grade whose range includes their current salary.",
+                  "Job evaluation using the same methodology and calibration panel as the acquirer's own grades.",
+                  "A seniority mapping based on years of experience in each role tier."
+                ],
+                "ans": 2,
+                "exp": "Job evaluation against a consistent methodology is the only approach that produces defensible, equitable grade placements — title and salary matching both invert the compensation logic."
+              },
+              {
+                "q": "A Bridgeway employee earning £72,000 who is mapped to a grade with a maximum of £70,000 should:",
+                "opts": [
+                  "Have their salary reduced to the grade maximum of £70,000.",
+                  "Be red-circled — salary protected, pay freeze applied until market review determines appropriate range adjustment.",
+                  "Be regraded upward to the next grade where their salary fits within the range.",
+                  "Receive a one-time payment equal to the excess and then have their salary reduced to the maximum."
+                ],
+                "ans": 1,
+                "exp": "Red-circle is the standard management approach — salary protection is non-negotiable, and regrading to make the salary fit reverses the evaluation logic."
+              },
+              {
+                "q": "Post-acquisition attrition of junior employees citing 'uncertainty about the future' is most commonly caused by:",
+                "opts": [
+                  "Compensation cuts implemented too quickly during harmonisation.",
+                  "Absence of clear day-one communication about salary protection, harmonisation timeline, and individual outcomes.",
+                  "Junior employees being naturally more risk-averse than senior employees.",
+                  "Integration processes that take longer than expected, causing employees to lose faith in the acquirer."
+                ],
+                "ans": 1,
+                "exp": "Uncertainty-driven attrition is almost always a communication failure — employees who know their salary is protected and have a named date for their individual outcome are significantly less likely to resign than those receiving no information."
+              },
+              {
+                "q": "Full compensation harmonisation should ideally be completed by:",
+                "opts": [
+                  "Day 1 post-close — employees should know their grade immediately.",
+                  "Month 3 post-close — giving 90 days for the evaluation to be completed.",
+                  "Month 9-12 post-close — allowing adequate time for evaluation, market review, and adjustment.",
+                  "Month 24 post-close — ensuring full cultural integration before pay integration."
+                ],
+                "ans": 2,
+                "exp": "The 9-12 month timeline balances the need to complete harmonisation (resolving uncertainty) with the practical reality of conducting job evaluation for an entire acquired workforce while managing the rest of the integration."
+              },
+              {
+                "q": "When an acquired employee's salary is higher than a comparable acquirer employee's salary after grade mapping, the correct approach is:",
+                "opts": [
+                  "Immediately reduce the acquired employee's salary to the comparator's level.",
+                  "Explain the evaluation basis to both employees; the difference reflects different employment histories, not inequitable treatment.",
+                  "Increase the acquirer employee's salary to match the acquired employee's.",
+                  "Remap the acquired employee to a higher grade where their salary appears more competitive."
+                ],
+                "ans": 1,
+                "exp": "Post-acquisition pay comparisons are inevitable and must be addressed proactively with an explanation based on evaluation — attempting to resolve the appearance of inequity by adjusting grades or salaries without evaluation evidence creates real inequity."
+              },
+              {
+                "q": "The harmonisation cost presented to the CFO should include:",
+                "opts": [
+                  "Only the below-minimum uplift costs — all other costs are operational and belong in departmental budgets.",
+                  "Below-minimum uplifts, red-circle management overhead, market review for affected grades, and HR resource for the integration programme.",
+                  "Only the cost of the day-one communication programme.",
+                  "The full cost of the acquired company's payroll for the first 12 months post-close."
+                ],
+                "ans": 1,
+                "exp": "The full harmonisation cost includes all direct financial impacts — uplifts, market review, and HR resource — and should be modelled as a percentage of deal value for board presentation."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "15-3",
+        "title": "Benefits Integration",
+        "color": "#6B3A2A",
+        "lessons": [
+          {
+            "id": "15-3-1",
+            "title": "Benefits Integration After an Acquisition",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Benefits integration is simultaneously the most visible and the most emotionally charged dimension of post-acquisition harmonisation. Employees notice when their health insurance plan changes; they notice when the gym subsidy disappears; and they notice when new colleagues seem to receive better benefits than they do. Managing these perceptions — while delivering a coherent and cost-effective integrated benefits programme — requires both technical competence and communication skill."
+              },
+              {
+                "t": "h",
+                "v": "The Benefits Audit"
+              },
+              {
+                "t": "p",
+                "v": "Before any integration decisions are made, a full benefits audit of both organisations' programmes is required. The audit documents for each benefit: what is provided, who is eligible, the employer cost, the employee cost (if any), the provider contract terms (particularly notice periods and termination clauses), the take-up rate, and the employee perception score (if available from engagement surveys). The audit produces a comparison matrix showing where the programmes are aligned, where one is more generous, and where there are gaps. This comparison matrix is the foundation for all subsequent integration decisions."
+              },
+              {
+                "t": "h",
+                "v": "Integration Strategy Options"
+              },
+              {
+                "t": "p",
+                "v": "Three integration strategies are available. Alignment to the acquirer's programme: all acquired employees move to the acquirer's existing programme on a defined date. Simplest to administer; may result in acquired employees perceiving a reduction if their previous programme was more generous in some areas. Best of both: the integrated programme preserves the more generous element from each organisation for each benefit category. Most employee-friendly; most expensive and complex to administer. Redesign: the acquisition is used as an opportunity to redesign the benefits programme from scratch for the combined organisation. Takes longest; most disruptive but highest-quality outcome. Most organisations use a pragmatic hybrid: align to the acquirer's core programme immediately, preserve specific more-generous elements from the acquired company for a defined transition period, and use the 12-month integration window for a full programme redesign."
+              },
+              {
+                "t": "h",
+                "v": "Provider Contracts and Transition"
+              },
+              {
+                "t": "p",
+                "v": "Benefits integration has a practical infrastructure dimension that is often underestimated. Each benefit is delivered through a provider contract — a health insurance policy, a pension scheme, a risk benefit agreement. These contracts have minimum notice periods (typically 1-3 months), specific data requirements for new members, and sometimes minimum headcount requirements that change when the two workforces are combined. The integration plan must map each provider contract against the timeline and either: (a) novate the acquired company's contract to the acquirer; (b) migrate the acquired employees onto the acquirer's existing contract; or (c) terminate the acquired company's contract on the appropriate notice period and enrol employees in the acquirer's programme. None of these options can be completed without the provider being notified in advance — data room review should identify all active provider contracts and their key terms during due diligence."
+              },
+              {
+                "t": "h",
+                "v": "The Benefits Communication Challenge"
+              },
+              {
+                "t": "p",
+                "v": "Benefits changes are more emotionally salient than equivalent cash changes. An employee who loses a health insurance benefit they valued will perceive this as a greater loss than an equivalent reduction in salary, even though the financial impact is identical. This loss aversion asymmetry means benefits reductions — even where the overall package is more valuable — generate disproportionate negative reactions. The communication principle: always communicate what employees will receive in the new programme before communicating what is changing from the previous programme. Lead with the total package value; then explain any specific changes in the context of the overall picture. Do not lead with 'what you're losing' — lead with 'what your new package includes.'"
+              },
+              {
+                "t": "box",
+                "label": "Benefits Integration Principles",
+                "v": "Audit first: comparison matrix before any integration decision\nStrategy: align / best of both / redesign — most use hybrid\nProvider contracts: map and novate/migrate/terminate with notice\nCommunication: total package value first, changes in context\nLoss aversion: benefits changes are more emotionally salient than equivalent cash"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Castleton's Benefits Comparison",
+                "v": "Castleton's health cover: Bupa Plan A, employer pays 80%, £4,200 employer cost per employee annually. Bridgeway's health cover: AXA comprehensive plan, employer pays 100%, £5,800 employer cost per employee annually — significantly more generous. Bridgeway employees will move to Bupa Plan A on integration day."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Provider contracts must be mapped during due diligence — discovering a 3-month notice period the week before the integration date creates a forced delay in harmonisation.",
+                  "A benefits comparison matrix (both organisations, all benefits, cost and generosity side by side) is the mandatory first step before any integration design decision.",
+                  "The communication sequence for benefits changes is: total package value first, then changes in context — never lead with what is being reduced or removed."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "Bridgeway employees moving from a 100%-employer-funded £5,800 health plan to an 80%-employer-funded £4,200 plan face a real reduction in benefits. The communication should lead with:",
+              "opts": [
+                "The cost saving this represents to Castleton — demonstrating good financial stewardship.",
+                "The total value of the Castleton benefits package, of which health insurance is one element — giving the full picture before the specific change is explained.",
+                "The fact that the change is happening on a specific date, with no further context.",
+                "A comparison of the two health plans' clinical coverage to show Bupa Plan A is adequate."
+              ],
+              "ans": 1,
+              "exp": "Loss aversion means benefits reductions generate disproportionate negative reactions regardless of their relative size — leading with the total package value establishes context before the employee focuses on what is changing."
+            }
+          },
+          {
+            "id": "15-3-2",
+            "title": "Designing Castleton's Integrated Benefits Programme",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Benefits integration design requires decisions about which elements to align, which to preserve temporarily, and how to communicate the combined package to both populations."
+              },
+              {
+                "t": "box",
+                "label": "Castleton-Bridgeway Benefits Comparison Matrix",
+                "v": "Benefit | Castleton | Bridgeway | More Generous\nHealth insurance | 80% employer, £4,200 cost/emp | 100% employer, £5,800 cost/emp | Bridgeway\nPension (employer) | 8% of salary | 6% of salary | Castleton\nLife assurance | 4× salary | 3× salary | Castleton\nAnnual leave | 26 days + BH | 23 days + BH | Castleton\nDental insurance | None | Employer-funded £380/yr | Bridgeway\nGym benefit | £400/yr subsidy | None | Castleton\nEmployee assistance | EAP included | None | Castleton"
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — Classify Each Benefit by Integration Approach"
+              },
+              {
+                "t": "p",
+                "v": "Use the comparison matrix to decide: align to Castleton, preserve Bridgeway's version, or redesign."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "Health insurance: Bridgeway is more generous (100% employer, higher-value plan). Align to Castleton is the cost-effective choice — but creates a real reduction for Bridgeway employees. Approach: align to Castleton Plan A on a defined transition date (12 months post-close to allow Bridgeway's contract to be terminated on notice). In the transition year, Bridgeway employees retain their current cover. Communicate the change 3 months before it takes effect with full package context.\n\nPension: Castleton is more generous (8% vs 6%). Align to Castleton immediately — all Bridgeway employees move to 8% employer contribution on integration. This is a benefit improvement for Bridgeway employees — communicate it immediately as a day-one enhancement.\n\nLife assurance: Castleton is more generous (4× vs 3×). Align to Castleton immediately — again, an improvement for Bridgeway employees.\n\nAnnual leave: Castleton is more generous (26 vs 23 days). Apply Castleton's 26-day policy to Bridgeway employees on day 1. Improvement — communicate immediately.\n\nDental: Bridgeway is more generous (employer-funded, Castleton has none). Decision: include dental in the Castleton programme for all employees post-acquisition, or remove it for Bridgeway employees after a transition period. Recommendation: extend dental to all Castleton employees as part of the integration — cost is £380/employee, small relative to the health harmonisation saving. This demonstrates that the integration produces benefits improvements for both populations, not just Bridgeway receiving cuts.\n\nGym benefit: Castleton has; Bridgeway doesn't. Extend to Bridgeway employees on day 1 — an enhancement.\n\nEAP: Castleton has; Bridgeway doesn't. Extend to Bridgeway on day 1."
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Calculate the Net Cost Impact"
+              },
+              {
+                "t": "p",
+                "v": "Model the year-1 and steady-state benefits cost for the combined 400-person organisation."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "Year 1 transition costs (Bridgeway employees, months 1-12):\n• Bridgeway keeps AXA health cover for 12 months: 60 employees × £5,800 = £348,000\n• Bridgeway pension increases to 8%: 60 employees × avg £52K salary × (8%-6%) = £62,400 additional/year\n• Bridgeway life assurance aligns to 4×: marginal premium increase ~£15,000\n• Bridgeway receives dental: 60 × £380 = £22,800\n• Bridgeway receives gym benefit: 60 × £400 × estimated 55% take-up = £13,200\n• EAP for all: marginal (typically per-member per-month, £3-5, add for 60 employees = ~£3,600/year)\n\nYear 2 steady state (all 400 employees, Castleton programme):\n• Health: all on Bupa Plan A, 80% employer: 400 × £4,200 × 80% = £1,344,000\n• Pension 8%: 400 × avg £55K × 8% = £1,760,000\n• Life 4× (premium estimated): ~£80,000\n• Dental all employees: 400 × £380 = £152,000\n• Gym: 400 × £400 × 55% = £88,000\n• EAP: 400 × ~£60 = £24,000\n\nYear 2 total: ~£3,448,000. Compare to pre-acquisition combined: Castleton (340 × [health + pension + other]) + Bridgeway (60 × [health + pension]) — the integration produces a net saving primarily from the health plan alignment while adding dental for all (a benefit enhancement that costs less than the health saving)."
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Design the Communication Sequence"
+              },
+              {
+                "t": "p",
+                "v": "Design the communication plan for both Castleton and Bridgeway employees."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "Communication sequence:\n\nDay 1 post-close — Bridgeway employees:\nA single letter covering all immediate changes (day-1 enhancements). Message: 'From today, your benefits package includes [pension 8%, life cover 4×, annual leave 26 days, gym benefit £400, dental insurance, EAP]. These are improvements to your previous package and are effective immediately. Your health insurance continues on your existing AXA plan until [month 12 date], when it will transition to Castleton's Bupa Plan A — full details of the Bupa plan will be provided at least 3 months before the change.'\n\nMonth 9 — Bridgeway employees (3 months before health transition):\n'Your health insurance will move to Castleton's Bupa Plan A from [date]. Here's what changes: [specific coverage comparison]. Here's what your full benefits package will look like from [date]: [total package including all elements, with estimated value].' Lead with the full package; address the health change in the context of everything else.\n\nDay 1 post-close — Castleton employees:\n'As part of the Bridgeway integration, we're extending dental insurance (£380/year) to all employees from today. Your other benefits are unchanged.' — a positive message that signals the integration produces benefits for both populations."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Immediate improvements (pension, leave, gym, EAP) should be communicated as day-one enhancements — they build goodwill that makes subsequent adjustments easier to communicate.",
+                  "The health plan transition communication should be delivered 3 months before the change — sufficient time to understand the new plan, not so early that employees worry about something that is still months away.",
+                  "Extending dental to all Castleton employees as part of the integration is strategically valuable — it demonstrates that the acquisition improves benefits for both populations, not just reduces them for the acquired company."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "15-3-3",
+            "title": "Castleton's Benefits Transition — Full Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "M&A reward integration problems are almost always foreseeable — and almost always discovered too late. This case works through what happens when due diligence is incomplete."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Castleton — Month 9: Health Plan Transition",
+                "v": "Castleton has communicated the health plan transition to Bridgeway employees 3 months in advance. The response has been mixed: 8 Bridgeway employees have formally complained about the change; 3 have threatened to resign; and one (a senior Principal) has a dependent with a chronic condition that was covered under the AXA comprehensive plan, and who claims the Bupa Plan A does not provide equivalent coverage for their specific condition."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "Eight formal complaints about a benefits change — what does this volume indicate and what is the response?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Eight complaints out of 60 Bridgeway employees (13%) is a meaningful response rate but not an unusual one for a significant benefits reduction. The response: each complaint should be acknowledged individually within 5 working days — not with a standard letter, but with a personalised response that addresses the specific concern raised. The standard for what 'addressed' means: HR should have read the complaint, understood the specific concern, and provided a specific answer. Common complaint types for health plan transitions: (1) specific treatment or condition no longer covered — requires a direct comparison of the two plans' coverage for that treatment; (2) network access — different GP or specialist networks; (3) premium increase — the employee now pays 20% rather than 0%; (4) administrative disruption — needing to register with a new provider. Each type has a different answer. For (3) specifically: the 20% employee contribution represents an annual cost to the employee of approximately £840 (20% of £4,200). The Head of People should assess whether a cash compensation to cover this during a transition period is appropriate — it would cost approximately £50,400 for all 60 Bridgeway employees for one year and may prevent several resignations."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The senior Principal with a dependent's chronic condition is a specific hardship case. How should this be managed?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "This is the most sensitive case in the transition and requires individual management. The steps: (1) verify the specific coverage difference — obtain written confirmation from both AXA and Bupa on what the specific treatment or condition protocol requires and whether it is covered under Bupa Plan A; (2) if there is a genuine coverage gap, assess the options: (a) negotiate an exception for this specific employee to remain on AXA cover longer than the transition date at Castleton's cost; (b) explore whether a top-up policy (critical illness, specialist cover) can bridge the gap; (c) in the most complex cases, consider a temporary cash supplement while a permanent solution is designed. Under no circumstances should an employee with a dependent's chronic condition be left without continuity of care coverage during a benefits transition — the legal, ethical, and reputational exposure of such an outcome significantly exceeds the cost of any temporary solution. Involve HR legal counsel before any commitment is made to the employee."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "Three employees have threatened to resign over the health plan change. How should this be assessed and managed?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "A threat to resign over a benefits change must be taken seriously but distinguished from the broader complaints. For each of the three employees: (1) is this a genuine exit threat or a negotiating position? A one-to-one conversation with each manager should assess whether the employee has already begun job-searching or is expressing frustration. (2) What is the underlying driver? Health plan specifically, or is the health plan the articulated reason for accumulated dissatisfaction about the integration? Three months post-close, some employees use a specific change as the focal point for broader unhappiness about the acquisition experience. (3) What would it take to retain each employee? If the answer is 'reverse the health plan change' for all three, this is very unlikely to be feasible. If the answer is 'show me the full package value and confirm my career path under Castleton' — this is entirely addressable through a well-equipped manager and a TRS. The health plan transition communication may not have included adequate total package value context — presenting a personalised TRS showing the enhanced pension, dental, life cover, and gym benefit alongside the health plan change may substantially change the perceived value of the overall move."
+              },
+              {
+                "t": "box",
+                "label": "Benefits Transition Complaint Management",
+                "v": "8 complaints: individual response within 5 days; categorise by type; address specifically\nChronic condition case: coverage verification → exception/top-up → legal counsel\nResignation threats: assess genuine vs positional; identify underlying driver; TRS as retention tool\nTransition cash supplement: £840/year × 60 employees = £50,400 — may be cheaper than resignations"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Individual response to benefits complaints within 5 working days signals that each employee's concern has been heard — standard form letters produce further escalation.",
+                  "A chronic condition continuity-of-care case is a legal and ethical priority that outweighs the transition timeline — it must be resolved with individual case management and legal counsel involvement.",
+                  "Resignation threats following benefits changes often reflect accumulated integration anxiety rather than the specific change — a personalised TRS showing the full enhanced package frequently changes the perceived calculus."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "15-3-Q",
+            "title": "Module Quiz: Benefits Integration",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "A benefits comparison matrix is required before any integration design decision because:",
+                "opts": [
+                  "It is a legal requirement under employment transfer regulations.",
+                  "It ensures integration decisions are based on a complete, objective picture of both programmes rather than assumptions about which is better.",
+                  "It satisfies the requirements of the due diligence data room.",
+                  "It allows providers to be notified simultaneously of any programme changes."
+                ],
+                "ans": 1,
+                "exp": "Integration decisions made without a full comparison matrix produce either unnecessary costs (preserving redundant elements) or unexpected reductions (eliminating valued benefits that weren't reviewed)."
+              },
+              {
+                "q": "The communication principle for benefits changes that involve reductions is:",
+                "opts": [
+                  "Lead with the cost saving to the organisation — demonstrating financial stewardship.",
+                  "Lead with the total package value, then explain changes in context — loss aversion means reductions feel disproportionately large without the full picture.",
+                  "Communicate reductions first to avoid employees feeling the good news was used to bury the bad news.",
+                  "Communicate reductions only after positive changes have been in place for 3 months."
+                ],
+                "ans": 1,
+                "exp": "Benefits loss aversion is well-evidenced — an employee losing a £500 annual benefit perceives it as a greater loss than a £500 cash reduction, making context essential before the specific change is communicated."
+              },
+              {
+                "q": "Provider contracts must be identified during due diligence because:",
+                "opts": [
+                  "Benefits providers have a legal right to be notified of M&A transactions before they close.",
+                  "Contract notice periods (typically 1-3 months) affect the integration timeline — discovering these late prevents planned transition dates from being met.",
+                  "Provider contracts contain change-of-control provisions similar to employment contracts.",
+                  "Benefits providers are required to improve their terms when an acquirer with a larger headcount takes over a contract."
+                ],
+                "ans": 1,
+                "exp": "Notice periods in provider contracts are practical constraints on the integration timeline — missing a 3-month notice period can delay a planned transition by a full quarter."
+              },
+              {
+                "q": "An acquired employee with a dependent's chronic condition who may face a coverage gap in the new health plan should be managed by:",
+                "opts": [
+                  "Excluding them from the health plan transition until their situation is resolved — they continue on the existing plan indefinitely.",
+                  "Verifying the specific coverage difference, exploring exception or top-up options, involving legal counsel, and ensuring continuity of care — at Castleton's cost if necessary.",
+                  "Explaining that the new plan is broadly comparable and encouraging the employee to review the plan documentation.",
+                  "Offering a cash payment equivalent to the expected out-of-pocket costs under the new plan."
+                ],
+                "ans": 1,
+                "exp": "Continuity of care for a dependent's chronic condition is both a legal and ethical priority — any solution is preferable to a coverage gap, and the cost is almost always lower than the legal and reputational exposure of failing to manage it."
+              },
+              {
+                "q": "Extending dental insurance to all Castleton employees as part of the integration is strategically valuable primarily because:",
+                "opts": [
+                  "It reduces the administrative complexity of managing different benefit programmes across the combined workforce.",
+                  "It demonstrates that the acquisition produces benefits improvements for both populations, which builds integration goodwill across the whole organisation.",
+                  "It satisfies a contractual obligation to Bridgeway's employees to receive comparable benefits to Castleton employees.",
+                  "It allows Castleton to negotiate a better rate with the dental provider by increasing the insured headcount."
+                ],
+                "ans": 1,
+                "exp": "Integration goodwill is built when both populations perceive they are gaining something — extending a Bridgeway benefit to all Castleton employees sends this signal clearly."
+              },
+              {
+                "q": "A resignation threat following a benefits change should be assessed first by:",
+                "opts": [
+                  "Immediately offering to reverse the benefits change for the employee as a retention measure.",
+                  "Determining whether the threat is genuine or a negotiating position, and identifying whether the stated reason (benefits change) is the real driver or a focal point for broader integration dissatisfaction.",
+                  "Escalating to the CEO for a decision on whether the integration should be reversed for this employee.",
+                  "Calculating the replacement cost and offering a retention bonus equivalent to one year's salary."
+                ],
+                "ans": 1,
+                "exp": "Resignation threats after a specific change often reflect accumulated dissatisfaction — the specific change is the articulated reason, but the underlying motivation may be more complex and more addressable than reversing the specific change."
+              },
+              {
+                "q": "The 'best of both' benefits integration strategy preserves the more generous element from each organisation for each benefit. Its primary disadvantage is:",
+                "opts": [
+                  "It is not legally permissible under employment transfer regulations to combine elements from two different programmes.",
+                  "It is the most expensive and administratively complex integration approach — it may preserve redundant programme elements that increase costs without proportionate employee value.",
+                  "It reduces employee engagement because employees perceive the combination as indecisive rather than strategic.",
+                  "It requires a minimum 24-month implementation period before any integration can be completed."
+                ],
+                "ans": 1,
+                "exp": "'Best of both' is employee-friendly but expensive — it may produce a programme that is more generous than either predecessor alone, with proportionate cost increases that are difficult to justify post-integration."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "15-4",
+        "title": "Change Management and Communication",
+        "color": "#6B3A2A",
+        "lessons": [
+          {
+            "id": "15-4-1",
+            "title": "Change Management and Communication in Reward Integration",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Reward integration fails most often not because the technical design was wrong, but because the change was communicated poorly. Employees who understand what is changing, why it is changing, and when their specific situation will be resolved are dramatically more likely to remain engaged through an integration than those who receive generic announcements and then wait months for individual answers. Change management in reward integration is a communication discipline as much as a project management one."
+              },
+              {
+                "t": "h",
+                "v": "The Integration Communication Framework"
+              },
+              {
+                "t": "p",
+                "v": "Effective reward integration communication has three layers. Strategic narrative (for all employees): what the acquisition means for the organisation, why it is happening, and what success looks like for the combined entity. This layer is delivered by the CEO and senior leadership — it is not an HR communication, and treating it as one is the first communication mistake. Process narrative (for all employees): how the integration will work — what the timeline is, what decisions will be made and when, and what employees can expect to hear and from whom. This layer is delivered by the Head of People, with manager support. Individual narrative (for each employee): what the integration means specifically for them — their grade, their salary, their benefits, their team structure, and their career path under the combined organisation. This layer is delivered by the direct manager, equipped by HR. All three layers are required. Missing any one produces anxiety at that level."
+              },
+              {
+                "t": "h",
+                "v": "Cadence and Timing"
+              },
+              {
+                "t": "p",
+                "v": "Integration communication must operate on a regular cadence — not a series of one-off announcements triggered by events. A monthly all-hands Q&A, a fortnightly email update from the Head of People, and a defined timeline for individual conversations creates a communication rhythm that employees can rely on. The worst outcome is a communication burst at deal close followed by silence for 2-3 months while the integration team works through the technical design. Silence is always interpreted negatively — employees assume that news is being withheld. The cadence should be established on day 1 and maintained regardless of whether there is new news — 'no change to report' is itself information that reduces anxiety."
+              },
+              {
+                "t": "h",
+                "v": "Manager Briefing in Integration"
+              },
+              {
+                "t": "p",
+                "v": "Managers are the most trusted communication channel for individual employees, and the least reliably equipped in an integration. Integration managers face a specific challenge: they may themselves be uncertain about their own role, their team structure, or their grade in the combined organisation. A manager who is personally anxious about their own integration outcome will communicate their team's situation poorly — projecting their own uncertainty rather than the structured message the integration programme has prepared. The integration communication programme must address manager personal anxiety first — by ensuring managers receive their own individual outcomes early in the process, before they are asked to deliver individual messages to their teams. A manager who knows their own grade, salary, and team structure is a much more effective communication channel than one who doesn't."
+              },
+              {
+                "t": "h",
+                "v": "FAQs and Information Management"
+              },
+              {
+                "t": "p",
+                "v": "Post-deal, employees ask a predictable set of questions: what happens to my salary? What happens to my bonus? What happens to my pension? What happens to my job? What happens to my benefits? A comprehensive FAQ document, developed before close and updated weekly in the first 3 months, answers 80% of the questions employees will raise — reducing the HR workload and the uncertainty that drives attrition. The FAQ must be specific — 'your salary is protected and no changes will occur without individual consultation' — not generic. A vague FAQ ('we are committed to competitive reward') generates more questions than it answers and signals that the organisation does not have a clear integration plan."
+              },
+              {
+                "t": "box",
+                "label": "Integration Communication Framework",
+                "v": "Strategic narrative: CEO — what the acquisition means and why\nProcess narrative: Head of People — how integration works and timeline\nIndividual narrative: direct manager — what it means for you specifically\nCadence: regular rhythm regardless of news — silence creates anxiety\nManager priority: personal outcomes first, then team communication\nFAQ: specific answers to the five predictable questions, updated weekly"
+              },
+              {
+                "t": "scenario",
+                "label": "Case",
+                "title": "Castleton's Communication Gap",
+                "v": "Two months after close, Castleton's employee engagement pulse for former Bridgeway employees shows: 31% feel they have received adequate information about the integration; 54% are uncertain whether their role is secure; 67% have heard conflicting information from different sources about their benefits. The Head of People must diagnose and redesign the communication programme."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Strategic narrative, process narrative, and individual narrative must all be delivered — missing any layer produces anxiety at that level.",
+                  "Communication cadence must be established on day 1 and maintained regardless of whether there is new news — silence is always interpreted negatively.",
+                  "Managers must receive their own individual integration outcomes before being asked to deliver individual messages to their teams — personal anxiety undermines communication quality."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "A 67% conflicting information rate most directly indicates:",
+              "opts": [
+                "The integration process is genuinely inconsistent — different employees are receiving different treatment.",
+                "The communication is not coordinated — different managers are answering questions differently without a common brief or FAQ to reference.",
+                "The Bridgeway employees are more suspicious of corporate communications than the typical workforce.",
+                "The benefits integration design has not been finalised and therefore consistent communication is not yet possible."
+              ],
+              "ans": 1,
+              "exp": "Conflicting information across employees almost always reflects a coordination failure — managers answering questions from personal knowledge rather than a shared brief produce contradictory answers to identical questions."
+            }
+          },
+          {
+            "id": "15-4-2",
+            "title": "Designing Castleton's Integration Communication Programme",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Communication programme redesign must address both the structural failure (no cadence, no FAQ, no coordination) and the specific gap (40% of employees without individual outcomes)."
+              },
+              {
+                "t": "box",
+                "label": "Castleton — Communication Redesign Brief",
+                "v": "Current state: no regular cadence; managers briefed once at close with a 20-minute slide deck; no FAQ document; individual outcomes not yet communicated to 40% of employees (grade mapping 60% complete); conflicting information rate 67%.\nTarget state: <15% conflicting information rate within 60 days; >75% adequate information rating within 90 days."
+              },
+              {
+                "t": "h",
+                "v": "Component 1 — The FAQ Document"
+              },
+              {
+                "t": "p",
+                "v": "Build the core document that eliminates 80% of conflicting information."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Component 1",
+                "v": "Integration FAQ — key content (to be published on intranet and distributed to all managers as a briefing document):\n\nQ: Will my salary change?\nA: Your salary is fully protected. No reductions will occur as a result of the integration. If your role evaluation places you below the minimum of your mapped grade, your salary will be increased — you will hear this outcome from your manager by [date].\n\nQ: Will my bonus change?\nA: Your current bonus plan continues unchanged until [date]. The combined organisation's bonus structure for [year+1] will be communicated to all employees by [date].\n\nQ: Will my benefits change?\nA: Your benefits will change in the following ways: [specific list — pension increase to 8%, life cover increase to 4×, annual leave increase to 26 days, dental insurance and gym benefit added from day 1]. Your health insurance continues on your existing AXA plan until [month 12 date] when it moves to Castleton's Bupa Plan A. Full details will be provided by [month 9 date].\n\nQ: Is my job at risk?\nA: There are no planned redundancies as a result of this acquisition. If this changes, you will receive individual consultation directly — not through general announcements.\n\nQ: When will I know my grade?\nA: Grade mapping is 60% complete. All remaining grades will be confirmed by [specific date, not more than 6 weeks away]. You will receive your individual grade outcome from your direct manager in a private conversation, not via email or letter alone.\n\nUpdate cadence: updated weekly by the Head of People. Date-stamped at the top. Managers send any new questions from their teams to a central integration inbox; answers are added to the FAQ within 72 hours."
+              },
+              {
+                "t": "h",
+                "v": "Component 2 — Manager Enablement for Integration"
+              },
+              {
+                "t": "p",
+                "v": "Redesign the manager briefing programme to enable consistent individual conversations."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Component 2",
+                "v": "Manager enablement redesign:\n\n1. Personal outcomes first: all managers in the 40% unresolved population receive their own grade and salary outcome within 10 working days — before they are asked to deliver any team conversations. This is the single highest-return investment in communication quality.\n\n2. Manager briefing pack (redesigned from the original 20-minute slide deck):\n• What has been decided: specific answers on salary protection, benefits, bonus, and grade mapping status\n• What has NOT been decided: clear statement of what is still in progress and by when\n• The FAQ document — every manager receives it and is asked to share it with their team\n• The five questions their team will ask — with specific, scripted answers\n• Escalation path: any question not covered by the FAQ goes to [named HR contact] within 24 hours — not left unanswered\n\n3. Manager check-in: weekly 15-minute call between the integration HR lead and each manager team for the first 8 weeks — to surface questions, capture conflicting information before it spreads, and update the FAQ in real time."
+              },
+              {
+                "t": "h",
+                "v": "Component 3 — Communication Cadence"
+              },
+              {
+                "t": "p",
+                "v": "Establish the monthly all-hands rhythm and the fortnightly email."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Component 3",
+                "v": "Communication cadence:\n\nFortnightly email (Head of People → all former Bridgeway employees):\n• Sent every other Friday, regardless of whether there is new news\n• Format: 3 sections — (1) 'What's confirmed this fortnight', (2) 'What's still in progress', (3) 'When you'll next hear from us'\n• 300-400 words maximum — not a report, a conversation\n\nMonthly all-hands Q&A (CEO + Head of People + relevant functional leaders):\n• Live or video, 45-60 minutes\n• Open Q&A for 30 minutes — questions submitted in advance and in real time\n• 'I don't know' is an acceptable answer if accompanied by a commitment to find out and by when\n• Key principle: senior leaders present, on camera, taking unfiltered questions — this is the strategic narrative layer that cannot be delegated to HR\n\nDay-90 individual outcome completion:\n• All grade and salary outcomes delivered by private manager conversation by day 90 from today\n• Managers who have not completed their team's individual conversations by day 90 have this on their own performance record for the quarter — not punitive, but accountable"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "A specific, dated FAQ document — updated weekly — eliminates the vast majority of conflicting information by giving every manager the same answers to the same questions.",
+                  "The fortnightly email cadence maintains information flow regardless of new developments — 'still in progress, here's when you'll know' is more reassuring than silence.",
+                  "Manager personal outcomes before team communication is the highest-return sequencing decision in integration communication — an anxious manager communicates anxiety, not structure."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "15-4-3",
+            "title": "Castleton's Integration — Month 12 Review",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "M&A reward integration problems are almost always foreseeable — and almost always discovered too late. This case works through what happens when due diligence is incomplete."
+              },
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Castleton-Bridgeway — Year 1 Outcomes",
+                "v": "Twelve months post-close, Castleton reviews the integration outcomes against the original plan. Results: adequate information rating improved from 31% to 74% ✅; conflicting information rate fell from 67% to 11% ✅; 9 former Bridgeway employees have left voluntarily (15% attrition vs the planned 8%). Of the 9 departures: 3 were identified as high-risk and received proactive conversations and retention offers; 4 were not on the risk radar; 2 were planned (the Bridgeway CEO and one Principal took deal-related compensation and left as expected). The Head of People must present a full integration review to the Castleton board."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The communication metrics improved dramatically. What drove the improvement and what does this tell us about the root cause of the original 67% conflicting information rate?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The 67% to 11% improvement over 60 days confirms the original diagnosis: the conflicting information was a coordination failure, not a genuine inconsistency in the integration plan. The three interventions that drove the improvement: (1) the FAQ document gave all managers identical answers to the questions employees were asking — eliminating the source of contradiction; (2) the fortnightly email created an authoritative information source that employees could check against what their manager told them; (3) the manager enablement redesign (personal outcomes first, weekly check-in) significantly reduced manager-driven variation. The lesson: conflicting information in an integration is almost always a solvable coordination problem, not a signal that the integration is genuinely chaotic. Solving it requires a document (FAQ), a cadence (fortnightly email), and a coordination mechanism (manager weekly check-in) — all low-cost, high-return investments."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "9 departures against a planned 8% (5 departures) — the 4 unplanned non-high-risk departures are the key finding. What do they indicate?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The 4 departures that were not on the risk radar are the most important finding in the integration review. They indicate: (1) the attrition risk model was not comprehensive — it identified 3 high-risk employees correctly but missed 4. The most likely explanation: the model was built for the Castleton population and the Bridgeway employees were not fully incorporated into the risk scoring (grade mapping for 40% was delayed, which meant compa-ratios were not calculable for those employees). (2) Bridgeway-specific integration factors — the integration experience itself created attrition risk for employees who were not otherwise compensation risks. Post-acquisition identity disruption ('I was a Bridgeway Partner, now I'm a Castleton Grade 5 Director') is a real factor that compa-ratio models do not capture. The recommendation: expand the risk model to include a specific 'integration disruption' risk factor for acquired employees in the 6-18 months post-close, and improve the grade mapping timeline to ensure all acquired employees are modelled by month 3, not month 9."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "The board asks: what would we do differently in the next acquisition? What are the top five lessons from the Castleton-Bridgeway integration?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Top five lessons:\n1. Due diligence scope: all employment contracts, not just senior ones. The change-of-control provisions in junior contracts were discovered late and required reactive deal negotiation. Full contract review is non-negotiable.\n2. Day-1 communication: a personalised letter to every acquired employee on close day — salary protection, benefits summary, grade mapping timeline, and a named HR contact. The 6 Associate resignations in month 3 were preventable with this one intervention.\n3. Manager personal outcomes first: equip managers to have conversations from a position of security, not anxiety. This is the single highest-return integration communication investment.\n4. FAQ cadence: a specific, dated, weekly-updated FAQ document eliminates 80% of conflicting information at minimal cost. Should be prepared pre-close and distributed on day 1.\n5. Attrition risk model: build a risk model for the acquired population from day 1, including an integration disruption factor for the first 12 months. The 4 undetected departures each cost approximately £45,000 in replacement cost — the model would have cost a fraction of this to implement."
+              },
+              {
+                "t": "box",
+                "label": "Year 1 Integration Review — Key Lessons",
+                "v": "Communication success: FAQ + cadence + coordination = 67%→11% conflict rate (60 days)\nAttrition: 3 high-risk caught; 4 missed due to delayed grade mapping and absent Bridgeway risk model\nTop 5 lessons: full contract review / day-1 communication / manager outcomes first / FAQ pre-close / risk model for acquired employees"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The conflicting information problem was solved by coordination tools (FAQ, cadence, check-in) — not by changing the integration plan. Most communication failures are coordination failures.",
+                  "Attrition risk models must include all employees — including acquired employees — from the start of the integration. Delayed grade mapping creates blind spots in the risk model that produce undetected departures.",
+                  "The top 5 lessons from an integration become the due diligence and integration planning checklist for the next acquisition — M&A organisations build institutional knowledge through structured review, not just experience."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "15-4-Q",
+            "title": "Module Quiz: Change Management and Communication",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The three layers of integration communication are:",
+                "opts": [
+                  "Strategic, tactical, and operational.",
+                  "Strategic narrative (CEO), process narrative (Head of People), individual narrative (direct manager).",
+                  "Written, verbal, and digital.",
+                  "Before close, day 1, and post-close."
+                ],
+                "ans": 1,
+                "exp": "Each layer addresses a different audience need — missing any one produces anxiety at that level. Individual narrative cannot substitute for strategic narrative, and process narrative cannot substitute for individual narrative."
+              },
+              {
+                "q": "Communication cadence in an integration should be maintained:",
+                "opts": [
+                  "Only when there is new information to share — unnecessary communications reduce employee attention.",
+                  "Regardless of whether there is new news — a regular rhythm ('still in progress, here's when you'll know') is more reassuring than silence.",
+                  "Monthly — sufficient for a 12-month integration programme.",
+                  "As determined by the communication consultant engaged to support the integration."
+                ],
+                "ans": 1,
+                "exp": "Silence is universally interpreted negatively in an integration — employees assume news is being withheld. Regular cadence, even with 'no change' messages, maintains trust."
+              },
+              {
+                "q": "Managers should receive their own individual integration outcomes before delivering team conversations because:",
+                "opts": [
+                  "This is required by employment law — managers must be informed before their teams.",
+                  "A manager who is personally uncertain about their own outcome communicates their anxiety rather than the structured integration message, undermining communication quality.",
+                  "It is administratively simpler to process managers before employees.",
+                  "Managers require longer to process their integration outcomes than employees."
+                ],
+                "ans": 1,
+                "exp": "Manager personal anxiety is the most common source of poor integration communication — equipping managers from a position of personal security produces significantly better team conversations."
+              },
+              {
+                "q": "A specific, dated FAQ document reduces conflicting information because:",
+                "opts": [
+                  "It prevents employees from asking questions outside the FAQ framework.",
+                  "Every manager has identical answers to the same questions — eliminating the coordination failure that produces contradictory information across teams.",
+                  "It satisfies legal requirements for employee information in post-M&A periods.",
+                  "It replaces the need for individual manager conversations."
+                ],
+                "ans": 1,
+                "exp": "Conflicting information is produced when managers answer questions from personal knowledge rather than a shared source — the FAQ provides the common reference that coordinates answers across all managers."
+              },
+              {
+                "q": "The 4 Bridgeway employees who left unexpectedly (not on the risk radar) indicate which gap in the attrition model?",
+                "opts": [
+                  "The model's compa-ratio thresholds were set incorrectly.",
+                  "The model did not include Bridgeway employees fully (delayed grade mapping prevented compa-ratio calculation) and did not include a post-acquisition integration disruption risk factor.",
+                  "The 4 employees were not identified as high-risk because they were in non-engineering roles.",
+                  "The attrition model is fundamentally unsuitable for post-acquisition populations."
+                ],
+                "ans": 1,
+                "exp": "Grade mapping delay created a compa-ratio blind spot for 40% of the acquired workforce, and the standard risk model did not include the integration-specific identity disruption factor that affected acquired employees specifically."
+              },
+              {
+                "q": "The top 5 lessons from an integration should be used to:",
+                "opts": [
+                  "Report to the board that the integration underperformed on attrition targets.",
+                  "Build the due diligence and integration planning checklist for the next acquisition — converting experience into institutional knowledge.",
+                  "Evaluate the performance of the integration team members involved.",
+                  "Determine whether the acquisition was financially justified given the attrition outcomes."
+                ],
+                "ans": 1,
+                "exp": "Post-integration review lessons are the most valuable input into the next acquisition's planning — M&A capability is built through structured review of what worked and what didn't, not just through accumulated experience."
+              },
+              {
+                "q": "A 15% first-year voluntary attrition rate among acquired employees (vs planned 8%) is best described as:",
+                "opts": [
+                  "An acceptable outcome given the complexity of the integration.",
+                  "A signal that specific aspects of the integration failed — particularly day-1 communication and the attrition risk model — requiring structured post-review and process improvement.",
+                  "An industry-standard outcome for acquisitions of this size and complexity.",
+                  "A board-level crisis requiring immediate investigation of the integration team's performance."
+                ],
+                "ans": 1,
+                "exp": "15% vs 8% planned represents a meaningful shortfall that was partially preventable — the post-review should identify the specific failures (communication, risk model) and convert them into process improvements."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "c15-cap",
+        "title": "Capstone Project",
+        "color": "#6B3A2A",
+        "lessons": [
+          {
+            "id": "c15-cap-l",
+            "title": "Capstone: Castleton Partners Acquires Vantage Group",
+            "duration": "10 min",
+            "xp": 250,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Castleton Partners is 18 months post-close on the Bridgeway acquisition and has identified a second acquisition target: Vantage Group, a 120-person professional services firm operating in London and Lagos. The Head of People must apply the lessons from the Bridgeway integration to design a complete due diligence and integration plan for Vantage — from data room review through to full year-1 harmonisation."
+              },
+              {
+                "t": "box",
+                "label": "Vantage Group Key Facts",
+                "v": "Employees: 120 (85 London, 35 Lagos)\nFormal grade structure: yes (6 grades, different from Castleton's 7-grade structure)\nBonus plan: formula-based annual bonus, 15% of salary at target for all employees\nEquity: EMI share options for 18 employees (senior only)\nPension: UK: defined contribution (employer 7%); Nigeria: PRA-compliant pension (10% employer)\nHealth: UK: Bupa Plan A (same as Castleton) at 75% employer; Nigeria: HMO plan at 100% employer\nNotice periods: senior staff (G5-G6) — 6 months; junior staff (G1-G4) — 1-3 months\nData room: complete — all contracts, benefit booklets, pension details, equity plan rules provided"
+              },
+              {
+                "t": "h",
+                "v": "Step 1 — Due Diligence Priority Review"
+              },
+              {
+                "t": "p",
+                "v": "Given the Bridgeway lessons, what are the top due diligence priorities for Vantage and what do you expect to find based on the known facts?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach for Step 1",
+                "v": "Priority due diligence areas:\n\n1. Equity plan (EMI options, 18 employees): read the plan rules for change-of-control provisions immediately. Expected finding: EMI plans frequently provide for accelerated vesting on a qualifying acquisition. Calculate the in-the-money value for all 18 option holders at the proposed deal price — this is a potential unmodelled cost to the deal model. Check HMRC-approved status (EMI options have tax-advantaged treatment for employees; this affects the structuring options for cash-out or substitution).\n\n2. Nigerian employment contracts (35 employees): confirm whether Lagos-based employees have any change-of-control provisions (less common in Nigerian employment practice but must be verified). Confirm PRA pension compliance — are contributions current and correct for all 35 employees?\n\n3. Bonus plan: verify whether the formula-based bonus plan contains any deal-trigger payment — some bonus plans pay out at target or maximum on a qualifying transaction. If so, quantify the cost (120 × average salary × 15% × deal trigger = potentially significant).\n\n4. Grade structure reconciliation: Vantage has 6 grades vs Castleton's 7. The mapping is therefore not a direct one-to-one — some Castleton grades will cover two Vantage grades, or some Vantage grades will split across Castleton grades. This is more complex than the Bridgeway (no-structure) situation but more tractable than a fresh evaluation — Vantage's existing evaluations provide a starting point.\n\n5. Nigerian HMO plan: the Lagos HMO at 100% employer cost is more generous than Castleton's Lagos programme (if it has one). If Castleton does not currently operate in Nigeria, this plan will need a provider review — ensuring it meets Castleton's health programme standards and that the provider can onboard a combined employer entity."
+              },
+              {
+                "t": "h",
+                "v": "Step 2 — Day-1 Communication Plan"
+              },
+              {
+                "t": "p",
+                "v": "Apply the Bridgeway lesson about day-1 communication. Design the complete day-1 communication programme for Vantage employees."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach for Step 2",
+                "v": "Day-1 communication programme:\n\nDay-1 package (every Vantage employee receives on close day):\n1. Letter from the CEO and Head of People: welcome to Castleton; what this acquisition means strategically; commitment to the team.\n2. Integration FAQ (pre-prepared): specific answers to the five questions — salary, bonus, pension, job security, grade. Specific rather than vague.\n3. Benefits summary: immediate changes (if any from day 1); what continues unchanged; timeline for health plan review.\n4. Named HR contact: one named person for each population (UK integration manager, Lagos HR partner) with contact details.\n5. Integration timeline: visual one-page timeline showing key milestones — grade mapping complete by month 3, individual outcomes communicated by month 4, harmonisation complete by month 12.\n\nKey differences from Bridgeway based on lessons:\n• Pre-close preparation: all five FAQ components prepared before close — not started on day 1.\n• Named contacts with specific portfolios — not 'contact HR' generically.\n• Lagos-specific communication in addition to the UK programme — a separate letter acknowledging the Nigerian context specifically (PRA pension continuity, HMO plan status), not identical to the UK letter.\n• Manager personal outcomes: prepare and deliver manager grade outcomes in week 1 post-close (not month 4 as in Bridgeway). Managers should deliver team conversations in week 2-3."
+              },
+              {
+                "t": "h",
+                "v": "Step 3 — Grade Mapping Approach"
+              },
+              {
+                "t": "p",
+                "v": "Vantage has a 6-grade structure vs Castleton's 7. Design the grade mapping methodology for 120 employees."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach for Step 3",
+                "v": "Grade mapping approach:\n\n1. Evaluation methodology: use Castleton's point-factor scheme (now calibrated from the Bridgeway integration) for all Vantage roles. Do not simply map Vantage Grade 3 to Castleton Grade 3 — evaluate.\n\n2. Anchor roles: use the Bridgeway-calibrated anchor role library as the reference set for the Vantage evaluation — expanding the anchor library to include the first 10 Vantage roles evaluated (the 10 most clearly representative roles across all grades).\n\n3. Timeline target: all 120 grades confirmed by month 3 (not month 9 as in Bridgeway — this is the primary lesson from the Bridgeway attrition model gap).\n\n4. Lagos-specific considerations: the 35 Lagos employees are evaluated against the same Castleton global grade criteria, but their salary ranges will be the Nigeria-market-calibrated ranges — the same principle applied in the Bridgeway integration. Lagos grades are confirmed simultaneously with London grades.\n\n5. Below-minimum identification: as soon as each employee's grade is confirmed, check their salary against the Castleton range for that grade in their market. Any below-minimum salary is corrected immediately — not deferred to a later phase.\n\n6. Communication of outcomes: each employee's grade is communicated by their direct manager in a private conversation — not by email or group announcement. Managers are briefed in advance and have the FAQ and the manager data sheet before each conversation."
+              },
+              {
+                "t": "h",
+                "v": "Step 4 — Benefits Integration"
+              },
+              {
+                "t": "p",
+                "v": "Design the benefits integration approach for both the UK and Lagos populations."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach for Step 4",
+                "v": "UK benefits integration:\nVantage UK has Bupa Plan A at 75% employer — Castleton pays 80%. Align to Castleton immediately: 5% improvement for Vantage UK employees. Day-1 enhancement. No transition required.\nVantage UK pension: 7% employer vs Castleton 8%. Align to Castleton immediately: improvement for Vantage UK employees.\nAll other Castleton UK benefits (dental, gym, EAP, life cover) extended to Vantage UK employees on day 1. This mirrors the Bridgeway lesson: maximise day-1 enhancements and minimise delayed changes.\n\nLagos benefits integration:\nVantage Lagos HMO plan (100% employer) must be reviewed: (1) confirm the plan provider meets Castleton's health programme standards; (2) if Castleton has an existing Lagos programme, compare — align to the more comprehensive plan; (3) if Castleton has no Lagos programme, adopt the Vantage HMO plan as the Castleton Nigeria standard and review its cost and coverage annually.\nVantage Lagos pension (10% employer, PRA-compliant) matches PRA minimum — align to Castleton's global philosophy of going above statutory minimum where sustainable. Consider moving to 12% employer for Lagos (matching Castleton's global premium positioning) — communicate this as a day-1 enhancement.\n\nKey Bridgeway lesson applied: no benefits reductions on day 1 for either population. All day-1 changes are improvements. Any adjustments requiring reduction are deferred to month 12 with a 3-month pre-communication."
+              },
+              {
+                "t": "h",
+                "v": "Step 5 — Risk Model for Vantage Population"
+              },
+              {
+                "t": "p",
+                "v": "Apply the Bridgeway attrition model lesson: build the Vantage risk model from day 1."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach for Step 5",
+                "v": "Vantage attrition risk model (built in month 1, not month 9):\n\nStandard risk factors (from the existing model): compa-ratio, performance vs compa-ratio, consecutive zero merit, tenure in grade, role type mobility.\n\nVantage-specific integration risk factor (new, based on Bridgeway lesson): each Vantage employee receives an additional 'integration disruption' score for the first 18 months post-close:\n• High integration disruption: employees whose role, team, or reporting line has changed materially since close (+2 points)\n• Medium integration disruption: employees in roles with unclear integration status (+1 point)\n• Low/no disruption: employees whose day-to-day is unchanged from pre-close (0 points)\n\nMonth 1 constraint: grade mapping will not be complete in month 1. Until grades are confirmed, substitute range penetration relative to the Vantage salary structure as the compa-ratio proxy — imperfect but better than excluding 100% of the Vantage population from the risk model until month 3.\n\nOutput: first risk report presented to Castleton leadership in month 2, covering all 120 Vantage employees. High-risk employees (score 7+): immediate HBP conversation with manager; targeted retention action within 30 days.\n\nTarget: Vantage year-1 voluntary attrition ≤8% (the Bridgeway planned but not achieved target) — achievable with day-1 communication, early grade mapping, and proactive risk management."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Due diligence breadth — reviewing all contracts, all equity plan rules, and all benefit provider agreements — is the prerequisite for a clean deal model. The Bridgeway lessons make this non-negotiable for Vantage.",
+                  "Day-1 communication completeness — FAQ pre-prepared, named contacts, specific timeline, Lagos-specific letter — eliminates the primary cause of post-acquisition attrition: uncertainty.",
+                  "Grade mapping by month 3 (not month 9) is the structural fix for the attrition model blind spot — grades must be confirmed before meaningful risk scores can be calculated.",
+                  "The integration disruption risk factor adds a Vantage-specific dimension to the attrition model — employees whose role and team have changed since close are at higher risk regardless of their compa-ratio.",
+                  "Benefits integration with no day-1 reductions — only improvements — is the most effective tool for building integration goodwill in the first 30 days post-close."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "c15-cap-q",
+            "title": "Capstone Assessment: Mergers, Acquisitions and Reward Integration",
+            "duration": "15 min",
+            "xp": 300,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The first due diligence action for Vantage's EMI equity plan is:",
+                "opts": [
+                  "Review the plan for change-of-control provisions and calculate the in-the-money value for all 18 option holders at the proposed deal price.",
+                  "Confirm the number of employees holding options and their current tax treatment.",
+                  "Check whether the EMI plan is still open to new participants.",
+                  "Review the exercise price to assess whether options are likely to be exercised before the deal closes."
+                ],
+                "ans": 0,
+                "exp": "Change-of-control provisions in the equity plan determine whether the options vest on close and at what cost — this must be quantified before the deal model is finalised."
+              },
+              {
+                "q": "The primary Bridgeway lesson applied to the Vantage day-1 communication plan is:",
+                "opts": [
+                  "Include more slides in the manager briefing deck.",
+                  "Prepare all FAQ components before close and deliver a named-contact, specific-timeline communication to every employee on day 1.",
+                  "Announce all integration decisions on day 1 to eliminate uncertainty immediately.",
+                  "Focus day-1 communication on senior employees only."
+                ],
+                "ans": 1,
+                "exp": "The Bridgeway day-1 communication failure — no FAQ, no named contacts, no specific timeline — drove the uncertainty-based Associate resignations. Pre-close preparation of a complete day-1 package is the primary corrective."
+              },
+              {
+                "q": "Grade mapping for all 120 Vantage employees should be completed by:",
+                "opts": [
+                  "Month 1 — grades should be confirmed before any individual conversations take place.",
+                  "Month 3 — the primary Bridgeway lesson was that delayed grade mapping creates attrition model blind spots and extended employee uncertainty.",
+                  "Month 6 — allowing adequate time for calibrated evaluation of all roles.",
+                  "Month 12 — as part of the full harmonisation completion."
+                ],
+                "ans": 1,
+                "exp": "Bridgeway's month-9 grade mapping created a blind spot in the attrition risk model that contributed to 4 undetected departures. Month 3 is the target that resolves both uncertainty and model coverage simultaneously."
+              },
+              {
+                "q": "The 'integration disruption' risk factor adds to the standard attrition model because:",
+                "opts": [
+                  "Standard compa-ratio models do not apply to acquired employees.",
+                  "Post-acquisition identity disruption (role, team, reporting line changes) is a specific attrition driver that is not captured by compa-ratio or performance metrics.",
+                  "The integration disruption factor is required for the model to comply with employment law in the UK and Nigeria.",
+                  "It replaces the role type mobility factor for acquired employees during the integration period."
+                ],
+                "ans": 1,
+                "exp": "Standard risk models capture compensation-driven attrition signals. Integration disruption captures the acquisition-specific experience of employees whose working context has changed — a real attrition driver that compensation data does not reflect."
+              },
+              {
+                "q": "Vantage UK employees moving from 75% employer health contribution to Castleton's 80% should be communicated as:",
+                "opts": [
+                  "A change to their health plan requiring them to register with a different employer scheme.",
+                  "A day-one improvement — their employer contribution has increased by 5% — communicated alongside all other immediate benefits enhancements.",
+                  "A neutral administrative change to align with the Castleton programme.",
+                  "A future change to take effect at month 12 alongside the full harmonisation."
+                ],
+                "ans": 1,
+                "exp": "Benefits improvements should be communicated as immediate enhancements on day 1 — they build goodwill and create a positive frame for the integration before any subsequent adjustments are required."
+              },
+              {
+                "q": "Using Vantage's existing salary structure as a compa-ratio proxy before grades are confirmed allows:",
+                "opts": [
+                  "Accurate risk scoring from day 1 using verified grade data.",
+                  "A workable interim risk model that covers the acquired population before the evaluation is complete — imperfect but better than excluding 100% of Vantage employees until month 3.",
+                  "The Castleton grade structure to be retired while Vantage's structure is used during the integration period.",
+                  "The attrition model to produce grade-specific recommendations before the evaluation panel has begun."
+                ],
+                "ans": 1,
+                "exp": "An imperfect model that covers all employees immediately is more valuable than a perfect model that takes 3 months to build — the interim proxy enables early risk identification during the highest-risk period post-close."
+              },
+              {
+                "q": "The top 5 lessons from the Bridgeway integration become which type of document for the Vantage integration?",
+                "opts": [
+                  "The post-integration performance review for the Bridgeway integration team.",
+                  "The due diligence and integration planning checklist — converting lessons into institutional knowledge that prevents recurrence.",
+                  "A board report on what went wrong with the Bridgeway acquisition.",
+                  "A risk register submitted to the Castleton investment committee before the Vantage deal is approved."
+                ],
+                "ans": 1,
+                "exp": "Structured review of integration lessons converts experience into replicable process — the checklist is the mechanism that prevents the same failures from recurring in successive acquisitions."
+              },
+              {
+                "q": "Vantage Lagos's pension moving from 10% to 12% employer contribution should be:",
+                "opts": [
+                  "Deferred to month 12 when the full harmonisation is completed.",
+                  "Communicated as a day-1 enhancement — it is a benefit improvement that builds goodwill at the most sensitive communication moment of the integration.",
+                  "Implemented quietly through payroll without a specific employee communication.",
+                  "Confirmed by the Nigerian pension regulator before being communicated to employees."
+                ],
+                "ans": 1,
+                "exp": "Any benefit improvement should be communicated proactively as an enhancement — day 1 is the highest-impact moment for this communication, and silent implementation misses the goodwill opportunity."
+              },
+              {
+                "q": "An 8% voluntary attrition target for Vantage in year 1 (vs Bridgeway's actual 15%) is achievable primarily through:",
+                "opts": [
+                  "A larger retention bonus fund for Vantage employees.",
+                  "Day-1 communication completeness, month-3 grade mapping, and an attrition risk model covering all employees from the start — addressing the specific failures that produced the Bridgeway shortfall.",
+                  "A longer integration timeline that gives employees more time to adjust.",
+                  "Keeping Vantage operating as a separate brand and entity for 24 months post-close."
+                ],
+                "ans": 1,
+                "exp": "The three specific Bridgeway failures (communication gap, delayed grade mapping, attrition model exclusion) directly caused the 7-percentage-point shortfall — addressing all three is the evidence-based path to the 8% target."
+              },
+              {
+                "q": "The Vantage acquisition capstone applies Bridgeway lessons primarily by:",
+                "opts": [
+                  "Avoiding all the integration decisions that were made in the Bridgeway case.",
+                  "Converting experience into a systematic pre-close preparation and day-1 execution that addresses the root causes of Bridgeway's communication and attrition outcomes.",
+                  "Assigning a larger integration team to handle the increased headcount.",
+                  "Negotiating a lower purchase price to allow more budget for integration costs."
+                ],
+                "ans": 1,
+                "exp": "Institutional learning is the process of converting specific failures into specific process improvements — the Vantage plan is the Bridgeway lessons applied systematically, not a wholesale redesign."
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ];
 
