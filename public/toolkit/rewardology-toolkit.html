@@ -14,7 +14,7 @@
   --white:#fff;--rule:rgba(255,255,255,.09);
   --sans:'DM Sans','Segoe UI',sans-serif;
   --serif:'Cormorant Garamond',Georgia,serif;
-  --c1:#C8963E;--c2:#0C6B65;--c3:#6B4C9A;--c4:#B84B4B;--c5:#3A7D44;--c6:#0C6B65;--c7:#6B4C9A;--c8:#B84B4B;--c9:#3A7D44;--c10:#C8963E;
+  --c1:#C8963E;--c2:#0C6B65;--c3:#6B4C9A;--c4:#B84B4B;--c5:#3A7D44;--c6:#0C6B65;--c7:#6B4C9A;--c8:#B84B4B;--c9:#3A7D44;--c10:#C8963E;--c11:#2D6A9F;--c12:#7B3FA0;--c13:#1A7A4A;--c14:#C25B20;--c15:#6B3A2A;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
@@ -107,7 +107,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 </head>
 <body>
 <div class="menu-btn" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</div>
-<div class="sidebar" id="sidebar"><div class="sb-brand"><div class="sb-mark"><div class="sb-logo">R</div><div><div class="sb-name">Rewardology</div><div class="sb-sub">Practitioner Toolkit</div></div></div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#C8963E"></div>Course 1 · Total Rewards Foundations</div><div class="sb-item" id="nav-t01" onclick="showTool('t01')" style="--active-c:var(--c1)"><span class="sb-item-icon">🎯</span>Five Pillars Diagnostic</div><div class="sb-item" id="nav-t02" onclick="showTool('t02')" style="--active-c:var(--c1)"><span class="sb-item-icon">📋</span>Total Reward Statement Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#0C6B65"></div>Course 2 · Compensation & Benefits Essentials</div><div class="sb-item" id="nav-t03" onclick="showTool('t03')" style="--active-c:var(--c2)"><span class="sb-item-icon">📐</span>Salary Range Builder</div><div class="sb-item" id="nav-t04" onclick="showTool('t04')" style="--active-c:var(--c2)"><span class="sb-item-icon">📊</span>Market Pricing Worksheet</div><div class="sb-item" id="nav-t05" onclick="showTool('t05')" style="--active-c:var(--c2)"><span class="sb-item-icon">💰</span>Benefits Budget Calculator</div><div class="sb-item" id="nav-t06" onclick="showTool('t06')" style="--active-c:var(--c2)"><span class="sb-item-icon">✅</span>Approval Matrix Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#6B4C9A"></div>Course 3 · Pay Equity & Job Evaluation</div><div class="sb-item" id="nav-t07" onclick="showTool('t07')" style="--active-c:var(--c3)"><span class="sb-item-icon">⚖️</span>Point-Factor Evaluation Scorecard</div><div class="sb-item" id="nav-t08" onclick="showTool('t08')" style="--active-c:var(--c3)"><span class="sb-item-icon">📉</span>Pay Gap Calculator</div><div class="sb-item" id="nav-t09" onclick="showTool('t09')" style="--active-c:var(--c3)"><span class="sb-item-icon">🔧</span>Remediation Budget Calculator</div><div class="sb-item" id="nav-t10" onclick="showTool('t10')" style="--active-c:var(--c3)"><span class="sb-item-icon">📋</span>Pay Equity Audit Checklist</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#B84B4B"></div>Course 4 · Pay Transparency & Communication</div><div class="sb-item" id="nav-t11" onclick="showTool('t11')" style="--active-c:var(--c4)"><span class="sb-item-icon">🔍</span>Transparency Maturity Assessment</div><div class="sb-item" id="nav-t12" onclick="showTool('t12')" style="--active-c:var(--c4)"><span class="sb-item-icon">💬</span>Manager Briefing Pack</div><div class="sb-item" id="nav-t13" onclick="showTool('t13')" style="--active-c:var(--c4)"><span class="sb-item-icon">📄</span>Total Reward Statement Template</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#3A7D44"></div>Course 5 · HR Analytics & Career Development</div><div class="sb-item" id="nav-t14" onclick="showTool('t14')" style="--active-c:var(--c5)"><span class="sb-item-icon">📈</span>Compa-Ratio Distribution Analyser</div><div class="sb-item" id="nav-t15" onclick="showTool('t15')" style="--active-c:var(--c5)"><span class="sb-item-icon">⚠️</span>Flight-Risk Scoring Tool</div><div class="sb-item" id="nav-t16" onclick="showTool('t16')" style="--active-c:var(--c5)"><span class="sb-item-icon">💹</span>Turnover Cost & ROI Calculator</div><div class="sb-item" id="nav-t17" onclick="showTool('t17')" style="--active-c:var(--c5)"><span class="sb-item-icon">🗺️</span>Career Lattice Mapping Tool</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#0C6B65"></div>Course 6 · Variable Pay &amp; STI Design</div><div class="sb-item" id="nav-t18" onclick="showTool('t18')" style="--active-c:var(--c6)"><span class="sb-item-icon">🎯</span>STI Framework Planner</div><div class="sb-item" id="nav-t19" onclick="showTool('t19')" style="--active-c:var(--c6)"><span class="sb-item-icon">📈</span>Payout Curve Calculator</div><div class="sb-item" id="nav-t20" onclick="showTool('t20')" style="--active-c:var(--c6)"><span class="sb-item-icon">🔒</span>Governance Gate Checklist</div><div class="sb-item" id="nav-t21" onclick="showTool('t21')" style="--active-c:var(--c6)"><span class="sb-item-icon">💬</span>Manager Briefing Template</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#6B4C9A"></div>Course 7 · Benefits Design &amp; Administration</div><div class="sb-item" id="nav-t22" onclick="showTool('t22')" style="--active-c:var(--c7)"><span class="sb-item-icon">🔍</span>Benefits Portfolio Auditor</div><div class="sb-item" id="nav-t23" onclick="showTool('t23')" style="--active-c:var(--c7)"><span class="sb-item-icon">🏥</span>Health Plan Cost Comparison</div><div class="sb-item" id="nav-t24" onclick="showTool('t24')" style="--active-c:var(--c7)"><span class="sb-item-icon">🏦</span>Pension Contribution Modeller</div><div class="sb-item" id="nav-t25" onclick="showTool('t25')" style="--active-c:var(--c7)"><span class="sb-item-icon">⚙️</span>Flex Benefits Budget Planner</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#B84B4B"></div>Course 8 · Executive Compensation &amp; LTI</div><div class="sb-item" id="nav-t26" onclick="showTool('t26')" style="--active-c:var(--c8)"><span class="sb-item-icon">🎯</span>LTI Vehicle Selector</div><div class="sb-item" id="nav-t27" onclick="showTool('t27')" style="--active-c:var(--c8)"><span class="sb-item-icon">📊</span>PSU Vesting Schedule Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#3A7D44"></div>Course 9 · Sales Compensation Design</div><div class="sb-item" id="nav-t28" onclick="showTool('t28')" style="--active-c:var(--c9)"><span class="sb-item-icon">📋</span>TTC Benchmarking Worksheet</div><div class="sb-item" id="nav-t29" onclick="showTool('t29')" style="--active-c:var(--c9)"><span class="sb-item-icon">💰</span>Commission Payout Table Builder</div><div class="sb-item" id="nav-t30" onclick="showTool('t30')" style="--active-c:var(--c9)"><span class="sb-item-icon">📉</span>Quota Attainment Analyser</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#C8963E"></div>Course 10 · Global Compensation &amp; Mobility</div><div class="sb-item" id="nav-t31" onclick="showTool('t31')" style="--active-c:var(--c10)"><span class="sb-item-icon">🌍</span>Geographic Differential Matrix</div><div class="sb-item" id="nav-t32" onclick="showTool('t32')" style="--active-c:var(--c10)"><span class="sb-item-icon">✈️</span>Expat Balance Sheet Calculator</div></div></div>
+<div class="sidebar" id="sidebar"><div class="sb-brand"><div class="sb-mark"><div class="sb-logo">R</div><div><div class="sb-name">Rewardology</div><div class="sb-sub">Practitioner Toolkit</div></div></div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#C8963E"></div>Course 1 · Total Rewards Foundations</div><div class="sb-item" id="nav-t01" onclick="showTool('t01')" style="--active-c:var(--c1)"><span class="sb-item-icon">🎯</span>Five Pillars Diagnostic</div><div class="sb-item" id="nav-t02" onclick="showTool('t02')" style="--active-c:var(--c1)"><span class="sb-item-icon">📋</span>Total Reward Statement Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#0C6B65"></div>Course 2 · Compensation & Benefits Essentials</div><div class="sb-item" id="nav-t03" onclick="showTool('t03')" style="--active-c:var(--c2)"><span class="sb-item-icon">📐</span>Salary Range Builder</div><div class="sb-item" id="nav-t04" onclick="showTool('t04')" style="--active-c:var(--c2)"><span class="sb-item-icon">📊</span>Market Pricing Worksheet</div><div class="sb-item" id="nav-t05" onclick="showTool('t05')" style="--active-c:var(--c2)"><span class="sb-item-icon">💰</span>Benefits Budget Calculator</div><div class="sb-item" id="nav-t06" onclick="showTool('t06')" style="--active-c:var(--c2)"><span class="sb-item-icon">✅</span>Approval Matrix Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#6B4C9A"></div>Course 3 · Pay Equity & Job Evaluation</div><div class="sb-item" id="nav-t07" onclick="showTool('t07')" style="--active-c:var(--c3)"><span class="sb-item-icon">⚖️</span>Point-Factor Evaluation Scorecard</div><div class="sb-item" id="nav-t08" onclick="showTool('t08')" style="--active-c:var(--c3)"><span class="sb-item-icon">📉</span>Pay Gap Calculator</div><div class="sb-item" id="nav-t09" onclick="showTool('t09')" style="--active-c:var(--c3)"><span class="sb-item-icon">🔧</span>Remediation Budget Calculator</div><div class="sb-item" id="nav-t10" onclick="showTool('t10')" style="--active-c:var(--c3)"><span class="sb-item-icon">📋</span>Pay Equity Audit Checklist</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#B84B4B"></div>Course 4 · Pay Transparency & Communication</div><div class="sb-item" id="nav-t11" onclick="showTool('t11')" style="--active-c:var(--c4)"><span class="sb-item-icon">🔍</span>Transparency Maturity Assessment</div><div class="sb-item" id="nav-t12" onclick="showTool('t12')" style="--active-c:var(--c4)"><span class="sb-item-icon">💬</span>Manager Briefing Pack</div><div class="sb-item" id="nav-t13" onclick="showTool('t13')" style="--active-c:var(--c4)"><span class="sb-item-icon">📄</span>Total Reward Statement Template</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#3A7D44"></div>Course 5 · HR Analytics & Career Development</div><div class="sb-item" id="nav-t14" onclick="showTool('t14')" style="--active-c:var(--c5)"><span class="sb-item-icon">📈</span>Compa-Ratio Distribution Analyser</div><div class="sb-item" id="nav-t15" onclick="showTool('t15')" style="--active-c:var(--c5)"><span class="sb-item-icon">⚠️</span>Flight-Risk Scoring Tool</div><div class="sb-item" id="nav-t16" onclick="showTool('t16')" style="--active-c:var(--c5)"><span class="sb-item-icon">💹</span>Turnover Cost & ROI Calculator</div><div class="sb-item" id="nav-t17" onclick="showTool('t17')" style="--active-c:var(--c5)"><span class="sb-item-icon">🗺️</span>Career Lattice Mapping Tool</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#0C6B65"></div>Course 6 · Variable Pay &amp; STI Design</div><div class="sb-item" id="nav-t18" onclick="showTool('t18')" style="--active-c:var(--c6)"><span class="sb-item-icon">🎯</span>STI Framework Planner</div><div class="sb-item" id="nav-t19" onclick="showTool('t19')" style="--active-c:var(--c6)"><span class="sb-item-icon">📈</span>Payout Curve Calculator</div><div class="sb-item" id="nav-t20" onclick="showTool('t20')" style="--active-c:var(--c6)"><span class="sb-item-icon">🔒</span>Governance Gate Checklist</div><div class="sb-item" id="nav-t21" onclick="showTool('t21')" style="--active-c:var(--c6)"><span class="sb-item-icon">💬</span>Manager Briefing Template</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#6B4C9A"></div>Course 7 · Benefits Design &amp; Administration</div><div class="sb-item" id="nav-t22" onclick="showTool('t22')" style="--active-c:var(--c7)"><span class="sb-item-icon">🔍</span>Benefits Portfolio Auditor</div><div class="sb-item" id="nav-t23" onclick="showTool('t23')" style="--active-c:var(--c7)"><span class="sb-item-icon">🏥</span>Health Plan Cost Comparison</div><div class="sb-item" id="nav-t24" onclick="showTool('t24')" style="--active-c:var(--c7)"><span class="sb-item-icon">🏦</span>Pension Contribution Modeller</div><div class="sb-item" id="nav-t25" onclick="showTool('t25')" style="--active-c:var(--c7)"><span class="sb-item-icon">⚙️</span>Flex Benefits Budget Planner</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#B84B4B"></div>Course 8 · Executive Compensation &amp; LTI</div><div class="sb-item" id="nav-t26" onclick="showTool('t26')" style="--active-c:var(--c8)"><span class="sb-item-icon">🎯</span>LTI Vehicle Selector</div><div class="sb-item" id="nav-t27" onclick="showTool('t27')" style="--active-c:var(--c8)"><span class="sb-item-icon">📊</span>PSU Vesting Schedule Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#3A7D44"></div>Course 9 · Sales Compensation Design</div><div class="sb-item" id="nav-t28" onclick="showTool('t28')" style="--active-c:var(--c9)"><span class="sb-item-icon">📋</span>TTC Benchmarking Worksheet</div><div class="sb-item" id="nav-t29" onclick="showTool('t29')" style="--active-c:var(--c9)"><span class="sb-item-icon">💰</span>Commission Payout Table Builder</div><div class="sb-item" id="nav-t30" onclick="showTool('t30')" style="--active-c:var(--c9)"><span class="sb-item-icon">📉</span>Quota Attainment Analyser</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#C8963E"></div>Course 10 · Global Compensation &amp; Mobility</div><div class="sb-item" id="nav-t31" onclick="showTool('t31')" style="--active-c:var(--c10)"><span class="sb-item-icon">🌍</span>Geographic Differential Matrix</div><div class="sb-item" id="nav-t32" onclick="showTool('t32')" style="--active-c:var(--c10)"><span class="sb-item-icon">✈️</span>Expat Balance Sheet Calculator</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#2D6A9F"></div>Course 11 · Job Evaluation &amp; Grade Architecture</div><div class="sb-item" id="nav-t33" onclick="showTool('t33')" style="--active-c:var(--c11)"><span class="sb-item-icon">⚖️</span>Point-Factor Evaluation Scorecard</div><div class="sb-item" id="nav-t34" onclick="showTool('t34')" style="--active-c:var(--c11)"><span class="sb-item-icon">🏗️</span>Grade Structure Builder</div><div class="sb-item" id="nav-t35" onclick="showTool('t35')" style="--active-c:var(--c11)"><span class="sb-item-icon">🔎</span>Grade Inflation Auditor</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#7B3FA0"></div>Course 12 · Pay Equity Analysis &amp; Reporting</div><div class="sb-item" id="nav-t36" onclick="showTool('t36')" style="--active-c:var(--c12)"><span class="sb-item-icon">📊</span>Gender Pay Gap Calculator</div><div class="sb-item" id="nav-t37" onclick="showTool('t37')" style="--active-c:var(--c12)"><span class="sb-item-icon">🔬</span>Pay Equity Cohort Analyser</div><div class="sb-item" id="nav-t38" onclick="showTool('t38')" style="--active-c:var(--c12)"><span class="sb-item-icon">💊</span>Remediation Cost Modeller</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#1A7A4A"></div>Course 13 · Reward Communication</div><div class="sb-item" id="nav-t39" onclick="showTool('t39')" style="--active-c:var(--c13)"><span class="sb-item-icon">📋</span>TRS Builder</div><div class="sb-item" id="nav-t40" onclick="showTool('t40')" style="--active-c:var(--c13)"><span class="sb-item-icon">💬</span>Manager Conversation Scorer</div><div class="sb-item" id="nav-t41" onclick="showTool('t41')" style="--active-c:var(--c13)"><span class="sb-item-icon">🔓</span>Pay Transparency Readiness</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#C25B20"></div>Course 14 · Compensation Analytics</div><div class="sb-item" id="nav-t42" onclick="showTool('t42')" style="--active-c:var(--c14)"><span class="sb-item-icon">📐</span>Merit Matrix Builder</div><div class="sb-item" id="nav-t43" onclick="showTool('t43')" style="--active-c:var(--c14)"><span class="sb-item-icon">⚠️</span>Attrition Risk Scorer</div><div class="sb-item" id="nav-t44" onclick="showTool('t44')" style="--active-c:var(--c14)"><span class="sb-item-icon">🗂️</span>Data Quality Auditor</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#6B3A2A"></div>Course 15 · M&amp;A Reward Integration</div><div class="sb-item" id="nav-t45" onclick="showTool('t45')" style="--active-c:var(--c15)"><span class="sb-item-icon">🔍</span>HR Due Diligence Checklist</div><div class="sb-item" id="nav-t46" onclick="showTool('t46')" style="--active-c:var(--c15)"><span class="sb-item-icon">💷</span>Harmonisation Cost Modeller</div><div class="sb-item" id="nav-t47" onclick="showTool('t47')" style="--active-c:var(--c15)"><span class="sb-item-icon">📅</span>Integration Comms Planner</div></div></div>
 <div class="main" id="main">
 <div class="tool-panel" id="panel-t01" style="--active-c:var(--c1)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c1)">Course 1 · Total Rewards Foundations</div><div class="tool-title">Five Pillars Diagnostic</div><div class="tool-desc">Score each pillar 1–5 using real data from exit interviews, engagement surveys, and turnover reports. The tool identifies your weakest pillar and recommends where to focus investment first.</div></div>
 <div class="section"><div class="section-title">Rate each pillar</div>
@@ -848,12 +848,321 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 </div>
 <div style="margin-top:14px;padding:12px 14px;background:rgba(255,255,255,.03);border-radius:8px;font-size:12px;color:rgba(255,255,255,.4)">⚠️ Tax equalization is an estimate only. Engage an international tax advisor for an accurate gross-up calculation before approving assignment cost.</div>
 </div></div>
+<div class="tool-panel" id="panel-t33" style="--active-c:var(--c11)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c11)">Course 11 · Job Evaluation &amp; Grade Architecture</div><div class="tool-title">Point-Factor Evaluation Scorecard</div><div class="tool-desc">Score up to 4 roles on a 4-factor scheme (Knowledge, Problem-Solving, Accountability, Communication). The tool calculates total evaluation points, assigns a grade band, and flags panel calibration divergences.</div></div>
+<div class="section"><div class="section-title">Factor scheme (points per level)</div>
+<div class="grid-2" style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:12px"><div>Knowledge: L1=50 L2=100 L3=150 L4=200 (max 200)</div><div>Problem-Solving: L1=40 L2=80 L3=120 L4=150 (max 150)</div><div>Accountability: L1=50 L2=100 L3=150 L4=200 (max 200)</div><div>Communication: L1=25 L2=50 L3=75 L4=100 (max 100)</div></div>
+<div class="field"><label>Grade bands: G1=50-200 | G2=201-320 | G3=321-440 | G4=441-550 | G5=551+</label></div>
+</div>
+<div id="pfe-roles">
+<div class="section" style="margin-bottom:8px"><div class="section-title">Role 1</div><div class="grid-3"><div class="field"><label>Role name</label><input type="text" class="pfe-name" placeholder="Payroll Administrator" oninput="calcPFE()"></div></div><div class="grid-2"><div class="field"><label>Knowledge (1-4)</label><input type="number" class="pfe-k" min="1" max="4" placeholder="2" oninput="calcPFE()"></div><div class="field"><label>Problem-Solving (1-4)</label><input type="number" class="pfe-ps" min="1" max="4" placeholder="1" oninput="calcPFE()"></div><div class="field"><label>Accountability (1-4)</label><input type="number" class="pfe-ac" min="1" max="4" placeholder="2" oninput="calcPFE()"></div><div class="field"><label>Communication (1-4)</label><input type="number" class="pfe-cm" min="1" max="4" placeholder="2" oninput="calcPFE()"></div></div></div>
+<div class="section" style="margin-bottom:8px"><div class="section-title">Role 2</div><div class="grid-3"><div class="field"><label>Role name</label><input type="text" class="pfe-name" placeholder="Senior Comp Analyst" oninput="calcPFE()"></div></div><div class="grid-2"><div class="field"><label>Knowledge (1-4)</label><input type="number" class="pfe-k" min="1" max="4" placeholder="3" oninput="calcPFE()"></div><div class="field"><label>Problem-Solving (1-4)</label><input type="number" class="pfe-ps" min="1" max="4" placeholder="3" oninput="calcPFE()"></div><div class="field"><label>Accountability (1-4)</label><input type="number" class="pfe-ac" min="1" max="4" placeholder="3" oninput="calcPFE()"></div><div class="field"><label>Communication (1-4)</label><input type="number" class="pfe-cm" min="1" max="4" placeholder="3" oninput="calcPFE()"></div></div></div>
+</div>
+<div class="result-block colored" id="pfe-result" style="display:none"><div id="pfe-cards" class="out-grid"></div></div></div>
+
+<div class="tool-panel" id="panel-t34" style="--active-c:var(--c11)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c11)">Course 11 · Job Evaluation &amp; Grade Architecture</div><div class="tool-title">Grade Structure Builder</div><div class="tool-desc">Enter midpoints for up to 6 grades and your spread policy. The tool builds the full min/mid/max range table, calculates grade overlap, and shows the progression ratio between adjacent midpoints.</div></div>
+<div class="section"><div class="section-title">Design parameters</div>
+<div class="grid-2"><div class="field"><label>Spread policy (± % of midpoint)</label><input type="number" id="gs-spread" placeholder="25" oninput="calcGS()"></div><div class="field"><label>Currency / label</label><input type="text" id="gs-curr" placeholder="£" oninput="calcGS()"></div></div></div>
+<div class="section"><div class="section-title">Grade midpoints</div>
+<div id="gs-inputs">
+<div class="grid-3">
+<div class="field"><label>G1 midpoint</label><input type="number" class="gs-mid" placeholder="28000" oninput="calcGS()"></div>
+<div class="field"><label>G2 midpoint</label><input type="number" class="gs-mid" placeholder="38000" oninput="calcGS()"></div>
+<div class="field"><label>G3 midpoint</label><input type="number" class="gs-mid" placeholder="50000" oninput="calcGS()"></div>
+<div class="field"><label>G4 midpoint</label><input type="number" class="gs-mid" placeholder="66000" oninput="calcGS()"></div>
+<div class="field"><label>G5 midpoint</label><input type="number" class="gs-mid" placeholder="86000" oninput="calcGS()"></div>
+<div class="field"><label>G6 midpoint (optional)</label><input type="number" class="gs-mid" placeholder="" oninput="calcGS()"></div>
+</div></div></div>
+<div id="gs-table-wrap" style="display:none;margin-top:18px">
+<div class="section-title" style="margin-bottom:10px">Grade structure</div>
+<table style="width:100%;border-collapse:collapse;font-size:13px" id="gs-table"></table>
+<div style="margin-top:12px;padding:12px;background:rgba(255,255,255,.03);border-radius:8px;font-size:12px;line-height:1.7;color:rgba(255,255,255,.55)" id="gs-notes"></div>
+</div></div>
+
+<div class="tool-panel" id="panel-t35" style="--active-c:var(--c11)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c11)">Course 11 · Job Evaluation &amp; Grade Architecture</div><div class="tool-title">Grade Inflation Auditor</div><div class="tool-desc">Enter your designed and actual grade distribution. The tool calculates the divergence per grade, identifies inflation-affected grades, and estimates the remediation priority order.</div></div>
+<div class="section"><div class="section-title">Organisation parameters</div>
+<div class="field"><label>Total headcount</label><input type="number" id="gi-hc" placeholder="280" oninput="calcGI()"></div>
+</div>
+<div class="section"><div class="section-title">Grade distribution (% of headcount)</div>
+<div id="gi-grades">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;font-size:12px;color:rgba(255,255,255,.5);margin-bottom:6px"><div>Grade</div><div>Designed %</div><div>Actual %</div></div>
+<div class="gi-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:6px;align-items:center"><div style="font-size:13px">G1</div><div><input type="number" class="gi-des" placeholder="15" oninput="calcGI()"></div><div><input type="number" class="gi-act" placeholder="8" oninput="calcGI()"></div></div>
+<div class="gi-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:6px;align-items:center"><div style="font-size:13px">G2</div><div><input type="number" class="gi-des" placeholder="30" oninput="calcGI()"></div><div><input type="number" class="gi-act" placeholder="18" oninput="calcGI()"></div></div>
+<div class="gi-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:6px;align-items:center"><div style="font-size:13px">G3</div><div><input type="number" class="gi-des" placeholder="30" oninput="calcGI()"></div><div><input type="number" class="gi-act" placeholder="25" oninput="calcGI()"></div></div>
+<div class="gi-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:6px;align-items:center"><div style="font-size:13px">G4</div><div><input type="number" class="gi-des" placeholder="15" oninput="calcGI()"></div><div><input type="number" class="gi-act" placeholder="32" oninput="calcGI()"></div></div>
+<div class="gi-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:6px;align-items:center"><div style="font-size:13px">G5</div><div><input type="number" class="gi-des" placeholder="8" oninput="calcGI()"></div><div><input type="number" class="gi-act" placeholder="12" oninput="calcGI()"></div></div>
+<div class="gi-row" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;align-items:center"><div style="font-size:13px">G6</div><div><input type="number" class="gi-des" placeholder="2" oninput="calcGI()"></div><div><input type="number" class="gi-act" placeholder="5" oninput="calcGI()"></div></div>
+</div></div>
+<div class="result-block colored" id="gi-result" style="display:none">
+<div class="out-grid" id="gi-summary"></div>
+<div style="margin-top:14px;font-size:12px;color:rgba(255,255,255,.6)" id="gi-notes"></div>
+</div></div>
+
+<div class="tool-panel" id="panel-t36" style="--active-c:var(--c12)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c12)">Course 12 · Pay Equity Analysis &amp; Reporting</div><div class="tool-title">Gender Pay Gap Calculator</div><div class="tool-desc">Enter median and mean hourly pay for men and women, plus bonus data. The tool calculates UK statutory pay gap figures, bonus gap, and participation gap — ready for your statutory report.</div></div>
+<div class="section"><div class="section-title">Hourly pay (same currency)</div>
+<div class="grid-2">
+<div class="field"><label>Women's median hourly pay</label><input type="number" id="gpg-wmed" placeholder="18.40" step="0.01" oninput="calcGPG()"></div>
+<div class="field"><label>Men's median hourly pay</label><input type="number" id="gpg-mmed" placeholder="24.20" step="0.01" oninput="calcGPG()"></div>
+<div class="field"><label>Women's mean hourly pay</label><input type="number" id="gpg-wmean" placeholder="21.80" step="0.01" oninput="calcGPG()"></div>
+<div class="field"><label>Men's mean hourly pay</label><input type="number" id="gpg-mmean" placeholder="29.60" step="0.01" oninput="calcGPG()"></div>
+</div></div>
+<div class="section"><div class="section-title">Bonus data</div>
+<div class="grid-2">
+<div class="field"><label>Women's median bonus</label><input type="number" id="gpg-wbon" placeholder="3200" oninput="calcGPG()"></div>
+<div class="field"><label>Men's median bonus</label><input type="number" id="gpg-mbon" placeholder="5800" oninput="calcGPG()"></div>
+<div class="field"><label>Women receiving bonus (%)</label><input type="number" id="gpg-wpct" placeholder="61" oninput="calcGPG()"></div>
+<div class="field"><label>Men receiving bonus (%)</label><input type="number" id="gpg-mpct" placeholder="78" oninput="calcGPG()"></div>
+</div></div>
+<div class="result-block colored" id="gpg-result" style="display:none">
+<div class="out-grid">
+<div class="out-card highlight"><div class="out-label">Median pay gap</div><div class="out-val" id="gpg-med-out">—</div></div>
+<div class="out-card highlight"><div class="out-label">Mean pay gap</div><div class="out-val" id="gpg-mean-out">—</div></div>
+<div class="out-card"><div class="out-label">Median bonus gap</div><div class="out-val" id="gpg-bon-out">—</div></div>
+<div class="out-card"><div class="out-label">Bonus participation gap</div><div class="out-val" id="gpg-par-out">—</div></div>
+</div>
+<div style="margin-top:14px;padding:12px;background:rgba(255,255,255,.03);border-radius:8px;font-size:12px;color:rgba(255,255,255,.55)" id="gpg-notes"></div>
+</div></div>
+
+<div class="tool-panel" id="panel-t37" style="--active-c:var(--c12)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c12)">Course 12 · Pay Equity Analysis &amp; Reporting</div><div class="tool-title">Pay Equity Cohort Analyser</div><div class="tool-desc">Enter average pay by gender for up to 5 grade cohorts. The tool calculates within-grade pay gaps, flags statistically unreliable results (small sample), and prioritises grades for individual case review.</div></div>
+<div class="section"><div class="section-title">Grade cohorts</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:8px;font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px"><div>Grade</div><div>F avg pay</div><div>F count</div><div>M avg pay</div><div>M count</div></div>
+<div id="peca-rows">
+<div class="peca-row" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:8px;margin-bottom:6px;align-items:center">
+<div style="font-size:13px">G3</div><div><input type="number" class="peca-fsal" placeholder="46200" oninput="calcPECA()"></div><div><input type="number" class="peca-fn" placeholder="42" oninput="calcPECA()"></div><div><input type="number" class="peca-msal" placeholder="48400" oninput="calcPECA()"></div><div><input type="number" class="peca-mn" placeholder="22" oninput="calcPECA()"></div>
+</div>
+<div class="peca-row" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:8px;margin-bottom:6px;align-items:center">
+<div style="font-size:13px">G4</div><div><input type="number" class="peca-fsal" placeholder="61800" oninput="calcPECA()"></div><div><input type="number" class="peca-fn" placeholder="22" oninput="calcPECA()"></div><div><input type="number" class="peca-msal" placeholder="65200" oninput="calcPECA()"></div><div><input type="number" class="peca-mn" placeholder="38" oninput="calcPECA()"></div>
+</div>
+<div class="peca-row" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:8px;margin-bottom:6px;align-items:center">
+<div style="font-size:13px">G5</div><div><input type="number" class="peca-fsal" placeholder="82000" oninput="calcPECA()"></div><div><input type="number" class="peca-fn" placeholder="8" oninput="calcPECA()"></div><div><input type="number" class="peca-msal" placeholder="87500" oninput="calcPECA()"></div><div><input type="number" class="peca-mn" placeholder="26" oninput="calcPECA()"></div>
+</div>
+</div></div>
+<div id="peca-table-wrap" style="display:none;margin-top:18px">
+<table style="width:100%;border-collapse:collapse;font-size:12px" id="peca-table"></table>
+</div></div>
+
+<div class="tool-panel" id="panel-t38" style="--active-c:var(--c12)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c12)">Course 12 · Pay Equity Analysis &amp; Reporting</div><div class="tool-title">Remediation Cost Modeller</div><div class="tool-desc">Model the annual cost of pay equity salary corrections for up to 3 finding types (point-of-hire, merit gap, parental leave). See total year-1 cost, ongoing cost, and cost as a percentage of payroll.</div></div>
+<div class="section"><div class="section-title">Organisation baseline</div>
+<div class="grid-2"><div class="field"><label>Total annual payroll ($)</label><input type="number" id="rem-payroll" placeholder="5000000" oninput="calcREM()"></div></div></div>
+<div class="section"><div class="section-title">Finding type 1 — Point-of-hire salary gaps</div>
+<div class="grid-3">
+<div class="field"><label>Affected employees</label><input type="number" id="rem-hire-n" placeholder="14" oninput="calcREM()"></div>
+<div class="field"><label>Average annual correction ($)</label><input type="number" id="rem-hire-amt" placeholder="3000" oninput="calcREM()"></div>
+<div class="field"><label>Back-pay months (0 if none)</label><input type="number" id="rem-hire-back" placeholder="0" oninput="calcREM()"></div>
+</div></div>
+<div class="section"><div class="section-title">Finding type 2 — Merit allocation gaps</div>
+<div class="grid-2">
+<div class="field"><label>Affected employees</label><input type="number" id="rem-merit-n" placeholder="9" oninput="calcREM()"></div>
+<div class="field"><label>Average annual catch-up ($)</label><input type="number" id="rem-merit-amt" placeholder="3100" oninput="calcREM()"></div>
+</div></div>
+<div class="section"><div class="section-title">Finding type 3 — Parental leave review misses (one-off)</div>
+<div class="grid-2">
+<div class="field"><label>Affected employees</label><input type="number" id="rem-mat-n" placeholder="4" oninput="calcREM()"></div>
+<div class="field"><label>Average arrears payment ($)</label><input type="number" id="rem-mat-amt" placeholder="2750" oninput="calcREM()"></div>
+</div></div>
+<div class="result-block colored" id="rem-result" style="display:none">
+<div class="out-grid">
+<div class="out-card highlight"><div class="out-label">Year 1 total cost</div><div class="out-val" id="rem-yr1">$0</div></div>
+<div class="out-card"><div class="out-label">Ongoing annual cost</div><div class="out-val" id="rem-ongoing">$0</div></div>
+<div class="out-card"><div class="out-label">Year 1 as % of payroll</div><div class="out-val" id="rem-pct">—</div></div>
+</div>
+<div style="margin-top:14px;padding:12px;background:rgba(255,255,255,.03);border-radius:8px;font-size:12px;color:rgba(255,255,255,.55)" id="rem-notes"></div>
+</div></div>
+
+<div class="tool-panel" id="panel-t39" style="--active-c:var(--c13)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c13)">Course 13 · Reward Communication</div><div class="tool-title">TRS Builder</div><div class="tool-desc">Enter an employee's compensation data. The tool builds a formatted Total Reward Statement showing employer-funded elements only, calculates annual leave value, and shows total reward as % above base salary.</div></div>
+<div class="section"><div class="section-title">Employee data</div>
+<div class="grid-2">
+<div class="field"><label>Employee name</label><input type="text" id="trs-name" placeholder="Sarah Adeyemi" oninput="buildTRS()"></div>
+<div class="field"><label>Base salary (£)</label><input type="number" id="trs-sal" placeholder="52000" oninput="buildTRS()"></div>
+<div class="field"><label>Bonus paid this year (£)</label><input type="number" id="trs-bon" placeholder="6200" oninput="buildTRS()"></div>
+<div class="field"><label>Employer pension contribution (%)</label><input type="number" id="trs-pen" placeholder="8" oninput="buildTRS()"></div>
+<div class="field"><label>Health insurance employer premium (£/yr)</label><input type="number" id="trs-health" placeholder="1840" oninput="buildTRS()"></div>
+<div class="field"><label>Life assurance cover (× salary)</label><input type="number" id="trs-life" placeholder="4" step="0.5" oninput="buildTRS()"></div>
+<div class="field"><label>Dental insurance employer cost (£/yr)</label><input type="number" id="trs-dental" placeholder="380" oninput="buildTRS()"></div>
+<div class="field"><label>Annual leave days</label><input type="number" id="trs-leave" placeholder="26" oninput="buildTRS()"></div>
+<div class="field"><label>L&amp;D investment (£/yr)</label><input type="number" id="trs-ld" placeholder="1200" oninput="buildTRS()"></div>
+</div></div>
+<div id="trs-doc" style="display:none;margin-top:18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:20px;font-size:13px;line-height:1.9;color:rgba(255,255,255,.85)"></div></div>
+
+<div class="tool-panel" id="panel-t40" style="--active-c:var(--c13)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c13)">Course 13 · Reward Communication</div><div class="tool-title">Manager Conversation Scorer</div><div class="tool-desc">Rate a manager's preparedness across the five core pay conversation questions. The tool scores readiness, identifies gaps, and generates a targeted preparation brief for each weak area.</div></div>
+<div class="section" id="mcs-items"></div>
+<div class="result-block colored" id="mcs-result" style="display:none">
+<div class="out-grid">
+<div class="out-card highlight"><div class="out-label">Readiness score</div><div class="out-val" id="mcs-score">—</div></div>
+<div class="out-card"><div class="out-label">Rating</div><div class="out-val sm" id="mcs-rating">—</div></div>
+</div>
+<div style="margin-top:14px;padding:14px;background:rgba(255,255,255,.03);border-radius:8px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.6)" id="mcs-gaps"></div>
+</div></div>
+
+<div class="tool-panel" id="panel-t41" style="--active-c:var(--c13)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c13)">Course 13 · Reward Communication</div><div class="tool-title">Pay Transparency Readiness Assessment</div><div class="tool-desc">Assess your organisation's readiness to post salary ranges externally. Answer 8 questions covering grade structure, internal communication, manager enablement, and market positioning. Get a readiness score and action plan.</div></div>
+<div class="section" id="ptr-items"></div>
+<div class="result-block colored" id="ptr-result" style="display:none">
+<div class="out-card highlight" style="margin-bottom:14px"><div class="out-label">Transparency readiness</div><div class="out-val" id="ptr-score">—</div></div>
+<div style="padding:14px;background:rgba(255,255,255,.03);border-radius:8px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.6)" id="ptr-plan"></div>
+</div></div>
+
+<div class="tool-panel" id="panel-t42" style="--active-c:var(--c14)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c14)">Course 14 · Compensation Analytics</div><div class="tool-title">Merit Matrix Builder &amp; Budget Validator</div><div class="tool-desc">Design a 3×3 merit matrix (performance × compa-ratio band), enter your actual population distribution, and validate that the weighted average equals your approved budget. The tool flags over- and under-budget designs.</div></div>
+<div class="section"><div class="section-title">Budget &amp; population</div>
+<div class="grid-3">
+<div class="field"><label>Approved pool (%)</label><input type="number" id="mm-pool" placeholder="5" step="0.1" oninput="calcMM()"></div>
+<div class="field"><label>Total eligible payroll ($)</label><input type="number" id="mm-payroll" placeholder="3200000" oninput="calcMM()"></div>
+</div>
+<div style="font-size:12px;color:rgba(255,255,255,.45);margin-top:8px">Population split (% in each performance tier):</div>
+<div class="grid-3" style="margin-top:8px">
+<div class="field"><label>Exceeds (%)</label><input type="number" id="mm-exc" placeholder="22" oninput="calcMM()"></div>
+<div class="field"><label>Meets (%)</label><input type="number" id="mm-mts" placeholder="61" oninput="calcMM()"></div>
+<div class="field"><label>Below (%)</label><input type="number" id="mm-bel" placeholder="17" oninput="calcMM()"></div>
+</div>
+<div style="font-size:12px;color:rgba(255,255,255,.45);margin-top:8px">Compa-ratio split (% in each band):</div>
+<div class="grid-3" style="margin-top:8px">
+<div class="field"><label>&lt;85% CR (%)</label><input type="number" id="mm-low" placeholder="28" oninput="calcMM()"></div>
+<div class="field"><label>85-115% CR (%)</label><input type="number" id="mm-mid" placeholder="52" oninput="calcMM()"></div>
+<div class="field"><label>&gt;115% CR (%)</label><input type="number" id="mm-high" placeholder="20" oninput="calcMM()"></div>
+</div></div>
+<div class="section"><div class="section-title">Matrix cells (increase % — Below row is always 0)</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px"><div></div><div>&lt;85% CR</div><div>85-115%</div><div>&gt;115%</div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;align-items:center;margin-bottom:6px">
+<div style="font-size:12px">Exceeds</div>
+<div><input type="number" id="mm-e-l" placeholder="10" step="0.5" oninput="calcMM()"></div>
+<div><input type="number" id="mm-e-m" placeholder="7" step="0.5" oninput="calcMM()"></div>
+<div><input type="number" id="mm-e-h" placeholder="4" step="0.5" oninput="calcMM()"></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;align-items:center;margin-bottom:6px">
+<div style="font-size:12px">Meets</div>
+<div><input type="number" id="mm-m-l" placeholder="6.5" step="0.5" oninput="calcMM()"></div>
+<div><input type="number" id="mm-m-m" placeholder="5" step="0.5" oninput="calcMM()"></div>
+<div><input type="number" id="mm-m-h" placeholder="3" step="0.5" oninput="calcMM()"></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;align-items:center">
+<div style="font-size:12px;color:rgba(255,255,255,.4)">Below</div>
+<div style="font-size:12px;color:rgba(255,255,255,.4);text-align:center">0%</div>
+<div style="font-size:12px;color:rgba(255,255,255,.4);text-align:center">0%</div>
+<div style="font-size:12px;color:rgba(255,255,255,.4);text-align:center">0%</div>
+</div>
+</div>
+<div class="result-block colored" id="mm-result" style="display:none">
+<div class="out-grid">
+<div class="out-card highlight"><div class="out-label">Weighted avg increase</div><div class="out-val" id="mm-wavg">—</div></div>
+<div class="out-card highlight"><div class="out-label">Approved pool</div><div class="out-val" id="mm-pool-out">—</div></div>
+<div class="out-card"><div class="out-label">Budget variance</div><div class="out-val" id="mm-var">—</div></div>
+<div class="out-card"><div class="out-label">Projected spend</div><div class="out-val" id="mm-spend">$0</div></div>
+</div>
+<div style="margin-top:14px;padding:12px;background:rgba(255,255,255,.03);border-radius:8px;font-size:13px;color:rgba(255,255,255,.6)" id="mm-verdict"></div>
+</div></div>
+
+<div class="tool-panel" id="panel-t43" style="--active-c:var(--c14)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c14)">Course 14 · Compensation Analytics</div><div class="tool-title">Attrition Risk Scorer</div><div class="tool-desc">Score up to 8 employees on 5 risk factors. The tool produces a risk band (Low/Medium/High) for each, calculates the replacement cost exposure, and prioritises the retention action list.</div></div>
+<div class="section"><div class="section-title">Employee risk profiles</div>
+<div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr;gap:6px;font-size:10px;color:rgba(255,255,255,.4);margin-bottom:6px"><div>Name / role</div><div>CR%</div><div>Perf(1-4)</div><div>0-merit yrs</div><div>Tenure(mo)</div><div>Mobile?(Y)</div></div>
+<div id="ars-rows">
+<div class="ars-row" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr;gap:6px;margin-bottom:6px;align-items:center">
+<input type="text" class="ars-name" placeholder="Engineer A" oninput="calcARS()">
+<input type="number" class="ars-cr" placeholder="78" oninput="calcARS()">
+<input type="number" class="ars-perf" min="1" max="4" placeholder="4" oninput="calcARS()">
+<input type="number" class="ars-zero" min="0" max="5" placeholder="2" oninput="calcARS()">
+<input type="number" class="ars-ten" placeholder="38" oninput="calcARS()">
+<input type="text" class="ars-mob" placeholder="Y" oninput="calcARS()">
+</div>
+<div class="ars-row" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr;gap:6px;margin-bottom:6px;align-items:center">
+<input type="text" class="ars-name" placeholder="Engineer B" oninput="calcARS()">
+<input type="number" class="ars-cr" placeholder="96" oninput="calcARS()">
+<input type="number" class="ars-perf" min="1" max="4" placeholder="3" oninput="calcARS()">
+<input type="number" class="ars-zero" min="0" max="5" placeholder="0" oninput="calcARS()">
+<input type="number" class="ars-ten" placeholder="14" oninput="calcARS()">
+<input type="text" class="ars-mob" placeholder="Y" oninput="calcARS()">
+</div>
+<div class="ars-row" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr;gap:6px;margin-bottom:6px;align-items:center">
+<input type="text" class="ars-name" placeholder="PM C" oninput="calcARS()">
+<input type="number" class="ars-cr" placeholder="83" oninput="calcARS()">
+<input type="number" class="ars-perf" min="1" max="4" placeholder="3" oninput="calcARS()">
+<input type="number" class="ars-zero" min="0" max="5" placeholder="1" oninput="calcARS()">
+<input type="number" class="ars-ten" placeholder="28" oninput="calcARS()">
+<input type="text" class="ars-mob" placeholder="N" oninput="calcARS()">
+</div>
+</div>
+<div class="field" style="margin-top:10px"><label>Average annual salary for risk modelling ($)</label><input type="number" id="ars-sal" placeholder="55000" oninput="calcARS()"></div>
+</div>
+<div class="result-block colored" id="ars-result" style="display:none">
+<div style="margin-bottom:14px;font-size:12px;color:rgba(255,255,255,.45)">Risk score: CR &lt;85%=2, 85-105%=1 | Perf 4+low CR=2 | Zero merit ≥2=2,=1→1 | Tenure &gt;36mo=2,18-36=1 | Mobile role=2 | Max=10 | High=7+, Med=4-6, Low≤3</div>
+<div id="ars-cards"></div>
+<div class="out-card" style="margin-top:14px"><div class="out-label">High-risk replacement cost exposure</div><div class="out-val" id="ars-exposure">$0</div></div>
+</div></div>
+
+<div class="tool-panel" id="panel-t44" style="--active-c:var(--c14)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c14)">Course 14 · Compensation Analytics</div><div class="tool-title">Compensation Data Quality Auditor</div><div class="tool-desc">Enter your data coverage rates for key compensation variables. The tool scores overall data quality, flags which analyses are blocked by data gaps, and prioritises remediation actions.</div></div>
+<div class="section"><div class="section-title">Data coverage (% of employees with complete data)</div>
+<div class="grid-2">
+<div class="field"><label>Grade / level assignment (%)</label><input type="number" id="dqa-grade" placeholder="86" oninput="calcDQA()"></div>
+<div class="field"><label>Current salary (verified vs payroll) (%)</label><input type="number" id="dqa-sal" placeholder="100" oninput="calcDQA()"></div>
+<div class="field"><label>Performance rating — last cycle (%)</label><input type="number" id="dqa-perf" placeholder="80" oninput="calcDQA()"></div>
+<div class="field"><label>Hire date / tenure (%)</label><input type="number" id="dqa-tenure" placeholder="96" oninput="calcDQA()"></div>
+<div class="field"><label>Gender self-ID (%)</label><input type="number" id="dqa-gender" placeholder="100" oninput="calcDQA()"></div>
+<div class="field"><label>Ethnicity self-ID (%)</label><input type="number" id="dqa-eth" placeholder="42" oninput="calcDQA()"></div>
+<div class="field"><label>Bonus data (verified vs payroll) (%)</label><input type="number" id="dqa-bon" placeholder="78" oninput="calcDQA()"></div>
+</div></div>
+<div class="result-block colored" id="dqa-result" style="display:none">
+<div class="out-grid">
+<div class="out-card highlight"><div class="out-label">Overall data quality score</div><div class="out-val" id="dqa-score">—</div></div>
+<div class="out-card"><div class="out-label">Rating</div><div class="out-val sm" id="dqa-rating">—</div></div>
+</div>
+<div style="margin-top:14px;padding:14px;background:rgba(255,255,255,.03);border-radius:8px;font-size:13px;line-height:1.8;color:rgba(255,255,255,.6)" id="dqa-blocked"></div>
+</div></div>
+
+<div class="tool-panel" id="panel-t45" style="--active-c:var(--c15)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c15)">Course 15 · M&amp;A Reward Integration</div><div class="tool-title">HR Due Diligence Checklist</div><div class="tool-desc">Work through 6 HR due diligence domains. Rate each as Red (deal-affecting), Amber (integration issue), or Green (clean). The tool produces a RAG summary and identifies which findings require immediate deal-team escalation.</div></div>
+<div class="section" id="ddil-items"></div>
+<div class="result-block colored" id="ddil-result" style="display:none">
+<div class="out-grid" id="ddil-rag"></div>
+<div style="margin-top:14px;padding:14px;background:rgba(255,255,255,.03);border-radius:8px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.6)" id="ddil-actions"></div>
+</div></div>
+
+<div class="tool-panel" id="panel-t46" style="--active-c:var(--c15)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c15)">Course 15 · M&amp;A Reward Integration</div><div class="tool-title">Harmonisation Cost Modeller</div><div class="tool-desc">Model the cost of integrating an acquired workforce into your grade structure. Enter below-minimum uplift data and red-circle population to calculate year-1 harmonisation cost as a percentage of deal value.</div></div>
+<div class="section"><div class="section-title">Deal parameters</div>
+<div class="grid-2">
+<div class="field"><label>Deal value ($)</label><input type="number" id="hcm-deal" placeholder="8500000" oninput="calcHCM()"></div>
+<div class="field"><label>Acquired headcount</label><input type="number" id="hcm-hc" placeholder="60" oninput="calcHCM()"></div>
+</div></div>
+<div class="section"><div class="section-title">Below-minimum uplifts</div>
+<div class="grid-3">
+<div class="field"><label>Employees below minimum</label><input type="number" id="hcm-bel-n" placeholder="8" oninput="calcHCM()"></div>
+<div class="field"><label>Average annual uplift ($)</label><input type="number" id="hcm-bel-amt" placeholder="4200" oninput="calcHCM()"></div>
+</div></div>
+<div class="section"><div class="section-title">Red-circle population</div>
+<div class="grid-2">
+<div class="field"><label>Red-circle employees</label><input type="number" id="hcm-rc-n" placeholder="5" oninput="calcHCM()"></div>
+</div></div>
+<div class="section"><div class="section-title">Integration HR resource</div>
+<div class="grid-2">
+<div class="field"><label>HR resource cost ($, year 1)</label><input type="number" id="hcm-hr" placeholder="40000" oninput="calcHCM()"></div>
+</div></div>
+<div class="result-block colored" id="hcm-result" style="display:none">
+<div class="out-grid">
+<div class="out-card highlight"><div class="out-label">Year 1 harmonisation cost</div><div class="out-val" id="hcm-yr1">$0</div></div>
+<div class="out-card"><div class="out-label">Ongoing annual cost</div><div class="out-val" id="hcm-ongoing">$0</div></div>
+<div class="out-card"><div class="out-label">Cost as % of deal value</div><div class="out-val" id="hcm-pct">—</div></div>
+<div class="out-card"><div class="out-label">Cost per acquired employee</div><div class="out-val" id="hcm-per">$0</div></div>
+</div>
+<div style="margin-top:14px;padding:12px;background:rgba(255,255,255,.03);border-radius:8px;font-size:12px;color:rgba(255,255,255,.55)" id="hcm-notes"></div>
+</div></div>
+
+<div class="tool-panel" id="panel-t47" style="--active-c:var(--c15)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c15)">Course 15 · M&amp;A Reward Integration</div><div class="tool-title">Integration Communications Planner</div><div class="tool-desc">Enter the deal close date and target milestone dates. The tool builds a 12-month integration communication timeline, flags gaps against best-practice cadence, and generates a milestone checklist.</div></div>
+<div class="section"><div class="section-title">Key dates</div>
+<div class="grid-2">
+<div class="field"><label>Deal close date</label><input type="date" id="icp-close" oninput="calcICP()"></div>
+</div>
+<div style="font-size:12px;color:rgba(255,255,255,.45);margin-top:10px">Target milestone dates (best practice shown as guidance):</div>
+<div class="grid-2" style="margin-top:10px">
+<div class="field"><label>Day-1 comms to all employees (target: close date)</label><input type="date" id="icp-d1" oninput="calcICP()"></div>
+<div class="field"><label>Manager personal outcomes communicated (target: week 1)</label><input type="date" id="icp-mgr" oninput="calcICP()"></div>
+<div class="field"><label>FAQ document live (target: close date)</label><input type="date" id="icp-faq" oninput="calcICP()"></div>
+<div class="field"><label>Grade mapping complete (target: month 3)</label><input type="date" id="icp-grade" oninput="calcICP()"></div>
+<div class="field"><label>Individual outcomes communicated (target: month 4)</label><input type="date" id="icp-ind" oninput="calcICP()"></div>
+<div class="field"><label>Full harmonisation complete (target: month 12)</label><input type="date" id="icp-full" oninput="calcICP()"></div>
+</div></div>
+<div id="icp-timeline" style="display:none;margin-top:18px"></div></div>
+
 
 
 </div>
 <div id="toast"></div>
 <script>
-const ACTIVE_COLORS={t01:'#C8963E',t02:'#C8963E',t03:'#0C6B65',t04:'#0C6B65',t05:'#0C6B65',t06:'#0C6B65',t07:'#6B4C9A',t08:'#6B4C9A',t09:'#6B4C9A',t10:'#6B4C9A',t11:'#B84B4B',t12:'#B84B4B',t13:'#B84B4B',t14:'#3A7D44',t15:'#3A7D44',t16:'#3A7D44',t17:'#3A7D44'};
+const ACTIVE_COLORS={t01:'#C8963E',t02:'#C8963E',t03:'#0C6B65',t04:'#0C6B65',t05:'#0C6B65',t06:'#0C6B65',t07:'#6B4C9A',t08:'#6B4C9A',t09:'#6B4C9A',t10:'#6B4C9A',t11:'#B84B4B',t12:'#B84B4B',t13:'#B84B4B',t14:'#3A7D44',t15:'#3A7D44',t16:'#3A7D44',t17:'#3A7D44',t18:'#0C6B65',t19:'#0C6B65',t20:'#0C6B65',t21:'#0C6B65',t22:'#6B4C9A',t23:'#6B4C9A',t24:'#6B4C9A',t25:'#6B4C9A',t26:'#B84B4B',t27:'#B84B4B',t28:'#3A7D44',t29:'#3A7D44',t30:'#3A7D44',t31:'#C8963E',t32:'#C8963E',t33:'#2D6A9F',t34:'#2D6A9F',t35:'#2D6A9F',t36:'#7B3FA0',t37:'#7B3FA0',t38:'#7B3FA0',t39:'#1A7A4A',t40:'#1A7A4A',t41:'#1A7A4A',t42:'#C25B20',t43:'#C25B20',t44:'#C25B20',t45:'#6B3A2A',t46:'#6B3A2A',t47:'#6B3A2A'};
 function showTool(id){
   document.querySelectorAll('.tool-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.sb-item').forEach(n=>n.classList.remove('active'));
@@ -1537,7 +1846,7 @@ function calcGates(){
   });
   const max=GATE_ITEMS.length*2;
   const pct=Math.round((score/max)*100);
-  const rating=pct>=85?'Strong':'pct>=65?'Adequate':'Needs work';
+  const rating=pct>=85?'Strong':pct>=65?'Adequate':'Needs work';
   document.getElementById('gate-score').textContent=pct+'%';
   document.getElementById('gate-rating').textContent=pct>=85?'Strong':pct>=65?'Adequate':'Needs work';
   document.getElementById('gate-notes').innerHTML=issues.length?'<strong>Items to address:</strong><br>'+issues.map(i=>`• ${i}`).join('<br>'):'All governance features in place.';
@@ -1882,6 +2191,414 @@ window.showTool=function(id){
 };
 
 function fmt(n,noSign){const v=Math.round(Math.abs(n)).toLocaleString();return noSign?v:(n<0?'-'+v:v);}
+
+// ─── t33: Point-Factor Evaluation ────────────────────────────────────────────
+const PFE_FACTORS={k:[50,100,150,200],ps:[40,80,120,150],ac:[50,100,150,200],cm:[25,50,75,100]};
+function pfeGrade(pts){if(pts<=200)return'G1';if(pts<=320)return'G2';if(pts<=440)return'G3';if(pts<=550)return'G4';return'G5';}
+function calcPFE(){
+  const names=document.querySelectorAll('.pfe-name');
+  const ks=document.querySelectorAll('.pfe-k');
+  const pss=document.querySelectorAll('.pfe-ps');
+  const acs=document.querySelectorAll('.pfe-ac');
+  const cms=document.querySelectorAll('.pfe-cm');
+  let cards='';let any=false;
+  for(let i=0;i<names.length;i++){
+    const n=names[i].value;const k=parseInt(ks[i].value)||0;const ps=parseInt(pss[i].value)||0;const ac=parseInt(acs[i].value)||0;const cm=parseInt(cms[i].value)||0;
+    if(!n||!k)continue;any=true;
+    const total=(PFE_FACTORS.k[k-1]||0)+(PFE_FACTORS.ps[ps-1]||0)+(PFE_FACTORS.ac[ac-1]||0)+(PFE_FACTORS.cm[cm-1]||0);
+    const grade=pfeGrade(total);
+    cards+=`<div class="out-card"><div class="out-label">${n}</div><div class="out-val">${total} pts → ${grade}</div><div class="out-sub">K:${PFE_FACTORS.k[k-1]||'—'} | PS:${PFE_FACTORS.ps[ps-1]||'—'} | AC:${PFE_FACTORS.ac[ac-1]||'—'} | CM:${PFE_FACTORS.cm[cm-1]||'—'}</div></div>`;
+  }
+  if(any){document.getElementById('pfe-cards').innerHTML=cards;document.getElementById('pfe-result').style.display='block';}
+}
+
+// ─── t34: Grade Structure Builder ─────────────────────────────────────────────
+function calcGS(){
+  const spread=parseFloat(document.getElementById('gs-spread')?.value)||25;
+  const curr=document.getElementById('gs-curr')?.value||'£';
+  const mids=[...document.querySelectorAll('.gs-mid')].map(i=>parseFloat(i.value)||0).filter(v=>v>0);
+  if(mids.length<2)return;
+  const f=spread/100;
+  let rows='<tr style="color:rgba(255,255,255,.45);font-size:11px"><th style="padding:5px 8px;text-align:left">Grade</th><th style="padding:5px 8px;text-align:right">Min</th><th style="padding:5px 8px;text-align:right">Mid</th><th style="padding:5px 8px;text-align:right">Max</th><th style="padding:5px 8px;text-align:right">Overlap</th></tr>';
+  mids.forEach((mid,i)=>{
+    const min=Math.round(mid*(1-f));const max=Math.round(mid*(1+f));
+    const prev=i>0?Math.round(mids[i-1]*(1+f)):null;
+    const overlap=prev?`${curr}${fmt(prev-min)} overlap`:'—';
+    rows+=`<tr style="border-top:1px solid rgba(255,255,255,.06)"><td style="padding:5px 8px;font-size:12px">G${i+1}</td><td style="padding:5px 8px;text-align:right;font-size:12px">${curr}${fmt(min)}</td><td style="padding:5px 8px;text-align:right;font-size:12px;font-weight:600">${curr}${fmt(mid)}</td><td style="padding:5px 8px;text-align:right;font-size:12px">${curr}${fmt(max)}</td><td style="padding:5px 8px;text-align:right;font-size:11px;color:rgba(255,255,255,.4)">${overlap}</td></tr>`;
+  });
+  document.getElementById('gs-table').innerHTML=rows;
+  const ratios=mids.slice(1).map((m,i)=>(m/mids[i]).toFixed(2));
+  document.getElementById('gs-notes').innerHTML=`Progression ratios between adjacent midpoints: ${ratios.join(' → ')}. Consistent progression ratios (1.25-1.35) indicate well-spaced grades.`;
+  document.getElementById('gs-table-wrap').style.display='block';
+}
+
+// ─── t35: Grade Inflation Auditor ─────────────────────────────────────────────
+function calcGI(){
+  const hc=parseFloat(document.getElementById('gi-hc')?.value)||0;
+  const rows=document.querySelectorAll('.gi-row');
+  let summary='',notes=[],totalDivUp=0,totalDivDown=0;
+  rows.forEach((r,i)=>{
+    const des=parseFloat(r.querySelectorAll('input')[0]?.value)||0;
+    const act=parseFloat(r.querySelectorAll('input')[1]?.value)||0;
+    if(!des&&!act)return;
+    const divN=Math.round((act-des)/100*hc);
+    const dir=divN>0?'⬆️ Over':divN<0?'⬇️ Under':'✅ On target';
+    if(divN>0)totalDivUp+=divN; else totalDivDown+=Math.abs(divN);
+    summary+=`<div class="out-card"><div class="out-label">G${i+1}</div><div class="out-val sm">${des}% → ${act}%</div><div class="out-sub">${dir} (${divN>0?'+':''}${divN} employees)</div></div>`;
+    if(divN>5)notes.push(`G${i+1}: ${divN} employees above design — priority for evaluation review`);
+  });
+  document.getElementById('gi-summary').innerHTML=summary;
+  const inflation=totalDivUp>0?`⚠️ Grade inflation signal: ${totalDivUp} employees in grades above design. Priority: evaluation review for over-populated grades. Implement no-regrade-without-evaluation policy immediately.`:'✅ Grade distribution within expected range.';
+  document.getElementById('gi-notes').innerHTML=inflation+(notes.length?'<br><br>'+notes.map(n=>`• ${n}`).join('<br>'):'');
+  document.getElementById('gi-result').style.display='block';
+}
+
+// ─── t36: Gender Pay Gap Calculator ──────────────────────────────────────────
+function calcGPG(){
+  const wmed=parseFloat(document.getElementById('gpg-wmed')?.value)||0;
+  const mmed=parseFloat(document.getElementById('gpg-mmed')?.value)||0;
+  const wmean=parseFloat(document.getElementById('gpg-wmean')?.value)||0;
+  const mmean=parseFloat(document.getElementById('gpg-mmean')?.value)||0;
+  const wbon=parseFloat(document.getElementById('gpg-wbon')?.value)||0;
+  const mbon=parseFloat(document.getElementById('gpg-mbon')?.value)||0;
+  const wpct=parseFloat(document.getElementById('gpg-wpct')?.value)||0;
+  const mpct=parseFloat(document.getElementById('gpg-mpct')?.value)||0;
+  if(!wmed||!mmed)return;
+  const medGap=((mmed-wmed)/mmed*100).toFixed(1);
+  const meanGap=wmean&&mmean?((mmean-wmean)/mmean*100).toFixed(1):'—';
+  const bonGap=wbon&&mbon?((mbon-wbon)/mbon*100).toFixed(1):'—';
+  const parGap=wpct&&mpct?(mpct-wpct).toFixed(1)+'pp':'—';
+  document.getElementById('gpg-med-out').textContent=medGap+'%';
+  document.getElementById('gpg-mean-out').textContent=meanGap+(meanGap!=='—'?'%':'');
+  document.getElementById('gpg-bon-out').textContent=bonGap+(bonGap!=='—'?'%':'');
+  document.getElementById('gpg-par-out').textContent=parGap;
+  const signal=parseFloat(medGap)>20?'⚠️ Above 20% — well above UK national median. Primary driver likely representation (grade distribution) — check quartile data.':parseFloat(medGap)>10?'⚠️ Above 10% — above UK median. Investigate representation and adjusted gap.':'✅ Below 10% — within lower range. Conduct adjusted gap analysis to check within-grade equity.';
+  document.getElementById('gpg-notes').innerHTML=`Formula: (Men's median − Women's median) ÷ Men's median × 100. ${signal}`;
+  document.getElementById('gpg-result').style.display='block';
+}
+
+// ─── t37: Pay Equity Cohort Analyser ──────────────────────────────────────────
+function calcPECA(){
+  const rows=document.querySelectorAll('.peca-row');
+  let tableRows='<tr style="color:rgba(255,255,255,.4);font-size:11px"><th style="padding:5px 8px;text-align:left">Grade</th><th style="padding:5px 8px;text-align:right">F avg</th><th style="padding:5px 8px;text-align:right">M avg</th><th style="padding:5px 8px;text-align:right">Gap</th><th style="padding:5px 8px;text-align:right">F n</th><th style="padding:5px 8px;text-align:left">Reliability</th></tr>';
+  let any=false;
+  rows.forEach((r,i)=>{
+    const fsal=parseFloat(r.querySelectorAll('.peca-fsal')[0]?.value)||0;
+    const fn=parseFloat(r.querySelectorAll('.peca-fn')[0]?.value)||0;
+    const msal=parseFloat(r.querySelectorAll('.peca-msal')[0]?.value)||0;
+    const mn=parseFloat(r.querySelectorAll('.peca-mn')[0]?.value)||0;
+    if(!fsal||!msal)return;any=true;
+    const gap=msal>0?((msal-fsal)/msal*100).toFixed(1):'—';
+    const rel=fn>=30?'✅ Reliable':fn>=15?'⚠️ Small F sample':'🔴 Insufficient (n<15)';
+    const flagged=parseFloat(gap)>=4&&fn>=15?'🔍 Flag for review':'';
+    tableRows+=`<tr style="border-top:1px solid rgba(255,255,255,.06)"><td style="padding:5px 8px">G${i+3}</td><td style="padding:5px 8px;text-align:right;font-size:12px">$${fmt(fsal)}</td><td style="padding:5px 8px;text-align:right;font-size:12px">$${fmt(msal)}</td><td style="padding:5px 8px;text-align:right;font-size:12px;font-weight:${parseFloat(gap)>=4?'600':'400'}">${gap}%</td><td style="padding:5px 8px;text-align:right;font-size:12px">${fn}</td><td style="padding:5px 8px;font-size:11px;color:rgba(255,255,255,.5)">${rel} ${flagged}</td></tr>`;
+  });
+  if(any){document.getElementById('peca-table').innerHTML=tableRows;document.getElementById('peca-table-wrap').style.display='block';}
+}
+
+// ─── t38: Remediation Cost Modeller ──────────────────────────────────────────
+function calcREM(){
+  const payroll=parseFloat(document.getElementById('rem-payroll')?.value)||0;
+  const hireN=parseFloat(document.getElementById('rem-hire-n')?.value)||0;
+  const hireAmt=parseFloat(document.getElementById('rem-hire-amt')?.value)||0;
+  const hireBack=parseFloat(document.getElementById('rem-hire-back')?.value)||0;
+  const meritN=parseFloat(document.getElementById('rem-merit-n')?.value)||0;
+  const meritAmt=parseFloat(document.getElementById('rem-merit-amt')?.value)||0;
+  const matN=parseFloat(document.getElementById('rem-mat-n')?.value)||0;
+  const matAmt=parseFloat(document.getElementById('rem-mat-amt')?.value)||0;
+  const hireCost=hireN*hireAmt+(hireN*hireAmt*hireBack/12);
+  const meritCost=meritN*meritAmt;
+  const matCost=matN*matAmt;
+  const yr1=hireCost+meritCost+matCost;
+  const ongoing=hireN*hireAmt+meritN*meritAmt;
+  const pct=payroll>0?(yr1/payroll*100).toFixed(2)+'%':'—';
+  document.getElementById('rem-yr1').textContent='$'+fmt(yr1);
+  document.getElementById('rem-ongoing').textContent='$'+fmt(ongoing);
+  document.getElementById('rem-pct').textContent=pct;
+  document.getElementById('rem-notes').innerHTML=`Year 1 includes one-time parental leave arrears ($${fmt(matCost)}) and any back-pay. Ongoing: point-of-hire corrections ($${fmt(hireN*hireAmt)}/yr) + merit acceleration ($${fmt(meritN*meritAmt)}/yr). ${pct!=='—'?`At ${pct} of payroll, this is within the 0.5-1.0% range typical for a mid-size equity remediation programme.`:''}`;
+  document.getElementById('rem-result').style.display='block';
+}
+
+// ─── t39: TRS Builder ─────────────────────────────────────────────────────────
+function buildTRS(){
+  const name=document.getElementById('trs-name')?.value||'Employee';
+  const sal=parseFloat(document.getElementById('trs-sal')?.value)||0;if(!sal)return;
+  const bon=parseFloat(document.getElementById('trs-bon')?.value)||0;
+  const penPct=parseFloat(document.getElementById('trs-pen')?.value)||0;
+  const health=parseFloat(document.getElementById('trs-health')?.value)||0;
+  const lifeMul=parseFloat(document.getElementById('trs-life')?.value)||0;
+  const dental=parseFloat(document.getElementById('trs-dental')?.value)||0;
+  const leave=parseFloat(document.getElementById('trs-leave')?.value)||0;
+  const ld=parseFloat(document.getElementById('trs-ld')?.value)||0;
+  const pen=Math.round(sal*penPct/100);
+  const leaveVal=leave>0?Math.round(sal/260*leave):0;
+  const total=sal+bon+pen+health+dental+leaveVal+ld;
+  const pctAbove=sal>0?((total/sal-1)*100).toFixed(0):'—';
+  const lifeStr=lifeMul>0?`<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06)"><span style="color:rgba(255,255,255,.6)">Life assurance cover</span><span style="font-weight:500">£${fmt(Math.round(sal*lifeMul))} of cover</span></div>`:'';
+  document.getElementById('trs-doc').style.display='block';
+  document.getElementById('trs-doc').innerHTML=`
+<div style="font-size:16px;font-weight:700;color:var(--c13);margin-bottom:4px">${name} — Your 2026 Total Reward Statement</div>
+<div style="font-size:12px;color:rgba(255,255,255,.4);margin-bottom:18px">This statement reflects what your employer contributes on your behalf — your own contributions are not included.</div>
+${[['Base salary',sal],['Bonus paid this year',bon],['Employer pension ('+penPct+'%)',pen],['Health insurance (employer premium)',health],['Dental insurance',dental],['Annual leave value ('+leave+' days)',leaveVal],['Learning & development investment',ld]].filter(x=>x[1]>0).map(([l,v])=>`<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06)"><span style="color:rgba(255,255,255,.6)">${l}</span><span style="font-weight:500">£${fmt(v)}</span></div>`).join('')}
+${lifeStr}
+<div style="display:flex;justify-content:space-between;padding:12px 0;margin-top:8px;font-weight:700;font-size:15px;border-top:2px solid rgba(255,255,255,.15)"><span>Total visible reward</span><span style="color:var(--c13)">£${fmt(total)}</span></div>
+<div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:8px">Your total reward is <strong style="color:var(--c13)">${pctAbove}% above your base salary</strong>. The investment your employer makes extends well beyond what appears on your payslip each month.</div>`;
+}
+
+// ─── t40: Manager Conversation Scorer ─────────────────────────────────────────
+const MCS_ITEMS=[
+  {id:'mq1',q:'Q1 — Why did I get this amount?',h:'Can articulate the merit pool %, compa-ratio logic, and performance factor for this employee specifically?'},
+  {id:'mq2',q:'Q2 — Am I paid fairly vs colleagues?',h:'Can explain grade-based equity without disclosing individual salaries?'},
+  {id:'mq3',q:'Q3 — Am I paid fairly vs the market?',h:'Can state the market percentile for this role and the employee\'s position within the range?'},
+  {id:'mq4',q:'Q4 — What earns more?',h:'Can describe specific, actionable steps to a higher grade or merit increase?'},
+  {id:'mq5',q:'Q5 — What happens at promotion?',h:'Can state the next grade range and the criteria for promotion?'},
+];
+function initMCS(){
+  const wrap=document.getElementById('mcs-items');
+  if(!wrap||wrap.innerHTML.trim())return;
+  let h='<div class="section-title">Manager readiness</div>';
+  MCS_ITEMS.forEach(item=>{
+    h+=`<div style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)"><div style="font-size:13px;font-weight:500;margin-bottom:3px">${item.q}</div><div style="font-size:12px;color:rgba(255,255,255,.45);margin-bottom:8px">${item.h}</div>
+    <select id="${item.id}" onchange="calcMCS()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:6px;color:#fff;padding:6px 10px;font-size:13px">
+    <option value="">—</option><option value="2">✅ Confident</option><option value="1">⚠️ Partial</option><option value="0">❌ Not prepared</option>
+    </select></div>`;
+  });
+  wrap.innerHTML=h;
+}
+function calcMCS(){
+  let score=0,gaps=[];
+  MCS_ITEMS.forEach(item=>{
+    const v=parseInt(document.getElementById(item.id)?.value);
+    if(!isNaN(v)){score+=v;if(v<2)gaps.push(item.q);}
+  });
+  const max=MCS_ITEMS.length*2;const pct=Math.round(score/max*100);
+  document.getElementById('mcs-score').textContent=pct+'%';
+  document.getElementById('mcs-rating').textContent=pct>=80?'Ready':pct>=60?'Needs practice':'Not ready — do not send without briefing';
+  document.getElementById('mcs-gaps').innerHTML=gaps.length?'<strong>Preparation needed:</strong><br>'+gaps.map(g=>`• ${g}`).join('<br>'):'All five questions covered — manager is ready for the conversation.';
+  document.getElementById('mcs-result').style.display='block';
+}
+
+// ─── t41: Pay Transparency Readiness ─────────────────────────────────────────
+const PTR_ITEMS=[
+  {id:'pt1',q:'Formal grade structure with documented ranges for all roles?'},
+  {id:'pt2',q:'All employees know their grade (>90% completion)?'},
+  {id:'pt3',q:'Internal grade range communication delivered before any external posting?'},
+  {id:'pt4',q:'Manager briefed and able to explain range positioning?'},
+  {id:'pt5',q:'Market data available to confirm ranges are defensible?'},
+  {id:'pt6',q:'Pay equity audit conducted in last 24 months?'},
+  {id:'pt7',q:'Red-circle population below 5% and managed with a documented plan?'},
+  {id:'pt8',q:'HR team prepared to handle increased pay-related questions post-launch?'},
+];
+function initPTR(){
+  const wrap=document.getElementById('ptr-items');
+  if(!wrap||wrap.innerHTML.trim())return;
+  let h='<div class="section-title">Readiness checklist</div>';
+  PTR_ITEMS.forEach(item=>{
+    h+=`<div style="display:flex;align-items:center;gap:14px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06)">
+    <div style="flex:1;font-size:13px">${item.q}</div>
+    <select id="${item.id}" onchange="calcPTR()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:6px;color:#fff;padding:6px 10px;font-size:13px">
+    <option value="">—</option><option value="1">Yes</option><option value="0">No</option>
+    </select></div>`;
+  });
+  wrap.innerHTML=h;
+}
+function calcPTR(){
+  let score=0,blockers=[],ready=true;
+  PTR_ITEMS.forEach((item,i)=>{
+    const v=document.getElementById(item.id)?.value;
+    if(v==='1')score++;
+    else if(v==='0'&&i<3){blockers.push(item.q);ready=false;}
+    else if(v==='0')blockers.push(item.q);
+  });
+  const total=PTR_ITEMS.length;
+  document.getElementById('ptr-score').textContent=score+'/'+total+' — '+(score>=6?'Ready to proceed':score>=4?'Almost ready':'Not ready');
+  document.getElementById('ptr-plan').innerHTML=(blockers.length?'<strong>Address before posting:</strong><br>'+blockers.map(b=>`• ${b}`).join('<br>'):score>=6?'✅ All critical items in place — you can proceed with external salary range posting.':'');
+  document.getElementById('ptr-result').style.display='block';
+}
+
+// ─── t42: Merit Matrix Builder ────────────────────────────────────────────────
+function calcMM(){
+  const pool=parseFloat(document.getElementById('mm-pool')?.value)||0;
+  const payroll=parseFloat(document.getElementById('mm-payroll')?.value)||0;
+  const exc=parseFloat(document.getElementById('mm-exc')?.value)||0;
+  const mts=parseFloat(document.getElementById('mm-mts')?.value)||0;
+  const bel=parseFloat(document.getElementById('mm-bel')?.value)||0;
+  const low=parseFloat(document.getElementById('mm-low')?.value)||0;
+  const mid=parseFloat(document.getElementById('mm-mid')?.value)||0;
+  const high=parseFloat(document.getElementById('mm-high')?.value)||0;
+  const el=parseFloat(document.getElementById('mm-e-l')?.value)||0;
+  const em=parseFloat(document.getElementById('mm-e-m')?.value)||0;
+  const eh=parseFloat(document.getElementById('mm-e-h')?.value)||0;
+  const ml=parseFloat(document.getElementById('mm-m-l')?.value)||0;
+  const mm=parseFloat(document.getElementById('mm-m-m')?.value)||0;
+  const mh=parseFloat(document.getElementById('mm-m-h')?.value)||0;
+  if(!pool||!payroll||!exc)return;
+  // weighted average: (exc_pop × exc_wavg) + (mts_pop × mts_wavg) + (bel_pop × 0)
+  const excWavg=(el*low+em*mid+eh*high)/(low+mid+high||1);
+  const mtsWavg=(ml*low+mm*mid+mh*high)/(low+mid+high||1);
+  const wAvg=(exc/100*excWavg+mts/100*mtsWavg+bel/100*0)/1;
+  const spend=Math.round(payroll*wAvg/100);
+  const target=Math.round(payroll*pool/100);
+  const variance=wAvg-pool;
+  const varStr=(variance>=0?'+':'')+variance.toFixed(2)+'%';
+  document.getElementById('mm-wavg').textContent=wAvg.toFixed(2)+'%';
+  document.getElementById('mm-pool-out').textContent=pool+'%';
+  document.getElementById('mm-var').textContent=varStr;
+  document.getElementById('mm-spend').textContent='$'+fmt(spend);
+  const over=Math.abs(variance)>0.5;
+  document.getElementById('mm-verdict').innerHTML=over?(variance>0?`⚠️ Over-budget by ${variance.toFixed(2)}% — reduce cell values or confirm increased budget. Excess: $${fmt(spend-target)}.`:`⚠️ Under-budget by ${Math.abs(variance).toFixed(2)}% — increase cell values or return $${fmt(target-spend)} to Finance.`):`✅ Matrix within ±0.5% of approved pool — budget validated.`;
+  document.getElementById('mm-result').style.display='block';
+}
+
+// ─── t43: Attrition Risk Scorer ───────────────────────────────────────────────
+function calcARS(){
+  const rows=document.querySelectorAll('.ars-row');
+  const avgSal=parseFloat(document.getElementById('ars-sal')?.value)||55000;
+  let cards='';let highCount=0;
+  rows.forEach(r=>{
+    const name=r.querySelector('.ars-name')?.value;
+    const cr=parseFloat(r.querySelector('.ars-cr')?.value)||0;
+    const perf=parseInt(r.querySelector('.ars-perf')?.value)||0;
+    const zero=parseInt(r.querySelector('.ars-zero')?.value)||0;
+    const ten=parseFloat(r.querySelector('.ars-ten')?.value)||0;
+    const mob=(r.querySelector('.ars-mob')?.value||'').toLowerCase()==='y';
+    if(!name)return;
+    let s=0;
+    if(cr<85)s+=2;else if(cr<105)s+=1;
+    if(perf===4&&cr<85)s+=2;else if(perf>=3&&cr<105)s+=1;
+    if(zero>=2)s+=2;else if(zero===1)s+=1;
+    if(ten>36)s+=2;else if(ten>18)s+=1;
+    if(mob)s+=2;
+    const band=s>=7?'🔴 High':s>=4?'🟡 Medium':'🟢 Low';
+    if(s>=7)highCount++;
+    cards+=`<div class="out-card${s>=7?' highlight':''}" style="margin-bottom:8px"><div class="out-label">${name}</div><div class="out-val sm">${band} (${s}/10)</div><div class="out-sub">CR ${cr}% | Perf ${perf} | Zero merit ${zero}yr | Tenure ${ten}mo | Mobile ${mob?'Y':'N'}</div></div>`;
+  });
+  if(cards){
+    const exposure=highCount*avgSal*0.75;
+    document.getElementById('ars-cards').innerHTML=cards;
+    document.getElementById('ars-exposure').textContent='$'+fmt(Math.round(exposure));
+    document.getElementById('ars-result').style.display='block';
+  }
+}
+
+// ─── t44: Data Quality Auditor ────────────────────────────────────────────────
+function calcDQA(){
+  const fields=[
+    {id:'dqa-grade',label:'Grade',threshold:90,blocks:['Compa-ratio analysis','Pay equity audit','Merit matrix modelling']},
+    {id:'dqa-sal',label:'Salary',threshold:98,blocks:['Any compensation analysis']},
+    {id:'dqa-perf',label:'Performance ratings',threshold:85,blocks:['Pay equity regression','Merit matrix validation']},
+    {id:'dqa-tenure',label:'Tenure',threshold:90,blocks:['Attrition risk model','Pay equity regression']},
+    {id:'dqa-gender',label:'Gender self-ID',threshold:95,blocks:['Gender pay gap calculation']},
+    {id:'dqa-eth',label:'Ethnicity self-ID',threshold:70,blocks:['Ethnicity pay gap analysis']},
+    {id:'dqa-bon',label:'Bonus data',threshold:90,blocks:['Bonus gap calculation','Total reward TRS']},
+  ];
+  let totalScore=0;let blocked=[];
+  fields.forEach(f=>{
+    const v=parseFloat(document.getElementById(f.id)?.value)||0;
+    const ok=v>=f.threshold;
+    totalScore+=ok?2:v>=(f.threshold*0.7)?1:0;
+    if(!ok)f.blocks.forEach(b=>{if(!blocked.includes(b+` (${f.label}: ${v}%)`))blocked.push(b+` (${f.label}: ${v}%)`);});
+  });
+  const max=fields.length*2;const pct=Math.round(totalScore/max*100);
+  document.getElementById('dqa-score').textContent=pct+'%';
+  document.getElementById('dqa-rating').textContent=pct>=80?'Good':pct>=60?'Acceptable — flag gaps':'Poor — remediate before analysis';
+  document.getElementById('dqa-blocked').innerHTML=blocked.length?'<strong>Analyses blocked or unreliable:</strong><br>'+blocked.map(b=>`• ${b}`).join('<br>'):'✅ No analyses blocked — data quality is sufficient for all standard compensation analyses.';
+  document.getElementById('dqa-result').style.display='block';
+}
+
+// ─── t45: HR Due Diligence Checklist ─────────────────────────────────────────
+const DDIL_ITEMS=[
+  {id:'dd1',dom:'Workforce & headcount',q:'All workers (perm, contractor, agency) identified and employment status confirmed?'},
+  {id:'dd2',dom:'Contracts & terms',q:'All employment contracts reviewed (not just senior)? Change-of-control provisions identified and quantified?'},
+  {id:'dd3',dom:'Compensation & equity',q:'Bonus plan deal triggers reviewed? Equity plan change-of-control vesting calculated? Pension funding position confirmed?'},
+  {id:'dd4',dom:'Employment law compliance',q:'Pending tribunal claims disclosed? Wage compliance confirmed? Jurisdiction-specific obligations mapped?'},
+  {id:'dd5',dom:'Key person risk',q:'Employees whose departure would materially damage acquired value identified?'},
+  {id:'dd6',dom:'Culture & engagement',q:'Turnover rate, engagement data, and public employer reviews reviewed?'},
+];
+function initDDIL(){
+  const wrap=document.getElementById('ddil-items');
+  if(!wrap||wrap.innerHTML.trim())return;
+  let h='<div class="section-title">Due diligence domains — rate each finding</div>';
+  DDIL_ITEMS.forEach(item=>{
+    h+=`<div style="padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)"><div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.4);margin-bottom:3px">${item.dom}</div><div style="font-size:13px;margin-bottom:8px">${item.q}</div>
+    <select id="${item.id}" onchange="calcDDIL()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:6px;color:#fff;padding:6px 10px;font-size:13px">
+    <option value="">—</option><option value="r">🔴 Red — deal-affecting finding</option><option value="a">🟡 Amber — integration issue</option><option value="g">🟢 Green — confirmed clean</option>
+    </select></div>`;
+  });
+  wrap.innerHTML=h;
+}
+function calcDDIL(){
+  let reds=[],ambers=[],greens=[];
+  DDIL_ITEMS.forEach(item=>{
+    const v=document.getElementById(item.id)?.value;
+    if(v==='r')reds.push(item.dom);
+    else if(v==='a')ambers.push(item.dom);
+    else if(v==='g')greens.push(item.dom);
+  });
+  const rag=`<div class="out-card" style="border-color:rgba(220,60,60,.4)"><div class="out-label">🔴 Red (deal-affecting)</div><div class="out-val sm">${reds.length} domain${reds.length!==1?'s':''}</div><div class="out-sub">${reds.join(', ')||'None'}</div></div><div class="out-card"><div class="out-label">🟡 Amber (integration)</div><div class="out-val sm">${ambers.length} domain${ambers.length!==1?'s':''}</div><div class="out-sub">${ambers.join(', ')||'None'}</div></div><div class="out-card" style="border-color:rgba(30,160,90,.4)"><div class="out-label">🟢 Green (clean)</div><div class="out-val sm">${greens.length} domain${greens.length!==1?'s':''}</div><div class="out-sub">${greens.join(', ')||'None'}</div></div>`;
+  document.getElementById('ddil-rag').innerHTML=rag;
+  document.getElementById('ddil-actions').innerHTML=reds.length?`⚠️ Red findings require immediate deal-team escalation: ${reds.map(r=>'• '+r).join('; ')}. Quantify financial impact and determine deal model adjustment or warranty requirement before signing.`:(ambers.length?`Integration planning required for amber findings: ${ambers.map(a=>'• '+a).join('; ')}.`:'✅ All reviewed domains clean — proceed with standard integration planning.');
+  document.getElementById('ddil-result').style.display='block';
+}
+
+// ─── t46: Harmonisation Cost Modeller ────────────────────────────────────────
+function calcHCM(){
+  const deal=parseFloat(document.getElementById('hcm-deal')?.value)||0;
+  const hc=parseFloat(document.getElementById('hcm-hc')?.value)||0;
+  const belN=parseFloat(document.getElementById('hcm-bel-n')?.value)||0;
+  const belAmt=parseFloat(document.getElementById('hcm-bel-amt')?.value)||0;
+  const hr=parseFloat(document.getElementById('hcm-hr')?.value)||0;
+  const uplift=belN*belAmt;
+  const yr1=uplift+hr;
+  const ongoing=uplift;
+  const pct=deal>0?(yr1/deal*100).toFixed(2)+'%':'—';
+  const perHC=hc>0?Math.round(yr1/hc):0;
+  document.getElementById('hcm-yr1').textContent='$'+fmt(yr1);
+  document.getElementById('hcm-ongoing').textContent='$'+fmt(ongoing);
+  document.getElementById('hcm-pct').textContent=pct;
+  document.getElementById('hcm-per').textContent='$'+fmt(perHC);
+  document.getElementById('hcm-notes').innerHTML=`Year 1 includes one-off HR resource ($${fmt(hr)}) plus ongoing below-minimum uplifts ($${fmt(ongoing)}/yr). A harmonisation cost of 0.5-2% of deal value is typical for mid-size acquisitions. Red-circle employees incur no direct salary cost (pay freeze) but require governance management and a market review within 6 months.`;
+  document.getElementById('hcm-result').style.display='block';
+}
+
+// ─── t47: Integration Comms Planner ──────────────────────────────────────────
+function calcICP(){
+  const closeStr=document.getElementById('icp-close')?.value;if(!closeStr)return;
+  const close=new Date(closeStr);
+  const milestones=[
+    {id:'icp-d1',label:'Day-1 communication to all employees',target:0,unit:'day'},
+    {id:'icp-faq',label:'FAQ document live',target:0,unit:'day'},
+    {id:'icp-mgr',label:'Manager personal outcomes',target:7,unit:'day'},
+    {id:'icp-grade',label:'Grade mapping complete',target:90,unit:'day'},
+    {id:'icp-ind',label:'Individual outcomes communicated',target:120,unit:'day'},
+    {id:'icp-full',label:'Full harmonisation',target:365,unit:'day'},
+  ];
+  let html='<div class="section-title" style="margin-bottom:12px">Integration milestone status</div>';
+  milestones.forEach(m=>{
+    const planned=document.getElementById(m.id)?.value;
+    const targetDate=new Date(close);targetDate.setDate(targetDate.getDate()+m.target);
+    const targetStr=targetDate.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
+    let status='',colour='rgba(255,255,255,.4)';
+    if(planned){
+      const p=new Date(planned);const diffDays=Math.round((p-targetDate)/(1000*60*60*24));
+      if(diffDays>14){status=`⚠️ ${diffDays} days late vs best practice`;colour='#C25B20';}
+      else if(diffDays>0){status=`✅ ${diffDays} days after target — monitor`;colour='#1A7A4A';}
+      else{status=`✅ On or ahead of target`;colour='#1A7A4A';}
+    }else{status='Not yet planned';}
+    html+=`<div style="display:flex;justify-content:space-between;align-items:flex-start;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06)"><div><div style="font-size:13px">${m.label}</div><div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:2px">Best practice: ${targetStr}</div></div><div style="text-align:right;font-size:12px;color:${colour}">${status}</div></div>`;
+  });
+  document.getElementById('icp-timeline').innerHTML=html;
+  document.getElementById('icp-timeline').style.display='block';
+}
+
+// Initialise on panel show
+const _prev=window.showTool;
+window.showTool=function(id){
+  if(typeof _prev==='function')_prev(id);
+  if(id==='t40')initMCS();
+  if(id==='t41')initPTR();
+  if(id==='t45')initDDIL();
+};
 </script>
 </body>
 </html>

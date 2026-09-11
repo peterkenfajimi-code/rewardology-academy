@@ -37,6 +37,21 @@ export const TOOLKIT_MAP: Record<string, ToolkitEntry> = {
   "9-3-2": { toolId: "t30", label: "Open: Quota Attainment Distribution Analyser" },
   "10-2-2": { toolId: "t31", label: "Open: Geographic Differential Matrix" },
   "10-3-2": { toolId: "t32", label: "Open: Expat Balance Sheet Calculator" },
+  "11-1-2": { toolId: "t33", label: "Open: Point-Factor Evaluation Scorecard" },
+  "11-2-2": { toolId: "t34", label: "Open: Grade Structure Builder" },
+  "11-4-2": { toolId: "t35", label: "Open: Grade Inflation Auditor" },
+  "12-1-2": { toolId: "t36", label: "Open: Gender Pay Gap Calculator" },
+  "12-2-2": { toolId: "t37", label: "Open: Pay Equity Cohort Analyser" },
+  "12-4-2": { toolId: "t38", label: "Open: Remediation Cost Modeller" },
+  "13-2-2": { toolId: "t39", label: "Open: TRS Builder" },
+  "13-3-2": { toolId: "t40", label: "Open: Manager Conversation Scorer" },
+  "13-4-2": { toolId: "t41", label: "Open: Pay Transparency Readiness Assessment" },
+  "14-3-2": { toolId: "t42", label: "Open: Merit Matrix Builder & Budget Validator" },
+  "14-4-2": { toolId: "t43", label: "Open: Attrition Risk Scorer" },
+  "14-1-2": { toolId: "t44", label: "Open: Compensation Data Quality Auditor" },
+  "15-1-2": { toolId: "t45", label: "Open: HR Due Diligence Checklist" },
+  "15-2-2": { toolId: "t46", label: "Open: Harmonisation Cost Modeller" },
+  "15-4-2": { toolId: "t47", label: "Open: Integration Communications Planner" },
 };
 
 export const TOOLKIT_HTML_PATH = "/toolkit/rewardology-toolkit.html";

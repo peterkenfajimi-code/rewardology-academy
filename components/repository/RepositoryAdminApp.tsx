@@ -87,6 +87,16 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [supersedePreview, setSupersedePreview] = useState<
+    {
+      category: string;
+      field: string;
+      fieldLabel: string;
+      existingValue: string | null;
+      incomingValue: string | null;
+    }[]
+    | null
+  >(null);
   const [coverage, setCoverage] = useState<{ summary: { companies: number; activeEntries: number }; rows: CoverageRow[] } | null>(null);
 
   const selectedCompany = useMemo(
@@ -214,7 +224,7 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
     }
   }
 
-  async function saveEntries() {
+  async function saveEntries(opts?: { confirmed?: boolean }) {
     if (!selectedCompanyId) {
       setError("Select a company first");
       return;
@@ -226,22 +236,47 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
     setError("");
     setMessage("");
     setLoading(true);
+    const payload = {
+      companyId: selectedCompanyId,
+      source: { ...source, country: selectedCompany?.country ?? null },
+      entries,
+      publish,
+    };
     try {
+      if (publish && !opts?.confirmed) {
+        const previewRes = await fetch("/api/repository-admin/save", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...payload, preview: true }),
+        });
+        const previewData = (await previewRes.json()) as {
+          supersedes?: {
+            category: string;
+            field: string;
+            fieldLabel: string;
+            existingValue: string | null;
+            incomingValue: string | null;
+          }[];
+          error?: string;
+        };
+        if (!previewRes.ok) throw new Error(previewData.error ?? "Could not check published facts");
+        if (previewData.supersedes?.length) {
+          setSupersedePreview(previewData.supersedes);
+          return;
+        }
+      }
+
       const res = await fetch("/api/repository-admin/save", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          companyId: selectedCompanyId,
-          source: { ...source, country: selectedCompany?.country ?? null },
-          entries,
-          publish,
-        }),
+        body: JSON.stringify(payload),
       });
       const data = (await res.json()) as {
         results?: {
           action: string;
           confidence_was_clamped?: boolean;
           original_confidence?: ConfidenceScore;
+          superseded_published?: { entry_id: string; previous_value: string | null }[];
         }[];
         error?: string;
       };
@@ -252,8 +287,13 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
       const saved = data.results?.filter(
         (r) => !["unmapped_skipped", "registry_rejected"].includes(r.action)
       ).length ?? 0;
+      const replacedPublished =
+        data.results?.reduce((n, r) => n + (r.superseded_published?.length ?? 0), 0) ?? 0;
       const notes = [
         `Saved ${saved} entries with reconciliation.`,
+        replacedPublished
+          ? `${replacedPublished} published fact${replacedPublished === 1 ? "" : "s"} replaced.`
+          : "",
         clamped ? `${clamped} had confidence capped per field registry.` : "",
         unmapped ? `${unmapped} unmapped fields skipped — add to registry or remap.` : "",
         rejected ? `${rejected} non-registry fields rejected.` : "",
@@ -263,6 +303,7 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
       setMessage(notes);
       setEntries([]);
       setRawText("");
+      setSupersedePreview(null);
       await loadCoverage();
     } catch (e) {
       setError(e instanceof Error ? e.message : "Save failed");
@@ -349,6 +390,65 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
       {(message || error) && (
         <div className={error ? "repo-admin-alert error" : "repo-admin-alert"}>{error || message}</div>
       )}
+
+      {supersedePreview ? (
+        <div
+          className="repo-admin-dialog-backdrop"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="repo-admin-supersede-title"
+        >
+          <div className="repo-admin-dialog">
+            <h2 id="repo-admin-supersede-title">Replace published facts?</h2>
+            <p className="repo-admin-muted">
+              Publishing will supersede the current public value for each field below. This cannot be
+              undone from this screen.
+            </p>
+            <div className="repo-admin-table-wrap">
+              <table className="repo-admin-table">
+                <thead>
+                  <tr>
+                    <th>Field</th>
+                    <th>Current published</th>
+                    <th>New value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {supersedePreview.map((row) => (
+                    <tr key={`${row.category}.${row.field}`}>
+                      <td>
+                        {row.fieldLabel || row.field}
+                        <div className="repo-admin-muted">
+                          {row.category}.{row.field}
+                        </div>
+                      </td>
+                      <td>{row.existingValue || "—"}</td>
+                      <td>{row.incomingValue || "—"}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="repo-admin-dialog-actions">
+              <button
+                type="button"
+                className="repo-admin-btn repo-admin-btn-ghost"
+                onClick={() => setSupersedePreview(null)}
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                className="repo-admin-btn repo-admin-btn-primary"
+                disabled={loading}
+                onClick={() => void saveEntries({ confirmed: true })}
+              >
+                {loading ? "Saving…" : "Confirm replacement"}
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
 
       {tab === "coverage" ? (
         <section className="repo-admin-card">
@@ -674,7 +774,7 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
                 type="button"
                 className="repo-admin-btn repo-admin-btn-primary"
                 disabled={loading}
-                onClick={saveEntries}
+                onClick={() => void saveEntries()}
               >
                 Save source + entries
               </button>
