@@ -18,14 +18,17 @@ Prioritized follow-up items. Smallest concrete fixes first.
 
 4c. ~~**Statutory vs company-disclosed rate (extraction guidance)**~~ — **Done (Sep 2026).** One canonical test in `lib/repository/statutory-vs-disclosure.ts`, used by the extraction prompt, field-registry descriptions (migration 012), and `formatRegistryForPrompt`. Lockstep covered by `statutory-vs-disclosure.test.ts`.
 
-5. **GCB `defined_benefit_plan_exists`** — Interim string patch held pending (`Yes (closed legacy scheme, discontinued 1985)`). Proper `defined_benefit_plan_status` field would be cleaner but not blocking.
+5. ~~**GCB `defined_benefit_plan_exists`**~~ — **Done (Sep 2026).** Split onto `defined_benefit_plan_status=closed_legacy` (migration 013). `exists=Yes` is now a real Yes/No; the closed-1985 story no longer lives on a field that collapses narrative to Yes.
 
 ## Deliberate next sessions (do not fold into current work)
 
-6. **Guide 2 (careers page) for GCB** — Parked with its own validation target; same pattern as GTCO careers reconciliation. Thin GCB profile is Guide-1-only by design, not a bug.
+6. ~~**Guide 2 (careers page) for GCB**~~ — **Done (Sep 2026).** `https://www.gcbbank.com.gh/careers` is a 404 and is not in the public nav (zero career/job links on the homepage). No benefits-bearing careers page to extract. Source-discovery no longer guesses `/careers` for GCB. Thin Health/Risk/Leave remains Guide 1-only by absence of Guide 2, not a collection bug.
 
-7. **Fifth company — MTN Ghana (Scancom PLC)** — Tests two companies in the same country/regime (company-identity / dedup handling). Natural pick after GCB Guide 1 proof point.
+6b. ~~**Safaricom Guide 2 close-out**~~ — **Done (Sep 2026).** Live `/careers/` is CloudFront 403; indexed excerpt of the same URL saved. Published wellness programme (narrative/low), crèche facilities (named_program/medium), subsidized gym (named_program/medium). Did not publish “competitive salaries”. FY2024 AR “medical aid contributions” row remains pending on `wellness_program_narrative` (wrong field — not this sitting).
+
+7. ~~**Fifth company — MTN Ghana (Scancom PLC)**~~ — **Done (Sep 2026).** Separate row `GSE:MTNGH` / slug `scancom-plc-mtn-ghana-gh` vs `JSE:MTN` / `mtn-group-ltd-za`. Guide 1 from 2024 AR: DC scheme disclosed with no rate (statutory 5% not copied); ESOP/PSP published; workforce 42.8% / 29.3% women. Empty quantified rows dropped going forward.
 
 ## Reference
 
 - **GCB Guide-1-only scope:** GCB was collected from a single Guide 1 source to validate Ghana three-tier structure. Empty Health/Risk/Leave sections = not yet collected from Guides 2–6.
+- **GCB careers URL:** `https://www.gcbbank.com.gh/careers` is a 404 and is not in the public nav — do not re-probe it as a Guide 2 source.
