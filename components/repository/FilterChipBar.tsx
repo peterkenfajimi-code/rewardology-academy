@@ -14,7 +14,8 @@ type Props = {
   filters: ActiveFilter[];
   onChange: (filters: ActiveFilter[]) => void;
   industries: string[];
-  matchCount: number;
+  /** null until the directory has loaded — avoids flashing "0 of 0". */
+  matchCount: number | null;
   totalCount: number;
 };
 
@@ -124,9 +125,11 @@ export function FilterChipBar({ filters, onChange, industries, matchCount, total
         </div>
       ) : null}
 
-      <p className="benefits-repo-filter-note">
-        {matchCount} of {totalCount} {totalCount === 1 ? "company" : "companies"} match
-      </p>
+      {matchCount !== null ? (
+        <p className="benefits-repo-filter-note">
+          {matchCount} of {totalCount} {totalCount === 1 ? "company" : "companies"} match
+        </p>
+      ) : null}
     </div>
   );
 }

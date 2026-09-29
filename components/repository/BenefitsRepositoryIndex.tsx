@@ -12,6 +12,7 @@ import { marketLabel } from "@/lib/repository/market-labels";
 import "@/styles/benefits-repository.css";
 
 type IndexResponse = {
+  error?: string;
   configured?: boolean;
   companies?: CompanyIndexRow[];
   industries?: string[];
@@ -37,25 +38,45 @@ export function BenefitsRepositoryIndex() {
   const [filters, setFilters] = useState<ActiveFilter[]>([]);
   const [q, setQ] = useState("");
   const [loading, setLoading] = useState(true);
+  const [loadFailed, setLoadFailed] = useState(false);
+  const [hasLoaded, setHasLoaded] = useState(false);
+  const [reloadKey, setReloadKey] = useState(0);
 
   useEffect(() => {
     const params = new URLSearchParams();
     for (const f of filters) params.set(f.key, f.value);
     if (q.trim()) params.set("q", q.trim());
 
+    let cancelled = false;
     setLoading(true);
     fetch(`/api/benefits-repository?${params.toString()}`)
-      .then((r) => r.json())
-      .then((data: IndexResponse) => {
+      .then(async (r) => {
+        const data = (await r.json()) as IndexResponse;
+        if (!r.ok || data.error) throw new Error(data.error ?? `HTTP ${r.status}`);
+        return data;
+      })
+      .then((data) => {
+        if (cancelled) return;
         setConfigured(Boolean(data.configured));
         setCompanies(data.companies ?? []);
         setStats(data.stats ?? undefined);
         if (data.industries) setIndustries(data.industries);
+        setLoadFailed(false);
+        setHasLoaded(true);
       })
-      .finally(() => setLoading(false));
-  }, [filters, q]);
+      .catch(() => {
+        if (!cancelled) setLoadFailed(true);
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [filters, q, reloadKey]);
 
   const totalCompanies = stats?.companies_total ?? companies.length;
+  const showCount = hasLoaded && !loadFailed;
 
   return (
     <div className="benefits-repo">
@@ -72,7 +93,7 @@ export function BenefitsRepositoryIndex() {
         filters={filters}
         onChange={setFilters}
         industries={industries}
-        matchCount={companies.length}
+        matchCount={showCount ? companies.length : null}
         totalCount={totalCompanies}
       />
 
@@ -89,7 +110,14 @@ export function BenefitsRepositoryIndex() {
         <p className="benefits-repo-muted benefits-repo-loading-hint">Updating…</p>
       ) : null}
 
-      {!loading && companies.length === 0 ? (
+      {!loading && loadFailed ? (
+        <EmptyState
+          heading="Couldn't load the repository"
+          body="The directory didn't load — this is a connection problem, not missing data. A VPN, corporate network, or ad blocker can block it. Try refreshing, or open the page on another network."
+          ctaLabel="Try again"
+          onCta={() => setReloadKey((k) => k + 1)}
+        />
+      ) : !loading && companies.length === 0 ? (
         <EmptyState
           heading={
             filters.length

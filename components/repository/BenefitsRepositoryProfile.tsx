@@ -22,26 +22,42 @@ export function BenefitsRepositoryProfile({ slug }: { slug: string }) {
   const [company, setCompany] = useState<CompanyIndexRow | null>(null);
   const [entries, setEntries] = useState<PublicBenefitEntry[]>([]);
   const [notFound, setNotFound] = useState(false);
+  const [loadFailed, setLoadFailed] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [reloadKey, setReloadKey] = useState(0);
 
   useEffect(() => {
+    let cancelled = false;
     setLoading(true);
+    setLoadFailed(false);
+    setNotFound(false);
     fetch(`/api/benefits-repository/companies/${encodeURIComponent(slug)}`)
       .then(async (r) => {
-        if (r.status === 404) {
-          setNotFound(true);
-          return null;
-        }
-        return r.json() as Promise<ProfileResponse>;
+        if (r.status === 404) return null;
+        const data = (await r.json()) as ProfileResponse;
+        if (!r.ok || data.error) throw new Error(data.error ?? `HTTP ${r.status}`);
+        return data;
       })
       .then((data) => {
-        if (!data) return;
+        if (cancelled) return;
+        if (!data) {
+          setNotFound(true);
+          return;
+        }
         setConfigured(Boolean(data.configured));
         setCompany(data.company ?? null);
         setEntries(data.entries ?? []);
       })
-      .finally(() => setLoading(false));
-  }, [slug]);
+      .catch(() => {
+        if (!cancelled) setLoadFailed(true);
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [slug, reloadKey]);
 
   const byCategory = useMemo(() => {
     const map = new Map<string, PublicBenefitEntry[]>();
@@ -55,6 +71,19 @@ export function BenefitsRepositoryProfile({ slug }: { slug: string }) {
 
   if (loading) {
     return <p className="benefits-repo-muted">Loading…</p>;
+  }
+
+  if (loadFailed) {
+    return (
+      <div className="benefits-repo">
+        <EmptyState
+          heading="Couldn't load this company profile"
+          body="The profile didn't load — this is a connection problem, not missing data. A VPN, corporate network, or ad blocker can block it. Try refreshing, or open the page on another network."
+          ctaLabel="Try again"
+          onCta={() => setReloadKey((k) => k + 1)}
+        />
+      </div>
+    );
   }
 
   if (notFound || !company) {
