@@ -34,6 +34,7 @@ export const STRUCTURAL_NAMED_PROGRAM_FIELDS = new Set<string>([
   "pension_scheme_type",
   "pension_administrator_type",
   "gratuity_scheme_type",
+  "defined_benefit_plan_status",
 ]);
 
 /** compliance_status and selected structural named_program fields — staleness badge only, no hard cutoff. */
@@ -57,7 +58,11 @@ export function isExcludedBenefitField(field: string): boolean {
 }
 
 export function filterExtractedEntries(entries: ExtractedEntry[]): ExtractedEntry[] {
-  return entries.filter((e) => !isExcludedBenefitField(e.field));
+  return entries.filter((e) => {
+    if (isExcludedBenefitField(e.field)) return false;
+    if (e.value_type === "quantified" && !e.value?.trim()) return false;
+    return true;
+  });
 }
 
 export function sanitizeBenefitEntriesForSave(entries: ExtractedEntry[]): {

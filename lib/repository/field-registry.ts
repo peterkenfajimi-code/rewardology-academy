@@ -83,13 +83,18 @@ export function clampConfidenceToRegistry(
   };
 }
 
+const NAMED_PROGRAM_VALUE_LABELS: Record<string, string> = {
+  closed_legacy: "closed (legacy, not accruing for current employees)",
+};
+
 export function renderDisplayText(
   template: string | null | undefined,
   companyName: string,
   value: string | null | undefined,
   fieldLabel?: string | null
 ): string {
-  const displayValue = value?.trim() || "—";
+  const raw = value?.trim() || "";
+  const displayValue = NAMED_PROGRAM_VALUE_LABELS[raw] ?? (raw || "—");
   if (template?.trim()) {
     return template.replace(/\{company\}/g, companyName).replace(/\{value\}/g, displayValue);
   }

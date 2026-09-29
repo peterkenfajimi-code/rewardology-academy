@@ -35,7 +35,8 @@ GHANA THREE-TIER SSNIT PENSION — critical:
 - Tier 1 primary rates: employer_contribution_pct / employee_contribution_pct (only when the source states Tier 1 / SSNIT rates explicitly).
 - Tier 2 mandatory occupational rates: tier2_employer_contribution_pct / tier2_employee_contribution_pct — NOT voluntary_contribution_program (that field is for optional employee-initiated extra contributions only, e.g. AVC).
 - Tier 3 voluntary extras: voluntary_contribution_program only when the source describes optional additional employee contributions.
-- Post-retirement medical care for former employees: post_retirement_medical_care — NOT health.hmo_scope (active-employee coverage) or additional_exit_benefit_scheme (exit/severance payout).`
+- Post-retirement medical care for former employees: post_retirement_medical_care — NOT health.hmo_scope (active-employee coverage) or additional_exit_benefit_scheme (exit/severance payout).
+- defined_benefit_plan_exists is Yes/No only for a company-sponsored supplementary DB scheme — NOT SSNIT Tier 1 (country statutory DB). If the company scheme is closed, frozen, or discontinued, still Yes, and set defined_benefit_plan_status to closed_legacy. Values for defined_benefit_plan_status: active | closed_legacy | none. Never put the closed/discontinued story on defined_benefit_plan_exists.`
       : "";
 
   const registryBlock =
