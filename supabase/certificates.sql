@@ -140,3 +140,6 @@ $$;
 
 grant execute on function public.issue_certificate(text, text, text, text, text, integer, integer, timestamptz) to authenticated;
 grant execute on function public.get_public_certificate(text) to anon, authenticated;
+
+grant select, insert, update on table public.issued_certificates to authenticated;
+grant select, insert, update, delete on table public.issued_certificates to service_role;

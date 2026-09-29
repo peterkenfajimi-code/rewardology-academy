@@ -41,3 +41,6 @@ end;
 $$;
 
 grant execute on function public.record_dictionary_term(text, integer) to authenticated;
+
+grant select, insert on table public.dictionary_progress to authenticated;
+grant select, insert, update, delete on table public.dictionary_progress to service_role;

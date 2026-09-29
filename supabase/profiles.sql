@@ -85,3 +85,7 @@ select
   u.raw_user_meta_data ->> 'avatar_url'
 from auth.users u
 on conflict (id) do nothing;
+
+-- Data API grants (required after 2026-10-30). RLS still applies.
+grant select, insert, update on table public.profiles to authenticated;
+grant select, insert, update, delete on table public.profiles to service_role;

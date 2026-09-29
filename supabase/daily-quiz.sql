@@ -57,3 +57,6 @@ end;
 $$;
 
 grant execute on function public.record_daily_quiz_completion(date, text, text, boolean, integer) to authenticated;
+
+grant select, insert, update on table public.daily_quiz_completions to authenticated;
+grant select, insert, update, delete on table public.daily_quiz_completions to service_role;

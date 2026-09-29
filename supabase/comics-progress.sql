@@ -43,3 +43,6 @@ end;
 $$;
 
 grant execute on function public.record_comic_issue(text, integer, integer) to authenticated;
+
+grant select, insert on table public.comics_progress to authenticated;
+grant select, insert, update, delete on table public.comics_progress to service_role;

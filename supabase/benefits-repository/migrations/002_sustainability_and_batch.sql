@@ -17,6 +17,9 @@ create table if not exists batch_runs (
 
 create index if not exists idx_batch_runs_started on batch_runs(started_at desc);
 
+-- Admin-only: no anon/authenticated grant. Service role bypasses RLS but still needs GRANT after 2026-10-30.
+grant select, insert, update, delete on table public.batch_runs to service_role;
+
 create unique index if not exists idx_sources_company_url
   on sources(company_id, source_url)
   where source_url is not null;

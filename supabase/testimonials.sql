@@ -95,3 +95,7 @@ $$;
 
 grant execute on function public.list_pending_testimonials() to authenticated;
 grant execute on function public.moderate_testimonial(uuid, text) to authenticated;
+
+grant select on table public.testimonials to anon, authenticated;
+grant insert on table public.testimonials to authenticated;
+grant select, insert, update, delete on table public.testimonials to service_role;

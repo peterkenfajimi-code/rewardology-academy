@@ -160,3 +160,10 @@ create table workforce_composition_entries (
 );
 
 create index idx_workforce_company on workforce_composition_entries(company_id);
+
+-- Data API grants (required after 2026-10-30). RLS still applies.
+grant select on table public.benefit_field_registry to anon, authenticated;
+grant select, insert, update, delete on table public.benefit_field_registry to service_role;
+
+grant select on table public.workforce_composition_entries to anon, authenticated;
+grant select, insert, update, delete on table public.workforce_composition_entries to service_role;

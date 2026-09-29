@@ -86,3 +86,7 @@ begin
     updated_at = now();
 end;
 $$;
+
+grant select, insert, update, delete on table public.quiz_centre_progress to authenticated;
+grant select, insert, update, delete on table public.quiz_centre_progress to service_role;
+grant execute on function public.record_quiz_centre_attempt(integer, integer, integer, integer) to authenticated;

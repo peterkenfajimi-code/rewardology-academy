@@ -255,3 +255,19 @@ begin
     created_at = now();
 end;
 $$;
+
+-- Data API grants (required after 2026-10-30). RLS still applies.
+grant select, insert, update on table public.profiles to authenticated;
+grant select, insert, update, delete on table public.profiles to service_role;
+
+grant select, insert, update, delete on table public.quiz_centre_progress to authenticated;
+grant select, insert, update, delete on table public.quiz_centre_progress to service_role;
+grant execute on function public.record_quiz_centre_attempt(integer, integer, integer, integer) to authenticated;
+
+grant select, insert, update, delete on table public.course_progress to authenticated;
+grant select, insert, update, delete on table public.course_progress to service_role;
+grant execute on function public.record_course_lesson(integer, text, integer) to authenticated;
+
+grant select, insert, update on table public.daily_quiz_completions to authenticated;
+grant select, insert, update, delete on table public.daily_quiz_completions to service_role;
+grant execute on function public.record_daily_quiz_completion(date, text, text, boolean, integer) to authenticated;

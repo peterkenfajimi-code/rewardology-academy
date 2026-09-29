@@ -43,3 +43,6 @@ end;
 $$;
 
 grant execute on function public.record_article_read(integer, text, integer) to authenticated;
+
+grant select, insert on table public.article_progress to authenticated;
+grant select, insert, update, delete on table public.article_progress to service_role;

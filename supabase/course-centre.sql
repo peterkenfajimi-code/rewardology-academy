@@ -72,3 +72,7 @@ begin
     updated_at = now();
 end;
 $$;
+
+grant select, insert, update, delete on table public.course_progress to authenticated;
+grant select, insert, update, delete on table public.course_progress to service_role;
+grant execute on function public.record_course_lesson(integer, text, integer) to authenticated;

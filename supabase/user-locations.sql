@@ -167,3 +167,6 @@ $$;
 
 grant execute on function public.record_user_location(text, text, text, text) to authenticated;
 grant execute on function public.admin_user_location_stats() to authenticated;
+
+grant select, insert, update on table public.user_locations to authenticated;
+grant select, insert, update, delete on table public.user_locations to service_role;
