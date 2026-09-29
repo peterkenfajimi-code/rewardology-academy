@@ -180,7 +180,44 @@ function investorPaths(origin: string): string[] {
       `${origin}/downloadable-reports`,
       `${origin}/downloads/reports`,
       `${origin}/group-results-and-reporting`,
+      // /careers 404s and is not in the public nav (Guide 2 check, Sep 2026).
+    ];
+  }
+
+  if (host.includes("mtn.com.gh")) {
+    return [
+      origin,
+      `${origin}/investors`,
       `${origin}/careers`,
+    ];
+  }
+
+  if (host.includes("safaricom.co.ke")) {
+    return [
+      origin,
+      `${origin}/careers`,
+      `${origin}/about/join-safaricom`,
+      `${origin}/investors`,
+      `${origin}/investor-relations`,
+    ];
+  }
+
+  if (host.includes("ubagroup.com")) {
+    return [
+      origin,
+      `${origin}/investors`,
+      `${origin}/investors/financial-reports`,
+      `${origin}/careers`,
+    ];
+  }
+
+  if (host === "www.mtn.com" || host === "mtn.com" || host === "group.mtn.com") {
+    return [
+      origin,
+      `${origin}/join-our-yello-family-people-and-culture`,
+      `${origin}/careers`,
+      `${origin}/vacancies`,
+      `${origin}/investors`,
     ];
   }
 
