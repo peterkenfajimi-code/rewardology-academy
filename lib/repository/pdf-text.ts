@@ -28,6 +28,9 @@ const BENEFITS_KEYWORDS = [
   "npra",
   "provident fund",
   "personnel",
+  "esop",
+  "women in leadership",
+  "female representation",
 ];
 
 const PROMPT_CHAR_LIMIT = 12_000;
