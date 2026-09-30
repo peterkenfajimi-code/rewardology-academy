@@ -101,6 +101,7 @@ export async function loadPublicBenefitEntries(): Promise<{
     `
     )
     .eq("publish_status", "published")
+    .neq("confidence_score", "low")
     .order("date_collected", { ascending: false })
     .limit(500);
 

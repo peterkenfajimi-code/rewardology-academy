@@ -174,6 +174,7 @@ function prepareIncoming(
   let publishStatus: PublishStatus = entry.publish ? "published" : "pending_verification";
   if (valueTypeNote) publishStatus = "pending_verification";
   if (legalReview) publishStatus = "pending_verification";
+  if (clamped.confidence_score === "low") publishStatus = "pending_verification";
 
   return { originalConfidence, clamped, entryValue, valueTypeNote, legalReview, publishStatus };
 }
