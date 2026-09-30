@@ -144,7 +144,7 @@ async function main() {
 
   console.log(`\nSaved ${inserted} entries (pending_verification unless value_type_mismatch).`);
   for (const r of saved.results) {
-    if (r.action === "unmapped_skipped" || r.action === "registry_rejected") continue;
+    if (r.action === "unmapped_queued" || r.action === "registry_rejected") continue;
     console.log(`  ${r.action} → ${r.publish_status}`);
   }
 }

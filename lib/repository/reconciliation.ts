@@ -41,7 +41,7 @@ export type SaveEntryResult = {
     | "kept_existing"
     | "pending_conflict"
     | "duplicate"
-    | "unmapped_skipped"
+    | "unmapped_queued"
     | "registry_rejected"
     | "value_type_mismatch";
   confidence_was_clamped?: boolean;
@@ -230,6 +230,36 @@ export async function previewPublishedSupersedes(
   return previews;
 }
 
+async function queueUnmappedFinding(
+  supabase: SupabaseClient,
+  params: { companyId: string; sourceId: string },
+  entry: SaveEntryInput,
+  suggestedField: string | null
+): Promise<void> {
+  const rawExcerpt = entry.value?.trim() || null;
+
+  const query = supabase
+    .from("unmapped_findings")
+    .select("finding_id")
+    .eq("source_id", params.sourceId)
+    .eq("suggested_category", entry.category);
+  const { data: found, error: findError } = await (
+    rawExcerpt ? query.eq("raw_excerpt", rawExcerpt) : query.is("raw_excerpt", null)
+  ).limit(1);
+  if (findError) throw new Error(`Could not check unmapped findings: ${findError.message}`);
+  if (found?.length) return;
+
+  const { error } = await supabase.from("unmapped_findings").insert({
+    company_id: params.companyId,
+    source_id: params.sourceId,
+    raw_excerpt: rawExcerpt,
+    suggested_category: entry.category,
+    suggested_field: suggestedField,
+    ai_notes: entry.notes?.trim() || null,
+  });
+  if (error) throw new Error(`Could not queue unmapped finding: ${error.message}`);
+}
+
 export async function saveEntriesWithReconciliation(
   supabase: SupabaseClient,
   params: {
@@ -247,10 +277,11 @@ export async function saveEntriesWithReconciliation(
 
   for (const entry of params.entries) {
     if (isUnmappedField(entry.field)) {
+      await queueUnmappedFinding(supabase, params, entry, null);
       results.push({
         entry_id: "",
         publish_status: "pending_verification",
-        action: "unmapped_skipped",
+        action: "unmapped_queued",
       });
       continue;
     }
@@ -259,6 +290,7 @@ export async function saveEntriesWithReconciliation(
 
     const registryRow = registryByKey.get(`${entry.category}::${entry.field}`);
     if (!registryRow) {
+      await queueUnmappedFinding(supabase, params, entry, entry.field);
       results.push({
         entry_id: "",
         publish_status: "pending_verification",
