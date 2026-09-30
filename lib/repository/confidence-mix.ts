@@ -36,5 +36,7 @@ export function computeConfidenceMix(scores: string[]): ConfidenceMix {
 
 export function confidenceMixLegend(mix: ConfidenceMix): string {
   if (mix.total === 0) return "No published entries";
-  return `High ${mix.highPct}% · Medium ${mix.mediumPct}% · Low ${mix.lowPct}%`;
+  const parts = [`High ${mix.highPct}%`, `Medium ${mix.mediumPct}%`];
+  if (mix.low > 0) parts.push(`Low ${mix.lowPct}%`);
+  return parts.join(" · ");
 }

@@ -19,10 +19,10 @@ type Props = {
   totalCount: number;
 };
 
+/** Low is never public (held for verification), so it is not offered as a filter. */
 const CONFIDENCE_OPTIONS = [
   { value: "high", label: "High confidence" },
   { value: "medium", label: "Medium confidence" },
-  { value: "low", label: "Low confidence" },
 ];
 
 export function FilterChipBar({ filters, onChange, industries, matchCount, totalCount }: Props) {

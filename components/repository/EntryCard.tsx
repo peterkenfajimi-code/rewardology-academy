@@ -4,6 +4,7 @@ import { categoryLabel } from "@/lib/repository/category-labels";
 import { formatStatValue } from "@/lib/repository/format-stat-value";
 import type { PublicBenefitEntry } from "@/lib/repository/load-public-entries";
 import { formatEffectiveDateBadge, isEntryStale } from "@/lib/repository/staleness";
+import { MonoNumbers } from "@/components/repository/MonoNumbers";
 import { SourceCitation } from "@/components/repository/SourceCitation";
 
 function confidenceClass(score: string): string {
@@ -14,10 +15,9 @@ function confidenceClass(score: string): string {
 
 type Props = {
   row: PublicBenefitEntry;
-  index?: number;
 };
 
-export function EntryCard({ row, index = 0 }: Props) {
+export function EntryCard({ row }: Props) {
   const stale = isEntryStale(row.effective_date);
   const dateBadge = row.effective_date ? formatEffectiveDateBadge(row.effective_date) : null;
   const isQuantified = row.value_type === "quantified";
@@ -26,7 +26,6 @@ export function EntryCard({ row, index = 0 }: Props) {
   return (
     <article
       className={`benefits-repo-card benefits-repo-card-enter ${isQuantified ? "benefits-repo-stat-card" : "benefits-repo-narrative-card"}`}
-      style={{ animationDelay: `${Math.min(index * 30, 180)}ms` }}
     >
       <div className="benefits-repo-card-top">
         <p className="benefits-repo-field">{categoryLabel(row.category)}</p>
@@ -41,10 +40,14 @@ export function EntryCard({ row, index = 0 }: Props) {
             <span className="benefits-repo-stat-number">{stat.number}</span>
             {stat.unit ? <span className="benefits-repo-stat-unit">{stat.unit}</span> : null}
           </div>
-          <p className="benefits-repo-stat-caption">{row.display_text}</p>
+          <p className="benefits-repo-stat-caption">
+            <MonoNumbers text={row.display_text} />
+          </p>
         </>
       ) : (
-        <p className="benefits-repo-value">{row.display_text}</p>
+        <p className="benefits-repo-value">
+          <MonoNumbers text={row.display_text} />
+        </p>
       )}
 
       <p className="benefits-repo-meta">

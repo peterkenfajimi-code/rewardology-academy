@@ -144,8 +144,8 @@ export function BenefitsRepositoryProfile({ slug }: { slug: string }) {
               />
             ) : (
               <div className="benefits-repo-grid">
-                {rows.map((row, index) => (
-                  <EntryCard key={row.entry_id} row={row} index={index} />
+                {rows.map((row) => (
+                  <EntryCard key={row.entry_id} row={row} />
                 ))}
               </div>
             )}
