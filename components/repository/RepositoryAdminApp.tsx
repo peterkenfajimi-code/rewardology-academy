@@ -11,6 +11,7 @@ import type {
 import { compareConfidence } from "@/lib/repository/trust-weights";
 import { RepositoryBatchPanel } from "@/components/repository/RepositoryBatchPanel";
 import { RepositoryCompanyLogoPanel } from "@/components/repository/RepositoryCompanyLogoPanel";
+import { RepositoryUnmappedPanel } from "@/components/repository/RepositoryUnmappedPanel";
 import {
   formatStatutoryEmployeePct,
   formatStatutoryEmployerPct,
@@ -63,7 +64,7 @@ type Props = {
 };
 
 export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
-  const [tab, setTab] = useState<"entry" | "coverage" | "automation">("entry");
+  const [tab, setTab] = useState<"entry" | "coverage" | "automation" | "unmapped">("entry");
   const [countries, setCountries] = useState<CountryModule[]>([]);
   const [companies, setCompanies] = useState<Company[]>([]);
   const [selectedCompanyId, setSelectedCompanyId] = useState("");
@@ -283,10 +284,10 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
       };
       if (!res.ok) throw new Error(data.error ?? "Save failed");
       const clamped = data.results?.filter((r) => r.confidence_was_clamped).length ?? 0;
-      const unmapped = data.results?.filter((r) => r.action === "unmapped_skipped").length ?? 0;
+      const unmapped = data.results?.filter((r) => r.action === "unmapped_queued").length ?? 0;
       const rejected = data.results?.filter((r) => r.action === "registry_rejected").length ?? 0;
       const saved = data.results?.filter(
-        (r) => !["unmapped_skipped", "registry_rejected"].includes(r.action)
+        (r) => !["unmapped_queued", "registry_rejected"].includes(r.action)
       ).length ?? 0;
       const replacedPublished =
         data.results?.reduce((n, r) => n + (r.superseded_published?.length ?? 0), 0) ?? 0;
@@ -296,8 +297,9 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
           ? `${replacedPublished} published fact${replacedPublished === 1 ? "" : "s"} replaced.`
           : "",
         clamped ? `${clamped} had confidence capped per field registry.` : "",
-        unmapped ? `${unmapped} unmapped fields skipped — add to registry or remap.` : "",
-        rejected ? `${rejected} non-registry fields rejected.` : "",
+        unmapped || rejected
+          ? `${unmapped + rejected} finding${unmapped + rejected === 1 ? "" : "s"} outside the registry sent to the unmapped queue.`
+          : "",
       ]
         .filter(Boolean)
         .join(" ");
@@ -328,10 +330,10 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
 
   function entryReviewWarning(entry: ExtractedEntry): string | null {
     if (entry.field.trim().toLowerCase() === "unmapped") {
-      return "Unmapped — will not save until mapped to a registry field.";
+      return "Unmapped — goes to the unmapped queue on save, not into the repository.";
     }
     const reg = registryRowFor(entry);
-    if (!reg) return "Field not in registry — will be rejected on save.";
+    if (!reg) return "Field not in registry — goes to the unmapped queue on save.";
     if (compareConfidence(entry.confidence_score, reg.max_confidence) > 0) {
       return `AI suggested ${entry.confidence_score}; will cap to ${reg.max_confidence} on save.`;
     }
@@ -385,6 +387,13 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
           onClick={() => setTab("automation")}
         >
           Disclosure automation
+        </button>
+        <button
+          type="button"
+          className={tab === "unmapped" ? "repo-admin-tab active" : "repo-admin-tab"}
+          onClick={() => setTab("unmapped")}
+        >
+          Unmapped queue
         </button>
       </div>
 
@@ -490,6 +499,8 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
         </section>
       ) : tab === "automation" ? (
         <RepositoryBatchPanel anthropicConfigured={anthropicConfigured} />
+      ) : tab === "unmapped" ? (
+        <RepositoryUnmappedPanel />
       ) : (
         <>
           <section className="repo-admin-card">
