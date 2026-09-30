@@ -49,6 +49,16 @@ const BENEFITS_KEYWORDS = [
   "staff allowance",
   "13th month",
   "thirteenth month",
+  "phone allowance",
+  "cellphone allowance",
+  "data allowance",
+  "airtime allowance",
+  "lifestyle benefit",
+  "lifestyle allowance",
+  // Not bare "bonus": reports use it for bonus share issues and dividends.
+  "performance bonus",
+  "annual bonus",
+  "discretionary bonus",
 ];
 
 const PROMPT_CHAR_LIMIT = 12_000;

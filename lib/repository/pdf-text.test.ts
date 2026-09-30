@@ -15,4 +15,18 @@ describe("selectBenefitsExcerpt", () => {
     expect(excerpt).toContain("funeral benefit");
     expect(excerpt).not.toContain("expected credit loss");
   });
+
+  it("keeps performance-bonus and cellphone-allowance passages but not bonus share issues", () => {
+    const filler = "Revenue grew strongly in the year across all operating segments and markets, driven by data and fintech.";
+    const text = [
+      "The Board approved a bonus issue of one new share for every ten held, credited as fully paid to shareholders.",
+      filler,
+      filler,
+      "All permanent staff participate in an annual performance bonus scheme and receive a monthly cellphone allowance.",
+    ].join("\n\n");
+
+    const excerpt = selectBenefitsExcerpt(text);
+    expect(excerpt).toContain("annual performance bonus");
+    expect(excerpt).not.toContain("bonus issue");
+  });
 });
