@@ -136,7 +136,8 @@ create table if not exists verification_log (
   entry_id uuid references benefit_entries(entry_id) not null,
   action text check (action in
     ('extracted','cross_checked','corrected','upgraded_confidence',
-     'downgraded_confidence','flagged_legal_review','superseded','reconciled')) not null,
+     'downgraded_confidence','flagged_legal_review','superseded','reconciled',
+     'published','rejected','pending_conflict','confidence_clamped','value_type_mismatch')) not null,
   actor text,
   timestamp timestamptz default now(),
   detail text
