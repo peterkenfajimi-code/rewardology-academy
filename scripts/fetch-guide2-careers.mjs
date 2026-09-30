@@ -2,7 +2,7 @@
  * Fetch Guide 2 careers pages via headless Chrome (JS/bot walls).
  * Writes data/guide2-downloads/{ticker}.txt
  *
- * Usage: node scripts/fetch-guide2-careers.mjs
+ * Usage: node scripts/fetch-guide2-careers.mjs [--ticker=MTNGH]
  */
 import fs from "fs";
 import path from "path";
@@ -17,7 +17,9 @@ const PAGES = [
   { ticker: "MTN", url: "https://www.mtn.com/join-our-yello-family-people-and-culture/" },
   { ticker: "SCOM", url: "https://www.safaricom.co.ke/careers/" },
   { ticker: "GCB", url: "https://www.gcbbank.com.gh/careers" },
+  { ticker: "MTNGH", url: "https://mtn.com.gh/careers/" },
 ];
+const tickerFilter = process.argv.find((a) => a.startsWith("--ticker="))?.slice("--ticker=".length).toUpperCase();
 
 async function fetchOne(page, ticker, url) {
   console.log("Loading", ticker, url);
@@ -54,6 +56,7 @@ async function main() {
   page.setDefaultNavigationTimeout(120000);
   const results = [];
   for (const row of PAGES) {
+    if (tickerFilter && row.ticker !== tickerFilter) continue;
     try {
       results.push(await fetchOne(page, row.ticker, row.url));
     } catch (e) {

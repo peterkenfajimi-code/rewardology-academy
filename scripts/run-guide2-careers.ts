@@ -1,5 +1,5 @@
 /**
- * Guide 2 careers-page extract + reconcile for GTCO, MTN (JSE), Safaricom, GCB.
+ * Guide 2 careers-page extract + reconcile for GTCO, MTN (JSE), Safaricom, GCB, MTN Ghana.
  * Reads data/guide2-downloads/{TICKER}.txt from scripts/fetch-guide2-careers.mjs.
  *
  * Usage: npx tsx scripts/run-guide2-careers.ts
@@ -22,6 +22,7 @@ const COMPANIES = [
   { ticker: "MTN", exchange: "JSE", url: "https://www.mtn.com/join-our-yello-family-people-and-culture/" },
   { ticker: "SCOM", exchange: "NSE", url: "https://www.safaricom.co.ke/careers/" },
   { ticker: "GCB", exchange: "GSE", url: "https://www.gcbbank.com.gh/careers" },
+  { ticker: "MTNGH", exchange: "GSE", url: "https://mtn.com.gh/careers/" },
 ] as const;
 
 function loadEnvLocal() {
