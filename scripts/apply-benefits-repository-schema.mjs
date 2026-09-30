@@ -100,6 +100,10 @@ const migration012 = fs.existsSync(migration012Path) ? fs.readFileSync(migration
 const migration013 = fs.existsSync(migration013Path) ? fs.readFileSync(migration013Path, "utf8") : "";
 const migration014 = fs.existsSync(migration014Path) ? fs.readFileSync(migration014Path, "utf8") : "";
 const migration015 = fs.existsSync(migration015Path) ? fs.readFileSync(migration015Path, "utf8") : "";
+const migration016Path = path.join(root, "supabase", "benefits-repository", "migrations", "016_risk_and_allowance_fields.sql");
+const migration016 = fs.existsSync(migration016Path) ? fs.readFileSync(migration016Path, "utf8") : "";
+const migration017Path = path.join(root, "supabase", "benefits-repository", "migrations", "017_company_logos.sql");
+const migration017 = fs.existsSync(migration017Path) ? fs.readFileSync(migration017Path, "utf8") : "";
 
 // Migrations first — existing DBs may lack columns referenced in schema.sql inserts.
 if (migration) await runQuery("Migration 002 (sustainability + batch)", migration, { warnOnFail: true });
@@ -146,6 +150,12 @@ if (migration014) {
 }
 if (migration015) {
   await runQuery("Migration 015 (verification_log actions)", migration015, { warnOnFail: true });
+}
+if (migration016) {
+  await runQuery("Migration 016 (risk and allowance fields)", migration016, { warnOnFail: true });
+}
+if (migration017) {
+  await runQuery("Migration 017 (company logos)", migration017, { warnOnFail: true });
 }
 
 const verify = await fetch(
