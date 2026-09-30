@@ -10,6 +10,7 @@ import type {
 } from "@/lib/repository/types";
 import { compareConfidence } from "@/lib/repository/trust-weights";
 import { RepositoryBatchPanel } from "@/components/repository/RepositoryBatchPanel";
+import { RepositoryCompanyLogoPanel } from "@/components/repository/RepositoryCompanyLogoPanel";
 import {
   formatStatutoryEmployeePct,
   formatStatutoryEmployerPct,
@@ -519,6 +520,14 @@ export function RepositoryAdminApp({ configured, anthropicConfigured }: Props) {
                   ? ` · Regulator: ${selectedCountryModule.pension_regulator}`
                   : ""}
               </p>
+            ) : null}
+            {selectedCompany ? (
+              <RepositoryCompanyLogoPanel
+                company={selectedCompany}
+                onUpdated={(updated) =>
+                  setCompanies((prev) => prev.map((c) => (c.company_id === updated.company_id ? updated : c)))
+                }
+              />
             ) : null}
 
             <h3>Create company</h3>

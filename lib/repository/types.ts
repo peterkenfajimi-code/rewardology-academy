@@ -72,6 +72,8 @@ export type Company = {
   listing_exchange: DisclosureExchange | null;
   created_at: string;
   last_reviewed_at: string | null;
+  website_domain?: string | null;
+  logo_storage_path?: string | null;
 };
 
 export type SourceRecord = {

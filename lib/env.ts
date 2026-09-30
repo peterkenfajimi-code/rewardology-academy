@@ -42,3 +42,8 @@ export function isRepositoryAdminConfigured() {
 export function isAnthropicConfigured() {
   return Boolean(process.env.ANTHROPIC_API_KEY?.trim());
 }
+
+/** logo.dev publishable key — read server-side only, so the admin preview proxies through our API. */
+export function logoDevKey(): string | null {
+  return process.env.PUBLIC_LOGO_DEV_KEY?.trim() || null;
+}
