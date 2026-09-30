@@ -31,6 +31,24 @@ const BENEFITS_KEYWORDS = [
   "esop",
   "women in leadership",
   "female representation",
+  // Not bare "allowance" / "disability": in bank reports those mostly mean ECL loss allowances and
+  // DEI metrics, which would crowd benefit text out of the excerpt.
+  "life assurance",
+  "death in service",
+  "disability cover",
+  "disability benefit",
+  "permanent disability",
+  "funeral",
+  "burial",
+  "leave allowance",
+  "housing allowance",
+  "transport allowance",
+  "meal allowance",
+  "lunch allowance",
+  "utility allowance",
+  "staff allowance",
+  "13th month",
+  "thirteenth month",
 ];
 
 const PROMPT_CHAR_LIMIT = 12_000;
