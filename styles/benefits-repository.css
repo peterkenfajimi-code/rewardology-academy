@@ -223,6 +223,16 @@
   color: var(--gold, #c8963e);
 }
 
+.benefits-repo-methodology-link-hero {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold, #c8963e);
+}
+
+.benefits-repo-methodology-link-hero:hover {
+  text-decoration: underline;
+}
+
 .benefits-repo-breadcrumb {
   font-size: 0.82rem;
   color: rgba(255, 255, 255, 0.55);
@@ -486,4 +496,40 @@
 
 .benefits-repo-methodology-section ul {
   padding-left: 1.25rem;
+}
+
+.benefits-repo-methodology-table {
+  width: 100%;
+  max-width: 68rem;
+  border-collapse: collapse;
+  margin: 0.75rem 0 1rem;
+  font-size: 0.92rem;
+}
+
+.benefits-repo-methodology-table th,
+.benefits-repo-methodology-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.benefits-repo-methodology-table thead th {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.benefits-repo-methodology-table tbody th {
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .benefits-repo-methodology-table tbody th {
+    white-space: normal;
+  }
 }

@@ -1,9 +1,11 @@
 import { BenefitsRepositoryMethodology } from "@/components/repository/BenefitsRepositoryMethodology";
 
+export const revalidate = 3600;
+
 export const metadata = {
-  title: "How confidence is scored · Africa Benefits Repository",
+  title: "Methodology & About · Africa Benefits Repository",
   description:
-    "How the Africa Benefits Repository weights sources, assigns confidence levels, and handles conflicting disclosures.",
+    "Where the Africa Benefits Repository's data comes from, how the seven-source framework and confidence scoring work, and how conflicting disclosures are handled.",
 };
 
 export default function BenefitsRepositoryMethodologyPage() {
