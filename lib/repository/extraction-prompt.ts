@@ -92,6 +92,8 @@ Other rules:
 - Prefer high confidence only when explicitly stated in the source.
 - Respect each field's max confidence from the registry — narrative/wellness content must not be high even in audited reports.
 - Do NOT extract pension subsidiary business metrics (AUM, revenue, growth), micro-pension products, RSA transfer programmes, defined-contribution balance-sheet liabilities, personnel expense totals, share-based payment liabilities, or COVID donation amounts.
+- Accounting-policy text is not a benefit disclosure. IAS 19 definitions ("short-term benefits consist of salaries, bonuses and non-monetary benefits such as medical aid"), recognition rules ("termination benefits are recognised when the Group is demonstrably committed…"), and accrual notes (accrued annual leave liability) describe cost categories or timing — extract only what the company asserts it actually provides.
+- Committee terms of reference ("the committee reviews pension and medical schemes / learning and development") describe oversight duties, not benefits employees receive.
 - Focus employee-facing benefits on schemes, coverage, programmes, contribution rates.
 - For group life insurance salary multiples, always use field_key group_life_coverage_multiple — never create variants.
 - If no workforce statistics appear in the source, return "workforce_composition": [].
