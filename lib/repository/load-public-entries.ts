@@ -13,6 +13,7 @@ type CompanyJoin = {
   industry?: string | null;
   company_id?: string;
   slug?: string | null;
+  logo_storage_path?: string | null;
 };
 
 type SourceJoin = {
@@ -46,6 +47,7 @@ export type PublicBenefitEntry = {
     country: string;
     industry: string | null;
     slug: string;
+    logo_storage_path: string | null;
   };
   sources: {
     source_type: string;
@@ -61,6 +63,7 @@ export type CompanyIndexRow = {
   country: string;
   industry: string | null;
   slug: string;
+  logo_storage_path: string | null;
   field_count: number;
   confidence_mix: ReturnType<typeof computeConfidenceMix>;
   categories: string[];
@@ -96,7 +99,7 @@ export async function loadPublicBenefitEntries(): Promise<{
       `
       entry_id, category, field, value, value_type, confidence_score, confidence_was_clamped,
       fiscal_year_or_effective_date, effective_date, company_id,
-      companies!inner ( company_id, name, country, industry, slug ),
+      companies!inner ( company_id, name, country, industry, slug, logo_storage_path ),
       sources!inner ( source_type, source_title, source_url, publication_date )
     `
     )
@@ -165,6 +168,7 @@ export async function loadPublicBenefitEntries(): Promise<{
           country: companyRaw.country ?? "",
           industry: companyRaw.industry ?? null,
           slug,
+          logo_storage_path: companyRaw.logo_storage_path ?? null,
         },
         sources: {
           source_type: sourceRaw.source_type ?? "",
@@ -204,6 +208,7 @@ export function buildCompanyIndex(entries: PublicBenefitEntry[]): CompanyIndexRo
         country: row.companies.country,
         industry: row.companies.industry,
         slug: row.companies.slug,
+        logo_storage_path: row.companies.logo_storage_path,
         field_count: 0,
         confidence_mix: computeConfidenceMix([]),
         categories: [],
@@ -242,6 +247,7 @@ export function findCompanyBySlug(
       country: first.country,
       industry: first.industry,
       slug: first.slug,
+      logo_storage_path: first.logo_storage_path,
       field_count: companyEntries.length,
       confidence_mix: computeConfidenceMix(companyEntries.map((e) => e.confidence_score)),
       categories: Array.from(new Set(companyEntries.map((e) => e.category))),

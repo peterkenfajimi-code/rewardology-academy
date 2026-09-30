@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { CompanyLogo } from "@/components/repository/CompanyLogo";
 import { ConfidenceMixBar } from "@/components/repository/ConfidenceMixBar";
 import { EmptyState } from "@/components/repository/EmptyState";
 import { EntryCard } from "@/components/repository/EntryCard";
@@ -110,15 +111,24 @@ export function BenefitsRepositoryProfile({ slug }: { slug: string }) {
       </nav>
 
       <header className="benefits-repo-profile-head">
-        <div>
-          <p className="benefits-repo-eyebrow">Company profile</p>
-          <h1>{company.name}</h1>
-          <p className="benefits-repo-muted">
-            {marketLabel(company.country)}
-            {company.industry ? ` · ${company.industry}` : ""}
-            {" · "}
-            {company.field_count} published {company.field_count === 1 ? "field" : "fields"}
-          </p>
+        <div className="benefits-repo-profile-identity">
+          <CompanyLogo name={company.name} logoPath={company.logo_storage_path} size={64} />
+          <div>
+            <p className="benefits-repo-eyebrow">Company profile</p>
+            <h1>{company.name}</h1>
+            <p className="benefits-repo-muted">
+              {marketLabel(company.country)}
+              {company.industry ? ` · ${company.industry}` : ""}
+              {" · "}
+              {company.field_count} published {company.field_count === 1 ? "field" : "fields"}
+            </p>
+            <p className="benefits-repo-trademark">
+              {company.logo_storage_path
+                ? `${company.name}'s name and logo identify the subject of publicly sourced research and remain the trademarks of their owner.`
+                : `${company.name}'s name identifies the subject of publicly sourced research and remains the trademark of its owner.`}{" "}
+              This profile is not endorsed by the company.
+            </p>
+          </div>
         </div>
         <div className="benefits-repo-profile-confidence">
           <ConfidenceMixBar mix={company.confidence_mix} expanded />

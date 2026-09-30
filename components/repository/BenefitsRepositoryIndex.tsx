@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BenefitsRepositoryHero } from "@/components/repository/BenefitsRepositoryHero";
+import { CompanyLogo } from "@/components/repository/CompanyLogo";
 import { ConfidenceMixBar } from "@/components/repository/ConfidenceMixBar";
 import { EmptyState } from "@/components/repository/EmptyState";
 import { FilterChipBar, type ActiveFilter } from "@/components/repository/FilterChipBar";
@@ -164,8 +165,11 @@ export function BenefitsRepositoryIndex({ marketCount }: { marketCount: number |
                   <tr key={company.company_id} className="benefits-repo-index-row">
                     <td>
                       <Link href={`/benefits-repository/${company.slug}`} className="benefits-repo-index-link">
-                        <span className="benefits-repo-index-name">{company.name}</span>
-                        <span className="benefits-repo-index-meta">View profile →</span>
+                        <CompanyLogo name={company.name} logoPath={company.logo_storage_path} size={36} />
+                        <span className="benefits-repo-index-text">
+                          <span className="benefits-repo-index-name">{company.name}</span>
+                          <span className="benefits-repo-index-meta">View profile →</span>
+                        </span>
                       </Link>
                     </td>
                     <td>{marketLabel(company.country)}</td>
