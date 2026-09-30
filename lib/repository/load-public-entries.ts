@@ -2,7 +2,6 @@ import {
   isEntryWithinRecencyWindow,
   isExcludedBenefitField,
 } from "@/lib/repository/collection-policy";
-import { resolveCompanySlug } from "@/lib/repository/company-slug";
 import { computeConfidenceMix } from "@/lib/repository/confidence-mix";
 import { indexRegistry, loadFieldRegistry, renderDisplayText } from "@/lib/repository/field-registry";
 import { createRepositoryReadClient } from "@/lib/supabase/repository/admin";
@@ -12,7 +11,7 @@ type CompanyJoin = {
   country?: string;
   industry?: string | null;
   company_id?: string;
-  slug?: string | null;
+  slug: string;
   logo_storage_path?: string | null;
 };
 
@@ -135,11 +134,7 @@ export async function loadPublicBenefitEntries(): Promise<{
       return [];
     }
 
-    const slug = resolveCompanySlug(
-      companyRaw.slug,
-      companyRaw.name,
-      companyRaw.country ?? ""
-    );
+    const slug = companyRaw.slug;
     const registry = registryByKey.get(`${row.category}::${row.field}`);
     const displayText = renderDisplayText(
       registry?.display_template,
