@@ -104,6 +104,10 @@ const migration016Path = path.join(root, "supabase", "benefits-repository", "mig
 const migration016 = fs.existsSync(migration016Path) ? fs.readFileSync(migration016Path, "utf8") : "";
 const migration017Path = path.join(root, "supabase", "benefits-repository", "migrations", "017_company_logos.sql");
 const migration017 = fs.existsSync(migration017Path) ? fs.readFileSync(migration017Path, "utf8") : "";
+const migration018Path = path.join(root, "supabase", "benefits-repository", "migrations", "018_registry_patch_4.sql");
+const migration018 = fs.existsSync(migration018Path) ? fs.readFileSync(migration018Path, "utf8") : "";
+const migration019Path = path.join(root, "supabase", "benefits-repository", "migrations", "019_company_slug_required.sql");
+const migration019 = fs.existsSync(migration019Path) ? fs.readFileSync(migration019Path, "utf8") : "";
 
 // Migrations first — existing DBs may lack columns referenced in schema.sql inserts.
 if (migration) await runQuery("Migration 002 (sustainability + batch)", migration, { warnOnFail: true });
@@ -156,6 +160,12 @@ if (migration016) {
 }
 if (migration017) {
   await runQuery("Migration 017 (company logos)", migration017, { warnOnFail: true });
+}
+if (migration018) {
+  await runQuery("Migration 018 (registry patch 4)", migration018, { warnOnFail: true });
+}
+if (migration019) {
+  await runQuery("Migration 019 (company slug required)", migration019, { warnOnFail: true });
 }
 
 const verify = await fetch(
