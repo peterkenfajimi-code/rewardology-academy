@@ -1,5 +1,12 @@
 export type CountryCode = "NG" | "GH" | "KE" | "ZA" | "EG" | "RW";
 
+/**
+ * Seven-source framework — each source type is collected under a numbered guide:
+ * Guide 1 annual/sustainability report, Guide 2 careers page, Guide 3 press releases,
+ * Guide 4 regulatory filings, Guide 5 LinkedIn, Guide 6 award submissions,
+ * Guide 7 direct outreach (direct_confirmation).
+ * Indexed or pasted text keeps its real source type; say so in source_title.
+ */
 export type SourceType =
   | "annual_report"
   | "sustainability_report"
