@@ -1,8 +1,6 @@
 import Link from "next/link";
-import { isRepositorySupabaseConfigured } from "@/lib/env";
 import { SOURCE_RECENCY_YEARS } from "@/lib/repository/collection-policy";
-import { buildCompanyIndex, loadPublicBenefitEntries } from "@/lib/repository/load-public-entries";
-import { MARKET_OPTIONS } from "@/lib/repository/market-labels";
+import { loadRepositoryCoverage } from "@/lib/repository/coverage";
 import { STALENESS_MONTHS } from "@/lib/repository/staleness";
 import { CONTACT_EMAIL } from "@/lib/site";
 import "@/styles/benefits-repository.css";
@@ -38,23 +36,8 @@ const SOURCES = [
   { name: "Direct outreach", gives: "Confirmation requested directly from a company, on the record." },
 ];
 
-async function loadCoverage(): Promise<{ companies: number; countries: string[] } | null> {
-  if (!isRepositorySupabaseConfigured()) return null;
-  try {
-    const { entries } = await loadPublicBenefitEntries();
-    const companies = buildCompanyIndex(entries);
-    const codes = new Set(companies.map((c) => c.country));
-    return {
-      companies: companies.length,
-      countries: MARKET_OPTIONS.filter((m) => codes.has(m.code)).map((m) => m.label),
-    };
-  } catch {
-    return null;
-  }
-}
-
 export async function BenefitsRepositoryMethodology() {
-  const coverage = await loadCoverage();
+  const coverage = await loadRepositoryCoverage();
 
   return (
     <div className="benefits-repo benefits-repo-methodology">

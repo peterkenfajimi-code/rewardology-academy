@@ -30,7 +30,7 @@ function filterDescription(filters: ActiveFilter[]): string {
   return parts.length ? parts.join(" · ") : "your filters";
 }
 
-export function BenefitsRepositoryIndex() {
+export function BenefitsRepositoryIndex({ marketCount }: { marketCount: number | null }) {
   const [configured, setConfigured] = useState<boolean | null>(null);
   const [companies, setCompanies] = useState<CompanyIndexRow[]>([]);
   const [stats, setStats] = useState<IndexResponse["stats"]>(undefined);
@@ -80,7 +80,7 @@ export function BenefitsRepositoryIndex() {
 
   return (
     <div className="benefits-repo">
-      <BenefitsRepositoryHero />
+      <BenefitsRepositoryHero marketCount={marketCount} />
 
       {configured === false ? (
         <div className="benefits-repo-notice">
@@ -98,7 +98,10 @@ export function BenefitsRepositoryIndex() {
       />
 
       <label className="benefits-repo-search benefits-repo-search-standalone">
-        Search companies or benefits
+        <span>
+          Search companies or benefits{" "}
+          <kbd className="benefits-repo-kbd">Ctrl / ⌘ K</kbd>
+        </span>
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
