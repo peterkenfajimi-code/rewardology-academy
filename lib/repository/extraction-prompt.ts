@@ -36,7 +36,7 @@ GHANA THREE-TIER SSNIT PENSION — critical:
 - Tier 2 mandatory occupational rates: tier2_employer_contribution_pct / tier2_employee_contribution_pct — NOT voluntary_contribution_program (that field is for optional employee-initiated extra contributions only, e.g. AVC).
 - Tier 3 voluntary extras: voluntary_contribution_program only when the source describes optional additional employee contributions.
 - Post-retirement medical care for former employees: post_retirement_medical_care — NOT health.hmo_scope (active-employee coverage) or additional_exit_benefit_scheme (exit/severance payout).
-- defined_benefit_plan_exists is Yes/No only for a company-sponsored supplementary DB scheme — NOT SSNIT Tier 1 (country statutory DB). If the company scheme is closed, frozen, or discontinued, still Yes, and set defined_benefit_plan_status to closed_legacy. Values for defined_benefit_plan_status: active | closed_legacy | none. Never put the closed/discontinued story on defined_benefit_plan_exists.`
+- defined_benefit_plan_exists is Yes/No only for a company-sponsored supplementary pension-style DB scheme (pays a pension defined by salary and service) — NOT SSNIT Tier 1 (country statutory DB), and NOT a lump-sum gratuity even when IAS 19 treats it as a defined benefit obligation (that goes on gratuity_scheme_exists / gratuity_scheme_type). If the company pension-style scheme is closed, frozen, or discontinued, still Yes, and set defined_benefit_plan_status to closed_legacy. Values for defined_benefit_plan_status: active | closed_legacy | none. Never put the closed/discontinued story on defined_benefit_plan_exists.`
       : "";
 
   const registryBlock =
@@ -93,6 +93,7 @@ Other rules:
 - Respect each field's max confidence from the registry — narrative/wellness content must not be high even in audited reports.
 - Do NOT extract pension subsidiary business metrics (AUM, revenue, growth), micro-pension products, RSA transfer programmes, defined-contribution balance-sheet liabilities, personnel expense totals, share-based payment liabilities, or COVID donation amounts.
 - Accounting-policy text is not a benefit disclosure. IAS 19 definitions ("short-term benefits consist of salaries, bonuses and non-monetary benefits such as medical aid"), recognition rules ("termination benefits are recognised when the Group is demonstrably committed…"), and accrual notes (accrued annual leave liability) describe cost categories or timing — extract only what the company asserts it actually provides.
+- A lump-sum gratuity or terminal-benefit scheme belongs on gratuity_scheme_exists / gratuity_scheme_type even when the accounts call it a defined benefit obligation under IAS 19. defined_benefit_plan_exists / defined_benefit_plan_status are only for pension-style DB schemes that pay a pension defined by salary and service. Never record the same scheme on both.
 - Committee terms of reference ("the committee reviews pension and medical schemes / learning and development") describe oversight duties, not benefits employees receive.
 - Focus employee-facing benefits on schemes, coverage, programmes, contribution rates.
 - For group life insurance salary multiples, always use field_key group_life_coverage_multiple — never create variants.
