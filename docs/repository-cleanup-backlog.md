@@ -54,6 +54,8 @@ Prioritized follow-up items. Smallest concrete fixes first.
 
 6p. **Long service award (Oct 2026).** Migration 023 (`field_registry_patch_6`) adds `other_voluntary.long_service_award` (`named_program` / medium) — tenure-milestone recognition, not gratuity, not 13th month, not performance bonus. Excerpt keywords `long service award` and `service award` (not bare "service"). Published from stored 2024 ARs (`scripts/publish-long-service-awards.ts`): MTN Ghana — instituted Dec 2016, permanent staff, five years; GCB Plan A — cash at graduated rates after 15 years (same sitting, already identified). Registry now 63 fields. P&L long-service cost lines were not copied as the value.
 
+6q. **Extraction model pin (Oct 2026).** Default was a dated snapshot (`claude-sonnet-4-5-20250929`) on a retirement clock. Switched to the alias `claude-sonnet-5` (`fd720ff`). Structured extraction also sets `thinking: disabled` so adaptive thinking cannot spend the 4,096-token output budget. Smoke-tested on the stored MTN Ghana 2024 AR (shape only; not saved). Standing rule: prefer the undated alias; on a token-budgeted JSON call, disable thinking or budget for it — a short valid-JSON smoke test is not enough.
+
 7. ~~**Fifth company — MTN Ghana (Scancom PLC)**~~ — **Done (Sep 2026).** Separate row `GSE:MTNGH` / slug `scancom-plc-mtn-ghana-gh` vs `JSE:MTN` / `mtn-group-ltd-za`. Guide 1 from 2024 AR: DC scheme disclosed with no rate (statutory 5% not copied); ESOP/PSP published; workforce 42.8% / 29.3% women. Empty quantified rows dropped going forward.
 
 ## Reference

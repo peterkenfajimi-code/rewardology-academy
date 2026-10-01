@@ -156,6 +156,9 @@ export async function callAnthropicExtraction(model: string, prompt: string): Pr
 
       max_tokens: 4096,
 
+      // Structured JSON with a fixed output budget: do not inherit a model's default thinking.
+      // Adaptive thinking can spend this budget before JSON is produced — that can look fine on a
+      // short smoke test and fail on a longer source. Disable it, or raise max_tokens to cover it.
       thinking: { type: "disabled" },
 
       messages: [{ role: "user", content: prompt }],
@@ -196,6 +199,7 @@ export async function callAnthropicExtraction(model: string, prompt: string): Pr
 
 
 
+/** Current Anthropic alias. Prefer `claude-sonnet-5` over a dated snapshot (`…-YYYYMMDD`), which retires on a clock independent of this code. Override with ANTHROPIC_MODEL only to pin on purpose. */
 export function anthropicModelId(): string {
   return process.env.ANTHROPIC_MODEL?.trim() || "claude-sonnet-5";
 }
