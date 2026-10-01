@@ -156,6 +156,8 @@ export async function callAnthropicExtraction(model: string, prompt: string): Pr
 
       max_tokens: 4096,
 
+      thinking: { type: "disabled" },
+
       messages: [{ role: "user", content: prompt }],
 
     }),
@@ -195,9 +197,7 @@ export async function callAnthropicExtraction(model: string, prompt: string): Pr
 
 
 export function anthropicModelId(): string {
-
-  return process.env.ANTHROPIC_MODEL?.trim() || "claude-sonnet-4-5-20250929";
-
+  return process.env.ANTHROPIC_MODEL?.trim() || "claude-sonnet-5";
 }
 
 
