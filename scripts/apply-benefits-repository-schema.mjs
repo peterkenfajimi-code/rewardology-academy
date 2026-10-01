@@ -112,6 +112,8 @@ const migration020Path = path.join(root, "supabase", "benefits-repository", "mig
 const migration020 = fs.existsSync(migration020Path) ? fs.readFileSync(migration020Path, "utf8") : "";
 const migration021Path = path.join(root, "supabase", "benefits-repository", "migrations", "021_unmapped_findings.sql");
 const migration021 = fs.existsSync(migration021Path) ? fs.readFileSync(migration021Path, "utf8") : "";
+const migration022Path = path.join(root, "supabase", "benefits-repository", "migrations", "022_gratuity_vs_db_scope.sql");
+const migration022 = fs.existsSync(migration022Path) ? fs.readFileSync(migration022Path, "utf8") : "";
 
 // Migrations first — existing DBs may lack columns referenced in schema.sql inserts.
 if (migration) await runQuery("Migration 002 (sustainability + batch)", migration, { warnOnFail: true });
@@ -176,6 +178,9 @@ if (migration020) {
 }
 if (migration021) {
   await runQuery("Migration 021 (unmapped findings)", migration021, { warnOnFail: true });
+}
+if (migration022) {
+  await runQuery("Migration 022 (gratuity vs DB scope)", migration022, { warnOnFail: true });
 }
 
 const verify = await fetch(
