@@ -59,6 +59,9 @@ const BENEFITS_KEYWORDS = [
   "performance bonus",
   "annual bonus",
   "discretionary bonus",
+  // Not bare "service": reports also use it for customer service, national service and service charges.
+  "long service award",
+  "service award",
 ];
 
 const PROMPT_CHAR_LIMIT = 12_000;

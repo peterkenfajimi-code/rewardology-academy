@@ -29,4 +29,18 @@ describe("selectBenefitsExcerpt", () => {
     expect(excerpt).toContain("annual performance bonus");
     expect(excerpt).not.toContain("bonus issue");
   });
+
+  it("keeps long-service-award passages but not customer-service text", () => {
+    const filler = "Revenue grew strongly in the year across all operating segments and markets, driven by data and fintech.";
+    const text = [
+      "The Group invests in customer service training so that front-line staff can resolve complaints within agreed turnaround times.",
+      filler,
+      filler,
+      "Long service awards were instituted in 2016. Permanent staff become eligible after five years of service.",
+    ].join("\n\n");
+
+    const excerpt = selectBenefitsExcerpt(text);
+    expect(excerpt).toContain("Long service awards");
+    expect(excerpt).not.toContain("customer service training");
+  });
 });
