@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { clientIpFromHeaders, geoFromHeaders } from "@/lib/geo/resolveLocation";
+import {
+  clientIpFromHeaders,
+  geoFromHeaders,
+  parseNetlifyGeoHeader,
+} from "@/lib/geo/resolveLocation";
 
 describe("geoFromHeaders", () => {
   it("reads Vercel geo headers", () => {
@@ -24,6 +28,43 @@ describe("geoFromHeaders", () => {
       region: null,
       city: null,
     });
+  });
+
+  it("reads Netlify x-nf-geo header", () => {
+    const payload = {
+      city: "Austin",
+      country: { code: "US", name: "United States" },
+      subdivision: { code: "TX", name: "Texas" },
+    };
+    const encoded = Buffer.from(JSON.stringify(payload)).toString("base64");
+    const headers = new Headers({ "x-nf-geo": encoded });
+    expect(parseNetlifyGeoHeader(headers)).toEqual({
+      countryCode: "US",
+      countryName: "United States",
+      region: "Texas",
+      city: "Austin",
+    });
+    expect(geoFromHeaders(headers)).toEqual({
+      countryCode: "US",
+      countryName: "United States",
+      region: "Texas",
+      city: "Austin",
+    });
+  });
+
+  it("prefers Netlify geo over x-country-only header", () => {
+    const payload = {
+      city: "Seattle",
+      country: { code: "US", name: "United States" },
+      subdivision: { name: "Washington" },
+    };
+    const encoded = Buffer.from(JSON.stringify(payload)).toString("base64");
+    const headers = new Headers({
+      "x-nf-geo": encoded,
+      "x-country": "US",
+    });
+    expect(geoFromHeaders(headers).city).toBe("Seattle");
+    expect(geoFromHeaders(headers).region).toBe("Washington");
   });
 
   it("returns empty when no geo headers exist", () => {
