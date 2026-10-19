@@ -20,6 +20,13 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true, recorded: false });
   }
 
+  const location = {
+    countryCode: geo.countryCode,
+    countryName: geo.countryName,
+    region: geo.region,
+    city: geo.city,
+  };
+
   const { error } = await supabase.rpc("record_user_location", {
     p_country_code: geo.countryCode,
     p_country_name: geo.countryName,
@@ -31,5 +38,5 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
   }
 
-  return NextResponse.json({ ok: true, recorded: true });
+  return NextResponse.json({ ok: true, recorded: true, location });
 }

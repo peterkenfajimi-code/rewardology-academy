@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { recordUserLocation } from "@/lib/geo/clientRecordLocation";
 
 type AdminStats = {
   users: { total: number; newLast7: number; newLast30: number; active7: number; active30: number };
@@ -74,6 +75,8 @@ export function AdminDashboardPanel() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [lastRefreshed, setLastRefreshed] = useState<Date | null>(null);
+  const [geoRecording, setGeoRecording] = useState(false);
+  const [geoMessage, setGeoMessage] = useState("");
 
   const load = async () => {
     setLoading(true);
@@ -94,6 +97,29 @@ export function AdminDashboardPanel() {
   };
 
   useEffect(() => { load(); }, []);
+
+  const refreshMyLocation = async () => {
+    setGeoRecording(true);
+    setGeoMessage("");
+    try {
+      const result = await recordUserLocation({ force: true });
+      if (!result.ok) {
+        setGeoMessage(result.error || "Could not record location.");
+        return;
+      }
+      if (!result.recorded || !result.location) {
+        setGeoMessage("No location could be resolved from this request (headers/IP).");
+        return;
+      }
+      const { countryCode, countryName, region, city } = result.location;
+      setGeoMessage(`Recorded: ${formatLocationLabel(countryCode, countryName, region, city)}`);
+      await load();
+    } catch {
+      setGeoMessage("Network error while recording location.");
+    } finally {
+      setGeoRecording(false);
+    }
+  };
 
   if (loading) return <div className="adm-loading">Loading platform stats…</div>;
   if (error) return <div className="adm-error">{error}</div>;
@@ -173,7 +199,21 @@ export function AdminDashboardPanel() {
       </div>
 
       {/* ── User locations ── */}
-      <SectionHead title="User locations" icon="🌍" />
+      <div className="adm-section-head adm-section-head-actions">
+        <div className="adm-section-head-main">
+          <span className="adm-section-icon">🌍</span>
+          <h3 className="adm-section-title">User locations</h3>
+        </div>
+        <button
+          type="button"
+          className="setup-btn setup-btn-sm"
+          disabled={geoRecording}
+          onClick={refreshMyLocation}
+        >
+          {geoRecording ? "Recording…" : "Update my location"}
+        </button>
+      </div>
+      {geoMessage && <p className="adm-location-geo-msg">{geoMessage}</p>}
       <div className="adm-stat-grid">
         <StatCard
           label="Users with location"
