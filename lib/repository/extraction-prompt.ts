@@ -1,4 +1,5 @@
 import { STATUTORY_VS_DISCLOSURE_PROMPT_BLOCK } from "@/lib/repository/statutory-vs-disclosure";
+import { TRAINING_SPEND_PROMPT_BLOCK } from "@/lib/repository/training-spend";
 import type { CountryModule } from "@/lib/repository/types";
 import type { FieldRegistryRow } from "@/lib/repository/field-registry";
 import { formatRegistryForPrompt } from "@/lib/repository/field-registry";
@@ -52,7 +53,7 @@ If nothing in this list fits a genuine employee benefit fact in the source text,
   return `You extract structured employer benefits data for the Africa Benefits Repository.
 
 Company: ${companyName}
-${countryContext}${STATUTORY_VS_DISCLOSURE_PROMPT_BLOCK}${kenyaTierNote}${ghanaTierNote}${registryBlock}
+${countryContext}${STATUTORY_VS_DISCLOSURE_PROMPT_BLOCK}${TRAINING_SPEND_PROMPT_BLOCK}${kenyaTierNote}${ghanaTierNote}${registryBlock}
 
 Return ONLY a JSON object (no markdown, no commentary) with two arrays:
 
