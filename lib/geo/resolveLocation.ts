@@ -12,6 +12,20 @@ const EMPTY: GeoLocation = {
   city: null,
 };
 
+type NetlifyGeoPayload = {
+  city?: string;
+  country?: { code?: string; name?: string };
+  subdivision?: { code?: string; name?: string };
+};
+
+type IpApiResponse = {
+  status?: string;
+  country?: string;
+  countryCode?: string;
+  regionName?: string;
+  city?: string;
+};
+
 /** Extract the client IP from common CDN / proxy headers. */
 export function clientIpFromHeaders(headers: Headers): string | null {
   const netlify = headers.get("x-nf-client-connection-ip");
@@ -33,45 +47,69 @@ function isPrivateIp(ip: string): boolean {
   return false;
 }
 
-/** Read geo from CDN headers when the host injects them (Vercel, Cloudflare, etc.). */
+function decodeBase64Json(raw: string): NetlifyGeoPayload | null {
+  try {
+    const normalized = raw.trim();
+    const jsonText =
+      typeof atob !== "undefined"
+        ? atob(normalized)
+        : Buffer.from(normalized, "base64").toString("utf8");
+    return JSON.parse(jsonText) as NetlifyGeoPayload;
+  } catch {
+    return null;
+  }
+}
+
+/** Netlify injects base64 JSON on function/API requests (see x-nf-geo / edge Geo header). */
+export function parseNetlifyGeoHeader(headers: Headers): GeoLocation {
+  const raw = headers.get("x-nf-geo");
+  if (!raw) return { ...EMPTY };
+
+  const json = decodeBase64Json(raw);
+  if (!json?.country?.code?.trim()) return { ...EMPTY };
+
+  const subdivision = json.subdivision?.name?.trim() || json.subdivision?.code?.trim() || null;
+
+  return {
+    countryCode: json.country.code.trim().toUpperCase(),
+    countryName: json.country.name?.trim() || null,
+    region: subdivision,
+    city: json.city?.trim() || null,
+  };
+}
+
+function hasRegionalDetail(geo: GeoLocation): boolean {
+  return Boolean(geo.region?.trim() || geo.city?.trim());
+}
+
+/** Read geo from CDN headers when the host injects them (Vercel, Netlify, Cloudflare, etc.). */
 export function geoFromHeaders(headers: Headers): GeoLocation {
-  const countryCode =
-    headers.get("x-vercel-ip-country") ||
-    headers.get("cf-ipcountry") ||
-    headers.get("x-country") ||
-    null;
+  const vercelCountry = headers.get("x-vercel-ip-country");
+  if (vercelCountry) {
+    return {
+      countryCode: vercelCountry.toUpperCase(),
+      countryName: null,
+      region: headers.get("x-vercel-ip-country-region")?.trim() || null,
+      city: headers.get("x-vercel-ip-city")?.trim() || null,
+    };
+  }
 
-  const region =
-    headers.get("x-vercel-ip-country-region") ||
-    headers.get("x-region") ||
-    null;
+  const netlify = parseNetlifyGeoHeader(headers);
+  if (netlify.countryCode) return netlify;
 
-  const city = headers.get("x-vercel-ip-city") || headers.get("x-city") || null;
-
+  const countryCode = headers.get("cf-ipcountry") || headers.get("x-country") || null;
   if (!countryCode) return { ...EMPTY };
 
   return {
     countryCode: countryCode.toUpperCase(),
     countryName: null,
-    region: region?.trim() || null,
-    city: city?.trim() || null,
+    region: headers.get("x-region")?.trim() || null,
+    city: headers.get("x-city")?.trim() || null,
   };
 }
 
-type IpApiResponse = {
-  status?: string;
-  country?: string;
-  countryCode?: string;
-  regionName?: string;
-  city?: string;
-};
-
-/** Resolve approximate location from request headers, with IP lookup fallback. */
-export async function resolveLocation(request: Request): Promise<GeoLocation> {
-  const fromHeaders = geoFromHeaders(request.headers);
-  if (fromHeaders.countryCode) return fromHeaders;
-
-  const ip = clientIpFromHeaders(request.headers);
+async function lookupGeoFromIp(headers: Headers): Promise<GeoLocation> {
+  const ip = clientIpFromHeaders(headers);
   if (!ip || isPrivateIp(ip)) return { ...EMPTY };
 
   try {
@@ -93,4 +131,30 @@ export async function resolveLocation(request: Request): Promise<GeoLocation> {
   } catch {
     return { ...EMPTY };
   }
+}
+
+function mergeGeo(base: GeoLocation, enrichment: GeoLocation): GeoLocation {
+  return {
+    countryCode: base.countryCode ?? enrichment.countryCode,
+    countryName: base.countryName ?? enrichment.countryName,
+    region: base.region ?? enrichment.region,
+    city: base.city ?? enrichment.city,
+  };
+}
+
+/** Resolve approximate location from request headers, with IP lookup fallback. */
+export async function resolveLocation(request: Request): Promise<GeoLocation> {
+  const fromHeaders = geoFromHeaders(request.headers);
+
+  if (fromHeaders.countryCode && hasRegionalDetail(fromHeaders)) {
+    return fromHeaders;
+  }
+
+  const fromIp = await lookupGeoFromIp(request.headers);
+
+  if (fromHeaders.countryCode) {
+    return mergeGeo(fromHeaders, fromIp);
+  }
+
+  return fromIp.countryCode ? fromIp : { ...EMPTY };
 }

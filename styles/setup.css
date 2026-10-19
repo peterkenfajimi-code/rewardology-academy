@@ -217,6 +217,25 @@
   gap: 10px;
   margin-top: 8px;
 }
+.adm-section-head-actions {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.adm-section-head-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.setup-btn-sm {
+  padding: 8px 14px;
+  font-size: 12px;
+}
+.adm-location-geo-msg {
+  margin: 4px 0 12px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+}
 .adm-section-icon { font-size: 18px; }
 .adm-section-title {
   font-size: 13px;
