@@ -30,7 +30,7 @@ for (const script of scripts) {
     errors.push(`Invalid toolkit JavaScript: ${error.message}`);
   }
 }
-for (let index = 1; index <= 47; index += 1) {
+for (let index = 1; index <= 62; index += 1) {
   const toolId = `t${String(index).padStart(2, "0")}`;
   if (!navIds.has(toolId)) errors.push(`Missing navigation item ${toolId}`);
   if (!panelIds.has(toolId)) errors.push(`Missing panel ${toolId}`);

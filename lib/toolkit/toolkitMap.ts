@@ -52,6 +52,21 @@ export const TOOLKIT_MAP: Record<string, ToolkitEntry> = {
   "15-1-2": { toolId: "t45", label: "Open: HR Due Diligence Checklist" },
   "15-2-2": { toolId: "t46", label: "Open: Harmonisation Cost Modeller" },
   "15-4-2": { toolId: "t47", label: "Open: Integration Communications Planner" },
+  "16-1-2": { toolId: "t48", label: "Open: Reward Strategy Maturity Scorer" },
+  "16-2-2": { toolId: "t49", label: "Open: Business Case ROI Calculator" },
+  "16-3-2": { toolId: "t50", label: "Open: SCQA Presentation Builder" },
+  "17-1-2": { toolId: "t52", label: "Open: Workforce Scenario Cost Modeller" },
+  "17-2-2": { toolId: "t51", label: "Open: Employment Cost Calculator" },
+  "17-4-2": { toolId: "t53", label: "Open: Redundancy Cost & Payback Calculator" },
+  "18-2-2": { toolId: "t54", label: "Open: Recognition Programme Designer" },
+  "18-3-2": { toolId: "t56", label: "Open: Non-Financial Reward Audit" },
+  "18-4-2": { toolId: "t55", label: "Open: EVP Diagnostic" },
+  "19-1-2": { toolId: "t57", label: "Open: Startup Compensation Benchmarker" },
+  "19-2-2": { toolId: "t58", label: "Open: EMI Option Pool Calculator" },
+  "19-3-2": { toolId: "t59", label: "Open: Scaling Pay Structure Planner" },
+  "20-2-2": { toolId: "t60", label: "Open: ESG Pay Metric Selector" },
+  "20-3-2": { toolId: "t61", label: "Open: Board Reward Report Builder" },
+  "20-4-2": { toolId: "t62", label: "Open: Pay Transparency Readiness — Advanced" },
 };
 
 export const TOOLKIT_HTML_PATH = "/toolkit/rewardology-toolkit.html";

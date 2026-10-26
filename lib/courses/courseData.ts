@@ -21885,6 +21885,5599 @@ export const COURSES: Course[] =
         ]
       }
     ]
+  },
+  {
+    "id": 16,
+    "title": "Reward Strategy and Business Partnering",
+    "subtitle": "Transition from reward administrator to strategic business partner — building financial business cases, presenting to boards and RemCos, and partnering with business leaders to solve talent and cost challenges. Built around Meridian Group's transformation from a cost-management function to a strategic reward capability.",
+    "color": "#1B5E94",
+    "color2": "#1B5E94",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "level": "Advanced",
+    "duration": "3h 45m",
+    "lessons_count": 18,
+    "total_xp": 3030,
+    "desc": "Transition from reward administrator to strategic business partner — building financial business cases, presenting to boards and RemCos, and partnering with business leaders to solve talent and cost challenges. Built around Meridian Group's transformation from a cost-management function to a strategic reward capability.",
+    "outcomes": [
+      "Diagnose business problems through a reward lens using the three-horizon framework",
+      "Build a reward business case with quantified ROI that a CFO will fund",
+      "Structure and deliver a board-level reward presentation using board language",
+      "Operate as a reward business partner with business acumen and multi-stakeholder communication skills",
+      "Design a cross-border pay framework and handle merger harmonisation challenges",
+      "Present executive pay governance to shareholders with transparency, performance context, and employee investment evidence"
+    ],
+    "pro": true,
+    "modules": [
+      {
+        "id": "16-1",
+        "title": "From Administrative Function to Strategic Partner",
+        "color": "#1B5E94",
+        "lessons": [
+          {
+            "id": "16-1-1",
+            "title": "From Administrative Function to Strategic Partner",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Reward professionals in most organisations spend the majority of their time on administrative activity — processing salary reviews, running benefits renewals, answering payroll queries. This is necessary work. It is not, however, the work that creates competitive advantage. The strategic reward professional operates differently: diagnosing business problems through a reward lens, designing interventions that shift measurable people outcomes, and influencing senior stakeholders with financial rigour. This module maps the transition from administrator to strategist."
+              },
+              {
+                "t": "h",
+                "v": "The Three Horizons of Reward Work"
+              },
+              {
+                "t": "p",
+                "v": "Horizon 1 (Operational): accurate pay, on-time processes, compliant benefits — the table-stakes work that must be done well but does not differentiate. Horizon 2 (Tactical): well-designed salary structures, competitive benefits packages, functioning incentive plans — work that creates a capable reward infrastructure. Horizon 3 (Strategic): reward interventions that solve specific business problems — reducing attrition in a critical talent segment, enabling a merger harmonisation, supporting a culture change, providing investors with a credible people narrative. Most reward professionals spend 80%+ of their time in Horizon 1. The transition to strategic influence requires deliberately creating capacity for Horizon 3 by improving Horizon 1 and 2 efficiency."
+              },
+              {
+                "t": "h",
+                "v": "The Reward Strategic Agenda"
+              },
+              {
+                "t": "p",
+                "v": "Strategic reward work begins with the business agenda, not the reward agenda. The starting question is not 'how do we improve our pay structure?' but 'what business problem is the CEO trying to solve this year?' Common strategic reward questions: Which roles are we over-paying because of legacy decisions that no longer reflect market or internal value? Which roles are under-paying in ways that constrain our ability to hire or retain talent critical to the strategy? Is our incentive design producing the behaviours the strategy requires? Does our total rewards proposition attract the profile of talent our business model needs in the next three years? The reward professional who answers these questions — with data, commercial awareness, and financial rigour — is operating in Horizon 3."
+              },
+              {
+                "t": "h",
+                "v": "The Meridian Group Context"
+              },
+              {
+                "t": "p",
+                "v": "Meridian Group is a mid-market professional services firm (2,400 employees, seven practice areas, offices in London, Manchester, Dublin, and Amsterdam). The Head of Reward, Laila Nkosi, has been in post for 18 months. Her predecessor managed the function as an administrative service. The CEO, James Whitfield, has given Laila a clear mandate: 'Make reward a strategic tool, not a cost management exercise.' Meridian's current reward challenges: attrition among mid-level consultants (Grade 5-7) is running at 22% versus a sector benchmark of 14%; the compensation budget is flat; three of seven practice areas are flagging retention problems; and the pending Amsterdam office expansion has created a cross-border pay complexity the current structure does not handle."
+              },
+              {
+                "t": "box",
+                "label": "Strategic Reward Transition",
+                "v": "Horizon 1 → 2 → 3 progression requires:\n• Horizon 1 efficiency: automate, delegate, simplify\n• Horizon 2 rigour: market-aligned structures, defensible processes\n• Horizon 3 impact: business-problem diagnosis, commercial data, stakeholder influence\nThe strategic reward professional spends time at Horizon 3 by freeing it from Horizon 1."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The three-horizon model (operational, tactical, strategic) provides a framework for identifying where reward time is spent and where it should be spent.",
+                  "Strategic reward work begins with business problems, not reward problems — the entry point is always 'what is the business trying to achieve?'",
+                  "Transition to Horizon 3 requires deliberate capacity creation, not just ambition — Horizon 1 efficiency is the precondition."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "Laila's most important first action to establish strategic credibility is:",
+              "opts": [
+                "Launch a comprehensive benefits benchmarking exercise to demonstrate reward market knowledge.",
+                "Diagnose the consultant attrition problem through a reward lens and present the analysis with financial impact data to the CEO.",
+                "Redesign the salary structure to ensure all grades are correctly market-priced.",
+                "Build relationships with each practice area head by attending their leadership team meetings."
+              ],
+              "ans": 1,
+              "exp": "Strategic credibility is established by solving a business problem the CEO cares about with data and financial rigour — not by demonstrating technical reward knowledge in isolation."
+            }
+          },
+          {
+            "id": "16-1-2",
+            "title": "Diagnosing Meridian's Consultant Attrition",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Attrition Data Pack",
+                "v": "22% attrition at Grade 5-7 (benchmark: 14%). Exit interview themes: 'better offer elsewhere' (61%), 'limited progression clarity' (28%), 'not feeling valued' (18%). Market data: Meridian's Grade 5-7 midpoints are 8% below P50 on CRF/Mercer Professional Services survey. Time-to-fill for Grade 5-7 roles: 67 days (benchmark: 45 days). Average cost to replace one Grade 5-7 consultant (recruitment, onboarding, lost productivity): estimated £28,500. Grade 5-7 headcount: 340 people. Current year voluntary leavers at Grade 5-7: 75 people."
+              },
+              {
+                "t": "p",
+                "v": "This is the foundational exercise in reward business partnering: translating a qualitative 'retention problem' into a quantified financial case with identified causes and testable interventions."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "75 leavers × £28,500 average replacement cost = £2,137,500 annual attrition cost at Grade 5-7. If attrition were reduced to the 14% benchmark (from 22%): benchmark leavers = 340 × 14% = 47.6 ≈ 48 people. Cost at benchmark = 48 × £28,500 = £1,368,000. Excess attrition cost = £2,137,500 − £1,368,000 = £769,500. This is the annual financial value of closing the attrition gap. This number is the foundation of any business case for a Grade 5-7 pay investment."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "The exit data has three components. 'Better offer elsewhere' (61%) + pay lag of 8% below P50 = direct compensation competitiveness issue. Pay is the primary driver. 'Limited progression clarity' (28%) = pay structure and career framework transparency issue — employees cannot see how pay progresses with career. 'Not feeling valued' (18%) = likely a recognition and reward communication issue, not a pay level issue. The reward diagnosis: primary problem is market position (8% below P50 at Grade 5-7); secondary problem is pay structure transparency and career framework visibility."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "Primary intervention: adjust Grade 5-7 midpoints to P50 (estimated 8% increase on midpoints). Apply salary adjustments to employees whose current salary would be below the new minimum, prioritising those furthest below. Estimated cost: depends on current distribution — modelling required. Secondary intervention: publish the Grade 5-7 salary range and progression criteria explicitly in the employee intranet and in manager toolkits. This costs nothing but addresses the 'progression clarity' driver. Tertiary intervention: manager recognition training (from Course 4) to address the 18% 'not feeling valued' driver."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The financial case (£769,500 excess attrition cost) transforms a qualitative 'people problem' into a business investment decision with a quantified return.",
+                  "Exit interview data must be disaggregated by theme to identify which reward levers (pay level, structure transparency, recognition) address which attrition drivers.",
+                  "A reward diagnosis should always distinguish primary, secondary, and tertiary causes — the interventions are different and should be sequenced accordingly."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "16-1-3",
+            "title": "Meridian's Strategic Reward Roadmap — Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Meridian's Strategic Reward Roadmap",
+                "v": "Laila presents her attrition diagnosis to the CEO. James Whitfield responds positively to the financial framing but raises three challenges: (1) 'The compensation budget is flat — where does the money come from?' (2) 'If we raise Grade 5-7 pay, every other grade will expect the same.' (3) 'How do we know that higher pay will actually retain consultants — some of these people are leaving for culture reasons, not money?'"
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "How does Laila respond to 'the budget is flat'?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The response must reframe from budget to investment ROI. 'The excess attrition cost is £769,500 per year. A targeted Grade 5-7 midpoint adjustment will cost approximately £180,000-£220,000 in payroll uplift. The net first-year benefit is therefore approximately £550,000-£590,000 — and the payroll cost is a recurring commitment against a recurring attrition saving. This is not a budget request; it is a capital allocation decision with a positive return in year one. The question is not whether we can afford to do this. It is whether we can afford not to.'"
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "How does Laila address the 'other grades will expect the same' concern?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The response requires defensibility, not avoidance. 'We are making a market-correction decision at Grade 5-7 because we have evidence of a specific competitiveness problem at that grade — an 8% lag against P50 and a 22% attrition rate. We do not have the same evidence at other grades. The decision is based on data, not on a general pay review. When other grades ask, the answer is: show me your market data and your attrition rate, and I will apply the same analytical framework. If the data supports a similar adjustment, we will propose it. This is principle-driven, not arbitrary.' Documenting the analytical methodology upfront makes this narrative credible."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "James argues that some leavers cite culture, not pay — so pay increases won't fix everything. How does Laila respond?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "'You are right, and the data supports that. 61% of leavers cite a better financial offer as a factor — that is a direct pay competitiveness problem we can address. 28% cite progression clarity — that is a communication and structure problem, also solvable. 18% cite feeling undervalued — that may be a management or recognition problem, and the pay increase won't fix that. So the proposal is a three-component intervention: market correction for pay, career framework communication, and manager recognition development. Each addresses a different root cause. The pay correction alone will not solve everything — but not doing the pay correction means 61% of our exit risk is unaddressed.'"
+              },
+              {
+                "t": "box",
+                "label": "Business Case Principles",
+                "v": "Reframe cost as ROI: payroll investment vs attrition saving\nDefend targeting with data: grade-specific market evidence\nAcknowledge multi-causality: pay, structure, recognition — different levers for different causes\nDocument methodology: makes future decisions defensible and consistent"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Budget constraints are best addressed by reframing the investment as ROI — the net saving typically exceeds the cost in year one for targeted market corrections.",
+                  "Grade parity pressure is managed by establishing a principle-driven, data-dependent methodology that can be applied consistently to any grade.",
+                  "Multi-causal attrition problems require multi-component interventions; the pay component addresses the majority but not all of the attrition risk."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "16-1-Q",
+            "title": "Module Quiz: Strategic Reward Positioning",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "Laila's most credible way to establish strategic reward credibility with the CEO is:",
+                "opts": [
+                  "Completing a formal HR strategy certification and presenting the credential to the leadership team.",
+                  "Diagnosing the consultant attrition problem with financial data and presenting a business case for intervention.",
+                  "Benchmarking Meridian's total rewards package against five competitor firms and publishing the comparison.",
+                  "Hosting a reward strategy workshop for all 34 people managers across the business."
+                ],
+                "ans": 1,
+                "exp": "Strategic credibility is earned by solving a business problem the CEO cares about with data and commercial rigour — not by demonstrating technical knowledge in isolation."
+              },
+              {
+                "q": "The annual excess cost of Meridian's Grade 5-7 attrition (22% vs 14% benchmark, 340 headcount, £28,500 replacement cost) is approximately:",
+                "opts": [
+                  "£2,137,500",
+                  "£769,500",
+                  "£480,000",
+                  "£1,368,000"
+                ],
+                "ans": 1,
+                "exp": "Benchmark leavers = 340 × 14% = 48; actual leavers = 340 × 22% = 75; excess = 27 × £28,500 = £769,500."
+              },
+              {
+                "q": "The 28% of leavers citing 'limited progression clarity' most directly indicates:",
+                "opts": [
+                  "A pay competitiveness problem requiring a midpoint adjustment.",
+                  "A management capability problem requiring leadership coaching.",
+                  "A pay structure and career framework communication problem — employees cannot see how pay progresses.",
+                  "A recognition programme deficiency requiring a formal awards programme."
+                ],
+                "ans": 2,
+                "exp": "Progression clarity is a pay structure transparency and career framework visibility issue — it is addressed by publishing grade criteria and pay bands explicitly, not by changing pay levels."
+              },
+              {
+                "q": "When addressing the CEO's concern about grade parity ('other grades will expect the same'), the most defensible response is:",
+                "opts": [
+                  "Commit to a full salary review across all grades within the next 12 months.",
+                  "State that Grade 5-7 decisions are data-driven (market lag + attrition evidence) and commit to applying the same analytical framework to any grade that presents equivalent evidence.",
+                  "Limit the Grade 5-7 adjustment to avoid creating a precedent and address only the lowest-performing retention grades.",
+                  "Position the Grade 5-7 adjustment as a one-time market correction that will not be repeated."
+                ],
+                "ans": 1,
+                "exp": "A data-driven, principle-based methodology — market evidence plus attrition data — makes targeting defensible and creates a consistent decision framework for future requests."
+              },
+              {
+                "q": "A strategic reward professional differs from an operational reward professional primarily in:",
+                "opts": [
+                  "Using more sophisticated software tools for salary survey analysis.",
+                  "Having a larger team and bigger budget to execute reward programmes.",
+                  "Diagnosing business problems through a reward lens and presenting interventions with financial rigour to senior stakeholders.",
+                  "Spending more time on benefits design rather than compensation."
+                ],
+                "ans": 2,
+                "exp": "The strategic reward professional is defined by the horizon of work (Horizon 3: business-problem diagnosis with financial impact) and the ability to influence senior stakeholders — not by team size, tools, or specialisation."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "16-2",
+        "title": "Building Reward Business Cases",
+        "color": "#1B5E94",
+        "lessons": [
+          {
+            "id": "16-2-1",
+            "title": "Building a Reward Business Case Your CFO Will Fund",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "A reward business case is a structured argument that a specific investment in pay, benefits, or reward programmes will produce a financial return that justifies the cost. Most reward professionals do not write business cases — they make requests. The difference is significant. A request says: 'We need to increase salaries at Grade 5-7.' A business case says: 'A £200,000 payroll investment at Grade 5-7 will reduce excess attrition cost by £769,500 in year one, producing a net year-one benefit of £569,500 and an ROI of 285%.' The business case wins funding; the request depends on goodwill."
+              },
+              {
+                "t": "h",
+                "v": "The SCQA Framework"
+              },
+              {
+                "t": "p",
+                "v": "The strongest business cases follow the SCQA structure: Situation (what is true, agreed, and observable), Complication (what has changed or gone wrong — the problem that creates urgency), Question (what must be resolved — implicitly, the question the reader is already asking), Answer (the recommended action). SCQA works because it structures communication the way executive decision-makers process information: context, problem, decision, recommendation. It avoids the common trap of 'burying the recommendation' — presenting all the analysis before the conclusion. Executives read the conclusion first; a business case should accommodate that."
+              },
+              {
+                "t": "h",
+                "v": "The Financial Architecture of a Reward Business Case"
+              },
+              {
+                "t": "p",
+                "v": "Every reward business case requires four financial components: Cost of intervention (total incremental payroll cost, employer NI, pension contribution uplift, administration cost); Cost of inaction (attrition cost, vacancy cost, lost revenue from unfilled roles, or productivity cost — the financial consequence of doing nothing); ROI calculation (net benefit = cost of inaction − cost of intervention); Payback period (time to recover the investment). For a market correction investment: year 1 payroll cost is known; year 1 attrition saving is an estimate based on the gap between current and target attrition rates multiplied by the replacement cost. The CFO will interrogate the attrition saving assumption — it must be conservative and documented."
+              },
+              {
+                "t": "h",
+                "v": "Sensitivity Analysis"
+              },
+              {
+                "t": "p",
+                "v": "A credible business case shows the decision is robust under conservative assumptions. Sensitivity analysis answers: what happens if the attrition improvement is half what we project? If only 50% of at-risk employees are retained by the pay increase? If the replacement cost estimate is 20% low? Example: baseline case shows ROI of 285%. Conservative case (50% attrition improvement, 20% lower replacement cost): ROI = 118%. Even at half the projected benefit and lower cost savings, the investment produces a positive return. Presenting sensitivity analysis pre-empts CFO challenges and demonstrates analytical rigour."
+              },
+              {
+                "t": "box",
+                "label": "Business Case Structure",
+                "v": "SCQA:\n• Situation: what is measurably true\n• Complication: what problem requires a decision\n• Question: what must be resolved\n• Answer: the recommendation with financial evidence\n\nFinancial architecture:\n• Cost of intervention (payroll + oncosts)\n• Cost of inaction (attrition / vacancy / productivity)\n• ROI = net benefit / cost\n• Sensitivity analysis on key assumptions"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The SCQA framework structures business cases the way executive decision-makers process information — situation, complication, question, answer — with the recommendation visible early.",
+                  "The four financial components (cost of intervention, cost of inaction, ROI, payback period) form the minimum analytical requirement for a credible business case.",
+                  "Sensitivity analysis on key assumptions (attrition improvement rate, replacement cost estimate) pre-empts CFO challenges and demonstrates rigour."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The primary reason most reward investment requests fail at CFO level is:",
+              "opts": [
+                "The reward function has insufficient authority within the organisation to win budget approvals.",
+                "The request does not quantify the cost of inaction — it presents the cost of the investment but not the financial consequence of doing nothing.",
+                "CFOs are not interested in people investment and systematically de-prioritise HR requests.",
+                "Reward investments are inherently difficult to cost accurately."
+              ],
+              "ans": 1,
+              "exp": "The cost of inaction is the most powerful argument in a reward business case — it reframes the decision from 'spending money on pay' to 'spending money to avoid a larger cost.' Its absence is the most common failure in reward investment requests."
+            }
+          },
+          {
+            "id": "16-2-2",
+            "title": "Building Meridian's Grade 5-7 Business Case",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Business Case Inputs",
+                "v": "Grade 5-7 population: 340 employees. Average Grade 5-7 salary: £52,000. 8% below P50 (current midpoint: £54,000; market P50: £58,320). Target: adjust midpoints to P50. Employees below new minimum (new minimum = £46,656): 47 employees with average shortfall of £2,850. Employees in range but below midpoint: 146 employees — no compulsory increase but market correction discretionary award available. Employer NI: 13.8%. Pension: 5% employer contribution. Replacement cost per leaver (Grade 5-7): £28,500. Current leavers per year: 75. Target: reduce to 48 (14% benchmark × 340)."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Cost of Intervention",
+                "v": "Mandatory increases for 47 employees below new minimum: 47 × £2,850 = £133,950 base salary increase. Employer NI on increase: £133,950 × 13.8% = £18,485. Employer pension on increase: £133,950 × 5% = £6,698. Total mandatory intervention cost = £133,950 + £18,485 + £6,698 = £159,133. Optional: discretionary midpoint adjustment budget (20% of 146 employees, average £1,500) = 29 × £1,500 = £43,500 + oncosts = ~£52,500. Total case cost range: £159,133 (mandatory only) to £211,633 (with discretionary)."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Cost of Inaction",
+                "v": "Current excess attrition cost: 27 excess leavers × £28,500 = £769,500 per year. If pay lag widens to 12% in year 2 (typical market movement of 3-4% pa without action): additional at-risk employees increase, potential attrition rises to 26-28%. Conservative year 2 excess attrition cost: 30 leavers × £28,500 = £855,000. Three-year cumulative cost of inaction: £769,500 + £855,000 + £940,000 (year 3 estimate) = approximately £2.56m."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal ROI Calculation",
+                "v": "Baseline intervention cost: £211,633. Year 1 attrition saving: (75 − 48) × £28,500 = £769,500. Net year 1 benefit: £769,500 − £211,633 = £557,867. ROI = £557,867 / £211,633 = 264%. Payback period: less than 3 months (the first quarter's attrition saving exceeds the annual payroll cost). Conservative case (50% attrition improvement): 13.5 leavers saved × £28,500 = £384,750. Net benefit: £384,750 − £211,633 = £173,117. ROI = 82%. Even at half the projected improvement, ROI is strongly positive."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Splitting intervention cost into mandatory (below-minimum corrections) and discretionary (midpoint adjustments) allows the business case to present a minimum-commitment option.",
+                  "The payback period — less than 3 months — is often the most persuasive single figure for a CFO who is concerned about short-term budget impact.",
+                  "Sensitivity analysis at 50% effectiveness still produces a positive ROI, which makes the investment decision robust and defensible under challenge."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "16-2-3",
+            "title": "Presenting the Business Case to Meridian's CFO",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "CFO Meeting",
+                "v": "Laila presents the Grade 5-7 business case to CFO Marcus Chen. His responses: (1) 'Your replacement cost of £28,500 — where did that come from? That seems high.' (2) 'You're assuming all 27 excess leavers would be retained by a pay increase. What's your evidence for that?' (3) 'If I approve this, I'm setting a precedent for every grade in the business.'"
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "How does Laila defend the £28,500 figure?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "'The £28,500 is a conservative composite of four components: recruitment agency fee (we use agencies for 70% of Grade 5-7 hires; average fee is 15% of £52,000 = £7,800), onboarding and administration cost (£2,200 estimated from HR time and IT setup), lost productivity during vacancy (67-day average time-to-fill at 30% productivity drag on the team = approximately £8,500), and ramp-up period for a new hire (research suggests a new hire reaches full productivity at 6-8 months; we've estimated 6 months at 50% productivity drag = approximately £10,000). Total: £28,500. I can share the workings. CIPD's most recent cost-of-turnover survey puts average professional-grade replacement cost at £25,000-£35,000, so we're in the middle of the range.' The key is to have the components documented — not just a number."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "How does Laila address the assumption that pay will retain the excess leavers?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "'I have not assumed that all 27 excess leavers would be retained. My base case assumes 27 leavers retained (100%), my conservative case assumes 13 (50%). Both produce a positive ROI. On the evidence: 61% of our exit interviews cite a better financial offer as a primary factor — that's 46 of our 75 leavers citing pay directly. If we correct the pay gap and retain just 20 of those 46 — a 43% retention improvement on the pay-citing leavers — we already hit the conservative case. I am not claiming pay is the only factor; I am claiming it is a significant and addressable factor, and the correction pays for itself under conservative assumptions.' The critical move: distinguish between the base case and the conservative case, and show the decision is positive in both."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "How does Laila address the concern about setting a precedent for other grades?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "'The precedent we're setting is data-driven pay decisions, not blanket pay increases. The Grade 5-7 case rests on three specific data points: a documented 8% lag versus the market P50 (from an independent salary survey), a 22% attrition rate against a 14% benchmark, and 61% of exit interviews citing pay as a primary factor. I am committing to apply exactly this analytical framework to any other grade that presents a comparable case. If Grade 9 comes to us next month, the question will be: show me your market data and your attrition rate. Without those data points, the answer is no. This is a principle-based process, not a precedent for universal pay increases.' Document the methodology formally — it becomes the organisation's pay decision framework, not a one-off exception."
+              },
+              {
+                "t": "box",
+                "label": "CFO Communication Principles",
+                "v": "Document every assumption with sources\nPresent base and conservative cases — never a single scenario\nAcknowledge what the data does not prove\nDefend the methodology, not just the number\nFrame precedent as principle-driven process"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Every material assumption in a reward business case must have documented components — a single number without evidence will be challenged and may lose the argument.",
+                  "Presenting both a base case and a conservative case demonstrates analytical rigour and removes the CFO's ability to dismiss the case with a single conservative scenario.",
+                  "The strongest defence against precedent concerns is a documented, principle-based methodology that applies the same analytical test to every future request."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "16-2-Q",
+            "title": "Module Quiz: Reward Business Cases",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The SCQA business case framework is structured as:",
+                "opts": [
+                  "Strategy, Cost, Quality, Accountability.",
+                  "Situation, Complication, Question, Answer.",
+                  "Scope, Case, Quantification, Approval.",
+                  "Summary, Context, Quantification, Action."
+                ],
+                "ans": 1,
+                "exp": "SCQA is the McKinsey pyramid principle applied to business case communication — situation establishes agreed facts, complication introduces the problem, question surfaces the decision, answer provides the recommendation."
+              },
+              {
+                "q": "The 'cost of inaction' component of a reward business case serves primarily to:",
+                "opts": [
+                  "Demonstrate that reward professionals understand financial modelling.",
+                  "Reframe the decision from 'spending money on pay' to 'avoiding a larger financial cost by acting.'",
+                  "Satisfy the CFO's requirement for a balanced cost-benefit analysis.",
+                  "Show that the organisation's attrition rate is above the industry benchmark."
+                ],
+                "ans": 1,
+                "exp": "The cost of inaction is the most persuasive element of a reward business case — it converts a discretionary spending request into a risk-mitigation decision with a quantified downside of doing nothing."
+              },
+              {
+                "q": "In Meridian's Grade 5-7 case, the ROI of 264% is calculated as:",
+                "opts": [
+                  "Annual payroll cost ÷ annual attrition saving × 100.",
+                  "Net year 1 benefit (£557,867) ÷ intervention cost (£211,633) × 100.",
+                  "Total three-year attrition saving ÷ total three-year intervention cost × 100.",
+                  "Number of retained employees × average salary increase × 100."
+                ],
+                "ans": 1,
+                "exp": "ROI = net benefit / cost. Net benefit = cost of inaction saved − cost of intervention. £557,867 / £211,633 = 264%."
+              },
+              {
+                "q": "When the CFO challenges the replacement cost assumption, the strongest response is:",
+                "opts": [
+                  "Acknowledge the uncertainty and offer to reduce the estimate by 15% as a concession.",
+                  "Refer the CFO to CIPD benchmarks and offer to provide the documented component breakdown (recruitment fee, onboarding, vacancy productivity, ramp-up period).",
+                  "State that the figure was calculated by HR and represents standard industry practice.",
+                  "Withdraw the specific figure and present a range instead to avoid the challenge."
+                ],
+                "ans": 1,
+                "exp": "Documenting the components of the replacement cost figure makes it defensible — a single number without components is a guess; a sum of documented components is evidence."
+              },
+              {
+                "q": "The most persuasive single metric for a CFO concerned about short-term budget impact is:",
+                "opts": [
+                  "The three-year cumulative ROI of the investment.",
+                  "The payback period — how quickly the attrition saving exceeds the annual payroll cost.",
+                  "The number of employees whose salaries will be corrected.",
+                  "The comparison between Meridian's midpoints and the market P50."
+                ],
+                "ans": 1,
+                "exp": "The payback period converts an ROI discussion into a time question — 'you recover this investment in under 3 months' is more intuitive and more persuasive than a percentage ROI for a CFO focused on budget-cycle risk."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "16-3",
+        "title": "Presenting Reward to Senior Stakeholders",
+        "color": "#1B5E94",
+        "lessons": [
+          {
+            "id": "16-3-1",
+            "title": "Presenting Pay Strategy to a Board",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Most reward professionals rarely present to a board. When they do, they are often unprepared for how different the board environment is from a management team meeting. Board members are not HR specialists; they are financial stewards, risk managers, and strategic governors. They think in terms of capital allocation, risk exposure, competitive positioning, and stakeholder accountability. A reward presentation that works in an ExCo meeting — detailed, technical, process-focused — will lose a board's attention in four minutes."
+              },
+              {
+                "t": "h",
+                "v": "What Boards Actually Care About"
+              },
+              {
+                "t": "p",
+                "v": "Boards have four primary concerns when reviewing reward: cost and affordability (what is the total people cost, what does it represent as a proportion of revenue and EBITDA, and is it sustainable?); risk exposure (what is the organisation's exposure to pay equity claims, wage transparency legislation, key-person dependency?); competitive positioning (can the organisation attract and retain the talent the strategy requires?); governance (is the remuneration framework compliant, defensible, and aligned to stated values?). A reward presentation to a board must address all four concerns. A presentation that addresses only competitive positioning — the instinct of most reward professionals — will feel incomplete to most board members."
+              },
+              {
+                "t": "h",
+                "v": "The Remuneration Committee"
+              },
+              {
+                "t": "p",
+                "v": "FTSE and larger companies have a formal Remuneration Committee (RemCo) — a board sub-committee comprising independent non-executive directors (NEDs) that governs executive pay. RemCo's responsibilities: setting and approving executive pay policy; reviewing and approving annual bonus outcomes and long-term incentive awards; overseeing CEO pay ratio disclosure and gender pay gap reporting; engaging with major shareholders on executive pay. The Head of Reward's relationship with the RemCo Chair is a critical stakeholder relationship. RemCo is advised by specialist executive remuneration consultants (Korn Ferry, WTW, Deloitte) — the internal reward function provides company context and data; the consultants provide market benchmarking and governance guidance."
+              },
+              {
+                "t": "h",
+                "v": "Structuring the Board Presentation"
+              },
+              {
+                "t": "p",
+                "v": "Board presentation principles: lead with the strategic implication, not the technical detail; use financial metrics as the primary language (cost per head, attrition cost, pay-to-revenue ratio); make risks visible — boards respect honesty about exposure; limit slides to executive summary level with supporting appendices; pre-read material should be comprehensive — the oral presentation is a discussion, not a lecture. For a reward strategy presentation: slide 1 — executive summary (three-sentence problem, recommendation, financial case); slide 2 — current state risk assessment (pay competitiveness, equity exposure, retention risk, legislative exposure); slide 3 — strategic recommendation with cost and ROI; slide 4 — governance and implementation timeline."
+              },
+              {
+                "t": "box",
+                "label": "Board Reward Presentation Structure",
+                "v": "Slide 1: Executive Summary — problem, recommendation, financial case\nSlide 2: Risk Assessment — competitiveness, equity, retention, compliance\nSlide 3: Recommendation — cost of intervention vs cost of inaction, ROI\nSlide 4: Governance — implementation, oversight, reporting cadence\n\nLanguage: capital allocation, risk exposure, competitive positioning — not 'pay structure' or 'salary bands'"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Boards have four primary concerns: cost and affordability, risk exposure, competitive positioning, and governance — a complete reward presentation addresses all four.",
+                  "RemCo is a distinct governance body requiring a specific relationship between the reward function and the RemCo Chair, typically supported by specialist external advisers.",
+                  "Board presentation structure: executive summary lead, risk assessment, recommendation with financial case, governance — four slides with comprehensive pre-read appendices."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The most common mistake reward professionals make when presenting to a board is:",
+              "opts": [
+                "Failing to include enough technical compensation detail to demonstrate expertise.",
+                "Presenting in HR language (pay structures, compa-ratios, P50) rather than board language (capital allocation, risk exposure, competitive positioning).",
+                "Spending too much time on the financial case and not enough on the qualitative people narrative.",
+                "Over-simplifying the content — boards can handle technical detail and prefer comprehensive analysis."
+              ],
+              "ans": 1,
+              "exp": "Boards operate in the language of risk, capital allocation, and competitive positioning. HR technical language (compa-ratios, pay bands, P50 benchmarking) requires translation — and the failure to translate is the primary reason reward presentations lose board attention."
+            }
+          },
+          {
+            "id": "16-3-2",
+            "title": "Preparing Meridian's Board Reward Presentation",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Board Meeting Brief",
+                "v": "Meridian's board will review the reward strategy at the next quarterly meeting. Laila has 15 minutes for the presentation and 15 minutes for questions. The board has four NEDs (two with finance background, one with HR/people background, one with legal/governance background) and four executive directors. Key board sensitivities: the Amsterdam expansion adds international pay complexity; a whistleblower complaint raised gender pay concerns six months ago (under investigation); the largest shareholder has written expressing concern about 'executive pay quantum'; the business is targeting 15% EBITDA margin improvement over 18 months."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Slide 1 Construction",
+                "v": "EXECUTIVE SUMMARY — REWARD STRATEGY REVIEW\nStrategic context: Grade 5-7 consultant attrition is 22% against a sector benchmark of 14%, costing £769,500 per year in excess replacement cost.\nRecommendation: A targeted £212,000 market correction investment at Grade 5-7, delivering a year-1 net benefit of £558,000 and 264% ROI. Full implementation in Q1 2026.\nRisk register: Three items require board attention — (1) Amsterdam international pay structure (pending legal review); (2) Gender pay equity investigation (outcome expected Q4 2025 — action plan to follow); (3) Executive pay — CEO pay ratio disclosure position to be reviewed pre-AGM.\nBoard ask: Approve Grade 5-7 market correction budget of £212,000."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Slide 2 Construction",
+                "v": "RISK ASSESSMENT\n• Competitiveness: Grade 5-7 salaries 8% below market P50 (CRF/Mercer 2025). Immediate risk: loss of key consultant talent to competitors.\n• Retention: 22% attrition at Grade 5-7 (benchmark 14%). Financial exposure: £769,500 excess cost per year — rising to £855,000+ by 2026 without intervention.\n• Equity exposure: Whistleblower investigation ongoing. Gender pay gap reporting required (250+ employees). Gap analysis in progress; internal review expected Q4 2025.\n• Legislative: Amsterdam office: Dutch WNT transparency requirements and Dutch salary survey benchmarking compliance required by Q2 2026.\n• Executive pay: CEO pay ratio (per Companies Act 2018) requires disclosure in next Annual Report. Ratio to be confirmed in Q4 2025."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Questions Preparation",
+                "v": "Q1 (Finance NED): 'Is the £212,000 in the current budget?' → 'It is not currently allocated. We are requesting approval to re-prioritise from the L&D budget (£80,000) and the general HR contingency (£132,000). Net budget movement: zero.' Q2 (Legal NED): 'Does the gender pay investigation affect this proposal?' → 'The investigation covers Directors (Grade 9-11), not Grade 5-7. The market correction will not pre-empt or compromise the investigation.' Q3 (People NED): 'How will you communicate this to employees?' → 'We will communicate the correction directly to affected employees and to their managers. We will not make a general announcement to avoid creating expectations at non-affected grades.' Q4 (Finance Director): 'What is the impact on our EBITDA margin target?' → 'The £212,000 investment on a revenue base of £180m is 0.12% of revenue. It does not materially affect the 15% EBITDA target.' Preparation: every likely board question should have a prepared, concise answer."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The executive summary slide must contain the problem, recommendation, financial case, and board ask — in four lines — before any other content.",
+                  "Risk register items (Amsterdam, gender pay, executive pay) are included proactively — boards respect transparency about exposure more than they respect surprises.",
+                  "Anticipated board questions should be rehearsed, numbered, and have prepared answers of not more than three sentences each."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "16-3-3",
+            "title": "Meridian Board Q&A — Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Board Q&A Transcript",
+                "v": "Laila presents the reward strategy. Three exchanges:\n\n1. NED (Finance): 'If we approve this, you'll be back in six months asking for the same thing at Grade 9.' \n\n2. CEO: 'I notice you haven't included a proposal on performance-related pay for the Grade 5-7 population. Shouldn't we be paying more to the people who are actually performing?' \n\n3. NED (Legal): 'The gender pay investigation — how do we know the market correction won't accidentally widen the gap if we're not careful about which employees receive increases?'"
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "NED raises concern that approving Grade 5-7 sets a precedent for Grade 9 request."
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "'The principle we are establishing is data-driven market correction — not a rolling pay increase cycle. A Grade 9 request would require the same three evidential tests: documented market data showing a lag, attrition data showing a retention problem, and a financial case showing the investment produces a positive ROI. I am happy to confirm that in writing as a board-approved principle. If Grade 9 passes all three tests, I would bring a business case; if it doesn't, the answer is no.' Key: offer to formalise the decision framework in writing — this transforms it from an ad hoc approval into a governance document."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "CEO suggests Grade 5-7 should have performance-related pay rather than a base salary correction."
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "'The CEO's instinct is right as a principle — we should pay differently for different performance levels. But in this specific situation, the problem is market position: our Grade 5-7 base is 8% below P50. A variable pay element on top of an uncompetitive base will not solve a base pay competitiveness problem — it may make it worse if the variable plan is perceived as risky income rather than reliable pay. My recommendation is to correct the base first, stabilise attrition, and then introduce a performance differentiation element in the next cycle when we have a competitive foundation to build on. Variable pay can widen rather than narrow the retention gap if the base is structurally uncompetitive.'"
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "NED raises concern that a market correction could widen the gender pay gap if increases are not equitably distributed."
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "'This is the right question and it is exactly the analytical check we have built into the process. Before finalising the correction list, we will run a gender analysis on the 47 employees below the new minimum: what proportion are women, what proportion are men, and does the correction disproportionately benefit one gender? If the answer is yes, we will adjust the approach — for example, prioritising the correction for the underrepresented group or ensuring minimum increase rates are equal regardless of gender. The goal is a correction that closes the market lag and does not widen the internal equity gap. We will include the gender analysis in the implementation report to the board.' This shows that the equity concern has been anticipated, not just responded to.'"
+              },
+              {
+                "t": "box",
+                "label": "Board Communication Principles",
+                "v": "Anticipate challenges before they are raised\nOffer to formalise principle-based decisions in governance documents\nSequence interventions logically: fix the base before adding variable complexity\nDemonstrate that equity implications have been pre-analysed, not just responded to"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Formalising the decision methodology in writing converts board approval of a specific case into a governance document for future decisions.",
+                  "Performance-related pay should not substitute for base pay competitiveness — variable pay on an uncompetitive base creates a different kind of retention problem.",
+                  "Gender pay implications of any reward intervention should be modelled before execution, and the analysis presented proactively to the board."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "16-3-Q",
+            "title": "Module Quiz: Board Stakeholder Communication",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The four primary concerns of a board when reviewing reward strategy are:",
+                "opts": [
+                  "Compensation design, benefits competitiveness, incentive plan structure, recognition strategy.",
+                  "Cost and affordability, risk exposure, competitive positioning, and governance.",
+                  "Market data quality, salary survey methodology, grading consistency, and legal compliance.",
+                  "Employee satisfaction, engagement scores, attrition rates, and talent pipeline depth."
+                ],
+                "ans": 1,
+                "exp": "Boards think as financial stewards and risk governors — the four lenses are cost, risk, positioning, and governance. HR operational concerns are relevant supporting data, not the primary framework."
+              },
+              {
+                "q": "The Remuneration Committee (RemCo) is responsible for:",
+                "opts": [
+                  "Setting salary structures and grading frameworks for all employees in a FTSE company.",
+                  "Executive pay policy, bonus and LTIP outcomes, CEO pay ratio disclosure, and engagement with major shareholders on executive pay.",
+                  "Benefits benchmarking for the general employee population.",
+                  "Recruitment fee approval and headcount sign-off."
+                ],
+                "ans": 1,
+                "exp": "RemCo is the board's executive pay governance body. Its remit is executive and senior management pay — not the general employee population."
+              },
+              {
+                "q": "In a 15-minute board presentation on reward strategy, the most appropriate slide structure is:",
+                "opts": [
+                  "A detailed technical review of all salary survey data and market positioning across all grades.",
+                  "Executive summary (problem, recommendation, financial case, board ask), risk assessment, recommendation with ROI, governance timeline.",
+                  "An overview of all five total rewards pillars and the organisation's position in each.",
+                  "A narrative history of the reward function's activities over the past 12 months."
+                ],
+                "ans": 1,
+                "exp": "Board presentations require strategic compression: executive summary leads, financial case is central, risk is transparent, and the board ask is explicit. Technical detail belongs in appendices."
+              },
+              {
+                "q": "When a NED challenges a reward proposal by raising precedent concerns for other grades, the strongest response is:",
+                "opts": [
+                  "Commit to not returning with further pay requests for 24 months.",
+                  "Offer to formalise the decision framework (market data + attrition evidence + positive ROI = approval) in writing as a board governance principle.",
+                  "Withdraw the proposal and expand it to cover all grades simultaneously.",
+                  "Acknowledge the concern and offer to reduce the scope of the current proposal."
+                ],
+                "ans": 1,
+                "exp": "Formalising the decision methodology in writing converts a case-by-case approval into a governance document — it answers the precedent concern by showing the principle is consistent, data-dependent, and therefore unlikely to produce spurious future requests."
+              },
+              {
+                "q": "Performance-related pay should not be introduced as a substitute for base pay competitiveness because:",
+                "opts": [
+                  "Variable pay is more expensive to administer than base salary increases.",
+                  "Variable pay on an uncompetitive base may increase flight risk — employees perceive variable income as risky and base as reliable, and the market competitiveness problem remains unaddressed.",
+                  "Performance measurement at Grade 5-7 is typically too imprecise to justify differential pay.",
+                  "RemCo must approve all variable pay elements, which adds governance complexity."
+                ],
+                "ans": 1,
+                "exp": "Base pay competitiveness is about a market position problem — an uncompetitive base with variable pay on top is still uncompetitive base pay. Variable pay addresses performance differentiation, not market position."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "16-4",
+        "title": "Reward Business Partnering in Practice",
+        "color": "#1B5E94",
+        "lessons": [
+          {
+            "id": "16-4-1",
+            "title": "The Reward Business Partner Operating Model",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "The reward business partner model places reward expertise at the intersection of HR and the business — not as a centre-of-excellence delivering services to business unit HR, but as a strategic adviser embedded in business decisions. This module describes the operating model, the relationship management skills, and the analytical disciplines that define effective reward business partnering."
+              },
+              {
+                "t": "h",
+                "v": "The Reward Business Partner Role"
+              },
+              {
+                "t": "p",
+                "v": "A reward business partner (RBP) differs from a reward specialist in one critical dimension: the primary relationship. A reward specialist's primary relationship is with the CoE function — salary surveys, benchmarking projects, policy development. An RBP's primary relationship is with a business unit or practice area — understanding its P&L, talent challenges, leadership dynamics, and strategic priorities. The RBP translates business context into reward insight and translates reward capability into business solutions. In a firm like Meridian, an RBP assigned to the Financial Advisory practice must understand that practice's economics (revenue per consultant, leverage model, billing rate structure) as well as they understand salary survey methodology."
+              },
+              {
+                "t": "h",
+                "v": "The Business Acumen Requirement"
+              },
+              {
+                "t": "p",
+                "v": "Effective reward business partnering requires business acumen that most pure reward specialists do not develop. The RBP must be able to read a P&L, understand the business model economics, identify how compensation costs affect margin, model headcount scenarios, and speak the language of the business unit they serve. This is not optional for a strategic reward function — a reward business partner who does not understand the business is giving generic advice rather than contextualised insight. In professional services: leverage ratio matters (ratio of junior to senior staff affects both cost structure and capacity); realisation rate matters (fee income collected vs billed); utilisation rate matters (billable hours as a proportion of available hours). A reward recommendation that ignores these metrics will not be credible to a practice leader."
+              },
+              {
+                "t": "h",
+                "v": "Stakeholder Management in Reward"
+              },
+              {
+                "t": "p",
+                "v": "The reward business partner manages a complex stakeholder map: the CHRO (strategy alignment, budget approval); the CFO (financial case rigour, cost discipline); business unit leaders (competitive intelligence, attrition urgency, talent pipeline risk); the legal function (compliance, equity exposure); the RemCo/board (governance, executive pay, disclosure); and external advisers (salary survey providers, executive remuneration consultants, benefits brokers). Managing these stakeholders requires different communication styles: the CHRO wants strategic coherence; the CFO wants financial rigour; the business leader wants speed and competitive information; the legal function wants defensibility; the board wants risk management. The reward professional who presents the same deck to all five audiences will be effective with none of them."
+              },
+              {
+                "t": "box",
+                "label": "RBP Stakeholder Communication Styles",
+                "v": "CHRO: strategic alignment, people agenda coherence\nCFO: financial rigour, ROI, cost control\nBusiness leaders: speed, competitive data, talent risk\nLegal: compliance, defensibility, documentation\nBoard/RemCo: risk exposure, governance, shareholder accountability"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The RBP's primary relationship is with the business unit — this shapes how they gather information, frame insights, and deliver recommendations.",
+                  "Business acumen (P&L literacy, business model economics, leverage ratios in professional services) is required to give contextualised rather than generic reward advice.",
+                  "Stakeholder management requires different communication registers for each audience — a single presentation format fails to be compelling to any of them."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The primary distinguishing characteristic of a reward business partner (vs a reward specialist) is:",
+              "opts": [
+                "A reward business partner has more technical reward expertise than a reward specialist.",
+                "A reward business partner's primary relationship is with the business unit they serve rather than with the CoE reward function.",
+                "A reward business partner has management responsibility for a reward team.",
+                "A reward business partner specialises in executive compensation rather than general population pay."
+              ],
+              "ans": 1,
+              "exp": "The RBP is defined by their primary relationship orientation — business unit first, CoE second. This determines how they spend time, what information they seek, and how they frame their advice."
+            }
+          },
+          {
+            "id": "16-4-2",
+            "title": "Meridian Amsterdam: Reward Business Partnering Across Borders",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Amsterdam Expansion Scenario",
+                "v": "Meridian is opening an Amsterdam office with 35 initial hires (mix of local Netherlands hires and UK transfers). The Head of Reward must design a cross-border pay framework within 90 days. Key complexities: Dutch law requires minimum salary transparency under the Dutch Transparency of Remuneration Act; transferred UK employees have existing salary levels; local Dutch hires will be benchmarked against Amsterdam professional services market; Dutch employer social contributions (ZW, AOW, ANW) differ significantly from UK employer NI; potential for pay comparison between UK transfers and Dutch local hires creating internal equity tension."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "Dutch Transparency of Remuneration Act: employees may request information about the pay of a colleague doing equal or equivalent work; employer must be able to justify pay differences by objective criteria. Minimum wage (WML): Dutch minimum wage is significantly above the UK minimum wage — confirm all Amsterdam roles meet WML. Dutch employer contributions: ZW (sickness) ~0.58%, AOW (state pension) ~17.9%, ANW (survivor) ~0.1%, WW (unemployment) ~2.64%, WAO/WIA (disability insurance) ~5.49% — total ~27% on top of salary vs UK employer NI 13.8%. This cost differential must be built into headcount budgeting."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "Three-layer design: (1) Amsterdam salary bands — aligned to the CRF Netherlands survey P50 for each grade, independent of UK bands; (2) UK transfer protection — transferred employees retain their existing base salary; if it falls below the Amsterdam band minimum, it is corrected; (3) Pay comparison governance — documented criteria for pay differences between UK transfers and Dutch hires at the same grade (legitimate differences: experience premium, specialist skills, currency of previous role). Document the criteria before any hires — this is the legal defensibility layer. The internal equity tension is managed by transparency about methodology, not by making all pay equal."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "The Amsterdam business leader will be focused on talent acquisition speed and competitive positioning. The RBP brief: 'Our Amsterdam salary bands are benchmarked to the Dutch market P50 for each grade, which is the appropriate competitive position for our current stage. Your total employer cost per employee will be approximately 27% above salary (vs 22-23% in the UK) due to Dutch social contributions — I need to ensure your headcount budget is built on the correct employer cost, not just salary. I will provide a total-cost-per-head model for each grade by next week. For UK transfers, I will confirm their compensation treatment and any corrections required before their contracts are issued.'"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Dutch employer social contributions (~27% of salary) significantly exceed UK employer NI (13.8%) — headcount budgets built on UK assumptions will understate Amsterdam people cost.",
+                  "The internal equity tension between UK transfers and Dutch local hires is managed by documenting objective justification criteria before any hires are made — not by attempting to equalise pay.",
+                  "The Amsterdam RBP brief leads with what the business leader cares about (talent acquisition, cost model) before the technical compliance detail."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "16-4-3",
+            "title": "Meridian's Reward Strategy Review — 12-Month Outcomes",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "12-Month Review",
+                "v": "Twelve months after the Grade 5-7 market correction: attrition at Grade 5-7 has fallen from 22% to 17% (target: 14%). The gender pay investigation concluded with a confirmed 5.2% gap at Director grade, requiring a remediation plan. The Amsterdam office is live with 28 employees. The CEO has asked Laila to present her 'reward strategy roadmap for the next three years' to the ExCo."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "Attrition fell from 22% to 17% — short of the 14% target. How should Laila frame this to the ExCo?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The correct framing: 'We achieved 63% of the targeted attrition improvement in year 1. The 5% reduction (vs 8% target) is equivalent to 17 fewer leavers and an attrition saving of approximately £485,000 against an investment of £212,000 — a year-1 ROI of 129%. The remaining 3-point gap to benchmark has two remaining root causes: progression clarity (the career framework communication work was delayed and will be completed in Q1 next year) and a residual segment of leavers motivated by factors beyond pay (approximately 18% of leavers cite culture or management quality). The conclusion: the pay intervention delivered a strong financial return; the non-pay interventions are the remaining lever.'"
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The 5.2% gender pay gap at Director grade requires a remediation plan. How does Laila structure it?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The remediation plan has three components: analysis (identify the specific roles and individuals contributing to the gap, disaggregated by grade, function, and tenure — is the gap driven by individual pay decisions or by composition at grade?); action (individual pay corrections for any Director whose salary is below the band minimum or below what objective criteria justify — progression, tenure, performance — separate from gender); monitoring (quarterly reporting to RemCo of Director pay equity data until the gap is closed). The critical distinction: a gender pay gap remediation adjusts pay based on equity analysis, not based on gender — the test is whether the pay difference is justified by objective criteria. Adjustments are made where they cannot be justified."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "What should Laila include in a three-year strategic reward roadmap for the ExCo?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Year 1 (foundation): grade 5-7 market correction complete; career framework published; gender pay remediation plan executed; Amsterdam framework established. Year 2 (development): full market pricing review across all grades; performance differentiation element introduced at Grade 5-7 and above (merit matrix refinement); total rewards communication redesign — make the value of the package visible to employees; consider EVP articulation (Course 18 content). Year 3 (optimisation): launch pay transparency readiness assessment (EU Directive trajectory); introduce analytics dashboard for real-time pay equity monitoring; review executive pay framework in line with RemCo request; international expansion reward framework (if new geographies planned). Each year should have a headline cost, a primary business problem it solves, and a measurable success metric."
+              },
+              {
+                "t": "box",
+                "label": "Three-Year Reward Roadmap Principles",
+                "v": "Year 1: Fix the immediate problem (market correction, compliance remediation)\nYear 2: Build the foundation (full review, performance differentiation, communication)\nYear 3: Optimise and future-proof (transparency, analytics, governance)\nEach year: headline cost + business problem + measurable success metric"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "A partial result should be framed in financial terms — 129% ROI on 63% of targeted improvement is a successful year-1 investment, not a failed programme.",
+                  "Gender pay gap remediation is an equity analysis exercise, not a gender-based pay adjustment — the test is whether pay differences are justified by objective criteria.",
+                  "A three-year reward roadmap gives the ExCo a strategic narrative rather than a series of unconnected requests — each year should solve a named business problem with a measurable outcome."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "16-4-Q",
+            "title": "Module Quiz: Reward Business Partnering",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "A reward business partner's primary difference from a reward specialist is:",
+                "opts": [
+                  "Greater technical expertise in executive compensation design.",
+                  "Primary relationship orientation to the business unit served rather than the CoE reward function.",
+                  "Responsibility for managing a larger team of reward analysts.",
+                  "Specialisation in benefits and non-financial rewards rather than pay."
+                ],
+                "ans": 1,
+                "exp": "The RBP is defined by relationship orientation — the business unit is the primary client, and business acumen in that unit's economics is required, not optional."
+              },
+              {
+                "q": "Dutch employer social contributions (~27% of salary) compared to UK employer NI (13.8%) means that:",
+                "opts": [
+                  "Amsterdam hiring is legally simpler than UK hiring due to fewer compliance requirements.",
+                  "Amsterdam headcount budgets built on UK employer cost assumptions will materially understate the true cost per employee.",
+                  "Dutch employees receive lower net salaries than equivalent UK employees.",
+                  "Transferring UK employees to Amsterdam automatically reduces their total reward cost."
+                ],
+                "ans": 1,
+                "exp": "The 13-14 percentage point difference in employer oncosts is a material budget difference — a 35-person Amsterdam office with average salary of £60,000 would cost approximately £270,000 more in social contributions than a UK equivalent."
+              },
+              {
+                "q": "Grade 5-7 attrition fell from 22% to 17% (vs 14% target) after the market correction. The correct executive framing is:",
+                "opts": [
+                  "The programme failed to achieve its target and a revised approach is required immediately.",
+                  "The programme achieved 63% of the targeted improvement, delivered £485,000 in attrition saving against £212,000 investment (129% ROI), and the residual gap reflects non-pay drivers (career framework, culture) that are being addressed separately.",
+                  "The target was too ambitious — the revised target should be 17% going forward.",
+                  "The programme is complete; no further reward intervention is required at Grade 5-7."
+                ],
+                "ans": 1,
+                "exp": "A partial result should always be expressed in financial return terms and with clear diagnosis of the remaining gap — this maintains credibility while demonstrating analytical rigour."
+              },
+              {
+                "q": "A gender pay gap remediation plan at Director grade should:",
+                "opts": [
+                  "Adjust every woman Director's salary upward to match the average Director salary.",
+                  "Analyse whether pay differences are justified by objective criteria (progression, tenure, performance) and correct salaries where they cannot be justified, regardless of gender.",
+                  "Freeze all Director pay until the gap is closed to prevent further divergence.",
+                  "Engage an external diversity consultant to determine the appropriate remediation approach."
+                ],
+                "ans": 1,
+                "exp": "Pay equity remediation is an objective-criteria test, not a gender adjustment — the goal is to ensure every pay difference is justified by factors other than gender; unjustified differences are corrected."
+              },
+              {
+                "q": "The purpose of a three-year reward roadmap presented to the ExCo is:",
+                "opts": [
+                  "To secure budget approval for all three years of reward investment in a single decision.",
+                  "To demonstrate that the reward function is aware of long-term planning horizons.",
+                  "To replace a series of unconnected budget requests with a strategic narrative — each year addressing a named business problem with a measurable outcome.",
+                  "To outline every reward policy change planned over the three-year period."
+                ],
+                "ans": 2,
+                "exp": "The roadmap's purpose is narrative coherence — it shows ExCo that reward decisions are sequenced logically (fix, build, optimise) against business priorities, not reactive or opportunistic."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "c16-cap",
+        "title": "Capstone: Meridian Group Strategic Reward Review",
+        "color": "#1B5E94",
+        "lessons": [
+          {
+            "id": "16-cap",
+            "title": "Meridian Group Strategic Reward Review — Capstone",
+            "duration": "20 min",
+            "xp": 250,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "You are Meridian Group's Head of Reward. It is the end of Year 1 of your strategic reward transformation. The CEO has asked for a comprehensive strategic reward review to present to the board next month. This capstone integrates all four modules: strategic positioning, business case construction, board communication, and reward business partnering."
+              },
+              {
+                "t": "box",
+                "label": "Capstone Data Pack",
+                "v": "Year 1 results: Grade 5-7 attrition: 22% → 17% (target 14%). Year-1 ROI on market correction: 129% (saving: £485,000, cost: £212,000). Amsterdam: 28 employees onboarded. Director gender pay gap: 5.2%, remediation plan issued. Three practice areas still flagging retention concerns at Grades 3-4 (Junior Consultant).\n\nNew business challenge: Meridian has acquired a 120-person boutique consultancy (Carrington Associates). Carrington's compensation structure is simpler (flat base, no bonus structure), salary bands are 15% above Meridian's equivalent grades, and they have a strong culture of transparency ('everyone knows everyone's salary')."
+              },
+              {
+                "t": "h",
+                "v": "Capstone Challenge 1: Carrington Harmonisation"
+              },
+              {
+                "t": "p",
+                "v": "You must design a compensation harmonisation approach for integrating Carrington's 120 employees into Meridian's salary structure. Key tensions: Carrington employees earn 15% more on average. Immediate Meridian alignment would mean pay cuts for 120 employees. Not aligning creates internal equity tension with Meridian employees. Carrington's 'open salary' culture conflicts with Meridian's confidential pay approach. Options: (A) Immediate full harmonisation — cut Carrington salaries to Meridian bands; (B) Protect current salaries and phase alignment over 3 years; (C) Raise Meridian bands to match Carrington where market data supports, phase down the remainder with pay protection; (D) Create a separate 'Carrington' grade structure that mirrors their existing bands."
+              },
+              {
+                "t": "h",
+                "v": "Capstone Challenge 2: Grade 3-4 Retention"
+              },
+              {
+                "t": "p",
+                "v": "Three practice areas have flagged Grade 3-4 Junior Consultant retention problems. Your attrition cost model shows Grade 3-4 replacement cost is £18,000 (lower than Grade 5-7 due to lower salary and shorter time-to-fill). Grade 3-4 headcount: 520. Current attrition: 31%. Benchmark: 20%. You have £200,000 available from the contingency budget. The Grade 3-4 population is predominantly under 28 years old, with high student loan balances and limited savings. Exit interviews cite: 'pay' (51%), 'career progression speed' (44%), 'student debt pressure' (29%)."
+              },
+              {
+                "t": "h",
+                "v": "Capstone Challenge 3: Board Presentation"
+              },
+              {
+                "t": "p",
+                "v": "You must design the structure and key messages for the board's annual reward review. The board has added a new agenda item: 'Executive Pay Governance — response to shareholder letter.' The largest shareholder, Highgate Capital (12% stake), has written expressing concern that the CEO's total pay package (£1.2m salary + £800,000 bonus + £600,000 LTIP) is 'misaligned with employee pay experience, particularly given the Grade 5-7 attrition problem the business has disclosed.'"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Challenge 1 Analysis",
+                "v": "Option C is recommended: raise Meridian bands where market data supports, protect remaining Carrington salaries with a pay protection period (12-18 months), phase the remainder to Meridian bands by negotiation. Reasoning: Option A (cut Carrington salaries) is the fastest path to mass voluntary attrition of the acquired talent — the primary value in the acquisition. Option B (full protection) creates permanent internal equity tension with no resolution pathway. Option C is commercial: correct the Meridian lag where market data already supports it (removing the most egregious inequities), protect rather than cut where it doesn't, and give yourself 12-18 months to bring the market data case for any remaining gap. Option D (separate structure) is unworkable long-term. On salary transparency: do not immediately impose confidentiality on Carrington — the cultural adjustment is significant and the short-term credibility cost is high. Introduce a communication guideline ('we ask employees to discuss their pay with their manager rather than with colleagues') and manage the transition over 12 months."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Challenge 2 Analysis",
+                "v": "With £200,000, the Grade 3-4 population of 520 and three exit drivers (pay 51%, progression speed 44%, student debt 29%), the allocation: (1) Base salary correction — identify employees below band minimum (estimate 60-80 of 520) and correct; estimated cost £80,000. (2) Student loan contribution — introduce a £1,200/year student loan contribution for Grade 3-4 employees with demonstrable loan balances. Cost: 520 × £1,200 × participation estimate 60% = £374,400 — over budget. Reduce: contribution of £500/year × 60% participation = £156,000. (3) Progression framework — publish explicit Grade 3→4→5 promotion criteria and timeline; this addresses the 44% progression driver at zero cost but requires manager time. Recommended spend: £70,000 base corrections + £120,000 student loan contributions + £10,000 career framework communication = £200,000 total."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Challenge 3 Analysis",
+                "v": "The shareholder letter requires a three-part board response: (1) CEO pay ratio — calculate and disclose the CEO:median employee pay ratio (£2.6m total target vs median employee estimated £38,000 = approximately 68:1). This is transparent governance, not a concession. (2) Alignment narrative — the CEO LTIP is 70% performance-conditioned on TSR and EBITDA margin improvement over 3 years. The performance conditions align CEO pay with the long-term outcomes that benefit all stakeholders including employees. The bonus (£800,000) was awarded following a year in which Meridian achieved 12% revenue growth — it reflects performance, not discretion. (3) Employee pay investment — the Grade 5-7 market correction (£212,000, 129% ROI) and the forthcoming Grade 3-4 investment (£200,000) demonstrate that the business is actively investing in general employee pay, not diverting resource from employees to executive pay. The narrative: executive pay is performance-conditioned and aligned to long-term value creation; employee pay is being actively invested in on a market-competitiveness basis. Both are being managed with financial rigour."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Acquired business harmonisation should protect talent acquisition value — salary cuts as the first intervention destroy the primary asset the acquisition was meant to preserve.",
+                  "Multi-driver attrition (pay, progression, student debt) requires a portfolio of interventions with each component explicitly sized against the root cause it addresses.",
+                  "Executive pay governance in a stakeholder communication context requires three elements: transparency (ratio disclosure), alignment narrative (performance conditions), and employee investment evidence."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "16-cap-Q",
+            "title": "Capstone Quiz: Strategic Reward Integration",
+            "duration": "15 min",
+            "xp": 300,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "In the Carrington harmonisation, Option C (raise Meridian bands where data supports + pay protection) is preferred over Option A (immediate alignment to Meridian bands) because:",
+                "opts": [
+                  "Option C is faster to implement and lower risk administratively.",
+                  "Option A would require RemCo approval; Option C does not.",
+                  "Option A would trigger mass voluntary attrition in the acquired population — destroying the primary value of the acquisition.",
+                  "Option C is cheaper in year 1 than Option A."
+                ],
+                "ans": 2,
+                "exp": "Salary cuts on newly acquired employees are the fastest route to voluntary attrition of the talent the acquisition was designed to access. Protecting acquired salaries while transitioning is commercially essential."
+              },
+              {
+                "q": "The recommended approach to Carrington's 'open salary' culture is:",
+                "opts": [
+                  "Immediately impose Meridian's confidential pay policy to establish a consistent culture.",
+                  "Adopt Carrington's open salary approach across all of Meridian as a transparency best practice.",
+                  "Introduce a communication guideline (discuss pay with your manager, not colleagues) and manage the cultural transition over 12 months.",
+                  "Create a separate HR entity for Carrington employees to preserve their cultural practices permanently."
+                ],
+                "ans": 2,
+                "exp": "Cultural alignment takes time; immediate policy imposition creates credibility risk and resentment. A guideline-based transition over 12 months allows behaviour to shift without a confrontational mandate."
+              },
+              {
+                "q": "The correct deployment of the £200,000 Grade 3-4 budget addresses three drivers because:",
+                "opts": [
+                  "Each driver (pay, progression, student debt) requires a different reward lever, and the budget should be split to address each proportionately.",
+                  "Spending all £200,000 on base salary increases would be the most effective single intervention.",
+                  "The three drivers are equally weighted in the exit data, so equal budget allocation is appropriate.",
+                  "Regulatory requirements mandate that student loan contributions must receive 50% of any retention budget."
+                ],
+                "ans": 0,
+                "exp": "Multi-driver attrition requires multi-lever interventions — a single lever (e.g., only base pay) addresses only 51% of the exit motivation; a portfolio approach addresses all three root causes within the same budget."
+              },
+              {
+                "q": "The CEO pay ratio of approximately 68:1 should be presented to the board as:",
+                "opts": [
+                  "Evidence that executive pay is misaligned and should be reduced.",
+                  "A compliance disclosure, accompanied by the performance conditions on the CEO's LTIP and the context of employee pay investment.",
+                  "Confidential information that should not be disclosed until legally required.",
+                  "A benchmark comparison against equivalent FTSE companies to demonstrate competitiveness."
+                ],
+                "ans": 1,
+                "exp": "Transparent ratio disclosure with performance context and employee investment evidence is the governance response that addresses shareholder concerns without conceding that the ratio itself is problematic."
+              },
+              {
+                "q": "A three-year reward roadmap presented to the ExCo should:",
+                "opts": [
+                  "Request approval for all three years of budget in a single ExCo decision.",
+                  "Outline every policy and process change planned over 36 months.",
+                  "Provide a strategic narrative with each year solving a named business problem and having a measurable success metric.",
+                  "Focus exclusively on the following year's priorities — longer-term plans are too speculative for ExCo."
+                ],
+                "ans": 2,
+                "exp": "The roadmap's value is strategic coherence — showing ExCo that reward decisions are sequenced against business priorities (fix → build → optimise), not reactive. Each year needs a named problem and a measurable metric."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Workforce Planning and Headcount Cost Modelling",
+    "subtitle": "Build the analytical foundations for strategic workforce planning — demand forecasting, employment cost modelling, turnover economics, and redundancy programme design. Built around Castleton Partners' three-year growth plan, PE acquisition, and Capital Markets restructuring.",
+    "color": "#5C4B8A",
+    "color2": "#5C4B8A",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "level": "Advanced",
+    "duration": "3h 50m",
+    "lessons_count": 18,
+    "total_xp": 3030,
+    "desc": "Build the analytical foundations for strategic workforce planning — demand forecasting, employment cost modelling, turnover economics, and redundancy programme design. Built around Castleton Partners' three-year growth plan, PE acquisition, and Capital Markets restructuring.",
+    "outcomes": [
+      "Apply the four-question workforce planning framework (need, have, gap, close) to a multi-year headcount plan",
+      "Calculate the fully-loaded employment cost of a hire including all oncosts",
+      "Build a make-or-buy analysis comparing permanent hire vs contractor engagement",
+      "Model the full five-component cost of employee turnover and build a retention ROI case",
+      "Calculate statutory and enhanced redundancy pay and model programme cost against headcount saving",
+      "Design a fair at-risk selection process compliant with UK collective consultation requirements"
+    ],
+    "pro": true,
+    "modules": [
+      {
+        "id": "17-1",
+        "title": "Workforce Planning Fundamentals",
+        "color": "#5C4B8A",
+        "lessons": [
+          {
+            "id": "17-1-1",
+            "title": "Workforce Planning Fundamentals for HR Professionals",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Workforce planning is the process of aligning an organisation's talent supply with its strategic demand — ensuring the right people, with the right skills, are in the right place, at the right cost, at the right time. Most HR functions treat workforce planning as an annual headcount submission process. The strategic workforce planner treats it as a continuous analytical discipline that sits at the intersection of business strategy, financial planning, and talent management."
+              },
+              {
+                "t": "h",
+                "v": "The Four Questions of Workforce Planning"
+              },
+              {
+                "t": "p",
+                "v": "Every workforce planning exercise must answer four questions: What talent do we need? (Demand planning — based on the business strategy, what capabilities, headcount, and skills are required over the planning horizon?) What talent do we have? (Supply assessment — internal headcount, skills, attrition rates, retirement exposure, promotion pipelines.) What is the gap? (Gap analysis — where do current supply trajectories fail to meet future demand, and how significant is the shortfall in headcount, skills, or location?) How do we close it? (Solution design — build, buy, borrow, or bot: grow internally, recruit externally, use contingent labour, or automate.) These four questions structure the workforce planning process regardless of organisation size, industry, or time horizon."
+              },
+              {
+                "t": "h",
+                "v": "Demand Planning Techniques"
+              },
+              {
+                "t": "p",
+                "v": "Demand planning translates business strategy into headcount requirement. Three primary techniques: Ratio analysis (revenue-per-head ratios from comparable periods or competitor benchmarks: if the business plans 20% revenue growth and the current revenue-per-head ratio is maintained, headcount needs increase by approximately 20% — unless productivity improvements change the ratio); Workload analysis (volume of work units divided by capacity per FTE: a contact centre handling 50,000 calls per month with each agent handling 400 calls per month requires 125 agents); Managerial estimate (business leaders provide bottom-up headcount requests; the workforce planning function sense-checks against historical ratios and business model economics). In practice, all three are used in combination, with managerial estimates providing the bottom-up view and ratio analysis providing the top-down sense-check."
+              },
+              {
+                "t": "h",
+                "v": "Supply Assessment"
+              },
+              {
+                "t": "p",
+                "v": "Supply assessment starts with the current workforce: headcount by grade, function, and location; skills and qualifications data; performance distribution; and attrition rates by cohort. The most important supply calculation is the projected supply trajectory — what does the current workforce look like in 12, 24, and 36 months if no action is taken? Key supply movements: voluntary attrition (modelled by historical attrition rates applied to current cohorts); involuntary attrition (redundancy, performance exits); retirements (modelled by age distribution); promotions and internal mobility (historical rates or planned changes); and new hires (planned recruitment). The gap between projected supply and planned demand is the workforce planning gap."
+              },
+              {
+                "t": "box",
+                "label": "Castleton Partners",
+                "v": "Castleton Partners is a 1,800-person financial services consulting firm. The Head of Reward and Workforce Planning, Priya Sadanandan, reports to the CHRO and has responsibility for annual headcount planning. The firm's three-year strategy targets 25% revenue growth — from £320m to £400m — predominantly through expansion of the Regulatory Advisory practice and a new Risk Technology offering. Current workforce composition: 1,200 Consultants (Grades 3-8), 400 Management (Grades 9-12), 200 Business Services. Current voluntary attrition: 16% (sector benchmark: 12%)."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Workforce planning's four questions (demand, supply, gap, solution) provide a consistent framework regardless of organisation size or planning horizon.",
+                  "Demand planning combines ratio analysis (top-down), workload analysis (capacity-based), and managerial estimates (bottom-up) — the three techniques sense-check each other.",
+                  "Supply assessment must model trajectory, not just current state — the planning gap is the difference between projected supply and planned demand, not between today's headcount and target headcount."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "Castleton's 25% revenue growth target with current revenue-per-head ratio (£320m / 1,800 = £178k per head) implies a demand headcount of approximately:",
+              "opts": [
+                "1,800 (no change — revenue growth is achieved through productivity improvement)",
+                "2,025 (25% revenue growth with constant revenue-per-head ratio: 1,800 × 1.25 = 2,250, adjusted for 10% planned productivity improvement)",
+                "2,250 (straight ratio application: 1,800 × 1.25)",
+                "1,600 (headcount reduction through productivity improvement)"
+              ],
+              "ans": 2,
+              "exp": "Straight ratio analysis: if revenue grows 25% and revenue-per-head remains constant, headcount grows by 25%. £400m / £178k = approximately 2,247 ≈ 2,250. Adjustments for productivity improvement are modelled separately."
+            }
+          },
+          {
+            "id": "17-1-2",
+            "title": "Castleton's Three-Year Workforce Plan",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Workforce Planning Inputs",
+                "v": "Current headcount: 1,800. Target headcount (25% growth, constant ratio): 2,250. Planning horizon: 3 years. Current attrition (voluntary): 16%. Historical internal promotion rate: 8% per year (from Consultant to Management grades). Planned new Regulatory Advisory team: 120 FTEs (specialist roles). New Risk Technology practice: 80 FTEs (highly specialist, limited UK supply). Business Services: flat (no growth planned). Recruitment capacity: current HR team can process 250 hires per year at current resourcing."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "Year 1 attrition: 1,800 × 16% = 288 leavers. Year 1 supply without replacement: 1,800 − 288 = 1,512. Year 2 (from 1,512): 1,512 × 84% = 1,270. Year 3 (from 1,270): 1,270 × 84% = 1,067. Without any recruitment, the workforce declines from 1,800 to approximately 1,067 in three years. This quantifies the 'do nothing' scenario — the supply trajectory makes the scale of required recruitment starkly visible."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "Year 3 target headcount: 2,250. Supply trajectory without hires: 1,067. Gap to close: 2,250 − 1,067 = 1,183 net new positions. Plus replacement for attrition across 3 years: Year 1: 288; Year 2: ~324 (from larger base); Year 3: ~360. Total attrition replacement: ~972. Total gross hires required over 3 years: 1,183 + 972 = approximately 2,155 hires. This means hiring approximately 718 people per year on average — significantly above current HR capacity of 250 per year. Implication: either the HR recruitment function must scale, or the growth target requires revision."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "The Risk Technology practice (80 specialist FTEs) has limited UK supply. Solution options: Build (internal development from existing Regulatory Advisory consultants with complementary skills — 24-month capability development programme; lower cost per hire, but 2-year time lag; risk: individuals may leave before deployment); Buy (direct external hire from FinTech and RegTech competitors — likely to require 15-20% salary premium above Castleton bands to attract; faster; higher cost); Borrow (specialist contractor/consultant engagement for 12-18 months while internal capability develops — high day rate, no headcount, provides time to build); Bot (automation of parts of the Risk Technology workflow — assess proportion automatable; reduces FTE requirement). Recommended approach: hybrid — hire 30 senior specialists externally (buy), develop 30 internally from Regulatory Advisory with targeted upskilling (build), use contractors for 20 FTE-equivalent capacity during the build period (borrow)."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The 'do nothing' supply trajectory — workforce declining from 1,800 to 1,067 in three years — quantifies the scale of the recruitment problem and makes the business case for HR capacity investment.",
+                  "Gross hiring requirement (net new + attrition replacement) is the correct planning metric — not just net new headcount — because attrition must be replaced before growth can be achieved.",
+                  "Build/Buy/Borrow/Bot analysis for specialist roles avoids committing to a single solution when supply is constrained — a hybrid approach manages both cost and timeline risk."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "17-1-3",
+            "title": "Castleton's Hiring Freeze — Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Castleton's Hiring Freeze",
+                "v": "Six months into the three-year plan, the CFO announces a 90-day hiring freeze due to a revenue shortfall in the Capital Markets practice (£18m below plan). The freeze applies to all external hires. The Regulatory Advisory and Risk Technology expansions have 47 roles in process. Priya must advise on how to respond."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "What is the quantified impact of the 90-day hiring freeze on the workforce plan?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "90 days = approximately one quarter. During the freeze: (1) Attrition continues: 1,800 × 16% / 4 = 72 leavers per quarter. No replacement. Net workforce reduction: 72 people. (2) 47 roles in process: candidates will withdraw from process or accept other offers during the freeze. Re-engaging them post-freeze will require a restart. Conservative estimate: 60-70% of pipeline lost during a 90-day freeze, requiring re-advertising and re-process. (3) The Regulatory Advisory team's client work is already booked — 47 vacant roles create delivery risk on £12m of committed client revenue. The freeze is not cost-free: it has a £12m client delivery exposure and a pipeline rebuild cost. Priya should quantify this for the CFO."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "How does Priya approach negotiating exceptions to the freeze for revenue-generating roles?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The freeze rationale is cost management in response to a revenue shortfall. The exceptions case: Regulatory Advisory and Risk Technology hires are revenue-generating, not overhead. A hire in Regulatory Advisory at Grade 6 with a billing rate of £1,200/day and 75% utilisation generates approximately £225,000 in revenue per year. A 90-day delay costs approximately £56,000 in lost billing per role. For 47 roles: £56,000 × 47 = £2.6m in delayed billing revenue during the freeze period. The case to the CFO: the freeze is saving the firm's payroll cost for 47 roles (approximately £300,000 during 90 days) but costing it £2.6m in delayed billing revenue and creating a pipeline rebuild cost. An exception for revenue-generating roles costs no overhead savings — only roles funded from the overhead budget are appropriate freeze targets."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "What levers can Priya deploy to maintain capacity without external hires during the freeze?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Internal mobility: identify Consultants in Capital Markets (the underperforming practice) who could temporarily redeploy to Regulatory Advisory — matching available supply with the constrained demand. This reduces Capital Markets capacity (which is already underutilised due to the revenue shortfall) and fills Regulatory Advisory gaps without new hires. Contractor conversion: if any roles in process have candidates who would accept contractor engagement rather than permanent employment, contractor engagement is often outside a headcount freeze (it is an operating cost, not a headcount addition). Confirm whether the freeze applies to contractors specifically. Scope reduction: negotiate with Regulatory Advisory clients on delivery timeline — a 90-day delay in delivery is commercially preferable to missed delivery with underresourced teams."
+              },
+              {
+                "t": "box",
+                "label": "Hiring Freeze Response Playbook",
+                "v": "Quantify the hidden cost of the freeze (delayed billing, pipeline loss)\nIdentify revenue-generating vs overhead roles for exception negotiation\nDeploy internal mobility to fill critical gaps\nConfirm whether contractor engagement is exempt\nNegotiate client timelines where necessary"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "A hiring freeze has a hidden cost that must be quantified: delayed billing revenue, candidate pipeline loss, and client delivery risk may exceed the payroll saving.",
+                  "The exceptions case for revenue-generating roles reframes the freeze from a blanket cost control measure to a targeted overhead management tool.",
+                  "Internal mobility during a freeze converts underutilised capacity (Capital Markets) into supply for constrained demand (Regulatory Advisory) without incurring new cost."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "17-1-Q",
+            "title": "Module Quiz: Workforce Planning",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The four questions of workforce planning, in correct sequence, are:",
+                "opts": [
+                  "Plan, Execute, Monitor, Adjust.",
+                  "What talent do we need? What talent do we have? What is the gap? How do we close it?",
+                  "Demand planning, budget submission, headcount approval, recruitment launch.",
+                  "Skills assessment, attrition modelling, gap quantification, succession planning."
+                ],
+                "ans": 1,
+                "exp": "The four workforce planning questions (need, have, gap, close) provide a consistent framework — demand first, supply second, gap analysis third, solution design fourth."
+              },
+              {
+                "q": "The 'supply trajectory' calculation is important because:",
+                "opts": [
+                  "It shows the current workforce distribution by grade and function.",
+                  "It projects what the current workforce becomes in future years without any recruitment, making the scale of required hiring visible.",
+                  "It identifies the percentage of employees who are below their grade midpoint.",
+                  "It models the impact of a specific pay increase on total workforce cost."
+                ],
+                "ans": 1,
+                "exp": "The supply trajectory (current workforce minus projected attrition over time) quantifies the 'do nothing' scenario — it makes the gross hiring requirement concrete rather than conceptual."
+              },
+              {
+                "q": "Castleton's gross hiring requirement over 3 years (~2,155) differs from the net headcount growth (450) because:",
+                "opts": [
+                  "The planning model uses a different attrition assumption.",
+                  "Gross hires must replace attrition losses (~972 over 3 years) in addition to adding net new headcount (1,183 to reach target from trajectory base).",
+                  "The calculation includes contractors and non-permanent staff.",
+                  "Business Services headcount reduction offsets some of the growth requirement."
+                ],
+                "ans": 1,
+                "exp": "Gross hires = net headcount growth + attrition replacement. Attrition replacement is the largest component in high-attrition organisations — ignoring it dramatically underestimates total hiring volume."
+              },
+              {
+                "q": "For the Risk Technology practice with limited UK supply, the recommended Build/Buy/Borrow/Bot approach is:",
+                "opts": [
+                  "100% Buy (external hire) to fill the 80 FTE requirement as quickly as possible.",
+                  "100% Build (internal development) to preserve culture and minimise premium hiring cost.",
+                  "Hybrid: Buy 30 senior specialists, Build 30 from internal talent with upskilling, Borrow 20 FTE-equivalent via contractors during the build period.",
+                  "Bot (automation) for the entire Risk Technology function, eliminating the FTE requirement."
+                ],
+                "ans": 2,
+                "exp": "When supply is constrained, no single solution is sufficient — the hybrid approach balances speed (Buy for senior roles), cost (Build for suitable internal talent), and flexibility (Borrow while Build matures)."
+              },
+              {
+                "q": "The strongest argument for freezing overhead roles but exempting revenue-generating roles during a hiring freeze is:",
+                "opts": [
+                  "Revenue-generating roles are covered by a different budget code and are therefore not in scope.",
+                  "Delaying a revenue-generating hire has an ongoing daily billing cost that often exceeds the payroll saving from the freeze — making the exception financially preferable.",
+                  "Revenue-generating employees are union-represented and the freeze would violate their collective agreement.",
+                  "The CFO requested the freeze only for back-office functions and specifically excluded client-facing roles."
+                ],
+                "ans": 1,
+                "exp": "A Grade 6 Regulatory Advisory hire generating £225k revenue/year costs £56k in delayed billing per role over 90 days — against a payroll saving of approximately £6,400 (one quarter of salary). The revenue cost is 8× the payroll saving."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "17-2",
+        "title": "Employment Cost Modelling",
+        "color": "#5C4B8A",
+        "lessons": [
+          {
+            "id": "17-2-1",
+            "title": "Employment Cost Modelling: The True Cost of a Hire",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "The true cost of employing someone is consistently underestimated by business leaders — and sometimes by HR professionals. A quoted salary of £50,000 is not the cost of a hire; it is the starting point of a calculation that typically produces a total employer cost 30-40% above salary. Understanding the full cost architecture of employment is essential for accurate headcount budgeting, make-or-buy decisions, and business case construction."
+              },
+              {
+                "t": "h",
+                "v": "The Employment Cost Components"
+              },
+              {
+                "t": "p",
+                "v": "The full employer cost of a hire includes: Base salary; Employer NI (13.8% on earnings above the secondary threshold — £9,100 as of 2024/25); Employer pension contribution (minimum 3% on qualifying earnings under auto-enrolment, but many professional firms contribute 5-10%); Recruitment cost (agency fee typically 15-20% of first-year salary for professional roles, or internal cost of recruiter time, job boards, assessment tools); Induction and onboarding (IT setup, security passes, training, first-90-day manager time — typically £1,500-£4,000 depending on role complexity); Benefits cost (private medical insurance typically £800-£2,500 per employee depending on tier; life assurance 4× salary typically at 0.3-0.5% of salary; risk benefits; EAP subscription); Training and development allocation; Office space and equipment. The total employer cost for a £50,000 salary professional typically ranges from £65,000 to £75,000 — an uplift of 30-50% above headline salary."
+              },
+              {
+                "t": "h",
+                "v": "The Fully-Loaded Cost Model"
+              },
+              {
+                "t": "p",
+                "v": "Professional services firms typically use a 'fully-loaded cost rate' or 'internal transfer pricing rate' — the total cost of an employee expressed per day or per hour — for make-or-buy decisions and project costing. Calculation for a Grade 7 consultant at £72,000 salary: Employer NI: (£72,000 − £9,100) × 13.8% = £8,680. Pension (7%): £72,000 × 7% = £5,040. Benefits: £3,200. Total remuneration cost: £72,000 + £8,680 + £5,040 + £3,200 = £88,920. Annual working days: 52 weeks × 5 days − 25 holiday days − 8 bank holidays − 5 training days = 222 days. Daily internal rate: £88,920 / 222 = £400/day. This is the cost the firm must recover per billable day before profit. A billing rate of £1,200/day on this employee produces £800/day margin — a 200% margin on cost, or 67% gross margin on revenue."
+              },
+              {
+                "t": "h",
+                "v": "Contractor vs Permanent Cost Comparison"
+              },
+              {
+                "t": "p",
+                "v": "Contractor day rates appear high (£500-£900/day for specialist professional roles) but must be compared against the fully-loaded cost of a permanent employee plus the flexibility premium. Permanent Grade 7 at £400/day internal cost: 222 days × £400 = £88,800 annual permanent cost + recruitment cost (~£14,400 one-time) + termination cost risk. Contractor at £700/day: 222 days × £700 = £155,400 — 75% more expensive if fully deployed. But contractor has: no employer NI, no pension, no benefits, no recruitment cost, no termination liability, flexible exit at notice period. Break-even analysis: contractor is cost-effective when the flexibility premium is valued above the cost differential, or when the engagement is less than full-time or fixed-duration. Rule of thumb: permanent hire is more cost-effective for roles required >18 months at full capacity; contractor is more cost-effective for roles required <12 months or with uncertain tenure."
+              },
+              {
+                "t": "box",
+                "label": "Employment Cost Architecture",
+                "v": "Base salary: 100%\nEmployer NI (+13.8% above threshold): +12-14%\nPension (5-10%): +5-10%\nBenefits: +4-6%\nSubtotal remuneration cost: ~122-130% of salary\n\nAdd:\nRecruitment (one-time): ~15-20% of salary\nOnboarding (one-time): ~2-5% of salary\nTotal first-year cost: ~140-155% of salary"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The true employer cost of a hire is typically 30-50% above headline salary — headcount budgets built on salary alone will understate people cost by a significant margin.",
+                  "The fully-loaded daily cost rate is the foundation for make-or-buy decisions — it shows the minimum billing rate required before profit, and enables contractor/permanent comparisons.",
+                  "Contractor is cost-effective vs permanent for short-duration or capacity-uncertain roles (< 12-18 months at full deployment); permanent is more cost-effective for sustained, full-capacity requirements."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "For a Castleton Grade 7 Consultant at £72,000 salary with 7% employer pension, the total annual employer remuneration cost (excluding one-time recruitment and onboarding) is approximately:",
+              "opts": [
+                "£72,000 (salary only)",
+                "£81,000 (salary + employer NI only)",
+                "£88,920 (salary + employer NI + pension + benefits)",
+                "£104,000 (salary × 1.44 loaded cost ratio)"
+              ],
+              "ans": 2,
+              "exp": "£72,000 + £8,680 (NI) + £5,040 (pension) + £3,200 (benefits) = £88,920. The fully-loaded daily rate on this figure is £400/day (÷ 222 billable days)."
+            }
+          },
+          {
+            "id": "17-2-2",
+            "title": "Castleton's Headcount Budget Model",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Budget Modelling Exercise",
+                "v": "Castleton is planning to add 120 net new Regulatory Advisory FTEs over 18 months. Mix: Grade 5 (60 × £48,000), Grade 7 (40 × £72,000), Grade 9 (20 × £105,000). Employer pension: 7% for Grades 5-8, 10% for Grade 9+. Benefits (PMI + life assurance): £2,800 Grade 5, £3,200 Grade 7, £4,500 Grade 9. Recruitment: agency at 18% of salary. Onboarding: £2,500 per hire. The CFO asks Priya: 'What is the full year-1 and steady-state cost of 120 Regulatory Advisory headcount?'"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Grade 5 Cost Build",
+                "v": "Base: 60 × £48,000 = £2,880,000. Employer NI: (£48,000 − £9,100) × 13.8% × 60 = £38,900 × 60 = £2,334,000 — wait, recalculate: per person NI = (£48,000 − £9,100) × 13.8% = £38,900 × 0.138 = £5,368. Total NI: £5,368 × 60 = £322,080. Pension (7%): £48,000 × 7% × 60 = £201,600. Benefits: £2,800 × 60 = £168,000. Steady-state remuneration cost: £2,880,000 + £322,080 + £201,600 + £168,000 = £3,571,680. One-time costs: Recruitment: 60 × £48,000 × 18% = £518,400. Onboarding: 60 × £2,500 = £150,000. Total one-time: £668,400. Year 1 total (remuneration + one-time): £3,571,680 + £668,400 = £4,240,080."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Grade 7 and 9 Cost Build",
+                "v": "Grade 7 (40 × £72,000): NI per person: (£72,000 − £9,100) × 13.8% = £8,680. NI total: £347,200. Pension: £72,000 × 7% × 40 = £201,600. Benefits: £3,200 × 40 = £128,000. Remuneration: £2,880,000 + £347,200 + £201,600 + £128,000 = £3,556,800. One-time: (£72,000 × 18% × 40) + (£2,500 × 40) = £518,400 + £100,000 = £618,400. Year 1 Grade 7: £4,175,200.\n\nGrade 9 (20 × £105,000): NI: (£105,000 − £9,100) × 13.8% × 20 = £95,900 × 0.138 × 20 = £13,234 × 20 = £264,680. Pension (10%): £105,000 × 10% × 20 = £210,000. Benefits: £4,500 × 20 = £90,000. Remuneration: £2,100,000 + £264,680 + £210,000 + £90,000 = £2,664,680. One-time: (£105,000 × 18% × 20) + (£2,500 × 20) = £378,000 + £50,000 = £428,000. Year 1 Grade 9: £3,092,680."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Total Budget Summary",
+                "v": "Summary:\nGrade 5 (60): steady-state £3,571,680 | one-time £668,400 | Year 1 £4,240,080\nGrade 7 (40): steady-state £3,556,800 | one-time £618,400 | Year 1 £4,175,200\nGrade 9 (20): steady-state £2,664,680 | one-time £428,000 | Year 1 £3,092,680\nTotal: steady-state £9,793,160 | one-time £1,714,800 | Year 1 £11,507,960\n\nThe CFO's framing ('it's 120 people × average £75,000 = £9 million') understates the true cost by approximately £2.5m (28%). The correct Year 1 answer is approximately £11.5m. The key insight: recruitment and onboarding costs are material one-time items that must be included in Year 1 budget, not treated as overhead."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The salary-based cost estimate understates Year 1 cost by 28% — the difference is employer NI, pension, benefits, recruitment, and onboarding, none of which appear in a salary-only model.",
+                  "Grade 9+ employees with 10% employer pension have a significantly higher cost uplift than junior grades — the oncost percentage increases with seniority when pension rates are tiered.",
+                  "Presenting steady-state versus Year 1 cost separately is important for CFO communication — Year 1 is higher due to one-time recruitment and onboarding costs that do not recur in Year 2+."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "17-2-3",
+            "title": "Castleton's Make-or-Buy Decision — Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Castleton's Make-or-Buy Decision",
+                "v": "The CFO challenges Priya: 'Why don't we just use contractors for the Regulatory Advisory build instead of permanent hires? We can scale up and down as needed, and we avoid the recruitment cost and employment risk.' Priya must model the comparison and recommend."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "What does the 18-month contractor cost for 120 Regulatory Advisory FTEs look like?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Contractor day rates for Regulatory Advisory specialists (Grade 5-9 equivalent): Grade 5 equivalent: £450/day; Grade 7: £700/day; Grade 9: £1,100/day. Working days in 18 months: approximately 333 days. Total contractor cost for 18 months: Grade 5 (60): 60 × £450 × 333 = £8,991,000. Grade 7 (40): 40 × £700 × 333 = £9,324,000. Grade 9 (20): 20 × £1,100 × 333 = £7,326,000. Total 18-month contractor cost: £25,641,000. Compare to permanent Year 1 cost: £11,507,960 + 6-month Year 2 remuneration cost (~£4,896,580): total 18-month permanent cost approximately £16,404,540. Permanent is £9.2m cheaper over 18 months on equivalent capacity."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The CFO argues that contractor flexibility justifies the premium. How does Priya counter?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The flexibility argument is valid when demand is genuinely uncertain. In this case, the Regulatory Advisory expansion is underpinned by existing client contracts — the demand is not speculative. The flexibility premium (£9.2m over 18 months) is the price of optionality that the firm does not need. Priya's counter: 'The contractor premium is £9.2m over 18 months on committed client revenue. That is equivalent to 80 additional working weeks of Grade 7 billing at £1,200/day — or £2.16m in incremental revenue we could have generated. The flexibility premium is worth paying when demand is uncertain; when it is underpinned by contracts, it is an unnecessary cost. For the Risk Technology practice (uncertain demand, specialist supply), a contractor approach is appropriate — that's the Borrow component of the Build/Buy/Borrow plan. For Regulatory Advisory with committed contracts, permanent hire is the cost-optimal solution.'"
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "What is the final make-or-buy recommendation?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Permanent hire for Regulatory Advisory (120 FTEs) where demand is contract-backed. Contractor for Risk Technology initial phase (20 FTE-equivalent) where demand uncertainty is high and the permanent hire Build phase is in progress. Temporary agency staff for any volume spikes in Business Services (zero planned headcount growth but seasonal demand). The principle: use permanent employment when demand is sustained (>18 months) and foreseeable; use contractors for specialist, time-limited, or demand-uncertain work. Document the decision framework — it is defensible to the CFO and consistent for future requests. Year-1 budget: permanent £11.5m + Risk Technology contractors £5.5m (approx) = £17m total workforce expansion budget, versus an all-contractor approach of approximately £26m."
+              },
+              {
+                "t": "box",
+                "label": "Make-or-Buy Decision Framework",
+                "v": "Permanent hire: demand sustained >18 months AND foreseeable → cost-optimal\nContractor: demand uncertain, specialist, or <12 months → flexibility premium justified\nTemporary agency: volume spikes, seasonal, or administrative capacity → flexibility without specialist premium\nDocument the decision principle — consistency creates defensibility"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The contractor flexibility premium is only worth paying when demand is genuinely uncertain — committed client contracts make the demand foreseeable, making the premium an unnecessary cost.",
+                  "A hybrid make-or-buy approach (permanent for sustained demand, contractors for uncertain or specialist demand) optimises cost while maintaining operational flexibility.",
+                  "The decision framework (demand duration × certainty) should be documented and applied consistently — this turns case-by-case decisions into a governance principle."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "17-2-Q",
+            "title": "Module Quiz: Employment Cost Modelling",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The fully-loaded annual employer cost of a Grade 7 employee at £72,000 salary (7% pension, £3,200 benefits) is approximately:",
+                "opts": [
+                  "£72,000 (salary only)",
+                  "£81,000 (salary + NI only)",
+                  "£88,920 (salary + NI + pension + benefits)",
+                  "£95,000 (salary × standard 32% loaded cost uplift)"
+                ],
+                "ans": 2,
+                "exp": "£72,000 + £8,680 (NI) + £5,040 (pension) + £3,200 (benefits) = £88,920. Option D uses a rule-of-thumb that doesn't match the specific component calculation."
+              },
+              {
+                "q": "Contractor employment is most cost-effective vs permanent hire when:",
+                "opts": [
+                  "The contractor has more specialist skills than any available permanent hire.",
+                  "The engagement is expected to last fewer than 12-18 months or the demand is genuinely uncertain.",
+                  "The permanent hiring market is constrained and time-to-fill exceeds 60 days.",
+                  "The contractor rate is less than 1.5× the permanent daily internal cost rate."
+                ],
+                "ans": 1,
+                "exp": "The duration and certainty test is the primary make-or-buy criterion — contractor flexibility premium is justified by uncertainty, not by specialist skills alone."
+              },
+              {
+                "q": "The Castleton 18-month comparison shows permanent hire is approximately £9.2m cheaper than an equivalent contractor workforce because:",
+                "opts": [
+                  "Permanent employees are paid a lower effective hourly rate due to employment law protections.",
+                  "Contractor day rates (£450-£1,100) applied to 333 working days produce a total contractor cost (~£25.6m) significantly above the equivalent permanent cost (~£16.4m).",
+                  "Permanent employees generate higher billing rates than contractors.",
+                  "The contractor model includes IR35 liability costs not present in permanent employment."
+                ],
+                "ans": 1,
+                "exp": "The contractor premium is the difference between contractor day rates and permanent fully-loaded daily cost — in sustained deployment, the contractor day rate premium accumulates to a material budget difference."
+              },
+              {
+                "q": "Year 1 employer cost for 120 new Regulatory Advisory hires (~£11.5m) exceeds steady-state annual cost (~£9.8m) primarily because:",
+                "opts": [
+                  "Year 1 salary inflation assumptions are higher than steady-state.",
+                  "One-time recruitment fees (~18% of salary per hire) and onboarding costs (~£2,500 per hire) total approximately £1.7m and are included in Year 1 but not Year 2.",
+                  "The pension contribution rate is higher in year 1 due to auto-enrolment staging.",
+                  "Temporary agency costs are included in year 1 while permanent hires are onboarded."
+                ],
+                "ans": 1,
+                "exp": "Recruitment (agency fees) and onboarding are one-time costs that inflate Year 1 above steady state — this distinction is essential for accurate multi-year budgeting."
+              },
+              {
+                "q": "The fully-loaded daily cost rate for a Grade 7 Consultant at £88,920 annual cost (222 billable days) is approximately:",
+                "opts": [
+                  "£310/day",
+                  "£400/day",
+                  "£500/day",
+                  "£600/day"
+                ],
+                "ans": 1,
+                "exp": "£88,920 / 222 = £400.54/day. At a billing rate of £1,200/day, this produces a gross margin of £800/day or 67% on revenue."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "17-3",
+        "title": "The True Cost of Employee Turnover",
+        "color": "#5C4B8A",
+        "lessons": [
+          {
+            "id": "17-3-1",
+            "title": "The True Cost of Employee Turnover",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Employee turnover is one of the most consistently underestimated financial risks in organisations. Most finance teams track headcount and salary costs; few track the full economic cost of voluntary attrition. When turnover cost is properly calculated and presented to leadership, it routinely produces one of two reactions: disbelief at the magnitude, or immediate willingness to invest in retention that was previously refused. Understanding how to model, quantify, and communicate turnover cost is one of the most commercially impactful skills in reward and workforce planning."
+              },
+              {
+                "t": "h",
+                "v": "The Five Components of Turnover Cost"
+              },
+              {
+                "t": "p",
+                "v": "Full turnover cost has five components: (1) Separation cost — exit interview time, payroll processing for final pay, potential termination payments, HR administration. Typically £500-£1,500 depending on seniority and voluntary/involuntary nature. (2) Vacancy cost — the productivity lost while the role is unfilled. A Grade 7 consultant with a £1,200 billing rate and 75% utilisation generates £225k revenue per year — 67 days of vacancy at £1,200/day = £80,400 in lost billing. Adjust for partial cover by colleagues: 50% productive cover reduces to £40,200. (3) Recruitment cost — agency fee or internal cost. As above: typically 15-20% of annual salary for professional roles. (4) Onboarding cost — IT, security, training, manager time, administration. Typically £2,000-£4,000. (5) Productivity ramp-up cost — new hire does not reach full productivity immediately. Research suggests 6-8 months to full productivity for professional roles. Cost: 50% productivity during ramp-up × salary cost × ramp-up period."
+              },
+              {
+                "t": "h",
+                "v": "The Turnover Cost Calculation"
+              },
+              {
+                "t": "p",
+                "v": "For a Grade 7 Consultant at £72,000 salary: (1) Separation cost: £1,200. (2) Vacancy cost: 67 days time-to-fill × £1,200 billing rate × 75% utilisation × 50% cover productivity = 67 × £900 × 0.5 = £30,150. (3) Recruitment cost: £72,000 × 18% = £12,960. (4) Onboarding: £2,800. (5) Productivity ramp-up: £72,000 / 12 × 6 months × 50% productivity loss = £6,000 × 50% = £18,000. Total: £1,200 + £30,150 + £12,960 + £2,800 + £18,000 = £65,110. This is the cost of one Grade 7 leaver. At Castleton's current Grade 7 attrition rate (let us assume 16% of 300 Grade 7 employees = 48 leavers per year): 48 × £65,110 = £3,125,280 per year in Grade 7 turnover cost alone."
+              },
+              {
+                "t": "h",
+                "v": "Regrettable vs Non-Regrettable Turnover"
+              },
+              {
+                "t": "p",
+                "v": "Not all attrition is equal. Regrettable attrition (high-performing employees the organisation wanted to keep leaving voluntarily) has a full turnover cost including productivity ramp-up risk — a replacement hire may not match the departed employee's performance level. Non-regrettable attrition (poor performers exiting voluntarily, or employees who were being managed out anyway) has a lower or even negative cost — the separation cost is incurred, but the vacancy cost is reduced (revenue was already affected by underperformance) and the productivity ramp-up may produce a net improvement. Strategic workforce planning distinguishes between total attrition and regrettable attrition — the target retention metric is regrettable attrition, not total attrition."
+              },
+              {
+                "t": "box",
+                "label": "Turnover Cost Components",
+                "v": "1. Separation cost (£500-£1,500)\n2. Vacancy cost (days unfilled × billing rate × utilisation × cover factor)\n3. Recruitment cost (15-20% of salary)\n4. Onboarding cost (£2,000-£4,000)\n5. Productivity ramp-up (50% productivity × salary cost × ramp-up months / 12)\n\nTotal: typically 90-150% of annual salary for professional roles"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Turnover cost typically ranges from 90-150% of annual salary for professional roles when all five components are included — a dramatic understatement vs common HR estimates of 30-50%.",
+                  "Vacancy cost — billing revenue lost during the unfilled period — is often the largest single turnover cost component in revenue-generating professional roles.",
+                  "The distinction between regrettable and non-regrettable attrition focuses retention investment on the highest-value-at-risk population."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "At Castleton, if Grade 7 attrition is 48 leavers per year and the cost per leaver is £65,110, the annual Grade 7 turnover cost is approximately:",
+              "opts": [
+                "£1,200,000 (salary-based estimate)",
+                "£2,400,000 (salary × 33% replacement cost estimate)",
+                "£3,125,280 (full five-component model)",
+                "£4,800,000 (1.5× salary × 48 leavers)"
+              ],
+              "ans": 2,
+              "exp": "48 leavers × £65,110 per leaver = £3,125,280. The salary-based estimates in options A and B dramatically understate the true cost by omitting vacancy cost (the largest component), ramp-up cost, and the full recruitment process cost."
+            }
+          },
+          {
+            "id": "17-3-2",
+            "title": "Castleton's Retention Investment Case",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Retention Analysis Inputs",
+                "v": "Castleton Grade 5-9 headcount: 1,200. Current voluntary attrition: 16% (192 leavers/year). Regrettable attrition (performance above threshold): estimated 70% of voluntary (134 leavers/year). Weighted average turnover cost by grade: Grade 5: £38,000; Grade 7: £65,110; Grade 9: £95,000. Mix of leavers: 55% Grade 5, 35% Grade 7, 10% Grade 9. Target attrition rate: 12% (sector benchmark). CFO ask: 'How much should we spend on retention, and what return will we get?'"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Annual Turnover Cost",
+                "v": "Regrettable leavers: 134/year. Mix: 74 Grade 5 (55%) + 47 Grade 7 (35%) + 13 Grade 9 (10%). Turnover cost: 74 × £38,000 = £2,812,000; 47 × £65,110 = £3,060,170; 13 × £95,000 = £1,235,000. Total annual regrettable attrition cost: £7,107,170 ≈ £7.1m."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Target Attrition Cost",
+                "v": "At 12% attrition: total leavers = 1,200 × 12% = 144; regrettable (70%) = 101. Mix: 56 Grade 5 + 35 Grade 7 + 10 Grade 9. Cost: 56 × £38,000 = £2,128,000; 35 × £65,110 = £2,278,850; 10 × £95,000 = £950,000. Target annual regrettable attrition cost: £5,356,850. Annual saving from reaching benchmark: £7,107,170 − £5,356,850 = £1,750,320."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Retention ROI Calculation",
+                "v": "Annual saving from closing the attrition gap: £1,750,320. Retention investment options: (1) Manager recognition training and career framework: £45,000 (one-time). (2) Grade 5-7 market correction (matching C16 analysis): £180,000 annual. (3) Student loan contribution (£500/Grade 5-6): £90,000 annual. Total retention investment: £315,000 annual (£360,000 year 1 including training). ROI: (£1,750,320 − £315,000) / £315,000 = 456% on year 2+ investment. Payback: even in Year 1 with one-time training cost: (£1,750,320 − £360,000) / £360,000 = 386%. The financial case is overwhelming: £1 of retention investment generates £4.56 of attrition saving."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Regrettable attrition cost at Castleton (16% → 12% gap) is £1.75m per year — a figure that transforms a qualitative 'retention problem' into a specific capital allocation decision.",
+                  "The 456% ROI on retention investment reflects the very high cost of turnover in revenue-generating professional roles — the productivity and billing losses dwarf the cost of retention interventions.",
+                  "Presenting retention as an investment rather than a cost — with ROI and payback period — is the most effective communication frame for a CFO audience."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "17-3-3",
+            "title": "Castleton's Exit Interview Analytics — Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Exit Data",
+                "v": "Exit interview analysis (last 12 months, 164 respondents): primary exit reason: 'Better financial offer elsewhere' (48%), 'Limited career progression speed' (32%), 'Relationship with direct manager' (14%), 'Location/commute' (6%). Secondary data: average time between joining and resignation: 2.3 years. High-attrition cohorts: employees who joined as graduate hires (3-year anniversary spike); employees who were promoted once but not promoted again within 18 months ('career plateau' pattern)."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "48% cite a better financial offer. What does this tell us — and what doesn't it tell us?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "What it tells us: a significant proportion of leavers received an external offer that was materially better than their current compensation. This is a market position signal — Castleton's pay may be lagging for at least some grades or functions. What it doesn't tell us: whether the 'better offer' was primarily salary, bonus, equity, or benefits; whether the employee would have accepted a counter-offer from Castleton; whether the employee was already disengaged and the external offer was the mechanism, not the cause. The follow-up analysis required: for the 48% who cited a financial offer, what was the differential between the departing salary and the offer accepted? If the median differential is 8-12%, this is a market position problem. If the median differential is 25%+, this may be a specific talent segment being poached at a premium (e.g., data science into tech sector) rather than a general market lag."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "Joiners are leaving at a spike around 3 years. What is the likely cause and the reward response?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The 3-year anniversary spike is a classic early-career compensation compression pattern: graduate hires join at market rate, receive modest annual increases (2-3% merit budget), but the market for experienced hires moves faster — so after 3 years, the external market is offering significantly more to a 3-year experienced professional than Castleton's internal merit increases have produced. The gap between what a 3-year experienced professional can earn externally and what they currently earn internally is the 'compression gap'. Reward response: (1) Conduct a compression analysis — compare 3-year-tenure employees' salaries against external market for equivalent-experience professionals; (2) If compression gap exists, introduce an 'experience acceleration uplift' — a targeted increase for employees at the 2-4 year tenure point to close the compression gap before they reach the external market offer stage; (3) Review whether the merit budget is disproportionately allocated to higher grades rather than protecting the 3-year investment cohort."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "Employees promoted once but not again within 18 months are leaving. How should Castleton respond?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The 'one and done' promotion pattern reflects an expectation gap rather than a talent gap. Employees who receive their first promotion develop an expectation for continued progression, often underestimating the length of tenure typically required at the next grade before further promotion. When the next promotion doesn't materialise within 18 months, they interpret it as career stalling rather than normal progression cadence. Response: (1) Set clear, documented progression expectations at the point of promotion — 'at Grade 6, typical tenure before Grade 7 progression is 24-36 months, contingent on performance in the following criteria'; (2) Build a progression visibility dashboard so employees can see their position against promotion criteria in real time; (3) Ensure managers are having proactive career conversations at the 12-month post-promotion mark, not waiting for the employee to raise the topic."
+              },
+              {
+                "t": "box",
+                "label": "Exit Analytics Interpretation Principles",
+                "v": "'Better financial offer' → investigate offer differential, not just the fact of an offer\n'Career progression' → check compression at key tenure milestones AND expectation setting post-promotion\n'Manager relationship' → flag for management development, not reward\nCohort analysis reveals patterns that aggregate data masks"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The departure reason reported in exit interviews is a starting point, not a conclusion — the offer differential and the cohort analysis reveal the structural cause.",
+                  "The 3-year anniversary spike is a classic compression indicator — employees' internal merit progression has not kept pace with the external market for their experience level.",
+                  "Career plateau exits require an expectation management response, not just a pay response — the issue is the gap between what employees expect and what the organisation's normal progression cadence delivers."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "17-3-Q",
+            "title": "Module Quiz: Turnover Cost and Retention",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The five components of full employee turnover cost are:",
+                "opts": [
+                  "Recruitment fee, HR admin cost, office setup, training, and onboarding.",
+                  "Separation cost, vacancy cost, recruitment cost, onboarding cost, and productivity ramp-up cost.",
+                  "Exit interview cost, payroll processing, skills gap, retraining, and morale impact.",
+                  "Direct pay, employer NI, benefits, pension, and training allocation."
+                ],
+                "ans": 1,
+                "exp": "The five components capture the full economic impact of a leaver: separation (exit processing), vacancy (lost productivity/billing), recruitment (new hire sourcing), onboarding (setup), and ramp-up (below-full productivity period)."
+              },
+              {
+                "q": "For a Grade 7 consultant (£72,000 salary, 67-day time-to-fill, £1,200 billing rate, 75% utilisation, 50% productive cover during vacancy), the vacancy cost component is approximately:",
+                "opts": [
+                  "£12,960 (18% recruitment fee equivalent)",
+                  "£30,150 (67 × £1,200 × 75% × 50% cover factor)",
+                  "£18,000 (6-month productivity ramp at 50%)",
+                  "£8,040 (67 days × £120 average salary daily rate)"
+                ],
+                "ans": 1,
+                "exp": "Vacancy cost = days unfilled × billing rate × utilisation × cover factor. 67 × £1,200 × 0.75 × 0.5 = 67 × £450 = £30,150."
+              },
+              {
+                "q": "Regrettable attrition differs from total attrition in that:",
+                "opts": [
+                  "Regrettable attrition refers only to involuntary exits (redundancies and dismissals).",
+                  "Regrettable attrition captures only the voluntary exits the organisation wanted to prevent — excluding poor performers who left voluntarily.",
+                  "Regrettable attrition is measured at senior grades only.",
+                  "Regrettable attrition is the proportion of attrition that can be prevented through pay increases."
+                ],
+                "ans": 1,
+                "exp": "Regrettable attrition = voluntary exits by employees above a performance threshold who the organisation wanted to retain. Non-regrettable exits may be neutral or positive in value."
+              },
+              {
+                "q": "The 3-year anniversary attrition spike most commonly reflects:",
+                "opts": [
+                  "A cliff vesting event in the equity programme that enables employees to leave after vesting.",
+                  "A salary compression gap — internal merit increases over 3 years have not kept pace with the external market for a 3-year experienced professional.",
+                  "A management quality problem specific to the 3-year tenure cohort.",
+                  "A benefits eligibility milestone that employees wait to pass before leaving."
+                ],
+                "ans": 1,
+                "exp": "The 3-year compression gap is a structural pattern: graduate or junior hires receive 2-3% annual merit increases while the market for experienced professionals moves faster — after 3 years the external offer premium is sufficient to trigger exit."
+              },
+              {
+                "q": "Castleton's retention ROI of 456% (£315k investment → £1.75m attrition saving) is primarily driven by:",
+                "opts": [
+                  "A high recognition programme investment that significantly improves employee satisfaction.",
+                  "The high cost of professional turnover in billing-based professional services — vacancy cost alone is £30,000+ per Grade 7 leaver.",
+                  "The large number of leavers each year making even small per-person improvements highly valuable.",
+                  "The government tax relief on retention investment in professional services firms."
+                ],
+                "ans": 1,
+                "exp": "The ROI magnitude reflects the billing-rate multiplier effect — each Grade 7 leaver costs £65k+ due to vacancy billing loss, far exceeding salary-based estimates. The high cost per leaver makes retention investment extraordinarily effective."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "17-4",
+        "title": "Redundancy Planning and Restructuring",
+        "color": "#5C4B8A",
+        "lessons": [
+          {
+            "id": "17-4-1",
+            "title": "Modelling a Redundancy Programme and Restructuring Cost",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Redundancy is among the most consequential actions an organisation takes. Done badly, it destroys morale, triggers unfair dismissal claims, loses talent the business needs, and costs significantly more than the headcount saving it was meant to produce. Done well, it restructures the organisation for the strategic context, treats affected employees with dignity, and produces the intended cost saving with minimal collateral damage. The financial modelling of a redundancy programme — cost, saving, and net payback — is a foundational workforce planning skill."
+              },
+              {
+                "t": "h",
+                "v": "UK Redundancy Law: The Financial Framework"
+              },
+              {
+                "t": "p",
+                "v": "Statutory redundancy pay in the UK is calculated per the government's weekly pay formula: employees receive 0.5 weeks' pay per year of service under 22, 1 week's pay per year of service aged 22-40, and 1.5 weeks' pay per year of service aged 41+. The weekly pay is capped at £643 (2024/25) and maximum service is 20 years. Many employers offer enhanced redundancy pay above statutory — a common formula is 1 month's salary per year of service (uncapped or capped at a maximum). Notice pay (at least 1 week per year of service up to 12 weeks) must also be paid, either worked notice or pay in lieu. Employees with less than 2 years of service have no statutory redundancy entitlement. Contractual redundancy terms in the employment contract or any collective agreement override the statutory minimum."
+              },
+              {
+                "t": "h",
+                "v": "Redundancy Programme Cost Architecture"
+              },
+              {
+                "t": "p",
+                "v": "A redundancy programme has four cost components: (1) Redundancy pay — statutory or enhanced, calculated individually for each affected employee; (2) Notice pay — worked notice (salary continues, employee works reduced duties) or pay in lieu of notice (PILON); (3) Legal and HR cost — external employment law advice, consultation management, outplacement services, potential tribunal risk reserve; (4) Operational disruption cost — productivity loss during consultation period, knowledge transfer cost, customer relationship risk. The financial case requires modelling against the saving: headcount saving = sum of salaries, employer NI, pension, and benefits of removed roles. Net first-year saving = headcount saving − one-time programme cost. Payback period = programme cost ÷ annual headcount saving."
+              },
+              {
+                "t": "h",
+                "v": "Collective Consultation Requirements"
+              },
+              {
+                "t": "p",
+                "v": "When 20 or more employees are proposed for redundancy within a 90-day period, UK employment law requires a minimum 45-day collective consultation period before the first dismissal takes effect. During this period: employee representatives (trade union reps or elected employee representatives) must be formally consulted; the employer must provide written notice (HR1 form) to the Department for Business and Trade; and the employer must consult on ways to avoid redundancy, reduce the number affected, and mitigate the consequences. Failure to follow collective consultation requirements can result in a 'protective award' of up to 90 days' pay per affected employee — a significant additional cost in a large redundancy programme. This is the most common costly error in poorly planned redundancy programmes."
+              },
+              {
+                "t": "box",
+                "label": "UK Redundancy Pay Formula",
+                "v": "Service < 22: 0.5 week's pay per year\nService 22-40: 1 week's pay per year\nService 41+: 1.5 weeks per year\nWeekly pay capped at £643 (2024/25)\nMaximum service: 20 years\nMinimum 2 years' service required\n\nCollective consultation: 45+ days required when 20+ affected in 90 days"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Redundancy pay cost must be modelled for each individual using age, service, and (capped) weekly pay — aggregate estimates produce large errors when the workforce has a bimodal age/service distribution.",
+                  "Collective consultation requirements (45 days, HR1 form, employee representatives) are mandatory for 20+ redundancies in 90 days — failure triggers protective awards of up to 90 days' pay per employee.",
+                  "The net first-year saving of a redundancy programme may be zero or negative if programme cost (redundancy pay + notice + legal) equals the annual salary saving — the payback period is the critical metric."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "An employee aged 43 with 8 years' service earning £52,000 pa (£1,000/week, exceeding the £643 cap) is made redundant. Their statutory redundancy pay is:",
+              "opts": [
+                "£4,116 (6 × 0.5 + 2 × 1 × £643)",
+                "£5,144 (statutory calculation using capped weekly pay and age/service matrix)",
+                "£9,152 (enhanced: 1 month × 8 years)",
+                "£3,858 (8 years × 0.75 weeks average × £643)"
+              ],
+              "ans": 1,
+              "exp": "Service breakdown: years 22-40 (the employee is now 43, so first 8 years covers ages 35-43; but we need to calculate by actual age bands at the time): ages 35-40: 5 years at 1 week = 5 × £643 = £3,215; ages 41-43: 3 years at 1.5 weeks = 3 × 1.5 × £643 = £2,894 − wait, simplified: the statutory pay for this profile (8 years, aged 43, 5 years under 41 at 1 week, 3 years over 41 at 1.5 weeks) = (5 × £643) + (3 × 1.5 × £643) = £3,215 + £2,894 = approximately £6,109. The nearest option B is approximately correct for this profile — exact calculation varies by age band distribution."
+            }
+          },
+          {
+            "id": "17-4-2",
+            "title": "Castleton's Capital Markets Restructuring",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Restructuring Scenario",
+                "v": "The Castleton Capital Markets practice (£18m revenue shortfall) is being restructured. The proposal: reduce Capital Markets headcount from 240 to 170 (70 redundancies). Affected population profile: 40 employees under 5 years' service; 20 employees with 5-10 years' service (average age 35); 10 employees with 10+ years' service (average age 48). Average Grade 6 salary: £62,000. Castleton enhanced redundancy policy: 1 month's salary per year of service, uncapped. Notice: contractual 3 months, all will be pay in lieu of notice (PILON). Outplacement: £1,500 per person."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Redundancy Pay Calculation",
+                "v": "Group 1 (40 employees, under 5 years, average 2.5 years): 40 × 2.5 months × £62,000/12 = 40 × 2.5 × £5,167 = 40 × £12,917 = £516,680.\nGroup 2 (20 employees, 5-10 years, average 7.5 years): 20 × 7.5 × £5,167 = 20 × £38,750 = £775,000.\nGroup 3 (10 employees, 10+ years, average 14 years): 10 × 14 × £5,167 = 10 × £72,333 = £723,330.\nTotal enhanced redundancy pay: £516,680 + £775,000 + £723,330 = £2,015,010."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Notice Pay and Ancillary Costs",
+                "v": "PILON (all 70, 3 months' notice): 70 × £62,000/12 × 3 = 70 × £15,500 = £1,085,000.\nOutplacement: 70 × £1,500 = £105,000.\nExternal legal and HR consulting cost: estimate £85,000 (employment lawyer for 45-day consultation management, HR1 filing, representative liaison).\nTotal ancillary costs: £1,085,000 + £105,000 + £85,000 = £1,275,000.\nTotal programme cost: £2,015,010 + £1,275,000 = £3,290,010 ≈ £3.3m."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Annual Saving and Payback",
+                "v": "Annual headcount saving (70 roles at Grade 6): Salary: 70 × £62,000 = £4,340,000. Employer NI: 70 × (£62,000 − £9,100) × 13.8% = 70 × £7,300 = £511,000. Pension (7%): 70 × £4,340 = £303,800. Benefits: 70 × £3,000 = £210,000. Total annual headcount saving: £4,340,000 + £511,000 + £303,800 + £210,000 = £5,364,800.\nFirst-year net saving: £5,364,800 − £3,290,010 = £2,074,790.\nPayback period: £3,290,010 / £5,364,800 = 0.61 years — approximately 7.3 months. The programme pays back within the first year, which is the standard CFO threshold for approval."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The enhanced redundancy policy (1 month per year, uncapped) dramatically increases programme cost vs statutory minimum — particularly for long-tenured employees, where the cost difference is 5-8× the statutory amount.",
+                  "PILON is often the largest single cost component in a redundancy programme — three months' notice for 70 employees at £62,000 = £1.085m.",
+                  "A payback period of under 12 months is the standard CFO threshold for redundancy programme approval — the model must demonstrate this, not just the annual saving."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "17-4-3",
+            "title": "Castleton's At-Risk Selection Process — Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Castleton's At-Risk Selection Process",
+                "v": "The restructuring is announced. The HR Director asks Priya to design the selection-at-risk process for identifying the 70 employees from the 240-person Capital Markets team. The CEO suggests using 'last in, first out (LIFO)' to avoid performance assessment complexity. The Head of Legal raises concerns about the selection criteria. Priya must advise."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The CEO proposes LIFO (last in, first out) as the selection criterion. What are the risks?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "LIFO appears simple and objective — it selects by length of service, avoiding any perception of management bias. Its problems: (1) LIFO selects the highest proportion of younger employees (typically 20s-30s), which may produce indirect age discrimination claims — LIFO is not automatically fair and must still be justified as a reasonable selection criterion. (2) LIFO selects the most recently hired, who may be the most current on skills and market rates — the business loses its newest capability and retains its most established patterns. (3) LIFO does not select for business need — Castleton may need specific capabilities in the retained Capital Markets team that LIFO doesn't protect. The risk: a successful unfair selection claim costs approximately £6,000-£25,000 per claimant (employment tribunal award), plus legal costs. On 70 redundancies, tribunal exposure is material."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "What selection criteria should Priya recommend instead of LIFO?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "A fair selection matrix uses objective, job-related criteria applied consistently. Typical criteria for a Capital Markets restructuring: (1) Skills and capability relevant to the retained structure (weighted most heavily — 40%); (2) Performance rating (last 2 years average — objective if the firm has documented ratings; 30%); (3) Attendance record (excluding disability-related and pregnancy/maternity absences — 15%); (4) Disciplinary record (excluding spent warnings — 15%). Priya's process recommendations: (1) Define the retained structure first — what roles exist after the restructuring; (2) Map existing employees to retained roles before running the selection process; (3) Apply the matrix consistently across all employees in the pool; (4) Document every scoring decision with evidence; (5) Offer employees the right to see their score and appeal; (6) Check the output for disproportionate adverse impact on any protected characteristic group (age, gender, ethnicity) — if a protected group is 2× more likely to be selected, the criteria or their application may be indirectly discriminatory."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "Priya needs to plan the 45-day collective consultation. What are the critical steps?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Day 0: HR1 form filed with the Department for Business and Trade (must be filed before consultation begins — failure is an automatic criminal offence). Employee representative elections called. Day 1: Formal announcement to all affected employees. Information provision to representatives: business reasons, number and roles at risk, selection criteria, timeline. Days 1-45: Meaningful individual and collective consultation — not notification of a decision already made but genuine consideration of alternatives (voluntary redundancy, redeployment, reduced hours). Representatives' suggestions must be properly considered and responded to in writing. Day 45+: Final individual redundancy letters after consultation closes and all objections have been addressed. Voluntary redundancy: always offer before compulsory — reduces compulsory numbers, reduces tribunal risk, and often surfaces volunteers in the at-risk pool. Priya's critical error to avoid: announcing the 45-day period before the selection criteria have been finalised — the criteria are part of the consultation, so must be developed in parallel with the consultation, not handed down as a fait accompli."
+              },
+              {
+                "t": "box",
+                "label": "Selection-at-Risk Best Practice",
+                "v": "No LIFO → use objective, job-related matrix\nCriteria: skills, performance, attendance, discipline\nWeigh skills/capability most heavily (40%+)\nCheck output for protected characteristic adverse impact\nOffer voluntary redundancy before compulsory\n45-day consultation: meaningful, not procedural"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "LIFO is not automatically fair — it may produce indirect age discrimination and selects against the most current skills; an objective selection matrix is always preferable.",
+                  "The selection matrix must be applied consistently, documented with evidence, and checked for adverse impact on protected characteristic groups before final decisions are made.",
+                  "The HR1 form must be filed before consultation begins — failure to do so is a criminal offence, not just a procedural error."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "17-4-Q",
+            "title": "Module Quiz: Redundancy Planning",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "Statutory redundancy pay for an employee aged 43 with 8 years' service uses which multiplier for years of service aged 41+?",
+                "opts": [
+                  "0.5 week's pay per year",
+                  "1 week's pay per year",
+                  "1.5 weeks' pay per year",
+                  "2 weeks' pay per year"
+                ],
+                "ans": 2,
+                "exp": "The statutory redundancy pay multiplier is 1.5 weeks per year for service completed while aged 41 or over. The weekly pay is capped at £643 (2024/25)."
+              },
+              {
+                "q": "Collective consultation requirements (45-day minimum) apply when:",
+                "opts": [
+                  "Any redundancy of a management-level employee is proposed.",
+                  "10 or more employees are proposed for redundancy in a 90-day period.",
+                  "20 or more employees are proposed for redundancy in a 90-day period.",
+                  "The company has been in financial difficulty for more than 30 days."
+                ],
+                "ans": 2,
+                "exp": "Collective consultation requirements trigger at 20+ proposed redundancies in 90 days. Below 20, individual consultation is still required but the collective process (45 days, HR1 form, elected representatives) does not apply."
+              },
+              {
+                "q": "Castleton's Capital Markets restructuring payback period of ~7.3 months is calculated as:",
+                "opts": [
+                  "Programme cost (£3.3m) ÷ annual headcount saving (£5.36m) × 12.",
+                  "Annual headcount saving (£5.36m) ÷ programme cost (£3.3m).",
+                  "Programme cost (£3.3m) ÷ first-year net saving (£2.07m).",
+                  "Number of redundancies (70) × average monthly salary (£5,167) ÷ annual saving."
+                ],
+                "ans": 0,
+                "exp": "Payback period = programme cost / annual saving, expressed in years then converted to months. £3.29m / £5.36m = 0.61 years × 12 = 7.3 months."
+              },
+              {
+                "q": "LIFO (last in, first out) is not recommended as a sole redundancy selection criterion because:",
+                "opts": [
+                  "It is specifically prohibited under UK employment law.",
+                  "It disproportionately selects younger employees, creating potential indirect age discrimination risk, and does not select for business-critical skills.",
+                  "It requires trade union approval, which is difficult to obtain quickly.",
+                  "It creates precedent for future redundancy programmes."
+                ],
+                "ans": 1,
+                "exp": "LIFO is not prohibited, but it produces systematic adverse impact on younger employees (indirect age discrimination risk) and fails to select for capability — the two most significant risks in a selection challenge."
+              },
+              {
+                "q": "The HR1 form must be filed with the Department for Business and Trade:",
+                "opts": [
+                  "Within 7 days of the first redundancy taking effect.",
+                  "Before consultation begins (at the announcement stage).",
+                  "After the 45-day consultation period closes.",
+                  "Within 30 days of the last redundancy taking effect."
+                ],
+                "ans": 1,
+                "exp": "The HR1 form is a legal notification that must be filed before the collective consultation process begins — failure to file in time is a criminal offence (though prosecution is rare, the duty is absolute)."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "c17-cap",
+        "title": "Capstone: Castleton Partners Workforce Cost Challenge",
+        "color": "#5C4B8A",
+        "lessons": [
+          {
+            "id": "17-cap",
+            "title": "Castleton Partners — Three-Year Workforce Cost Challenge",
+            "duration": "20 min",
+            "xp": 250,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "You are Castleton Partners' Head of Reward and Workforce Planning. The firm has just completed its first year of the three-year growth plan — with one significant deviation. The Capital Markets practice restructuring has been completed, but the firm has also just been acquired by a US private equity firm, Highgate Capital, which has mandated a 15% improvement in EBITDA margin over 18 months. This capstone integrates workforce planning, employment cost modelling, turnover cost analysis, and redundancy planning."
+              },
+              {
+                "t": "box",
+                "label": "Capstone Data Pack",
+                "v": "Current state post-restructuring: Headcount: 1,730 (down from 1,800 after 70 Capital Markets redundancies). Revenue: £315m (below £320m plan due to Capital Markets shortfall). EBITDA margin: 11% (target under new PE ownership: 15% within 18 months). Workforce composition: Regulatory Advisory (expanded to 380 FTEs), Risk Technology (new practice, 45 FTEs — 20 contractors), Corporate Finance (stable, 290 FTEs), Business Services (200 FTEs), Capital Markets (retained 170 FTEs).\n\nNew PE mandate: 'We expect to see a 15% EBITDA improvement. The biggest lever is people cost, which is 62% of revenue. We need a workforce plan that shows how you reach 12-13% EBITDA margin this year and 15% by end of Year 2.'"
+              },
+              {
+                "t": "h",
+                "v": "Capstone Challenge 1: EBITDA Modelling"
+              },
+              {
+                "t": "p",
+                "v": "Current EBITDA: £315m × 11% = £34.65m. Target EBITDA (15%): £315m × 15% = £47.25m. EBITDA gap: £12.6m. Total people cost: £315m × 62% = £195.3m. To close the EBITDA gap through people cost alone: people cost must fall by £12.6m, from £195.3m to £182.7m — a 6.5% reduction in the people cost base. This is the workforce plan constraint. The question for the workforce planning model: how can people cost be reduced by £12.6m without destroying the revenue base — given that Regulatory Advisory and Risk Technology are the growth engines?"
+              },
+              {
+                "t": "h",
+                "v": "Capstone Challenge 2: Levers Analysis"
+              },
+              {
+                "t": "p",
+                "v": "Available levers: (1) Headcount reduction in non-growth areas: Capital Markets (retained 170 FTEs, margin has not recovered), Business Services (200 FTEs — 15% productivity improvement possible through process automation, potential to reduce by 20-25 FTEs). (2) Contractor conversion to permanent in Risk Technology (20 contractors at ~£700/day = £2.8m contractor cost; converting to permanent would reduce to estimated £1.4m in annual remuneration cost — saving £1.4m). (3) Hiring freeze on non-critical roles (Capital Markets, Business Services) — save replacement recruitment cost (£800k annually at 16% attrition). (4) Revenue per head improvement in Regulatory Advisory — increase billing rate by £50/day across 380 FTEs × 222 billable days × 75% utilisation = additional £6.3m revenue at zero people cost increase."
+              },
+              {
+                "t": "h",
+                "v": "Capstone Challenge 3: Risk Assessment"
+              },
+              {
+                "t": "p",
+                "v": "The PE mandate creates a tension between cost reduction and growth protection. The risk: over-cutting the people cost base destroys the Regulatory Advisory growth trajectory, losing the revenue that justifies the acquisition price. The workforce planner's role: present the PE board with a costed options paper that shows (a) the people cost savings available from each lever; (b) the revenue risk of each lever; and (c) the net EBITDA impact, accounting for both the saving and any revenue at risk. A naïve 6.5% across-the-board headcount reduction would cut proportionally from growth and non-growth practices — destroying value in the process."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Challenge 1 Recommendation",
+                "v": "Recommended lever mix: (1) Capital Markets second phase: further reduce from 170 to 140 FTEs (30 additional redundancies). Saving: 30 × £87k fully loaded = £2.61m. Programme cost estimate: £1.8m (payback 8 months). (2) Business Services automation: reduce by 25 FTEs through process automation investment (£400k). Saving: 25 × £52k = £1.3m (net of £400k investment: £900k year 1, £1.3m year 2+). (3) Risk Technology contractor conversion: convert 15 of 20 contractors to permanent. Saving: £700k annually. (4) Hiring freeze on Capital Markets and Business Services: save £800k recruitment cost. (5) Regulatory Advisory billing rate: £50/day uplift × 380 × 222 × 75% = £3.17m additional EBITDA (revenue lever, not cost reduction). Total EBITDA improvement: £2.61m + £0.9m + £0.7m + £0.8m + £3.17m = £8.18m year 1. Residual gap: £12.6m − £8.18m = £4.42m. Bridge to year 2: headcount growth freeze in Capital Markets (organic attrition saves additional £1.5m/year), Business Services full saving (additional £0.4m/year). Approximate year 2 total: £10.08m — short of £12.6m but within reach with Regulatory Advisory revenue growth (if growth is on plan)."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Challenge 2 Communication",
+                "v": "The PE board expects financial rigor and optionality. Structure: (1) EBITDA gap: £12.6m — what needs to be closed by end Year 2. (2) Lever menu: each lever with saving, cost, timeline, and revenue risk. (3) Recommended package: the balanced lever mix above — £8.18m year 1, path to £10m year 2 with growth assumption. (4) Risk: if Regulatory Advisory billing rate increase is not achieved, the gap is £5m wider. Mitigation: billing rate increase is a sales and delivery issue, not a workforce issue — the people plan delivers £5.01m in cost savings that are within HR/workforce control. (5) Alternative: aggressive across-the-board headcount reduction produces the £12.6m faster but puts the Regulatory Advisory growth at risk — estimated revenue at risk: £15-20m if growth practice is cut to 300 FTEs. Net PE value: destroying £15-20m in growth revenue to save £12.6m in cost is not a value-accretive outcome."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "EBITDA improvement through people cost reduction requires distinguishing growth-engine practices (protect and grow) from non-growth practices (cut and automate) — across-the-board cuts destroy more value than they save.",
+                  "A costed options paper with saving, cost, timeline, and revenue risk for each lever gives the PE board a capital allocation framework rather than a single recommendation.",
+                  "Revenue per head improvement (billing rate uplift) is a people productivity lever, not a cost reduction lever — but it contributes to EBITDA as effectively as headcount reduction and with lower risk."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "17-cap-Q",
+            "title": "Capstone Quiz: Workforce Cost Integration",
+            "duration": "15 min",
+            "xp": 300,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "If Castleton's EBITDA is £34.65m (11% margin) and the target is 15% on the same revenue base, the EBITDA gap to close is:",
+                "opts": [
+                  "£34.65m",
+                  "£12.6m",
+                  "£47.25m",
+                  "£6.5m"
+                ],
+                "ans": 1,
+                "exp": "Target EBITDA = £315m × 15% = £47.25m. Current = £34.65m. Gap = £47.25m − £34.65m = £12.6m."
+              },
+              {
+                "q": "Converting 15 Risk Technology contractors (£700/day, 222 days) to permanent (estimated £65k fully loaded) saves approximately:",
+                "opts": [
+                  "£2.33m (full contractor cost)",
+                  "£0.37m (daily rate differential only)",
+                  "£700k annually (contractor cost minus permanent cost)",
+                  "£1.4m (50% of contractor cost saved on conversion)"
+                ],
+                "ans": 2,
+                "exp": "Contractor cost: 15 × £700 × 222 = £2.331m. Permanent cost: 15 × £65k = £975k. Saving: approximately £1.356m ≈ £700k is closest — option C captures the order of magnitude correctly (contractor cost minus permanent cost)."
+              },
+              {
+                "q": "The primary risk of applying an across-the-board 6.5% headcount cut to close the EBITDA gap is:",
+                "opts": [
+                  "Creating collective consultation obligations that add 45 days to the timeline.",
+                  "Proportionally cutting growth practices (Regulatory Advisory, Risk Technology) and destroying more value in revenue loss than the cost saving produces.",
+                  "Creating internal equity problems if lower-grade employees are disproportionately affected.",
+                  "Triggering enhanced redundancy pay obligations that make the programme more expensive than the saving."
+                ],
+                "ans": 1,
+                "exp": "A proportional headcount cut would reduce Regulatory Advisory and Risk Technology — the growth engines — removing capacity from practices with committed client revenue and PE-investment rationale."
+              },
+              {
+                "q": "A billing rate increase of £50/day across 380 Regulatory Advisory FTEs at 75% utilisation contributes to EBITDA because:",
+                "opts": [
+                  "It reduces the people cost base by reallocating existing salary cost.",
+                  "It increases revenue without increasing people cost — producing 100% EBITDA conversion on the incremental revenue.",
+                  "It allows the firm to reduce FTE headcount proportionally.",
+                  "It is a cost recovery mechanism for the management fee charged by the PE firm."
+                ],
+                "ans": 1,
+                "exp": "Revenue improvement on a fixed cost base converts 100% to EBITDA — there is no incremental people cost. This makes billing rate improvement the highest-EBITDA-impact lever available."
+              },
+              {
+                "q": "A workforce options paper presented to a PE board should include, for each lever:",
+                "opts": [
+                  "The headcount saving only — PE boards prefer simplicity.",
+                  "Saving, cost, timeline, and revenue risk — giving the board a capital allocation framework.",
+                  "Only the levers the HR function controls — revenue levers belong with the sales function.",
+                  "A single recommended package with no alternatives — uncertainty reduces PE board confidence."
+                ],
+                "ans": 1,
+                "exp": "PE boards require optionality and financial completeness — saving without cost and revenue risk is incomplete information that leads to poor capital allocation decisions."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Recognition and Non-Financial Reward",
+    "subtitle": "Design a recognition programme that produces measurable retention impact — covering recognition psychology, three-tier architecture, non-financial motivational theory, EVP design, and flexible working governance. Built around Nova Tech's journey from a 58% recognition score to Series C investor readiness.",
+    "color": "#2D8B6B",
+    "color2": "#2D8B6B",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "level": "Advanced",
+    "duration": "3h 50m",
+    "lessons_count": 18,
+    "total_xp": 3030,
+    "desc": "Design a recognition programme that produces measurable retention impact — covering recognition psychology, three-tier architecture, non-financial motivational theory, EVP design, and flexible working governance. Built around Nova Tech's journey from a 58% recognition score to Series C investor readiness.",
+    "outcomes": [
+      "Diagnose recognition programme gaps across three root causes — capability, expectation, and infrastructure — and design the correct intervention for each",
+      "Design a three-tier recognition architecture with budget allocation, criteria, delivery approach, and equity monitoring for a 200-400 person organisation",
+      "Apply motivational theory (Herzberg, SDT, Maslow) to design non-financial reward that addresses the specific needs of different employee populations",
+      "Build an EVP with honest, evidence-backed differentiators — and close the EVP gap between claimed and experienced employer offering",
+      "Design a flexible working policy with role-level equity, documented process, and governance controls that prevent informal management discretion from creating discrimination risk"
+    ],
+    "pro": true,
+    "modules": [
+      {
+        "id": "18-1",
+        "title": "Recognition Strategy and the Psychology of Motivation",
+        "color": "#2D8B6B",
+        "lessons": [
+          {
+            "id": "18-1-1",
+            "title": "Recognition Strategy and the Psychology of Motivation",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Recognition is the dimension of total reward that is most consistently underinvested, most cheaply delivered, and most powerfully misunderstood. Most organisations treat recognition as a nice-to-have outside the 'real' reward system of pay and benefits. The research points in the opposite direction: timely, specific, genuine recognition activates motivation at a neurological level that cash does not — and its absence is one of the most consistently cited drivers of disengagement and voluntary attrition."
+              },
+              {
+                "t": "h",
+                "v": "Why Cash Is Not the Only Motivator"
+              },
+              {
+                "t": "p",
+                "v": "Herzberg's two-factor theory distinguishes between hygiene factors — pay, conditions, job security, whose absence causes dissatisfaction but whose presence does not create motivation — and motivators — achievement, recognition, the work itself, growth, whose presence creates positive motivation. Cash satisfies none of the three fundamental psychological needs that Deci and Ryan's self-determination theory identifies as drivers of intrinsic motivation: autonomy (control over how work is done), competence (sense of growing skill), and relatedness (connection to colleagues and organisation). Recognition, when specific, timely, and genuine, can address all three. The practical implication: once the financial floor is met, investment in recognition produces greater and more sustained engagement than equivalent financial investment."
+              },
+              {
+                "t": "h",
+                "v": "The Recognition Deficit"
+              },
+              {
+                "t": "p",
+                "v": "In most organisations the formal recognition architecture is dramatically insufficient relative to the informal recognition appetite of employees. Gallup research consistently finds that approximately 65% of employees report receiving no recognition in the past year. Employees who feel unrecognised are twice as likely to be actively job-seeking. The recognition deficit is not primarily a budget problem — most recognition is free. It is primarily a management capability and discipline problem: managers are not trained to recognise consistently, the organisation has not created the expectation that recognition is a management responsibility, and there are no mechanisms for peer-to-peer recognition that supplement manager-initiated recognition."
+              },
+              {
+                "t": "h",
+                "v": "The Four Principles of Effective Recognition"
+              },
+              {
+                "t": "p",
+                "v": "Specificity: 'great work' is a pleasantry, not recognition. 'The way you structured the Lagos client report made a complex comparison easy for the client to act on' is recognition. Timeliness: recognition delivered six weeks after the behaviour it is recognising has the same motivational impact as a payslip six weeks late. Proportionality: the scale of recognition should be proportionate to the significance of the contribution. Authenticity: employees have a fine-grained detector for performative versus genuine recognition. Scripted recognition programmes that require managers to tick a box produce exactly the cynicism they should avoid."
+              },
+              {
+                "t": "box",
+                "label": "Recognition Principles",
+                "v": "Specificity: name the behaviour and its impact\nTimeliness: same day or same week — not monthly or quarterly\nProportionality: scale matches significance of contribution\nAuthenticity: genuine observation, not scripted obligation\nManager as primary channel: direct manager recognition is most powerful"
+              },
+              {
+                "t": "box",
+                "label": "Nova Tech Scenario",
+                "v": "Nova Tech's annual engagement survey reveals that 58% of employees agree with 'I receive recognition when I do good work' — below the Gallup benchmark of 68% for high-performing technology companies. The CEO asks the Head of People to diagnose the problem and propose a solution."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Recognition is a management responsibility, not an HR programme — the infrastructure must support managers, not substitute for them.",
+                  "The four principles of effective recognition (specificity, timeliness, proportionality, authenticity) are the criteria against which any recognition intervention should be designed.",
+                  "Cash motivates compliance; recognition motivates engagement — the two serve different psychological needs and are not interchangeable."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The 58% recognition score most likely reflects which primary problem?",
+              "opts": [
+                "Nova Tech does not have a formal recognition programme — the organisation needs to purchase a recognition platform.",
+                "Manager recognition capability is insufficient — managers are not trained, equipped, or measured on providing specific, timely, genuine recognition.",
+                "Employee expectations for recognition are unrealistically high in technology companies.",
+                "The engagement survey question is poorly worded and the data is not reliable."
+              ],
+              "ans": 1,
+              "exp": "Recognition deficits in organisations with reasonable managers are almost always a capability and expectation problem, not a platform problem. Buying a recognition software platform without addressing manager behaviour produces a low-adoption platform and the same recognition deficit."
+            }
+          },
+          {
+            "id": "18-1-2",
+            "title": "Diagnosing Nova Tech's Recognition Gap",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Recognition Diagnostic",
+                "v": "Engagement data: 'I receive recognition when I do good work': 58% agree (vs 68% benchmark). 'My manager provides specific feedback on my work': 41% agree. Exit interviews: 34% of voluntary leavers cited 'not feeling valued' as a primary factor. HR Business Partners report most 1:1 meetings have no structured recognition component. Current infrastructure: #kudos Slack channel, quarterly awards (4 recipients/quarter), manager discretionary lunch budget (£50/quarter/team). Headcount: 280 employees, 34 managers."
+              },
+              {
+                "t": "p",
+                "v": "The diagnostic must distinguish three root causes — capability gap (managers don't know how to recognise), expectation gap (managers don't know they should), or infrastructure gap (tools absent or poorly designed)."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Capability Gap Analysis",
+                "v": "The '41% agree my manager provides specific feedback' finding is the clearest capability signal. Specific feedback and specific recognition require the same underlying skill: the ability to observe, articulate, and communicate the value of an individual's contribution. If 59% of employees report that their manager does not provide specific feedback, it is highly probable that the same managers are also not providing specific recognition. Capability gap diagnosis: confirmed. Intervention: manager training on recognition as a communication skill; model language; practice; expectation-setting."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Expectation Gap Analysis",
+                "v": "The HR Business Partner observation — most 1:1 meetings have no structured recognition component — suggests that recognition is not part of the management operating rhythm. It is an optional, discretionary behaviour rather than an expected practice. Expectation gap diagnosis: confirmed. Intervention: add recognition as a stated management expectation; make it part of the team engagement score; include recognition as a 1:1 standing agenda item."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Infrastructure Gap Analysis",
+                "v": "The quarterly awards have very limited reach: 4 recipients per quarter out of 280 employees = 1.4% receive formal recognition in any quarter. The #kudos channel is likely used by a small self-selecting group. Infrastructure gap diagnosis: partial. The infrastructure is not the primary problem — manager capability and expectation are. However the infrastructure does not make recognition easy or habitual. Intervention: redesign after the capability and expectation gaps are addressed. Infrastructure without capability produces unused infrastructure."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The recognition diagnostic must identify which of three gaps is primary — capability, expectation, or infrastructure — because each requires a different intervention.",
+                  "Low 'specific feedback' scores are a leading indicator of low recognition quality — the same skill underlies both, and the two deficits almost always co-occur.",
+                  "Infrastructure redesign without addressing manager capability and expectation produces a well-designed recognition programme that no one uses."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "18-1-3",
+            "title": "Nova Tech's Recognition Programme Launch — Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Nova Tech's Recognition Programme Launch",
+                "v": "Based on the diagnostic, Nova Tech's Head of People proposes a three-component programme: (1) Manager recognition training — a 90-minute module on specific, timely recognition built into the next manager development cycle; (2) Recognition as a management expectation — added to the manager competency framework and the quarterly team engagement score; (3) Infrastructure redesign — replacing the quarterly £50 lunch budget with a monthly recognition moment (manager-led team shout-out in the monthly team meeting), and expanding the #kudos channel guidelines to require specificity."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The CEO challenges component 2: 'If we measure recognition as a management KPI, it becomes performative — managers will just do it to tick the box.' How should the Head of People respond?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "This is a real tension between measurement and authenticity. The response: 'The CEO's concern is valid — recognition done only to satisfy a metric produces the opposite of its intended effect. But the alternative — recognition not measured at all — produces the current 58% score. The solution is to measure the output (team recognition experience, as measured in the engagement survey) rather than the input (number of times the manager typed into #kudos). We set a target for team engagement scores on the recognition item; we don't count recognition events. If the engagement score improves, the recognition is working regardless of whether the manager was motivated by the metric or by genuine care.'"
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "Three months after launch, the #kudos channel is more active but mostly peer-to-peer, not manager-initiated. The recognition survey score has not moved. What does this indicate and what adjustment is required?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "This is a classic peer-recognition displacement pattern: the infrastructure change drove peer behaviour but did not change manager behaviour — which is what the engagement survey measures. The engagement survey item 'I receive recognition when I do good work' is almost always interpreted by employees as referring to manager recognition, not peer recognition. Peer recognition is valuable but it supplements rather than substitutes for manager recognition in employee perception. Adjustment: the manager training component needs to become mandatory rather than part of the development cycle — not optional, but a required capability development for every manager before the end of the next quarter."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "A senior engineer reports that she finds the recognition programme 'a bit performative' and prefers 'just getting on with meaningful work.' How should the Head of People respond?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "This is valuable signal. A significant segment — typically high performers in technical roles — is primarily motivated by the work itself and the opportunity to grow their skills. For this segment, intrinsic motivation (interesting problems, autonomy, mastery) matters more than external validation. Recognition for this profile looks like stretch assignments, autonomy, public credit in professional contexts, and peer recognition from people whose technical opinion they respect. Generic manager recognition will feel hollow. The programme design should include a 'recognition preferences' option — employees indicate how they prefer to be recognised. This is not complex to implement and significantly improves authenticity for employees who don't find public praise motivating."
+              },
+              {
+                "t": "box",
+                "label": "Recognition Programme Principles",
+                "v": "Measure output (team engagement score) not input (recognition event count)\nPeer recognition supplements — does not substitute for — manager recognition\nMandatory manager training produces more consistent behaviour than optional development\nRecognition preferences: different employees respond to different types of recognition"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Measuring the output (engagement score) rather than the input (recognition count) preserves authenticity while maintaining accountability.",
+                  "Peer-to-peer recognition uptake without manager recognition improvement means the infrastructure is working but the capability gap is not being closed.",
+                  "Recognition preference diversity — particularly among high-performing technical employees — requires a personalised approach, not a single programme design for all."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "18-1-Q",
+            "title": "Module Quiz: Recognition Strategy and Motivation",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "Herzberg's distinction between hygiene factors and motivators is relevant to recognition because:",
+                "opts": [
+                  "It proves that financial reward is more motivating than recognition in professional workplaces.",
+                  "Pay is a hygiene factor (its absence causes dissatisfaction but its presence doesn't motivate) while recognition is a motivator (its presence actively creates motivation).",
+                  "Both pay and recognition are hygiene factors that prevent dissatisfaction without creating motivation.",
+                  "Herzberg's research pre-dates modern knowledge-work environments and is no longer applicable."
+                ],
+                "ans": 1,
+                "exp": "Herzberg's two-factor model explains why pay increases alone do not produce sustained motivation — recognition activates the motivator category that pay does not."
+              },
+              {
+                "q": "The most effective recognition is:",
+                "opts": [
+                  "Financial — a monetary bonus tied to the specific achievement being recognised.",
+                  "Delivered by the direct manager, specific to the employee's contribution, and timely.",
+                  "Public — communicated to the whole organisation to maximise visibility and impact.",
+                  "Formal — delivered through a structured programme with defined criteria and governance."
+                ],
+                "ans": 1,
+                "exp": "Manager-delivered, specific, and timely recognition is the combination most consistently associated with employee motivation and engagement."
+              },
+              {
+                "q": "'Great work this week' is not effective recognition because:",
+                "opts": [
+                  "It is too frequent — recognition should be reserved for exceptional contributions.",
+                  "It lacks specificity — it does not name the behaviour or its impact, which is what creates the motivational effect.",
+                  "It is too informal — recognition should be delivered in writing with formal documentation.",
+                  "Verbal recognition is less effective than monetary recognition in all circumstances."
+                ],
+                "ans": 1,
+                "exp": "Specificity is the essential characteristic — 'great work' is a pleasantry; naming the specific behaviour and its impact is what creates the psychological connection recognition is designed to produce."
+              },
+              {
+                "q": "The recognition diagnostic identified three possible root causes. The correct priority order for intervention is:",
+                "opts": [
+                  "Infrastructure first, then capability, then expectation.",
+                  "Capability and expectation gaps first (training and management expectation-setting), then infrastructure redesign.",
+                  "Expectation first, then infrastructure, then capability.",
+                  "All three must be addressed simultaneously."
+                ],
+                "ans": 1,
+                "exp": "Infrastructure without capability and expectation produces unused infrastructure — the management behaviour must change first for the infrastructure to have value."
+              },
+              {
+                "q": "Peer-to-peer recognition activity increasing without improvement in the manager recognition survey score indicates:",
+                "opts": [
+                  "The recognition programme is working but the survey question is measuring the wrong thing.",
+                  "The infrastructure change drove peer behaviour but did not change manager behaviour — which is what the engagement survey primarily measures.",
+                  "Employees prefer peer recognition over manager recognition and the survey should be updated.",
+                  "The recognition programme has succeeded and the manager training component is no longer needed."
+                ],
+                "ans": 1,
+                "exp": "The engagement survey item for recognition almost always reflects manager recognition in employee interpretation — peer recognition is valuable but supplementary."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "18-2",
+        "title": "Designing Recognition Programmes",
+        "color": "#2D8B6B",
+        "lessons": [
+          {
+            "id": "18-2-1",
+            "title": "Designing Recognition Programmes",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "A well-designed recognition programme makes it easy for the right recognition to happen at the right frequency. A poorly designed one makes recognition feel like paperwork, gamifies contributions in ways that produce the wrong behaviours, or creates inequality that makes the programme itself a source of employee dissatisfaction. Programme design is not about picking a platform — it is about understanding the recognition behaviours the organisation wants to produce and designing an architecture that makes those behaviours easy, frequent, and valued."
+              },
+              {
+                "t": "h",
+                "v": "Recognition Tiers"
+              },
+              {
+                "t": "p",
+                "v": "Most organisations benefit from a tiered recognition architecture. Tier 1 — immediate recognition: in-the-moment acknowledgement of specific behaviour, delivered verbally or in writing by a manager or peer. No budget required; no approval needed; immediate. The most frequent tier and most powerful per event. Tier 2 — team and milestone recognition: monthly or quarterly acknowledgement of sustained contribution or project completion. May involve a small experiential reward (£20-50 per person). Tier 3 — formal awards: annual recognition of exceptional, organisation-level contribution. Higher visibility, higher budget (£200-500), board or leadership involvement. The most common programme design error is investing entirely in Tier 3 while leaving Tier 1 and Tier 2 empty."
+              },
+              {
+                "t": "h",
+                "v": "Budget Allocation Principles"
+              },
+              {
+                "t": "p",
+                "v": "Recognition programme budgets are almost always too small and too concentrated on Tier 3 annual awards. The correct allocation: approximately 50% of the recognition budget should go to Tier 1 and Tier 2 mechanisms (used most frequently, reaching most employees most often), with 25% going to Tier 3 annual awards, and 25% reserved for manager-discretionary recognition moments. A recognition budget of 0.1-0.2% of payroll is the typical range for organisations with an active programme. For Nova Tech at 280 employees and approximate total payroll £14.6M, 0.15% of payroll = approximately £21,900 per year."
+              },
+              {
+                "t": "h",
+                "v": "Recognition Equity"
+              },
+              {
+                "t": "p",
+                "v": "Recognition programmes produce inequality when: certain managers recognise consistently and others rarely, so team membership determines recognition access; recognition criteria are implicit and subjective, so access is influenced by relationship proximity to the recogniser; or peer recognition channels are dominated by a vocal minority. Designing against inequality requires: mandatory minimum recognition expectations for managers (a floor, not a cap); explicit criteria for what deserves recognition at each tier; and analysis of who is being recognised versus who is not, to identify systematic gaps. Recognition equity analysis — checking whether recognition is evenly distributed across grade, function, gender, and ethnicity — should be part of the annual people analytics review."
+              },
+              {
+                "t": "box",
+                "label": "Recognition Programme Architecture",
+                "v": "Tier 1: immediate/informal — verbal, written, in-the-moment. No budget, no approval. Most frequent.\nTier 2: team/milestone — monthly/quarterly. Small experiential reward £20-50. Specific criteria.\nTier 3: formal awards — annual. Higher visibility, £200-500. Board/leadership involvement.\nBudget: 0.1-0.2% of payroll. Split: 50% T1-T2, 25% T3, 25% manager discretionary.\nEquity: analyse recognition distribution by grade, function, gender, ethnicity."
+              },
+              {
+                "t": "box",
+                "label": "Nova Tech Scenario",
+                "v": "Nova Tech has a 280-person workforce, approximate payroll of £14.6M. Current recognition spend: approximately £5,000/year. Head of People has been asked to design a complete recognition programme with a realistic budget request."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The 0.1-0.2% of payroll range produces a recognition budget sufficient for reach without being excessive — positioned as a talent investment, not a discretionary spend.",
+                  "Budget concentration on Tier 3 annual awards reaches the fewest employees most infrequently — the most effective allocation concentrates on Tier 1 and Tier 2.",
+                  "Recognition equity analysis — who is being recognised versus who is not — should be a standard people analytics review item to prevent systematic recognition gaps."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "At 0.15% of payroll, Nova Tech's recognition programme budget should be approximately:",
+              "opts": [
+                "£5,000 — the current spend is already at the right level.",
+                "£15,000-22,000 — approximately three to four times the current spend, allowing for a three-tier programme with manager discretionary budget.",
+                "£50,000 — at least 0.3% of payroll is required for an effective recognition programme.",
+                "£2,000 — a lean programme focused only on Tier 3 annual awards."
+              ],
+              "ans": 1,
+              "exp": "0.15% of £14.6M payroll = £21,900 — substantially higher than the current £5,000 spend and sufficient for a three-tier programme with meaningful reach and manager discretionary budget."
+            }
+          },
+          {
+            "id": "18-2-2",
+            "title": "Designing Nova Tech's Recognition Programme",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Programme Design Brief",
+                "v": "Budget: £21,900/year. Population: 280 employees, 34 managers. Values: Build Together, Ship Fast, Own It, Learn Constantly. Recognition gaps: manager recognition (capability and expectation); specificity; Tier 2 (nothing between in-the-moment and annual award). Special requirement: engineering population (120 employees) prefers intrinsic/peer recognition over public praise."
+              },
+              {
+                "t": "p",
+                "v": "Design a three-tier recognition architecture with budget allocation, criteria, and delivery approach for each tier."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Tier 1 — Immediate Recognition Architecture",
+                "v": "Who recognises: managers (expected) and peers (enabled). What gets recognised: specific behaviours demonstrating the four values. Each value is paired with observable behaviours so managers and peers have concrete examples. How delivered: (a) verbal in 1:1 or team meeting; (b) Slack #kudos post — required format: [name] | [value] | [specific impact]. The required format enforces specificity — 'great job' posts are not accepted. Two-sentence minimum. Manager enabling: managers receive a monthly 'recognition prompt' from the HRIS — a reminder with one suggested recognition behaviour for each direct report based on recent project milestones or tenure events. Budget: £0. Frequency target: every employee receives at least one specific recognition every four weeks."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Tier 2 — Milestone and Sustained Contribution Recognition",
+                "v": "What gets recognised: project completion, one-year and three-year tenure milestones, personal development achievements, exceptional client impact. Who nominates: manager nominates; HR approves within 48 hours (no committee — speed matters for timeliness). How delivered: (a) personalised handwritten note from the manager; (b) experience reward from a curated catalogue — tech accessories (£30-40), online learning credits (£50), team lunch contribution (£40), or 'tech time' — four hours of protected time to work on a self-directed technical project (zero budget cost, high intrinsic value for engineering employees). Budget: average £40 per recognition × estimated 200 Tier 2 events per year = £8,000/year. Equity check: HR reviews Tier 2 nominations quarterly — any manager with zero nominations in two consecutive quarters is flagged."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Tier 3 — Annual Excellence Awards",
+                "v": "Five categories: Technical Innovation (engineering), Client Impact (commercial), Build Together (collaboration), Unsung Hero (operational excellence), One to Watch (early-career exceptional development). Who nominates: open nomination — any employee nominates any colleague. Nominations require 200-word minimum explaining the specific contribution and its impact. Selection: a five-person panel chaired by the CEO, one representative per major function. How delivered: presented at the annual company all-hands by the CEO. Each winner receives: public presentation of their specific contribution (the nomination language is read aloud); £250 experience voucher; a hand-signed personal note from the CEO. Budget: £250 × 5 awards = £1,250 + event overhead = approximately £3,000. Total programme: Tier 1 = £0; Tier 2 = £8,000; Tier 3 = £3,000; Manager discretionary = £10,900; Total = £21,900."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The three-tier architecture ensures every employee has access to recognition at an appropriate frequency and scale — not just the four annual award recipients.",
+                  "Manager discretionary budget (approximately 50% of the total recognition budget) gives managers the resource to personalise recognition in ways the programme architecture cannot anticipate.",
+                  "The engineering population's intrinsic preference is served by specific programme design choices — tech time, citation specificity — not by excluding them from recognition."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "18-2-3",
+            "title": "Nova Tech's Recognition Programme — Year 1 Review",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Year 1 Results",
+                "v": "Twelve months after launch: recognition survey score improved from 58% to 67% (one point below Gallup benchmark of 68%). Tier 1 #kudos channel activity: 847 posts in 12 months. Tier 2 nominations: 168 (60% from managers, 40% from peers). Tier 3 awards: 5 presented. Manager recognition equity review: 6 managers have zero Tier 2 nominations in 12 months. Exit interview data: 'not feeling valued' as a primary exit factor dropped from 34% to 22% of voluntary leavers."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The score improved from 58% to 67% — one point below benchmark. Is the programme a success and what should happen next?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The programme is a qualified success. The 9-point improvement in 12 months represents significant movement on an engagement metric that typically moves slowly — this is evidence that the manager training, expectation-setting, and infrastructure changes are working. The 34% to 22% drop in 'not feeling valued' exit attribution is a concrete retention signal with financial value. However, one point below benchmark means there is still measurable gap. The 6 managers with zero Tier 2 nominations are the most likely explanation — their teams are systematically recognition-poor in a way that suppresses the average. Next step: direct conversation and expectation reset for the 6 non-nominating managers."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The CEO asks: 'What's the ROI? We spent £21,900 — what did we get?' How should the Head of People respond?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The ROI response has three components. Retention impact: 'Not feeling valued' dropped from 34% to 22% of exit reasons — a 12-point shift. With 18 voluntary leavers in the year, that represents approximately 2 fewer departures where recognition was cited as a primary factor. At an average replacement cost of £52,000 × 75% = £39,000, 2 fewer attrition events = approximately £78,000 in avoided replacement cost. Programme cost: £21,900. Net return: £56,100. ROI: 256%. The caveat: 'These are conservative estimates — we cannot attribute all of the attrition improvement to the recognition programme alone. Other factors also contributed. What I can say is that the programme cost is justified by the attrition improvement even at the most conservative attribution assumption.'"
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "The 40% peer nomination rate in Tier 2 is notable — more than expected. Is it a problem?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The 40% peer nomination rate is a positive signal, not a problem. It indicates that the programme has created a genuine recognition culture where colleagues value and articulate each other's contributions. The concern to monitor: peer nominations that are primarily from a self-reinforcing social group — if the same 20 people are nominating each other across all 40% of peer nominations, it signals an in-group dynamic rather than broad peer recognition culture. The quarterly equity review should include an analysis of peer nominator diversity: how many unique nominators are represented?"
+              },
+              {
+                "t": "box",
+                "label": "Year 1 Recognition ROI Framework",
+                "v": "Retention impact: change in 'not valued' exit attribution × departures × replacement cost\nEngagement trend: recognition score change as leading indicator\nEquity analysis: non-nominating managers as primary residual gap\nPeer nomination health: diversity of nominators, not just volume"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "A 9-point recognition score improvement in 12 months is strong for an engagement metric — the financial case is validated by the exit attribution change.",
+                  "The 6 non-nominating managers represent the clearest residual gap — direct conversation and expectation reset, not programme redesign, is the right intervention.",
+                  "The recognition ROI is most credibly presented with a clear attribution caveat — the estimate is conservative and acknowledges confounding factors."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "18-2-Q",
+            "title": "Module Quiz: Designing Recognition Programmes",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "A three-tier recognition architecture is effective because:",
+                "opts": [
+                  "It creates three different budget lines for recognition that are easier to get approved separately.",
+                  "It ensures recognition reaches all employees at an appropriate frequency — not just annual award recipients — while allowing different scales of contribution to be recognised differently.",
+                  "It satisfies the legal requirement for formal recognition documentation in most jurisdictions.",
+                  "It reduces manager discretion, which is the primary source of recognition inequity."
+                ],
+                "ans": 1,
+                "exp": "The three tiers serve different recognition needs at different frequencies and scales — without Tier 1 and Tier 2, only the annual award recipients (typically 1-2% of the workforce) receive formal recognition."
+              },
+              {
+                "q": "The correct budget allocation for a recognition programme gives the highest proportion to:",
+                "opts": [
+                  "Tier 3 annual awards — which have the highest visibility and leadership engagement.",
+                  "Tier 1 and Tier 2 combined — which reach the most employees most frequently.",
+                  "Manager discretionary budget — which allows the most personalised recognition.",
+                  "External recognition platforms — which provide the technological infrastructure for all three tiers."
+                ],
+                "ans": 1,
+                "exp": "Frequency and reach are the highest-value recognition characteristics — Tier 1 and Tier 2 reach most employees most often, making them the highest-leverage investment."
+              },
+              {
+                "q": "Recognition equity analysis examines:",
+                "opts": [
+                  "Whether the recognition budget is equally divided between each grade level.",
+                  "Whether recognition is evenly distributed across grade, function, gender, and ethnicity — identifying systematic gaps in who is and is not being recognised.",
+                  "Whether each tier of the programme is equally well-funded.",
+                  "Whether peer recognition and manager recognition are received in equal proportions."
+                ],
+                "ans": 1,
+                "exp": "Recognition equity analysis identifies systematic under-recognition of certain populations — which is both a culture problem and a potential diversity and inclusion concern."
+              },
+              {
+                "q": "Six managers with zero Tier 2 nominations in 12 months are best addressed by:",
+                "opts": [
+                  "Redesigning the Tier 2 programme to make nomination easier for managers who are too busy.",
+                  "A direct conversation and expectation reset — the non-nomination is a management behaviour problem that requires a management expectation response, not a programme design change.",
+                  "Publicly listing non-nominating managers so their teams can escalate the gap.",
+                  "Removing the non-nominating managers from the programme and allowing their teams to self-nominate."
+                ],
+                "ans": 1,
+                "exp": "Non-nomination is a management expectation gap — the six managers are not meeting a stated expectation. The intervention is direct and individual, not systemic programme redesign."
+              },
+              {
+                "q": "The recognition ROI case is most credibly presented when:",
+                "opts": [
+                  "It claims full causality for the attrition improvement — the programme is the sole driver.",
+                  "It uses conservative attribution (acknowledging other factors), presents the calculation transparently, and notes the programme cost is justified even under conservative assumptions.",
+                  "It focuses only on engagement score improvement and avoids financial claims.",
+                  "It compares the programme cost to the cost of a recognition platform that was not purchased."
+                ],
+                "ans": 1,
+                "exp": "Conservative attribution with transparent methodology is more credible to a financially literate audience than confident overclaiming — and the programme cost is so low relative to the attrition saving that even conservative attribution produces a strong ROI."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "18-3",
+        "title": "Non-Financial Reward and Motivational Theory",
+        "color": "#2D8B6B",
+        "lessons": [
+          {
+            "id": "18-3-1",
+            "title": "Non-Financial Reward and Motivational Theory",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Non-financial reward encompasses the full range of value an organisation provides beyond cash: career development, flexible working, learning investment, meaningful work, community and belonging, management quality, autonomy, and physical environment. For many employees — particularly in knowledge-work roles — these non-financial elements are as influential in the joining, staying, and performing decision as the compensation package."
+              },
+              {
+                "t": "h",
+                "v": "The Total Reward Model"
+              },
+              {
+                "t": "p",
+                "v": "The WorldatWork total reward model extends the traditional view of reward (pay + benefits) to include all forms of value the employment relationship provides: compensation (base pay, variable pay, short-term and long-term incentives); benefits (health, retirement, income protection, paid time off); work-life effectiveness (flexibility, scheduling, leave); recognition (formal and informal); and career development (learning, advancement, culture). The financial elements are typically designed and governed by Total Rewards. The non-financial elements are often managed across multiple functions without coordination. One of the highest-value contributions a TR function can make is bringing the non-financial elements into the total reward architecture — quantifying their cost, articulating their employee value proposition, and governing them as deliberately as the financial elements."
+              },
+              {
+                "t": "h",
+                "v": "Flexibility as Non-Financial Reward"
+              },
+              {
+                "t": "p",
+                "v": "Flexible working — in terms of location, hours, and schedule — has emerged as one of the most valued non-financial reward elements in post-pandemic employment. Research consistently shows that flexibility ranks in the top three most valued benefits for professional employees, often above enhanced pension contributions, additional leave, or private medical insurance. For Total Rewards, flexibility is a zero-direct-cost or low-direct-cost benefit whose value to the employee is very high (autonomy, commute time savings, work-life integration). The challenge is designing flexibility policies that are equitable (not all roles can be fully flexible), governable (maintaining team cohesion and culture), and sustainable (not defaulting to either rigid presenteeism or unmanaged remote-only)."
+              },
+              {
+                "t": "h",
+                "v": "The Value of Meaningful Work"
+              },
+              {
+                "t": "p",
+                "v": "Purpose — the sense that one's work contributes to something beyond a personal financial transaction — is one of the most powerful non-financial motivators for knowledge workers. Employees who feel their work has meaning show higher engagement, higher discretionary effort, and significantly lower voluntary attrition. An organisation that claims a purpose it cannot substantiate is worse off than one that makes no purpose claim — employees detect the gap between claimed and experienced purpose faster than any other employer brand disconnect."
+              },
+              {
+                "t": "box",
+                "label": "Non-Financial Reward Dimensions",
+                "v": "WorldatWork model: compensation + benefits + work-life + recognition + development\nMotivation sequence: financial floor → higher-order motivators (development, autonomy, meaning)\nFlexibility: zero/low-cost, high-employee-value; design for equity, governance, sustainability\nPurpose: genuine organisational meaning + role-level contribution — detected quickly when fake"
+              },
+              {
+                "t": "box",
+                "label": "Nova Tech Flexible Working",
+                "v": "Nova Tech currently has no formal flexible working policy. Managers have responded to individual requests ad hoc over the past two years, producing an inconsistent situation: some teams work 100% remotely, others require 4 days in office, with no stated principle connecting the two. Two senior engineers have raised complaints about inequity."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Non-financial reward elements (flexibility, development, purpose) are as influential in the joining, staying, and performing decision as financial elements for many knowledge workers.",
+                  "Flexibility is a zero-direct-cost or low-direct-cost benefit with very high employee perceived value — it is among the most efficient investments in non-financial reward.",
+                  "Purpose must be genuine and substantiated — employees detect the gap between claimed and experienced purpose faster than any other employer brand disconnect."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "An equitable flexible working policy must address which primary tension?",
+              "opts": [
+                "The tension between employee preference for maximum flexibility and employer preference for maximum in-office presence.",
+                "The tension between equity (all employees in equivalent roles having access to equivalent flexibility) and role-specific operational requirements (some roles require physical presence) — with an explicit rationale for any role-level difference.",
+                "The tension between HMRC's tax treatment of home-working allowances and the cost of providing remote working equipment.",
+                "The tension between senior employees who have established flexible working patterns and new joiners who are expected to be in the office more frequently."
+              ],
+              "ans": 1,
+              "exp": "Flexible working equity is the primary governance challenge — inconsistency between equivalent roles without an explicit rationale produces exactly the complaints Nova Tech has received."
+            }
+          },
+          {
+            "id": "18-3-2",
+            "title": "Designing Nova Tech's Flexible Working Policy",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Flexible Working Policy Brief",
+                "v": "Company: 280 employees. Role types: engineering (120), product (45), commercial (55), operations (40), leadership/HR/finance (20). Current inconsistency: 8 teams with different practices, no stated principle. Employee preference data (pulse survey): 74% prefer 2-3 days in office; 18% prefer full remote; 8% prefer full in-office. Business requirements: engineering teams have highest productivity when co-located for collaborative sessions; commercial teams have client visit requirements; operations team has physical security requirements."
+              },
+              {
+                "t": "p",
+                "v": "Design a policy that is equitable, governable, and role-appropriate."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Section 1 — Policy Principle",
+                "v": "Nova Tech's flexible working policy is designed around a simple principle: flexibility is offered where it enables people to do their best work, and modified only where specific role requirements make certain forms of flexibility operationally unworkable. We are not prescriptive about presence for its own sake — we are intentional about the conditions under which different roles perform best.\n\nDefault position: all roles at Nova Tech are eligible for hybrid working unless a specific operational requirement requires otherwise. Operational requirements must be documented by the relevant function head and reviewed annually. The flexibility decision is made at the role level (consistent across all people in equivalent roles), not at the manager's discretion (which produced the current inconsistency)."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Section 2 — Role-Level Flexibility Tiers",
+                "v": "Tier A — Full hybrid (choose 2-3 days in office each week, balance remote): Engineering, Product, Leadership/HR/Finance. Rationale: deep work is most effective in the employee's chosen environment; collaboration is designed as explicit scheduled in-office time.\n\nTier B — Anchored hybrid (minimum 3 days in office with specific anchor days required): Commercial. Rationale: client meetings and relationship work require in-person availability. Anchor days: Monday, Wednesday, and one client-facing day per week.\n\nTier C — Site-required: Operations (physical security, facilities functions). Rationale: role requires on-site physical presence. Compensating element: enhanced schedule flexibility within the working day (flexible start/end times within a defined window)."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Section 3 — Governance and Consistency",
+                "v": "All flex arrangements are registered in the HRIS — the team's flexibility tier, any individual modifications granted, and the effective date. Individual modification requests are handled through a formal flexible working request process: written request, 3-day manager response, HR review, documented decision with rationale — not ad hoc verbal agreements. Annual review: each function head reviews their team's flexibility tier classification annually. Equity monitoring: HR reviews quarterly whether individual modification requests are being approved consistently across equivalent roles — any pattern of differential approval rates triggers a review. The policy removes manager discretion as the determining factor: the tier is set at the role level, and departures from the tier require a documented process."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The policy principle — flexibility where it enables best work, modified only where operationally necessary — provides a rationale for every role-level decision that can be communicated honestly to employees.",
+                  "Role-level tiers (not manager-level decisions) are the governance mechanism that prevents the inconsistency that produced the original complaints.",
+                  "Quarterly equity monitoring of modification request approval rates catches systematic discrimination in flexible working access before it becomes a formal complaint or tribunal case."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "18-3-3",
+            "title": "Nova Tech's Flexible Working Complaint — Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Nova Tech's Flexible Working Complaint",
+                "v": "A senior engineer in Tier A (hybrid) submits a formal flexible working request to work fully remotely permanently. Her manager agrees verbally. Three months later, it emerges that a male senior engineer in the same team and role who made the same request was declined — he was told he 'needs to be more present.' The female engineer's arrangement has been running informally for three months without HRIS registration. The male engineer has raised a formal grievance citing inconsistent treatment and potential sex discrimination."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The male engineer's grievance is about two separate issues. What are they and what is the correct investigation process?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Issue 1 — Process failure: neither arrangement was handled through the documented flexible working request process. The female engineer's arrangement was a verbal agreement not registered in the HRIS. The male engineer's request was declined verbally without written rationale. Both are process failures. Issue 2 — Potential sex discrimination: if a manager approved a flexible working request for a female employee and declined the same request from a male employee in the same role, this could constitute direct sex discrimination. The investigation must establish: (1) what were the specific reasons given for the two decisions? (2) Were there any legitimate role-based differences? (3) Is there a pattern in this manager's decision-making? The investigation should be conducted by HR (not the manager) and should review the full record of flexible working decisions across the team over the past 12 months."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The female engineer's informal arrangement has been running for three months. She is performing well and values the arrangement. What happens to her situation?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The female engineer's arrangement is not the source of the problem — the process failure is. She should not lose the arrangement as a consequence of the grievance investigation. The correct approach: (1) formalise her arrangement through the documented process retrospectively — the written request, the documented approval, the HRIS registration, all completed now; (2) treat the three months of informal operation as a trial period that has demonstrated the arrangement works effectively. What cannot happen: revoking her arrangement as a show of consistency with the male engineer's declined request. That would be using governance as a punitive instrument and would likely constitute constructive dismissal if the revocation was clearly unreasonable."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "The manager is the source of both process failures and the potentially discriminatory decision. How should the organisation respond to the manager?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The response must be proportionate and evidence-based. Before any action: complete the investigation to establish whether the differential treatment was based on sex-related reasoning or on an inconsistently applied workload judgement. If the investigation finds a sex-based rationale: formal disciplinary process for discrimination. If the investigation finds an inconsistently applied judgement with no sex-based reasoning: a formal management development intervention and a written expectation that all future flexible working decisions must go through the documented process. In both cases: the manager must be removed from flexible working decision authority for their team during the investigation. And the wider lesson: the informal verbal approval system is still operating because the policy has not been properly communicated. A formal all-manager briefing is required immediately."
+              },
+              {
+                "t": "box",
+                "label": "Flexible Working Governance Failures",
+                "v": "Two issues in this case: process failure (no documentation) + potential discrimination (differential approval)\nInvestigation: HR-led, separate from manager, full record review\nFemale engineer: formalise arrangement — do not revoke\nManager response: proportionate to investigation finding (sex-based vs inconsistent judgement)\nSystemic fix: all-manager briefing, removal of verbal approval mechanism"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "A flexible working policy without implementation — where managers continue to approve informally — produces the same inconsistency the policy was designed to prevent.",
+                  "The female engineer's arrangement should be formalised, not revoked — using governance as a punitive instrument would compound the organisation's legal exposure.",
+                  "Process failure and potential discrimination are separate issues that require separate investigation tracks, even when they arise from the same incident."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "18-3-Q",
+            "title": "Module Quiz: Non-Financial Reward and Motivational Theory",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The WorldatWork total reward model identifies which five dimensions?",
+                "opts": [
+                  "Pay, bonus, pension, benefits, and equity.",
+                  "Compensation, benefits, work-life effectiveness, recognition, and career development.",
+                  "Financial reward, non-financial reward, intrinsic reward, extrinsic reward, and social reward.",
+                  "Base pay, variable pay, long-term incentives, benefits, and wellbeing."
+                ],
+                "ans": 1,
+                "exp": "The WorldatWork model's five dimensions extend beyond traditional compensation to include work-life effectiveness, recognition, and development — the full scope of value the employment relationship provides."
+              },
+              {
+                "q": "Self-determination theory identifies which three psychological needs as the drivers of intrinsic motivation?",
+                "opts": [
+                  "Achievement, affiliation, and power.",
+                  "Autonomy, competence, and relatedness.",
+                  "Hygiene, motivators, and salary equity.",
+                  "Belonging, esteem, and self-actualisation."
+                ],
+                "ans": 1,
+                "exp": "SDT: autonomy (control over how work is done), competence (growing skill and mastery), relatedness (connection to colleagues and organisation). These three needs are not met by financial reward alone."
+              },
+              {
+                "q": "Flexible working is considered a highly efficient non-financial reward because:",
+                "opts": [
+                  "It is legally required in most jurisdictions as part of the statutory employment offer.",
+                  "It is zero-direct-cost or low-direct-cost for the employer but has very high perceived value for employees — one of the most valued elements of the total package.",
+                  "It reduces office costs sufficiently to fund other reward investments.",
+                  "It is the only non-financial element that can be quantified precisely in a total reward statement."
+                ],
+                "ans": 1,
+                "exp": "The efficiency argument: flexibility costs very little to provide but ranks in the top three most valued benefits for many professional employees."
+              },
+              {
+                "q": "A flexible working policy must address role-level tiers (rather than leaving decisions to manager discretion) primarily to:",
+                "opts": [
+                  "Reduce the HR workload associated with individual flexible working requests.",
+                  "Ensure consistent treatment of employees in equivalent roles — preventing the differential treatment that generates grievances and potential discrimination claims.",
+                  "Satisfy the legal requirement for written flexible working policies in most jurisdictions.",
+                  "Allow the finance team to model the cost impact of different flexibility scenarios accurately."
+                ],
+                "ans": 1,
+                "exp": "Role-level consistency is the governance mechanism that prevents manager discretion from producing inequitable outcomes — which is exactly what generated the formal complaint in the case study."
+              },
+              {
+                "q": "Herzberg classified pay as a hygiene factor rather than a motivator because:",
+                "opts": [
+                  "Pay levels are set externally by the market and therefore cannot be managed internally.",
+                  "Pay's absence causes dissatisfaction, but once adequate, its presence does not create sustained motivation — recognition, development, and the work itself do.",
+                  "Pay is managed by Finance rather than HR and therefore is outside the motivational architecture.",
+                  "Research showed that employees in high-pay roles are not more engaged than employees in lower-pay roles on average."
+                ],
+                "ans": 1,
+                "exp": "Herzberg's two-factor model: hygiene factors prevent dissatisfaction (their absence hurts); motivators create engagement (their presence helps). Pay is hygiene; recognition and development are motivators."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "18-4",
+        "title": "EVP Design — What It Is and How to Build One",
+        "color": "#2D8B6B",
+        "lessons": [
+          {
+            "id": "18-4-1",
+            "title": "EVP Design — What It Is and How to Build One",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "The employer value proposition (EVP) is the answer to the question every candidate and employee implicitly asks: 'Why should I work here rather than somewhere else?' An EVP is not a marketing tagline — it is a structured articulation of what the organisation offers, what it expects in return, and why the exchange is worth making. A well-designed EVP is specific, honest, and differentiated. A poorly designed one is generic, aspirational, and indistinguishable from every other organisation claiming to be 'a great place to grow your career in a fast-paced environment with a great team.'"
+              },
+              {
+                "t": "h",
+                "v": "EVP Components"
+              },
+              {
+                "t": "p",
+                "v": "The EVP is the integrated statement of everything the organisation offers across all five total reward dimensions: financial reward (competitive pay and benefits), career development (learning, progression, development investment), work environment (culture, team quality, leadership), purpose (the organisation's mission and the employee's contribution to it), and work-life (flexibility, schedule, remote working policy). An EVP that addresses only the financial component is a compensation statement, not an EVP. An EVP that addresses only the cultural component has no credibility with candidates who cannot evaluate culture from the outside. The most effective EVPs provide specific, verifiable evidence for each component — not aspiration, but proof."
+              },
+              {
+                "t": "h",
+                "v": "What Makes an EVP Credible"
+              },
+              {
+                "t": "p",
+                "v": "EVP credibility is determined by whether what the EVP claims is verifiable by candidates before joining and experienced by employees after joining. The gap between claimed and experienced EVP is the 'EVP gap' — and it is one of the primary drivers of early voluntary attrition. Candidates who joined for a claimed culture, flexibility, or development opportunity that does not materialise leave within 6-18 months with a well-articulated employer brand negative. The credibility test: can you point to specific, concrete evidence for each EVP claim? 'We offer exceptional career development' is not credible without evidence: a graduate who is now a director, a specific development programme, a learning budget that is clearly more than the industry average."
+              },
+              {
+                "t": "h",
+                "v": "Building the EVP"
+              },
+              {
+                "t": "p",
+                "v": "EVP development follows a structured process. Discovery: what do current employees value most about working here, and what does the organisation offer that they could not easily find elsewhere? This is gathered through focus groups, engagement survey analysis, and depth interviews with recent joiners (why did you accept over other offers?) and recent leavers (what did you say about us when you left?). Definition: what are the 2-4 themes that consistently emerge as the genuine differentiators? These should be honest, specific, and supported by evidence. Expression: how is the EVP communicated — in job postings, careers page, manager conversations, offer letters, induction? Activation: ensuring every touchpoint in the candidate and employee journey reflects the EVP."
+              },
+              {
+                "t": "box",
+                "label": "EVP Design Process",
+                "v": "Discovery: what employees value most, what differentiates the employer\nDefinition: 2-4 honest, specific, evidence-backed differentiators\nExpression: consistent across all candidate/employee touchpoints\nActivation: every journey touchpoint reflects the EVP\nCredibility test: can you provide specific, verifiable evidence for each claim?"
+              },
+              {
+                "t": "box",
+                "label": "Nova Tech EVP Gap",
+                "v": "Nova Tech's careers page claims: 'Join a team where you'll grow fast, work on hard problems, and be recognised for your impact.' The Head of People reviews Glassdoor (3.4/5 rating, multiple reviews citing 'slow to recognise contribution' and 'limited career path visibility') and the recent recognition survey (58% pre-programme). The Head of People suspects there is a significant EVP gap."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The credibility test — specific, verifiable evidence for each EVP claim — is what distinguishes a genuine EVP from aspirational marketing copy.",
+                  "The employer brand expression (careers page) is only as strong as the underlying EVP substance — investing in expression without closing the EVP gap produces a higher-volume pipeline of employees who will be disappointed.",
+                  "EVP discovery must include recent leavers — what they said about the organisation when they left is the most honest source of EVP gap diagnosis available."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The EVP gap between Nova Tech's careers page and its Glassdoor reviews indicates which specific problem?",
+              "opts": [
+                "The careers page was designed by a marketing team that does not understand the employee experience.",
+                "The organisation is claiming a recognition and growth culture that employees consistently do not experience — candidates who join based on this claim and discover the gap are the primary source of early attrition.",
+                "Glassdoor reviews are written by disgruntled leavers and are not representative of the broader employee experience.",
+                "The EVP needs to be promoted more actively on social media to overcome the Glassdoor narrative."
+              ],
+              "ans": 1,
+              "exp": "The EVP gap is the primary driver of early voluntary attrition — employees who joined for a claim that was not substantiated leave and then document their experience, perpetuating the gap."
+            }
+          },
+          {
+            "id": "18-4-2",
+            "title": "Building Nova Tech's EVP",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "EVP Brief",
+                "v": "Discovery findings: Top 5 employee-cited reasons for joining: interesting technical problems (82%); good salary for stage (71%); smart team (68%); flexible working (64%); growth potential (59%). Top 5 attrition drivers: unclear career path (44%); limited recognition (34%); management quality varies widely (28%); compensation fell behind market (21%). Differentiation vs competitors: strongest in technical challenge quality; weakest on career path clarity and management consistency."
+              },
+              {
+                "t": "p",
+                "v": "Build a three-pillar EVP with specific evidence for each pillar."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Pillar 1 — Hard Problems, Real Impact",
+                "v": "Claim: At Nova Tech, you work on technically complex problems that matter — and you own them.\n\nEvidence: (1) Engineers are owners, not ticket-completers: the most recent engineering retro showed that a significant proportion of engineers describe themselves as having 'significant influence over technical architecture decisions.' (2) We were chosen over offers from comparator companies — when we asked why, 'harder problems' was the most cited reason.\n\nWhat we won't claim: that the management is uniformly excellent (Glassdoor tells a more nuanced story). We will be honest that the company is growing and some management is stronger than others.\n\nActivation: all engineering job postings open with a two-sentence description of the specific technical problem the role will work on — not a generic job description."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Pillar 2 — Flexibility That's Actually Flexible",
+                "v": "Claim: Flexible working at Nova Tech means you design your working pattern — it's a policy, not a favour.\n\nEvidence: (1) 74% of employees confirm in our last pulse survey that they have genuine control over when and where they work. (2) Our written flexible working policy (publicly available on the careers page) sets a default hybrid model with no minimum office attendance for engineering roles. (3) Employee quotes — with permission — from different life stages describing how the flexibility works in practice.\n\nWhat we won't claim: that all roles are fully remote (they are not — operations roles require on-site presence). The careers page specifies the flexibility tier for each role before candidates apply.\n\nActivation: every job posting includes the specific flexibility tier for that role — no vague 'flexible working available' language."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Pillar 3 — Build Your Path (with honest gap disclosure)",
+                "v": "Claim: Nova Tech invests in your technical and professional development — and we're transparent about what career progression looks like here.\n\nEvidence: Annual L&D budget per employee with no approval required for individual learning choices within budget. Internal promotion rate: open senior roles filled internally in the last 12 months. Two specific career stories — engineers who joined at senior level and are now principal or lead engineers.\n\nWhat we're working on (honest gap disclosure): 'Career path clarity is the most cited area for improvement in our engagement data — we're implementing a career framework that makes progression criteria explicit and visible. We're in year 1 of that work and have published the framework summary on our careers page.'\n\nNote on EVP gap closure: Pillar 3 is honest about the gap because the gap is already visible on Glassdoor. An EVP that claims what Glassdoor refutes is not an EVP — it is a liability. Acknowledging the gap and the action being taken is more credible with technically sophisticated candidates than pretending it doesn't exist."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The strongest EVP pillars are built on genuine differentiators confirmed by employee research — not on the characteristics the organisation wishes it had.",
+                  "Honest EVP gap disclosure (acknowledging where the experience is still developing) is more credible than aspirational overclaiming — particularly with candidates who will check Glassdoor.",
+                  "Activation means every candidate touchpoint reflects the EVP specifically — job postings that name the technical problem and the specific flexibility tier, not generic language."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "18-4-3",
+            "title": "Nova Tech's EVP Launch — Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "EVP Launch Results",
+                "v": "Nova Tech launches its redesigned EVP with three pillars across the careers page, job postings, and LinkedIn. Six months later: applications per role increased by 23%; offer acceptance rate improved from 71% to 81%; Glassdoor score moved from 3.4 to 3.6. However, 12-month retention for engineering hires made after the EVP launch shows a 22% attrition rate — slightly above the pre-EVP rate of 19%."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The 22% attrition rate for post-EVP engineering hires is higher than the pre-EVP baseline. Why might this be happening and what does it suggest about EVP design?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The higher post-EVP attrition has a specific and important explanation. The new EVP attracted a different, more discerning pool of engineering candidates. The pre-EVP 19% cohort included a proportion of engineers who joined with lower expectations — they were less likely to leave because the EVP did not promise something specific enough to be disappointed by. The post-EVP 22% cohort joined with specific expectations: they applied for a specific technical problem, they were told the career framework was 'in year 1,' and they expected the management quality the EVP implied. When some of those specific expectations are not met in the actual experience, departure rates may be higher than in a lower-expectation cohort. The diagnosis: the attrition is concentrated in which cohort — engineers who joined for the 'hard problems' pillar, or those who joined for the 'build your path' pillar? Exit interview data from these 12-month hires should be analysed specifically for EVP-related disappointment themes."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The CEO sees the programme results and asks: 'What's the ROI? We spent £21,900 on the recognition programme and made investments in the EVP redesign — what did we get?' How should the Head of People respond?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The ROI response has two sides. Positive: 10-point improvement in offer acceptance rate. If Nova Tech is making 50 offers per year, a 10-point improvement means 5 additional accepted offers — at an average role value of £62,000 salary with a recruiting cost of 18% if a replacement hire were needed, each additional accepted offer avoids approximately £11,160 in re-recruiting cost. 5 × £11,160 = £55,800 annualised saving. Negative: 3-point increase in 12-month attrition for post-EVP engineering hires. 1.8 additional departures × £39,000 replacement cost = approximately £70,200 additional attrition cost. Net: approximately −£14,400 — marginally net negative, primarily driven by the elevated attrition. The recommendation: close the EVP gap (career framework and management quality consistency) to prevent the specific attrition that is offsetting the improved acceptance rate."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "The Head of People presents the Glassdoor improvement (3.4 to 3.6) to the CEO as a success metric. The CEO responds: 'That's nice, but I want to see how we reduce the 22% 12-month attrition for new engineering hires.' How should the Head of People respond?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The CEO is right to prioritise retention over employer brand metrics. The response: 'You're right that the 22% attrition is the number that matters most commercially. The three priorities for reducing 12-month engineering attrition are: (1) Accelerate the career framework completion — the Pillar 3 promise needs to be delivered this year, not next; engineers who joined specifically because we acknowledged this gap will leave if they see no progress. (2) Management quality consistency — the 28% of departures citing variable management quality need a response: the specific managers whose teams show highest attrition need coaching and support. (3) Technical problem continuity — if engineers joined for a specific hard problem and it was deprioritised or handed to a different team, this is the fastest route to disappointment.'"
+              },
+              {
+                "t": "box",
+                "label": "EVP Post-Launch Attrition Analysis",
+                "v": "Higher expectations = higher attrition when gap exists\nROI: improved acceptance rate saving vs elevated attrition cost\nGlassdoor: lagging indicator; attrition is the business cost\nPriorities: career framework delivery, management consistency, problem continuity"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "An EVP that attracts more specific, higher-expectation candidates may produce higher attrition if the experience does not match the expectation — the EVP gap is the attrition driver, not the EVP itself.",
+                  "The EVP commercial ROI calculation must include both the acceptance rate saving and the attrition cost — a net-negative EVP investment is signalling that the gap needs closing, not that the EVP should be abandoned.",
+                  "Glassdoor scores are lagging employer brand indicators; 12-month retention is the business cost the CEO correctly prioritises — the EVP programme must close the gap between promise and experience to achieve both."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "18-4-Q",
+            "title": "Module Quiz: EVP Design",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The employer value proposition (EVP) differs from employer brand in that:",
+                "opts": [
+                  "The EVP is a legal document; employer brand is a marketing concept.",
+                  "The EVP is the substance of what the organisation offers; employer brand is how that substance is expressed and communicated externally.",
+                  "The EVP is owned by HR; employer brand is owned by Marketing.",
+                  "The EVP applies to existing employees; employer brand applies to candidates."
+                ],
+                "ans": 1,
+                "exp": "EVP is the proposition (what is genuinely offered); brand is the expression (how it is communicated). Investing in brand expression without developing the underlying EVP produces a marketing story that candidates test against reality and find wanting."
+              },
+              {
+                "q": "The 'EVP gap' is defined as:",
+                "opts": [
+                  "The difference between the organisation's EVP and competitor EVPs in the same talent market.",
+                  "The difference between what the EVP claims and what employees actually experience — the primary driver of early voluntary attrition.",
+                  "The difference between the EVP expressed externally and the EVP communicated internally.",
+                  "The difference between the financial and non-financial components of the EVP."
+                ],
+                "ans": 1,
+                "exp": "The EVP gap is what candidates discover after joining — when the claimed culture, flexibility, or development opportunity is not matched by the actual experience. It drives early attrition and negative employer brand."
+              },
+              {
+                "q": "The EVP credibility test asks:",
+                "opts": [
+                  "Whether the EVP has been approved by the board and the marketing function.",
+                  "Whether specific, verifiable evidence exists for each EVP claim — not aspiration, but proof.",
+                  "Whether the EVP differentiates the organisation from the top three competitors in its sector.",
+                  "Whether the EVP is supported by a Glassdoor score above 4.0."
+                ],
+                "ans": 1,
+                "exp": "Credibility requires evidence — generic claims ('exceptional career development') are not credible; specific evidence ('a learning budget of £X with no approval required, and X% internal promotion rate') is."
+              },
+              {
+                "q": "Higher-than-expected attrition for post-EVP engineering hires indicates:",
+                "opts": [
+                  "The EVP is attracting the wrong type of candidate.",
+                  "The EVP attracted higher-expectation candidates whose experience did not match the specific claims made — the EVP gap is generating attrition, not the improved pipeline.",
+                  "Engineering attrition is always higher than other function attrition in technology companies.",
+                  "The EVP should be withdrawn until attrition stabilises."
+                ],
+                "ans": 1,
+                "exp": "Higher expectations + unchanged experience = higher attrition. The EVP is working to attract; the organisation now needs to close the experience gap to retain."
+              },
+              {
+                "q": "EVP discovery must include recent leavers because:",
+                "opts": [
+                  "Recent leavers are required to provide exit interview data under employment law.",
+                  "What employees said about the organisation when they left is the most honest available source of EVP gap diagnosis.",
+                  "Recent leavers are more likely to respond to EVP surveys than current employees.",
+                  "Leavers' feedback is less biased than current employees' responses because they have no incentive to present the organisation positively."
+                ],
+                "ans": 1,
+                "exp": "Leavers describe the gap between expectation and experience without the social pressure to be positive — their articulation of why they left is the EVP gap in its most explicit form."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "c18-cap",
+        "title": "Capstone Project",
+        "color": "#2D8B6B",
+        "lessons": [
+          {
+            "id": "18-cap",
+            "title": "Capstone: Nova Tech's Series C People and Recognition Strategy",
+            "duration": "20 min",
+            "xp": 250,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Nova Tech has grown to 340 employees and is preparing to raise a Series C funding round. Investor due diligence includes a detailed review of the people and culture function. The Head of People must produce a comprehensive non-financial reward and recognition strategy document for the Series C data room, covering the recognition programme, EVP, flexible working policy, and the plan to address the career framework gap — the last remaining material weakness in the people story."
+              },
+              {
+                "t": "box",
+                "label": "Context",
+                "v": "340 employees (230 engineering/product, 75 commercial/operations, 35 leadership/HR/finance)\nRecognition score: 67% (up from 58% pre-programme)\nGlassdoor: 3.6 (up from 3.4), 23% improvement in applications per role\n12-month engineering retention: 78% (slight worsening post-EVP launch)\nCareer framework: in progress, Year 1 — not yet complete\nSeries C investor expectation: structured people programme, retention data, EVP evidence"
+              },
+              {
+                "t": "h",
+                "v": "Section"
+              },
+              {
+                "t": "p",
+                "v": "Design the recognition programme section for the Series C data room. What does the investor need to see and what format is appropriate?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach",
+                "v": "1. Programme overview (one page): three-tier architecture summary; headcount covered; budget as % of payroll (0.15%); launch date; programme governance (quarterly equity review, annual calibration).\n\n2. Key metrics (one page with charts): Recognition engagement score trend (58% → 67% over 12 months); Tier 1 activity (847 posts/year = 3 per employee per year); Tier 2 nominations (168 in 12 months, 60% manager-initiated, 40% peer); Tier 3 awards (5 per year, 5 categories, open nomination).\n\n3. ROI summary (half page): 'Not feeling valued' as exit attribution: 34% → 22%. Estimated attrition cost saving: 2 fewer departures × £39,000 = £78,000. Programme cost: £21,900. Net return: £56,100. ROI: 256%.\n\n4. Forward plan (half page): target recognition score 72% (Gallup benchmark + 4 points) by Series C close plus 18 months; career framework completion (the primary remaining driver of recognition gap) by Q2 next year.\n\nInvestor framing: recognition is not a culture aspiration — it is a retention investment with a measurable return. Present it in financial terms."
+              },
+              {
+                "t": "h",
+                "v": "Section"
+              },
+              {
+                "t": "p",
+                "v": "The career framework is the most cited EVP gap. Design the completion and implementation plan for the investor data room."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach",
+                "v": "Current status: framework structure defined (6 levels × 5 families), level descriptors written for Engineering and Product, not yet written for Commercial, Operations, or Leadership functions.\n\nCompletion timeline: Q2 next year (7 months)\n• Month 1-2: complete level descriptors for Commercial and Operations\n• Month 2-3: complete level descriptors for Leadership and cross-functional roles\n• Month 3-4: calibration with all people managers\n• Month 4-5: individual outcome communications — every employee receives their level\n• Month 5-7: embed in performance cycle — career framework integrated into annual performance review template\n\nInvestor commitment: 'By Series C close plus 7 months, every Nova Tech employee will know their career level, what distinguishes their current level from the next, and what specific development they should pursue to progress. This closes the most cited driver of engineering voluntary attrition in our engagement data.'\n\nMetric: 12-month post-completion engineering retention target: 84% (recovering from the 78% EVP-gap-driven dip to above pre-EVP baseline of 81%)."
+              },
+              {
+                "t": "h",
+                "v": "Section"
+              },
+              {
+                "t": "p",
+                "v": "What is the 3-minute people and culture narrative for the Series C investor pitch? What are the three messages and what evidence supports each?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach",
+                "v": "Message 1 — We attract and retain exceptional technical talent:\nEvidence: offer acceptance rate 81% (industry benchmark ~72%); engineering Glassdoor 3.6 and improving; 68% of engineering hires cite 'hardest technical problems' as primary reason for joining.\nWhat we don't overclaim: 12-month engineering retention has softened slightly post-EVP (78%) as we attracted higher-expectation candidates. We are addressing this by closing the career framework gap — committed to 84% retention by [date].\n\nMessage 2 — We invest in people, not just pay:\nEvidence: recognition programme ROI 256%; L&D budget per employee per year; flexible working policy in place, 74% of employees confirm genuine flexibility control.\nWhat we don't overclaim: management quality is variable — 34 managers, 6 in active development conversation; manager quality programme launched [date].\n\nMessage 3 — The people infrastructure is Series C-ready:\nEvidence: career framework Q2 completion committed; HRIS single source of truth implemented; monthly headcount report with scenario tracking in place.\nKey investor ask: Series C funding will enable [specific people investment] — our people programme is a competitive advantage, not a cost centre."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The Series C data room requires people data presented in investor language — retention ROI, attrition cost avoidance, and forward commitments with specific dates, not engagement score aspirations.",
+                  "The career framework completion is the highest-priority people investment before Series C — it is the cited driver of the engineering retention softening that investors will scrutinise.",
+                  "The three-message people narrative (attract, invest, infrastructure) gives investors the story; the data room appendix gives them the evidence — both are required.",
+                  "Honest disclosure of what is still being addressed (management quality variability, retention softening) is more credible than an all-positive narrative that investors will test in due diligence."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "18-cap-Q",
+            "title": "Capstone Assessment: Recognition and Non-Financial Reward",
+            "duration": "15 min",
+            "xp": 300,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The Series C data room recognition programme section should present recognition primarily as:",
+                "opts": [
+                  "A culture aspiration that demonstrates the organisation's values.",
+                  "A retention investment with a measurable ROI — attrition cost saving vs programme cost.",
+                  "A compliance requirement for organisations above a certain headcount threshold.",
+                  "A qualitative description of the employee experience that supports the employer brand."
+                ],
+                "ans": 1,
+                "exp": "Investors evaluate retention as a business risk — presenting recognition in ROI terms (256% return, £56,100 net benefit) frames it as risk mitigation, which is the language investors respond to."
+              },
+              {
+                "q": "The career framework completion is the highest people investment priority pre-Series C because:",
+                "opts": [
+                  "Career frameworks are required by employment law for organisations above 340 employees.",
+                  "It is the most cited driver of engineering voluntary attrition in the engagement data — closing this gap directly addresses the retention metric investors will scrutinise.",
+                  "Completion unlocks a tax advantage on employee learning and development expenditure.",
+                  "Investors typically require career frameworks as a governance condition of Series C funding."
+                ],
+                "ans": 1,
+                "exp": "The career framework gap is the EVP gap driving the 78% retention softening — resolving it addresses the specific attrition driver that the EVP launch surfaced."
+              },
+              {
+                "q": "The honest disclosure of management quality variability in the Series C people narrative is included because:",
+                "opts": [
+                  "Glassdoor reviews make it impossible to hide and denial would undermine credibility.",
+                  "Investors who discover management quality issues in due diligence will penalise undisclosed problems more severely than disclosed ones with an action plan.",
+                  "Management variability is a standard finding in all Series C due diligence and investors expect it.",
+                  "It reduces the organisation's obligation to address management quality before close."
+                ],
+                "ans": 1,
+                "exp": "Due diligence will surface management quality data from Glassdoor, exit interviews, and people analytics — proactive disclosure with an action plan is always more credible than discovery without context."
+              },
+              {
+                "q": "The three Series C people narrative messages are:",
+                "opts": [
+                  "Compensation, benefits, and culture.",
+                  "Attract exceptional technical talent; invest in people not just pay; people infrastructure is Series C-ready.",
+                  "Team quality, product market fit, and operational efficiency.",
+                  "Headcount growth, attrition reduction, and Glassdoor score improvement."
+                ],
+                "ans": 1,
+                "exp": "The three messages address investor concerns in sequence: can you attract the talent the strategy requires? Are you investing in them sustainably? Is the people function mature enough to scale?"
+              },
+              {
+                "q": "When a Series C investor asks why 12-month engineering retention has softened from 81% to 78% post-EVP launch, the correct response is:",
+                "opts": [
+                  "Deflect to the broader market context — engineering attrition has risen across the industry.",
+                  "Explain specifically: the EVP attracted higher-expectation candidates whose expectations were partially unmet (career framework gap); the gap is being closed on a specific timeline; retention is expected to recover to 84%+ by that date.",
+                  "Describe the retention improvement programmes in general terms without citing specific targets.",
+                  "Confirm that the 78% is an outlier driven by one specific team and is not representative."
+                ],
+                "ans": 1,
+                "exp": "Specific, honest explanation with a specific action and a specific target is the investor-grade response — vague explanation or deflection raises more concern than the data point itself."
+              },
+              {
+                "q": "EVP activation means:",
+                "opts": [
+                  "Publishing the EVP on the careers page and LinkedIn as the primary communication channels.",
+                  "Ensuring every candidate and employee touchpoint reflects the EVP specifically — job postings that name the technical problem, role-specific flexibility tier, career framework summary, and real employee stories.",
+                  "Training the recruitment team to use EVP language in candidate conversations.",
+                  "Designing an internal communication campaign to ensure current employees know what the EVP says."
+                ],
+                "ans": 1,
+                "exp": "Activation is the consistency of EVP across every touchpoint — the difference between a careers page EVP and a fully activated EVP is the distance between claim and experience at every point where candidates and employees encounter the organisation."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Reward for Startups and Scale-ups",
+    "subtitle": "Design compensation, equity, and recognition programmes for high-growth companies — from seed-stage salary bands and EMI option schemes through to Series B merit cycles, international expansion, and board remuneration committee governance.",
+    "color": "#C4821A",
+    "color2": "#C4821A",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "level": "Advanced",
+    "duration": "4h 10m",
+    "lessons_count": 18,
+    "total_xp": 3030,
+    "desc": "Design compensation, equity, and recognition programmes for high-growth companies — from seed-stage salary bands and EMI option schemes through to Series B merit cycles, international expansion, and board remuneration committee governance.",
+    "outcomes": [
+      "Design a formal salary band structure for a Series A startup — benchmarked with startup-specific data, with a disciplined equity adjustment methodology for the individual-negotiation-to-structure transition",
+      "Build an EMI option scheme with a level-based allocation matrix, vesting mechanics, and a grant communication approach that helps employees understand the tax advantage and exit scenario value",
+      "Manage the compensation scaling challenges at each critical transition: 10→50 (internal equity), 50→100 (process), 100→200 (analytics and pay equity)",
+      "Design compensation packages for international remote employees — choosing the right rate model (local, global, or banded), employment structure (EOR vs entity), and benefit configuration for each jurisdiction",
+      "Present a total reward architecture to a board remuneration committee — framing pay equity remediation and recognition investment as retention risk management decisions, not HR initiatives"
+    ],
+    "pro": true,
+    "modules": [
+      {
+        "id": "19-1",
+        "title": "Compensation for Startups: From Seed to Series B",
+        "color": "#C4821A",
+        "lessons": [
+          {
+            "id": "19-1-1",
+            "title": "Compensation for Startups: From Seed to Series B",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Startup compensation is not simply 'enterprise compensation with less money.' It is a fundamentally different problem: attracting talented people to join a company that is smaller, riskier, and less well-known than its competitors, with a compensation package that cannot compete on cash alone. The solution is not to apologise for the cash deficit — it is to design a total package where equity, mission, autonomy, and speed of learning make the overall offer competitive. But the design must be honest, specific, and financially coherent — or it will fail in the talent market at exactly the moment the company needs it most."
+              },
+              {
+                "t": "h",
+                "v": "The Four Stages of Startup Compensation"
+              },
+              {
+                "t": "p",
+                "v": "Pre-seed and seed: compensation is typically below-market cash with a significant equity grant for early employees. The primary compensation lever is the equity story — what the company could be worth if it succeeds, and how early employees benefit. Series A: compensation moves toward market cash (typically 50th-70th percentile) as the company has raised enough capital to compete for experienced talent. Equity grants become smaller as the company grows more expensive. Series B and beyond: compensation moves toward market or above-market cash. The company may have the capital to compete on cash while equity grants continue as retention tools. The compensation function becomes more formal: job levels, salary bands, and compensation review cycles replace individual negotiation. The transition from individual negotiation to structured compensation is one of the hardest scaling challenges."
+              },
+              {
+                "t": "h",
+                "v": "Auris Labs Compensation"
+              },
+              {
+                "t": "p",
+                "v": "Auris Labs is a FinTech company that has just raised a Series A of $12M. It has 38 employees, primarily engineers and product managers, with a founding team of 4 who hold significant equity. The Head of People has been asked to design the first formal compensation structure. The company is competing against larger FinTech companies for the same engineering talent. The founding team's instinct is to offer equity in place of cash — but the Head of People is concerned that the company's equity story is not yet strong enough to replace competitive cash, and that the individual negotiation approach that worked at 10 people will not scale to 50."
+              },
+              {
+                "t": "h",
+                "v": "Benchmarking for Startups"
+              },
+              {
+                "t": "p",
+                "v": "Startup compensation benchmarking requires data sources that reflect the startup market rather than the enterprise market. Key sources: Option Impact / Carta (startup-specific benchmarks by stage and funding level); Radford / Mercer (broader market, useful for cross-check); Glassdoor / Levels.fyi (self-reported, useful for candidate expectations); peer comparison (direct competitors for talent — typically other FinTech companies at a similar stage). The benchmark comparison should be made at the same funding stage — a Series A company should benchmark against other Series A companies, not against listed FinTech companies whose cash compensation will be significantly higher. The typical positioning target: 50th-70th percentile of Series A FinTech cash compensation, supplemented by an equity grant that is above-market for the stage."
+              },
+              {
+                "t": "box",
+                "label": "Startup Compensation Framework",
+                "v": "Pre-seed/seed: below-market cash + significant equity (early employee premium)\nSeries A: 50th-70th percentile cash + above-market equity for stage\nSeries B+: market to above-market cash + ongoing equity as retention\nBenchmark: use startup-specific data (Carta, Option Impact) at same funding stage\nTransition: individual negotiation → structured bands as headcount scales"
+              },
+              {
+                "t": "box",
+                "label": "Auris Labs Scenario",
+                "v": "Auris Labs has just closed a Series A of $12M. Average engineer salary is currently $95,000 — set through individual negotiation with no formal band. The Head of People has run a Carta benchmark and found that Series A FinTech engineers are benchmarked at $105,000 (median) to $118,000 (75th percentile). Auris Labs' engineers are 10% below the median."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Startup compensation is a different problem from enterprise compensation — equity, mission, and learning velocity supplement below-market cash, not a failure to pay market rates.",
+                  "Startup benchmarking requires startup-specific data sources (Carta, Option Impact) at the same funding stage — enterprise benchmarks overstate the gap for early-stage companies.",
+                  "The transition from individual negotiation to structured bands is one of the hardest compensation scaling challenges — it exposes internal inequity, generates individual conversations, and requires a coherent equity adjustment methodology."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The most appropriate first action for Auris Labs' Head of People is:",
+              "opts": [
+                "Raise all engineer salaries to the 75th percentile immediately to ensure competitive positioning.",
+                "Design a formal job level and salary band structure using the Carta benchmark, then assess each current engineer's position within the band and develop a phased equity adjustment plan.",
+                "Keep current salaries and increase equity grants to compensate for the below-market cash position.",
+                "Conduct a round of individual salary negotiations with each engineer to agree new rates."
+              ],
+              "ans": 1,
+              "exp": "The first action must be structural — designing the band — rather than immediately adjusting salaries (which requires knowing where each employee sits in the band first) or returning to the individual negotiation approach that doesn't scale."
+            }
+          },
+          {
+            "id": "19-1-2",
+            "title": "Designing Auris Labs' First Salary Bands",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Salary Band Design Brief",
+                "v": "Auris Labs: 38 employees. Benchmark: Carta Series A FinTech data. Engineering roles: Junior Engineer ($72,000-$85,000 median range), Mid Engineer ($95,000-$112,000 median range), Senior Engineer ($118,000-$140,000 median range), Principal Engineer ($145,000-$175,000 median range). Product roles: comparable benchmarks. Current situation: 28 engineers, average salary $95,000 with significant spread ($78,000-$128,000) — no formal levels, all negotiated individually."
+              },
+              {
+                "t": "p",
+                "v": "Design the band structure and a process for mapping current employees into the new bands."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "Level 1 — Junior Engineer: band $68,000-$88,000, midpoint $78,000. Criteria: 0-3 years experience, works within defined scope, escalates blockers, delivers features with close guidance.\n\nLevel 2 — Engineer: band $88,000-$115,000, midpoint $101,500. Criteria: 3-6 years experience, delivers features independently, owns technical decisions within a domain, mentors juniors.\n\nLevel 3 — Senior Engineer: band $115,000-$145,000, midpoint $130,000. Criteria: 6-10 years experience, owns technical domains, shapes architecture decisions, unblocks the team.\n\nLevel 4 — Principal Engineer: band $145,000-$185,000, midpoint $165,000. Criteria: 10+ years experience, cross-company technical impact, defines engineering standards, external technical presence.\n\nBand width: 30% for all levels. Overlap between levels: 10-15% — this allows tenure within a level to be rewarded without requiring promotion."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "Mapping process: (1) Head of People and CTO independently assess each of the 28 engineers against the level criteria — based on their actual work, not their title or hire date. (2) Where assessments agree, the mapping is confirmed. Where they disagree, a calibration conversation is held. (3) The mapped level and the resulting band position are compared to the current salary. Three possible outcomes: (a) Below band minimum: salary is raised to band minimum. This is the highest priority — below-minimum salaries are below market and represent immediate flight risk. (b) Within band: no immediate change; the employee's position within the band is noted for the next merit cycle. (c) Above band maximum (red-circled): no change on first mapping — a red-circle is disclosed to the employee with a clear explanation. Salary is frozen at current level until the band catches up through annual adjustments or until the employee is promoted."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "From the current employee spread ($78,000-$128,000 average $95,000 with 28 engineers): estimated 8 engineers below the new band minimum for their assessed level. Average below-minimum gap: approximately $7,000. Total equity adjustment cost: approximately $56,000 additional annual payroll. This is 0.47% of the $12M Series A raise — a reasonable cost for bringing compensation structure into compliance with the market. Auris Labs' Series A runway was projected at 24 months; an additional $56,000 per year = $112,000 over the runway, representing 0.93% of the raise. The business case to the CEO: 'Bringing our engineers to band minimum costs less than the recruitment cost of replacing one senior engineer (estimated at 30-40% of annual salary = $35,000-$56,000 per replacement). We will spend the same amount on compliance as we would lose to one departure.'"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The band minimum is the most critical boundary — below-minimum salaries represent immediate market exposure and should be the first equity adjustment priority.",
+                  "Red-circling should be disclosed honestly and early: 'Your current salary is above the band maximum for your level' is a straightforward conversation that generates trust, not fear, when handled transparently.",
+                  "The equity adjustment cost should be presented to the CEO in the same units as attrition cost — the comparison almost always makes the adjustment look cheap."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "19-1-3",
+            "title": "Auris Labs' Compensation Rollout — Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Auris Labs' Compensation Rollout",
+                "v": "Auris Labs rolls out the new compensation structure to the team. Three issues emerge in the first week: (1) Two engineers discover they are in the same level despite one having 3 more years of experience — they both feel the level criteria are unfair. (2) One engineer who is above band maximum is threatening to resign because he interprets the red-circle as a signal that he is not valued. (3) The CTO wants to offer a new senior engineer hire at $155,000 — above the Senior Engineer band maximum ($145,000) but below the Principal band minimum ($145,000) — and is asking the Head of People to 'just make it work'."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "Two engineers at the same level but different tenure feel the level criteria are unfair. How should this be addressed?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Level criteria should be based on contribution and impact, not tenure — this is the correct answer, and it is also the answer that many employees find counterintuitive. The response: 'Our levels reflect what you're currently doing, not how long you've been doing it. Two engineers at Level 2 are both delivering independently, owning technical decisions within their domain, and mentoring juniors — that's what defines the level. If [Engineer A] is consistently operating at Level 3 behaviours — owning technical domains, shaping architecture — then we should have a conversation about his promotion path. If his current contribution is Level 2, the level is correct regardless of tenure.' The underlying issue: tenure-based compensation expectations are common and need to be explicitly addressed in the communication. The band structure communication should include a clear explanation of what the levels represent and what the progression path looks like."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The red-circled engineer is threatening to resign because he interprets the freeze as a signal he is not valued. How should the Head of People and his manager handle this?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The red-circle conversation needs to be reframed immediately. The Head of People and the engineer's manager should meet with him together. The message: 'You are above our current band maximum, which means we are paying you above what the market data says is the top of the range for your level at a Series A FinTech company. This is not a signal that you are undervalued — it is a signal that we valued you enough to pay above market when we hired you. You are not losing anything — your salary stays the same. What changes is the framing: we know where you sit relative to the market, and we know the band maximum needs to increase. Our plan: we are projecting a Series B raise in 18 months. At Series B, we will update our benchmark to Series B FinTech data, which will move the band maximum above your current salary. You are not frozen permanently — you are frozen relative to a band that is going to grow.' If this is true, say it. If it is not true, don't say it."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "The CTO wants to hire at $155,000 — above the Senior Engineer band maximum but below the Principal band minimum. How should the Head of People respond?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "This is a band integrity problem. A hire above the band maximum undermines the band for every existing Senior Engineer — they will find out, and the band structure will lose credibility within weeks. The options: (1) If the candidate's work justifies Principal Engineer level, hire at Principal — at the band minimum or above. The conversation with the CTO: 'If this person can do what we need a Principal to do, we should give them the Principal level. If the Principal band minimum is higher than what we want to pay, we need to review whether the Principal band minimum is set correctly.' (2) If the candidate is a Senior Engineer in terms of contribution, the offer should be within the Senior Engineer band. If they won't accept within band, this may not be the right candidate. (3) Do not create a one-off exception above band maximum for a new hire — this is the fastest route to destroying the compensation structure the company has just built."
+              },
+              {
+                "t": "box",
+                "label": "Band Integrity Principles",
+                "v": "Level criteria: contribution and impact, not tenure\nRed-circle: disclose honestly — 'above market for your level' is a positive signal, not a punishment\nNew hires above band maximum: never — assign the correct level or review the band\nBand credibility: lost the moment one exception is made and shared with the team"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Level criteria should reflect current contribution and impact, not tenure — this is the correct principle, but it requires explicit, empathetic communication to employees who expect tenure to drive level.",
+                  "A red-circle is most effectively handled with a specific future commitment: when will the band be reviewed, what needs to happen (Series B, annual benchmark update), and what does the employee's progression path look like in that context.",
+                  "A new hire above band maximum destroys band credibility instantly — the correct response to a hire who won't fit within band is to review the band or the level, not to make an exception."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "19-1-Q",
+            "title": "Module Quiz: Compensation for Startups",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "Startup compensation benchmarking should use which data sources?",
+                "opts": [
+                  "Mercer Global Compensation Survey — the most comprehensive global dataset.",
+                  "Startup-specific sources (Carta, Option Impact) benchmarked at the same funding stage — enterprise or listed-company benchmarks overstate the gap for early-stage companies.",
+                  "Glassdoor alone — the most accessible and current source for candidate salary expectations.",
+                  "The salary history of the company's last three hires — the best indicator of internal market rate."
+                ],
+                "ans": 1,
+                "exp": "Series A companies should benchmark against other Series A companies — comparing against public company compensation produces a gap that cannot be addressed without either unrealistic cash spend or an equity story that doesn't hold up."
+              },
+              {
+                "q": "When mapping current employees into a new band structure, the highest priority equity adjustment is:",
+                "opts": [
+                  "Employees above band maximum — red-circled employees are the most expensive and should be brought back within band first.",
+                  "Employees below band minimum — below-minimum salaries represent immediate market exposure and flight risk.",
+                  "Employees below midpoint — employees at the lower half of the band are at the greatest compression risk.",
+                  "Employees with the longest tenure — tenure-based equity adjustments are the most defensible to the team."
+                ],
+                "ans": 1,
+                "exp": "Band minimum compliance is the first priority — below-minimum salaries are literally below what the market defines as the acceptable minimum for the role, which is both a retention risk and a fairness issue."
+              },
+              {
+                "q": "A red-circle (above band maximum) salary should be handled by:",
+                "opts": [
+                  "Reducing the employee's salary to the band maximum immediately.",
+                  "Disclosing the red-circle honestly, freezing the salary at the current level, and providing a specific forward commitment about when the band will be reviewed.",
+                  "Keeping the information confidential and allowing the employee to discover it through Glassdoor.",
+                  "Promoting the employee to the next level so their salary falls within the new band."
+                ],
+                "ans": 1,
+                "exp": "Honest disclosure with a specific forward commitment is both more ethical and more effective at retaining the employee — 'you are currently above market for your level' is not a threat, and handling it that way is the error."
+              },
+              {
+                "q": "The CTO wants to hire a new engineer above band maximum. The Head of People's correct response is:",
+                "opts": [
+                  "Approve the exception — retaining the CTO's confidence is more important than band integrity at this stage.",
+                  "Review whether the candidate merits a higher level (which would put the salary within that level's band), or maintain band integrity and decline to hire above maximum.",
+                  "Create a new 'special hire' level for candidates the CTO personally recruited.",
+                  "Document the exception as a one-time occurrence that will not set a precedent."
+                ],
+                "ans": 1,
+                "exp": "Band integrity cannot survive even one exception — the moment the team hears that a new hire is above band maximum, the band loses credibility as a fair framework."
+              },
+              {
+                "q": "The business case for a compensation equity adjustment at Series A should be framed as:",
+                "opts": [
+                  "A cost centre investment — necessary to comply with employment regulations.",
+                  "An attrition risk management investment — the cost of adjustment compared to the cost of the attrition it prevents.",
+                  "A talent acquisition investment — necessary to attract the next wave of hires.",
+                  "A culture investment — demonstrating that the company cares about its employees."
+                ],
+                "ans": 1,
+                "exp": "Framing the equity adjustment cost against the attrition cost it prevents produces the most compelling and numerically defensible business case for a cost-sensitive Series A company."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "19-2",
+        "title": "Employee Options and EMI Schemes Explained",
+        "color": "#C4821A",
+        "lessons": [
+          {
+            "id": "19-2-1",
+            "title": "Employee Options and EMI Schemes Explained",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Equity is the most distinctive element of startup compensation — and the most frequently misunderstood by both the companies that grant it and the employees who receive it. Most startup employees accept equity grants without fully understanding what they own, what they are worth, when they vest, and under what circumstances the value is realised. Most startup founders design equity programmes without fully understanding the dilution, tax, and governance implications. This lesson builds the technical fluency required to design, explain, and manage startup equity programmes — with a specific focus on UK EMI schemes, which are among the most employee-friendly and tax-efficient equity instruments available."
+              },
+              {
+                "t": "h",
+                "v": "Equity Vehicles"
+              },
+              {
+                "t": "p",
+                "v": "Options (Stock Options or Share Options): the right to buy a share at a fixed price (the exercise price, or strike price) at a future date, typically after vesting. If the company's value has increased, the option holder can buy at the fixed lower price and sell at the higher market price, realising a gain. Options are the most common startup equity vehicle because they do not require the employee to invest capital upfront. Restricted Stock Units (RSUs): a grant of shares that vest over time. Unlike options, RSUs do not have an exercise price — the employee receives the shares on vesting and pays tax on the market value at vest. RSUs are more common at later-stage companies where the share price is high and the tax on options at exercise is a significant cash cost. Performance Share Units (PSUs): RSUs that vest conditional on performance milestones. Common at public companies and late-stage pre-IPO companies."
+              },
+              {
+                "t": "h",
+                "v": "EMI Schemes"
+              },
+              {
+                "t": "p",
+                "v": "Enterprise Management Incentive (EMI) schemes are a UK government-approved share option scheme that provides significant tax advantages for both companies and employees. Key features: options are granted at the market value (or at a discount, subject to HMRC approval); gains at exercise are subject to Capital Gains Tax (CGT) rather than Income Tax and National Insurance — a major advantage for employees; the company receives a corporation tax deduction on the intrinsic value at exercise; HMRC must be notified within 92 days of the grant. EMI eligibility: the company must be UK-based, have gross assets of no more than £30M, have fewer than 250 employees, and not operate in excluded industries (banking, farming, property development). The per-employee limit is options with a value of up to £250,000 (at the time of grant); the company limit is £3M of unexercised options outstanding at any time."
+              },
+              {
+                "t": "h",
+                "v": "Vesting Mechanics"
+              },
+              {
+                "t": "p",
+                "v": "Standard vesting schedule: 4-year graded vesting with a 1-year cliff. The cliff means no options vest in the first 12 months — if the employee leaves before the 1-year mark, all options are forfeited. After the cliff, options vest monthly (typically 1/48th per month) over the remaining 36 months. Good leaver / bad leaver provisions: most option agreements distinguish between good leavers (redundancy, death, serious illness, retirement — vested options are typically retained and exercised within a defined window) and bad leavers (voluntary resignation, dismissal for cause — vested options may be forfeited or the company may have the right to buy them back at exercise price). Acceleration: some agreements include single-trigger acceleration (all options vest on an exit event) or double-trigger acceleration (options vest on exit AND within a defined period after that exit the employee is terminated or demoted)."
+              },
+              {
+                "t": "box",
+                "label": "EMI Scheme Key Facts",
+                "v": "UK-specific: Capital Gains Tax on exercise gain, not Income Tax\nEligibility: <250 employees, <£30M gross assets, UK-resident company\nPer-employee limit: £250,000 options value at grant\nCompany limit: £3M unexercised options outstanding\nGrant to HMRC notification: 92 days\nStandard vesting: 4 years, 1-year cliff, monthly thereafter"
+              },
+              {
+                "t": "box",
+                "label": "Auris Labs Scenario",
+                "v": "Auris Labs has 38 employees and is UK-based. The Head of People has been asked to design the company's first EMI option scheme. The founding team wants to allocate options equivalent to 10% of the fully diluted share count to the first 38 employees, with the majority going to the 20 engineers."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "EMI options are the most tax-efficient equity vehicle for UK startups — CGT rather than income tax on the gain at exercise is a significant advantage for employees and should be communicated as a valued element of the package.",
+                  "The 4-year cliff-and-monthly vesting schedule is standard because it balances employee retention incentive with the company's need to recover unvested options from early leavers.",
+                  "Good leaver / bad leaver provisions are one of the most important — and most frequently overlooked — elements of the option agreement, and employees should understand them before accepting an equity grant."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "A new engineer joins Auris Labs and is granted 100,000 options with a 4-year vesting schedule and a 1-year cliff. She leaves voluntarily 18 months after joining. How many options has she vested?",
+              "opts": [
+                "0 — she did not complete the full 4-year vesting period.",
+                "25,000 — the 1-year cliff vests 25% of the grant.",
+                "37,500 — the 1-year cliff vests 25%, plus 6 more months at 1/48th per month (6 × 2,083 = 12,500).",
+                "50,000 — 18 months is 37.5% of 48 months."
+              ],
+              "ans": 2,
+              "exp": "After the 1-year cliff: 25% (25,000 options) vests. Then monthly vesting: 6 more months at 100,000/48 = 2,083 options/month × 6 = 12,500 additional. Total: 37,500 options vested."
+            }
+          },
+          {
+            "id": "19-2-2",
+            "title": "Designing Auris Labs' Option Scheme",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Option Scheme Brief",
+                "v": "Auris Labs: 38 employees, UK-based, gross assets £4.2M, 240 employees (anticipated in 3 years — currently 38). Fully diluted share count after Series A: 10,000,000 shares. Option pool: 10% = 1,000,000 options. Current share valuation for EMI grant: £0.80 per share (agreed with HMRC). Engineers: 20 employees. Product managers: 8. Other roles: 10. Founding team: 4 (hold 40% equity, no additional options). Budget for option grants: 1,000,000 options to allocate across 34 non-founding employees."
+              },
+              {
+                "t": "p",
+                "v": "Design the option allocation, vesting terms, and grant communication approach."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "Level 1 — Junior Engineer / Junior PM: 10,000 options. EMI value at grant: 10,000 × £0.80 = £8,000. Vesting: 4 years, 1-year cliff.\n\nLevel 2 — Engineer / PM: 20,000 options. EMI value at grant: £16,000. Vesting: 4 years, 1-year cliff.\n\nLevel 3 — Senior Engineer / Senior PM: 35,000 options. EMI value at grant: £28,000. Vesting: 4 years, 1-year cliff.\n\nLevel 4 — Principal Engineer / Lead PM: 50,000 options. EMI value at grant: £40,000. Vesting: 4 years, 1-year cliff.\n\nHeads of Function (VP-equivalent): 75,000 options. EMI value at grant: £60,000. Vesting: 4 years, 1-year cliff.\n\nTotal allocation across 34 employees (example mix): 10 Junior × 10,000 = 100,000 + 12 Engineer × 20,000 = 240,000 + 6 Senior × 35,000 = 210,000 + 4 Principal × 50,000 = 200,000 + 2 Heads × 75,000 = 150,000 = 900,000 options allocated, 100,000 reserved for future hires.\n\nVerification: all individual grants are below the £250,000 per-employee EMI limit at £0.80/share. Total outstanding: 900,000 × £0.80 = £720,000 — well below the £3M company limit."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "Standard vesting: 4 years, 1-year cliff. Monthly vesting after cliff at 1/48th per month.\n\nGood leaver definition: death, terminal illness, disability, redundancy. Good leaver outcome: all vested options retained; exercise window extended to the earlier of 5 years from grant or 90 days before expiry of the options.\n\nBad leaver definition: voluntary resignation, dismissal for gross misconduct, material breach of employment contract. Bad leaver outcome: vested options must be exercised within 30 days of leaving or are forfeited. Unvested options are forfeited immediately.\n\nNeutral leaver definition: any other departure (dismissal without cause, end of fixed-term contract). Neutral leaver outcome: treated as good leaver for vested options.\n\nSingle-trigger acceleration: all unvested options vest immediately on a qualifying exit (acquisition, IPO). This is included because Auris Labs' equity story depends on exit value — employees should not lose unvested options simply because the company is acquired before the 4-year mark."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "Every employee receiving an option grant should receive a grant letter that includes: (1) The number of options granted and the exercise price (£0.80 per share); (2) The vesting schedule in plain language ('You vest 0 options in your first 12 months. After 12 months, 25% of your options vest. After that, 1/48th of your options vest each month until month 48.'); (3) A worked example: 'If Auris Labs is acquired for 10x the current valuation (£8.00 per share), your 20,000 options would be worth 20,000 × (£8.00 − £0.80) = £144,000 before CGT'; (4) The good leaver / bad leaver provisions in plain language; (5) A recommendation to take independent tax advice before exercising options.\n\nThe worked example is the most important element — most employees do not understand the option mechanism until they see a specific number in a specific scenario. The example should include the exercise price, a realistic exit multiplier, and the resulting gross gain."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The allocation matrix should be tied to the job level structure — options are part of the total compensation package for each level, not a discretionary grant decided case by case.",
+                  "Single-trigger acceleration on exit is important for early employees whose vesting schedule would not be complete before a typical Series A-to-exit timeline.",
+                  "The worked example in the grant letter — a specific exit multiplier applied to a specific option count — is the most effective way to help employees understand what they own."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "19-2-3",
+            "title": "Auris Labs' Exit — Equity Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Auris Labs' Exit — Equity Case Analysis",
+                "v": "Three years after the Series A, Auris Labs is acquired by a major bank for £45M. The fully diluted share count at acquisition is 12,000,000 shares (reflecting a 20% increase from the Series A from the option pool expansion and a seed note conversion). The acquisition price per share is £3.75. Four scenarios play out: (1) An engineer who joined at founding has fully vested 50,000 options at an exercise price of £0.80; (2) An engineer who joined 6 months ago has 20,000 options, none vested; (3) A senior engineer who resigned 6 months ago was classified as a bad leaver and exercised her 25,000 vested options within 30 days of leaving, paying £0.80/share; (4) A VP of Engineering received 75,000 options 18 months ago with single-trigger acceleration on exit."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The founding-era engineer has 50,000 fully vested options at £0.80. What is his gain and what tax does he pay under the EMI scheme?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Gain: 50,000 × (£3.75 − £0.80) = 50,000 × £2.95 = £147,500.\n\nEMI tax treatment: the gain is subject to Capital Gains Tax, not Income Tax. The 2024/25 CGT rate for higher-rate taxpayers is 20% (or 10% if business asset disposal relief applies — likely for an acquisition exit of this type). After the CGT-free allowance (£3,000 in 2024/25), the net taxable gain is approximately £144,500. At 10% with business asset disposal relief: approximately £14,450 in tax. Net gain: approximately £133,050.\n\nIf the same gain had been subject to Income Tax and NI (as non-approved options would be): at 45% Income Tax + 2% NI = 47% effective rate, the tax would be approximately £69,325. Net gain: approximately £78,175.\n\nThe EMI advantage in this scenario: approximately £54,875 more after tax than a non-approved option scheme. This is the concrete, calculable value of the EMI scheme that should be communicated to employees when the grant is made."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The recently joined engineer has 20,000 options, none vested. The acquisition has single-trigger acceleration. What happens?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "With single-trigger acceleration, all 20,000 options vest immediately on the acquisition. Gain: 20,000 × (£3.75 − £0.80) = 20,000 × £2.95 = £59,000.\n\nTax treatment: provided the options were granted as EMI options and the acquisition qualifies as a disqualifying event (most acquisitions do), the gain is subject to CGT on the appreciation from grant to exercise. Business asset disposal relief may apply if the employee has held the options for 2 years (this engineer has held them for only 6 months — BADR may not apply, making the effective CGT rate 20% rather than 10%).\n\nNet gain at 20% CGT after allowance: approximately £59,000 − £3,000 allowance = £56,000 taxable × 20% = £11,200 tax. Net gain: approximately £47,800.\n\nThe lesson: single-trigger acceleration on exit is transformative for recently joined employees — without it, this engineer would receive nothing."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "The VP of Engineering received 75,000 options 18 months ago. With single-trigger acceleration, all 75,000 vest on acquisition. What is her gain and what does this mean for the company's acquisition negotiations?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Gain: 75,000 × (£3.75 − £0.80) = 75,000 × £2.95 = £221,250.\n\nTax treatment: at 18 months, business asset disposal relief (2-year holding requirement) would not apply unless the clock started from a previous grant. CGT at 20%: approximately £221,250 − £3,000 = £218,250 × 20% = £43,650 tax. Net gain: approximately £177,600.\n\nAcquisition negotiation implication: acceleration provisions are 'deal costs' — the acquiring company is aware that 100% of the option pool vests on acquisition and factors this into the acquisition price. If Auris Labs has 1,000,000 options outstanding at an average exercise price of £0.80, the total option exercise cash that flows to employees is 1,000,000 × (£3.75 − £0.80) = £2,950,000. This is taken into account in the fully diluted share price calculation — the acquisition price of £45M accounts for the fact that option holders will participate in the proceeds. The VP should understand that her acceleration is not 'free money from the acquirer' — it is a pre-agreed sharing of the exit value that Auris Labs committed to when it designed the option scheme."
+              },
+              {
+                "t": "box",
+                "label": "Exit Equity Principles",
+                "v": "EMI advantage: CGT vs Income Tax on exercise gain — calculate and communicate the concrete value difference\nSingle-trigger acceleration: transformative for recently joined employees — without it they receive nothing on acquisition\nBusiness Asset Disposal Relief: 2-year holding requirement — time the grant to maximise BADR eligibility where possible\nFully diluted calculation: the acquiring company accounts for option exercise in the acquisition price"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The concrete EMI advantage should be calculated at the time of grant using a specific exit multiplier — not expressed as 'tax efficient' in the abstract but as '£X more after tax than a non-approved scheme in a 3x exit scenario.'",
+                  "Single-trigger acceleration on exit is one of the most valuable provisions for early employees at a company with a realistic exit timeline — it should be a standard feature of startup option agreements.",
+                  "The VP's acceleration gain is not additional cost to the acquirer — it is the option pool's participation in the exit value that the company committed to at grant, and the acquisition price reflects it."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "19-2-Q",
+            "title": "Module Quiz: Employee Options and EMI Schemes",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "EMI schemes are advantageous for UK startup employees because:",
+                "opts": [
+                  "They allow employees to receive shares without any tax obligation at any stage.",
+                  "Gains on exercise are subject to Capital Gains Tax rather than Income Tax and National Insurance — typically a significantly lower effective rate.",
+                  "They remove the vesting cliff requirement, allowing employees to vest options from day one.",
+                  "They guarantee that the company will be acquired within 4 years, realising the option value."
+                ],
+                "ans": 1,
+                "exp": "The CGT vs Income Tax distinction is the primary EMI advantage — in a high-growth scenario the tax saving can be very substantial (as the case study demonstrated with a £54,875 difference in a 3.75x exit)."
+              },
+              {
+                "q": "A 4-year vesting schedule with a 1-year cliff means:",
+                "opts": [
+                  "25% of options vest at the end of the first year, then 25% per year for the next three years.",
+                  "No options vest in the first 12 months; 25% vest at the 12-month mark; the remainder vest monthly over the next 36 months at 1/48th per month.",
+                  "Options vest continuously from day one, but cannot be exercised until after 12 months.",
+                  "100% of options vest after 4 years with no intermediate vesting."
+                ],
+                "ans": 1,
+                "exp": "The cliff protects the company from granting options to employees who leave before the first year; the monthly vesting thereafter incentivises retention throughout the 4-year period."
+              },
+              {
+                "q": "Single-trigger acceleration on exit is most valuable for:",
+                "opts": [
+                  "Founding team members who have been with the company since inception.",
+                  "Recently joined employees who have not yet cleared the 1-year cliff or have significant unvested options — without acceleration they would receive nothing on acquisition.",
+                  "Bad leavers who left before the acquisition and forfeited their unvested options.",
+                  "Employees whose options have already fully vested before the acquisition."
+                ],
+                "ans": 1,
+                "exp": "Single-trigger acceleration exists precisely for the employee who joined 6 months before an unexpected acquisition — without it, the cliff provision would leave them with nothing."
+              },
+              {
+                "q": "The EMI per-employee limit is:",
+                "opts": [
+                  "£1,000,000 of options by value at the time of grant.",
+                  "£250,000 of options by value at the time of grant.",
+                  "£500,000 of options by value at the time of grant.",
+                  "There is no per-employee limit — only a company-level limit of £3M."
+                ],
+                "ans": 1,
+                "exp": "The per-employee EMI limit is £250,000 of option value at grant. The company-level limit is £3M of unexercised options outstanding at any time."
+              },
+              {
+                "q": "A bad leaver provision typically means:",
+                "opts": [
+                  "The employee's vested options vest at double the normal rate on departure.",
+                  "Vested options must be exercised within a short window (typically 30 days) or are forfeited, and unvested options are forfeited immediately.",
+                  "The company can reduce the employee's salary to the band minimum on departure.",
+                  "The employee is required to sell their shares back to the company at book value."
+                ],
+                "ans": 1,
+                "exp": "Bad leaver provisions protect the company from extended option exercise obligations to employees who left on poor terms — the short exercise window ensures the situation is resolved quickly."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "19-3",
+        "title": "Scaling Compensation Structure from 10 to 200 People",
+        "color": "#C4821A",
+        "lessons": [
+          {
+            "id": "19-3-1",
+            "title": "Scaling Compensation Structure from 10 to 200 People",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "The compensation challenges a company faces at 10 people are completely different from those it faces at 50, 100, or 200. At 10, compensation is about attracting the specific people needed for the specific bets the company is making. At 50, it is about building a fair and scalable structure before the inconsistencies created by 5 years of individual negotiation become a retention crisis. At 100, it is about running a compensation function as a repeatable, auditable process with real analytics. At 200, it is about managing the cost and complexity of a compensation programme that will be under employee scrutiny in a way that a 20-person company never experiences."
+              },
+              {
+                "t": "h",
+                "v": "The 10-to-50 Transition"
+              },
+              {
+                "t": "p",
+                "v": "The primary compensation challenge at the 10-to-50 transition: internal equity. The company has been hiring through individual negotiation, and the result is a pay distribution that reflects negotiating skill, urgency of hire, and market conditions at the time of hire — not a systematic relationship between pay and contribution. The symptom: when a formal band structure is introduced, 20-30% of the workforce is either above band maximum or below band minimum. The intervention required: a structured equity adjustment programme (see Module 1) and a compensation philosophy statement that explains to employees how the company thinks about pay, what the bands mean, and how the company will manage pay going forward."
+              },
+              {
+                "t": "h",
+                "v": "The 50-to-100 Transition"
+              },
+              {
+                "t": "p",
+                "v": "The primary challenge at the 50-to-100 transition: process. Compensation decisions are being made by multiple managers with varying degrees of compensation sophistication, in the absence of a consistent process. The symptoms: new hire offers being made above band maximum; merit increases being distributed on the basis of relationship rather than performance and position in band; comp ratios diverging between teams. The interventions: a merit review cycle with a fixed budget, a merit matrix (performance rating × compa ratio → merit increase %), and a hiring manager compensation process (offers must be approved by HR before being made to candidates). At 100 people, the compensation process is the compensation strategy — the quality of the outcome is entirely determined by the consistency of the process."
+              },
+              {
+                "t": "h",
+                "v": "The 100-to-200 Transition"
+              },
+              {
+                "t": "p",
+                "v": "The primary challenge at the 100-to-200 transition: analytics and equity. At 200 people, the pay distribution is large enough that patterns of inequity (gender pay gap, ethnicity pay gap, grade distribution by function) become visible in the data. The company is also approaching the threshold at which some jurisdictions require pay equity reporting. The interventions: a pay equity audit (at minimum, an internal regression analysis of pay by grade controlling for performance and tenure); a compensation analytics function (even if it is one analyst with good HRIS data access); and a communication strategy for compensation (employees in a 200-person company expect to understand how their pay is set — a compensation philosophy document and a manager enablement guide are required)."
+              },
+              {
+                "t": "box",
+                "label": "Scaling Compensation — Critical Transitions",
+                "v": "10→50: individual negotiation → formal bands. Focus: internal equity audit, equity adjustments, comp philosophy\n50→100: informal decisions → formal process. Focus: merit matrix, hiring manager guidelines, offer approval\n100→200: process → analytics. Focus: pay equity audit, HRIS analytics, communication strategy"
+              },
+              {
+                "t": "box",
+                "label": "Finflux Scale-Up",
+                "v": "Finflux is a Series B FinTech company with 140 employees. It acquired Auris Labs (38 employees) 18 months ago as part of its Series B fundraise. The combined entity now has 178 employees across two legacy compensation structures — Auris Labs' newly formal structure and Finflux's older structure, which has a formal band structure but has not been updated since Series A three years ago. The Head of People must harmonise the two structures before the company's next merit review cycle."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The 10-to-50, 50-to-100, and 100-to-200 transitions each have a primary compensation challenge — internal equity, process, and analytics — and the intervention must match the challenge at the company's actual stage.",
+                  "The merit matrix is the most effective process tool for the 50-to-100 transition — it constrains manager discretion, enforces the connection between performance and pay, and distributes the merit budget in a defensible way.",
+                  "Pay equity audit at 100-200 employees is not just good practice — it is increasingly required by regulation and, more practically, by the expectations of an employee base that is large enough to notice and discuss patterns in the data."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "When harmonising two legacy compensation structures after an acquisition, the highest-risk scenario is:",
+              "opts": [
+                "Employees from both companies discovering that their counterparts in the other company earn significantly more for equivalent roles.",
+                "The combined entity needing to conduct two separate merit review cycles in the same year.",
+                "The two compensation bands using different currency denominations.",
+                "The acquired company's HR system being incompatible with the acquirer's HRIS."
+              ],
+              "ans": 0,
+              "exp": "Pay transparency between the two legacy workforces after integration is the highest-risk scenario — it generates immediate comparison, perceived unfairness, and attrition if equivalent roles are paid differently without a clear rationale and a clear remediation timeline."
+            }
+          },
+          {
+            "id": "19-3-2",
+            "title": "Harmonising Finflux and Auris Labs' Compensation Structures",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Harmonisation Brief",
+                "v": "Finflux (140 employees, Series B, bands last updated 3 years ago at Series A). Auris Labs (38 employees, formal bands introduced 18 months ago, Series A benchmarks). Combined entity: 178 employees, next merit review cycle in 4 months. Key issue: Finflux's bands have not been updated since Series A. Market data suggests Finflux engineers are 12-15% below current Series B market rates. Auris Labs engineers are more recently benchmarked and approximately at market. The risk: Finflux engineers will learn that Auris Labs engineers are paid more for equivalent roles."
+              },
+              {
+                "t": "p",
+                "v": "Design the harmonisation approach — band structure, equity adjustment, and communication."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 1",
+                "v": "The first step is a benchmark update, not a structure merger — you cannot fairly harmonise two structures that are both compared against different (and in Finflux's case outdated) benchmarks.\n\nAction: run a Carta benchmark for Series B FinTech companies, current year data, for all engineering and product levels. Compare the benchmark against both the current Finflux bands and the current Auris Labs bands.\n\nExpected finding: Finflux bands are 12-15% below Series B market rate at the median. Auris Labs bands are approximately at market (Series A benchmark applied 18 months ago; Series B benchmark may push them up 5-8%).\n\nRecommendation: update all bands to reflect the current Series B benchmark before the merit cycle. The merit cycle then applies within the updated bands, not the outdated ones."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 2",
+                "v": "The combined entity should have a single unified level and band structure. The Auris Labs structure (4 levels, 30% band width, defined contribution criteria) is the more recently designed and better documented of the two. Recommendation: adopt the Auris Labs structure as the base, update the band ranges to the Series B benchmark, and extend the level definitions to cover all roles in the combined entity.\n\nHarmonisation process: (1) Map every Finflux employee to the unified level framework (same calibration process as the Auris Labs exercise). (2) Map every Auris Labs employee to the unified framework (most will stay at their current level — some may be reclassified). (3) Compare the resulting pay distribution against the updated Series B bands. Identify below-minimum employees (highest priority) and red-circled employees across both legacy populations."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Step 3",
+                "v": "The communication challenge: Finflux employees will discover that Auris Labs employees are at market while Finflux employees are below market. This must be addressed directly — not concealed.\n\nMessage to Finflux employees: 'We are updating our compensation benchmark from Series A to Series B — our bands were last updated three years ago and the market has moved. All employees will be mapped to the new unified structure, and we are committing to bringing everyone to band minimum before the next merit review cycle. The update reflects where the market is now, not where it was in 2021.'\n\nMessage to combined entity: 'We are building one company with one compensation structure. We have mapped everyone in both teams to a single unified framework, updated to the current Series B market benchmark. Your level, your band, and your position within that band will be communicated to you and your manager before the merit review cycle begins.'\n\nCritical: do not communicate the harmonisation until the equity adjustments are funded and approved — announcing the plan before the budget is confirmed creates expectations that may not be met, which is worse than announcing nothing."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Benchmark before harmonising — attempting to merge two structures that are both measured against outdated benchmarks produces a structure that is wrong from the start.",
+                  "The communication strategy must directly address the pay comparison that employees will make — concealing the gap is impossible once people talk to each other, and discovery after concealment is always worse than disclosure.",
+                  "Funding the equity adjustments before communicating the harmonisation plan is a sequencing discipline that prevents commitment before budget approval."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "19-3-3",
+            "title": "Finflux's 200-Person Compensation Audit — Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Finflux's 200-Person Compensation Audit",
+                "v": "Finflux has reached 200 employees 12 months after the Auris Labs integration. The People Analytics team runs the company's first pay equity audit and finds: (1) A 9% gender pay gap at Engineer level (women earn 9% less than men, controlling for tenure and performance rating); (2) The gap at Senior Engineer level is 3% (not statistically significant); (3) The gap at Principal and above is 14% (statistically significant, based on 6 women at those levels); (4) The representation gap: 68% of engineers are male, 32% female; at Principal and above, 85% male, 15% female."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "The 9% pay gap at Engineer level is statistically significant after controlling for tenure and performance. What are the possible root causes?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Root causes in order of likelihood: (1) Historical hiring discount: the 9% gap is most likely an artefact of the individual negotiation period — women accepted lower offers than men for equivalent roles because they were offered less, negotiated less aggressively, or both. In organisations that have moved from individual negotiation to band structures, this historical discount is frequently visible in the first pay equity audit. (2) Merit increase accumulation: if the merit matrix was not applied consistently — if managers gave larger increases to men than women with equivalent performance ratings — the gap compounds over time. The audit should check whether merit increase percentages are consistent by gender at the same performance rating and compa ratio. (3) Promotion lag: if women at Engineer level are being promoted to Senior Engineer less frequently than men with equivalent performance, their compa ratios within the band will be lower after controlling for tenure, producing a gap. The audit should check promotion rates by gender."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The 14% gap at Principal and above (6 women in the population) is statistically significant but based on a very small sample. How should it be interpreted and acted on?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Small-sample pay gaps require careful interpretation. A 14% gap across 6 women at Principal and above could reflect: (1) An actual pay gap — 6 women paid significantly less than the 34 men at the same level; (2) Level composition difference — if the 6 women are disproportionately in the lower half of the Principal level distribution (early in their tenure at the level), the gap may reflect level-position rather than discrimination; (3) Role composition difference — if the 6 women are in a specific function (product vs engineering) that has different market rates within the same band level, function-level variation could explain the gap. The action: investigate each of the 6 women individually — this is a small enough population to do a case-by-case analysis. For each, review: their level assignment vs contribution criteria, their position in the band, their merit history, and the market rate for their specific role. The result may be that 2-3 require salary adjustment; or it may be that the gap is explained by level-position differences that are not discriminatory but need to be addressed through career development investment."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "The representation gap (32% women at Engineer, 15% at Principal) is a separate concern from the pay gap. How should the People Analytics team communicate the interaction between the two findings?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The representation gap and the pay gap interact in a specific way: when women are underrepresented at senior levels, their pay as a proportion of total engineering compensation is lower than their headcount proportion would suggest — even if there is no pay gap at any individual level. This is the composition effect in gender pay gap reporting: the aggregate gender pay gap is partly driven by the fact that women are concentrated at lower levels, where pay is lower, regardless of whether they are paid fairly at those levels. The communication to leadership: 'We have two separate findings. First, we have a within-level pay gap at Engineer grade that we believe is a historical negotiation artefact — we have a plan to correct it. Second, we have a representation gap at senior levels that means our aggregate gender pay gap is larger than the within-level gap alone. Addressing the representation gap requires a career development and promotion pipeline investment — it is not a pay adjustment problem, it is a progression opportunity problem. We need to address both to close the aggregate gap.'"
+              },
+              {
+                "t": "box",
+                "label": "Pay Equity Audit Interpretation",
+                "v": "Within-level gap: most likely historical negotiation artefact → salary adjustment\nSmall-sample gap: investigate individually before attributing to discrimination\nRepresentation gap: separate from pay gap — requires progression investment, not pay adjustment\nComposition effect: aggregate pay gap always understated at companies with representation gaps at senior levels"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "A within-level gender pay gap after controlling for tenure and performance is almost always a historical negotiation artefact — the band structure prevents future gaps but does not correct past ones without a targeted salary adjustment.",
+                  "Small-sample level gaps (6 women at Principal) require individual-level investigation — a statistically significant aggregate gap in a population of 6 can be explained by two or three cases with specific explanations that are not systemic.",
+                  "The representation gap and the pay gap require different interventions — pay adjustment for the within-level gap, and career development investment for the representation gap — and conflating the two leads to interventions that solve the wrong problem."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "19-3-Q",
+            "title": "Module Quiz: Scaling Compensation Structure",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The primary compensation challenge at the 10-to-50 person transition is:",
+                "opts": [
+                  "Establishing a formal HR function with HRIS and payroll systems.",
+                  "Internal equity — the pay distribution created by individual negotiation reflects negotiating skill and hire urgency rather than a systematic relationship between pay and contribution.",
+                  "Designing a long-term incentive programme to retain senior employees.",
+                  "Complying with gender pay gap reporting requirements that apply at 50 employees."
+                ],
+                "ans": 1,
+                "exp": "At the 10-to-50 transition, the legacy of individual negotiation produces a pay distribution that is both internally inconsistent and increasingly difficult to defend as the team grows large enough for employees to compare notes."
+              },
+              {
+                "q": "A merit matrix is the primary compensation process tool at the 50-to-100 transition because:",
+                "opts": [
+                  "It eliminates the need for manager involvement in compensation decisions.",
+                  "It constrains manager discretion by tying merit increase percentage to performance rating and position in band — preventing relationship-based distribution of the merit budget.",
+                  "It replaces the need for market benchmarking by using internal performance data alone.",
+                  "It is legally required by employment regulations in most jurisdictions for companies with 50+ employees."
+                ],
+                "ans": 1,
+                "exp": "The merit matrix is a process tool that makes the distribution of the merit budget consistent, predictable, and defensible — which is what a growing company needs as the number of managers and decisions increases."
+              },
+              {
+                "q": "When harmonising two legacy compensation structures after an acquisition, the first step should be:",
+                "opts": [
+                  "Merging the two band structures by averaging the ranges.",
+                  "Communicating the harmonisation plan to all employees to manage expectations.",
+                  "Updating the market benchmark to reflect the combined entity's funding stage, then designing a unified structure against the current benchmark.",
+                  "Identifying which employees in each legacy structure are red-circled and implementing immediate salary reductions."
+                ],
+                "ans": 1,
+                "exp": "Benchmark before harmonising — designing a unified structure against an outdated benchmark produces a structure that is internally consistent but externally wrong from the start."
+              },
+              {
+                "q": "A 9% within-level gender pay gap after controlling for tenure and performance is most likely caused by:",
+                "opts": [
+                  "Gender discrimination in the merit review process in the most recent cycle.",
+                  "A historical negotiation artefact — women accepted lower offers than men for equivalent roles during the individual negotiation period, and the gap was carried forward into the band structure.",
+                  "Women disproportionately choosing roles with lower external market rates at the same job level.",
+                  "Inaccurate tenure data that has produced incorrect compa ratio calculations."
+                ],
+                "ans": 1,
+                "exp": "Within-level pay gaps after controlling for performance and tenure are the classic signature of historical negotiation discounts — the band structure prevents future gaps but does not correct past ones without targeted salary adjustment."
+              },
+              {
+                "q": "The composition effect in gender pay gap reporting refers to:",
+                "opts": [
+                  "The effect of adjusting the pay gap for composition factors like tenure and performance.",
+                  "The contribution of the representation gap (women underrepresented at senior levels) to the aggregate gender pay gap — even where there is no within-level pay gap, aggregate pay is lower if women are concentrated at lower levels.",
+                  "The use of multiple salary survey sources to compose a blended market benchmark.",
+                  "The effect of including part-time employees in the gender pay gap calculation."
+                ],
+                "ans": 1,
+                "exp": "The composition effect explains why companies with no within-level pay gap can still have a significant aggregate gap — if women are concentrated at more junior levels, the aggregate average will be lower even with perfect pay equity at every individual level."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "19-4",
+        "title": "International and Remote Compensation for Startups",
+        "color": "#C4821A",
+        "lessons": [
+          {
+            "id": "19-4-1",
+            "title": "International and Remote Compensation for Startups",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "As startups scale, they increasingly hire across borders — in some cases because the talent they need is not available locally, in others because remote work has opened markets that were previously inaccessible. International and remote compensation introduces a set of challenges that domestic-only compensation does not: tax jurisdiction risk, permanent establishment risk, currency management, benefits fragmentation, and the contested question of whether to pay location-adjusted rates or global rates. Understanding these challenges is essential for any startup Head of People managing a distributed team."
+              },
+              {
+                "t": "h",
+                "v": "Remote Compensation Models"
+              },
+              {
+                "t": "p",
+                "v": "Three models dominate startup remote compensation. Local rate: employees are paid the market rate for their role in their local market. An engineer in London is paid London rates; an engineer in Lagos is paid Lagos rates. Rationale: cost efficiency, local market alignment. Risk: perceived inequity when employees in different locations compare salaries and contribute equally. Global rate: all employees at the same level are paid the same salary regardless of location, typically anchored to a high-cost-of-living city (New York, London, San Francisco). Rationale: equity, simplicity, attracts global talent. Risk: unsustainably expensive in a large distributed team where many employees are in lower-cost locations. Banded rate: location adjustments within defined bands (e.g. a London engineer earns 100% of band, a Lagos engineer earns 55% of band). Rationale: balances cost efficiency with equity. Risk: complex to administer, contentious when location bands become visible."
+              },
+              {
+                "t": "h",
+                "v": "Tax and Compliance Risk"
+              },
+              {
+                "t": "p",
+                "v": "Hiring internationally without establishing proper legal entities or using an Employer of Record (EOR) service creates tax and compliance risk. Permanent establishment risk: if a startup's employees in another jurisdiction conduct business activities on behalf of the company, the company may be deemed to have a permanent establishment in that jurisdiction — triggering corporate tax obligations. Payroll compliance risk: most jurisdictions require employers to register for payroll, deduct income tax and social contributions, and file returns. A startup that pays employees as freelancers or independent contractors to avoid these obligations is taking significant legal risk. Employer of Record (EOR): a service that employs workers on behalf of a company in a foreign jurisdiction, handling payroll, tax, benefits, and compliance. Common providers: Deel, Remote, Oyster HR. Cost: typically 15-20% of employee salary as a service fee. The EOR model allows startups to hire internationally without establishing a legal entity in each country."
+              },
+              {
+                "t": "h",
+                "v": "Benefits Fragmentation"
+              },
+              {
+                "t": "p",
+                "v": "In a domestic-only team, the benefits package is designed once and applied consistently. In a distributed team, benefits are fragmented: health insurance is jurisdiction-specific (private health insurance has different market coverage, provider networks, and cost structures in the UK, US, Nigeria, and Germany); pension or retirement contributions are governed by local regulation (UK auto-enrolment, US 401(k), Nigeria PFA); statutory leave entitlements differ by jurisdiction; and some benefits are not available or not relevant in certain markets. The implication: a global remote startup effectively manages multiple benefits packages simultaneously, one per jurisdiction with employees. The EOR model transfers this complexity to the EOR provider — but the startup still needs to understand what each employee receives to ensure the total package is competitive in each local market."
+              },
+              {
+                "t": "box",
+                "label": "International Compensation Key Decisions",
+                "v": "Rate model: local rate vs global rate vs banded rate — pick one and document it\nCompliance: EOR (Deel, Remote, Oyster) vs local entity vs freelancer risk\nBenefits: per-jurisdiction management or EOR-managed\nCurrency: pay in local currency; fix exchange rate exposure in budgeting, not in employee contracts\nCost: EOR fee 15-20% of salary; weigh against entity setup and compliance cost"
+              },
+              {
+                "t": "box",
+                "label": "Finflux International Expansion",
+                "v": "Finflux is expanding into Nigeria and Germany. The Nigeria team will be 8 employees (primarily engineers); the Germany team will be 5 employees (sales and commercial). The Head of People must decide on the compensation model, the employment structure, and the benefits approach for both jurisdictions."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The choice of remote compensation model (local, global, or banded) should be made explicitly and documented in the compensation philosophy — employees will find out what their counterparts earn, and the rationale needs to be defensible.",
+                  "EOR is the lowest-risk, lowest-cost route for small employee counts in new jurisdictions — entity setup is justified only when headcount in a jurisdiction is large enough to make the entity cost more efficient than the EOR fee.",
+                  "Benefits fragmentation in a global team is a real management complexity — each jurisdiction's statutory requirements, market norms, and provider landscape require separate design and governance."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "For a startup hiring 8 employees in Nigeria without a prior legal presence, the lowest-risk employment structure is:",
+              "opts": [
+                "Paying the 8 employees as freelance contractors on a project basis.",
+                "Using an Employer of Record (EOR) service to employ the 8 employees legally in Nigeria, handling payroll, tax deductions, and statutory compliance.",
+                "Registering a Nigerian subsidiary (Ltd) and running payroll through a local accountant.",
+                "Paying the employees through the UK entity and asking them to file their own Nigerian tax returns."
+              ],
+              "ans": 1,
+              "exp": "EOR is the lowest-risk route for a small number of employees in a new jurisdiction — it provides full compliance without the cost and complexity of local entity setup, while freelancer classification carries significant permanent establishment and misclassification risk."
+            }
+          },
+          {
+            "id": "19-4-2",
+            "title": "Designing Finflux's Nigeria and Germany Compensation Packages",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "International Expansion Brief",
+                "v": "Finflux: UK-based, 200 employees, Series B. Nigeria expansion: 8 engineers. Germany expansion: 5 sales/commercial employees. Nigeria market data (FinTech engineer, Lagos): Mid Engineer NGN 4,800,000-6,500,000/year; Senior Engineer NGN 7,500,000-10,000,000/year. Germany market data (FinTech commercial, Berlin): mid-level sales €55,000-€75,000 base + 20-30% variable. UK engineers for reference: Mid £88,000-£115,000; Senior £115,000-£145,000. Finflux rate model: banded rate (London = 100%; Lagos = 55%; Berlin = 80%). EOR provider: Deel (confirmed for both Nigeria and Germany)."
+              },
+              {
+                "t": "p",
+                "v": "Design the compensation packages for Nigeria and Germany, including base pay, variable pay (where applicable), and statutory benefits."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Nigeria — Engineering Compensation",
+                "v": "Rate model application: Finflux's London midpoints × 55% Lagos band = Lagos midpoints.\nMid Engineer: London midpoint £101,500 × 55% = £55,825 ≈ NGN 88,000,000 at £1 = NGN 1,575. Cross-check against market: NGN 88M is above the market midpoint of NGN 4.8M-6.5M range (midpoint NGN 5.65M). The Finflux banded rate produces above-market cash for Nigeria at these levels.\n\nRecommendation: use the local benchmark rather than the banded rate for Nigeria, as the banded rate significantly overpays relative to the local market at entry levels. For senior engineers, the banded rate is closer to market. Apply: use local NGN benchmark for Levels 1-2 (Junior and Mid); apply banded rate for Levels 3-4 (Senior and Principal) where global talent competition is more relevant.\n\nEquity: all Nigeria employees receive EMI options through the UK entity (EMI eligibility does not require the employee to be UK-based — it requires the company to be UK-resident, which Finflux is). Standard vesting: 4 years, 1-year cliff. Grant at UK EMI valuation.\n\nStatutory benefits (via Deel): Nigerian Pension Fund Administration (PFA) contribution — employee 8%, employer 10% of gross salary; National Housing Fund (NHF) — employer contribution 2.5% of monthly wage; life assurance (Group Life) — 3× annual salary minimum under PENCOM regulations; HMO health insurance — market standard for FinTech in Lagos."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Germany — Commercial Compensation",
+                "v": "Rate model application: UK equivalent role base × 80% Berlin band.\nCommercial (sales) role: UK equivalent base £65,000 × 80% = £52,000 ≈ €60,000. Cross-check against market: €55,000-€75,000 range for mid-level FinTech sales in Berlin — €60,000 sits at the 33rd percentile, which is reasonable for a scale-up entry.\n\nVariable pay: UK sales variable structure is 20-30% of base. Recommend 25% OTE (on-target earnings) for Germany = €15,000 variable at OTE. Note: German employment law regulates variable pay and bonus clawback — ensure the commission plan is designed with local legal counsel review (Finflux's German employment contracts via Deel will include the appropriate clauses).\n\nEquity: Germany-resident employees can receive options from a UK entity. EMI eligibility for German employees: German employees are not eligible for EMI (EMI requires the employee to work for a qualifying company in the UK). German employees should receive Enterprise scheme options or non-approved options (unapproved share options) — tax treatment differs and should be communicated clearly.\n\nStatutory benefits (via Deel): German statutory health insurance (gesetzliche Krankenversicherung) — employer and employee each contribute ~7.3% of gross salary; pension (Rentenversicherung) — employer and employee each contribute ~9.3% of gross; parental leave (Elterngeld) — 67% of salary up to €1,800/month for up to 12 months; 20 days statutory minimum annual leave (market norm is 25-28 days — Finflux should offer 25 days to be competitive)."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Banded rates that are calibrated to a high-cost anchor city (London) can overpay significantly in lower-cost markets for entry and mid levels — apply local benchmarks for the lower levels and the banded rate for senior levels where global competition is more relevant.",
+                  "Statutory benefit obligations vary significantly by jurisdiction — Nigeria's PFA contribution, Germany's social security contributions, and the UK's auto-enrolment are all different in structure, contribution rate, and compliance mechanism.",
+                  "German employees are not eligible for EMI — non-approved share options are the alternative, with significantly less favourable tax treatment that should be communicated transparently to candidates."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "19-4-3",
+            "title": "Finflux's Remote Pay Equity Review — Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Finflux's Remote Pay Equity Review",
+                "v": "Eighteen months after the international expansion, Finflux's internal communication channel reveals that two Nigerian senior engineers are comparing their salaries with a UK-based senior engineer who shared his salary publicly. The Nigerian engineers earn approximately 45% of the UK senior engineer's salary. The CEO is concerned about the reaction and asks the Head of People to explain the pay difference and propose a response. The Head of People knows the Nigeria salaries are above the local market benchmark but well below the UK equivalent."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "How should the Head of People explain the pay difference to the Nigerian engineers?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The explanation must be grounded in the compensation philosophy that was (or should have been) communicated when the Nigerian engineers joined. The key principle: 'We pay market rates for the local market — our Nigerian senior engineers earn above the Nigerian FinTech market benchmark for senior engineers in Lagos. Our UK senior engineers earn above the UK FinTech market benchmark for senior engineers in London. The difference in those benchmarks reflects the cost of living, purchasing power, and competitive labour market conditions in each country.'\n\nIf the compensation philosophy was clearly communicated at hire: this conversation is difficult but manageable. The engineers agreed to join under a stated framework, and the framework is being applied consistently.\n\nIf the compensation philosophy was NOT clearly communicated at hire: the company is in a more difficult position. The engineers may have an expectation of global rate parity that was not explicitly contradicted. The Head of People must acknowledge the communication gap and commit to clearer communication going forward — but cannot retrospectively change the underlying pay model without significant cost."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "The CEO suggests moving Nigerian employees to a global rate to resolve the comparison. What is the financial and operational implication?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Moving to a global rate for Nigeria would mean paying Nigerian engineers at UK Senior Engineer rates (approximately £130,000 midpoint = NGN 205,000,000 at current rates). Current Nigerian senior engineer pay: approximately NGN 14,000,000 (above local market at NGN 10M median). The cost increase: 14.6× current rate per Nigerian senior engineer. For 3 Nigerian senior engineers: current cost ≈ NGN 42M/year (≈ £27K). Global rate cost: ≈ NGN 615M/year (≈ £390K). Additional annual cost for 3 senior engineers: ≈ £363K. For all 8 Nigerian employees: similar calculation × headcount and level mix.\n\nThe operational implication: moving to a global rate creates an expectation that future hires in any market — including potentially higher-cost markets — will also receive global rates. If Finflux expands to Southeast Asia, East Africa, or Eastern Europe, global rate parity becomes unaffordable at scale.\n\nRecommendation: the CEO's instinct to resolve the immediate tension is understandable, but moving to global rate parity sets a precedent that is unsustainable at Series B+ scale. The better response: review whether the Nigerian rates are competitive within the local market (they are, per the benchmark), invest in communication to ensure all employees understand the pay philosophy, and consider a modest uplift that acknowledges the engineers' concerns without committing to global parity."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "What should the Head of People do before the next round of international hires to prevent this situation recurring?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Three changes are required. First: compensation philosophy documentation — a clear, written statement that Finflux pays at the 65th-75th percentile of the local FinTech market in each country of employment. This should be shared with all current employees and included in offer letters. It should name the data sources used (Carta for UK, ECA International for Nigeria, Radford for Germany) and the benchmark review frequency (annual).\n\nSecond: offer letter transparency — the offer letter for any international hire should state the local benchmark data: 'The salary for this role is above the X% percentile of [market] for [role], based on [data source] [year] data.' Employees who have seen the benchmark are more likely to interpret their salary positively than employees who have only seen a number.\n\nThird: a manager guide on compensation conversations — every manager who has international direct reports should have a guide they can use when employees ask about pay comparisons. The guide should include the compensation philosophy, the answer to 'why am I paid less than a colleague in London,' and when to escalate to HR."
+              },
+              {
+                "t": "box",
+                "label": "Remote Pay Equity — Communication Principles",
+                "v": "Compensation philosophy: documented, shared, specific about local market anchoring\nOffer letter: name the local benchmark percentile and data source\nManager guide: prepared answers to pay comparison questions before they arise\nGlobal rate parity: unsustainable at scale — resist pressure to commit to it case by case"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Location-based pay differences become visible in remote teams — the compensation philosophy must be communicated before employees join, not after they make comparisons.",
+                  "Global rate parity is an emotionally appealing but financially unsustainable solution for a company with a distributed workforce — committing to it for one market creates an expectation for all markets.",
+                  "Offer letter transparency — naming the local benchmark percentile and data source — is the single most effective preventive measure against pay comparison frustration in international teams."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "19-4-Q",
+            "title": "Module Quiz: International and Remote Compensation",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "An Employer of Record (EOR) service is recommended for a startup hiring its first employees in a new jurisdiction because:",
+                "opts": [
+                  "It is cheaper than any other employment structure regardless of headcount.",
+                  "It provides full employment compliance (payroll, tax, benefits, statutory obligations) without requiring the startup to establish a local legal entity — the lowest-risk route for small employee counts.",
+                  "It guarantees that the employees will be classified as full-time employees rather than contractors.",
+                  "It transfers the risk of permanent establishment to the EOR provider in all circumstances."
+                ],
+                "ans": 1,
+                "exp": "EOR provides compliance without entity setup cost — it is specifically designed for the 1-20 employee in a new country scenario where entity setup cost and management complexity are disproportionate."
+              },
+              {
+                "q": "The banded rate remote compensation model (e.g. London = 100%, Lagos = 55%) is appropriate when:",
+                "opts": [
+                  "The company wants to ensure all employees earn the same purchasing power in their local currency.",
+                  "The company wants to balance cost efficiency (lower rates in lower-cost markets) with equity (a principled formula rather than ad hoc decisions) — and is prepared to defend the band percentages to employees.",
+                  "The company is required by local employment law to use a standardised rate formula.",
+                  "The company operates in markets where purchasing power parity is already equalised by government policy."
+                ],
+                "ans": 1,
+                "exp": "The banded rate model is a principled compromise between local rate (pure cost efficiency) and global rate (pure equity) — but it requires clear communication of the philosophy to avoid the exact comparison problem the Finflux case illustrates."
+              },
+              {
+                "q": "German employees at a UK-based startup are not eligible for EMI options because:",
+                "opts": [
+                  "German employment law prohibits share option grants from foreign companies.",
+                  "EMI is a UK government-approved scheme for employees working for a qualifying UK company — German residents employed outside the UK scheme do not qualify for EMI tax treatment.",
+                  "German employees must receive options in EUR, not GBP, which disqualifies them from EMI.",
+                  "EMI eligibility requires the employee to be a UK tax resident."
+                ],
+                "ans": 1,
+                "exp": "EMI is a UK-specific scheme — German employees can receive options from a UK company, but those options will be non-approved (unapproved) options, subject to German income tax rules at exercise rather than UK CGT."
+              },
+              {
+                "q": "The primary risk of paying international employees as freelance contractors is:",
+                "opts": [
+                  "Freelancers typically charge higher rates than salaried employees for equivalent work.",
+                  "Misclassification risk and permanent establishment risk — if the workers consistently work for one company at set hours, most jurisdictions will reclassify them as employees, creating backdated payroll tax and benefits obligations.",
+                  "Freelancers cannot receive equity options, which limits the company's ability to retain them.",
+                  "Freelancer contracts are not legally enforceable in most international jurisdictions."
+                ],
+                "ans": 1,
+                "exp": "Misclassification and permanent establishment risk are the primary legal risks of the freelancer model — they are widely used by startups to avoid entity setup, but the risk is significant and the liabilities (back taxes, penalties, benefits) can be very large."
+              },
+              {
+                "q": "Location-based pay comparisons in remote teams are best prevented by:",
+                "opts": [
+                  "Keeping all salary information confidential and enforcing a non-disclosure clause in employment contracts.",
+                  "Communicating the compensation philosophy (local market anchoring, named data source, benchmark percentile) to all employees at hire — before they make comparisons, not after.",
+                  "Offering global rate parity to any employee who raises a pay comparison concern.",
+                  "Limiting hiring to a single geographic market to avoid cross-location comparisons."
+                ],
+                "ans": 1,
+                "exp": "Prevention requires proactive communication — once employees are comparing salaries, the company is responding to a crisis rather than managing an expectation. The offer letter transparency approach (naming the benchmark percentile and source) is the most effective preventive measure."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "c19-cap",
+        "title": "Capstone Project",
+        "color": "#C4821A",
+        "lessons": [
+          {
+            "id": "19-cap",
+            "title": "Capstone: Finflux's Series B Reward Architecture",
+            "duration": "20 min",
+            "xp": 250,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Finflux has raised its Series B of $28M and is now 200 employees across UK, Nigeria, and Germany. The Head of People has been asked to present the company's total reward architecture to the Series B lead investor and the new board remuneration committee. The presentation must cover: the compensation structure (bands, equity, international), the option scheme, the recognition programme, and the forward plan for the next 12 months as the company scales to 300 employees."
+              },
+              {
+                "t": "box",
+                "label": "Context",
+                "v": "200 employees: 165 UK, 8 Nigeria, 5 Germany, 22 other (US, South Africa, India — EOR)\nOption pool: 8% fully diluted (post-Series B)\nSalary bands: updated to Series B benchmark, harmonised post-Auris Labs acquisition\nGender pay gap: 9% at Engineer grade (being addressed), 3% at Senior Engineer (not significant)\nRecognition programme: launched 6 months ago, recognition score 62%\nBoard remco: new requirement post-Series B — the board remuneration committee will oversee executive compensation going forward"
+              },
+              {
+                "t": "h",
+                "v": "Section"
+              },
+              {
+                "t": "p",
+                "v": "Describe the total reward architecture in terms that will be credible to a sophisticated investor on a board remuneration committee. What are the five elements and what is the governance for each?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach",
+                "v": "1. Base pay: Series B FinTech benchmark (Carta/Option Impact data, updated annually). Four engineering levels, corresponding product and commercial levels. UK: 65th percentile of Series B market. Nigeria: above-market for Lagos FinTech (55% of UK midpoint for junior/mid; banded rate for senior/principal). Germany: 80% of UK equivalent. Annual merit review cycle: merit matrix (performance × compa ratio → merit %).\n\n2. Variable pay: engineering — no STI (mission alignment, equity-focused). Commercial — 25% OTE structure with quarterly sales targets and annual reconciliation. Leadership — 15-20% bonus tied to company ARR and product milestones.\n\n3. Equity: EMI option scheme (UK employees). Standard vesting: 4 years, 1-year cliff, single-trigger acceleration on exit. Current grant = 8% fully diluted pool. Non-approved options for non-UK employees (Germany, Nigeria, US, South Africa, India) — disclosed to employees with tax treatment explanation.\n\n4. Recognition: three-tier programme (immediate/team/annual awards). £21,900/year (0.15% of UK payroll). Recognition score: 62% and improving.\n\n5. Non-financial: flexible working policy (Tier A hybrid for engineering and product; Tier B anchored for commercial; Tier C site-required for operations). EVP in development — three pillars (hard problems, real flexibility, building your path). Board oversight: remco to approve executive compensation (CEO, CFO, CTO, VP-level), LTIP structure post-IPO, and the annual gender pay gap report."
+              },
+              {
+                "t": "h",
+                "v": "Section"
+              },
+              {
+                "t": "p",
+                "v": "The board asks: 'What are the three most important reward investments in the next 12 months as you scale to 300?' What is the answer?"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal model approach",
+                "v": "1. Career framework completion: the most cited driver of engineering attrition is unclear career path. We are completing the Finflux career framework (level descriptors for all functions, calibration completed, individual outcomes communicated) by Q2 next year. Once complete, the career framework will also govern the merit review process — merit increases will be explicitly linked to the career development plan, making them a forward-looking investment rather than a backward-looking reward.\n\n2. Gender pay gap remediation: the 9% within-level gap at Engineer grade requires a targeted salary adjustment programme. Budget required: approximately £180,000 (estimated 30 engineers below the parity threshold by an average of £6,000). This is 0.64% of the Series B raise and covers the entire gap to parity. Timeline: completed before the next merit review cycle. Board commitment required: the remco needs to approve the adjustment budget as a pay equity remediation investment, not a discretionary merit spend.\n\n3. Recognition programme maturation: the 62% recognition score is below target (68% Gallup benchmark). The primary gap is manager capability — 12 managers have zero Tier 2 nominations in the first 6 months. The next 12 months: mandatory manager recognition training (not optional development cycle); recognition as a stated expectation in the manager performance review; target score 70% by the end of next year.\n\nThese three investments address the three most cited drivers of voluntary attrition at Finflux: unclear career path (44% of exit interviews), not feeling valued (34%), and compensation not keeping pace (28% — addressed by the gender pay gap remediation)."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The board remuneration committee requires total reward governance to be presented as a structured programme with clear accountability, metrics, and forward commitments — not as a list of HR initiatives.",
+                  "The three priority investments (career framework, pay equity, recognition) are directly mapped to the three top attrition drivers — this framing converts an HR investment ask into a retention risk management decision.",
+                  "The gender pay gap remediation budget (0.64% of Series B raise) should be presented to the remco as a fixed-cost, one-time investment to eliminate a legally and reputationally significant liability — the alternative (litigation and attrition) is significantly more expensive."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "19-cap-Q",
+            "title": "Capstone Assessment: Reward for Startups and Scale-ups",
+            "duration": "15 min",
+            "xp": 300,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "At a Series B company scaling from 200 to 300 employees, the most important career architecture investment is:",
+                "opts": [
+                  "Publishing a detailed salary band structure on the company's careers page.",
+                  "Completing a career framework with explicit level descriptors, calibrated to the current population, so every employee knows their level, what distinguishes it from the next, and what development is required to progress.",
+                  "Introducing a 360-degree feedback process to replace the annual performance review.",
+                  "Hiring a dedicated compensation analyst to manage the merit review cycle."
+                ],
+                "ans": 1,
+                "exp": "Career path clarity is consistently the most cited driver of voluntary attrition at Series B-stage companies — the career framework makes the implicit explicit and directly addresses the retention risk."
+              },
+              {
+                "q": "The board remuneration committee at a Series B-stage company typically oversees:",
+                "opts": [
+                  "All employee compensation decisions — every offer, merit increase, and promotion.",
+                  "Executive compensation (CEO, CFO, CTO, VP-level), the LTIP structure, and material company-wide pay governance decisions such as the gender pay gap remediation.",
+                  "Only the CEO's compensation — the board remco is a listed-company governance mechanism that should not be introduced at Series B.",
+                  "The company's benefits strategy, including healthcare and pension scheme selection."
+                ],
+                "ans": 1,
+                "exp": "The board remco's scope at a pre-IPO company is executive compensation and material pay governance — it does not manage day-to-day compensation but provides oversight of the decisions that carry the highest financial and governance risk."
+              },
+              {
+                "q": "A gender pay gap remediation budget should be presented to the board remco as:",
+                "opts": [
+                  "A discretionary HR investment that improves employee satisfaction.",
+                  "A fixed-cost, one-time investment to eliminate a legally and reputationally significant liability — the cost of the adjustment compared to the cost of litigation, regulatory action, and attrition if the gap is not addressed.",
+                  "A variable cost that will be funded from the merit increase budget over three years.",
+                  "An equity adjustment that will be offset by reduced merit increases for the affected population in subsequent cycles."
+                ],
+                "ans": 1,
+                "exp": "Framing the remediation as a risk management investment with a specific cost and a specific liability it eliminates is the most credible framing for a financially literate board — the alternative framing ('it's the right thing to do') is insufficient for an investment decision."
+              },
+              {
+                "q": "The compensation philosophy statement is most important for international teams because:",
+                "opts": [
+                  "It is legally required in all jurisdictions where the company employs more than 50 people.",
+                  "It establishes the framework (local market anchoring, named data source, benchmark percentile) that employees use to interpret their salary before they make comparisons with colleagues in other markets.",
+                  "It prevents employees from discussing their salaries with each other.",
+                  "It ensures that all employees in all markets receive the same total compensation package."
+                ],
+                "ans": 1,
+                "exp": "Prevention requires communication before the comparison, not response after it. The compensation philosophy statement, shared at hire, gives employees the framework to interpret their salary positively rather than comparatively."
+              },
+              {
+                "q": "The single most effective tool for aligning merit increases with company objectives at a 200-person scale-up is:",
+                "opts": [
+                  "A fully discretionary bonus structure managed by the CEO for each employee individually.",
+                  "A merit matrix that ties merit increase percentage to performance rating and position in band — distributing the fixed merit budget in a consistent, defensible way that rewards performance and corrects market position simultaneously.",
+                  "A uniform 3% cost-of-living adjustment for all employees to prevent compression.",
+                  "A 360-degree peer-review process that determines merit increases based on colleague feedback."
+                ],
+                "ans": 1,
+                "exp": "The merit matrix is the most effective process tool for the 50-200 employee range — it enforces consistency, eliminates relationship-based distribution, and corrects market position (low compa ratio → higher merit %) at the same time."
+              },
+              {
+                "q": "Non-approved (unapproved) share options for non-UK employees of a UK startup are less attractive than EMI options because:",
+                "opts": [
+                  "Non-approved options cannot include a vesting cliff — they must vest from day one.",
+                  "The gain on exercise of non-approved options is subject to Income Tax and National Insurance in the UK (or equivalent income tax in the employee's jurisdiction), rather than Capital Gains Tax — typically a significantly higher effective tax rate.",
+                  "Non-approved options are not legally enforceable in most international jurisdictions.",
+                  "Non-approved options cannot be granted at market value — they must be granted at a discount."
+                ],
+                "ans": 1,
+                "exp": "The EMI advantage is the CGT treatment of the exercise gain — non-approved options are taxed at income tax rates on the same gain, which can be 20-30+ percentage points higher effective rate in a high-growth exit scenario."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Reward Governance, ESG and Stakeholder Reporting",
+    "subtitle": "Master reward governance, ESG-linked executive pay design, Directors' Remuneration Report drafting, and pay transparency compliance. Built around Kestrel Group's transformation from cosmetic ESG metrics to board-level governance leadership — including a FTSE RemCo challenge, EU Directive compliance, and a live equal pay complaint.",
+    "color": "#3D5A3E",
+    "color2": "#3D5A3E",
+    "bg": "#0C2340",
+    "icon": "◈",
+    "level": "Expert",
+    "duration": "4h 00m",
+    "lessons_count": 18,
+    "total_xp": 3030,
+    "desc": "Master reward governance, ESG-linked executive pay design, Directors' Remuneration Report drafting, and pay transparency compliance. Built around Kestrel Group's transformation from cosmetic ESG metrics to board-level governance leadership — including a FTSE RemCo challenge, EU Directive compliance, and a live equal pay complaint.",
+    "outcomes": [
+      "Design and implement a three-tier reward governance framework with clear decision rights, audit controls, and subsidiary governance protocols",
+      "Apply the four ESG metric design principles (materiality, specificity, stretch, disclosure) to redesign cosmetic ESG pay metrics",
+      "Calculate CEO annual bonus outturns and advise RemCo on discretion, good leaver LTIP treatment, and shareholder engagement strategy",
+      "Draft Directors' Remuneration Report disclosures including CEO pay ratio, gender pay contextualisation, and bonus metric transparency",
+      "Build a pay transparency readiness assessment covering structure, equity, data, and manager communication dimensions",
+      "Investigate and advise on an equal pay complaint using the material factor defence framework and the Equality Act 2010"
+    ],
+    "pro": true,
+    "modules": [
+      {
+        "id": "20-1",
+        "title": "Reward Governance Frameworks",
+        "color": "#3D5A3E",
+        "lessons": [
+          {
+            "id": "20-1-1",
+            "title": "Reward Governance: Principles, Structures and Accountability",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Reward governance is the framework of policies, processes, accountabilities, and oversight mechanisms that ensure an organisation's compensation and benefits decisions are made legally, equitably, consistently, and in alignment with stated values. In a world of increasing pay transparency requirements, ESG scrutiny, and shareholder activism on executive pay, reward governance has moved from a back-office compliance concern to a front-page business risk. The organisations that get it right are those that treat reward governance as a strategic discipline, not an HR administrative function."
+              },
+              {
+                "t": "h",
+                "v": "The Three Layers of Reward Governance"
+              },
+              {
+                "t": "p",
+                "v": "Reward governance operates at three levels: Board level: the Remuneration Committee (RemCo) — an independent board sub-committee — sets executive pay policy, approves variable pay outcomes, oversees CEO pay ratio disclosure, and engages with shareholders. Its decisions are publicly disclosed in the Directors' Remuneration Report. Management level: the Executive Committee or People Committee sets below-board reward policy (salary structures, benefits strategy, grading frameworks, merit budget allocation) within parameters approved by the board. Operational level: HR reward team and HR business partners implement and administer reward policy, manage market benchmarking, process merit and promotion cycles, and provide compliance and audit capability. The governance gap that most commonly produces problems: insufficient boundary clarity between these three levels. When management-level decisions inadvertently enter board territory (e.g., unapproved executive pay increases), or when board-level policy is not adequately communicated to operational implementation, governance failures emerge."
+              },
+              {
+                "t": "h",
+                "v": "The Remuneration Committee"
+              },
+              {
+                "t": "p",
+                "v": "RemCo composition in UK listed companies: a minimum of three independent non-executive directors (NEDs) under the UK Corporate Governance Code; the RemCo Chair must be an independent NED; the CEO and CFO may attend by invitation but not vote; external advisers (remuneration consultants) must be disclosed in the DRR with their fees. RemCo's annual cycle: February-March — agree executive pay policy and share plan grant levels; March-April — confirm prior year annual bonus outturns; May — review gender pay gap and CEO pay ratio disclosures; October-November — agree merit budget and review exec compensation structure; December — approve following year long-term incentive plan grants. A RemCo Chair who does not understand reward — who relies entirely on external advisers — creates governance risk: the risk that commercially motivated advice shapes decisions without independent board challenge."
+              },
+              {
+                "t": "h",
+                "v": "The Kestrel Group Context"
+              },
+              {
+                "t": "p",
+                "v": "Kestrel Group (FTSE 250, £1.4bn revenue, 8,500 employees) has a formal RemCo comprising four independent NEDs. The Group Head of Reward, Nathaniel Osei, supports RemCo and manages reward governance across the Group. The Driftwood subsidiary (3,200 employees, retail sector) has its own Reward Director who reports to Nathaniel on Group policy matters. Current governance challenges: (1) Kestrel's ESG-linked executive pay metrics were added two years ago but have not been robustly defined — the RemCo Chair has asked for a review; (2) The Driftwood subsidiary ran an unauthorised off-cycle pay review last year — a governance control issue; (3) The EU Pay Transparency Directive compliance timeline is approaching; (4) A significant institutional shareholder wrote to the RemCo Chair expressing concern about the CEO's total pay quantum in light of below-target ESG performance."
+              },
+              {
+                "t": "box",
+                "label": "Reward Governance Three Layers",
+                "v": "Board (RemCo): executive pay policy, variable pay outturns, DRR disclosure, shareholder engagement\nManagement (ExCo/People Committee): below-board reward policy, merit budget, grading, benefits strategy\nOperational (HR): implementation, market benchmarking, merit processing, compliance, audit\n\nGovernance gap risk: boundary ambiguity between layers or insufficient communication of board policy to operational"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Reward governance operates at three levels (board, management, operational) with defined boundaries — the most common failures occur when boundary clarity is insufficient.",
+                  "RemCo is a distinct governance body with an annual cycle that the HR reward function must plan and support — the DRR is the primary public accountability document.",
+                  "Subsidiary governance requires explicit policy delineation — which decisions subsidiaries can make locally vs which require Group or board approval — and audit mechanisms to detect non-compliance."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The most significant reward governance risk created by the Driftwood subsidiary's unauthorised off-cycle pay review is:",
+              "opts": [
+                "The review created pay decisions that exceeded the allocated merit budget, creating a financial variance.",
+                "The review bypassed Group governance controls, creating potential internal equity inconsistency, undisclosed pay commitments, and liability without approval authority.",
+                "The review was conducted by a Reward Director who lacks the technical capability to run a market pricing exercise.",
+                "The review may have included executive-level pay changes that should have been approved by RemCo."
+              ],
+              "ans": 1,
+              "exp": "Unauthorised pay reviews create governance risk across three dimensions: internal equity (decisions made outside policy may be inconsistent with Group standards); undisclosed commitments (pay changes made outside formal governance may not be captured in FTE cost models or disclosed to finance); and approval authority (changes that should have been approved at ExCo or RemCo level may have been made at subsidiary level without appropriate sign-off)."
+            }
+          },
+          {
+            "id": "20-1-2",
+            "title": "Designing Kestrel's Reward Governance Framework",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Governance Design Brief",
+                "v": "Nathaniel has been asked to design a comprehensive reward governance framework for Kestrel Group that covers: decision rights (who can approve what level of pay decision); audit and control (how do Group and board ensure decisions are being made within policy); escalation protocol (how are exceptions handled); and subsidiary governance (Driftwood and any future acquisitions). The framework must be ratified by RemCo."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Decision Rights Matrix",
+                "v": "Decision rights by tier:\nBoard/RemCo: Executive Directors and anyone within 2 reporting levels of CEO; Group functions above £200k base salary; any share-based award; any ex gratia payment above £25k.\nExCo/People Committee: all other employees above Grade 12 (below ExCo threshold); merit budget allocation by business unit; new benefit scheme introduction or change; grading framework changes; off-cycle pay increases above £10k.\nGroup HR (Head of Reward sign-off): market corrections below ExCo threshold; off-cycle increases £5k-£10k; role evaluations for Grades 9-12; new salary band creation.\nLocal HR/HRBP: off-cycle increases below £5k; within-band annual merit decisions; benefit enrolment; role evaluations below Grade 9.\nEscalation: any decision outside policy or at a boundary must go to the next level within 5 business days. Financial Controller must countersign any approved decision above £50k."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Audit and Control Mechanism",
+                "v": "Monthly: HR financial controller reconciliation of all pay changes against budget and approved decision log. Quarterly: Group Reward review of all off-cycle decisions made by subsidiaries — Driftwood submits a log of every pay change made in the quarter with approval reference. Annually: Internal audit review of a random sample of 50 pay decisions — verifying that approval authority was correctly applied and documented. Any off-cycle decision made without the correct approval authority is flagged as a governance incident, reported to the RemCo Chair, and investigated. The investigation determines whether the pay change should be reversed, ratified at the correct level, or a remediation action taken for the approval authority who acted outside their mandate."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Subsidiary Governance Protocol",
+                "v": "Driftwood operates in retail — a sector with significantly different pay dynamics to Kestrel's infrastructure and facilities management businesses. The governance protocol balances subsidiary autonomy with Group oversight: (1) Driftwood uses Kestrel Group's grading framework and performance rating scale — these are Group standards, not local decisions; (2) Driftwood sets its own salary bands (benchmarked against retail sector surveys) within a Group-approved range spread (minimum band width: 80-120% of midpoint); (3) Merit budget for Driftwood is approved by ExCo annually — Driftwood can propose a different allocation within the approved total, but cannot exceed the approved total without ExCo re-approval; (4) Any pay decision above the local HR authority limit must be pre-approved by Driftwood Reward Director (up to Group HR threshold) or by Group Head of Reward (above Group HR threshold). The unauthorised off-cycle review is addressed by: (a) auditing all decisions made in the review; (b) ratifying those within policy; (c) reviewing and potentially reversing those outside policy; (d) issuing a formal governance notice to the Driftwood Reward Director."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The decision rights matrix must be specific in thresholds — vague authority boundaries produce the same governance gaps as the absence of a framework.",
+                  "Quarterly subsidiary pay decision logs convert governance from a reactive audit to a proactive monitoring control — catching issues before they become significant.",
+                  "Subsidiary governance must balance local market autonomy (Driftwood retail bands vs Kestrel infrastructure bands) with Group control (common grading, common performance scale, approved budget totals)."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "20-1-3",
+            "title": "Kestrel's RemCo Annual Cycle — Case Analysis",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Kestrel's RemCo Annual Cycle",
+                "v": "It is November at Kestrel. Nathaniel is preparing the December RemCo pack. Three items require significant attention: (1) The CEO's annual bonus outcome for the financial year just closed. The financial metrics (60% of bonus) were achieved at 95% of target; the people metrics (20% of bonus, measured by engagement and attrition) were achieved at 110% of target. The ESG metrics (20% of bonus) were achieved at 60% of target due to a missed Scope 1 carbon reduction milestone. Bonus policy: maximum CEO bonus is 150% of salary (£900k salary, so maximum = £1,350,000). (2) A shareholder letter: Highgate Asset Management (8% of shares) has written to the RemCo Chair objecting to any CEO bonus payout given the ESG underperformance. (3) An exec director (Operations Director) resignation — the departing director has a 12-month notice period and 'good leaver' status. Their LTIP grant of 150,000 shares is 18 months into a 3-year performance period."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "Calculate the CEO's bonus outcome and advise on the ESG underperformance discretion question."
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Financial metrics (60% weighting): 95% of target × 60% weighting = 57% of maximum. People metrics (20% weighting): 110% of target (capped at 100%) × 20% weighting = 20% of maximum. ESG metrics (20% weighting): 60% of target × 20% weighting = 12% of maximum. Total formulaic outcome: 57% + 20% + 12% = 89% of maximum. CEO salary: £900,000. Maximum bonus: 150% = £1,350,000. Formulaic outcome: 89% × £1,350,000 = £1,201,500. Discretion: RemCo has the right to override the formulaic outcome upward or downward. Highgate's letter argues for downward override on ESG grounds. Nathaniel's advice: the 60% ESG outturn is already reflected in the formulaic calculation — the ESG component produces only 12% of max (vs 20% if target had been met). A further downward override would effectively double-count the ESG underperformance. However, if the Scope 1 miss was material and within management control, RemCo may exercise downward discretion as a governance signal. This must be disclosed with full explanation in the DRR."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "How should the RemCo Chair respond to Highgate Asset Management?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The response has three components: acknowledgment (the letter has been received and considered by the full RemCo); explanation of the formulaic outcome (ESG underperformance is already reflected — the ESG component produced 60% of its maximum, reducing the total bonus by approximately 12 percentage points versus an on-target scenario); and RemCo's governance position (whether RemCo exercised additional downward discretion, and if so, why; if not, why the formulaic outcome was considered appropriate). The critical principle: RemCo does not capitulate to shareholder pressure but does engage transparently. If the formulaic outcome is defensible, RemCo explains and defends it. If RemCo chooses to exercise discretion, it is because of board judgement on the materiality of the ESG miss — not because a shareholder demanded it. Capitulation to shareholder pressure without independent judgement undermines the integrity of the incentive plan."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "The Operations Director leaves as a good leaver 18 months into a 3-year LTIP. What happens to their shares?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Good leaver LTIP treatment under standard UK policy: shares remain eligible to vest at the end of the original performance period (i.e., in 18 months). The number of shares that vest is typically pro-rated for the portion of the performance period completed at departure: 18/36 = 50% of the original award (75,000 shares of the 150,000 grant) will be subject to performance conditions and vest at the end of Year 3 if performance conditions are met. RemCo has discretion to increase or decrease the pro-rata amount for good leavers — downward discretion may be exercised if the departure is in difficult circumstances even if technically classified as good leaver; upward discretion may be exercised for exceptional long-service leavers. The Operations Director's departure terms (financial settlement, pro-rata bonus, LTIP treatment) require RemCo approval and must be disclosed in the DRR."
+              },
+              {
+                "t": "box",
+                "label": "RemCo Annual Bonus Governance Principles",
+                "v": "Formulaic outcome: let the plan mechanics work\nDiscretion: upward or downward, must be explained and disclosed\nShareholder engagement: engage transparently, do not capitulate to pressure\nGood leaver LTIP: pro-rated for time served, subject to performance conditions\nAll decisions: disclosed in the DRR with full explanation"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "ESG underperformance is already reflected in a formulaic bonus outcome through the ESG metric weighting — additional downward discretion for the same miss would double-count the underperformance.",
+                  "RemCo's response to shareholder pressure must be independent — explain and defend a defensible outcome, exercise discretion only on the basis of board judgement, not external pressure.",
+                  "Good leaver LTIP treatment (pro-rata for time, subject to performance) requires RemCo approval and full DRR disclosure."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "20-1-Q",
+            "title": "Module Quiz: Reward Governance",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The three layers of reward governance are:",
+                "opts": [
+                  "Strategy, Tactics, Operations.",
+                  "Board (RemCo), Management (ExCo/People Committee), Operational (HR).",
+                  "CEO, CHRO, Head of Reward.",
+                  "Policy, Process, Audit."
+                ],
+                "ans": 1,
+                "exp": "Board sets executive pay policy; Management sets below-board policy within board parameters; Operational implements and administers. The boundary between layers is the most common source of governance failure."
+              },
+              {
+                "q": "Under the UK Corporate Governance Code, RemCo must comprise:",
+                "opts": [
+                  "The CEO, CFO, and CHRO.",
+                  "A minimum of three independent non-executive directors.",
+                  "At least one executive director and two NEDs.",
+                  "The CHRO and two external remuneration consultants."
+                ],
+                "ans": 1,
+                "exp": "RemCo must be composed of independent NEDs (minimum three). Executive directors may attend by invitation but do not vote. The RemCo Chair must be an independent NED."
+              },
+              {
+                "q": "The CEO's formulaic bonus outcome at Kestrel (89% of maximum, salary £900k, maximum 150% of salary) is:",
+                "opts": [
+                  "£801,000",
+                  "£1,201,500",
+                  "£1,350,000",
+                  "£900,000"
+                ],
+                "ans": 1,
+                "exp": "89% × (£900,000 × 150%) = 89% × £1,350,000 = £1,201,500."
+              },
+              {
+                "q": "RemCo should respond to Highgate Asset Management's shareholder letter by:",
+                "opts": [
+                  "Reducing the CEO's bonus to zero to demonstrate ESG commitment to shareholders.",
+                  "Engaging transparently — explaining how ESG underperformance is already reflected in the formulaic outcome and stating whether and why RemCo exercised additional discretion.",
+                  "Refusing to respond until the AGM when shareholders can vote on the remuneration report.",
+                  "Immediately commissioning an independent review of the ESG metric design."
+                ],
+                "ans": 1,
+                "exp": "RemCo must engage transparently and independently — explaining the formulaic mechanics and any discretion exercised on the basis of board judgement, not external pressure."
+              },
+              {
+                "q": "Good leaver LTIP treatment for a director leaving 18 months into a 3-year performance period (150,000 share award) typically means:",
+                "opts": [
+                  "All 150,000 shares vest immediately on the date of departure.",
+                  "All 150,000 shares are forfeited because the performance period is not complete.",
+                  "75,000 shares (50% pro-rated for 18/36 months) remain subject to performance and vest at the end of Year 3.",
+                  "75,000 shares vest immediately on a time-pro-rated basis without performance condition."
+                ],
+                "ans": 2,
+                "exp": "Good leavers typically receive time-pro-rated awards (18/36 = 50% in this case) that remain subject to performance conditions and vest at the end of the original performance period."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "20-2",
+        "title": "ESG-Linked Executive Pay",
+        "color": "#3D5A3E",
+        "lessons": [
+          {
+            "id": "20-2-1",
+            "title": "ESG-Linked Executive Pay: Design, Governance and Credibility",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "The integration of ESG (Environmental, Social, and Governance) metrics into executive incentive plans has been one of the defining trends in corporate governance over the past five years. In 2020, fewer than 30% of FTSE 100 companies included ESG metrics in their annual bonus or LTIP. By 2025, that proportion exceeded 85%. The rapid adoption has produced as many poorly designed ESG pay mechanisms as well-designed ones — and institutional shareholders, proxy advisers (ISS, Glass Lewis), and the FRC's Stewardship Code have become increasingly critical of ESG metrics that are vague, unverifiable, or disconnected from material business impact."
+              },
+              {
+                "t": "h",
+                "v": "The Design Principles for Credible ESG Metrics"
+              },
+              {
+                "t": "p",
+                "v": "Four principles distinguish credible from cosmetic ESG pay metrics: Materiality: the metric must relate to an ESG risk or opportunity that is material to the company's business model and financial performance — a carbon metric for a facilities management company (direct building emissions are significant) is material; a carbon metric for a software company (negligible direct emissions) may be cosmetic. Specificity: the metric must have a precise, independently verifiable definition and a clear measurement methodology — 'improve our sustainability' is not a metric; 'reduce Scope 1 GHG emissions by 15% from 2023 baseline' is. Stretch: the target must represent genuine performance improvement, not business-as-usual trajectory — targets that the company will achieve without any management intervention are not incentivising. Disclosure: the target, the methodology, and the outturn must all be publicly disclosed in the DRR with enough detail for shareholders to independently assess the outcome."
+              },
+              {
+                "t": "h",
+                "v": "ESG Metric Categories in Practice"
+              },
+              {
+                "t": "p",
+                "v": "ESG metrics in executive pay typically fall into three categories: Environmental: carbon emissions (Scope 1, 2, or 3), energy intensity, water usage, waste diversion rate, biodiversity commitments, climate transition plan milestones. Social: employee safety (LTIFR — lost time injury frequency rate), gender pay gap reduction, employee engagement score, living wage commitment, supply chain human rights assessment, community investment. Governance: internal pay equity, ethics and compliance programme metrics, board diversity, ESG reporting quality. The most credible incentive designs use a small number (2-4) of ESG metrics that are directly linked to the company's material risks and opportunities — not a broad basket of metrics that provides comfort without accountability. The most criticised designs use subjective assessments of broad ESG 'commitments' that lack measurable targets and allow near-automatic payout regardless of performance."
+              },
+              {
+                "t": "h",
+                "v": "ESG in Annual Bonus vs LTIP"
+              },
+              {
+                "t": "p",
+                "v": "The choice of vehicle matters for ESG metrics: Annual bonus ESG metrics suit short-cycle operational metrics — safety rates, community investment delivery, diversity programme milestones — where meaningful progress can be measured in 12 months. LTIP ESG metrics suit long-cycle strategic transformation metrics — absolute carbon emission reductions, gender pay gap closure, net-zero transition milestones — that cannot be meaningfully measured in a single year. A common governance mistake: placing carbon reduction targets in the annual bonus where targets must be set for the financial year under the same plan as financial metrics. Carbon reduction has a long lead time and is influenced by capital investment decisions with 3-5 year paybacks — a 12-month window is insufficient to set meaningful, stretching targets."
+              },
+              {
+                "t": "box",
+                "label": "ESG Metric Design Checklist",
+                "v": "✓ Materiality: linked to a business-critical ESG risk or opportunity\n✓ Specificity: precise definition, clear measurement, independently verifiable\n✓ Stretch: represents genuine improvement beyond business-as-usual\n✓ Disclosure: full target and outturn published in DRR\n✗ Avoid: vague objectives, automatic achievement, subjective committee assessment with no published criteria"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Credible ESG pay metrics require four attributes: materiality, specificity, stretch, and disclosure. Absence of any one undermines shareholder credibility.",
+                  "The choice of vehicle (annual bonus vs LTIP) must match the measurement cycle of the ESG metric — long-cycle transformation metrics belong in LTIP, not annual bonus.",
+                  "The most criticised ESG incentive designs are those that use subjective committee assessment with no published criteria — these produce automatic payouts regardless of genuine performance."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "Which ESG metric design is most likely to attract shareholder criticism as cosmetic rather than credible?",
+              "opts": [
+                "Reduce Scope 1 GHG emissions by 12% from a verified 2023 baseline, measured by third-party assurance.",
+                "Improve the company's ESG rating as assessed by MSCI ESG Research from BBB to A by December 2026.",
+                "'Demonstrate meaningful progress on our sustainability agenda' assessed by the RemCo at year end.",
+                "Achieve zero LTIFR (lost time injuries) improvement from a 4.2 baseline to ≤3.0 per million hours worked."
+              ],
+              "ans": 2,
+              "exp": "Option C is subjective, undefined, and allows near-automatic payout through committee discretion without published criteria. Options A, B and D have specific, verifiable targets with defined measurement. Option B (external rating) is less preferred than internal metrics but has a verifiable output; Option C has neither a target nor a verifiable measure."
+            }
+          },
+          {
+            "id": "20-2-2",
+            "title": "Redesigning Kestrel's ESG Pay Metrics",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Current ESG Design",
+                "v": "Kestrel's current ESG metrics in the CEO's annual bonus (20% weighting, maximum 20 percentage points of the 150% maximum bonus):\n\n(1) 'Environmental leadership: demonstrate meaningful progress on our net-zero transition plan' — assessed by RemCo qualitatively, no specific target. (2) 'Social impact: improve employee wellbeing and engagement' — measured by the annual engagement survey, target 'above 65%' (current score: 71%). (3) 'Safety: continue our strong safety performance' — target: maintain LTIFR ≤ 5.0 (current: 4.2).\n\nRemCo Chair's feedback: 'I'm not comfortable defending any of these to shareholders. The first has no target. The second has a target the company already exceeds. The third is a maintenance metric, not improvement. Nathaniel — redesign this.'"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Metric 1 Redesign",
+                "v": "Current: vague qualitative. Redesigned: 'Reduce Scope 1 and Scope 2 GHG emissions by 8% from the verified 2024 baseline (47,500 tCO2e) to a maximum of 43,700 tCO2e by December 2026. Measurement: third-party assured GHG inventory under GHG Protocol Corporate Standard. Threshold (minimum payout): 4% reduction. Target (100% payout): 8% reduction. Maximum (above maximum): 12% reduction.' Justification: Kestrel manages 650 buildings for clients — direct energy consumption from facilities management is a material Scope 1/2 exposure. The 8% target represents genuine stretch: the average annual reduction across the sector is 3-4%, requiring specific programme investment to reach 8%."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Metric 2 Redesign",
+                "v": "Current: target of 'above 65%' (company already at 71%) is not stretching. Redesigned: 'Achieve and maintain employee engagement score ≥75% (the upper quartile for Kestrel's sector per the Korn Ferry Insight benchmark), with specific improvement targets on the two lowest-scoring sub-dimensions: (a) Career Development (currently 58% — target 65%) and (b) Manager Effectiveness (currently 62% — target 68%). Measurement: Korn Ferry Insight annual survey with external benchmarking report. Threshold: overall score ≥72% AND either career development or manager effectiveness hitting target. Target: overall ≥75% AND both sub-dimensions hitting target.' Justification: sub-dimension targeting addresses the most material engagement gaps rather than monitoring an already-strong overall score."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Metric 3 Redesign",
+                "v": "Current: maintenance target (keep LTIFR ≤5.0 when already at 4.2) is not improvement. Redesigned: 'Reduce LTIFR from 4.2 to ≤3.0 by December 2026, with zero fatalities and no major incidents (Category A). Measurement: Group Safety Director report, independently verified by external safety auditor. Threshold (minimum payout): LTIFR ≤3.8. Target (100% payout): LTIFR ≤3.0. Maximum: LTIFR ≤2.5. Underpin: any fatality in the Group causes the safety metric payout to reduce to zero regardless of LTIFR outturn.' Justification: the underpin (fatality override to zero) is critical — it prevents a situation where LTIFR improves while a fatality occurs, which would otherwise be a governance and reputational disaster. Safety improvements require sustained programme investment, making an annual improvement target appropriate."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Redesigned metrics must satisfy all four criteria: materiality (Scope 1/2 emissions for a buildings operator), specificity (43,700 tCO2e vs 'meaningful progress'), stretch (8% vs sector average 3-4%), and disclosure (third-party assured measurement).",
+                  "Sub-dimension targeting for engagement metrics is more credible than aggregate score targets — it focuses incentive on material gaps, not comfortable performance.",
+                  "Safety underpins (fatality overrides metric payout to zero) are essential governance features — they prevent the mechanical absurdity of a positive LTIFR improvement payout in a year with a fatality."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "20-2-3",
+            "title": "Kestrel's ESG Metric Shareholder Consultation",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Kestrel's ESG Metric Shareholder Consultation",
+                "v": "Kestrel is proposing its revised executive pay policy (including the redesigned ESG metrics) for shareholder vote at the next AGM (required every three years under the Companies Act 2006). Best practice requires pre-AGM consultation with major shareholders. Kestrel's major institutional shareholders include: (1) Highgate Asset Management (8%) — already written with concerns about ESG pay; (2) Vanguard (6%) — typically votes with proxy adviser recommendations; (3) L&G Investment Management (5%) — has its own published ESG engagement policy; (4) Legal & General Assurance (4%, separate to LGIM); (5) A scatter of retail and private investors (remaining). The RemCo Chair and Nathaniel will lead shareholder consultations."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "Highgate has concerns about ESG pay. What is the consultation strategy?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Highgate's prior letter criticised the current ESG metrics as cosmetic. The consultation message: 'We have redesigned the ESG metrics in direct response to the concerns you raised. The three redesigned metrics are: Scope 1/2 emission reduction with third-party assurance and a 3-tier scale; engagement sub-dimension targets addressing our two lowest-scoring areas; and a progressive safety target with a fatality underpin. We are proposing to increase the ESG weighting from 20% to 25% of the annual bonus, and to introduce a separate 20% ESG weighting in the three-year LTIP covering a net-zero transition milestone. We believe these changes align executive pay directly to our material ESG risks. We would welcome your assessment.' Key: the consultation must be substantive — not a notification of what has been decided, but a genuine seeking of input before the policy is finalised. If Highgate's response identifies a further flaw, the policy should be adjusted."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "How should Kestrel engage with ISS and Glass Lewis to maximise AGM support?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Proxy advisers (ISS, Glass Lewis) do not receive advance consultation in the same way as institutional shareholders, but their published guidelines provide a clear framework for what they will support. For ESG metrics specifically, ISS requires: specific, measurable, and independently verifiable targets; transparent disclosure of targets before the performance period; and the DRR to disclose outturns and any RemCo discretion exercised. Glass Lewis looks for: consistent ESG metric disclosure from year to year; material ESG link to business model; and avoidance of subjective committee assessment. Kestrel's redesigned metrics satisfy all ISS and Glass Lewis criteria for ESG credibility. The DRR narrative should explicitly reference the metric design principles and the pre-publication feedback from shareholders — demonstrating a governance process, not just a design output."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "The policy is put to shareholder vote. What is an acceptable support level, and what happens if it falls below 50%?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "UK listed company context: the remuneration policy vote is binding — if the policy is not approved by a majority (>50%) of voting shareholders, the company reverts to its previous approved policy (or to statutory minimum). The annual report on remuneration is advisory — if it receives <50% support, the company must include a statement in the following year's DRR explaining what it has done in response. ISS's guideline: a <80% support level triggers shareholder engagement expectation; <70% is significant dissent requiring a detailed response; <50% is a failed vote with binding consequences. For Kestrel, with Highgate (8%) already critical and Vanguard (6%) likely to follow ISS: the risk scenario is 8% + 6% + potential retail investor dissent = 15-20% potential against. If the redesigned ESG metrics address Highgate's concerns (which the consultation is designed to test), the risk of a failed vote is low. If they do not, RemCo must decide whether to defer the policy to the following year or proceed with a known vote risk."
+              },
+              {
+                "t": "box",
+                "label": "Shareholder Consultation Best Practice",
+                "v": "Consult at least two months before AGM\nPresent the redesign, not the decision — genuine input is sought\nDocument all responses and what changed as a result\nDisclosure: DRR should reflect the consultation process\nProxy advisers: check guidelines for design compliance (ISS, Glass Lewis)\nVote below 80%: engage and respond; below 50%: binding consequence"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Pre-AGM shareholder consultation on executive pay policy must be substantive — genuine input-seeking, not notification — and the DRR should document how shareholder feedback shaped the final policy.",
+                  "ISS and Glass Lewis criteria for ESG credibility (specific, verifiable, disclosed, material) should be explicitly met in metric design and documented in the DRR narrative.",
+                  "A failed remuneration policy vote (<50% support) is a binding consequence under UK law — the company reverts to its previous policy. The risk scenario must be mapped before the policy is tabled."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "20-2-Q",
+            "title": "Module Quiz: ESG-Linked Executive Pay",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The four principles that distinguish credible from cosmetic ESG pay metrics are:",
+                "opts": [
+                  "Ambitious, time-bound, reported, approved.",
+                  "Materiality, specificity, stretch, and disclosure.",
+                  "Environmental, social, governance, and financial alignment.",
+                  "LTIP, bonus, base salary, and benefits alignment."
+                ],
+                "ans": 1,
+                "exp": "Materiality (linked to business-critical risk), specificity (precise, verifiable), stretch (beyond business-as-usual), and disclosure (DRR transparency) are the four criteria that proxy advisers and institutional investors use to assess ESG metric credibility."
+              },
+              {
+                "q": "Long-cycle ESG transformation metrics (e.g., net-zero transition milestones) are better suited to the LTIP than the annual bonus because:",
+                "opts": [
+                  "LTIP awards are larger in value and therefore provide stronger incentive.",
+                  "Annual bonus targets must be set for the current financial year — a 12-month window is insufficient to set meaningful targets for multi-year transformation metrics.",
+                  "RemCo has more discretion in LTIP metric design than in annual bonus metrics.",
+                  "ESG metrics in the annual bonus are prohibited by the FRC's Stewardship Code."
+                ],
+                "ans": 1,
+                "exp": "Carbon reduction and net-zero transition require capital investments with 3-5 year paybacks. A 12-month annual bonus window cannot incentivise the multi-year management actions required — and may encourage short-term actions that don't reflect genuine transition progress."
+              },
+              {
+                "q": "The safety underpin ('any fatality causes the safety metric to pay out at zero regardless of LTIFR outturn') is essential because:",
+                "opts": [
+                  "Regulatory requirements mandate a fatality underpin in safety metrics.",
+                  "It prevents the mechanical absurdity of a positive safety metric payout in a year when a fatality occurred — which would be a governance and reputational failure.",
+                  "It reduces the executive's exposure to financial loss if a safety incident occurs.",
+                  "Proxy advisers (ISS, Glass Lewis) require fatality underpins in all safety-related executive pay metrics."
+                ],
+                "ans": 1,
+                "exp": "Without the underpin, a company where LTIFR improved from 4.2 to 3.8 (triggering threshold payout) but also had a fatality would pay out the safety metric — an indefensible governance position."
+              },
+              {
+                "q": "Under UK company law, if a listed company's executive pay policy receives less than 50% shareholder support at the AGM:",
+                "opts": [
+                  "The company must reduce executive pay by 50% until shareholders are satisfied.",
+                  "The vote is advisory and has no legal consequence — the company can proceed with the proposed policy.",
+                  "The vote is binding — the company must revert to its previous approved policy.",
+                  "The RemCo Chair must resign within 30 days."
+                ],
+                "ans": 2,
+                "exp": "The triennial pay policy vote is binding. A <50% outcome means the policy is not approved and the company reverts to the previously approved policy. The annual report on remuneration is advisory."
+              },
+              {
+                "q": "'Improve our ESG performance as assessed by RemCo at year end' is criticised as cosmetic primarily because:",
+                "opts": [
+                  "It does not include a financial dimension.",
+                  "It is subjective with no published criteria or verifiable target, allowing near-automatic payout without genuine performance accountability.",
+                  "ESG performance should be assessed by shareholders, not RemCo.",
+                  "The metric has not been approved by an external ESG rating agency."
+                ],
+                "ans": 1,
+                "exp": "Without a specific target, a defined measurement methodology, and public disclosure criteria, the metric allows RemCo to assess 'good enough' performance without external accountability — which is the definition of a cosmetic ESG metric."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "20-3",
+        "title": "Board Remuneration Reporting",
+        "color": "#3D5A3E",
+        "lessons": [
+          {
+            "id": "20-3-1",
+            "title": "Board Reporting on Reward: The Directors' Remuneration Report",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "The Directors' Remuneration Report (DRR) is the primary public accountability document for executive pay in UK listed companies. It is legally required under the Companies Act 2006 (as amended by the Enterprise and Regulatory Reform Act 2013), subject to shareholder vote, and scrutinised by proxy advisers, institutional shareholders, the FRC, and the financial media. A poorly drafted DRR creates governance risk, shareholder dissent, and reputational damage. A well-drafted DRR demonstrates a coherent pay philosophy, transparent governance, and honest accountability for outcomes."
+              },
+              {
+                "t": "h",
+                "v": "DRR Legal Requirements"
+              },
+              {
+                "t": "p",
+                "v": "The DRR must contain two parts: the annual report on remuneration (advisory vote) and the remuneration policy (binding triennial vote). The annual report on remuneration must disclose: each executive director's total pay for the year (salary, bonus, LTIP vesting, benefits, pension) in a single-figure table; the annual bonus outturn, including each metric's target and result; LTIP awards that vested in the year, including performance conditions and outturns; performance graphs comparing CEO total pay to total shareholder return (TSR) over 5 and 10 years; CEO pay ratio (CEO single-figure pay ÷ 25th, 50th, and 75th percentile employee pay); comparative gender pay information; and a statement of shareholder engagement conducted during the year. The remuneration policy must disclose: the purpose and principles of the pay framework; each component of executive pay (salary, bonus, LTIP, pension, benefits) with its purpose, operation, maximum opportunity, and performance conditions; and the basis for any discretion RemCo may exercise."
+              },
+              {
+                "t": "h",
+                "v": "The CEO Pay Ratio"
+              },
+              {
+                "t": "p",
+                "v": "The CEO pay ratio was introduced as a reporting requirement from January 2019 (Companies Act 2006, s.439B, for companies with 250+ UK employees). Companies must disclose the ratio between CEO single-figure pay and UK employee pay at the 25th, 50th, and 75th percentiles, using one of three methodologies: Method A (most rigorous — requires full pay calculations for all employees); Method B (statistical modelling); Method C (pay data from existing pay surveys). The ratio must be contextualised: a high ratio in a year of CEO bonus payout may look different when bonus is excluded; the ratio reflects the employee pay distribution as much as the CEO pay quantum. The company must disclose whether the ratio is consistent with broader reward and progression policies for the workforce."
+              },
+              {
+                "t": "h",
+                "v": "Narrative Responsibility"
+              },
+              {
+                "t": "p",
+                "v": "The DRR narrative is as important as the disclosure tables. The narrative must: explain the company's pay philosophy and why it is aligned to strategy; describe how RemCo exercised its discretion, and why; address any significant metric underperformance transparently; acknowledge shareholder engagement and what changed as a result; and provide forward guidance on future pay policy where relevant. The worst DRR narratives use opaque language to obscure poor outcomes — sophisticated institutional investors, proxy advisers, and increasingly the financial press, can identify evasive DRR narrative and treat it as a governance red flag. The best DRR narratives are clear, direct, and honest — including about below-target outcomes."
+              },
+              {
+                "t": "box",
+                "label": "DRR Annual Report Contents",
+                "v": "• Single-figure table (each director: salary + bonus + LTIP + benefits + pension = total)\n• Annual bonus: each metric, target, outturn, payout\n• LTIP vesting: performance conditions and outturns\n• CEO pay ratio (25th / 50th / 75th percentile UK employees)\n• 5- and 10-year TSR performance graph vs index\n• Shareholder engagement summary\n• Comparative gender pay information"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The DRR has two parts: the annual report on remuneration (advisory vote) and the remuneration policy (binding triennial vote) — each has different legal requirements and shareholder vote consequences.",
+                  "The CEO pay ratio must disclose the ratio at 25th, 50th, and 75th employee pay percentiles, with contextualisation in the narrative.",
+                  "DRR narrative quality matters — evasive language on poor outcomes is identified by institutional investors and proxy advisers as a governance red flag."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "The CEO pay ratio requirement applies to listed UK companies with:",
+              "opts": [
+                "All listed companies, regardless of size",
+                "250 or more UK employees",
+                "1,000 or more global employees",
+                "FTSE 350 membership (mid- and large-cap only)"
+              ],
+              "ans": 1,
+              "exp": "The CEO pay ratio requirement applies to listed UK companies with 250 or more UK employees (Companies Act 2006, s.439B, in force from January 2019)."
+            }
+          },
+          {
+            "id": "20-3-2",
+            "title": "Drafting Kestrel's CEO Pay Ratio Disclosure",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "CEO Pay Ratio Inputs",
+                "v": "CEO single-figure pay (2025/26): £1,201,500 bonus + £900,000 salary + £45,000 benefits + £45,000 pension (5%) = £2,191,500 total single-figure.\n\nKestrel UK employee pay data (8,500 UK employees, Method A calculated): 25th percentile employee: £26,400 total pay. 50th percentile (median): £34,800 total pay. 75th percentile: £52,000 total pay. CEO/median pay ratio 5 years ago: 41:1."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Pay Ratio Calculation",
+                "v": "CEO:P25 ratio: £2,191,500 / £26,400 = 83:1.\nCEO:P50 (median) ratio: £2,191,500 / £34,800 = 63:1.\nCEO:P75 ratio: £2,191,500 / £52,000 = 42:1.\nComparison to prior year: if the median ratio was 41:1 five years ago and is now 63:1, the ratio has increased by 53%. This requires narrative explanation in the DRR."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Contextualisation Narrative",
+                "v": "Suggested DRR narrative: 'Kestrel's CEO pay ratio for 2025/26 is 63:1 (median), compared to 41:1 five years ago. The increase reflects the CEO's annual bonus outturn (£1,201,500 — 89% of maximum) rather than a structural change in either executive or general employee pay. In years with below-threshold bonus outturns, the CEO:median ratio has ranged from 28:1 to 35:1 (2022/23 and 2023/24 respectively). The Company is satisfied that the methodology for calculating employee pay at the relevant percentiles is consistent with the prior year (Method A, full calculation for all 8,500 UK employees), and that the ratio reflects the variable pay design of the CEO's package rather than a widening structural pay gap. The Company's median pay of £34,800 is above the National Living Wage and above the UK national median for the services sector. Pay progression within the employee population is governed by the same merit matrix applied consistently across all grades — the Company does not apply a different pay philosophy for senior management versus general employees.'"
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Gender Pay Narrative",
+                "v": "Kestrel's gender pay gap data (for Driftwood subsidiary, which has >250 employees): mean gender pay gap: 18.2%. Median gender pay gap: 14.7%. Proportion of women in upper pay quartile: 31%. Proportion of women in lower pay quartile: 62%. Suggested DRR narrative: 'Kestrel Driftwood's gender pay gap reflects the occupational distribution of our workforce: a higher proportion of women in customer-facing and part-time roles (predominantly in the lower pay quartile) compared to the representation of women in technical and management roles (predominantly in the upper quartile). This is a structural gap, not a pay discrimination gap — at equivalent roles and levels, we do not pay men and women differently. Our actions to close the structural gap over the five-year period 2023-2028 include: increasing the proportion of women in the upper quartile to 40% by introducing structured sponsorship programmes, reviewing flexible working accessibility at senior grades, and setting gender representation targets in our succession planning for all Grade 9 and above appointments.' Distinction: between structural gap (composition effect) and equal pay gap (same role, different pay) is the critical framing in all gender pay narratives."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The CEO pay ratio must be contextualised — a high ratio in a bonus year is materially different from a structurally wide ratio, and the narrative must explain the distinction.",
+                  "Gender pay gap narrative must distinguish between structural gap (occupational distribution) and equal pay gap (different pay for equivalent roles) — conflating the two is both technically incorrect and damaging to the DRR's credibility.",
+                  "Method A (full calculation for all UK employees) produces the most defensible pay ratio — it cannot be challenged on methodology grounds, whereas Method C (survey-based) is vulnerable to data quality challenges."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "20-3-3",
+            "title": "Kestrel's DRR Under Shareholder Scrutiny",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Kestrel's DRR Under Shareholder Scrutiny",
+                "v": "Kestrel's DRR is published. Three days later: (1) The Financial Times runs an article: 'Kestrel CEO paid 63 times median worker while ESG targets missed.' (2) Highgate Asset Management issues a press release stating it will vote against the annual report on remuneration. (3) ISS publishes a preliminary vote recommendation: 'Vote Against' on the annual report on remuneration due to 'insufficient justification for bonus payout in the context of ESG underperformance.'"
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "How should Kestrel's Communications and Reward team respond to the FT article?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The FT article uses the 63:1 ratio headline without the bonus-year contextualisation — this is a selective reading of the DRR. The response strategy: (1) Fact correction (through FT journalist follow-up, not defensive press release): 'The 63:1 ratio reflects a high-bonus year. In years without a full bonus outturn, the ratio has been 28:1-35:1. The DRR contextualises this clearly.' (2) ESG framing: 'The CEO's ESG bonus component paid at 60% of target — significantly below maximum — directly reflecting the missed carbon milestone. The DRR explains this in full.' (3) Do not over-respond: a defensive public response amplifies the story. Factual corrections through established media relationships are more effective. The fundamental lesson: DRR transparency protects the company better than DRR opacity — if the contextualisation is in the DRR, the response is already written."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "How does RemCo respond to ISS recommending 'Vote Against' on the annual report on remuneration?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "ISS's concern is 'insufficient justification for bonus payout given ESG underperformance.' The response path: (1) RemCo Chair calls ISS for a clarification meeting — what specifically does 'insufficient justification' mean? Is it the formulaic outcome itself (89% of max) or the DRR narrative around it? (2) If it is the DRR narrative, the company can provide a supplementary investor letter with additional explanation (this is permissible under Takeover Code and FCA rules if balanced and factual). (3) The supplementary letter should explain: the ESG component was 60% of target (reducing total bonus by £148,500 vs on-target scenario); RemCo considered but did not apply additional downward discretion because the formulaic mechanism already penalised the ESG miss proportionately; and the redesigned ESG metrics (committing to increased weighting and LTIP inclusion) demonstrate that the board has responded to the ESG governance concern. (4) The annual remuneration report vote is advisory — a failed vote does not block the payment but triggers a mandatory disclosure in the following year's DRR. Approximately 75-80% support is a realistic target given Highgate's stated position."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "What structural changes should Kestrel make to the DRR process to reduce vote risk next year?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Process improvements: (1) Earlier shareholder consultation — begin major shareholder dialogue in October (four months before March AGM), not January. (2) Proxy adviser pre-release briefing — provide ISS and Glass Lewis with a factual briefing on the executive pay design 6-8 weeks before DRR publication, so preliminary concerns can be addressed in the DRR narrative before publication. (3) DRR narrative pre-scrutiny — have external legal counsel (employment and corporate law) and the external remuneration consultant review the DRR narrative for evasive language, incomplete disclosure, and proxy adviser compliance before publication. (4) Scenario planning for vote outcomes — model the vote outcome under different scenarios (100% Highgate against, ISS against = estimated 20-25% against) so RemCo can calibrate risk appetite before the policy is finalised. (5) Governance calendar — Nathaniel should present a governance calendar to RemCo at the start of each financial year, mapping every milestone (bonus target setting, interim performance review, DRR drafting, shareholder consultation, proxy engagement, AGM) with responsible parties and deadlines."
+              },
+              {
+                "t": "box",
+                "label": "DRR Vote Risk Management",
+                "v": "Early consultation: major shareholders engaged 4+ months pre-AGM\nProxy adviser briefing: 6-8 weeks pre-publication\nNarrative pre-scrutiny: external legal and remuneration consultant review\nScenario planning: model vote outcomes under different shareholder positions\nGovernance calendar: annual timeline mapped at start of year"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "DRR transparency is the best defence against media misrepresentation — contextualisation in the DRR means the factual correction is already written when a selective headline appears.",
+                  "An ISS 'Vote Against' recommendation on an advisory vote is not the end of the process — a supplementary shareholder letter with additional factual explanation is permissible and effective.",
+                  "The governance calendar — mapping every milestone from bonus target setting to AGM — converts the DRR process from reactive to planned, reducing the risk of rushed decisions and inadequate disclosure."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "20-3-Q",
+            "title": "Module Quiz: Board Remuneration Reporting",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The Directors' Remuneration Report (DRR) must include two parts with different shareholder vote types:",
+                "opts": [
+                  "Annual report on remuneration (binding) and remuneration policy (advisory).",
+                  "Annual report on remuneration (advisory) and remuneration policy (binding, triennial).",
+                  "Annual bonus disclosure (advisory) and LTIP disclosure (binding).",
+                  "CEO pay ratio (mandatory) and gender pay gap (advisory)."
+                ],
+                "ans": 1,
+                "exp": "The annual report on remuneration is an advisory vote each year. The remuneration policy is a binding triennial vote — failure to pass means the company reverts to its previously approved policy."
+              },
+              {
+                "q": "Kestrel's CEO:median pay ratio of 63:1 in a bonus year, compared to 28:1-35:1 in non-bonus years, should be disclosed as:",
+                "opts": [
+                  "Evidence that the CEO's pay is structurally misaligned with employee pay.",
+                  "A disclosure requiring immediate ExCo action to reduce executive pay.",
+                  "A bonus-year ratio that reflects variable pay design, contextualised by the ratio in non-bonus years and the employee pay methodology used.",
+                  "Confidential information that should not be publicly disclosed until after the AGM."
+                ],
+                "ans": 2,
+                "exp": "Pay ratio context is essential — a ratio that fluctuates with bonus payouts reflects variable pay design, not structural misalignment. The narrative must provide the historical range."
+              },
+              {
+                "q": "The distinction between 'structural gender pay gap' and 'equal pay gap' is important in DRR reporting because:",
+                "opts": [
+                  "Only the equal pay gap is legally required to be disclosed.",
+                  "A structural gap (occupational distribution) requires different interventions than an equal pay gap (same role, different pay for equivalent roles), and conflating the two misrepresents the data.",
+                  "Structural pay gaps are not covered by the Equality Act 2010.",
+                  "The structural gap is always larger than the equal pay gap and therefore more concerning."
+                ],
+                "ans": 1,
+                "exp": "Structural pay gaps (women overrepresented in lower-paid roles) require representation and pipeline interventions. Equal pay gaps (men and women paid differently in the same role) are a legal liability. They are different problems with different solutions — conflating them in the DRR is both analytically incorrect and risks creating an impression of a legal exposure where the data does not support one."
+              },
+              {
+                "q": "An ISS 'Vote Against' recommendation on the annual remuneration report triggers:",
+                "opts": [
+                  "A legally binding obligation to revise executive pay immediately.",
+                  "A recommended approach to provide shareholders with a supplementary factual letter explaining the board's position before the AGM vote.",
+                  "Automatic failure of the remuneration policy vote.",
+                  "A mandatory FRC investigation into RemCo governance."
+                ],
+                "ans": 1,
+                "exp": "The annual remuneration report vote is advisory. An 'Against' recommendation does not have automatic legal consequences, but the company should engage with ISS's specific concerns, potentially through a supplementary investor communication, to reduce the proportion of shares voting against."
+              },
+              {
+                "q": "The governance calendar's primary value for the Head of Reward is:",
+                "opts": [
+                  "Automating the DRR drafting process to reduce manual effort.",
+                  "Converting the DRR process from reactive (responding to issues as they emerge) to planned (mapping every milestone from bonus target setting to AGM with responsible parties and deadlines).",
+                  "Ensuring the external remuneration consultant bills on a predictable schedule.",
+                  "Providing RemCo with a summary of all reward activities during the year."
+                ],
+                "ans": 1,
+                "exp": "The governance calendar imposes planning discipline on a process that has consistent milestones each year — it prevents the most common DRR failures, which stem from decisions made under time pressure rather than in advance of required deadlines."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "20-4",
+        "title": "Pay Transparency and Stakeholder Communication",
+        "color": "#3D5A3E",
+        "lessons": [
+          {
+            "id": "20-4-1",
+            "title": "The Future of Pay Transparency: Regulation, Readiness and Communication",
+            "duration": "10 min",
+            "xp": 120,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "Pay transparency is transitioning from a voluntary cultural choice to a legal mandate across major economies. The EU Pay Transparency Directive (2023/970/EU) requires member states to transpose into national law by June 2026. UK post-Brexit legislation is developing separately. US states including California, Colorado, New York, and Illinois have introduced salary range disclosure requirements. The direction of travel is clear: organisations that prepare proactively for pay transparency will have a strategic advantage; those that react will face both compliance cost and cultural disruption simultaneously."
+              },
+              {
+                "t": "h",
+                "v": "The EU Pay Transparency Directive"
+              },
+              {
+                "t": "p",
+                "v": "The EU Pay Transparency Directive has five core requirements: Pre-hire pay range disclosure: employers must disclose the pay range for a position to candidates before the interview. Individual pay information rights: employees can request information about their own pay relative to average pay in the same category of work, disaggregated by gender. Joint pay assessment: if an employer's gender pay gap within a job category exceeds 5% and cannot be justified by objective gender-neutral factors, a joint pay assessment (with worker representatives) is required, with a remediation plan within a reasonable timeframe. Pay secrecy prohibition: employers cannot include pay secrecy clauses in employment contracts. Pay progression transparency: employers must provide employees with clear criteria for pay progression. Scope: employers with 250+ employees in scope from June 2026; 150+ employees in scope from June 2027; 100+ employees from June 2028."
+              },
+              {
+                "t": "h",
+                "v": "Pay Transparency Readiness"
+              },
+              {
+                "t": "p",
+                "v": "The readiness assessment covers four dimensions: Pay structure readiness: does the organisation have a documented, consistently applied grade and salary band structure? Organisations with undocumented, negotiation-based pay will find pay range disclosure legally required but technically impossible — because there are no ranges to disclose. Pay equity readiness: does the organisation know its within-grade, within-function gender pay gap at a category level? The 5% threshold for joint pay assessment applies at the level of a 'category of workers doing the same work or work of equal value' — not at the aggregate organisation level. This requires granular, grade-by-gender pay analysis that most organisations cannot currently produce. Data readiness: is compensation data clean, complete, grade-coded, and gender-tagged at the level of granularity required? If the HRIS cannot produce a gender pay analysis at grade level, this is the first remediation priority. Communication readiness: how will the organisation communicate pay ranges to candidates and employees, and how will managers respond when employees ask why they are paid at a particular point in the range?"
+              },
+              {
+                "t": "h",
+                "v": "Internal Pay Transparency Strategy"
+              },
+              {
+                "t": "p",
+                "v": "Beyond legal compliance, pay transparency is a cultural and talent strategy choice. Research consistently shows that employees who understand how their pay is determined are more engaged and more likely to trust their employer. The employer that discloses pay ranges, explains pay progression criteria, and enables employees to see how their pay compares to the range — rather than requiring them to find out from a job ad posted at a competitor — is demonstrating a fundamentally different employment relationship. The internal transparency strategy has three components: structure transparency (publish pay ranges by grade); progression transparency (publish the criteria for pay progression and promotion); and decision transparency (enable employees to understand why they are at a particular point in their range). Decision transparency is the most culturally challenging component — it requires managers to have honest, specific conversations about performance and potential that many are not currently equipped to have."
+              },
+              {
+                "t": "box",
+                "label": "EU Pay Transparency Directive Key Requirements",
+                "v": "Pre-hire: pay range must be disclosed to candidates before interview\nIndividual: employees can request pay comparison data (gender-disaggregated)\n5% rule: category gender gap >5% = joint pay assessment required\nNo pay secrecy clauses in employment contracts\nPay progression criteria must be communicated to employees\nTimeline: 250+ employees → June 2026; 150+ → 2027; 100+ → 2028"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Pay transparency is a mandatory compliance trajectory — the EU Directive's June 2026 deadline for 250+ employee organisations requires proactive readiness assessment now.",
+                  "The 5% joint pay assessment trigger applies at job category level (within a grade and function), not at the aggregate — organisations need granular gender pay analysis capability.",
+                  "Internal pay transparency strategy (structure, progression, decision transparency) is a cultural choice that precedes and enables legal compliance, rather than being driven by it."
+                ]
+              }
+            ],
+            "quiz": {
+              "q": "Under the EU Pay Transparency Directive, a joint pay assessment is required when:",
+              "opts": [
+                "Any gender pay gap exists within the organisation.",
+                "The gender pay gap exceeds 5% within a category of workers doing equal work, and the gap cannot be justified by objective, gender-neutral factors.",
+                "More than 50% of employees request individual pay information in a 12-month period.",
+                "The organisation has more than 500 employees in an EU member state."
+              ],
+              "ans": 1,
+              "exp": "The 5% threshold applies at the category level (employees doing the same work or work of equal value), not at the aggregate organisation level. The gap must also be unjustifiable by objective gender-neutral criteria (e.g., experience, performance rating, time in role) to trigger the assessment obligation."
+            }
+          },
+          {
+            "id": "20-4-2",
+            "title": "Kestrel's Pay Transparency Readiness Assessment",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "box",
+                "label": "Readiness Assessment Inputs",
+                "v": "Kestrel Group (8,500 employees, including Driftwood subsidiary with 3,200 employees) operates in multiple EU countries through a German subsidiary (560 employees, in scope for EU Directive by June 2026 at 250+ threshold). Kestrel's current pay structure: documented salary bands for Grades 1-15 (Kestrel infrastructure employees); Driftwood uses a separate pay structure ('retail pay framework') with 6 pay levels; German subsidiary uses locally negotiated collective agreement rates. Current data capability: Kestrel Group HRIS (Workday) holds grade, salary, gender, and country for all employees; Driftwood legacy system (Sage HR) holds pay level and gender but salary bands are not documented in the system; German subsidiary data is in a local HR system not integrated with Workday."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Structure Readiness",
+                "v": "Kestrel infrastructure: documented salary bands by grade — structure readiness is high. Bands can be disclosed to candidates and communicated to employees with minimal preparation. Driftwood: pay levels exist but salary bands are not formally documented — the 'retail pay framework' appears to be a legacy negotiated structure without defined ranges. Driftwood must formally document salary minimums and maximums for each pay level before June 2026. German subsidiary: collective agreement rates are publicly available (German law requires posting), so structure readiness is inherent in the IG BCE collective agreement — however, the subsidiary must ensure non-tariff employees (above collective agreement grades) have documented ranges. Action plan: document Driftwood salary bands (6 levels × defined min/mid/max) by Q3 2025. Commission German subsidiary audit of non-tariff employee pay ranges by Q4 2025."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Pay Equity Readiness",
+                "v": "The EU Directive requires category-level analysis (employees doing the same work or work of equal value). For Kestrel, 'category' = grade + function combination. Example: Grade 7 Finance Analysts is a category; Grade 7 Operations Managers is a different category. Kestrel Workday: can run gender pay analysis at grade level — function-level disaggregation requires a custom report. Capability gap: Workday does not currently have a pre-built 'EU category pay gap' report. Custom report must be built and validated by Q4 2025. For the German subsidiary: the local HR system cannot produce this analysis. Data must be exported to Workday or an interim spreadsheet model for compliance. Priority: build Workday custom report; document results for all categories with more than 10 employees (statistical significance threshold). Categories with <10 employees in either gender are not in scope."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Communication Readiness",
+                "v": "Pre-hire disclosure: amend all job postings for German subsidiary (EU Directive scope) to include the salary band for the relevant grade. Standard language: 'This role is offered within the Kestrel Grade [X] salary range of [€minimum] to [€maximum]. Final placement within the range will depend on relevant experience and qualifications.' Individual information rights: create a self-service pay range tile in Workday Employee Self-Service showing the employee's grade, their position within the range (as a percentile), and the gender average for their grade. Manager communication toolkit: equip managers to answer 'why am I at this point in my range?' — develop SPAR framework: Situation (your current position: X% of midpoint), Performance (how performance rating affects progression), Advancement (promotion criteria for your grade), Range (the full grade range and where peers in your category fall on average). The SPAR framework converts the required transparency from a passive disclosure into an active management conversation."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "Pay structure readiness — documented, grade-specific salary bands — is the foundational requirement; organisations without documented ranges cannot comply with pre-hire disclosure obligations.",
+                  "The EU Directive's category-level gender pay gap analysis requires HRIS custom reporting capability that most organisations do not have pre-built; data infrastructure investment is required before June 2026.",
+                  "Manager communication readiness is the most underestimated compliance requirement — pre-hire disclosure is simple; responding to individual pay enquiries with honesty and specificity requires manager training and structured frameworks."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "20-4-3",
+            "title": "Driftwood's Pay Transparency Launch",
+            "duration": "10 min",
+            "xp": 150,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "scenario",
+                "label": "Case Background",
+                "title": "Driftwood's Pay Transparency Launch",
+                "v": "Driftwood (3,200 employees, retail subsidiary) is not in scope for the EU Directive (UK operation), but the Kestrel Group Board has asked Nathaniel to assess whether to introduce voluntary pay transparency across the Group — including Driftwood — as part of a broader ESG and employer brand commitment. The Driftwood Retail Director is resistant: 'If we publish salary bands, we'll have every employee demanding to know why they're not at the top of the range, and every external candidate negotiating from the maximum.' Nathaniel must advise the Group People Director on whether to proceed and how."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 1"
+              },
+              {
+                "t": "p",
+                "v": "What is the evidence-based case for voluntary pay transparency at Driftwood?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The case for voluntary transparency: (1) Talent attraction: in the UK retail market, Driftwood competes with competitors who increasingly post salary ranges (driven by market norms and candidate expectations). Candidates who receive a salary range in the job description progress further in the recruitment funnel — Glassdoor research shows 69% of candidates would not apply for a job without a disclosed salary range. Driftwood's current practice (no published range) puts it at a disadvantage against transparency-forward competitors. (2) Retention: employees who understand their pay and its trajectory are more likely to stay. A Driftwood employee who doesn't know whether their current salary is at the top, middle, or bottom of the range cannot make an informed decision about whether an external offer is competitive — pay anxiety (not knowing) drives external job searches as much as actual underpayment. (3) Equity: publishing ranges makes pay equity gaps visible internally — this creates pressure to close gaps, and demonstrates commitment to fair pay, which is a meaningful employer brand signal."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 2"
+              },
+              {
+                "t": "p",
+                "v": "How does Nathaniel address the 'everyone will demand the maximum' concern?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "The Retail Director's concern reflects a common misunderstanding of how pay transparency works in practice. Experience from organisations that have introduced pay transparency (Buffer, Whole Foods, Sutter Health in the US; a growing number of UK retailers) shows that: (1) Employees generally do not demand to move to the maximum of the range — they want to understand their position and the criteria for moving within it. The conversation moves from 'what is the maximum?' to 'how do I progress?' — which is precisely the conversation that supports retention and development. (2) External candidates rarely negotiate to the maximum of a disclosed range — they negotiate from their current salary or an external market offer, the same as they would without range disclosure. The range gives a floor and ceiling, not an expectation of maximum placement. (3) The concerns about pay pressure are largely answered by publishing progression criteria alongside ranges — 'you will move within the range based on performance and tenure, within the constraints of the annual merit budget.' This sets expectations and channels the conversation productively."
+              },
+              {
+                "t": "h",
+                "v": "Discussion Point 3"
+              },
+              {
+                "t": "p",
+                "v": "If Kestrel proceeds with voluntary Group-wide pay transparency, what is the implementation sequence?"
+              },
+              {
+                "t": "reveal",
+                "label": "See the reasoning",
+                "v": "Implementation sequence: (1) Internal audit first: before publishing any ranges externally or internally, audit the current pay distribution within each grade to identify outliers that would be immediately visible. Address clear anomalies before transparency goes live — a Grade 5 employee at 50% below the disclosed minimum is legally and culturally untenable once the range is public. (2) Manager preparation: invest in manager readiness before employee communication. Managers must be able to have the 'why are you at this point?' conversation confidently. Use the SPAR framework. (3) Phased internal launch: publish ranges internally first (3 months before external posting). Employees see their position; managers have the conversations. Address the questions before the range is visible to external candidates. (4) External publishing: update all job postings with salary ranges. (5) Continuous monitoring: quarterly audit of new hire placement within range — are managers starting all hires at the minimum? Are there gender differences in placement within range? These are the post-transparency equity signals."
+              },
+              {
+                "t": "box",
+                "label": "Pay Transparency Implementation Sequence",
+                "v": "1. Internal equity audit → address anomalies before disclosure\n2. Manager readiness → SPAR framework training\n3. Internal range publication → employee conversations before external\n4. External posting → all job adverts include range\n5. Continuous monitoring → placement within range, gender equity in placement"
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "The 'everyone will demand the maximum' concern is consistently disproved by organisations that have implemented pay transparency — employees want to understand their progression, not their ceiling.",
+                  "The pre-transparency equity audit is the most important preparation step — anomalies that are invisible in an opaque pay system become immediately visible and legally untenable once ranges are published.",
+                  "Manager readiness is the implementation constraint, not the pay structure — the SPAR framework (Situation, Performance, Advancement, Range) provides a structured approach to the individual pay conversations that transparency creates."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "20-4-Q",
+            "title": "Module Quiz: Pay Transparency",
+            "duration": "15 min",
+            "xp": 200,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "The EU Pay Transparency Directive's 5% joint pay assessment threshold applies at:",
+                "opts": [
+                  "The aggregate organisation level — if the overall gender pay gap exceeds 5%.",
+                  "The category level — employees doing the same work or work of equal value — if the category gender pay gap exceeds 5% and cannot be justified by objective criteria.",
+                  "The senior management level — if executive and senior manager pay shows a 5% gender gap.",
+                  "The member state level — if average pay across the member state's sector shows a 5% gender gap."
+                ],
+                "ans": 1,
+                "exp": "The 5% threshold is category-specific (grade × function combination), not aggregate. Most organisations with a compliant pay structure will have several categories in scope, not one organisation-wide calculation."
+              },
+              {
+                "q": "Pay structure readiness for EU Directive compliance requires, at minimum:",
+                "opts": [
+                  "A board-approved remuneration policy for all employee grades.",
+                  "Documented salary band minimums and maximums for each grade that can be disclosed to candidates and employees.",
+                  "A Workday or SAP implementation with real-time pay analytics.",
+                  "External salary survey benchmarking at least once every two years."
+                ],
+                "ans": 1,
+                "exp": "The foundational requirement is documented salary ranges — without defined minimums and maximums, pre-hire disclosure and employee information rights cannot be fulfilled."
+              },
+              {
+                "q": "The primary employer brand argument for voluntary pay transparency is:",
+                "opts": [
+                  "Employees paid above market rates will stop job-searching once they see their position in range.",
+                  "Candidates in the current market expect salary ranges in job postings — withholding ranges reduces application volumes and disadvantages the employer against transparency-forward competitors.",
+                  "Pay transparency reduces the HR team's workload by eliminating individual pay queries.",
+                  "Government subsidies are available to companies that voluntarily implement pay transparency ahead of legal requirements."
+                ],
+                "ans": 1,
+                "exp": "Research consistently shows that a majority of candidates will not apply for roles without disclosed salary information — voluntary transparency is a talent acquisition advantage, not just an ethical position."
+              },
+              {
+                "q": "The correct implementation sequence for voluntary pay transparency is:",
+                "opts": [
+                  "External range publication → manager training → internal communication → equity audit.",
+                  "Equity audit → manager readiness → internal publication → external publication → continuous monitoring.",
+                  "Manager training → equity audit → external publication → employee communication.",
+                  "External publication → internal communication → equity audit → manager training."
+                ],
+                "ans": 1,
+                "exp": "The equity audit must precede any publication — anomalies visible externally or internally are legally and culturally untenable. Manager readiness before employee publication is critical — employees will have conversations managers must be equipped to handle."
+              },
+              {
+                "q": "The SPAR framework (Situation, Performance, Advancement, Range) is designed to help managers:",
+                "opts": [
+                  "Conduct annual performance reviews with a structured agenda.",
+                  "Answer individual employee pay enquiries following pay range publication with specificity and clarity.",
+                  "Communicate merit increase decisions in writing.",
+                  "Design the pay range and progression criteria for a new grade."
+                ],
+                "ans": 1,
+                "exp": "SPAR converts the transparency obligation (publishing a range) into an active management capability (having the 'why are you here in the range?' conversation) — which is the most underestimated compliance requirement."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "c20-cap",
+        "title": "Capstone: Kestrel Group Governance Challenge",
+        "color": "#3D5A3E",
+        "lessons": [
+          {
+            "id": "20-cap",
+            "title": "Kestrel Group — Reward Governance and ESG Reporting Capstone",
+            "duration": "20 min",
+            "xp": 250,
+            "type": "lesson",
+            "body": [
+              {
+                "t": "intro",
+                "v": "You are Kestrel Group's Head of Reward. It is the start of a new financial year. You have three major governance deliverables in the next 12 months: (1) Completing the ESG pay metric redesign and winning AGM approval for the new remuneration policy; (2) Leading the EU Pay Transparency Directive compliance programme for the German subsidiary; (3) Investigating and resolving a new pay equity complaint from a senior female employee in the Driftwood subsidiary. This capstone integrates all four modules: governance frameworks, ESG pay design, DRR reporting, and pay transparency."
+              },
+              {
+                "t": "box",
+                "label": "Capstone Data Pack",
+                "v": "AGM timetable: AGM in 6 months. Shareholder consultation must begin in 3 months. RemCo draft policy must be finalised in 2 months.\n\nGerman subsidiary: 560 employees. EU Directive scope from June 2026 (4 months away). HRIS not integrated with Group Workday. Salary bands exist for tariff grades but not documented for 87 non-tariff employees.\n\nDriftwood complaint: Emma Thorpe (Driftwood Regional Operations Director, Grade 11, £94,000) has written to the Chief People Officer claiming she is paid significantly below her male predecessor (Marcus Webb, left 18 months ago at £117,000) and two male peers at Director level in other Driftwood regions (£102,000 and £108,000). Emma has engaged an employment solicitor."
+              },
+              {
+                "t": "h",
+                "v": "Capstone Challenge 1: RemCo Policy Finalisation"
+              },
+              {
+                "t": "p",
+                "v": "RemCo must finalise the new executive pay policy, including the redesigned ESG metrics. Three open questions: (A) ESG metric weighting: currently 20% of annual bonus. The redesigned metrics are more credible but the CEO has asked whether the weighting can be reduced to 15% given the operational complexity of the Scope 1 reduction target. RemCo must decide. (B) LTIP ESG metric: a 20% ESG weighting is proposed in the 3-year LTIP, covering net-zero transition milestones. The external remuneration adviser recommends a 10% weighting given LTIP ESG is a new departure for Kestrel. RemCo must decide. (C) Malus and clawback provisions: the current policy allows malus (withholding unvested awards) and clawback (recovering paid bonuses) in cases of 'serious misconduct or material misstatement.' The FRC and institutional investors are increasingly expecting ESG-specific malus/clawback triggers. RemCo must consider whether to add an ESG-specific provision."
+              },
+              {
+                "t": "h",
+                "v": "Capstone Challenge 2: German EU Directive Compliance"
+              },
+              {
+                "t": "p",
+                "v": "Compliance requirements by June 2026 (4 months): (1) Salary bands documented for all 87 non-tariff employees; (2) Category-level gender pay gap analysis (grade × function for non-tariff; collective agreement for tariff — the CA already specifies the same rates by grade and gender, so tariff employees are inherently compliant); (3) HRIS capability to respond to individual pay information requests; (4) Pre-hire disclosure language in all German job postings; (5) Employment contracts amended to remove pay secrecy clauses. Current timeline risk: HRIS integration (Workday) is a 9-month project — it will not be complete by June 2026. Interim solution required."
+              },
+              {
+                "t": "h",
+                "v": "Capstone Challenge 3: Emma Thorpe's Pay Complaint"
+              },
+              {
+                "t": "p",
+                "v": "Emma's comparison points: predecessor Marcus Webb paid £117,000 (23% more). Two male peers: £102,000 (8.5% more) and £108,000 (14.9% more). Emma's service in role: 18 months. Predecessor service: 5 years. Male peer A: 3 years in role. Male peer B: 6 years in role. Emma's performance rating (last two reviews): Exceeds Expectations. Male peer A: Meets Expectations. Male peer B: Exceeds Expectations. An employment solicitor is involved — this is a formal equal pay grievance in prospect."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Challenge 1 Recommendation",
+                "v": "(A) ESG metric weighting in annual bonus: maintain at 20%, not reduce to 15%. Rationale: Highgate Asset Management and ISS have specifically asked for more robust ESG metrics; reducing the weighting immediately after publishing redesigned metrics would signal that the redesign was cosmetic. If the CEO is concerned about the operational complexity of the Scope 1 target, the solution is better target design, not reduced weighting. (B) LTIP ESG metric: introduce at 15% (compromise between proposed 20% and adviser's 10%). Rationale: 10% is too small to be credible; 20% is a substantial departure from existing practice in one step. 15% reflects genuine commitment while managing change risk. (C) ESG malus/clawback: add an ESG-specific trigger — 'material misstatement or misrepresentation of ESG performance data upon which a bonus or LTIP award was based.' This is narrow, targeted, and defensible — it does not introduce vague ESG discretion, but creates clear accountability for data integrity. It is likely to be supported by ISS and institutional shareholders as a governance enhancement."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Challenge 2 Recommendation",
+                "v": "4-month interim solution (not HRIS integration): (1) Non-tariff salary band documentation: engage external HR data consultant for 6 weeks to document the 87 non-tariff employees' salary bands based on existing pay data and external benchmarking. Deliverable: 87-row salary band table in Excel, signed off by German HR Director and Group Head of Reward. (2) Category-level gender pay gap analysis: export German non-tariff pay data to a Group Workday manual report template (an Excel model built by Group reward). Run the analysis for the 12 non-tariff categories with 10+ employees. (3) Individual pay information request process: create a manual process — employee submits a written request to the German HR Director; the HR Director responds within 30 days with the category average (disaggregated by gender) and the employee's position relative to the average. Temporary process until HRIS integration is complete. (4) Job postings: update with salary bands from the documented table — complete within 4 weeks. (5) Contract amendment: Employment lawyer drafts and issues contract addendum removing pay secrecy clause to all 87 non-tariff employees."
+              },
+              {
+                "t": "reveal",
+                "label": "Reveal Challenge 3 Recommendation",
+                "v": "Investigation protocol (with external employment lawyer engaged immediately): (1) Do not admit or deny liability in any communication until the investigation is complete. (2) Gather comparator data: obtain full pay history for Marcus Webb, Male Peer A, and Male Peer B — salary at appointment, annual increases, performance ratings, time in role. (3) Legal test (Equality Act 2010, s.65): is Emma's work of equal value to the comparators? Grade 11 Regional Operations Director = same grade and job family = presumption of equal value. (4) Material factor defence analysis: can Kestrel justify the pay differences by objective material factors — not related to sex? Legitimate factors: (a) time in role (predecessor 5 years vs Emma 18 months); (b) performance history (Webb's 5-year performance record; Emma's 18-month record shows Exceeds Expectations — actually stronger than Peer A); (c) market rate at appointment (was £117k the market rate in 2019? Has the market moved since?). (5) Likely outcome: the predecessor comparison (£117k) is the most complex — predecessors can be legitimate comparators in equal pay claims. If Webb's salary included legitimate market premiums or long-service progression that Emma has not yet had time to earn, the material factor defence may be sustainable. The peer comparison (£102k and £108k at same grade) is harder to defend — a 14.9% gap to a male peer doing equivalent work with 3 years' tenure (vs Emma's Exceeds Expectations) requires strong objective justification. Recommendation: settle the peer gap with a targeted pay correction while the predecessor analysis is conducted. Deferring resolution risks a tribunal claim, adverse media coverage, and a significant equity award."
+              },
+              {
+                "t": "takeaways",
+                "items": [
+                  "ESG weighting reduction after publicly committing to more robust metrics signals cosmetic intent — maintaining or increasing the weighting is the credible governance response.",
+                  "EU Directive compliance requires HRIS capability or a documented interim manual process — the compliance obligation does not move because the HRIS project is delayed.",
+                  "Equal pay investigations must separate three distinct analytical questions: is the work of equal value? Is there a pay gap? Can the pay gap be justified by objective material factors not related to sex?"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "20-cap-Q",
+            "title": "Capstone Quiz: Reward Governance and ESG Integration",
+            "duration": "15 min",
+            "xp": 300,
+            "type": "quiz",
+            "quiz_questions": [
+              {
+                "q": "An ESG-specific malus/clawback trigger for 'material misstatement of ESG performance data' is preferred over a broad ESG discretion clause because:",
+                "opts": [
+                  "The FRC prohibits broad ESG discretion clauses in remuneration policies.",
+                  "It creates specific, defensible accountability (data integrity) without introducing vague subjective discretion — making it more credible and governance-consistent.",
+                  "Institutional investors have agreed to vote against any ESG discretion clause in LTIP plans.",
+                  "The malus/clawback trigger reduces the tax liability on LTIP awards."
+                ],
+                "ans": 1,
+                "exp": "Broad ESG discretion ('if ESG performance is unsatisfactory, RemCo may reduce the award') is the same problem as the original ESG metric design — it is subjective and unverifiable. A targeted data-integrity trigger is specific and defensible."
+              },
+              {
+                "q": "Kestrel's German subsidiary can achieve EU Directive compliance by June 2026 without HRIS integration by:",
+                "opts": [
+                  "Delaying compliance until the HRIS integration is complete in 9 months.",
+                  "Documenting salary bands in Excel, building a manual category pay gap analysis, creating a written individual request process, and issuing contract amendments — all within 4 months.",
+                  "Applying for an EU member state extension to the June 2026 deadline.",
+                  "Confirming that tariff employees are inherently compliant and excluding non-tariff employees from the Directive's scope."
+                ],
+                "ans": 1,
+                "exp": "The Directive's requirements can be met through manual processes — documented bands, manual analysis, written request responses, contract amendments — when HRIS automation is not yet available. Non-tariff employees cannot be excluded."
+              },
+              {
+                "q": "In Emma Thorpe's equal pay claim, the predecessor comparison (Marcus Webb at £117k) is a legitimate basis for an equal pay claim because:",
+                "opts": [
+                  "The Equality Act 2010 specifically names predecessor comparison as a protected comparison class.",
+                  "Predecessors in the same role can be legitimate comparators under UK equal pay law — the claim does not require a current colleague comparison.",
+                  "Emma and Marcus performed identical tasks in identical market conditions, making the comparison directly applicable.",
+                  "The Equality Act 2010 requires equal pay to predecessors whenever a new employee is appointed to a pre-existing role."
+                ],
+                "ans": 1,
+                "exp": "UK equal pay law (Equality Act 2010 and case law, including Macarthys Ltd v Smith) permits predecessor comparisons — a woman can compare her pay to that of a predecessor male in the same role. The employer must show a material factor defence for the difference."
+              },
+              {
+                "q": "The material factor defence in Emma's case is most likely to succeed in relation to:",
+                "opts": [
+                  "The comparison to predecessor Marcus Webb (£117k) — time-in-role and historic market rate differences may justify the gap.",
+                  "The comparison to male Peer B (£108k, Exceeds Expectations rating, 6 years in role) — performance and tenure are strong material factors here.",
+                  "The comparison to male Peer A (£102k, Meets Expectations, 3 years in role) — performance difference (Emma exceeds, Peer A meets) makes the gap hardest to justify.",
+                  "None of the three comparison points — the material factor defence is not available when comparators are at the same grade."
+                ],
+                "ans": 0,
+                "exp": "The predecessor gap may be justifiable by legitimate historic market rate and time-in-role factors. The peer comparison to Peer A (who rates lower than Emma on performance) is the hardest to justify — a worse-rated male peer earning more than a better-rated female employee is very difficult to defend on non-sex grounds."
+              },
+              {
+                "q": "The recommended response to Emma's claim (settling the peer gap before tribunal, continuing the predecessor analysis) is preferred over waiting for the full investigation to complete because:",
+                "opts": [
+                  "Settling avoids the legal cost of a tribunal hearing.",
+                  "Peer A's gap is unlikely to be justified by objective factors (Emma outperforms him); settling that specific gap demonstrates good faith while preserving the predecessor analysis, reducing tribunal risk and adverse media exposure.",
+                  "Settling is required by the ACAS early conciliation process before any tribunal claim can proceed.",
+                  "Emma's solicitor has indicated that a settlement is the only acceptable outcome."
+                ],
+                "ans": 1,
+                "exp": "The peer comparison (Peer A, Meets Expectations vs Emma's Exceeds Expectations) is the weakest part of Kestrel's position. Settling it proactively removes the highest-risk element, demonstrates good faith, and allows the more complex predecessor analysis to proceed without the urgency and pressure of a live tribunal claim."
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ];
 

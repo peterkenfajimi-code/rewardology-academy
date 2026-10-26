@@ -14,7 +14,7 @@
   --white:#fff;--rule:rgba(255,255,255,.09);
   --sans:'DM Sans','Segoe UI',sans-serif;
   --serif:'Cormorant Garamond',Georgia,serif;
-  --c1:#C8963E;--c2:#0C6B65;--c3:#6B4C9A;--c4:#B84B4B;--c5:#3A7D44;--c6:#0C6B65;--c7:#6B4C9A;--c8:#B84B4B;--c9:#3A7D44;--c10:#C8963E;--c11:#2D6A9F;--c12:#7B3FA0;--c13:#1A7A4A;--c14:#C25B20;--c15:#6B3A2A;
+  --c1:#C8963E;--c2:#0C6B65;--c3:#6B4C9A;--c4:#B84B4B;--c5:#3A7D44;--c6:#0C6B65;--c7:#6B4C9A;--c8:#B84B4B;--c9:#3A7D44;--c10:#C8963E;--c11:#2D6A9F;--c12:#7B3FA0;--c13:#1A7A4A;--c14:#C25B20;--c15:#6B3A2A;--c16:#1B5E94;--c17:#5C4B8A;--c18:#2D8B6B;--c19:#C4821A;--c20:#3D5A3E;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
@@ -107,7 +107,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 </head>
 <body>
 <div class="menu-btn" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</div>
-<div class="sidebar" id="sidebar"><div class="sb-brand"><div class="sb-mark"><div class="sb-logo">R</div><div><div class="sb-name">Rewardology</div><div class="sb-sub">Practitioner Toolkit</div></div></div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#C8963E"></div>Course 1 · Total Rewards Foundations</div><div class="sb-item" id="nav-t01" onclick="showTool('t01')" style="--active-c:var(--c1)"><span class="sb-item-icon">🎯</span>Five Pillars Diagnostic</div><div class="sb-item" id="nav-t02" onclick="showTool('t02')" style="--active-c:var(--c1)"><span class="sb-item-icon">📋</span>Total Reward Statement Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#0C6B65"></div>Course 2 · Compensation & Benefits Essentials</div><div class="sb-item" id="nav-t03" onclick="showTool('t03')" style="--active-c:var(--c2)"><span class="sb-item-icon">📐</span>Salary Range Builder</div><div class="sb-item" id="nav-t04" onclick="showTool('t04')" style="--active-c:var(--c2)"><span class="sb-item-icon">📊</span>Market Pricing Worksheet</div><div class="sb-item" id="nav-t05" onclick="showTool('t05')" style="--active-c:var(--c2)"><span class="sb-item-icon">💰</span>Benefits Budget Calculator</div><div class="sb-item" id="nav-t06" onclick="showTool('t06')" style="--active-c:var(--c2)"><span class="sb-item-icon">✅</span>Approval Matrix Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#6B4C9A"></div>Course 3 · Pay Equity & Job Evaluation</div><div class="sb-item" id="nav-t07" onclick="showTool('t07')" style="--active-c:var(--c3)"><span class="sb-item-icon">⚖️</span>Point-Factor Evaluation Scorecard</div><div class="sb-item" id="nav-t08" onclick="showTool('t08')" style="--active-c:var(--c3)"><span class="sb-item-icon">📉</span>Pay Gap Calculator</div><div class="sb-item" id="nav-t09" onclick="showTool('t09')" style="--active-c:var(--c3)"><span class="sb-item-icon">🔧</span>Remediation Budget Calculator</div><div class="sb-item" id="nav-t10" onclick="showTool('t10')" style="--active-c:var(--c3)"><span class="sb-item-icon">📋</span>Pay Equity Audit Checklist</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#B84B4B"></div>Course 4 · Pay Transparency & Communication</div><div class="sb-item" id="nav-t11" onclick="showTool('t11')" style="--active-c:var(--c4)"><span class="sb-item-icon">🔍</span>Transparency Maturity Assessment</div><div class="sb-item" id="nav-t12" onclick="showTool('t12')" style="--active-c:var(--c4)"><span class="sb-item-icon">💬</span>Manager Briefing Pack</div><div class="sb-item" id="nav-t13" onclick="showTool('t13')" style="--active-c:var(--c4)"><span class="sb-item-icon">📄</span>Total Reward Statement Template</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#3A7D44"></div>Course 5 · HR Analytics & Career Development</div><div class="sb-item" id="nav-t14" onclick="showTool('t14')" style="--active-c:var(--c5)"><span class="sb-item-icon">📈</span>Compa-Ratio Distribution Analyser</div><div class="sb-item" id="nav-t15" onclick="showTool('t15')" style="--active-c:var(--c5)"><span class="sb-item-icon">⚠️</span>Flight-Risk Scoring Tool</div><div class="sb-item" id="nav-t16" onclick="showTool('t16')" style="--active-c:var(--c5)"><span class="sb-item-icon">💹</span>Turnover Cost & ROI Calculator</div><div class="sb-item" id="nav-t17" onclick="showTool('t17')" style="--active-c:var(--c5)"><span class="sb-item-icon">🗺️</span>Career Lattice Mapping Tool</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#0C6B65"></div>Course 6 · Variable Pay &amp; STI Design</div><div class="sb-item" id="nav-t18" onclick="showTool('t18')" style="--active-c:var(--c6)"><span class="sb-item-icon">🎯</span>STI Framework Planner</div><div class="sb-item" id="nav-t19" onclick="showTool('t19')" style="--active-c:var(--c6)"><span class="sb-item-icon">📈</span>Payout Curve Calculator</div><div class="sb-item" id="nav-t20" onclick="showTool('t20')" style="--active-c:var(--c6)"><span class="sb-item-icon">🔒</span>Governance Gate Checklist</div><div class="sb-item" id="nav-t21" onclick="showTool('t21')" style="--active-c:var(--c6)"><span class="sb-item-icon">💬</span>Manager Briefing Template</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#6B4C9A"></div>Course 7 · Benefits Design &amp; Administration</div><div class="sb-item" id="nav-t22" onclick="showTool('t22')" style="--active-c:var(--c7)"><span class="sb-item-icon">🔍</span>Benefits Portfolio Auditor</div><div class="sb-item" id="nav-t23" onclick="showTool('t23')" style="--active-c:var(--c7)"><span class="sb-item-icon">🏥</span>Health Plan Cost Comparison</div><div class="sb-item" id="nav-t24" onclick="showTool('t24')" style="--active-c:var(--c7)"><span class="sb-item-icon">🏦</span>Pension Contribution Modeller</div><div class="sb-item" id="nav-t25" onclick="showTool('t25')" style="--active-c:var(--c7)"><span class="sb-item-icon">⚙️</span>Flex Benefits Budget Planner</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#B84B4B"></div>Course 8 · Executive Compensation &amp; LTI</div><div class="sb-item" id="nav-t26" onclick="showTool('t26')" style="--active-c:var(--c8)"><span class="sb-item-icon">🎯</span>LTI Vehicle Selector</div><div class="sb-item" id="nav-t27" onclick="showTool('t27')" style="--active-c:var(--c8)"><span class="sb-item-icon">📊</span>PSU Vesting Schedule Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#3A7D44"></div>Course 9 · Sales Compensation Design</div><div class="sb-item" id="nav-t28" onclick="showTool('t28')" style="--active-c:var(--c9)"><span class="sb-item-icon">📋</span>TTC Benchmarking Worksheet</div><div class="sb-item" id="nav-t29" onclick="showTool('t29')" style="--active-c:var(--c9)"><span class="sb-item-icon">💰</span>Commission Payout Table Builder</div><div class="sb-item" id="nav-t30" onclick="showTool('t30')" style="--active-c:var(--c9)"><span class="sb-item-icon">📉</span>Quota Attainment Analyser</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#C8963E"></div>Course 10 · Global Compensation &amp; Mobility</div><div class="sb-item" id="nav-t31" onclick="showTool('t31')" style="--active-c:var(--c10)"><span class="sb-item-icon">🌍</span>Geographic Differential Matrix</div><div class="sb-item" id="nav-t32" onclick="showTool('t32')" style="--active-c:var(--c10)"><span class="sb-item-icon">✈️</span>Expat Balance Sheet Calculator</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#2D6A9F"></div>Course 11 · Job Evaluation &amp; Grade Architecture</div><div class="sb-item" id="nav-t33" onclick="showTool('t33')" style="--active-c:var(--c11)"><span class="sb-item-icon">⚖️</span>Point-Factor Evaluation Scorecard</div><div class="sb-item" id="nav-t34" onclick="showTool('t34')" style="--active-c:var(--c11)"><span class="sb-item-icon">🏗️</span>Grade Structure Builder</div><div class="sb-item" id="nav-t35" onclick="showTool('t35')" style="--active-c:var(--c11)"><span class="sb-item-icon">🔎</span>Grade Inflation Auditor</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#7B3FA0"></div>Course 12 · Pay Equity Analysis &amp; Reporting</div><div class="sb-item" id="nav-t36" onclick="showTool('t36')" style="--active-c:var(--c12)"><span class="sb-item-icon">📊</span>Gender Pay Gap Calculator</div><div class="sb-item" id="nav-t37" onclick="showTool('t37')" style="--active-c:var(--c12)"><span class="sb-item-icon">🔬</span>Pay Equity Cohort Analyser</div><div class="sb-item" id="nav-t38" onclick="showTool('t38')" style="--active-c:var(--c12)"><span class="sb-item-icon">💊</span>Remediation Cost Modeller</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#1A7A4A"></div>Course 13 · Reward Communication</div><div class="sb-item" id="nav-t39" onclick="showTool('t39')" style="--active-c:var(--c13)"><span class="sb-item-icon">📋</span>TRS Builder</div><div class="sb-item" id="nav-t40" onclick="showTool('t40')" style="--active-c:var(--c13)"><span class="sb-item-icon">💬</span>Manager Conversation Scorer</div><div class="sb-item" id="nav-t41" onclick="showTool('t41')" style="--active-c:var(--c13)"><span class="sb-item-icon">🔓</span>Pay Transparency Readiness</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#C25B20"></div>Course 14 · Compensation Analytics</div><div class="sb-item" id="nav-t42" onclick="showTool('t42')" style="--active-c:var(--c14)"><span class="sb-item-icon">📐</span>Merit Matrix Builder</div><div class="sb-item" id="nav-t43" onclick="showTool('t43')" style="--active-c:var(--c14)"><span class="sb-item-icon">⚠️</span>Attrition Risk Scorer</div><div class="sb-item" id="nav-t44" onclick="showTool('t44')" style="--active-c:var(--c14)"><span class="sb-item-icon">🗂️</span>Data Quality Auditor</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#6B3A2A"></div>Course 15 · M&amp;A Reward Integration</div><div class="sb-item" id="nav-t45" onclick="showTool('t45')" style="--active-c:var(--c15)"><span class="sb-item-icon">🔍</span>HR Due Diligence Checklist</div><div class="sb-item" id="nav-t46" onclick="showTool('t46')" style="--active-c:var(--c15)"><span class="sb-item-icon">💷</span>Harmonisation Cost Modeller</div><div class="sb-item" id="nav-t47" onclick="showTool('t47')" style="--active-c:var(--c15)"><span class="sb-item-icon">📅</span>Integration Comms Planner</div></div></div>
+<div class="sidebar" id="sidebar"><div class="sb-brand"><div class="sb-mark"><div class="sb-logo">R</div><div><div class="sb-name">Rewardology</div><div class="sb-sub">Practitioner Toolkit</div></div></div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#C8963E"></div>Course 1 · Total Rewards Foundations</div><div class="sb-item" id="nav-t01" onclick="showTool('t01')" style="--active-c:var(--c1)"><span class="sb-item-icon">🎯</span>Five Pillars Diagnostic</div><div class="sb-item" id="nav-t02" onclick="showTool('t02')" style="--active-c:var(--c1)"><span class="sb-item-icon">📋</span>Total Reward Statement Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#0C6B65"></div>Course 2 · Compensation & Benefits Essentials</div><div class="sb-item" id="nav-t03" onclick="showTool('t03')" style="--active-c:var(--c2)"><span class="sb-item-icon">📐</span>Salary Range Builder</div><div class="sb-item" id="nav-t04" onclick="showTool('t04')" style="--active-c:var(--c2)"><span class="sb-item-icon">📊</span>Market Pricing Worksheet</div><div class="sb-item" id="nav-t05" onclick="showTool('t05')" style="--active-c:var(--c2)"><span class="sb-item-icon">💰</span>Benefits Budget Calculator</div><div class="sb-item" id="nav-t06" onclick="showTool('t06')" style="--active-c:var(--c2)"><span class="sb-item-icon">✅</span>Approval Matrix Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#6B4C9A"></div>Course 3 · Pay Equity & Job Evaluation</div><div class="sb-item" id="nav-t07" onclick="showTool('t07')" style="--active-c:var(--c3)"><span class="sb-item-icon">⚖️</span>Point-Factor Evaluation Scorecard</div><div class="sb-item" id="nav-t08" onclick="showTool('t08')" style="--active-c:var(--c3)"><span class="sb-item-icon">📉</span>Pay Gap Calculator</div><div class="sb-item" id="nav-t09" onclick="showTool('t09')" style="--active-c:var(--c3)"><span class="sb-item-icon">🔧</span>Remediation Budget Calculator</div><div class="sb-item" id="nav-t10" onclick="showTool('t10')" style="--active-c:var(--c3)"><span class="sb-item-icon">📋</span>Pay Equity Audit Checklist</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#B84B4B"></div>Course 4 · Pay Transparency & Communication</div><div class="sb-item" id="nav-t11" onclick="showTool('t11')" style="--active-c:var(--c4)"><span class="sb-item-icon">🔍</span>Transparency Maturity Assessment</div><div class="sb-item" id="nav-t12" onclick="showTool('t12')" style="--active-c:var(--c4)"><span class="sb-item-icon">💬</span>Manager Briefing Pack</div><div class="sb-item" id="nav-t13" onclick="showTool('t13')" style="--active-c:var(--c4)"><span class="sb-item-icon">📄</span>Total Reward Statement Template</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#3A7D44"></div>Course 5 · HR Analytics & Career Development</div><div class="sb-item" id="nav-t14" onclick="showTool('t14')" style="--active-c:var(--c5)"><span class="sb-item-icon">📈</span>Compa-Ratio Distribution Analyser</div><div class="sb-item" id="nav-t15" onclick="showTool('t15')" style="--active-c:var(--c5)"><span class="sb-item-icon">⚠️</span>Flight-Risk Scoring Tool</div><div class="sb-item" id="nav-t16" onclick="showTool('t16')" style="--active-c:var(--c5)"><span class="sb-item-icon">💹</span>Turnover Cost & ROI Calculator</div><div class="sb-item" id="nav-t17" onclick="showTool('t17')" style="--active-c:var(--c5)"><span class="sb-item-icon">🗺️</span>Career Lattice Mapping Tool</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#0C6B65"></div>Course 6 · Variable Pay &amp; STI Design</div><div class="sb-item" id="nav-t18" onclick="showTool('t18')" style="--active-c:var(--c6)"><span class="sb-item-icon">🎯</span>STI Framework Planner</div><div class="sb-item" id="nav-t19" onclick="showTool('t19')" style="--active-c:var(--c6)"><span class="sb-item-icon">📈</span>Payout Curve Calculator</div><div class="sb-item" id="nav-t20" onclick="showTool('t20')" style="--active-c:var(--c6)"><span class="sb-item-icon">🔒</span>Governance Gate Checklist</div><div class="sb-item" id="nav-t21" onclick="showTool('t21')" style="--active-c:var(--c6)"><span class="sb-item-icon">💬</span>Manager Briefing Template</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#6B4C9A"></div>Course 7 · Benefits Design &amp; Administration</div><div class="sb-item" id="nav-t22" onclick="showTool('t22')" style="--active-c:var(--c7)"><span class="sb-item-icon">🔍</span>Benefits Portfolio Auditor</div><div class="sb-item" id="nav-t23" onclick="showTool('t23')" style="--active-c:var(--c7)"><span class="sb-item-icon">🏥</span>Health Plan Cost Comparison</div><div class="sb-item" id="nav-t24" onclick="showTool('t24')" style="--active-c:var(--c7)"><span class="sb-item-icon">🏦</span>Pension Contribution Modeller</div><div class="sb-item" id="nav-t25" onclick="showTool('t25')" style="--active-c:var(--c7)"><span class="sb-item-icon">⚙️</span>Flex Benefits Budget Planner</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#B84B4B"></div>Course 8 · Executive Compensation &amp; LTI</div><div class="sb-item" id="nav-t26" onclick="showTool('t26')" style="--active-c:var(--c8)"><span class="sb-item-icon">🎯</span>LTI Vehicle Selector</div><div class="sb-item" id="nav-t27" onclick="showTool('t27')" style="--active-c:var(--c8)"><span class="sb-item-icon">📊</span>PSU Vesting Schedule Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#3A7D44"></div>Course 9 · Sales Compensation Design</div><div class="sb-item" id="nav-t28" onclick="showTool('t28')" style="--active-c:var(--c9)"><span class="sb-item-icon">📋</span>TTC Benchmarking Worksheet</div><div class="sb-item" id="nav-t29" onclick="showTool('t29')" style="--active-c:var(--c9)"><span class="sb-item-icon">💰</span>Commission Payout Table Builder</div><div class="sb-item" id="nav-t30" onclick="showTool('t30')" style="--active-c:var(--c9)"><span class="sb-item-icon">📉</span>Quota Attainment Analyser</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#C8963E"></div>Course 10 · Global Compensation &amp; Mobility</div><div class="sb-item" id="nav-t31" onclick="showTool('t31')" style="--active-c:var(--c10)"><span class="sb-item-icon">🌍</span>Geographic Differential Matrix</div><div class="sb-item" id="nav-t32" onclick="showTool('t32')" style="--active-c:var(--c10)"><span class="sb-item-icon">✈️</span>Expat Balance Sheet Calculator</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#2D6A9F"></div>Course 11 · Job Evaluation &amp; Grade Architecture</div><div class="sb-item" id="nav-t33" onclick="showTool('t33')" style="--active-c:var(--c11)"><span class="sb-item-icon">⚖️</span>Point-Factor Evaluation Scorecard</div><div class="sb-item" id="nav-t34" onclick="showTool('t34')" style="--active-c:var(--c11)"><span class="sb-item-icon">🏗️</span>Grade Structure Builder</div><div class="sb-item" id="nav-t35" onclick="showTool('t35')" style="--active-c:var(--c11)"><span class="sb-item-icon">🔎</span>Grade Inflation Auditor</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#7B3FA0"></div>Course 12 · Pay Equity Analysis &amp; Reporting</div><div class="sb-item" id="nav-t36" onclick="showTool('t36')" style="--active-c:var(--c12)"><span class="sb-item-icon">📊</span>Gender Pay Gap Calculator</div><div class="sb-item" id="nav-t37" onclick="showTool('t37')" style="--active-c:var(--c12)"><span class="sb-item-icon">🔬</span>Pay Equity Cohort Analyser</div><div class="sb-item" id="nav-t38" onclick="showTool('t38')" style="--active-c:var(--c12)"><span class="sb-item-icon">💊</span>Remediation Cost Modeller</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#1A7A4A"></div>Course 13 · Reward Communication</div><div class="sb-item" id="nav-t39" onclick="showTool('t39')" style="--active-c:var(--c13)"><span class="sb-item-icon">📋</span>TRS Builder</div><div class="sb-item" id="nav-t40" onclick="showTool('t40')" style="--active-c:var(--c13)"><span class="sb-item-icon">💬</span>Manager Conversation Scorer</div><div class="sb-item" id="nav-t41" onclick="showTool('t41')" style="--active-c:var(--c13)"><span class="sb-item-icon">🔓</span>Pay Transparency Readiness</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#C25B20"></div>Course 14 · Compensation Analytics</div><div class="sb-item" id="nav-t42" onclick="showTool('t42')" style="--active-c:var(--c14)"><span class="sb-item-icon">📐</span>Merit Matrix Builder</div><div class="sb-item" id="nav-t43" onclick="showTool('t43')" style="--active-c:var(--c14)"><span class="sb-item-icon">⚠️</span>Attrition Risk Scorer</div><div class="sb-item" id="nav-t44" onclick="showTool('t44')" style="--active-c:var(--c14)"><span class="sb-item-icon">🗂️</span>Data Quality Auditor</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#6B3A2A"></div>Course 15 · M&amp;A Reward Integration</div><div class="sb-item" id="nav-t45" onclick="showTool('t45')" style="--active-c:var(--c15)"><span class="sb-item-icon">🔍</span>HR Due Diligence Checklist</div><div class="sb-item" id="nav-t46" onclick="showTool('t46')" style="--active-c:var(--c15)"><span class="sb-item-icon">💷</span>Harmonisation Cost Modeller</div><div class="sb-item" id="nav-t47" onclick="showTool('t47')" style="--active-c:var(--c15)"><span class="sb-item-icon">📅</span>Integration Comms Planner</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#1B5E94"></div>Course 16 · Reward Strategy &amp; Partnering</div><div class="sb-item" id="nav-t48" onclick="showTool('t48')" style="--active-c:#1B5E94"><span class="sb-item-icon">📊</span>Strategy Maturity Scorer</div><div class="sb-item" id="nav-t49" onclick="showTool('t49')" style="--active-c:#1B5E94"><span class="sb-item-icon">💡</span>Business Case ROI Calculator</div><div class="sb-item" id="nav-t50" onclick="showTool('t50')" style="--active-c:#1B5E94"><span class="sb-item-icon">📋</span>SCQA Presentation Builder</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#5C4B8A"></div>Course 17 · Workforce Planning</div><div class="sb-item" id="nav-t51" onclick="showTool('t51')" style="--active-c:#5C4B8A"><span class="sb-item-icon">💷</span>Employment Cost Calculator</div><div class="sb-item" id="nav-t52" onclick="showTool('t52')" style="--active-c:#5C4B8A"><span class="sb-item-icon">📈</span>Scenario Cost Modeller</div><div class="sb-item" id="nav-t53" onclick="showTool('t53')" style="--active-c:#5C4B8A"><span class="sb-item-icon">🔧</span>Redundancy Cost &amp; Payback</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#2D8B6B"></div>Course 18 · Recognition &amp; Non-Financial Reward</div><div class="sb-item" id="nav-t54" onclick="showTool('t54')" style="--active-c:#2D8B6B"><span class="sb-item-icon">⭐</span>Recognition Programme Designer</div><div class="sb-item" id="nav-t55" onclick="showTool('t55')" style="--active-c:#2D8B6B"><span class="sb-item-icon">🔍</span>EVP Diagnostic</div><div class="sb-item" id="nav-t56" onclick="showTool('t56')" style="--active-c:#2D8B6B"><span class="sb-item-icon">🎁</span>Non-Financial Reward Audit</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#C4821A"></div>Course 19 · Reward for Startups</div><div class="sb-item" id="nav-t57" onclick="showTool('t57')" style="--active-c:#C4821A"><span class="sb-item-icon">🚀</span>Startup Comp Benchmarker</div><div class="sb-item" id="nav-t58" onclick="showTool('t58')" style="--active-c:#C4821A"><span class="sb-item-icon">📐</span>Option Pool Calculator</div><div class="sb-item" id="nav-t59" onclick="showTool('t59')" style="--active-c:#C4821A"><span class="sb-item-icon">🗺️</span>Scaling Pay Structure Planner</div></div><div class="sb-group"><div class="sb-group-label"><div class="sb-group-dot" style="background:#3D5A3E"></div>Course 20 · Governance, ESG &amp; Reporting</div><div class="sb-item" id="nav-t60" onclick="showTool('t60')" style="--active-c:#3D5A3E"><span class="sb-item-icon">🌱</span>ESG Pay Metric Selector</div><div class="sb-item" id="nav-t61" onclick="showTool('t61')" style="--active-c:#3D5A3E"><span class="sb-item-icon">📝</span>Board Reward Report Builder</div><div class="sb-item" id="nav-t62" onclick="showTool('t62')" style="--active-c:#3D5A3E"><span class="sb-item-icon">🔓</span>Pay Transparency Readiness (Adv.)</div></div></div>
 <div class="main" id="main">
 <div class="tool-panel" id="panel-t01" style="--active-c:var(--c1)"><div class="tool-hd"><div class="tool-eye" style="color:var(--c1)">Course 1 · Total Rewards Foundations</div><div class="tool-title">Five Pillars Diagnostic</div><div class="tool-desc">Score each pillar 1–5 using real data from exit interviews, engagement surveys, and turnover reports. The tool identifies your weakest pillar and recommends where to focus investment first.</div></div>
 <div class="section"><div class="section-title">Rate each pillar</div>
@@ -1159,10 +1159,323 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 
 
 
+<!-- ═══════════════ t48: Reward Strategy Maturity Scorer ═══════════════ -->
+<div class="tool-panel" id="panel-t48" style="--active-c:#1B5E94">
+<div class="tool-hd"><div class="tool-eye" style="color:#1B5E94">Course 16 · Reward Strategy &amp; Partnering</div>
+<div class="tool-title">Reward Strategy Maturity Scorer</div>
+<div class="tool-desc">Rate your reward function across five strategic dimensions (1–5). The tool identifies your current horizon, scores your overall maturity, and prioritises the highest-leverage intervention.</div></div>
+<div class="section"><div class="section-title">Five Dimensions</div>
+<div class="grid-2" style="gap:12px">
+<div class="field"><label>Data Quality &amp; Speed</label><select id="rsm-d1"><option value="">Select…</option><option value="1">1 – No real-time data; reactive only</option><option value="2">2 – Annual surveys, slow turnaround</option><option value="3">3 – Quarterly analytics, reasonable speed</option><option value="4">4 – Monthly dashboards, fast query resolution</option><option value="5">5 – Real-time analytics, self-serve tools</option></select></div>
+<div class="field"><label>Business Alignment</label><select id="rsm-d2"><option value="">Select…</option><option value="1">1 – Reward reviewed independently of business plan</option><option value="2">2 – Annual alignment, post-plan</option><option value="3">3 – Quarterly review alongside business KPIs</option><option value="4">4 – Reward embedded in strategic planning cycle</option><option value="5">5 – Reward Director in the room for all major decisions</option></select></div>
+<div class="field"><label>Stakeholder Relationships</label><select id="rsm-d3"><option value="">Select…</option><option value="1">1 – HR/reward not trusted by Finance or Board</option><option value="2">2 – Occasional credibility; data challenged</option><option value="3">3 – Finance trusts headcount cost data</option><option value="4">4 – CFO and CPO treat reward as a business partner</option><option value="5">5 – Board-level trust; reward presents directly to RemCo</option></select></div>
+<div class="field"><label>Predictive Capability</label><select id="rsm-d4"><option value="">Select…</option><option value="1">1 – Cannot model impact of decisions in advance</option><option value="2">2 – Simple scenario modelling available</option><option value="3">3 – Can model most pay decisions before approval</option><option value="4">4 – Proactive modelling on workforce and cost scenarios</option><option value="5">5 – Predictive analytics used to prevent issues</option></select></div>
+<div class="field"><label>Market Intelligence</label><select id="rsm-d5"><option value="">Select…</option><option value="1">1 – No current market data; gut feel only</option><option value="2">2 – Annual survey data, limited role coverage</option><option value="3">3 – Multi-source survey data; coverage of key roles</option><option value="4">4 – Real-time benchmarking for critical roles</option><option value="5">5 – Continuous monitoring, immediate flagging of gaps</option></select></div>
+</div></div>
+<button onclick="calcRSM()" style="background:#1B5E94;color:#fff;border:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:600;cursor:pointer;margin-top:8px">Score My Function →</button>
+<div id="rsm-result" class="result-block colored" style="display:none;margin-top:20px">
+<div class="out-grid" id="rsm-cards"></div>
+<div id="rsm-verdict" style="margin-top:16px;font-size:14px;line-height:1.6;color:rgba(255,255,255,.75)"></div>
+</div></div>
+
+<!-- ═══════════════ t49: Business Case ROI Calculator ═══════════════════ -->
+<div class="tool-panel" id="panel-t49" style="--active-c:#1B5E94">
+<div class="tool-hd"><div class="tool-eye" style="color:#1B5E94">Course 16 · Reward Strategy &amp; Partnering</div>
+<div class="tool-title">Business Case ROI Calculator</div>
+<div class="tool-desc">Build a rigorous SCQA-structured reward business case. Enter the cost of inaction, proposed investment, and projected benefit to generate ROI, payback period, and a CFO-ready one-page summary.</div></div>
+<div class="section"><div class="section-title">Situation — Current State</div>
+<div class="grid-2">
+<div class="field"><label>Current Turnover Rate (%)</label><input type="number" id="bc-turn" placeholder="e.g. 22" min="0" max="100"></div>
+<div class="field"><label>Benchmark Turnover Rate (%)</label><input type="number" id="bc-bench" placeholder="e.g. 14" min="0" max="100"></div>
+<div class="field"><label>Headcount in Affected Population</label><input type="number" id="bc-hc" placeholder="e.g. 630"></div>
+<div class="field"><label>Average Annual Salary (£)</label><input type="number" id="bc-sal" placeholder="e.g. 72000"></div>
+<div class="field"><label>Fully-loaded Replacement Cost (% of salary)</label><input type="number" id="bc-rc" placeholder="e.g. 75" min="0" max="200"></div>
+</div></div>
+<div class="section"><div class="section-title">Complication — Proposed Intervention</div>
+<div class="grid-2">
+<div class="field"><label>Total Investment Cost (£)</label><input type="number" id="bc-inv" placeholder="e.g. 212000"></div>
+<div class="field"><label>Projected Turnover Reduction (pp)</label><input type="number" id="bc-red" placeholder="e.g. 8" min="0" max="100"></div>
+</div></div>
+<button onclick="calcBC()" style="background:#1B5E94;color:#fff;border:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:600;cursor:pointer;margin-top:8px">Calculate Business Case →</button>
+<div id="bc-result" class="result-block colored" style="display:none;margin-top:20px">
+<div class="out-grid" id="bc-cards"></div>
+<div id="bc-summary" style="margin-top:16px;padding:16px;background:rgba(27,94,148,.12);border-radius:10px;border:1px solid rgba(27,94,148,.3);font-size:13px;line-height:1.65"></div>
+</div></div>
+
+<!-- ═══════════════ t50: SCQA Presentation Builder ══════════════════════ -->
+<div class="tool-panel" id="panel-t50" style="--active-c:#1B5E94">
+<div class="tool-hd"><div class="tool-eye" style="color:#1B5E94">Course 16 · Reward Strategy &amp; Partnering</div>
+<div class="tool-title">SCQA Presentation Builder</div>
+<div class="tool-desc">Construct a board-ready reward recommendation using the Situation–Complication–Question–Answer framework. Generates a structured four-element narrative you can paste into a slide deck.</div></div>
+<div class="section">
+<div class="field" style="margin-bottom:14px"><label>Situation (current state, neutral, data-led)</label><textarea id="scqa-s" rows="3" placeholder="e.g. Our voluntary turnover among mid-level analysts is 28% annualised, against a sector benchmark of 16%."></textarea></div>
+<div class="field" style="margin-bottom:14px"><label>Complication (why this is a problem)</label><textarea id="scqa-c" rows="3" placeholder="e.g. Each leaver costs £42,000 to replace. 67% of exit interviews cite compensation competitiveness as a primary factor."></textarea></div>
+<div class="field" style="margin-bottom:14px"><label>Question (the question your audience is already asking)</label><input type="text" id="scqa-q" placeholder="e.g. What is the most cost-effective intervention?"></div>
+<div class="field" style="margin-bottom:14px"><label>Answer (recommendation, front-loaded with ROI)</label><textarea id="scqa-a" rows="3" placeholder="e.g. A targeted market adjustment of £212k to the bottom quartile, combined with a career framework, projects a 264% ROI with payback in under 3 months."></textarea></div>
+<div class="field"><label>Presenter / Stakeholder</label><input type="text" id="scqa-pres" placeholder="e.g. Head of Total Rewards presenting to CFO"></div>
+</div>
+<button onclick="buildSCQA()" style="background:#1B5E94;color:#fff;border:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:600;cursor:pointer">Generate Presentation Structure →</button>
+<div id="scqa-out" style="display:none;margin-top:20px"></div>
+</div>
+
+<!-- ═══════════════ t51: Employment Cost Calculator ═════════════════════ -->
+<div class="tool-panel" id="panel-t51" style="--active-c:#5C4B8A">
+<div class="tool-hd"><div class="tool-eye" style="color:#5C4B8A">Course 17 · Workforce Planning</div>
+<div class="tool-title">Employment Cost Calculator</div>
+<div class="tool-desc">Calculate the true fully-loaded cost of an employee role including employer NI, pension, benefits, and overheads. Compares permanent cost against equivalent contractor or EOR spend.</div></div>
+<div class="section"><div class="section-title">Role Details</div>
+<div class="grid-2">
+<div class="field"><label>Annual Base Salary (£)</label><input type="number" id="ec-sal" placeholder="e.g. 72000"></div>
+<div class="field"><label>Employer Pension Contribution (%)</label><input type="number" id="ec-pen" placeholder="e.g. 5" value="5"></div>
+<div class="field"><label>Annual Benefits Cost (£)</label><input type="number" id="ec-ben" placeholder="e.g. 2400" value="2400"></div>
+<div class="field"><label>Office / Desk Overhead per Head (£)</label><input type="number" id="ec-ovh" placeholder="e.g. 3500" value="3500"></div>
+<div class="field"><label>Contractor Day Rate (£, if comparing)</label><input type="number" id="ec-day" placeholder="e.g. 400"></div>
+<div class="field"><label>Working Days per Year</label><input type="number" id="ec-days" placeholder="e.g. 250" value="250"></div>
+</div></div>
+<button onclick="calcEC()" style="background:#5C4B8A;color:#fff;border:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:600;cursor:pointer">Calculate Costs →</button>
+<div id="ec-result" class="result-block colored" style="display:none;margin-top:20px">
+<div class="out-grid" id="ec-cards"></div>
+<div id="ec-compare" style="margin-top:14px"></div>
+</div></div>
+
+<!-- ═══════════════ t52: Scenario Cost Modeller ════════════════════════ -->
+<div class="tool-panel" id="panel-t52" style="--active-c:#5C4B8A">
+<div class="tool-hd"><div class="tool-eye" style="color:#5C4B8A">Course 17 · Workforce Planning</div>
+<div class="tool-title">Workforce Scenario Cost Modeller</div>
+<div class="tool-desc">Model three workforce scenarios (current, target, stress) across build/buy/borrow/automate levers. Computes total 3-year employment cost by scenario and surfaces the most cost-effective path to target headcount.</div></div>
+<div class="section"><div class="section-title">Baseline</div>
+<div class="grid-3">
+<div class="field"><label>Current Headcount</label><input type="number" id="wsc-hc" placeholder="e.g. 1800"></div>
+<div class="field"><label>Target Headcount (3yr)</label><input type="number" id="wsc-tgt" placeholder="e.g. 2250"></div>
+<div class="field"><label>Avg Fully-loaded Cost / Head (£)</label><input type="number" id="wsc-cost" placeholder="e.g. 95000"></div>
+</div></div>
+<div class="section"><div class="section-title">Lever Mix</div>
+<div class="grid-2">
+<div class="field"><label>Build (internal development) – % of gap</label><input type="number" id="wsc-build" placeholder="e.g. 20" min="0" max="100"></div>
+<div class="field"><label>Buy (external hire) – % of gap</label><input type="number" id="wsc-buy" placeholder="e.g. 60" min="0" max="100"></div>
+<div class="field"><label>Borrow (contract/EOR) – % of gap</label><input type="number" id="wsc-borrow" placeholder="e.g. 15" min="0" max="100"></div>
+<div class="field"><label>Automate (reduce need) – % of gap</label><input type="number" id="wsc-auto" placeholder="e.g. 5" min="0" max="100"></div>
+<div class="field"><label>Contractor Day Rate (£)</label><input type="number" id="wsc-drate" placeholder="e.g. 450"></div>
+<div class="field"><label>Recruitment Cost (% of salary, for Buy)</label><input type="number" id="wsc-rec" placeholder="e.g. 20" value="20"></div>
+</div></div>
+<button onclick="calcWSC()" style="background:#5C4B8A;color:#fff;border:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:600;cursor:pointer">Model Scenarios →</button>
+<div id="wsc-result" style="display:none;margin-top:20px"></div>
+</div>
+
+<!-- ═══════════════ t53: Redundancy Cost & Payback ══════════════════════ -->
+<div class="tool-panel" id="panel-t53" style="--active-c:#5C4B8A">
+<div class="tool-hd"><div class="tool-eye" style="color:#5C4B8A">Course 17 · Workforce Planning</div>
+<div class="tool-title">Redundancy Cost &amp; Payback Calculator</div>
+<div class="tool-desc">Model the full cost of a redundancy programme — statutory + enhanced pay, notice, outplacement, legal fees — and calculate payback period against the resulting annual salary saving.</div></div>
+<div class="section"><div class="section-title">Programme Scope</div>
+<div class="grid-2">
+<div class="field"><label>Number of Roles Affected</label><input type="number" id="rcp-n" placeholder="e.g. 70"></div>
+<div class="field"><label>Average Annual Salary (£)</label><input type="number" id="rcp-sal" placeholder="e.g. 82000"></div>
+<div class="field"><label>Average Years of Service</label><input type="number" id="rcp-svc" placeholder="e.g. 6" step="0.5"></div>
+<div class="field"><label>Average Age</label><input type="number" id="rcp-age" placeholder="e.g. 38"></div>
+<div class="field"><label>Enhanced Redundancy (months/year of service)</label><input type="number" id="rcp-enh" placeholder="e.g. 1" step="0.5" value="1"></div>
+<div class="field"><label>Average Notice Period (months)</label><input type="number" id="rcp-notice" placeholder="e.g. 3"></div>
+<div class="field"><label>Outplacement Cost per Head (£)</label><input type="number" id="rcp-out" placeholder="e.g. 2500" value="2500"></div>
+<div class="field"><label>Legal &amp; Advisory Fees (£)</label><input type="number" id="rcp-legal" placeholder="e.g. 45000" value="45000"></div>
+</div></div>
+<button onclick="calcRCP()" style="background:#5C4B8A;color:#fff;border:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:600;cursor:pointer">Calculate Programme Cost →</button>
+<div id="rcp-result" class="result-block colored" style="display:none;margin-top:20px">
+<div class="out-grid" id="rcp-cards"></div>
+<div id="rcp-verdict" style="margin-top:14px;font-size:13px;line-height:1.6;color:rgba(255,255,255,.7)"></div>
+</div></div>
+
+<!-- ═══════════════ t54: Recognition Programme Designer ══════════════════ -->
+<div class="tool-panel" id="panel-t54" style="--active-c:#2D8B6B">
+<div class="tool-hd"><div class="tool-eye" style="color:#2D8B6B">Course 18 · Recognition &amp; Non-Financial Reward</div>
+<div class="tool-title">Recognition Programme Designer</div>
+<div class="tool-desc">Assess your current recognition programme against seven design principles. The tool identifies your weakest dimension, scores overall programme quality, and generates a prioritised improvement roadmap.</div></div>
+<div class="section"><div class="section-title">Programme Assessment (1 = weak, 5 = excellent)</div>
+<div class="grid-2" style="gap:12px">
+<div class="field"><label>Immediacy (recognition speed)</label><select id="rpd-s1"><option value="">Select…</option><option value="1">1 – Mostly annual awards</option><option value="2">2 – Quarterly recognition cycles</option><option value="3">3 – Monthly touchpoints</option><option value="4">4 – Weekly recognition opportunities</option><option value="5">5 – Real-time, frictionless recognition</option></select></div>
+<div class="field"><label>Specificity (quality of recognition language)</label><select id="rpd-s2"><option value="">Select…</option><option value="1">1 – Generic ('great job')</option><option value="2">2 – Some specificity but inconsistent</option><option value="3">3 – Usually names the behaviour</option><option value="4">4 – Consistently names behaviour + impact</option><option value="5">5 – Always names behaviour, impact, and business connection</option></select></div>
+<div class="field"><label>Manager Capability</label><select id="rpd-s3"><option value="">Select…</option><option value="1">1 – No training; recognition left to chance</option><option value="2">2 – Basic guidance provided</option><option value="3">3 – Recognition included in manager training</option><option value="4">4 – Recognition is a measured manager competency</option><option value="5">5 – Coached, tracked, and linked to manager performance</option></select></div>
+<div class="field"><label>Meritocracy (top performers recognised more)</label><select id="rpd-s4"><option value="">Select…</option><option value="1">1 – Distributed equally / participation trophies</option><option value="2">2 – Slightly differentiated</option><option value="3">3 – Generally merit-based</option><option value="4">4 – Clearly more recognition for stronger performers</option><option value="5">5 – Rigorous differentiation; top quartile recognised ≥2× more</option></select></div>
+<div class="field"><label>Business Line-of-Sight</label><select id="rpd-s5"><option value="">Select…</option><option value="1">1 – Recognition disconnected from business goals</option><option value="2">2 – Loose connection to values</option><option value="3">3 – Connected to stated company values</option><option value="4">4 – Explicitly tied to strategic priorities</option><option value="5">5 – Recognition reinforces the specific behaviours driving strategy</option></select></div>
+<div class="field"><label>Personalisation</label><select id="rpd-s6"><option value="">Select…</option><option value="1">1 – One-size-fits-all approach</option><option value="2">2 – Some choice in delivery channel</option><option value="3">3 – Choice between public/private recognition</option><option value="4">4 – Preference captured during onboarding</option><option value="5">5 – Fully personalised; employee controls their experience</option></select></div>
+<div class="field"><label>Outcome Measurement</label><select id="rpd-s7"><option value="">Select…</option><option value="1">1 – No measurement beyond platform logins</option><option value="2">2 – Track nominations volume only</option><option value="3">3 – Monitor engagement score correlation</option><option value="4">4 – Track retention impact + engagement</option><option value="5">5 – Full ROI model with turnover cost savings quantified</option></select></div>
+</div></div>
+<button onclick="calcRPD()" style="background:#2D8B6B;color:#fff;border:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:600;cursor:pointer;margin-top:8px">Score Programme →</button>
+<div id="rpd-result" style="display:none;margin-top:20px"></div>
+</div>
+
+<!-- ═══════════════ t55: EVP Diagnostic ═════════════════════════════════ -->
+<div class="tool-panel" id="panel-t55" style="--active-c:#2D8B6B">
+<div class="tool-hd"><div class="tool-eye" style="color:#2D8B6B">Course 18 · Recognition &amp; Non-Financial Reward</div>
+<div class="tool-title">EVP Diagnostic</div>
+<div class="tool-desc">Score your Employee Value Proposition across five pillars and identify the promise gap between stated EVP and lived employee experience. Generates a prioritised action plan.</div></div>
+<div class="section"><div class="section-title">EVP Pillar Scores — Stated vs. Lived (1–5)</div>
+<div id="evp-rows">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:12px;align-items:center">
+<div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.35)">Pillar</div>
+<div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.35)">Stated EVP Score</div>
+<div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.35)">Lived Experience Score</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:10px;align-items:center"><span style="font-size:13px">💰 Compensation &amp; Financial</span><input type="number" class="evp-stated" placeholder="1–5" min="1" max="5" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px;color:#fff;font-size:14px"><input type="number" class="evp-lived" placeholder="1–5" min="1" max="5" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px;color:#fff;font-size:14px"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:10px;align-items:center"><span style="font-size:13px">🏥 Benefits &amp; Wellbeing</span><input type="number" class="evp-stated" placeholder="1–5" min="1" max="5" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px;color:#fff;font-size:14px"><input type="number" class="evp-lived" placeholder="1–5" min="1" max="5" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px;color:#fff;font-size:14px"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:10px;align-items:center"><span style="font-size:13px">📚 Career &amp; Development</span><input type="number" class="evp-stated" placeholder="1–5" min="1" max="5" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px;color:#fff;font-size:14px"><input type="number" class="evp-lived" placeholder="1–5" min="1" max="5" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px;color:#fff;font-size:14px"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:10px;align-items:center"><span style="font-size:13px">🎯 Purpose &amp; Culture</span><input type="number" class="evp-stated" placeholder="1–5" min="1" max="5" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px;color:#fff;font-size:14px"><input type="number" class="evp-lived" placeholder="1–5" min="1" max="5" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px;color:#fff;font-size:14px"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:10px;align-items:center"><span style="font-size:13px">🏢 Working Environment</span><input type="number" class="evp-stated" placeholder="1–5" min="1" max="5" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px;color:#fff;font-size:14px"><input type="number" class="evp-lived" placeholder="1–5" min="1" max="5" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px;color:#fff;font-size:14px"></div>
+</div></div>
+<button onclick="calcEVP()" style="background:#2D8B6B;color:#fff;border:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:600;cursor:pointer;margin-top:8px">Diagnose EVP →</button>
+<div id="evp-result" style="display:none;margin-top:20px"></div>
+</div>
+
+<!-- ═══════════════ t56: Non-Financial Reward Audit ═════════════════════ -->
+<div class="tool-panel" id="panel-t56" style="--active-c:#2D8B6B">
+<div class="tool-hd"><div class="tool-eye" style="color:#2D8B6B">Course 18 · Recognition &amp; Non-Financial Reward</div>
+<div class="tool-title">Non-Financial Reward Audit</div>
+<div class="tool-desc">Audit your non-financial reward offering across four categories. Enter current investment and utilisation rates to identify the lowest-ROI elements and highest-opportunity gaps.</div></div>
+<div class="section"><div class="section-title">Non-Financial Reward Inventory</div>
+<div style="overflow-x:auto"><table class="tbl"><thead><tr><th>Reward Element</th><th>Category</th><th>Annual Cost (£)</th><th>Utilisation (%)</th><th>Employee Importance (1–5)</th></tr></thead>
+<tbody id="nfr-body">
+<tr><td><input type="text" class="nfr-name" placeholder="e.g. Learning budget" style="background:transparent;border:none;color:#fff;font-size:13px;width:160px"></td><td><select class="nfr-cat" style="background:#1a2840;border:none;color:#fff;font-size:12px"><option>L&amp;D</option><option>Career</option><option>Flexibility</option><option>Recognition</option></select></td><td><input type="number" class="nfr-cost" placeholder="0" style="background:transparent;border:none;color:#fff;font-size:13px;width:90px"></td><td><input type="number" class="nfr-util" placeholder="0" min="0" max="100" style="background:transparent;border:none;color:#fff;font-size:13px;width:60px"></td><td><input type="number" class="nfr-imp" placeholder="3" min="1" max="5" style="background:transparent;border:none;color:#fff;font-size:13px;width:50px"></td></tr>
+<tr><td><input type="text" class="nfr-name" placeholder="e.g. Flexible working" style="background:transparent;border:none;color:#fff;font-size:13px;width:160px"></td><td><select class="nfr-cat" style="background:#1a2840;border:none;color:#fff;font-size:12px"><option>L&amp;D</option><option selected>Flexibility</option><option>Career</option><option>Recognition</option></select></td><td><input type="number" class="nfr-cost" placeholder="0" style="background:transparent;border:none;color:#fff;font-size:13px;width:90px"></td><td><input type="number" class="nfr-util" placeholder="0" min="0" max="100" style="background:transparent;border:none;color:#fff;font-size:13px;width:60px"></td><td><input type="number" class="nfr-imp" placeholder="4" min="1" max="5" style="background:transparent;border:none;color:#fff;font-size:13px;width:50px"></td></tr>
+<tr><td><input type="text" class="nfr-name" placeholder="e.g. Peer recognition" style="background:transparent;border:none;color:#fff;font-size:13px;width:160px"></td><td><select class="nfr-cat" style="background:#1a2840;border:none;color:#fff;font-size:12px"><option>L&amp;D</option><option>Career</option><option>Flexibility</option><option selected>Recognition</option></select></td><td><input type="number" class="nfr-cost" placeholder="0" style="background:transparent;border:none;color:#fff;font-size:13px;width:90px"></td><td><input type="number" class="nfr-util" placeholder="0" min="0" max="100" style="background:transparent;border:none;color:#fff;font-size:13px;width:60px"></td><td><input type="number" class="nfr-imp" placeholder="3" min="1" max="5" style="background:transparent;border:none;color:#fff;font-size:13px;width:50px"></td></tr>
+</tbody></table></div>
+<button onclick="addNFRRow()" style="background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:8px 16px;font-size:12px;cursor:pointer;margin-top:10px">+ Add Row</button></div>
+<button onclick="calcNFR()" style="background:#2D8B6B;color:#fff;border:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:600;cursor:pointer;margin-top:14px">Audit Portfolio →</button>
+<div id="nfr-result" style="display:none;margin-top:20px"></div>
+</div>
+
+<!-- ═══════════════ t57: Startup Comp Benchmarker ════════════════════════ -->
+<div class="tool-panel" id="panel-t57" style="--active-c:#C4821A">
+<div class="tool-hd"><div class="tool-eye" style="color:#C4821A">Course 19 · Reward for Startups</div>
+<div class="tool-title">Startup Compensation Benchmarker</div>
+<div class="tool-desc">Enter a role and funding stage to generate market-calibrated base salary, equity grant, and benefits benchmark ranges. Includes fully-loaded cost estimate and candidate total package value.</div></div>
+<div class="section"><div class="section-title">Role &amp; Stage</div>
+<div class="grid-2">
+<div class="field"><label>Role Family</label><select id="scb-role"><option value="">Select…</option><option value="eng">Engineering / Technical</option><option value="prod">Product</option><option value="data">Data / Analytics</option><option value="sales">Sales / RevOps</option><option value="ops">Operations / Finance</option><option value="hr">HR / People</option><option value="exec">Executive / C-Suite</option></select></div>
+<div class="field"><label>Seniority Level</label><select id="scb-lvl"><option value="">Select…</option><option value="ic2">IC2 – Junior</option><option value="ic3">IC3 – Mid-level</option><option value="ic4">IC4 – Senior</option><option value="m1">Manager / Lead</option><option value="m2">Senior Manager / Director</option><option value="vp">VP / Head of</option></select></div>
+<div class="field"><label>Funding Stage</label><select id="scb-stage"><option value="">Select…</option><option value="seed">Seed (pre-revenue, &lt;£2m raised)</option><option value="seriesa">Series A (£5–15m raised)</option><option value="seriesb">Series B (£20–60m raised)</option><option value="seriesc">Series C+ (£60m+)</option></select></div>
+<div class="field"><label>Location</label><select id="scb-loc"><option value="london">London / South East</option><option value="uk">UK (ex-London)</option><option value="remote">UK Remote</option></select></div>
+</div></div>
+<button onclick="calcSCB()" style="background:#C4821A;color:#fff;border:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:600;cursor:pointer">Generate Benchmarks →</button>
+<div id="scb-result" style="display:none;margin-top:20px"></div>
+</div>
+
+<!-- ═══════════════ t58: Option Pool Calculator ══════════════════════════ -->
+<div class="tool-panel" id="panel-t58" style="--active-c:#C4821A">
+<div class="tool-hd"><div class="tool-eye" style="color:#C4821A">Course 19 · Reward for Startups</div>
+<div class="tool-title">EMI Option Pool Calculator</div>
+<div class="tool-desc">Model your EMI option pool size, individual grant value, and exit scenarios. Calculates vested value at departure and illustrates the candidate trade-off between salary discount and equity upside.</div></div>
+<div class="section"><div class="section-title">Company &amp; Grant Details</div>
+<div class="grid-2">
+<div class="field"><label>Post-Money Valuation (£)</label><input type="number" id="opc-val" placeholder="e.g. 40000000"></div>
+<div class="field"><label>Option Pool Size (% of fully diluted)</label><input type="number" id="opc-pool" placeholder="e.g. 12" step="0.1"></div>
+<div class="field"><label>Individual Grant (% of fully diluted)</label><input type="number" id="opc-grant" placeholder="e.g. 0.3" step="0.01"></div>
+<div class="field"><label>Strike Price (£ per share)</label><input type="number" id="opc-strike" placeholder="e.g. 0.50" step="0.01"></div>
+<div class="field"><label>Total Shares in Issue (fully diluted)</label><input type="number" id="opc-shares" placeholder="e.g. 10000000"></div>
+<div class="field"><label>Vesting Schedule</label><select id="opc-vest"><option value="4cliff1">4yr graded, 1yr cliff (standard)</option><option value="3cliff1">3yr graded, 1yr cliff</option><option value="4cliff0">4yr graded, no cliff</option></select></div>
+</div></div>
+<div class="section"><div class="section-title">Exit Scenarios</div>
+<div class="grid-3">
+<div class="field"><label>Conservative Exit Multiple</label><input type="number" id="opc-x1" placeholder="e.g. 2" value="2"></div>
+<div class="field"><label>Base Case Multiple</label><input type="number" id="opc-x2" placeholder="e.g. 5" value="5"></div>
+<div class="field"><label>Upside Multiple</label><input type="number" id="opc-x3" placeholder="e.g. 10" value="10"></div>
+</div></div>
+<button onclick="calcOPC()" style="background:#C4821A;color:#fff;border:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:600;cursor:pointer">Model Options →</button>
+<div id="opc-result" style="display:none;margin-top:20px"></div>
+</div>
+
+<!-- ═══════════════ t59: Scaling Pay Structure Planner ══════════════════ -->
+<div class="tool-panel" id="panel-t59" style="--active-c:#C4821A">
+<div class="tool-hd"><div class="tool-eye" style="color:#C4821A">Course 19 · Reward for Startups</div>
+<div class="tool-title">Scaling Pay Structure Planner</div>
+<div class="tool-desc">Map your current headcount and funding stage to the right reward infrastructure. Identifies which elements to build now vs. later, and flags compliance thresholds (gender pay gap, EU Directive) as you scale.</div></div>
+<div class="section"><div class="section-title">Current State</div>
+<div class="grid-2">
+<div class="field"><label>Current Headcount</label><input type="number" id="spp-hc" placeholder="e.g. 85"></div>
+<div class="field"><label>Funding Stage</label><select id="spp-stage"><option value="seed">Seed</option><option value="seriesa">Series A</option><option value="seriesb">Series B</option><option value="seriesc">Series C+</option></select></div>
+<div class="field"><label>Do you have a job levelling framework?</label><select id="spp-lvl"><option value="no">No</option><option value="partial">Partial / informal</option><option value="yes">Yes, fully documented</option></select></div>
+<div class="field"><label>Do you have salary bands?</label><select id="spp-bands"><option value="no">No</option><option value="partial">Partial</option><option value="yes">Yes, published internally</option></select></div>
+<div class="field"><label>Have you run a pay equity audit?</label><select id="spp-eq"><option value="no">Never</option><option value="once">Once (12+ months ago)</option><option value="recent">Within 12 months</option></select></div>
+<div class="field"><label>EU employees (for Directive threshold)</label><input type="number" id="spp-eu" placeholder="e.g. 0" value="0"></div>
+</div></div>
+<button onclick="calcSPP()" style="background:#C4821A;color:#fff;border:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:600;cursor:pointer">Generate Roadmap →</button>
+<div id="spp-result" style="display:none;margin-top:20px"></div>
+</div>
+
+<!-- ═══════════════ t60: ESG Pay Metric Selector ════════════════════════ -->
+<div class="tool-panel" id="panel-t60" style="--active-c:#3D5A3E">
+<div class="tool-hd"><div class="tool-eye" style="color:#3D5A3E">Course 20 · Governance, ESG &amp; Reporting</div>
+<div class="tool-title">ESG Pay Metric Selector</div>
+<div class="tool-desc">Select your sector, business priorities, and incentive vehicle to generate a curated shortlist of ESG pay metrics with materiality ratings, measurement guidance, and proxy advisor notes.</div></div>
+<div class="section"><div class="section-title">Company Profile</div>
+<div class="grid-2">
+<div class="field"><label>Sector</label><select id="esg-sector"><option value="">Select…</option><option value="industrial">Industrial / Manufacturing</option><option value="financial">Financial Services</option><option value="tech">Technology</option><option value="retail">Retail / Consumer</option><option value="healthcare">Healthcare / Life Sciences</option><option value="energy">Energy / Utilities</option><option value="professional">Professional Services</option></select></div>
+<div class="field"><label>Incentive Vehicle</label><select id="esg-vehicle"><option value="bonus">Annual Bonus (STI)</option><option value="ltip">Long-Term Incentive (LTIP)</option><option value="both">Both STI and LTIP</option></select></div>
+<div class="field"><label>Target ESG Weighting (%)</label><input type="number" id="esg-wt" placeholder="e.g. 20" min="5" max="40"></div>
+<div class="field"><label>Number of ESG Metrics Desired</label><select id="esg-n"><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option></select></div>
+</div></div>
+<div class="section"><div class="section-title">Priority ESG Themes (select all that apply)</div>
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px">
+<label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px"><input type="checkbox" id="esg-t1" class="esg-theme"> Climate &amp; GHG Emissions</label>
+<label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px"><input type="checkbox" id="esg-t2" class="esg-theme"> Employee Safety &amp; Wellbeing</label>
+<label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px"><input type="checkbox" id="esg-t3" class="esg-theme"> Diversity &amp; Inclusion</label>
+<label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px"><input type="checkbox" id="esg-t4" class="esg-theme"> Employee Engagement</label>
+<label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px"><input type="checkbox" id="esg-t5" class="esg-theme"> Supply Chain &amp; Human Rights</label>
+<label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px"><input type="checkbox" id="esg-t6" class="esg-theme"> Governance &amp; Ethics</label>
+<label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px"><input type="checkbox" id="esg-t7" class="esg-theme"> Financial Inclusion / Social Impact</label>
+</div></div>
+<button onclick="calcESG()" style="background:#3D5A3E;color:#fff;border:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:600;cursor:pointer;margin-top:16px">Generate Metric Shortlist →</button>
+<div id="esg-result" style="display:none;margin-top:20px"></div>
+</div>
+
+<!-- ═══════════════ t61: Board Reward Report Builder ════════════════════ -->
+<div class="tool-panel" id="panel-t61" style="--active-c:#3D5A3E">
+<div class="tool-hd"><div class="tool-eye" style="color:#3D5A3E">Course 20 · Governance, ESG &amp; Reporting</div>
+<div class="tool-title">Board Reward Report Builder</div>
+<div class="tool-desc">Enter CEO remuneration data, employee pay percentiles, and ESG performance to generate a structured Directors' Remuneration Report summary with CEO pay ratio, gender pay narrative, and key disclosures checklist.</div></div>
+<div class="section"><div class="section-title">CEO Remuneration</div>
+<div class="grid-2">
+<div class="field"><label>CEO Base Salary (£)</label><input type="number" id="brr-ceosal" placeholder="e.g. 900000"></div>
+<div class="field"><label>Annual Bonus (£)</label><input type="number" id="brr-bonus" placeholder="e.g. 1201500"></div>
+<div class="field"><label>LTIP Vesting Value (£)</label><input type="number" id="brr-ltip" placeholder="e.g. 2450000"></div>
+<div class="field"><label>Pension / Benefits (£)</label><input type="number" id="brr-pen" placeholder="e.g. 135000"></div>
+</div></div>
+<div class="section"><div class="section-title">Workforce Pay (UK Employees)</div>
+<div class="grid-3">
+<div class="field"><label>P25 Employee Pay (£)</label><input type="number" id="brr-p25" placeholder="e.g. 42000"></div>
+<div class="field"><label>P50 / Median Employee Pay (£)</label><input type="number" id="brr-p50" placeholder="e.g. 68000"></div>
+<div class="field"><label>P75 Employee Pay (£)</label><input type="number" id="brr-p75" placeholder="e.g. 95000"></div>
+<div class="field"><label>UK Headcount</label><input type="number" id="brr-hc" placeholder="e.g. 2400"></div>
+<div class="field"><label>Gender Pay Gap — Mean (%)</label><input type="number" id="brr-gpgm" placeholder="e.g. 14.2" step="0.1"></div>
+<div class="field"><label>Gender Pay Gap — Median (%)</label><input type="number" id="brr-gpgmed" placeholder="e.g. 11.8" step="0.1"></div>
+</div></div>
+<button onclick="calcBRR()" style="background:#3D5A3E;color:#fff;border:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:600;cursor:pointer">Generate DRR Summary →</button>
+<div id="brr-result" style="display:none;margin-top:20px"></div>
+</div>
+
+<!-- ═══════════════ t62: Pay Transparency Readiness (Advanced) ══════════ -->
+<div class="tool-panel" id="panel-t62" style="--active-c:#3D5A3E">
+<div class="tool-hd"><div class="tool-eye" style="color:#3D5A3E">Course 20 · Governance, ESG &amp; Reporting</div>
+<div class="tool-title">Pay Transparency Readiness — Advanced</div>
+<div class="tool-desc">Comprehensive EU Pay Transparency Directive readiness assessment covering data, systems, policies, and manager capability. Generates a RAG-rated gap analysis with a prioritised 6-month implementation roadmap.</div></div>
+<div class="section"><div class="section-title">Readiness Assessment (1 = not started, 5 = fully compliant)</div>
+<div class="grid-2" style="gap:12px">
+<div class="field"><label>Pay Equity Audit (work category analysis)</label><select id="ptr-s1"><option value="">Select…</option><option value="1">1 – No audit completed</option><option value="2">2 – Headline gender pay gap only</option><option value="3">3 – Category-level analysis begun</option><option value="4">4 – Full work category analysis with objective factor testing</option><option value="5">5 – Complete, independently verified, remediation plan in place</option></select></div>
+<div class="field"><label>Job Architecture &amp; Work Categories</label><select id="ptr-s2"><option value="">Select…</option><option value="1">1 – No formal job architecture</option><option value="2">2 – Job titles exist but not standardised</option><option value="3">3 – Job families defined; not mapped to pay categories</option><option value="4">4 – Job architecture mapped to Directive work categories</option><option value="5">5 – Fully defined, documented, and legally reviewed</option></select></div>
+<div class="field"><label>Salary Band Transparency</label><select id="ptr-s3"><option value="">Select…</option><option value="1">1 – Bands not shared with employees or candidates</option><option value="2">2 – Disclosed on request to HR</option><option value="3">3 – Shared internally with employees</option><option value="4">4 – Included in job adverts for UK/EU roles</option><option value="5">5 – Full transparency internally and externally; no current-salary questions asked</option></select></div>
+<div class="field"><label>Manager Pay Conversation Capability</label><select id="ptr-s4"><option value="">Select…</option><option value="1">1 – Managers cannot explain pay decisions</option><option value="2">2 – Basic briefing provided; inconsistent delivery</option><option value="3">3 – Training completed; some confident managers</option><option value="4">4 – SPAR framework or equivalent in use</option><option value="5">5 – All managers calibrated and assessed; support materials live</option></select></div>
+<div class="field"><label>Systems &amp; Data Quality</label><select id="ptr-s5"><option value="">Select…</option><option value="1">1 – Pay data in multiple systems; inconsistent</option><option value="2">2 – Single source but manually reconciled</option><option value="3">3 – HRIS data clean for core population</option><option value="4">4 – Automated pay equity reports available</option><option value="5">5 – Real-time dashboards; Directive report-ready</option></select></div>
+<div class="field"><label>Legal &amp; Policy Framework</label><select id="ptr-s6"><option value="">Select…</option><option value="1">1 – No pay policy or equal pay policy</option><option value="2">2 – Equal pay statement exists but not enforced</option><option value="3">3 – Policy updated for transparency direction</option><option value="4">4 – Legal review completed; policy published</option><option value="5">5 – Full Directive compliance policy with governance sign-off</option></select></div>
+</div></div>
+<div class="section"><div class="section-title">Context</div>
+<div class="grid-2">
+<div class="field"><label>EU Employee Headcount</label><input type="number" id="ptr-eu" placeholder="e.g. 340"></div>
+<div class="field"><label>Target Compliance Date</label><input type="date" id="ptr-date"></div>
+</div></div>
+<button onclick="calcPTR2()" style="background:#3D5A3E;color:#fff;border:none;border-radius:8px;padding:12px 28px;font-size:14px;font-weight:600;cursor:pointer;margin-top:8px">Generate Readiness Report →</button>
+<div id="ptr2-result" style="display:none;margin-top:20px"></div>
 </div>
 <div id="toast"></div>
 <script>
-const ACTIVE_COLORS={t01:'#C8963E',t02:'#C8963E',t03:'#0C6B65',t04:'#0C6B65',t05:'#0C6B65',t06:'#0C6B65',t07:'#6B4C9A',t08:'#6B4C9A',t09:'#6B4C9A',t10:'#6B4C9A',t11:'#B84B4B',t12:'#B84B4B',t13:'#B84B4B',t14:'#3A7D44',t15:'#3A7D44',t16:'#3A7D44',t17:'#3A7D44',t18:'#0C6B65',t19:'#0C6B65',t20:'#0C6B65',t21:'#0C6B65',t22:'#6B4C9A',t23:'#6B4C9A',t24:'#6B4C9A',t25:'#6B4C9A',t26:'#B84B4B',t27:'#B84B4B',t28:'#3A7D44',t29:'#3A7D44',t30:'#3A7D44',t31:'#C8963E',t32:'#C8963E',t33:'#2D6A9F',t34:'#2D6A9F',t35:'#2D6A9F',t36:'#7B3FA0',t37:'#7B3FA0',t38:'#7B3FA0',t39:'#1A7A4A',t40:'#1A7A4A',t41:'#1A7A4A',t42:'#C25B20',t43:'#C25B20',t44:'#C25B20',t45:'#6B3A2A',t46:'#6B3A2A',t47:'#6B3A2A'};
+const ACTIVE_COLORS={t01:'#C8963E',t02:'#C8963E',t03:'#0C6B65',t04:'#0C6B65',t05:'#0C6B65',t06:'#0C6B65',t07:'#6B4C9A',t08:'#6B4C9A',t09:'#6B4C9A',t10:'#6B4C9A',t11:'#B84B4B',t12:'#B84B4B',t13:'#B84B4B',t14:'#3A7D44',t15:'#3A7D44',t16:'#3A7D44',t17:'#3A7D44',t18:'#0C6B65',t19:'#0C6B65',t20:'#0C6B65',t21:'#0C6B65',t22:'#6B4C9A',t23:'#6B4C9A',t24:'#6B4C9A',t25:'#6B4C9A',t26:'#B84B4B',t27:'#B84B4B',t28:'#3A7D44',t29:'#3A7D44',t30:'#3A7D44',t31:'#C8963E',t32:'#C8963E',t33:'#2D6A9F',t34:'#2D6A9F',t35:'#2D6A9F',t36:'#7B3FA0',t37:'#7B3FA0',t38:'#7B3FA0',t39:'#1A7A4A',t40:'#1A7A4A',t41:'#1A7A4A',t42:'#C25B20',t43:'#C25B20',t44:'#C25B20',t45:'#6B3A2A',t46:'#6B3A2A',t47:'#6B3A2A',t48:'#1B5E94',t49:'#1B5E94',t50:'#1B5E94',t51:'#5C4B8A',t52:'#5C4B8A',t53:'#5C4B8A',t54:'#2D8B6B',t55:'#2D8B6B',t56:'#2D8B6B',t57:'#C4821A',t58:'#C4821A',t59:'#C4821A',t60:'#3D5A3E',t61:'#3D5A3E',t62:'#3D5A3E'};
 function showTool(id){
   document.querySelectorAll('.tool-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.sb-item').forEach(n=>n.classList.remove('active'));
@@ -2599,6 +2912,491 @@ window.showTool=function(id){
   if(id==='t41')initPTR();
   if(id==='t45')initDDIL();
 };
+
+// ──────────────────── t48: Reward Strategy Maturity Scorer ──────────────────
+function calcRSM(){
+  const dims=['d1','d2','d3','d4','d5'];
+  const labels=['Data Quality','Business Alignment','Stakeholder Relationships','Predictive Capability','Market Intelligence'];
+  const scores=dims.map(d=>parseInt(document.getElementById('rsm-'+d)?.value)||0);
+  if(scores.some(s=>s===0)){alert('Please rate all five dimensions.');return;}
+  const total=scores.reduce((a,b)=>a+b,0);
+  const avg=(total/5).toFixed(1);
+  let horizon,advice;
+  if(total<=12){horizon='Horizon 1 (Operational)';advice='Your function is primarily administrative. Priority: run a visible data-driven intervention — a compression audit or benefit utilisation analysis — to build CFO credibility within 90 days.';}
+  else if(total<=18){horizon='Horizon 1.5–2 (Transitional)';advice='You have strategic ambition but operational constraints. Priority: identify your lowest-scoring dimension and secure 40% of practitioner time for strategic work by automating one major administrative process.';}
+  else if(total<=22){horizon='Horizon 2–3 (Approaching Strategic)';advice='You are functioning as a strong business partner. Priority: embed reward formally in the quarterly business review cycle and establish RemCo reporting capability.';}
+  else{horizon='Horizon 3 (Strategic)';advice='Your function is operating at the highest maturity level. Priority: maintain competitive intelligence advantage and develop predictive attrition modelling.';}
+  const lowestIdx=scores.indexOf(Math.min(...scores));
+  document.getElementById('rsm-cards').innerHTML=
+    scores.map((s,i)=>`<div class="out-card ${s<=2?'bad':s>=4?'good':''}"><div class="out-label">${labels[i]}</div><div class="out-val sm" style="color:${s<=2?'#EF4444':s>=4?'#4ADE80':'#FBBf24'}">${s}/5</div></div>`).join('')+
+    `<div class="out-card highlight"><div class="out-label">Total Score</div><div class="out-val">${total}/25</div><div class="out-sub">${avg} avg</div></div>`;
+  document.getElementById('rsm-verdict').innerHTML=`<div style="margin-bottom:12px"><strong style="color:var(--gold)">${horizon}</strong></div><p>${advice}</p><p style="margin-top:10px;color:rgba(255,255,255,.5)">Weakest dimension: <strong style="color:#EF4444">${labels[lowestIdx]}</strong> (${scores[lowestIdx]}/5) — this is your highest-leverage improvement opportunity.</p>`;
+  document.getElementById('rsm-result').style.display='block';
+}
+
+// ──────────────────── t49: Business Case ROI Calculator ─────────────────────
+function calcBC(){
+  const turn=parseFloat(document.getElementById('bc-turn').value)||0;
+  const bench=parseFloat(document.getElementById('bc-bench').value)||0;
+  const hc=parseFloat(document.getElementById('bc-hc').value)||0;
+  const sal=parseFloat(document.getElementById('bc-sal').value)||0;
+  const rc=parseFloat(document.getElementById('bc-rc').value)/100||0;
+  const inv=parseFloat(document.getElementById('bc-inv').value)||0;
+  const red=parseFloat(document.getElementById('bc-red').value)||0;
+  const excessPct=Math.max(0,turn-bench)/100;
+  const currentCost=hc*excessPct*(sal*rc);
+  const projectedSaving=(hc*(red/100))*(sal*rc);
+  const roi=inv>0?((projectedSaving/inv)*100).toFixed(0):0;
+  const paybackMo=projectedSaving>0?(inv/projectedSaving*12).toFixed(1):0;
+  const fmt=n=>n.toLocaleString('en-GB',{maximumFractionDigits:0});
+  document.getElementById('bc-cards').innerHTML=
+    `<div class="out-card bad"><div class="out-label">Annual Cost of Inaction</div><div class="out-val sm">£${fmt(currentCost)}</div><div class="out-sub">Excess attrition bill</div></div>`+
+    `<div class="out-card"><div class="out-label">Proposed Investment</div><div class="out-val sm">£${fmt(inv)}</div></div>`+
+    `<div class="out-card good"><div class="out-label">Projected Saving</div><div class="out-val sm">£${fmt(projectedSaving)}</div><div class="out-sub">Per annum</div></div>`+
+    `<div class="out-card highlight"><div class="out-label">Gross ROI</div><div class="out-val">${roi}%</div></div>`+
+    `<div class="out-card"><div class="out-label">Payback Period</div><div class="out-val sm">${paybackMo} months</div></div>`;
+  document.getElementById('bc-summary').innerHTML=
+    `<strong>Executive Summary</strong><br><br>
+    <strong>Situation:</strong> Our voluntary turnover rate of ${turn}% exceeds the ${bench}% benchmark among a population of ${fmt(hc)} employees.<br><br>
+    <strong>Complication:</strong> This excess attrition is costing the organisation approximately <strong>£${fmt(currentCost)}</strong> per year in replacement costs alone.<br><br>
+    <strong>Question:</strong> What is the most cost-effective intervention to close the gap?<br><br>
+    <strong>Answer:</strong> The proposed £${fmt(inv)} investment is projected to generate £${fmt(projectedSaving)} in annual savings — a <strong>${roi}% gross ROI</strong> with payback in <strong>${paybackMo} months</strong>.`;
+  document.getElementById('bc-result').style.display='block';
+}
+
+// ──────────────────── t50: SCQA Presentation Builder ────────────────────────
+function buildSCQA(){
+  const s=document.getElementById('scqa-s').value.trim();
+  const c=document.getElementById('scqa-c').value.trim();
+  const q=document.getElementById('scqa-q').value.trim();
+  const a=document.getElementById('scqa-a').value.trim();
+  const pres=document.getElementById('scqa-pres').value.trim()||'Presenter';
+  if(!s||!c||!q||!a){alert('Please complete all four SCQA sections.');return;}
+  document.getElementById('scqa-out').innerHTML=
+    `<div style="font-size:12px;color:rgba(255,255,255,.4);margin-bottom:16px;text-transform:uppercase;letter-spacing:1px">Generated: ${new Date().toLocaleDateString('en-GB')} · ${pres}</div>`+
+    ['Situation','Complication','Question','Answer'].map((label,i)=>{
+      const content=[s,c,q,a][i];
+      const colors=['#1B5E94','#C25B20','#5C4B8A','#2D8B6B'];
+      return `<div style="margin-bottom:16px;padding:18px 20px;background:rgba(255,255,255,.03);border-radius:10px;border-left:3px solid ${colors[i]}">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:${colors[i]};margin-bottom:8px">${label}</div>
+        <div style="font-size:14px;line-height:1.65;color:rgba(255,255,255,.85)">${content}</div>
+      </div>`;
+    }).join('');
+  document.getElementById('scqa-out').style.display='block';
+}
+
+// ──────────────────── t51: Employment Cost Calculator ────────────────────────
+function calcEC(){
+  const sal=parseFloat(document.getElementById('ec-sal').value)||0;
+  const pen=parseFloat(document.getElementById('ec-pen').value)/100||0.05;
+  const ben=parseFloat(document.getElementById('ec-ben').value)||0;
+  const ovh=parseFloat(document.getElementById('ec-ovh').value)||0;
+  const day=parseFloat(document.getElementById('ec-day').value)||0;
+  const days=parseFloat(document.getElementById('ec-days').value)||250;
+  const niThreshold=9100;
+  const niRate=0.138;
+  const ni=Math.max(0,(sal-niThreshold)*niRate);
+  const penAmt=sal*pen;
+  const total=sal+ni+penAmt+ben+ovh;
+  const contractorAnnual=day*days;
+  const fmt=n=>n.toLocaleString('en-GB',{maximumFractionDigits:0});
+  let compareHtml='';
+  if(day>0){
+    const diff=contractorAnnual-total;
+    const cheaper=diff>0?'permanent':'contractor';
+    const breakeven=Math.abs(diff)>0?(15000/Math.abs(diff)*12).toFixed(1):0;
+    compareHtml=`<div class="result-block" style="margin-top:0"><div style="font-size:13px;line-height:1.65">
+      <strong>Contractor vs Permanent:</strong> The contractor costs <strong>£${fmt(contractorAnnual)}/year</strong> vs permanent at <strong>£${fmt(total)}/year</strong>.<br>
+      The <strong>${cheaper} hire is cheaper</strong> by £${fmt(Math.abs(diff))}/year.<br>
+      ${cheaper==='permanent'?`Approximate break-even (including ~£15k recruitment cost): <strong>${breakeven} months</strong>.`:'Consider whether the flexibility premium is justified for this role.'}
+    </div></div>`;
+  }
+  document.getElementById('ec-cards').innerHTML=
+    `<div class="out-card"><div class="out-label">Base Salary</div><div class="out-val sm">£${fmt(sal)}</div></div>`+
+    `<div class="out-card"><div class="out-label">Employer NI</div><div class="out-val sm">£${fmt(ni)}</div><div class="out-sub">13.8% above £9,100</div></div>`+
+    `<div class="out-card"><div class="out-label">Pension (${(pen*100).toFixed(0)}%)</div><div class="out-val sm">£${fmt(penAmt)}</div></div>`+
+    `<div class="out-card"><div class="out-label">Benefits</div><div class="out-val sm">£${fmt(ben)}</div></div>`+
+    `<div class="out-card"><div class="out-label">Overhead</div><div class="out-val sm">£${fmt(ovh)}</div></div>`+
+    `<div class="out-card highlight"><div class="out-label">Fully-loaded Total</div><div class="out-val">£${fmt(total)}</div><div class="out-sub">${((total/sal-1)*100).toFixed(0)}% above base</div></div>`;
+  document.getElementById('ec-compare').innerHTML=compareHtml;
+  document.getElementById('ec-result').style.display='block';
+}
+
+// ──────────────────── t52: Workforce Scenario Cost Modeller ─────────────────
+function calcWSC(){
+  const hc=parseFloat(document.getElementById('wsc-hc').value)||0;
+  const tgt=parseFloat(document.getElementById('wsc-tgt').value)||0;
+  const cost=parseFloat(document.getElementById('wsc-cost').value)||0;
+  const build=parseFloat(document.getElementById('wsc-build').value)||0;
+  const buy=parseFloat(document.getElementById('wsc-buy').value)||0;
+  const borrow=parseFloat(document.getElementById('wsc-borrow').value)||0;
+  const auto=parseFloat(document.getElementById('wsc-auto').value)||0;
+  const drate=parseFloat(document.getElementById('wsc-drate').value)||0;
+  const recPct=parseFloat(document.getElementById('wsc-rec').value)/100||0.2;
+  const total=build+buy+borrow+auto;
+  const gap=tgt-hc;
+  const fmt=n=>n.toLocaleString('en-GB',{maximumFractionDigits:0});
+  if(Math.abs(total-100)>2){alert(`Your lever mix totals ${total}% — it should sum to 100%.`);return;}
+  if(gap<=0){alert('Target headcount must be greater than current headcount for this model.');return;}
+  const buildN=Math.round(gap*build/100);
+  const buyN=Math.round(gap*buy/100);
+  const borrowN=Math.round(gap*borrow/100);
+  const autoN=Math.round(gap*auto/100);
+  const buildCost=buildN*cost*0.1; // ~10% of salary for L&D/develop
+  const buyCost=buyN*(cost+(cost*recPct));
+  const borrowCost=drate>0?borrowN*drate*250:borrowN*cost*1.4;
+  const autoCost=autoN*cost*0.3; // technology investment
+  const totalCostYr1=buildCost+buyCost+borrowCost+autoCost;
+  const totalCostOngoing=(hc+gap-autoN)*cost;
+  document.getElementById('wsc-result').innerHTML=`
+    <div class="section-title">Scenario Cost Model</div>
+    <div class="out-grid">
+      <div class="out-card"><div class="out-label">Gap to Close</div><div class="out-val sm">${gap} roles</div><div class="out-sub">${hc} → ${tgt}</div></div>
+      <div class="out-card"><div class="out-label">Build (${build}%)</div><div class="out-val sm">${buildN} roles</div><div class="out-sub">£${fmt(buildCost)} dev cost</div></div>
+      <div class="out-card"><div class="out-label">Buy (${buy}%)</div><div class="out-val sm">${buyN} roles</div><div class="out-sub">£${fmt(buyCost)} inc. recruitment</div></div>
+      <div class="out-card"><div class="out-label">Borrow (${borrow}%)</div><div class="out-val sm">${borrowN} roles</div><div class="out-sub">£${fmt(borrowCost)} contractor cost</div></div>
+      <div class="out-card"><div class="out-label">Automate (${auto}%)</div><div class="out-val sm">${autoN} roles avoided</div><div class="out-sub">£${fmt(autoCost)} tech investment</div></div>
+      <div class="out-card highlight"><div class="out-label">Year 1 Total Cost</div><div class="out-val">£${fmt(totalCostYr1)}</div><div class="out-sub">Transition investment</div></div>
+      <div class="out-card"><div class="out-label">Ongoing Annual Cost</div><div class="out-val sm">£${fmt(totalCostOngoing)}</div><div class="out-sub">Steady-state workforce</div></div>
+    </div>`;
+  document.getElementById('wsc-result').style.display='block';
+}
+
+// ──────────────────── t53: Redundancy Cost & Payback ─────────────────────────
+function calcRCP(){
+  const n=parseFloat(document.getElementById('rcp-n').value)||0;
+  const sal=parseFloat(document.getElementById('rcp-sal').value)||0;
+  const svc=parseFloat(document.getElementById('rcp-svc').value)||0;
+  const age=parseFloat(document.getElementById('rcp-age').value)||35;
+  const enh=parseFloat(document.getElementById('rcp-enh').value)||1;
+  const notice=parseFloat(document.getElementById('rcp-notice').value)||3;
+  const out=parseFloat(document.getElementById('rcp-out').value)||2500;
+  const legal=parseFloat(document.getElementById('rcp-legal').value)||45000;
+  const wkCap=643; // 2024/25 weekly cap
+  const statWk=age>=41?1.5:age>=22?1:0.5;
+  const statPay=Math.min(svc,20)*statWk*Math.min(sal/52,wkCap)*n;
+  const enhPay=(enh*svc*sal/12)*n;
+  const noticePay=(sal/12*notice)*n;
+  const outPay=out*n;
+  const total=enhPay+noticePay+outPay+legal;
+  const annualSaving=n*sal;
+  const paybackMo=annualSaving>0?(total/annualSaving*12).toFixed(1):0;
+  const fmt=v=>v.toLocaleString('en-GB',{maximumFractionDigits:0});
+  document.getElementById('rcp-cards').innerHTML=
+    `<div class="out-card"><div class="out-label">Statutory Floor</div><div class="out-val sm">£${fmt(statPay)}</div><div class="out-sub">Min. legal entitlement</div></div>`+
+    `<div class="out-card"><div class="out-label">Enhanced Redundancy</div><div class="out-val sm">£${fmt(enhPay)}</div><div class="out-sub">${enh} mo/yr × ${n} roles</div></div>`+
+    `<div class="out-card"><div class="out-label">Notice Pay (PILON)</div><div class="out-val sm">£${fmt(noticePay)}</div><div class="out-sub">${notice} months avg</div></div>`+
+    `<div class="out-card"><div class="out-label">Outplacement</div><div class="out-val sm">£${fmt(outPay)}</div></div>`+
+    `<div class="out-card"><div class="out-label">Legal &amp; Advisory</div><div class="out-val sm">£${fmt(legal)}</div></div>`+
+    `<div class="out-card highlight"><div class="out-label">Total Programme Cost</div><div class="out-val">£${fmt(total)}</div></div>`+
+    `<div class="out-card good"><div class="out-label">Annual Salary Saving</div><div class="out-val sm">£${fmt(annualSaving)}</div></div>`+
+    `<div class="out-card"><div class="out-label">Payback Period</div><div class="out-val sm">${paybackMo} months</div></div>`;
+  document.getElementById('rcp-verdict').innerHTML=`Spend <strong>£${fmt(total)}</strong> once to save <strong>£${fmt(annualSaving)}</strong> every year thereafter — full payback in <strong>${paybackMo} months</strong>. ${parseFloat(paybackMo)<12?'✅ Strong business case.':parseFloat(paybackMo)<24?'Acceptable — present with 3-year cumulative saving.':'⚠️ Consider phasing the programme to improve payback optics.'}`;
+  document.getElementById('rcp-result').style.display='block';
+}
+
+// ──────────────────── t54: Recognition Programme Designer ────────────────────
+function calcRPD(){
+  const dims=['s1','s2','s3','s4','s5','s6','s7'];
+  const labels=['Immediacy','Specificity','Manager Capability','Meritocracy','Business Line-of-Sight','Personalisation','Outcome Measurement'];
+  const scores=dims.map(d=>parseInt(document.getElementById('rpd-'+d)?.value)||0);
+  if(scores.some(s=>s===0)){alert('Please rate all seven dimensions.');return;}
+  const total=scores.reduce((a,b)=>a+b,0);
+  const maxScore=35;
+  const pct=Math.round(total/maxScore*100);
+  const lowest=labels[scores.indexOf(Math.min(...scores))];
+  let grade,colour;
+  if(pct>=80){grade='Strong';colour='#4ADE80';}
+  else if(pct>=60){grade='Developing';colour='#FBBf24';}
+  else if(pct>=40){grade='Weak';colour='#F97316';}
+  else{grade='Critical';colour='#EF4444';}
+  const priorities=[
+    {dim:'Immediacy',fix:'Introduce a real-time peer recognition tool (e.g., Bonusly, Mo). Remove quarterly cycles.'},
+    {dim:'Specificity',fix:'Train managers on the Behaviour → Impact → Connection framework for recognition language.'},
+    {dim:'Manager Capability',fix:'Make recognition a formal manager competency with quarterly check-in against usage data.'},
+    {dim:'Meritocracy',fix:'Analyse recognition data by performance tier. Ensure top quartile receives 2× the average.'},
+    {dim:'Business Line-of-Sight',fix:'Map each recognition category to a specific strategic priority or company value.'},
+    {dim:'Personalisation',fix:'Add a recognition preference question to onboarding. Build a simple manager reference guide.'},
+    {dim:'Outcome Measurement',fix:'Connect recognition to quarterly engagement pulse and voluntary turnover rate. Report to leadership.'},
+  ];
+  const lowScoreItems=labels.map((l,i)=>({l,s:scores[i]})).filter(x=>x.s<=2).map(x=>priorities.find(p=>p.dim===x.l)).filter(Boolean);
+  document.getElementById('rpd-result').innerHTML=`
+    <div class="out-grid">${scores.map((s,i)=>`<div class="out-card ${s<=2?'bad':s>=4?'good':''}"><div class="out-label">${labels[i]}</div><div class="out-val sm" style="color:${s<=2?'#EF4444':s>=4?'#4ADE80':'#FBBf24'}">${s}/5</div></div>`).join('')}
+    <div class="out-card highlight"><div class="out-label">Overall Score</div><div class="out-val" style="color:${colour}">${pct}%</div><div class="out-sub">${grade}</div></div></div>
+    ${lowScoreItems.length>0?`<div class="result-block" style="margin-top:16px"><div class="section-title" style="margin-bottom:12px">Priority Fixes</div>${lowScoreItems.map(p=>`<div style="margin-bottom:12px;padding:12px 14px;background:rgba(255,255,255,.03);border-radius:8px;border-left:3px solid #EF4444"><strong style="font-size:13px">${p.dim}</strong><p style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px">${p.fix}</p></div>`).join('')}</div>`:'<div class="result-block" style="margin-top:16px"><p style="color:#4ADE80">✅ No critical gaps identified. Focus on maintaining consistency and measuring downstream impact.</p></div>'}`;
+  document.getElementById('rpd-result').style.display='block';
+}
+
+// ──────────────────── t55: EVP Diagnostic ────────────────────────────────────
+function calcEVP(){
+  const stated=[...document.querySelectorAll('.evp-stated')].map(i=>parseFloat(i.value)||0);
+  const lived=[...document.querySelectorAll('.evp-lived')].map(i=>parseFloat(i.value)||0);
+  const pillars=['Compensation & Financial','Benefits & Wellbeing','Career & Development','Purpose & Culture','Working Environment'];
+  const gaps=pillars.map((p,i)=>({p,stated:stated[i],lived:lived[i],gap:stated[i]-lived[i]}));
+  const avgGap=(gaps.reduce((a,g)=>a+g.gap,0)/gaps.length).toFixed(1);
+  const maxGap=gaps.reduce((m,g)=>g.gap>m.gap?g:m,{gap:-99});
+  const fmt=v=>v.toFixed(1);
+  document.getElementById('evp-result').innerHTML=`
+    <div class="out-grid">
+      ${gaps.map(g=>`<div class="out-card ${g.gap>=2?'bad':g.gap<=0?'good':'warn'}">
+        <div class="out-label">${g.p}</div>
+        <div class="out-val sm" style="color:${g.gap>=2?'#EF4444':g.gap<=0?'#4ADE80':'#FBBf24'}">${fmt(g.stated)} → ${fmt(g.lived)}</div>
+        <div class="out-sub">Gap: ${g.gap>0?'+'+fmt(g.gap):fmt(g.gap)}</div>
+      </div>`).join('')}
+      <div class="out-card ${parseFloat(avgGap)>=1.5?'bad':parseFloat(avgGap)<=0.5?'good':'warn'}">
+        <div class="out-label">Avg Promise Gap</div>
+        <div class="out-val">${avgGap}</div>
+        <div class="out-sub">Stated minus lived</div>
+      </div>
+    </div>
+    <div class="result-block" style="margin-top:16px">
+      ${parseFloat(avgGap)>1?`<p style="color:#F97316;margin-bottom:8px">⚠️ <strong>Significant promise gap detected.</strong> Your largest gap is in <strong>${maxGap.p}</strong> (${fmt(maxGap.stated)} stated vs ${fmt(maxGap.lived)} lived). Fix the lived experience before restating the EVP — aspirational EVPs that exceed reality increase attrition among exactly the people you most want to keep.</p>`:`<p style="color:#4ADE80;margin-bottom:8px">✅ Your EVP promise gaps are manageable. Focus on the Activate phase: ensure all five pillars are visible to employees and candidates.</p>`}
+      <p style="font-size:12px;color:rgba(255,255,255,.5)">Next step: Run a 30/60/90-day new joiner survey to validate lived scores with fresh evidence.</p>
+    </div>`;
+  document.getElementById('evp-result').style.display='block';
+}
+
+// ──────────────────── t56: Non-Financial Reward Audit ────────────────────────
+function addNFRRow(){
+  const tbody=document.getElementById('nfr-body');
+  const tr=document.createElement('tr');
+  tr.innerHTML=`<td><input type="text" class="nfr-name" placeholder="Element name" style="background:transparent;border:none;color:#fff;font-size:13px;width:160px"></td><td><select class="nfr-cat" style="background:#1a2840;border:none;color:#fff;font-size:12px"><option>L&D</option><option>Career</option><option>Flexibility</option><option>Recognition</option></select></td><td><input type="number" class="nfr-cost" placeholder="0" style="background:transparent;border:none;color:#fff;font-size:13px;width:90px"></td><td><input type="number" class="nfr-util" placeholder="0" min="0" max="100" style="background:transparent;border:none;color:#fff;font-size:13px;width:60px"></td><td><input type="number" class="nfr-imp" placeholder="3" min="1" max="5" style="background:transparent;border:none;color:#fff;font-size:13px;width:50px"></td>`;
+  tbody.appendChild(tr);
+}
+function calcNFR(){
+  const names=[...document.querySelectorAll('.nfr-name')].map(i=>i.value||'Unnamed');
+  const costs=[...document.querySelectorAll('.nfr-cost')].map(i=>parseFloat(i.value)||0);
+  const utils=[...document.querySelectorAll('.nfr-util')].map(i=>parseFloat(i.value)||0);
+  const imps=[...document.querySelectorAll('.nfr-imp')].map(i=>parseFloat(i.value)||3);
+  const totalCost=costs.reduce((a,b)=>a+b,0);
+  const fmt=v=>v.toLocaleString('en-GB',{maximumFractionDigits:0});
+  const items=names.map((n,i)=>{
+    const util=utils[i];const imp=imps[i];const cost=costs[i];
+    const flag=util<20&&imp>=4?'Low utilisation, high importance — INVEST':cost>5000&&util<15?'High cost, low utilisation — REVIEW':util>=60&&imp>=4?'High impact — MAINTAIN':'Monitor';
+    const col=flag.includes('INVEST')?'#4ADE80':flag.includes('REVIEW')?'#EF4444':'rgba(255,255,255,.5)';
+    return `<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(255,255,255,.025);border-radius:8px;margin-bottom:8px"><div><div style="font-size:13px;font-weight:500">${n}</div><div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:2px">£${fmt(cost)}/yr · ${util}% utilisation · Importance ${imp}/5</div></div><div style="font-size:11px;font-weight:600;color:${col}">${flag}</div></div>`;
+  }).join('');
+  document.getElementById('nfr-result').innerHTML=`<div class="section-title">Audit Results</div><div class="out-grid"><div class="out-card highlight"><div class="out-label">Total NFR Spend</div><div class="out-val">£${fmt(totalCost)}</div></div></div>${items}`;
+  document.getElementById('nfr-result').style.display='block';
+}
+
+// ──────────────────── t57: Startup Comp Benchmarker ──────────────────────────
+function calcSCB(){
+  const role=document.getElementById('scb-role').value;
+  const lvl=document.getElementById('scb-lvl').value;
+  const stage=document.getElementById('scb-stage').value;
+  const loc=document.getElementById('scb-loc').value;
+  if(!role||!lvl||!stage){alert('Please complete all fields.');return;}
+  // Market data matrix [min,mid,max] base salary £k
+  const base={eng:{ic2:[38,48,58],ic3:[55,70,85],ic4:[80,100,125],m1:[95,120,145],m2:[120,150,185],vp:[160,200,250]},
+    prod:{ic2:[36,46,56],ic3:[52,65,80],ic4:[75,95,115],m1:[90,115,140],m2:[115,145,175],vp:[150,190,240]},
+    data:{ic2:[35,44,55],ic3:[52,65,78],ic4:[75,95,112],m1:[90,112,138],m2:[112,140,170],vp:[145,185,230]},
+    sales:{ic2:[30,40,50],ic3:[45,58,72],ic4:[65,82,100],m1:[80,105,130],m2:[100,130,165],vp:[140,180,225]},
+    ops:{ic2:[30,38,46],ic3:[42,54,67],ic4:[60,76,93],m1:[75,95,118],m2:[95,120,148],vp:[130,165,205]},
+    hr:{ic2:[28,36,44],ic3:[40,52,64],ic4:[58,74,90],m1:[70,90,112],m2:[88,112,138],vp:[120,155,190]},
+    exec:{m2:[130,165,205],vp:[170,220,280]}};
+  const stageAdj={seed:0.72,seriesa:0.85,seriesb:0.95,seriesc:1.0};
+  const locAdj={london:1.0,'uk':0.85,remote:0.88};
+  const equityPct={seed:{ic3:1.0,ic4:0.6,m1:0.4,m2:0.3,vp:1.5},seriesa:{ic3:0.25,ic4:0.15,m1:0.25,m2:0.15,vp:0.5},seriesb:{ic3:0.1,ic4:0.06,m1:0.1,m2:0.08,vp:0.2},seriesc:{ic3:0.04,ic4:0.02,m1:0.04,m2:0.03,vp:0.08}};
+  const bmarks=(base[role]||base['ops'])[lvl]||[60,80,100];
+  const adj=stageAdj[stage]*locAdj[loc];
+  const [lo,mid,hi]=bmarks.map(v=>Math.round(v*adj*1000));
+  const eq=(equityPct[stage]||equityPct['seriesa'])[lvl]||0.1;
+  const fmt=v=>v.toLocaleString('en-GB');
+  document.getElementById('scb-result').innerHTML=`
+    <div class="out-grid">
+      <div class="out-card"><div class="out-label">Salary Range Min</div><div class="out-val sm">£${fmt(lo)}</div></div>
+      <div class="out-card highlight"><div class="out-label">Salary Midpoint</div><div class="out-val">£${fmt(mid)}</div></div>
+      <div class="out-card"><div class="out-label">Salary Range Max</div><div class="out-val sm">£${fmt(hi)}</div></div>
+      <div class="out-card"><div class="out-label">Typical Equity Grant</div><div class="out-val sm">${eq}%</div><div class="out-sub">Fully diluted, 4yr vest</div></div>
+      <div class="out-card"><div class="out-label">Fully-loaded Cost</div><div class="out-val sm">£${fmt(Math.round(mid*1.24))}</div><div class="out-sub">+24% employer costs est.</div></div>
+    </div>
+    <div class="result-block" style="margin-top:14px;font-size:13px;line-height:1.65">
+      <strong>Stage context:</strong> At ${stage==='seed'?'Seed':stage==='seriesa'?'Series A':stage==='seriesb'?'Series B':'Series C+'} stage, pay at <strong>${Math.round(adj*100)}%</strong> of London market rate. Equity should compensate for the cash discount — communicate the exit scenario clearly to candidates.
+    </div>`;
+  document.getElementById('scb-result').style.display='block';
+}
+
+// ──────────────────── t58: Option Pool Calculator ────────────────────────────
+function calcOPC(){
+  const val=parseFloat(document.getElementById('opc-val').value)||0;
+  const pool=parseFloat(document.getElementById('opc-pool').value)/100||0;
+  const grant=parseFloat(document.getElementById('opc-grant').value)/100||0;
+  const strike=parseFloat(document.getElementById('opc-strike').value)||0;
+  const shares=parseFloat(document.getElementById('opc-shares').value)||0;
+  const x1=parseFloat(document.getElementById('opc-x1').value)||2;
+  const x2=parseFloat(document.getElementById('opc-x2').value)||5;
+  const x3=parseFloat(document.getElementById('opc-x3').value)||10;
+  const grantShares=Math.round(shares*grant);
+  const poolShares=Math.round(shares*pool);
+  const currentPPS=val/shares;
+  const scenarios=[x1,x2,x3].map(x=>{
+    const exitPPS=currentPPS*x;
+    const gross=grantShares*(exitPPS-strike);
+    const cgt=Math.max(0,gross*0.1); // BADR 10% CGT
+    return {x,exitPPS,gross,net:gross-cgt};
+  });
+  const fmt=v=>v.toLocaleString('en-GB',{maximumFractionDigits:0});
+  const fmtm=v=>v>=1000000?`£${(v/1000000).toFixed(1)}m`:v>=1000?`£${fmt(v)}`:`£${v.toFixed(2)}`;
+  document.getElementById('opc-result').innerHTML=`
+    <div class="out-grid">
+      <div class="out-card"><div class="out-label">Option Pool</div><div class="out-val sm">${(pool*100).toFixed(1)}%</div><div class="out-sub">${fmt(poolShares)} shares</div></div>
+      <div class="out-card highlight"><div class="out-label">This Grant</div><div class="out-val sm">${(grant*100).toFixed(2)}%</div><div class="out-sub">${fmt(grantShares)} shares</div></div>
+      <div class="out-card"><div class="out-label">Strike Price</div><div class="out-val sm">£${strike.toFixed(2)}</div><div class="out-sub">Current PPS: £${currentPPS.toFixed(2)}</div></div>
+    </div>
+    <div class="result-block" style="margin-top:16px"><div class="section-title" style="margin-bottom:12px">Exit Scenarios (after BADR 10% CGT)</div>
+    <div class="out-grid">${scenarios.map(s=>`<div class="out-card ${s.x===x2?'highlight':''}"><div class="out-label">${s.x}× exit (£${fmt(val*s.x/1000000)}m)</div><div class="out-val sm">${fmtm(s.net)} net</div><div class="out-sub">Gross ${fmtm(s.gross)}</div></div>`).join('')}</div>
+    <p style="font-size:12px;color:rgba(255,255,255,.4);margin-top:14px">Assumes BADR qualification (2yr holding + 2yr employment) at 10% CGT rate. Dilution not modelled. Seek legal and tax advice before communicating to candidates.</p></div>`;
+  document.getElementById('opc-result').style.display='block';
+}
+
+// ──────────────────── t59: Scaling Pay Structure Planner ─────────────────────
+function calcSPP(){
+  const hc=parseFloat(document.getElementById('spp-hc').value)||0;
+  const stage=document.getElementById('spp-stage').value;
+  const lvl=document.getElementById('spp-lvl').value;
+  const bands=document.getElementById('spp-bands').value;
+  const eq=document.getElementById('spp-eq').value;
+  const eu=parseFloat(document.getElementById('spp-eu').value)||0;
+  const inflections=[
+    {n:25,label:'25-person inflection',action:'Build a 4–5 level job architecture. Anchor each level to a market data source. Publish bands internally.'},
+    {n:50,label:'50-person inflection',action:'Establish compensation governance (CEO/CFO/CPO committee). Run your first pay equity audit. Define merit review process.'},
+    {n:100,label:'100-person inflection',action:'Hire a dedicated or fractional Head of Reward. Write and publish a compensation philosophy. Begin annual merit cycles.'},
+    {n:150,label:'EU Directive threshold',action:'EU Pay Transparency Directive applies at 150+ EU employees (June 2026). Begin work category analysis and pre-hire salary disclosure.'},
+    {n:250,label:'UK Gender Pay Gap threshold',action:'UK mandatory gender pay gap reporting applies from 250+ UK employees. Run voluntary audit now to avoid surprises.'},
+    {n:500,label:'Annual reporting (EU Directive)',action:'Annual EU Pay Transparency Directive reporting required at 500+ EU employees.'},
+  ];
+  const reached=inflections.filter(i=>hc>=i.n||(i.n===150&&eu>=150)||(i.n===500&&eu>=500));
+  const upcoming=inflections.filter(i=>hc<i.n&&!(i.n===150&&eu>=150)&&!(i.n===500&&eu>=500));
+  const gaps=[];
+  if(lvl==='no')gaps.push({rag:'🔴',text:'No job levelling framework — critical gap at any scale above 20 people.'});
+  else if(lvl==='partial')gaps.push({rag:'🟡',text:'Partial levelling framework — formalise and document before next major hire wave.'});
+  if(bands==='no')gaps.push({rag:'🔴',text:'No salary bands — risk of pay gaps, negotiation bias, and candidate trust issues.'});
+  if(eq==='never')gaps.push({rag:'🔴',text:'No pay equity audit completed — run one now regardless of size.'});
+  else if(eq==='once')gaps.push({rag:'🟡',text:'Pay equity audit conducted 12+ months ago — re-run annually.'});
+  document.getElementById('spp-result').innerHTML=`
+    <div class="section-title">Infrastructure Gaps</div>
+    ${gaps.length?gaps.map(g=>`<div style="padding:10px 14px;background:rgba(255,255,255,.03);border-radius:8px;margin-bottom:8px;font-size:13px">${g.rag} ${g.text}</div>`).join(''):'<p style="color:#4ADE80;font-size:13px;margin-bottom:16px">✅ No critical infrastructure gaps identified.</p>'}
+    <div class="section-title" style="margin-top:20px">Upcoming Compliance Milestones</div>
+    ${upcoming.slice(0,4).map(u=>`<div style="padding:10px 14px;background:rgba(255,255,255,.025);border-radius:8px;margin-bottom:8px;border-left:3px solid #C4821A"><div style="font-size:12px;font-weight:700;color:#C4821A;margin-bottom:4px">${u.label} (${u.n} employees)</div><div style="font-size:12px;color:rgba(255,255,255,.65)">${u.action}</div></div>`).join('')}`;
+  document.getElementById('spp-result').style.display='block';
+}
+
+// ──────────────────── t60: ESG Pay Metric Selector ───────────────────────────
+function calcESG(){
+  const sector=document.getElementById('esg-sector').value;
+  const vehicle=document.getElementById('esg-vehicle').value;
+  const wt=parseFloat(document.getElementById('esg-wt').value)||20;
+  const n=parseInt(document.getElementById('esg-n').value)||3;
+  const themes=[...document.querySelectorAll('.esg-theme')].map((cb,i)=>cb.checked?i+1:0).filter(Boolean);
+  if(!sector){alert('Please select a sector.');return;}
+  const METRICS={
+    1:[{name:'Scope 1+2 GHG Reduction','v':'STI+LTIP','mat':'H','note':'Use absolute tonnes CO₂e against 2023 baseline. Require independent verification. Set 8–12% annual reduction as stretch.'},
+       {name:'Energy Intensity Improvement','v':'STI','mat':'H','note':'kWh per unit of output. Operational metric — appropriate for annual bonus at 5–10% weighting.'}],
+    2:[{name:'Lost Time Injury Frequency Rate (LTIFR)','v':'STI','mat':'H','note':'Incidents per 200,000 hours. Include fatality underpin (zero payout if fatality occurs). Target: 15% YoY reduction.'},
+       {name:'Employee Wellbeing Index','v':'STI','mat':'M','note':'Composite of EAP utilisation, sick absence rate, and engagement sub-score. Ensure index is externally benchmarked.'}],
+    3:[{name:'Women in Senior Leadership (%)','v':'LTIP','mat':'H','note':'% female at Grades 7+ or P50+ salary. Set 3-year target aligned to stated D&I strategy. Avoid pure headcount – use %. Threshold ≥ 50% of target for any payout.'},
+       {name:'Ethnic Minority Representation (%)','v':'LTIP','mat':'M','note':'% from under-represented ethnic groups at senior levels. Requires robust data collection and employee consent.'}],
+    4:[{name:'Employee Engagement Score','v':'STI','mat':'M','note':'Annual survey score or favourable response %. Use independently conducted survey. Target improvement of 3–5pp per year as stretch.'},
+       {name:'Voluntary Regrettable Attrition','v':'STI','mat':'M','note':'Track separately from total attrition. Reduction target of 3–5pp per year. Good complement to engagement measure.'}],
+    5:[{name:'Supplier ESG Audit Completion Rate','v':'STI','mat':'M','note':'% of critical suppliers audited against ESG standards annually. Stretch: 100% of Tier 1, 75% of Tier 2.'},
+       {name:'Responsible Sourcing Commitment','v':'LTIP','mat':'L','note':'3-year programme milestones for supply chain transparency. Appropriate for LTIP when multi-year commitment is genuine.'}],
+    6:[{name:'Governance Conduct Score','v':'BONUS','mat':'M','note':'Composite of regulatory fines, customer complaints, code of conduct breaches. Acts as a modifier (reduces ESG payout) rather than a standalone metric.'}],
+    7:[{name:'Financial Inclusion Metric','v':'LTIP','mat':'H','note':'Sector-specific: new customers from under-served markets, affordable product penetration. Requires regulator definition alignment.'}],
+  };
+  const selected=[];
+  themes.forEach(t=>{if(METRICS[t])METRICS[t].forEach(m=>{if(vehicle==='both'||(vehicle==='bonus'&&m.v.includes('STI'))||(vehicle==='ltip'&&m.v.includes('LTIP'))){selected.push(m);}})});
+  if(!selected.length){themes.forEach(t=>{if(METRICS[t])selected.push(...METRICS[t]);});}
+  const picks=selected.filter((m,i,a)=>a.findIndex(x=>x.name===m.name)===i).slice(0,n);
+  const matCols={'H':'#4ADE80','M':'#FBBf24','L':'rgba(255,255,255,.4)'};
+  const wtPerMetric=(wt/picks.length).toFixed(0);
+  document.getElementById('esg-result').innerHTML=`
+    <div class="out-grid"><div class="out-card highlight"><div class="out-label">ESG Weighting</div><div class="out-val">${wt}%</div></div><div class="out-card"><div class="out-label">Metrics Selected</div><div class="out-val sm">${picks.length}</div><div class="out-sub">${wtPerMetric}% per metric</div></div></div>
+    <div style="margin-top:16px">${picks.map(p=>`<div style="margin-bottom:14px;padding:16px 18px;background:rgba(255,255,255,.03);border-radius:10px;border-left:3px solid ${matCols[p.mat]}">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
+        <strong style="font-size:14px">${p.name}</strong>
+        <div style="display:flex;gap:8px;flex-shrink:0;margin-left:12px"><span class="pill" style="color:${matCols[p.mat]};background:rgba(0,0,0,.3);border-color:${matCols[p.mat]}">Materiality: ${p.mat==='H'?'High':p.mat==='M'?'Medium':'Lower'}</span><span class="pill gold">${p.v}</span></div>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.55">${p.note}</p>
+    </div>`).join('')}</div>`;
+  document.getElementById('esg-result').style.display='block';
+}
+
+// ──────────────────── t61: Board Reward Report Builder ───────────────────────
+function calcBRR(){
+  const ceosal=parseFloat(document.getElementById('brr-ceosal').value)||0;
+  const bonus=parseFloat(document.getElementById('brr-bonus').value)||0;
+  const ltip=parseFloat(document.getElementById('brr-ltip').value)||0;
+  const pen=parseFloat(document.getElementById('brr-pen').value)||0;
+  const p25=parseFloat(document.getElementById('brr-p25').value)||0;
+  const p50=parseFloat(document.getElementById('brr-p50').value)||0;
+  const p75=parseFloat(document.getElementById('brr-p75').value)||0;
+  const hc=parseFloat(document.getElementById('brr-hc').value)||0;
+  const gpgm=parseFloat(document.getElementById('brr-gpgm').value)||0;
+  const gpgmed=parseFloat(document.getElementById('brr-gpgmed').value)||0;
+  const total=ceosal+bonus+ltip+pen;
+  const r25=p25>0?Math.round(total/p25):0;
+  const r50=p50>0?Math.round(total/p50):0;
+  const r75=p75>0?Math.round(total/p75):0;
+  const fmt=v=>v.toLocaleString('en-GB',{maximumFractionDigits:0});
+  const gpgFlag=gpgmed>10?'⚠️ Median gap above 10% — explanatory narrative required. Structural vs equal pay distinction must be clearly articulated.':gpgmed>5?'Note: Gap above 5% EU Directive threshold — joint pay assessment required for EU operations.':'✅ Below 5% EU Directive threshold. Maintain monitoring.';
+  document.getElementById('brr-result').innerHTML=`
+    <div class="out-grid">
+      <div class="out-card"><div class="out-label">CEO Total Remuneration</div><div class="out-val sm">£${fmt(total)}</div></div>
+      <div class="out-card highlight"><div class="out-label">CEO Pay Ratio (P50)</div><div class="out-val">${r50}:1</div></div>
+      <div class="out-card"><div class="out-label">Pay Ratio (P25)</div><div class="out-val sm">${r25}:1</div></div>
+      <div class="out-card"><div class="out-label">Pay Ratio (P75)</div><div class="out-val sm">${r75}:1</div></div>
+      <div class="out-card ${gpgmed>10?'bad':gpgmed>5?'warn':'good'}"><div class="out-label">Gender Pay Gap (Median)</div><div class="out-val sm">${gpgmed}%</div></div>
+      <div class="out-card"><div class="out-label">UK Headcount</div><div class="out-val sm">${fmt(hc)}</div><div class="out-sub">${hc>=250?'✅ DRR reporting required':'Below 250 threshold'}</div></div>
+    </div>
+    <div class="result-block" style="margin-top:16px">
+      <div style="font-size:13px;line-height:1.7">
+        <strong>DRR Required Disclosures Checklist</strong><br><br>
+        ${[[true,'CEO single total figure of remuneration (salary, bonus, LTIP, pension, benefits)'],[true,'Annual bonus performance assessment against stated targets'],[true,'LTIP vesting — performance condition outturn'],[hc>=250,'CEO pay ratio — P25, P50, P75 (Method A/B/C)'],[true,'Gender pay gap — mean and median'],[true,'Percentage change in CEO pay vs employee pay'],[true,'Relative importance of spend on pay chart'],[true,'Statement from RemCo Chair']].map(([req,label])=>`<div style="padding:6px 0;display:flex;align-items:flex-start;gap:10px"><span style="color:${req?'#4ADE80':'rgba(255,255,255,.3)'}">${req?'✅':'⬜'}</span><span style="font-size:12px;color:${req?'rgba(255,255,255,.8)':'rgba(255,255,255,.4)'}">${label}</span></div>`).join('')}
+        <div style="margin-top:14px;padding:12px 14px;background:rgba(255,255,255,.03);border-radius:8px;font-size:12px;color:rgba(255,255,255,.6)">${gpgFlag}</div>
+      </div>
+    </div>`;
+  document.getElementById('brr-result').style.display='block';
+}
+
+// ──────────────────── t62: Pay Transparency Readiness (Advanced) ──────────────
+function calcPTR2(){
+  const dims=['s1','s2','s3','s4','s5','s6'];
+  const labels=['Pay Equity Audit','Job Architecture','Salary Band Transparency','Manager Capability','Systems & Data','Legal & Policy'];
+  const scores=dims.map(d=>parseInt(document.getElementById('ptr-'+d)?.value)||0);
+  if(scores.some(s=>s===0)){alert('Please rate all six dimensions.');return;}
+  const eu=parseFloat(document.getElementById('ptr-eu').value)||0;
+  const dateStr=document.getElementById('ptr-date').value;
+  const total=scores.reduce((a,b)=>a+b,0);
+  const pct=Math.round(total/30*100);
+  const dirThreshold=eu>=150;
+  const actions=[
+    'Run a work-category pay equity analysis (not just headline gender pay gap). Engage external counsel to test objective factor defences.',
+    'Formalise job families and map them explicitly to Directive "work categories." Legal review of category definitions required.',
+    'Publish salary ranges on all job adverts. Remove questions about current salary from hiring process. Update employment contracts to reflect transparency rights.',
+    'Train all hiring managers and line managers on the SPAR framework. Conduct role-play calibration sessions. Assess readiness before going live.',
+    'Consolidate pay data into a single HRIS source. Build automated work-category pay equity dashboards. Target real-time anomaly detection.',
+    'Update pay policy to reflect Directive obligations. Secure legal sign-off. Publish policy internally with governance approval.',
+  ];
+  const rag=scores.map((s,i)=>({label:labels[i],s,action:actions[i],rag:s>=4?'green':s>=3?'amber':'red'}));
+  const reds=rag.filter(r=>r.rag==='red');
+  const ambers=rag.filter(r=>r.rag==='amber');
+  const compliant=pct>=80&&(!dirThreshold||scores.every(s=>s>=3));
+  document.getElementById('ptr2-result').innerHTML=`
+    <div class="out-grid">
+      ${scores.map((s,i)=>`<div class="out-card ${s>=4?'good':s>=3?'warn':'bad'}"><div class="out-label">${labels[i]}</div><div class="out-val sm" style="color:${s>=4?'#4ADE80':s>=3?'#FBBf24':'#EF4444'}">${s}/5</div></div>`).join('')}
+      <div class="out-card ${pct>=80?'good':pct>=60?'warn':'bad'}"><div class="out-label">Overall Readiness</div><div class="out-val">${pct}%</div>${dirThreshold&&eu>=150?`<div class="out-sub">EU Directive applies (${eu} EU employees)</div>`:''}</div>
+    </div>
+    <div class="result-block" style="margin-top:16px">
+      <div class="section-title" style="margin-bottom:12px">Priority Actions (Red RAG)</div>
+      ${reds.length?reds.map(r=>`<div style="margin-bottom:12px;padding:12px 14px;background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.2);border-radius:8px"><strong style="font-size:13px;color:#EF4444">${r.label}</strong><p style="font-size:12px;color:rgba(255,255,255,.65);margin-top:4px;line-height:1.5">${r.action}</p></div>`).join(''):'<p style="color:#4ADE80;font-size:13px">No red-rated dimensions.</p>'}
+      ${ambers.length?`<div class="section-title" style="margin-top:16px;margin-bottom:12px">Improvements Required (Amber RAG)</div>${ambers.map(r=>`<div style="margin-bottom:10px;padding:12px 14px;background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.2);border-radius:8px"><strong style="font-size:13px;color:#FBBf24">${r.label}</strong><p style="font-size:12px;color:rgba(255,255,255,.65);margin-top:4px;line-height:1.5">${r.action}</p></div>`).join('')}`:''}
+      <div style="margin-top:14px;padding:12px 14px;background:rgba(255,255,255,.03);border-radius:8px;font-size:13px;color:${compliant?'#4ADE80':'#F97316'}">
+        ${compliant?'✅ On track for EU Pay Transparency Directive compliance.':'⚠️ Material gaps remain. Begin remediation immediately — Directive enforcement starts June 2026 for 250+ employee organisations.'}
+      </div>
+    </div>`;
+  document.getElementById('ptr2-result').style.display='block';
+}
 </script>
 </body>
 </html>
