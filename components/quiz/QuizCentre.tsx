@@ -41,6 +41,7 @@ export function QuizCentre() {
   const [selectedOpt, setSelectedOpt] = useState<number | null>(null);
   const [answered, setAnswered] = useState(false);
   const [answers, setAnswers] = useState<boolean[]>([]);
+  const [picks, setPicks] = useState<number[]>([]);
   const [completed, setCompleted] = useState<ProgressMap>({});
   const [synced, setSynced] = useState(false);
   const [lastXp, setLastXp] = useState(0);
@@ -107,6 +108,7 @@ export function QuizCentre() {
     setActiveId(id);
     setCurrentQ(0);
     setAnswers([]);
+    setPicks([]);
     setSelectedOpt(null);
     setAnswered(false);
     setView("runner");
@@ -118,11 +120,12 @@ export function QuizCentre() {
     const q = activeQuiz.questions[currentQ];
     const isCorrect = selectedOpt === q.ans;
     setAnswers((prev) => [...prev, isCorrect]);
+    setPicks((prev) => [...prev, selectedOpt]);
     setAnswered(true);
   }, [selectedOpt, answered, activeQuiz, currentQ]);
 
   const finishQuiz = useCallback(
-    (finalAnswers: boolean[]) => {
+    (finalAnswers: boolean[], finalPicks: number[]) => {
       if (!activeQuiz) return;
       const quizId = activeQuiz.id;
       const alreadyCompleted = Boolean(completed[quizId]);
@@ -150,7 +153,7 @@ export function QuizCentre() {
             const res = await fetch("/api/quiz-centre", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ quizId, score, total, xp: xpEarned }),
+              body: JSON.stringify({ quizId, answers: finalPicks }),
             });
             const data = (await res.json()) as {
               authenticated: boolean;
@@ -185,13 +188,13 @@ export function QuizCentre() {
     if (!activeQuiz) return;
     const isLast = currentQ >= activeQuiz.questions.length - 1;
     if (isLast) {
-      finishQuiz(answers);
+      finishQuiz(answers, picks);
       return;
     }
     setCurrentQ((c) => c + 1);
     setSelectedOpt(null);
     setAnswered(false);
-  }, [activeQuiz, currentQ, answers, finishQuiz]);
+  }, [activeQuiz, currentQ, answers, picks, finishQuiz]);
 
   const launchConfetti = useCallback((col: string) => {
     const colors = [col, "#C8963E", "#4ADE80", "#60A5FA", "#F9A8D4", "#FCD34D"];

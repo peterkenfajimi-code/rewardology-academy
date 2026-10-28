@@ -5,6 +5,7 @@ import { fetchApprovedTestimonials } from "@/lib/testimonials/fetchApproved";
 import { notifyAdminNewTestimonial } from "@/lib/testimonials/notifyAdmin";
 import { parseSubmitPayload } from "@/lib/testimonials/validate";
 import type { TestimonialSourceType } from "@/lib/testimonials/types";
+import { clientIp, consumeRateLimit, rateLimitResponse } from "@/lib/security/rateLimit";
 
 export const runtime = "nodejs";
 
@@ -80,6 +81,11 @@ export async function POST(req: Request) {
     if (!user) {
       return NextResponse.json({ error: "Sign in to submit feedback" }, { status: 401 });
     }
+
+    const limited = rateLimitResponse(
+      consumeRateLimit("testimonial", `${user.id}:${clientIp(req)}`, 5, 60 * 60 * 1000)
+    );
+    if (limited) return limited;
 
     const { data, error } = await supabase
       .from("testimonials")

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/env";
+import { gradeQuizCentreAttempt } from "@/lib/quizzes/gradeQuizCentre";
 import { QUIZ_CENTRE } from "@/lib/quizzes/quizCentre";
 import type { ProgressMap } from "@/lib/quizzes/progress";
 
@@ -56,9 +57,7 @@ export async function GET() {
 
 type SavePayload = {
   quizId: number;
-  score: number;
-  total: number;
-  xp: number;
+  answers: number[];
 };
 
 // ── Record an attempt for the signed-in user, return refreshed progress ──
@@ -77,11 +76,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Unknown quiz" }, { status: 404 });
   }
 
-  // Re-derive trustworthy values server-side from the quiz definition so a
-  // client can't inflate XP. We only trust the score, then compute the rest.
-  const total = quiz.questions.length;
-  const score = Math.max(0, Math.min(Number(body.score) || 0, total));
-  const xp = Math.round((score / total) * quiz.xp);
+  const graded = gradeQuizCentreAttempt(quiz, body.answers);
+  if (!graded) {
+    return NextResponse.json({ error: "Submit every answer to save progress" }, { status: 400 });
+  }
+  const { score, total, xp } = graded;
 
   try {
     const supabase = await createClient();

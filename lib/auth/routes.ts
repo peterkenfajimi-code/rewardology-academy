@@ -8,6 +8,7 @@ export const PROTECTED_PREFIXES = [
   "/api/course-centre",
   "/api/quiz-centre",
   "/api/setup",
+  "/api/tts",
 ];
 
 /** Always reachable without a session. */

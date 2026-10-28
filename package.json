@@ -23,6 +23,8 @@
     "apply:testimonials": "node scripts/apply-testimonials.mjs",
     "apply:user-locations": "node scripts/apply-user-locations.mjs",
     "apply:certificates": "node scripts/apply-certificates.mjs",
+    "apply:rate-limit": "node scripts/apply-rate-limit.mjs",
+    "apply:data-api-grants": "node scripts/apply-data-api-grants.mjs",
     "apply:benefits-repository": "node scripts/apply-benefits-repository-schema.mjs",
     "setup:benefits-repository": "node scripts/setup-benefits-repository.mjs",
     "sync:repository-netlify": "node scripts/sync-repository-netlify-env.mjs",

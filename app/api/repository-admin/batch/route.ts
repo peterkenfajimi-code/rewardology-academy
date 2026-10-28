@@ -7,6 +7,7 @@ import {
   updateBatchRunRecord,
   type BatchConfig,
 } from "@/lib/repository/batch-runner";
+import { clientIp, consumeSharedRateLimit, rateLimitResponse } from "@/lib/security/rateLimit";
 import { createRepositoryAdminClient } from "@/lib/supabase/repository/admin";
 
 export const runtime = "nodejs";
@@ -46,6 +47,8 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   if (!isRepositoryAdminAuthed(req)) return unauthorized();
+  const limited = rateLimitResponse(await consumeSharedRateLimit("anthropic-batch", clientIp(req), 6, 15 * 60 * 1000));
+  if (limited) return limited;
   if (!isRepositorySupabaseConfigured()) {
     return NextResponse.json({ error: "Repository database not configured" }, { status: 503 });
   }

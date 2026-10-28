@@ -5,8 +5,7 @@ import { usePathname } from "next/navigation";
 import { ReactNode, useState } from "react";
 import { AuthControls } from "@/components/auth/AuthControls";
 import { DashboardNavLink } from "@/components/auth/DashboardNavLink";
-import { useAuth } from "@/components/auth/AuthProvider";
-import { CONTACT_FORWARD_GMAIL, DAILY_QUIZ_HREF } from "@/lib/site";
+import { DAILY_QUIZ_HREF } from "@/lib/site";
 
 const nav = [
   { href: "/", label: "Home" },
@@ -33,11 +32,9 @@ function isActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
-export function SiteShell({ children }: { children: ReactNode }) {
+export function SiteShell({ children, isAdmin = false }: { children: ReactNode; isAdmin?: boolean }) {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const { user } = useAuth();
-  const isAdmin = user?.email?.toLowerCase() === CONTACT_FORWARD_GMAIL.toLowerCase();
 
   return (
     <>

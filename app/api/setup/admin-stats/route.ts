@@ -1,20 +1,11 @@
 import { NextResponse } from "next/server";
-import { createClient } from "@/lib/supabase/server";
-import { isSupabaseConfigured } from "@/lib/env";
-import { CONTACT_FORWARD_GMAIL } from "@/lib/site";
+import { requirePlatformAdmin } from "@/lib/auth/admin";
 import { COURSES, allLessons } from "@/lib/courses/courseData";
 
-const DENY = NextResponse.json({ error: "Forbidden" }, { status: 403 });
-
 export async function GET() {
-  if (!isSupabaseConfigured()) return DENY;
-
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (!user || user.email?.toLowerCase() !== CONTACT_FORWARD_GMAIL.toLowerCase()) return DENY;
+  const admin = await requirePlatformAdmin();
+  if (!admin.ok) return admin.response;
+  const supabase = admin.supabase;
 
   // Run all stat queries in parallel
   const [

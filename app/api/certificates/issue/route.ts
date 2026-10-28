@@ -2,16 +2,20 @@ import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/env";
 import { certificateVerifyUrl } from "@/lib/certificates/urls";
-import { courseCompletionIssuedAt } from "@/lib/certificates/courseCompletion";
 import type { IssueCertificatePayload } from "@/lib/certificates/types";
+import {
+  sanitizeRecipientName,
+  verifiedCourseCertificate,
+  verifiedDailyQuizCertificate,
+  verifiedQuizCentreCertificate,
+  type VerifiedCertificate,
+} from "@/lib/certificates/verifyIssue";
 
 const UNAUTH = NextResponse.json({ error: "Sign in required" }, { status: 401 });
-
-function parseCompletedAt(value: string | undefined): string | null {
-  if (!value?.trim()) return null;
-  const ms = new Date(value).getTime();
-  return Number.isNaN(ms) ? null : new Date(ms).toISOString();
-}
+const UNVERIFIED = NextResponse.json(
+  { error: "Complete this before a certificate can be issued" },
+  { status: 403 }
+);
 
 export async function POST(request: Request) {
   if (!isSupabaseConfigured()) {
@@ -31,50 +35,61 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
-  const {
-    certType,
-    sourceId,
-    recipientName,
-    credentialName,
-    credentialDetail,
-    scorePct,
-    xpEarned,
-    completedAt,
-  } = body;
+  const recipientName = sanitizeRecipientName(body.recipientName);
+  if (!recipientName) {
+    return NextResponse.json({ error: "Enter the name that should appear on the certificate" }, { status: 400 });
+  }
 
-  if (!certType || !sourceId || !recipientName?.trim() || !credentialName?.trim()) {
+  const certType = body.certType;
+  const sourceId = String(body.sourceId ?? "").trim();
+  if (!certType || !sourceId) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
 
-  if (!["course", "quiz_centre", "quiz"].includes(certType)) {
-    return NextResponse.json({ error: "Invalid certificate type" }, { status: 400 });
-  }
-
-  let issuedAt = parseCompletedAt(completedAt);
+  let verified: VerifiedCertificate | null = null;
 
   if (certType === "course") {
     const courseId = Number(sourceId);
-    if (Number.isFinite(courseId)) {
-      const { data: rows } = await supabase
-        .from("course_progress")
-        .select("lesson_id, xp, updated_at")
-        .eq("user_id", user.id)
-        .eq("course_id", courseId);
-
-      const fromProgress = courseCompletionIssuedAt(courseId, rows);
-      if (fromProgress) issuedAt = fromProgress;
-    }
+    if (!Number.isFinite(courseId)) return UNVERIFIED;
+    const { data: rows } = await supabase
+      .from("course_progress")
+      .select("lesson_id, xp, updated_at")
+      .eq("user_id", user.id)
+      .eq("course_id", courseId);
+    verified = verifiedCourseCertificate(sourceId, rows, recipientName);
+  } else if (certType === "quiz_centre") {
+    const quizId = Number(sourceId);
+    if (!Number.isFinite(quizId)) return UNVERIFIED;
+    const { data: row } = await supabase
+      .from("quiz_centre_progress")
+      .select("best_score, best_total, best_xp, updated_at")
+      .eq("user_id", user.id)
+      .eq("quiz_id", quizId)
+      .maybeSingle();
+    verified = verifiedQuizCentreCertificate(sourceId, row, recipientName);
+  } else if (certType === "quiz") {
+    const { data: row } = await supabase
+      .from("daily_quiz_completions")
+      .select("correct, xp_earned, created_at")
+      .eq("user_id", user.id)
+      .eq("quiz_date", sourceId)
+      .maybeSingle();
+    verified = verifiedDailyQuizCertificate(sourceId, row, recipientName);
+  } else {
+    return NextResponse.json({ error: "Invalid certificate type" }, { status: 400 });
   }
 
+  if (!verified) return UNVERIFIED;
+
   const { data: id, error } = await supabase.rpc("issue_certificate", {
-    p_cert_type: certType,
-    p_source_id: String(sourceId),
-    p_recipient_name: recipientName.trim(),
-    p_credential_name: credentialName.trim(),
-    p_credential_detail: credentialDetail?.trim() || null,
-    p_score_pct: typeof scorePct === "number" ? scorePct : null,
-    p_xp_earned: typeof xpEarned === "number" ? xpEarned : null,
-    p_issued_at: issuedAt,
+    p_cert_type: verified.certType,
+    p_source_id: verified.sourceId,
+    p_recipient_name: verified.recipientName,
+    p_credential_name: verified.credentialName,
+    p_credential_detail: verified.credentialDetail,
+    p_score_pct: verified.scorePct,
+    p_xp_earned: verified.xpEarned,
+    p_issued_at: verified.issuedAt,
   });
 
   if (error) {
@@ -92,6 +107,6 @@ export async function POST(request: Request) {
   return NextResponse.json({
     id: certId,
     verifyUrl: certificateVerifyUrl(certId),
-    issuedAt: cert?.issued_at ?? issuedAt ?? undefined,
+    issuedAt: cert?.issued_at ?? verified.issuedAt ?? undefined,
   });
 }

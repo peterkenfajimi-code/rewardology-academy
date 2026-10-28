@@ -41,6 +41,14 @@ grant select, insert, update, delete on table public.issued_certificates to serv
 grant execute on function public.issue_certificate(text, text, text, text, text, integer, integer, timestamptz) to authenticated;
 grant execute on function public.get_public_certificate(text) to anon, authenticated;
 
+-- Shared serverless rate limits / admin lockout (created after 30 Oct 2026).
+revoke all on table public.rate_limit_buckets from anon, authenticated;
+grant select, insert, update, delete on table public.rate_limit_buckets to service_role;
+grant execute on function public.consume_rate_limit(text, integer, integer) to anon, authenticated;
+grant execute on function public.register_auth_failure(text, integer, integer, integer) to anon, authenticated;
+grant execute on function public.auth_lock_remaining(text) to anon, authenticated;
+grant execute on function public.clear_auth_failures(text) to anon, authenticated;
+
 grant select on table public.testimonials to anon, authenticated;
 grant insert on table public.testimonials to authenticated;
 grant select, insert, update, delete on table public.testimonials to service_role;

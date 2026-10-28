@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 import { isRepositoryAdminAuthed } from "@/lib/auth/repository-admin";
+import { clientIp, consumeSharedRateLimit, rateLimitResponse } from "@/lib/security/rateLimit";
 
 import { isAnthropicConfigured, isRepositorySupabaseConfigured } from "@/lib/env";
 
@@ -29,6 +30,9 @@ function unauthorized() {
 export async function POST(req: NextRequest) {
 
   if (!isRepositoryAdminAuthed(req)) return unauthorized();
+
+  const limited = rateLimitResponse(await consumeSharedRateLimit("anthropic", clientIp(req), 20, 15 * 60 * 1000));
+  if (limited) return limited;
 
   if (!isAnthropicConfigured()) {
 

@@ -117,6 +117,7 @@ export const config = {
     "/api/setup/:path*",
     "/api/course-centre/:path*",
     "/api/quiz-centre/:path*",
+    "/api/tts",
     "/login",
     "/signup",
     "/repository-admin/:path*",

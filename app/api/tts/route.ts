@@ -1,5 +1,11 @@
 import { NextResponse } from "next/server";
-import { isElevenLabsConfigured } from "@/lib/env";
+import { createClient } from "@/lib/supabase/server";
+import { isElevenLabsConfigured, isSupabaseConfigured } from "@/lib/env";
+import {
+  clientIp,
+  consumeSharedRateLimit,
+  rateLimitResponse,
+} from "@/lib/security/rateLimit";
 import { prepareTextForTts } from "@/lib/tts/prepareText";
 import {
   DEFAULT_ELEVENLABS_VOICE_ID,
@@ -8,7 +14,10 @@ import {
 
 export const runtime = "nodejs";
 
-const MAX_CHARS = 10000;
+const MAX_CHARS = 4000;
+const USER_LIMIT = 20;
+const IP_LIMIT = 30;
+const WINDOW_MS = 15 * 60 * 1000;
 
 /** Educational narration — stable, clear, slightly slower. */
 const VOICE_SETTINGS = {
@@ -19,7 +28,23 @@ const VOICE_SETTINGS = {
   speed: 0.94,
 };
 
+async function requireTtsUser() {
+  if (!isSupabaseConfigured()) {
+    return { ok: false as const, error: NextResponse.json({ error: "Sign in required" }, { status: 401 }) };
+  }
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) {
+    return { ok: false as const, error: NextResponse.json({ error: "Sign in required" }, { status: 401 }) };
+  }
+  return { ok: true as const, user };
+}
+
 export async function GET() {
+  const auth = await requireTtsUser();
+  if (!auth.ok) return auth.error;
   return NextResponse.json({
     available: isElevenLabsConfigured(),
     voiceId: process.env.ELEVENLABS_VOICE_ID || DEFAULT_ELEVENLABS_VOICE_ID,
@@ -30,14 +55,37 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
+    const auth = await requireTtsUser();
+    if (!auth.ok) return auth.error;
+
+    const ipLimit = await consumeSharedRateLimit("tts-ip", clientIp(req), IP_LIMIT, WINDOW_MS);
+    const blockedIp = rateLimitResponse(ipLimit);
+    if (blockedIp) return blockedIp;
+    const userLimit = await consumeSharedRateLimit("tts-user", auth.user.id, USER_LIMIT, WINDOW_MS);
+    const blockedUser = rateLimitResponse(userLimit);
+    if (blockedUser) return blockedUser;
+
     const { text } = await req.json();
 
     if (!text || typeof text !== "string") {
       return NextResponse.json({ error: "Invalid text" }, { status: 400 });
     }
 
+    if (text.length > MAX_CHARS) {
+      return NextResponse.json(
+        { error: `Text exceeds the ${MAX_CHARS} character limit` },
+        { status: 400 }
+      );
+    }
+
     const prepared = prepareTextForTts(text, true);
-    const trimmed = prepared.trim().slice(0, MAX_CHARS);
+    const trimmed = prepared.trim();
+    if (trimmed.length > MAX_CHARS) {
+      return NextResponse.json(
+        { error: `Text exceeds the ${MAX_CHARS} character limit` },
+        { status: 400 }
+      );
+    }
     if (!trimmed) {
       return NextResponse.json({ error: "Empty text" }, { status: 400 });
     }

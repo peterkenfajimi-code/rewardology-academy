@@ -32,10 +32,13 @@ export function isRepositorySupabaseConfigured() {
 }
 
 export function isRepositoryAdminConfigured() {
+  const token = process.env.REPOSITORY_ADMIN_SESSION_TOKEN?.trim() || "";
+  const password = process.env.REPOSITORY_ADMIN_PASSWORD?.trim() || "";
   return Boolean(
     process.env.REPOSITORY_ADMIN_USERNAME?.trim() &&
-      process.env.REPOSITORY_ADMIN_PASSWORD?.trim() &&
-      process.env.REPOSITORY_ADMIN_SESSION_TOKEN?.trim()
+      password &&
+      token.length >= 32 &&
+      token !== password
   );
 }
 

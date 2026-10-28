@@ -1,12 +1,15 @@
 import { NextResponse } from "next/server";
 import { fetchTabNews } from "@/lib/news/fetchFeeds";
 import { isValidNewsTab } from "@/lib/news/feedConfig";
+import { clientIp, consumeRateLimit, rateLimitResponse } from "@/lib/security/rateLimit";
 
 export const runtime = "nodejs";
 
 type RouteContext = { params: Promise<{ tab: string }> };
 
-export async function GET(_request: Request, context: RouteContext) {
+export async function GET(request: Request, context: RouteContext) {
+  const limited = rateLimitResponse(consumeRateLimit("news", clientIp(request), 60, 10 * 60 * 1000));
+  if (limited) return limited;
   const tab = (await context.params).tab;
 
   if (!isValidNewsTab(tab)) {
