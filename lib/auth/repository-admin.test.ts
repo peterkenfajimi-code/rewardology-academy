@@ -26,36 +26,36 @@ function requestWithCookie(value: string) {
 }
 
 describe("repository admin sessions", () => {
-  it("issues a signed cookie that authenticates until rotated", () => {
+  it("issues a signed cookie that authenticates until rotated", async () => {
     process.env.REPOSITORY_ADMIN_SESSION_TOKEN = "test-secret-token-value-32bytes-ok";
-    const token = issueRepositoryAdminSession();
+    const token = await issueRepositoryAdminSession();
     expect(token).toBeTruthy();
-    expect(isRepositoryAdminAuthed(requestWithCookie(token!))).toBe(true);
-    expect(isRepositoryAdminAuthed(requestWithCookie("v1.9999999999.abc.not-a-sig"))).toBe(false);
+    expect(await isRepositoryAdminAuthed(requestWithCookie(token!))).toBe(true);
+    expect(await isRepositoryAdminAuthed(requestWithCookie("v1.9999999999.abc.not-a-sig"))).toBe(false);
   });
 
-  it("rejects a static leftover token and revokes when the secret rotates", () => {
+  it("rejects a static leftover token and revokes when the secret rotates", async () => {
     process.env.REPOSITORY_ADMIN_SESSION_TOKEN = "secret-a-must-be-32-bytes-long!!";
-    const token = issueRepositoryAdminSession()!;
-    expect(isRepositoryAdminAuthed(requestWithCookie(token))).toBe(true);
+    const token = (await issueRepositoryAdminSession())!;
+    expect(await isRepositoryAdminAuthed(requestWithCookie(token))).toBe(true);
     process.env.REPOSITORY_ADMIN_SESSION_TOKEN = "secret-b-must-be-32-bytes-long!!";
-    expect(isRepositoryAdminAuthed(requestWithCookie(token))).toBe(false);
-    expect(isRepositoryAdminAuthed(requestWithCookie("secret-a"))).toBe(false);
+    expect(await isRepositoryAdminAuthed(requestWithCookie(token))).toBe(false);
+    expect(await isRepositoryAdminAuthed(requestWithCookie("secret-a"))).toBe(false);
   });
 
-  it("compares credentials without accepting a mismatch", () => {
+  it("compares credentials without accepting a mismatch", async () => {
     process.env.REPOSITORY_ADMIN_USERNAME = "admin";
     process.env.REPOSITORY_ADMIN_PASSWORD = "correct-horse";
-    expect(validateRepositoryAdminCredentials("admin", "correct-horse")).toBe(true);
-    expect(validateRepositoryAdminCredentials("admin", "wrong")).toBe(false);
-    expect(validateRepositoryAdminCredentials("nope", "correct-horse")).toBe(false);
+    expect(await validateRepositoryAdminCredentials("admin", "correct-horse")).toBe(true);
+    expect(await validateRepositoryAdminCredentials("admin", "wrong")).toBe(false);
+    expect(await validateRepositoryAdminCredentials("nope", "correct-horse")).toBe(false);
   });
 
-  it("refuses to sign if the HMAC secret is the password or too short", () => {
+  it("refuses to sign if the HMAC secret is the password or too short", async () => {
     process.env.REPOSITORY_ADMIN_PASSWORD = "same-value-used-as-hmac-secret!!";
     process.env.REPOSITORY_ADMIN_SESSION_TOKEN = "same-value-used-as-hmac-secret!!";
-    expect(issueRepositoryAdminSession()).toBeNull();
+    expect(await issueRepositoryAdminSession()).toBeNull();
     process.env.REPOSITORY_ADMIN_SESSION_TOKEN = "short";
-    expect(issueRepositoryAdminSession()).toBeNull();
+    expect(await issueRepositoryAdminSession()).toBeNull();
   });
 });

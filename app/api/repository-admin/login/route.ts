@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
   const username = String(body.username ?? "").trim();
   const password = String(body.password ?? "");
 
-  if (!validateRepositoryAdminCredentials(username, password)) {
+  if (!(await validateRepositoryAdminCredentials(username, password))) {
     const lockSec = await registerAuthFailureShared(LOGIN_SCOPE, ip, MAX_FAILURES, WINDOW_MS, LOCK_MS);
     return NextResponse.json(
       { error: lockSec ? "Too many failed sign-in attempts. Try again later." : "Invalid credentials" },
@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const token = issueRepositoryAdminSession();
+  const token = await issueRepositoryAdminSession();
   if (!token) {
     return NextResponse.json({ error: "Admin session not configured" }, { status: 503 });
   }
@@ -66,6 +66,6 @@ export async function POST(req: NextRequest) {
   return res;
 }
 
-export function GET(req: NextRequest) {
-  return NextResponse.json({ authenticated: isRepositoryAdminAuthed(req) });
+export async function GET(req: NextRequest) {
+  return NextResponse.json({ authenticated: await isRepositoryAdminAuthed(req) });
 }

@@ -8,7 +8,7 @@ function unauthorized() {
 }
 
 export async function GET(req: NextRequest) {
-  if (!isRepositoryAdminAuthed(req)) return unauthorized();
+  if (!(await isRepositoryAdminAuthed(req))) return unauthorized();
   if (!isRepositorySupabaseConfigured()) {
     return NextResponse.json({ error: "Repository database not configured" }, { status: 503 });
   }

@@ -29,7 +29,7 @@ function unauthorized() {
 
 export async function POST(req: NextRequest) {
 
-  if (!isRepositoryAdminAuthed(req)) return unauthorized();
+  if (!(await isRepositoryAdminAuthed(req))) return unauthorized();
 
   const limited = rateLimitResponse(await consumeSharedRateLimit("anthropic", clientIp(req), 20, 15 * 60 * 1000));
   if (limited) return limited;

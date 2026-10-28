@@ -13,7 +13,7 @@ function notConfigured() {
 
 /** Unreviewed unmapped findings, oldest first. */
 export async function GET(req: NextRequest) {
-  if (!isRepositoryAdminAuthed(req)) return unauthorized();
+  if (!(await isRepositoryAdminAuthed(req))) return unauthorized();
   if (!isRepositorySupabaseConfigured()) return notConfigured();
 
   const supabase = createRepositoryAdminClient();
@@ -32,7 +32,7 @@ export async function GET(req: NextRequest) {
 
 /** Mark one finding reviewed: { finding_id }. */
 export async function PATCH(req: NextRequest) {
-  if (!isRepositoryAdminAuthed(req)) return unauthorized();
+  if (!(await isRepositoryAdminAuthed(req))) return unauthorized();
   if (!isRepositorySupabaseConfigured()) return notConfigured();
 
   const body = (await req.json().catch(() => ({}))) as { finding_id?: string };

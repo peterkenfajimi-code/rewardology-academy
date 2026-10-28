@@ -20,7 +20,7 @@ function unauthorized() {
 const activeRuns = new Set<string>();
 
 export async function GET(req: NextRequest) {
-  if (!isRepositoryAdminAuthed(req)) return unauthorized();
+  if (!(await isRepositoryAdminAuthed(req))) return unauthorized();
   if (!isRepositorySupabaseConfigured()) {
     return NextResponse.json({ error: "Repository database not configured" }, { status: 503 });
   }
@@ -46,7 +46,7 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  if (!isRepositoryAdminAuthed(req)) return unauthorized();
+  if (!(await isRepositoryAdminAuthed(req))) return unauthorized();
   const limited = rateLimitResponse(await consumeSharedRateLimit("anthropic-batch", clientIp(req), 6, 15 * 60 * 1000));
   if (limited) return limited;
   if (!isRepositorySupabaseConfigured()) {

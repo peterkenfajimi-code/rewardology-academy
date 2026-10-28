@@ -45,7 +45,7 @@ export async function middleware(req: NextRequest) {
   }
 
   if (isRepositoryAdminPath(pathname) && !isRepositoryAdminLoginPath(pathname)) {
-    if (!isRepositoryAdminAuthed(req)) {
+    if (!(await isRepositoryAdminAuthed(req))) {
       if (pathname.startsWith("/api/")) {
         return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
       }

@@ -5,7 +5,7 @@ import { loadFieldRegistry } from "@/lib/repository/field-registry";
 import { createRepositoryAdminClient } from "@/lib/supabase/repository/admin";
 
 export async function GET(req: NextRequest) {
-  if (!isRepositoryAdminAuthed(req)) {
+  if (!(await isRepositoryAdminAuthed(req))) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   if (!isRepositorySupabaseConfigured()) {

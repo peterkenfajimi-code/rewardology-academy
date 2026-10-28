@@ -14,7 +14,7 @@ import { createRepositoryAdminClient } from "@/lib/supabase/repository/admin";
 type Params = { params: Promise<{ id: string }> };
 
 function guard(req: NextRequest) {
-  if (!isRepositoryAdminAuthed(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!(await isRepositoryAdminAuthed(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   if (!isRepositorySupabaseConfigured()) {
     return NextResponse.json({ error: "Repository database not configured" }, { status: 503 });
   }

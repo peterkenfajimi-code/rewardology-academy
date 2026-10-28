@@ -4,7 +4,7 @@ import { normalizeDomain } from "@/lib/repository/company-logo";
 import { fetchLogoDevLogo } from "@/lib/repository/logo-dev";
 
 export async function GET(req: NextRequest) {
-  if (!isRepositoryAdminAuthed(req)) {
+  if (!(await isRepositoryAdminAuthed(req))) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   const domain = normalizeDomain(req.nextUrl.searchParams.get("domain"));

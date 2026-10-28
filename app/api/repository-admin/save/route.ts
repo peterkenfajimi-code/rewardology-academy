@@ -6,7 +6,7 @@ import type { ExtractedEntry, SourceRecord, SourceType } from "@/lib/repository/
 import { createRepositoryAdminClient } from "@/lib/supabase/repository/admin";
 
 export async function POST(req: NextRequest) {
-  if (!isRepositoryAdminAuthed(req)) return unauthorized();
+  if (!(await isRepositoryAdminAuthed(req))) return unauthorized();
   if (!isRepositorySupabaseConfigured()) {
     return NextResponse.json({ error: "Repository database not configured" }, { status: 503 });
   }
