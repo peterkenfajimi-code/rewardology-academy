@@ -13,7 +13,7 @@ import { createRepositoryAdminClient } from "@/lib/supabase/repository/admin";
 
 type Params = { params: Promise<{ id: string }> };
 
-function guard(req: NextRequest) {
+async function guard(req: NextRequest) {
   if (!(await isRepositoryAdminAuthed(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   if (!isRepositorySupabaseConfigured()) {
     return NextResponse.json({ error: "Repository database not configured" }, { status: 503 });
@@ -38,7 +38,7 @@ async function loadCompany(supabase: ReturnType<typeof createRepositoryAdminClie
  *   file    — the reviewer's own asset (press kit, newsroom), when source = "upload"
  */
 export async function POST(req: NextRequest, { params }: Params) {
-  const denied = guard(req);
+  const denied = await guard(req);
   if (denied) return denied;
   const { id } = await params;
 
@@ -111,7 +111,7 @@ export async function POST(req: NextRequest, { params }: Params) {
 
 /** Remove the stored logo; the public site falls back to the initials placeholder. */
 export async function DELETE(req: NextRequest, { params }: Params) {
-  const denied = guard(req);
+  const denied = await guard(req);
   if (denied) return denied;
   const { id } = await params;
 

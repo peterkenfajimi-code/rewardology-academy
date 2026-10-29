@@ -1,3 +1,4 @@
+import { NextResponse } from "next/server";
 import { requirePlatformAdmin } from "@/lib/auth/admin";
 import { checkSupabaseHealth } from "@/lib/supabase/health";
 
