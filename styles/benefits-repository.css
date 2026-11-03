@@ -213,6 +213,11 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
+.benefits-repo-index-wrap + .benefits-repo-trademark {
+  margin: 0.85rem 0 0;
+  max-width: 72ch;
+}
+
 .benefits-repo-index-link:hover .benefits-repo-index-name {
   color: #fff;
   text-decoration: underline;

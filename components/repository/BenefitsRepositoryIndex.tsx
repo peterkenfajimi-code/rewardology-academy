@@ -185,6 +185,10 @@ export function BenefitsRepositoryIndex({ marketCount }: { marketCount: number |
               </tbody>
             </table>
           </div>
+          <p className="benefits-repo-trademark">
+            Company names and logos identify the subject of publicly sourced research and remain the
+            trademarks of their respective owners.
+          </p>
         </>
       )}
     </div>
