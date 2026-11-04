@@ -23,5 +23,6 @@ export const CATEGORY_ORDER: BenefitCategory[] = [
 ];
 
 export function categoryLabel(category: string): string {
+  if (category === "workforce") return "Workforce";
   return CATEGORY_LABELS[category as BenefitCategory] ?? category;
 }
