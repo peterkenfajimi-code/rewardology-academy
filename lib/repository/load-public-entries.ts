@@ -5,6 +5,7 @@ import {
 import { computeConfidenceMix } from "@/lib/repository/confidence-mix";
 import { indexRegistry, loadFieldRegistry, renderDisplayText } from "@/lib/repository/field-registry";
 import { createRepositoryReadClient } from "@/lib/supabase/repository/admin";
+import { workforceMetricLabel } from "@/lib/repository/workforce-metrics";
 
 type CompanyJoin = {
   name: string;
@@ -224,6 +225,90 @@ export function buildCompanyIndex(entries: PublicBenefitEntry[]): CompanyIndexRo
       categories: Array.from(categorySet),
     }))
     .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+function reportingPeriodToEffectiveDate(period: string | null | undefined): string | null {
+  if (!period) return null;
+  const year = period.match(/(20\d{2})/);
+  return year ? `${year[1]}-12-31` : null;
+}
+
+export async function loadPublicWorkforceEntries(): Promise<PublicBenefitEntry[]> {
+  const supabase = createRepositoryReadClient();
+  if (!supabase) return [];
+
+  const { data, error } = await supabase
+    .from("workforce_composition_entries")
+    .select(
+      `
+      entry_id, metric_key, value, reporting_period, confidence_score, company_id,
+      companies!inner ( company_id, name, country, industry, slug, logo_storage_path ),
+      sources!inner ( source_type, source_title, source_url, publication_date )
+    `
+    )
+    .eq("publish_status", "published")
+    .neq("confidence_score", "low")
+    .order("date_collected", { ascending: false })
+    .limit(500);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return (data ?? []).flatMap((row) => {
+    const companyRaw = joinedOne(row.companies as CompanyJoin | CompanyJoin[] | null);
+    const sourceRaw = joinedOne(row.sources as SourceJoin | SourceJoin[] | null);
+    if (!companyRaw || !sourceRaw) return [];
+
+    const inWindow = isEntryWithinRecencyWindow(
+      {
+        fiscal_year_or_effective_date: row.reporting_period,
+        field: row.metric_key,
+        value_type: "quantified",
+      },
+      sourceRaw
+    );
+    if (!inWindow) return [];
+
+    const label = workforceMetricLabel(row.metric_key);
+    const slug = companyRaw.slug;
+    const displayText = renderDisplayText(
+      "{company} reports {value}.",
+      companyRaw.name,
+      `${label}: ${row.value}`,
+      label
+    );
+
+    return [
+      {
+        entry_id: row.entry_id,
+        category: "workforce",
+        field: row.metric_key,
+        field_label: label,
+        display_text: displayText,
+        value: row.value,
+        value_type: "quantified",
+        confidence_score: row.confidence_score,
+        effective_date: reportingPeriodToEffectiveDate(row.reporting_period),
+        fiscal_year_or_effective_date: row.reporting_period,
+        company_id: row.company_id,
+        companies: {
+          company_id: companyRaw.company_id ?? row.company_id,
+          name: companyRaw.name,
+          country: companyRaw.country ?? "",
+          industry: companyRaw.industry ?? null,
+          slug,
+          logo_storage_path: companyRaw.logo_storage_path ?? null,
+        },
+        sources: {
+          source_type: sourceRaw.source_type ?? "",
+          source_title: sourceRaw.source_title ?? null,
+          source_url: sourceRaw.source_url ?? null,
+          publication_date: sourceRaw.publication_date ?? null,
+        },
+      } satisfies PublicBenefitEntry,
+    ];
+  });
 }
 
 export function findCompanyBySlug(

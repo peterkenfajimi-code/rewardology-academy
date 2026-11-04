@@ -32,6 +32,18 @@ export type WorkforceMetricKey =
   | "female_leadership_pct"
   | "disability_employment_count";
 
+export const WORKFORCE_METRIC_LABELS: Record<string, string> = {
+  female_workforce_pct: "Women in the workforce",
+  female_board_pct: "Women on the board",
+  female_senior_management_pct: "Women in senior management",
+  female_leadership_pct: "Women in leadership",
+  disability_employment_count: "Employees with disabilities",
+};
+
+export function workforceMetricLabel(metricKey: string): string {
+  return WORKFORCE_METRIC_LABELS[metricKey] ?? metricKey.replace(/_/g, " ");
+}
+
 export type ExtractedWorkforceEntry = {
   metric_key: WorkforceMetricKey | string;
   value: string;

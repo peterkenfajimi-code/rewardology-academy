@@ -1,7 +1,7 @@
 "use client";
 
 import { categoryLabel } from "@/lib/repository/category-labels";
-import { formatStatValue } from "@/lib/repository/format-stat-value";
+import { formatStatValue, isSimpleQuantifiedValue } from "@/lib/repository/format-stat-value";
 import type { PublicBenefitEntry } from "@/lib/repository/load-public-entries";
 import { formatEffectiveDateBadge, isEntryStale } from "@/lib/repository/staleness";
 import { MonoNumbers } from "@/components/repository/MonoNumbers";
@@ -20,12 +20,12 @@ type Props = {
 export function EntryCard({ row }: Props) {
   const stale = isEntryStale(row.effective_date);
   const dateBadge = row.effective_date ? formatEffectiveDateBadge(row.effective_date) : null;
-  const isQuantified = row.value_type === "quantified";
-  const stat = isQuantified ? formatStatValue(row.value, row.field_label) : null;
+  const useStatHero = row.value_type === "quantified" && isSimpleQuantifiedValue(row.value);
+  const stat = useStatHero ? formatStatValue(row.value, row.field_label) : null;
 
   return (
     <article
-      className={`benefits-repo-card benefits-repo-card-enter ${isQuantified ? "benefits-repo-stat-card" : "benefits-repo-narrative-card"}`}
+      className={`benefits-repo-card benefits-repo-card-enter ${useStatHero ? "benefits-repo-stat-card" : "benefits-repo-narrative-card"}`}
     >
       <div className="benefits-repo-card-top">
         <p className="benefits-repo-field">{categoryLabel(row.category)}</p>
@@ -34,7 +34,7 @@ export function EntryCard({ row }: Props) {
         </span>
       </div>
 
-      {isQuantified && stat ? (
+      {useStatHero && stat ? (
         <>
           <div className="benefits-repo-stat-hero">
             <span className="benefits-repo-stat-number">{stat.number}</span>

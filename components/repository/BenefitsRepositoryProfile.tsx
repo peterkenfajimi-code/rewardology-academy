@@ -15,6 +15,7 @@ type ProfileResponse = {
   configured?: boolean;
   company?: CompanyIndexRow;
   entries?: PublicBenefitEntry[];
+  workforce?: PublicBenefitEntry[];
   error?: string;
 };
 
@@ -22,6 +23,7 @@ export function BenefitsRepositoryProfile({ slug }: { slug: string }) {
   const [configured, setConfigured] = useState<boolean | null>(null);
   const [company, setCompany] = useState<CompanyIndexRow | null>(null);
   const [entries, setEntries] = useState<PublicBenefitEntry[]>([]);
+  const [workforce, setWorkforce] = useState<PublicBenefitEntry[]>([]);
   const [notFound, setNotFound] = useState(false);
   const [loadFailed, setLoadFailed] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -43,11 +45,15 @@ export function BenefitsRepositoryProfile({ slug }: { slug: string }) {
         if (cancelled) return;
         if (!data) {
           setNotFound(true);
+          setCompany(null);
+          setEntries([]);
+          setWorkforce([]);
           return;
         }
         setConfigured(Boolean(data.configured));
         setCompany(data.company ?? null);
         setEntries(data.entries ?? []);
+        setWorkforce(data.workforce ?? []);
       })
       .catch(() => {
         if (!cancelled) setLoadFailed(true);
@@ -162,6 +168,17 @@ export function BenefitsRepositoryProfile({ slug }: { slug: string }) {
           </section>
         );
       })}
+
+      {workforce.length > 0 ? (
+        <section className="benefits-repo-category-section">
+          <h2 className="benefits-repo-section-label">Workforce</h2>
+          <div className="benefits-repo-grid">
+            {workforce.map((row) => (
+              <EntryCard key={row.entry_id} row={row} />
+            ))}
+          </div>
+        </section>
+      ) : null}
     </div>
   );
 }

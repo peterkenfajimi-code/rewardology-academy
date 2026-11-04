@@ -1,4 +1,5 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { isSimpleQuantifiedValue } from "@/lib/repository/format-stat-value";
 import { compareConfidence } from "@/lib/repository/trust-weights";
 import type { BenefitCategory, ConfidenceScore } from "@/lib/repository/types";
 
@@ -85,7 +86,20 @@ export function clampConfidenceToRegistry(
 
 const NAMED_PROGRAM_VALUE_LABELS: Record<string, string> = {
   closed_legacy: "closed (legacy, not accruing for current employees)",
+  closed_to_new_entrants: "closed to new entrants, still accruing",
 };
+
+/** Map a stored vocabulary token to its public label, keeping a trailing scope tag such as (Group). */
+export function namedProgramDisplayValue(raw: string): string {
+  const exact = NAMED_PROGRAM_VALUE_LABELS[raw];
+  if (exact) return exact;
+  const scoped = raw.match(/^(.*?)(\s*\([^)]+\))$/);
+  if (scoped) {
+    const label = NAMED_PROGRAM_VALUE_LABELS[scoped[1].trim()];
+    if (label) return `${label}${scoped[2]}`;
+  }
+  return raw || "—";
+}
 
 export function renderDisplayText(
   template: string | null | undefined,
@@ -94,9 +108,17 @@ export function renderDisplayText(
   fieldLabel?: string | null
 ): string {
   const raw = value?.trim() || "";
-  const displayValue = NAMED_PROGRAM_VALUE_LABELS[raw] ?? (raw || "—");
+  const displayValue = namedProgramDisplayValue(raw);
   if (template?.trim()) {
-    return template.replace(/\{company\}/g, companyName).replace(/\{value\}/g, displayValue);
+    let text = template.replace(/\{company\}/g, companyName);
+    if (!isSimpleQuantifiedValue(displayValue)) {
+      text = text
+        .replace("{value}% of salary", "{value}")
+        .replace("{value}x their annual salary", "{value}")
+        .replace("{value}%", "{value}")
+        .replace("{value}x", "{value}");
+    }
+    return text.replace(/\{value\}/g, displayValue);
   }
   if (fieldLabel) return `${fieldLabel}: ${displayValue}`;
   return displayValue;
