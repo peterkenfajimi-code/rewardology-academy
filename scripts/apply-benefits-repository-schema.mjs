@@ -120,6 +120,20 @@ const migration024Path = path.join(root, "supabase", "benefits-repository", "mig
 const migration024 = fs.existsSync(migration024Path) ? fs.readFileSync(migration024Path, "utf8") : "";
 const migration025Path = path.join(root, "supabase", "benefits-repository", "migrations", "025_housing_transport_named_program.sql");
 const migration025 = fs.existsSync(migration025Path) ? fs.readFileSync(migration025Path, "utf8") : "";
+const migration026Path = path.join(root, "supabase", "benefits-repository", "migrations", "026_review_schedule.sql");
+const migration026 = fs.existsSync(migration026Path) ? fs.readFileSync(migration026Path, "utf8") : "";
+const migration027Path = path.join(root, "supabase", "benefits-repository", "migrations", "027_zenith_other_voluntary_fields.sql");
+const migration027 = fs.existsSync(migration027Path) ? fs.readFileSync(migration027Path, "utf8") : "";
+const migration028Path = path.join(root, "supabase", "benefits-repository", "migrations", "028_hmo_scope_named_program.sql");
+const migration028 = fs.existsSync(migration028Path) ? fs.readFileSync(migration028Path, "utf8") : "";
+const migration029Path = path.join(root, "supabase", "benefits-repository", "migrations", "029_logo_provenance.sql");
+const migration029 = fs.existsSync(migration029Path) ? fs.readFileSync(migration029Path, "utf8") : "";
+const migration030Path = path.join(root, "supabase", "benefits-repository", "migrations", "030_closed_to_new_entrants.sql");
+const migration030 = fs.existsSync(migration030Path) ? fs.readFileSync(migration030Path, "utf8") : "";
+const migration031Path = path.join(root, "supabase", "benefits-repository", "migrations", "031_supplementary_retirement_fund.sql");
+const migration031 = fs.existsSync(migration031Path) ? fs.readFileSync(migration031Path, "utf8") : "";
+const migration032Path = path.join(root, "supabase", "benefits-repository", "migrations", "032_source_snapshots.sql");
+const migration032 = fs.existsSync(migration032Path) ? fs.readFileSync(migration032Path, "utf8") : "";
 
 // Migrations first — existing DBs may lack columns referenced in schema.sql inserts.
 if (migration) await runQuery("Migration 002 (sustainability + batch)", migration, { warnOnFail: true });
@@ -196,6 +210,27 @@ if (migration024) {
 }
 if (migration025) {
   await runQuery("Migration 025 (housing/transport named_program)", migration025, { warnOnFail: true });
+}
+if (migration026) {
+  await runQuery("Migration 026 (review schedule + last reviewed)", migration026, { warnOnFail: true });
+}
+if (migration027) {
+  await runQuery("Migration 027 (Zenith other_voluntary fields)", migration027, { warnOnFail: true });
+}
+if (migration028) {
+  await runQuery("Migration 028 (hmo_scope named_program)", migration028, { warnOnFail: true });
+}
+if (migration029) {
+  await runQuery("Migration 029 (logo provenance)", migration029, { warnOnFail: true });
+}
+if (migration030) {
+  await runQuery("Migration 030 (closed_to_new_entrants)", migration030, { warnOnFail: true });
+}
+if (migration031) {
+  await runQuery("Migration 031 (supplementary_retirement_fund)", migration031, { warnOnFail: true });
+}
+if (migration032) {
+  await runQuery("Migration 032 (source snapshots)", migration032, { warnOnFail: true });
 }
 
 const verify = await fetch(

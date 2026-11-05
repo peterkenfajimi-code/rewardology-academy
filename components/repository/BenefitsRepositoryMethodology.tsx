@@ -2,10 +2,10 @@ import Link from "next/link";
 import { SOURCE_RECENCY_YEARS } from "@/lib/repository/collection-policy";
 import { loadRepositoryCoverage } from "@/lib/repository/coverage";
 import { STALENESS_MONTHS } from "@/lib/repository/staleness";
+import { repositoryCorrectionMailto } from "@/lib/repository/correctionLink";
+import { loadRepositoryLastReviewed } from "@/lib/repository/lastReviewed";
 import { CONTACT_EMAIL } from "@/lib/site";
 import "@/styles/benefits-repository.css";
-
-const LAST_REVIEWED = "30 September 2026";
 
 const SOURCES = [
   {
@@ -37,7 +37,10 @@ const SOURCES = [
 ];
 
 export async function BenefitsRepositoryMethodology() {
-  const coverage = await loadRepositoryCoverage();
+  const [coverage, lastReviewed] = await Promise.all([
+    loadRepositoryCoverage(),
+    loadRepositoryLastReviewed(),
+  ]);
 
   return (
     <div className="benefits-repo benefits-repo-methodology">
@@ -164,8 +167,8 @@ export async function BenefitsRepositoryMethodology() {
           </li>
           <li>
             <strong>Not comprehensive by design.</strong> Coverage grows source by source and company by
-            company. An empty category for a given company means we haven&apos;t yet found a verifiable public
-            disclosure in that area — not that the benefit doesn&apos;t exist.
+            company. An empty category for a given company means that category is not disclosed in the
+            sources reviewed — not that the benefit doesn&apos;t exist, and not a loading error.
           </li>
           <li>
             <strong>Not a certification.</strong> Companies listed here have not reviewed, approved, or
@@ -180,7 +183,7 @@ export async function BenefitsRepositoryMethodology() {
         <p>
           If you believe an entry here misrepresents a public disclosure, or you&apos;re associated with a
           listed company and can point us to a more current or accurate public source, email{" "}
-          <a href={`mailto:${CONTACT_EMAIL}?subject=Africa%20Benefits%20Repository%20correction`}>
+          <a href={repositoryCorrectionMailto()}>
             {CONTACT_EMAIL}
           </a>{" "}
           — we&apos;ll review it against the original source and correct or update the entry with the same
@@ -189,7 +192,7 @@ export async function BenefitsRepositoryMethodology() {
       </section>
 
       <p className="benefits-repo-muted">
-        Last reviewed: {LAST_REVIEWED}
+        Last reviewed: {lastReviewed ?? "not yet recorded"}
         {coverage ? (
           <>
             {" "}

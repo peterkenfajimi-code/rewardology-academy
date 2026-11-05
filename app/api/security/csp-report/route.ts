@@ -1,4 +1,6 @@
+import { createClient } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
+import { isSupabaseConfigured } from "@/lib/env";
 import { clientIp, consumeRateLimit } from "@/lib/security/rateLimit";
 
 export const runtime = "nodejs";
@@ -65,10 +67,28 @@ export async function POST(req: Request) {
     const summary = summarize(JSON.parse(raw) as unknown);
     if (summary?.directive) {
       console.info("[csp-report]", summary.directive, summary.blocked);
+      await recordSummary(summary.directive, summary.blocked);
     }
   } catch {
     /* browsers retry on non-2xx; swallow malformed reports */
   }
 
   return new NextResponse(null, { status: 204 });
+}
+
+async function recordSummary(directive: string, blocked: string) {
+  if (!isSupabaseConfigured()) return;
+  try {
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      { auth: { persistSession: false, autoRefreshToken: false } }
+    );
+    await supabase.rpc("record_csp_violation", {
+      p_directive: directive,
+      p_blocked_host: blocked,
+    });
+  } catch {
+    /* report-only: never fail the browser beacon */
+  }
 }

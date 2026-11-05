@@ -38,6 +38,8 @@ export const WORKFORCE_METRIC_LABELS: Record<string, string> = {
   female_senior_management_pct: "Women in senior management",
   female_leadership_pct: "Women in leadership",
   disability_employment_count: "Employees with disabilities",
+  employees_average: "Average employees",
+  employees_year_end: "Year-end employees",
 };
 
 export function workforceMetricLabel(metricKey: string): string {

@@ -1,3 +1,4 @@
+import { GROUP_SCOPE_PROMPT_BLOCK } from "@/lib/repository/group-scope";
 import { STATUTORY_VS_DISCLOSURE_PROMPT_BLOCK } from "@/lib/repository/statutory-vs-disclosure";
 import { TRAINING_SPEND_PROMPT_BLOCK } from "@/lib/repository/training-spend";
 import type { CountryModule } from "@/lib/repository/types";
@@ -35,9 +36,10 @@ GHANA THREE-TIER SSNIT PENSION — critical:
 - Use pension_scheme_type for overall structure (expect mixed, not single-tier DC). Use pension_administrator_type for SSNIT vs corporate trustee/PFA roles per tier.
 - Tier 1 primary rates: employer_contribution_pct / employee_contribution_pct (only when the source states Tier 1 / SSNIT rates explicitly).
 - Tier 2 mandatory occupational rates: tier2_employer_contribution_pct / tier2_employee_contribution_pct — NOT voluntary_contribution_program (that field is for optional employee-initiated extra contributions only, e.g. AVC).
-- Tier 3 voluntary extras: voluntary_contribution_program only when the source describes optional additional employee contributions.
+- Tier 3 / named occupational or provident fund membership (including when the source does not say "voluntary"): supplementary_retirement_fund. Record compulsory vs voluntary only if the source states it. Do not fold managerial CTC retirement contributions into that row unless the source describes them separately as the same scheme.
+- voluntary_contribution_program only for optional employee-initiated extra contributions (AVC), not for named Tier 3 fund membership.
 - Post-retirement medical care for former employees: post_retirement_medical_care — NOT health.hmo_scope (active-employee coverage) or additional_exit_benefit_scheme (exit/severance payout).
-- defined_benefit_plan_exists is Yes/No only for a company-sponsored supplementary pension-style DB scheme (pays a pension defined by salary and service) — NOT SSNIT Tier 1 (country statutory DB), and NOT a lump-sum gratuity even when IAS 19 treats it as a defined benefit obligation (that goes on gratuity_scheme_exists / gratuity_scheme_type). If the company pension-style scheme is closed, frozen, or discontinued, still Yes, and set defined_benefit_plan_status to closed_legacy. Values for defined_benefit_plan_status: active | closed_legacy | none. Never put the closed/discontinued story on defined_benefit_plan_exists.`
+- defined_benefit_plan_exists is Yes/No only for a company-sponsored supplementary pension-style DB scheme (pays a pension defined by salary and service) — NOT SSNIT Tier 1 (country statutory DB), and NOT a lump-sum gratuity even when IAS 19 treats it as a defined benefit obligation (that goes on gratuity_scheme_exists / gratuity_scheme_type). If such a scheme exists but is closed, frozen, or discontinued, still Yes — put the status on defined_benefit_plan_status. Values: active | closed_legacy | closed_to_new_entrants | none. Use closed_legacy when frozen / not accruing for current employees. Use closed_to_new_entrants when closed to new members but still accruing for remaining members. Never put the closed/discontinued story on defined_benefit_plan_exists.`
       : "";
 
   const registryBlock =
@@ -53,7 +55,7 @@ If nothing in this list fits a genuine employee benefit fact in the source text,
   return `You extract structured employer benefits data for the Africa Benefits Repository.
 
 Company: ${companyName}
-${countryContext}${STATUTORY_VS_DISCLOSURE_PROMPT_BLOCK}${TRAINING_SPEND_PROMPT_BLOCK}${kenyaTierNote}${ghanaTierNote}${registryBlock}
+${countryContext}${STATUTORY_VS_DISCLOSURE_PROMPT_BLOCK}${GROUP_SCOPE_PROMPT_BLOCK}${TRAINING_SPEND_PROMPT_BLOCK}${kenyaTierNote}${ghanaTierNote}${registryBlock}
 
 Return ONLY a JSON object (no markdown, no commentary) with two arrays:
 
@@ -95,6 +97,7 @@ Other rules:
 - Do NOT extract pension subsidiary business metrics (AUM, revenue, growth), micro-pension products, RSA transfer programmes, defined-contribution balance-sheet liabilities, personnel expense totals, share-based payment liabilities, or COVID donation amounts.
 - Accounting-policy text is not a benefit disclosure. IAS 19 definitions ("short-term benefits consist of salaries, bonuses and non-monetary benefits such as medical aid"), recognition rules ("termination benefits are recognised when the Group is demonstrably committed…"), and accrual notes (accrued annual leave liability) describe cost categories or timing — extract only what the company asserts it actually provides.
 - A lump-sum gratuity or terminal-benefit scheme belongs on gratuity_scheme_exists / gratuity_scheme_type even when the accounts call it a defined benefit obligation under IAS 19. defined_benefit_plan_exists / defined_benefit_plan_status are only for pension-style DB schemes that pay a pension defined by salary and service. Never record the same scheme on both.
+- defined_benefit_plan_status values: active | closed_legacy | closed_to_new_entrants | none. closed_legacy = frozen / not accruing for current employees. closed_to_new_entrants = closed to new members but still accruing for remaining in-service members. Do not force a still-accruing closed scheme onto closed_legacy.
 - Committee terms of reference ("the committee reviews pension and medical schemes / learning and development") describe oversight duties, not benefits employees receive.
 - Focus employee-facing benefits on schemes, coverage, programmes, contribution rates.
 - For group life insurance salary multiples, always use field_key group_life_coverage_multiple — never create variants.

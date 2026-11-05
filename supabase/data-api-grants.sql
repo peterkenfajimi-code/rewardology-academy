@@ -49,6 +49,10 @@ grant execute on function public.register_auth_failure(text, integer, integer, i
 grant execute on function public.auth_lock_remaining(text) to anon, authenticated;
 grant execute on function public.clear_auth_failures(text) to anon, authenticated;
 
+revoke all on table public.csp_violation_summaries from anon, authenticated;
+grant select, insert, update, delete on table public.csp_violation_summaries to service_role;
+grant execute on function public.record_csp_violation(text, text) to anon, authenticated, service_role;
+
 grant select on table public.testimonials to anon, authenticated;
 grant insert on table public.testimonials to authenticated;
 grant select, insert, update, delete on table public.testimonials to service_role;

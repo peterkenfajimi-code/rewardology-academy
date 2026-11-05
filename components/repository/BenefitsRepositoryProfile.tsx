@@ -8,7 +8,9 @@ import { EmptyState } from "@/components/repository/EmptyState";
 import { EntryCard } from "@/components/repository/EntryCard";
 import { CATEGORY_ORDER, categoryLabel } from "@/lib/repository/category-labels";
 import type { CompanyIndexRow, PublicBenefitEntry } from "@/lib/repository/load-public-entries";
+import { repositoryCorrectionMailto } from "@/lib/repository/correctionLink";
 import { marketLabel } from "@/lib/repository/market-labels";
+import { CONTACT_EMAIL } from "@/lib/site";
 import "@/styles/benefits-repository.css";
 
 type ProfileResponse = {
@@ -141,6 +143,11 @@ export function BenefitsRepositoryProfile({ slug }: { slug: string }) {
           <Link href="/benefits-repository/methodology" className="benefits-repo-methodology-link">
             ⓘ How confidence is scored
           </Link>
+          <p className="benefits-repo-muted">
+            Found something inaccurate?{" "}
+            <a href={repositoryCorrectionMailto(company.name)}>Email {CONTACT_EMAIL}</a>
+            {" "}with a public source.
+          </p>
         </div>
       </header>
 
@@ -155,8 +162,8 @@ export function BenefitsRepositoryProfile({ slug }: { slug: string }) {
             <h2 className="benefits-repo-section-label">{categoryLabel(category)}</h2>
             {rows.length === 0 ? (
               <EmptyState
-                heading={`No verified ${categoryLabel(category)} data yet for ${company.name}`}
-                body="This category has no published entries for this company yet. That may reflect limited disclosure in available sources, not a system error."
+                heading="Not disclosed in sources reviewed"
+                body={`${categoryLabel(category)} is not stated in the sources reviewed for ${company.name}. That is a disclosure gap, not a loading error.`}
               />
             ) : (
               <div className="benefits-repo-grid">
