@@ -1,62 +1,34 @@
 import { NextResponse } from "next/server";
 import { requirePlatformAdmin } from "@/lib/auth/admin";
 import { COURSES, allLessons } from "@/lib/courses/courseData";
+import { loadAdminLocationStats, loadAdminStatsSnapshot } from "@/lib/setup/adminPlatformData";
 
 export async function GET() {
   const admin = await requirePlatformAdmin();
   if (!admin.ok) return admin.response;
-  const supabase = admin.supabase;
 
-  // Platform-wide rows via security-definer RPC (direct table selects are RLS-scoped to the signed-in user).
-  const [snapshotRes, locationRes] = await Promise.all([
-    supabase.rpc("admin_stats_snapshot"),
-    supabase.rpc("admin_user_location_stats"),
-  ]);
-
-  if (snapshotRes.error) {
+  const loaded = await loadAdminStatsSnapshot(admin.supabase);
+  if (!loaded.data) {
     return NextResponse.json(
       {
         error:
-          "Admin stats snapshot unavailable. Apply supabase/admin-platform-stats.sql on the database (node scripts/apply-admin-platform-stats.mjs).",
-        detail: snapshotRes.error.message,
+          "Admin stats unavailable. Apply supabase/admin-platform-stats.sql (node scripts/apply-admin-platform-stats.mjs) or set SUPABASE_SERVICE_ROLE_KEY in Netlify.",
+        detail: loaded.error,
       },
       { status: 503 }
     );
   }
 
-  type Snapshot = {
-    profiles: { id: string; created_at: string | null }[];
-    courseProgress: {
-      user_id: string;
-      course_id: number;
-      lesson_id: string;
-      xp: number | null;
-      updated_at: string | null;
-    }[];
-    quizProgress: {
-      user_id: string;
-      quiz_id: number;
-      best_xp: number | null;
-      best_score: number | null;
-      best_total: number | null;
-      updated_at: string | null;
-    }[];
-    dailyQuiz: { user_id: string; xp_earned: number | null; created_at: string | null }[];
-    articleProgress: { user_id: string; xp: number | null }[];
-    dictionaryProgress: { user_id: string; xp: number | null }[];
-    comicsProgress: { user_id: string; xp: number | null }[];
-    testimonials: { id: string; status: string }[];
-  };
-
-  const snap = snapshotRes.data as Snapshot;
-  const profiles = snap.profiles ?? [];
-  const courseRows = snap.courseProgress ?? [];
-  const quizRows = snap.quizProgress ?? [];
-  const dailyRows = snap.dailyQuiz ?? [];
-  const articleRows = snap.articleProgress ?? [];
-  const dictionaryRows = snap.dictionaryProgress ?? [];
-  const comicsRows = snap.comicsProgress ?? [];
-  const testimonials = snap.testimonials ?? [];
+  const {
+    profiles,
+    courseProgress: courseRows,
+    quizProgress: quizRows,
+    dailyQuiz: dailyRows,
+    articleProgress: articleRows,
+    dictionaryProgress: dictionaryRows,
+    comicsProgress: comicsRows,
+    testimonials,
+  } = loaded.data;
 
   // ── User metrics ──
   const totalUsers = profiles.length;
@@ -117,9 +89,7 @@ export async function GET() {
     ).length;
     const totalLessonsXp = [...userMap.values()].reduce((s, done) => s + done.size, 0);
     const avgPct =
-      started > 0
-        ? Math.round((totalLessonsXp / (started * lessonIds.size)) * 100)
-        : 0;
+      started > 0 ? Math.round((totalLessonsXp / (started * lessonIds.size)) * 100) : 0;
     return { id: course.id, title: course.title, started, completed, avgPct };
   });
 
@@ -135,40 +105,28 @@ export async function GET() {
     rejected: testimonials.filter((t) => t.status === "rejected").length,
   };
 
-  type LocationStats = {
-    totalTracked: number;
-    totalUsers: number;
-    unknown: number;
-    countriesRepresented: number;
-    byCountry: { countryCode: string; countryName: string | null; users: number }[];
-    byRegion: { countryCode: string; region: string; users: number }[];
-    recent: {
-      countryCode: string;
-      countryName: string | null;
-      region: string | null;
-      city: string | null;
-      lastSeenAt: string;
-    }[];
-  };
-
-  const emptyLocations: LocationStats = {
-    totalTracked: 0,
-    totalUsers: totalUsers,
-    unknown: totalUsers,
-    countriesRepresented: 0,
-    byCountry: [],
-    byRegion: [],
-    recent: [],
-  };
-
-  const locations: LocationStats =
-    locationRes.error || !locationRes.data
-      ? emptyLocations
-      : (locationRes.data as LocationStats);
+  const locations = await loadAdminLocationStats(
+    admin.supabase,
+    profiles.map((p) => p.id)
+  );
 
   return NextResponse.json({
-    users: { total: totalUsers, newLast7: newUsersLast7, newLast30: newUsersLast30, active7: activeUserIds7.size, active30: activeUserIds30.size },
-    xp: { total: totalXpAllUsers, courses: courseXpTotal, quizzes: quizXpTotal, daily: dailyXpTotal, articles: articleXpTotal, dictionary: dictionaryXpTotal, comics: comicsXpTotal },
+    users: {
+      total: totalUsers,
+      newLast7: newUsersLast7,
+      newLast30: newUsersLast30,
+      active7: activeUserIds7.size,
+      active30: activeUserIds30.size,
+    },
+    xp: {
+      total: totalXpAllUsers,
+      courses: courseXpTotal,
+      quizzes: quizXpTotal,
+      daily: dailyXpTotal,
+      articles: articleXpTotal,
+      dictionary: dictionaryXpTotal,
+      comics: comicsXpTotal,
+    },
     courses: courseStats,
     quizzes: { usersAttempted: quizUsersCount, attempts: quizAttempts, perfectScores: quizPerfectCount },
     testimonials: testimonialsByStatus,
