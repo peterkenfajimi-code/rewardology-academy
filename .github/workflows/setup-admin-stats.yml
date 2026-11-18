@@ -1,0 +1,48 @@
+# Push admin-stats env to Netlify, optionally apply Supabase SQL, trigger deploy.
+# Repo → Settings → Secrets and variables → Actions → add secrets below, then run this workflow manually.
+name: Setup admin dashboard stats
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Write .env.local from GitHub Actions secrets
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+        run: |
+          set -euo pipefail
+          for key in NETLIFY_AUTH_TOKEN SUPABASE_SERVICE_ROLE_KEY ADMIN_EMAIL NEXT_PUBLIC_SUPABASE_URL NEXT_PUBLIC_SUPABASE_ANON_KEY; do
+            eval "val=\$$key"
+            if [ -z "$val" ]; then
+              echo "Missing required secret: $key (add under repo Settings → Secrets → Actions)"
+              exit 1
+            fi
+          done
+          {
+            echo "NETLIFY_AUTH_TOKEN=$NETLIFY_AUTH_TOKEN"
+            echo "SUPABASE_SERVICE_ROLE_KEY=$SUPABASE_SERVICE_ROLE_KEY"
+            echo "ADMIN_EMAIL=$ADMIN_EMAIL"
+            echo "NEXT_PUBLIC_SUPABASE_URL=$NEXT_PUBLIC_SUPABASE_URL"
+            echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=$NEXT_PUBLIC_SUPABASE_ANON_KEY"
+            echo "NEXT_PUBLIC_ADMIN_EMAIL=$ADMIN_EMAIL"
+            if [ -n "${SUPABASE_ACCESS_TOKEN:-}" ]; then
+              echo "SUPABASE_ACCESS_TOKEN=$SUPABASE_ACCESS_TOKEN"
+            fi
+          } > .env.local
+
+      - name: Netlify env, optional SQL, production deploy
+        run: node scripts/setup-admin-stats-production.mjs
