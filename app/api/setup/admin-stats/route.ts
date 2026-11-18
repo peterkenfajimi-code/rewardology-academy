@@ -7,37 +7,56 @@ export async function GET() {
   if (!admin.ok) return admin.response;
   const supabase = admin.supabase;
 
-  // Run all stat queries in parallel
-  const [
-    profilesRes,
-    courseProgressRes,
-    quizProgressRes,
-    dailyRes,
-    articleProgressRes,
-    dictionaryProgressRes,
-    comicsProgressRes,
-    testimonialsRes,
-    locationRes,
-  ] = await Promise.all([
-    supabase.from("profiles").select("id, created_at"),
-    supabase.from("course_progress").select("user_id, course_id, lesson_id, xp, updated_at"),
-    supabase.from("quiz_centre_progress").select("user_id, quiz_id, best_xp, best_score, best_total, updated_at"),
-    supabase.from("daily_quiz_completions").select("user_id, xp_earned, created_at"),
-    supabase.from("article_progress").select("user_id, xp"),
-    supabase.from("dictionary_progress").select("user_id, xp"),
-    supabase.from("comics_progress").select("user_id, xp"),
-    supabase.from("testimonials").select("id, status, source_type, source_label, rating, created_at"),
+  // Platform-wide rows via security-definer RPC (direct table selects are RLS-scoped to the signed-in user).
+  const [snapshotRes, locationRes] = await Promise.all([
+    supabase.rpc("admin_stats_snapshot"),
     supabase.rpc("admin_user_location_stats"),
   ]);
 
-  const profiles = profilesRes.data ?? [];
-  const courseRows = courseProgressRes.data ?? [];
-  const quizRows = quizProgressRes.data ?? [];
-  const dailyRows = dailyRes.data ?? [];
-  const articleRows = articleProgressRes.data ?? [];
-  const dictionaryRows = dictionaryProgressRes.data ?? [];
-  const comicsRows = comicsProgressRes.data ?? [];
-  const testimonials = testimonialsRes.data ?? [];
+  if (snapshotRes.error) {
+    return NextResponse.json(
+      {
+        error:
+          "Admin stats snapshot unavailable. Apply supabase/admin-platform-stats.sql on the database (node scripts/apply-admin-platform-stats.mjs).",
+        detail: snapshotRes.error.message,
+      },
+      { status: 503 }
+    );
+  }
+
+  type Snapshot = {
+    profiles: { id: string; created_at: string | null }[];
+    courseProgress: {
+      user_id: string;
+      course_id: number;
+      lesson_id: string;
+      xp: number | null;
+      updated_at: string | null;
+    }[];
+    quizProgress: {
+      user_id: string;
+      quiz_id: number;
+      best_xp: number | null;
+      best_score: number | null;
+      best_total: number | null;
+      updated_at: string | null;
+    }[];
+    dailyQuiz: { user_id: string; xp_earned: number | null; created_at: string | null }[];
+    articleProgress: { user_id: string; xp: number | null }[];
+    dictionaryProgress: { user_id: string; xp: number | null }[];
+    comicsProgress: { user_id: string; xp: number | null }[];
+    testimonials: { id: string; status: string }[];
+  };
+
+  const snap = snapshotRes.data as Snapshot;
+  const profiles = snap.profiles ?? [];
+  const courseRows = snap.courseProgress ?? [];
+  const quizRows = snap.quizProgress ?? [];
+  const dailyRows = snap.dailyQuiz ?? [];
+  const articleRows = snap.articleProgress ?? [];
+  const dictionaryRows = snap.dictionaryProgress ?? [];
+  const comicsRows = snap.comicsProgress ?? [];
+  const testimonials = snap.testimonials ?? [];
 
   // ── User metrics ──
   const totalUsers = profiles.length;

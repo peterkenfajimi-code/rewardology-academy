@@ -35,6 +35,8 @@ grant select, insert, update on table public.user_locations to authenticated;
 grant select, insert, update, delete on table public.user_locations to service_role;
 grant execute on function public.record_user_location(text, text, text, text) to authenticated;
 grant execute on function public.admin_user_location_stats() to authenticated;
+grant execute on function public.admin_assert_platform_owner() to authenticated;
+grant execute on function public.admin_stats_snapshot() to authenticated;
 
 grant select, insert, update on table public.issued_certificates to authenticated;
 grant select, insert, update, delete on table public.issued_certificates to service_role;
