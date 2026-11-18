@@ -111,11 +111,11 @@ begin
           from (
             select
               country_code as "countryCode",
-              country_name as "countryName",
+              max(country_name) as "countryName",
               count(*)::int as users
             from public.user_locations
             where country_code is not null
-            group by country_code, country_name
+            group by country_code
             order by count(*) desc
             limit 20
           ) t

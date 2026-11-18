@@ -83,11 +83,16 @@ export function AdminDashboardPanel() {
     setError("");
     try {
       const res = await fetch("/api/setup/admin-stats");
+      const body = (await res.json()) as AdminStats | { error?: string; detail?: string };
       if (!res.ok) {
-        setError("Could not load stats. Make sure you are signed in as the admin.");
+        const msg =
+          typeof body === "object" && body && "error" in body && body.error
+            ? `${body.error}${body.detail ? ` (${body.detail})` : ""}`
+            : "Could not load stats. Make sure you are signed in as the admin.";
+        setError(msg);
         return;
       }
-      setStats(await res.json() as AdminStats);
+      setStats(body as AdminStats);
       setLastRefreshed(new Date());
     } catch {
       setError("Network error loading stats.");
