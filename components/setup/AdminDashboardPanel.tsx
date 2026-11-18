@@ -83,8 +83,22 @@ export function AdminDashboardPanel() {
     setError("");
     try {
       const res = await fetch("/api/setup/admin-stats");
-      const body = (await res.json()) as AdminStats | { error?: string; detail?: string };
+      const body = (await res.json()) as
+        | AdminStats
+        | {
+            error?: string;
+            detail?: string;
+            remediation?: { fastest: string[]; alternate?: string[]; projectRef?: string };
+          };
       if (!res.ok) {
+        if (typeof body === "object" && body && "remediation" in body && body.remediation) {
+          const steps = body.remediation.fastest.map((s, i) => `${i + 1}. ${s}`).join("\n");
+          const alt = body.remediation.alternate?.length
+            ? `\n\nAlternate:\n${body.remediation.alternate.map((s) => `• ${s}`).join("\n")}`
+            : "";
+          setError(`${body.error ?? "Setup required"}\n\n${steps}${alt}`);
+          return;
+        }
         const msg =
           typeof body === "object" && body && "error" in body && body.error
             ? `${body.error}${body.detail ? ` (${body.detail})` : ""}`

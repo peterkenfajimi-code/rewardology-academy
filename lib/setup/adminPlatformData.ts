@@ -50,25 +50,9 @@ type UserLocationRow = {
   last_seen_at: string;
 };
 
-/** Load platform-wide stats: RPC first, then service-role table reads (Netlify env). */
-export async function loadAdminStatsSnapshot(
-  supabase: SupabaseClient
+async function loadSnapshotFromServiceClient(
+  svc: SupabaseClient
 ): Promise<{ data: AdminStatsSnapshot | null; error: string | null }> {
-  const rpc = await supabase.rpc("admin_stats_snapshot");
-  if (!rpc.error && rpc.data) {
-    return { data: rpc.data as AdminStatsSnapshot, error: null };
-  }
-
-  const svc = getServiceAdminClient();
-  if (!svc) {
-    return {
-      data: null,
-      error:
-        rpc.error?.message ??
-        "admin_stats_snapshot missing. Apply supabase/admin-platform-stats.sql or set SUPABASE_SERVICE_ROLE_KEY on the server.",
-    };
-  }
-
   const [
     profilesRes,
     courseProgressRes,
@@ -115,6 +99,29 @@ export async function loadAdminStatsSnapshot(
       testimonials: testimonialsRes.data ?? [],
     },
     error: null,
+  };
+}
+
+/** Prefer service-role (Netlify); fall back to admin_stats_snapshot RPC when SQL is applied. */
+export async function loadAdminStatsSnapshot(
+  supabase: SupabaseClient
+): Promise<{ data: AdminStatsSnapshot | null; error: string | null }> {
+  const svc = getServiceAdminClient();
+  if (svc) {
+    const fromService = await loadSnapshotFromServiceClient(svc);
+    if (fromService.data) return fromService;
+  }
+
+  const rpc = await supabase.rpc("admin_stats_snapshot");
+  if (!rpc.error && rpc.data) {
+    return { data: rpc.data as AdminStatsSnapshot, error: null };
+  }
+
+  return {
+    data: null,
+    error:
+      rpc.error?.message ??
+      "Set SUPABASE_SERVICE_ROLE_KEY on Netlify (Settings → Environment variables), redeploy, then refresh. Or apply supabase/admin-platform-stats.sql in Supabase.",
   };
 }
 
