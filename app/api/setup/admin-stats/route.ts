@@ -11,9 +11,19 @@ export async function GET() {
   if (!loaded.data) {
     return NextResponse.json(
       {
-        error:
-          "Admin stats unavailable. Apply supabase/admin-platform-stats.sql (node scripts/apply-admin-platform-stats.mjs) or set SUPABASE_SERVICE_ROLE_KEY in Netlify.",
+        error: "Admin dashboard is not configured for platform-wide stats yet.",
         detail: loaded.error,
+        remediation: {
+          fastest: [
+            "Netlify → Site configuration → Environment variables",
+            "Add SUPABASE_SERVICE_ROLE_KEY = Supabase project Settings → API → service_role secret (not anon)",
+            "Deploy site → Trigger deploy → refresh this page",
+          ],
+          alternate: [
+            "Or run: node scripts/apply-admin-platform-stats.mjs (requires SUPABASE_ACCESS_TOKEN in .env.local)",
+          ],
+          projectRef: "fgkhowgggwbsosqhfnnz",
+        },
       },
       { status: 503 }
     );

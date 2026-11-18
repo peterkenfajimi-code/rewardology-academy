@@ -183,7 +183,12 @@
   color: rgba(255, 255, 255, 0.5);
   text-align: center;
 }
-.adm-error { color: #f87171; }
+.adm-error {
+  color: #f87171;
+  white-space: pre-wrap;
+  line-height: 1.55;
+  max-width: 720px;
+}
 
 .adm-dashboard {
   display: flex;
