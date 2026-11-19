@@ -18,6 +18,17 @@ The admin dashboard needs **platform-wide** read access to Supabase. Member tabl
 
 SQL migration is **optional** when this variable is set.
 
+## Fix “US” and “United States” as two country rows
+
+The app groups by country code once `admin_user_location_stats` is updated in the database:
+
+```bash
+# .env.local needs SUPABASE_ACCESS_TOKEN + ADMIN_EMAIL (same as Netlify)
+node scripts/apply-admin-platform-stats.mjs
+```
+
+Or **GitHub** → Actions → **Setup admin dashboard stats** → **Run workflow** (with the Actions secrets set).
+
 ## Automated (local or GitHub Actions)
 
 With `.env.local` containing `NETLIFY_AUTH_TOKEN`, `SUPABASE_SERVICE_ROLE_KEY`, `ADMIN_EMAIL`, Supabase URL/anon key:
