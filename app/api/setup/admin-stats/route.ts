@@ -106,7 +106,7 @@ export async function GET() {
   // ── Quiz metrics ──
   const quizUsersCount = new Set(quizRows.map((r) => r.user_id)).size;
   const quizPerfectCount = quizRows.filter((r) => r.best_score === r.best_total).length;
-  const quizAttempts = quizRows.length;
+  const quizAttempts = quizRows.reduce((s, r) => s + (r.attempts ?? 1), 0);
 
   // ── Testimonials ──
   const testimonialsByStatus = {
