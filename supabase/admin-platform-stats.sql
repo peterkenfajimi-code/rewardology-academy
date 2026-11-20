@@ -48,7 +48,7 @@ begin
     'quizProgress',
       coalesce(
         (select json_agg(row_to_json(t)) from (
-          select user_id, quiz_id, best_xp, best_score, best_total, updated_at
+          select user_id, quiz_id, best_xp, best_score, best_total, attempts, updated_at
           from public.quiz_centre_progress
         ) t),
         '[]'::json

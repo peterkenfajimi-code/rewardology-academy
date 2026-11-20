@@ -10,14 +10,15 @@ export type AdminStatsSnapshot = {
     xp: number | null;
     updated_at: string | null;
   }[];
-  quizProgress: {
-    user_id: string;
-    quiz_id: number;
-    best_xp: number | null;
-    best_score: number | null;
-    best_total: number | null;
-    updated_at: string | null;
-  }[];
+    quizProgress: {
+      user_id: string;
+      quiz_id: number;
+      best_xp: number | null;
+      best_score: number | null;
+      best_total: number | null;
+      attempts: number | null;
+      updated_at: string | null;
+    }[];
   dailyQuiz: { user_id: string; xp_earned: number | null; created_at: string | null }[];
   articleProgress: { user_id: string; xp: number | null }[];
   dictionaryProgress: { user_id: string; xp: number | null }[];
@@ -65,7 +66,9 @@ async function loadSnapshotFromServiceClient(
   ] = await Promise.all([
     svc.from("profiles").select("id, created_at"),
     svc.from("course_progress").select("user_id, course_id, lesson_id, xp, updated_at"),
-    svc.from("quiz_centre_progress").select("user_id, quiz_id, best_xp, best_score, best_total, updated_at"),
+    svc.from("quiz_centre_progress").select(
+      "user_id, quiz_id, best_xp, best_score, best_total, attempts, updated_at"
+    ),
     svc.from("daily_quiz_completions").select("user_id, xp_earned, created_at"),
     svc.from("article_progress").select("user_id, xp"),
     svc.from("dictionary_progress").select("user_id, xp"),
@@ -202,6 +205,16 @@ export async function loadAdminLocationStats(
   profileIds: string[]
 ): Promise<LocationStats> {
   const profileCount = profileIds.length;
+  const svc = getServiceAdminClient();
+  if (svc) {
+    const { data, error } = await svc
+      .from("user_locations")
+      .select("user_id, country_code, country_name, region, city, last_seen_at");
+    if (!error && data) {
+      return buildLocationStatsFromRows(profileIds, data as UserLocationRow[]);
+    }
+  }
+
   const rpc = await supabase.rpc("admin_user_location_stats");
   if (!rpc.error && rpc.data) {
     const loc = rpc.data as LocationStats;
@@ -211,7 +224,6 @@ export async function loadAdminLocationStats(
     return loc;
   }
 
-  const svc = getServiceAdminClient();
   if (!svc) {
     return {
       totalTracked: 0,
@@ -224,20 +236,13 @@ export async function loadAdminLocationStats(
     };
   }
 
-  const { data, error } = await svc
-    .from("user_locations")
-    .select("user_id, country_code, country_name, region, city, last_seen_at");
-  if (error || !data) {
-    return {
-      totalTracked: 0,
-      totalUsers: profileCount,
-      unknown: profileCount,
-      countriesRepresented: 0,
-      byCountry: [],
-      byRegion: [],
-      recent: [],
-    };
-  }
-
-  return buildLocationStatsFromRows(profileIds, data as UserLocationRow[]);
+  return {
+    totalTracked: 0,
+    totalUsers: profileCount,
+    unknown: profileCount,
+    countriesRepresented: 0,
+    byCountry: [],
+    byRegion: [],
+    recent: [],
+  };
 }
