@@ -1,0 +1,20 @@
+-- Migration 036 — notes only. No GRANT changes.
+--
+-- pending_verification is a publish_status on public.benefit_entries, not a table.
+-- Anon REST GET /benefit_entries?publish_status=eq.pending_verification returns
+-- 200 [] because RLS filters the rows. PostgreSQL cannot 401 a subset of one table.
+--
+-- Public policy required (migration 005):
+--   "Public read published benefit_entries"
+--   FOR SELECT TO anon, authenticated
+--   USING (publish_status = 'published');
+-- Directory, company profiles and the public API load published facts from this
+-- table via the anon key. Revoking SELECT would 401 published rows too and break
+-- those pages.
+--
+-- Same pattern on workforce_composition_entries
+--   ("Public read published workforce_composition", published only).
+--
+-- Public history: superseded is NOT visible to anon. Methodology "review history"
+-- is internal (service_role: superseded rows + verification_log). Live catalogue
+-- is published facts only.
