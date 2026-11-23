@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { requirePlatformAdmin } from "@/lib/auth/admin";
 import { COURSES, allLessons } from "@/lib/courses/courseData";
+import { buildAdminMemberDirectory } from "@/lib/setup/adminMemberDirectory";
 import { loadAdminLocationStats, loadAdminStatsSnapshot } from "@/lib/setup/adminPlatformData";
 
 export async function GET() {
@@ -120,6 +121,8 @@ export async function GET() {
     profiles.map((p) => p.id)
   );
 
+  const members = await buildAdminMemberDirectory(loaded.data);
+
   return NextResponse.json({
     users: {
       total: totalUsers,
@@ -141,5 +144,6 @@ export async function GET() {
     quizzes: { usersAttempted: quizUsersCount, attempts: quizAttempts, perfectScores: quizPerfectCount },
     testimonials: testimonialsByStatus,
     locations,
+    members: members ?? undefined,
   });
 }

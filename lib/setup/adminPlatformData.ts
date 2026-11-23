@@ -2,7 +2,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import { getServiceAdminClient } from "@/lib/supabase/serviceAdmin";
 
 export type AdminStatsSnapshot = {
-  profiles: { id: string; created_at: string | null }[];
+  profiles: { id: string; full_name: string | null; created_at: string | null }[];
   courseProgress: {
     user_id: string;
     course_id: number;
@@ -34,6 +34,7 @@ export type LocationStats = {
   byCountry: { countryCode: string; countryName: string | null; users: number }[];
   byRegion: { countryCode: string; region: string; users: number }[];
   recent: {
+    userId?: string;
     countryCode: string;
     countryName: string | null;
     region: string | null;
@@ -64,7 +65,7 @@ async function loadSnapshotFromServiceClient(
     comicsProgressRes,
     testimonialsRes,
   ] = await Promise.all([
-    svc.from("profiles").select("id, created_at"),
+    svc.from("profiles").select("id, full_name, created_at"),
     svc.from("course_progress").select("user_id, course_id, lesson_id, xp, updated_at"),
     svc.from("quiz_centre_progress").select(
       "user_id, quiz_id, best_xp, best_score, best_total, attempts, updated_at"
@@ -182,6 +183,7 @@ export function buildLocationStatsFromRows(
     .sort((a, b) => new Date(b.last_seen_at).getTime() - new Date(a.last_seen_at).getTime())
     .slice(0, 10)
     .map((r) => ({
+      userId: r.user_id,
       countryCode: r.country_code!.toUpperCase(),
       countryName: r.country_name,
       region: r.region,
