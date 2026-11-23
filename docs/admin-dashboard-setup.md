@@ -16,7 +16,9 @@ The admin dashboard needs **platform-wide** read access to Supabase. Member tabl
 
 3. Refresh [rewardologyacademy.com/setup](https://rewardologyacademy.com/setup).
 
-SQL migration is **optional** when this variable is set.
+You should see platform-wide user counts and a **Members (who & activity)** table (emails via service role). **Recent geo visits** labels each row with the matching member when geo data exists.
+
+SQL migration is **optional** when this variable is set. For a CLI export: `SUPABASE_SERVICE_ROLE_KEY=... node scripts/export-admin-members.mjs`.
 
 ## Automated (local or GitHub Actions)
 

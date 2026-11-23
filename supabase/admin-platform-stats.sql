@@ -168,6 +168,7 @@ begin
           select json_agg(row_to_json(t))
           from (
             select
+              user_id as "userId",
               country_code as "countryCode",
               country_name as "countryName",
               region,
