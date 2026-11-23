@@ -17,6 +17,7 @@ type AdminStats = {
     byCountry: { countryCode: string; countryName: string | null; users: number }[];
     byRegion: { countryCode: string; region: string; users: number }[];
     recent: {
+      userId?: string;
       countryCode: string;
       countryName: string | null;
       region: string | null;
@@ -24,7 +25,68 @@ type AdminStats = {
       lastSeenAt: string;
     }[];
   };
+  members?: AdminMember[];
 };
+
+type AdminMember = {
+  userId: string;
+  email: string | null;
+  fullName: string | null;
+  registeredAt: string | null;
+  location: {
+    countryCode: string | null;
+    countryName: string | null;
+    region: string | null;
+    city: string | null;
+    lastGeoAt: string | null;
+  } | null;
+  xp: {
+    total: number;
+    courses: number;
+    quizzes: number;
+    daily: number;
+    articles: number;
+    dictionary: number;
+    comics: number;
+  };
+  activity: {
+    courseLessonRows: number;
+    coursesTouched: number;
+    quizQuizzesAttempted: number;
+    quizAttempts: number;
+    dailyQuizCompletions: number;
+    articlesRead: number;
+    dictionaryTerms: number;
+    comicsIssues: number;
+    lastLearningAt: string | null;
+  };
+};
+
+function memberLabel(m: AdminMember) {
+  const name = m.fullName?.trim();
+  if (name && m.email) return `${name} (${m.email})`;
+  if (m.email) return m.email;
+  if (name) return name;
+  return `${m.userId.slice(0, 8)}…`;
+}
+
+function activitySummary(m: AdminMember) {
+  const parts: string[] = [];
+  if (m.activity.coursesTouched > 0) {
+    parts.push(`${m.activity.coursesTouched} course(s), ${m.activity.courseLessonRows} lessons`);
+  }
+  if (m.activity.quizAttempts > 0) {
+    parts.push(`${m.activity.quizAttempts} quiz attempt(s)`);
+  }
+  if (m.activity.dailyQuizCompletions > 0) {
+    parts.push(`${m.activity.dailyQuizCompletions} daily quiz`);
+  }
+  if (m.activity.articlesRead > 0) parts.push(`${m.activity.articlesRead} articles`);
+  if (m.activity.dictionaryTerms > 0) parts.push(`${m.activity.dictionaryTerms} dictionary`);
+  if (m.activity.comicsIssues > 0) parts.push(`${m.activity.comicsIssues} comics`);
+  if (parts.length === 0) return "No learning activity recorded yet";
+  return parts.join(" · ");
+}
 
 function StatCard({ label, value, sub, accent }: { label: string; value: string | number; sub?: string; accent?: string }) {
   return (
@@ -144,8 +206,9 @@ export function AdminDashboardPanel() {
   if (error) return <div className="adm-error">{error}</div>;
   if (!stats) return null;
 
-  const { users, xp, courses, quizzes, testimonials, locations } = stats;
+  const { users, xp, courses, quizzes, testimonials, locations, members } = stats;
   const topCountryUsers = locations.byCountry[0]?.users ?? 1;
+  const memberById = new Map((members ?? []).map((m) => [m.userId, m]));
 
   return (
     <div className="adm-dashboard">
@@ -306,16 +369,30 @@ export function AdminDashboardPanel() {
             )}
 
             <h4 className="adm-location-title" style={{ marginTop: 20 }}>
-              Recent activity
+              Recent geo visits
             </h4>
             {locations.recent.length > 0 ? (
               <ul className="adm-location-recent">
-                {locations.recent.map((row, i) => (
-                  <li key={`${row.countryCode}-${row.lastSeenAt}-${i}`}>
-                    <span>{formatLocationLabel(row.countryCode, row.countryName, row.region, row.city)}</span>
-                    <span className="adm-location-time">{formatRelativeTime(row.lastSeenAt)}</span>
-                  </li>
-                ))}
+                {locations.recent.map((row, i) => {
+                  const member = row.userId ? memberById.get(row.userId) : undefined;
+                  return (
+                    <li key={`${row.userId ?? row.countryCode}-${row.lastSeenAt}-${i}`}>
+                      <span className="adm-location-recent-main">
+                        {member ? (
+                          <>
+                            <strong className="adm-member-who">{memberLabel(member)}</strong>
+                            <span className="adm-member-where">
+                              {formatLocationLabel(row.countryCode, row.countryName, row.region, row.city)}
+                            </span>
+                          </>
+                        ) : (
+                          formatLocationLabel(row.countryCode, row.countryName, row.region, row.city)
+                        )}
+                      </span>
+                      <span className="adm-location-time">{formatRelativeTime(row.lastSeenAt)}</span>
+                    </li>
+                  );
+                })}
               </ul>
             ) : (
               <p className="adm-location-empty">No recent visits recorded.</p>
@@ -326,6 +403,62 @@ export function AdminDashboardPanel() {
         <p className="adm-location-empty">
           Location data will appear once signed-in users visit the site. Approximate geo is derived from IP/CDN headers — no GPS permission is requested.
         </p>
+      )}
+
+      {/* ── Members ── */}
+      {members && members.length > 0 && (
+        <>
+          <SectionHead title="Members (who & activity)" icon="🪪" />
+          <p className="adm-members-hint">
+            Admin-only: emails from auth. Learning counts are lesson rows, quiz attempts, daily quizzes, etc.
+          </p>
+          <div className="adm-member-table">
+            <div className="adm-member-row adm-member-hd">
+              <span>User</span>
+              <span>Location</span>
+              <span>XP</span>
+              <span>Activity</span>
+            </div>
+            {members.map((m) => (
+              <div key={m.userId} className="adm-member-row">
+                <span className="adm-member-user">
+                  <strong>{memberLabel(m)}</strong>
+                  {m.registeredAt && (
+                    <span className="adm-member-sub">Joined {new Date(m.registeredAt).toLocaleDateString()}</span>
+                  )}
+                </span>
+                <span>
+                  {m.location?.countryCode ? (
+                    <>
+                      {formatLocationLabel(
+                        m.location.countryCode,
+                        m.location.countryName,
+                        m.location.region,
+                        m.location.city
+                      )}
+                      {m.location.lastGeoAt && (
+                        <span className="adm-member-sub">
+                          Last geo {formatRelativeTime(m.location.lastGeoAt)}
+                        </span>
+                      )}
+                    </>
+                  ) : (
+                    <span className="adm-member-muted">Unknown</span>
+                  )}
+                </span>
+                <span className="adm-member-xp">{m.xp.total.toLocaleString()}</span>
+                <span className="adm-member-activity">
+                  {activitySummary(m)}
+                  {m.activity.lastLearningAt && (
+                    <span className="adm-member-sub">
+                      Last learning {formatRelativeTime(m.activity.lastLearningAt)}
+                    </span>
+                  )}
+                </span>
+              </div>
+            ))}
+          </div>
+        </>
       )}
 
       {/* ── Testimonials ── */}

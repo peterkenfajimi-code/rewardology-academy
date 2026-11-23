@@ -35,7 +35,7 @@ begin
   select json_build_object(
     'profiles',
       coalesce(
-        (select json_agg(row_to_json(t)) from (select id, created_at from public.profiles) t),
+        (select json_agg(row_to_json(t)) from (select id, full_name, created_at from public.profiles) t),
         '[]'::json
       ),
     'courseProgress',
