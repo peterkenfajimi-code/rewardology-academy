@@ -5,6 +5,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { AuthMode } from "@/components/auth/AuthProvider";
 import { SignupConsentFields } from "@/components/auth/SignupConsentFields";
+import { trackSignUp } from "@/lib/analytics/events";
 import { signupConsentPayload, writeSignupConsentCookie } from "@/lib/auth/signupConsent";
 import { isGoogleOAuthEnabled } from "@/lib/env";
 
@@ -87,6 +88,7 @@ export function AuthForm({
           },
         });
         if (signErr) throw signErr;
+        trackSignUp("email");
         if (data.session) {
           onSuccess?.();
         } else {

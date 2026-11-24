@@ -11,3 +11,44 @@ body {
   background: var(--brand-bg);
   color: #0f172a;
 }
+
+.ra-cookie-banner {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  max-width: 420px;
+  margin: 0 auto;
+  z-index: 9999;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #0f172a;
+  color: #e2e8f0;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.ra-cookie-banner-text {
+  margin: 0 0 12px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.ra-cookie-banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ra-cookie-btn {
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: #e2e8f0;
+  cursor: pointer;
+}
+.ra-cookie-btn-primary {
+  background: #c8963e;
+  border-color: #c8963e;
+  color: #0f172a;
+  font-weight: 600;
+}

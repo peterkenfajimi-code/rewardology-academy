@@ -3,6 +3,7 @@ import "./globals.css";
 import "@/styles/print-certificate.css";
 import { editorialSerif, editorialSans } from "@/lib/fonts";
 import { AuthProvider } from "@/components/auth/AuthProvider";
+import { ConsentedGoogleAnalytics } from "@/components/analytics/ConsentedGoogleAnalytics";
 import { APPLE_TOUCH_DATA_URL, FAVICON_DATA_URL } from "@/lib/brand/favicon";
 
 export const metadata: Metadata = {
@@ -16,10 +17,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID?.trim();
+
   return (
     <html lang="en">
       <body className={`${editorialSerif.variable} ${editorialSans.variable}`}>
         <AuthProvider>{children}</AuthProvider>
+        {gaId ? <ConsentedGoogleAnalytics gaId={gaId} /> : null}
       </body>
     </html>
   );
