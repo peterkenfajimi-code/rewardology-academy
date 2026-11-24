@@ -53,7 +53,9 @@ if (env.RSS2JSON_API_KEY) newVars.RSS2JSON_API_KEY = env.RSS2JSON_API_KEY;
 if (env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED) {
   newVars.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED = env.NEXT_PUBLIC_GOOGLE_OAUTH_ENABLED;
 }
-if (env.NEXT_PUBLIC_GA_ID) {
+if (env.GA_MEASUREMENT_ID) {
+  newVars.GA_MEASUREMENT_ID = env.GA_MEASUREMENT_ID;
+} else if (env.NEXT_PUBLIC_GA_ID) {
   newVars.NEXT_PUBLIC_GA_ID = env.NEXT_PUBLIC_GA_ID;
 }
 // Server-only — powers /setup Resend health checks (never NEXT_PUBLIC_*)

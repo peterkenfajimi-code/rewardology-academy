@@ -10,13 +10,13 @@
 
 1. [Google Analytics](https://analytics.google.com/) → **Admin** → **Create property** for `rewardologyacademy.com`.
 2. **Data stream** → Web → copy **Measurement ID** (`G-XXXXXXXXXX`).
-3. Add to Netlify → **Environment variables** → `NEXT_PUBLIC_GA_ID` = that value (all scopes).
+3. Add to Netlify → **Environment variables** → `GA_MEASUREMENT_ID` = that value (Builds, Functions, Runtime). Or run `node scripts/setup-ga4-production.mjs` with `NETLIFY_AUTH_TOKEN` and `GA_MEASUREMENT_ID` in `.env.local`.
 4. Deploy production, visit the site, **Accept analytics** on the cookie banner (required for EU/GDPR).
 5. In GA4 → **Admin** → **Events**, mark **`sign_up`** as a **Key event** (conversion).
 
 ## Local dev
 
-Set `NEXT_PUBLIC_GA_ID` in `.env.local` or omit it to disable analytics entirely.
+Set `GA_MEASUREMENT_ID` in `.env.local` / Netlify, or omit to disable analytics entirely.
 
 ## Alternatives
 
