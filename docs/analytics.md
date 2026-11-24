@@ -10,7 +10,7 @@
 
 1. [Google Analytics](https://analytics.google.com/) → **Admin** → **Create property** for `rewardologyacademy.com`.
 2. **Data stream** → Web → copy **Measurement ID** (`G-XXXXXXXXXX`).
-3. Add to Netlify → **Environment variables** → `GA_MEASUREMENT_ID` = that value (Builds, Functions, Runtime). Or run `node scripts/setup-ga4-production.mjs` with `NETLIFY_AUTH_TOKEN` and `GA_MEASUREMENT_ID` in `.env.local`.
+3. **Production:** `NEXT_PUBLIC_GA_ID` is set in `netlify.toml` (public by design). For other environments, set `NEXT_PUBLIC_GA_ID` in Netlify — **do not** mark it as a “secret” value (Netlify will block deploys as “exposed secrets”). Optional server alias: `GA_MEASUREMENT_ID`.
 4. Deploy production, visit the site, **Accept analytics** on the cookie banner (required for EU/GDPR).
 5. In GA4 → **Admin** → **Events**, mark **`sign_up`** as a **Key event** (conversion).
 
