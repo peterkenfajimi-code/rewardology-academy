@@ -10,11 +10,11 @@ export const CSP_REPORT_PATH = "/api/security/csp-report";
  */
 export const CONTENT_SECURITY_POLICY_REPORT_ONLY = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://cdn.sanity.io https://*.supabase.co https://img.logo.dev https://*.netlify.app",
   "font-src 'self' data:",
-  "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://*.sanity.io https://cdn.sanity.io https://accounts.google.com",
+  "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://*.sanity.io https://cdn.sanity.io https://accounts.google.com https://www.google-analytics.com https://www.googletagmanager.com https://region1.google-analytics.com",
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",
