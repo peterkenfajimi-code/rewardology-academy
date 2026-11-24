@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 import { SECURITY_HEADERS } from "./lib/security/csp";
 
 const nextConfig: NextConfig = {
+  eslint: {
+    // Avoid interactive/failed lint on Netlify when no eslint.config is committed.
+    ignoreDuringBuilds: true,
+  },
   serverExternalPackages: ["pdf-parse", "pdfjs-dist"],
   images: {
     remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io" }],
