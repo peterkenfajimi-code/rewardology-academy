@@ -2,6 +2,10 @@
 # Public client keys only (safe in repo; same as NEXT_PUBLIC_* in the browser bundle).
 [build.environment]
   NODE_VERSION = "20"
+  # GA4 measurement IDs are public in the browser; do not store as a "secret" env in Netlify UI.
+  NEXT_PUBLIC_GA_ID = "G-D8H4F9PPC7"
+  # Allowlisted for Netlify smart secret detection (values that intentionally ship in the bundle).
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_GA_ID,GA_MEASUREMENT_ID,NEXT_PUBLIC_SUPABASE_ANON_KEY"
   NEXT_PUBLIC_SITE_URL = "https://rewardologyacademy.com"
   NEXT_PUBLIC_SUPABASE_URL = "https://fgkhowgggwbsosqhfnnz.supabase.co"
   NEXT_PUBLIC_SUPABASE_ANON_KEY = "sb_publishable_SJCgneUnI2aPAetBDEzFeQ_UqpJEBts"

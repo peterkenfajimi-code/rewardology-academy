@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const gaId =
-    process.env.GA_MEASUREMENT_ID?.trim() || process.env.NEXT_PUBLIC_GA_ID?.trim();
+    process.env.NEXT_PUBLIC_GA_ID?.trim() || process.env.GA_MEASUREMENT_ID?.trim();
 
   return (
     <html lang="en">
