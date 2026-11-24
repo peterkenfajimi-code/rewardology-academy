@@ -1,6 +1,7 @@
 # https://docs.netlify.com/frameworks/next-js/overview/
 # Public client keys only (safe in repo; same as NEXT_PUBLIC_* in the browser bundle).
 [build.environment]
+  NODE_VERSION = "20"
   NEXT_PUBLIC_SITE_URL = "https://rewardologyacademy.com"
   NEXT_PUBLIC_SUPABASE_URL = "https://fgkhowgggwbsosqhfnnz.supabase.co"
   NEXT_PUBLIC_SUPABASE_ANON_KEY = "sb_publishable_SJCgneUnI2aPAetBDEzFeQ_UqpJEBts"
