@@ -4,6 +4,7 @@ import { isSupabaseConfigured } from "@/lib/env";
 import { certificateVerifyUrl } from "@/lib/certificates/urls";
 import type { IssueCertificatePayload } from "@/lib/certificates/types";
 import {
+  ignoreClientIssueScore,
   sanitizeRecipientName,
   verifiedCourseCertificate,
   verifiedDailyQuizCertificate,
@@ -81,15 +82,17 @@ export async function POST(request: Request) {
 
   if (!verified) return UNVERIFIED;
 
+  const issued = ignoreClientIssueScore(verified, body);
+
   const { data: id, error } = await supabase.rpc("issue_certificate", {
-    p_cert_type: verified.certType,
-    p_source_id: verified.sourceId,
-    p_recipient_name: verified.recipientName,
-    p_credential_name: verified.credentialName,
-    p_credential_detail: verified.credentialDetail,
-    p_score_pct: verified.scorePct,
-    p_xp_earned: verified.xpEarned,
-    p_issued_at: verified.issuedAt,
+    p_cert_type: issued.certType,
+    p_source_id: issued.sourceId,
+    p_recipient_name: issued.recipientName,
+    p_credential_name: issued.credentialName,
+    p_credential_detail: issued.credentialDetail,
+    p_score_pct: issued.scorePct,
+    p_xp_earned: issued.xpEarned,
+    p_issued_at: issued.issuedAt,
   });
 
   if (error) {

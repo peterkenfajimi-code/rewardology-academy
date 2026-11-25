@@ -2,7 +2,11 @@ import { COURSES, allLessons } from "@/lib/courses/courseData";
 import { questionForDate } from "@/lib/daily-quiz/dailyQuizData";
 import { QUIZ_CENTRE } from "@/lib/quizzes/quizCentre";
 import { courseCompletionIssuedAt } from "@/lib/certificates/courseCompletion";
-import type { CertificateType } from "@/lib/certificates/types";
+import type {
+  CertificateType,
+  IssueCertificatePayload,
+  PublicCertificate,
+} from "@/lib/certificates/types";
 
 export type CourseProgressRow = {
   lesson_id: string;
@@ -119,5 +123,40 @@ export function verifiedDailyQuizCertificate(
     scorePct: row.correct ? 100 : 0,
     xpEarned: Math.max(0, row.xp_earned),
     issuedAt: row.created_at,
+  };
+}
+
+/** Client-supplied scorePct / xpEarned on the issue payload must never be written. */
+export function ignoreClientIssueScore(
+  verified: VerifiedCertificate,
+  client: Pick<IssueCertificatePayload, "scorePct" | "xpEarned"> | undefined
+): VerifiedCertificate {
+  void client;
+  return verified;
+}
+
+/** Stored issued_certificates rows stay valid on the public verify page. */
+export function publicCertificateFromStored(row: {
+  id: string;
+  cert_type: CertificateType;
+  source_id: string;
+  recipient_name: string;
+  credential_name: string;
+  credential_detail: string | null;
+  score_pct: number | null;
+  xp_earned: number | null;
+  issued_at: string;
+}): PublicCertificate {
+  return {
+    id: row.id,
+    certType: row.cert_type,
+    sourceId: row.source_id,
+    recipientName: row.recipient_name,
+    credentialName: row.credential_name,
+    credentialDetail: row.credential_detail,
+    scorePct: row.score_pct,
+    xpEarned: row.xp_earned,
+    issuedAt: row.issued_at,
+    verified: true,
   };
 }

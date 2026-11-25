@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { QUIZ_CENTRE } from "@/lib/quizzes/quizCentre";
 import {
+  ignoreClientIssueScore,
+  publicCertificateFromStored,
   sanitizeRecipientName,
   verifiedDailyQuizCertificate,
   verifiedQuizCentreCertificate,
@@ -24,6 +26,41 @@ describe("verifiedQuizCentreCertificate", () => {
     expect(quiz?.scorePct).toBe(Math.round((2 / total) * 100));
     expect(quiz?.credentialName).toBeTruthy();
     expect(verifiedQuizCentreCertificate("1", null, "Ada")).toBeNull();
+  });
+
+  it("rejects a tampered client scorePct", () => {
+    const stored = verifiedQuizCentreCertificate(
+      "1",
+      { best_score: 2, best_total: 10, best_xp: 30, updated_at: "2026-01-01T00:00:00.000Z" },
+      "Ada"
+    );
+    expect(stored).not.toBeNull();
+    const issued = ignoreClientIssueScore(stored!, { scorePct: 100, xpEarned: 9999 });
+    const total = QUIZ_CENTRE.find((q) => q.id === 1)!.questions.length;
+    const expected = Math.round((2 / total) * 100);
+    expect(issued.scorePct).toBe(expected);
+    expect(issued.scorePct).not.toBe(100);
+    expect(issued.xpEarned).not.toBe(9999);
+  });
+});
+
+describe("publicCertificateFromStored", () => {
+  it("still validates an existing legitimate certificate", () => {
+    const cert = publicCertificateFromStored({
+      id: "RA-ABCDEF12",
+      cert_type: "quiz_centre",
+      source_id: "1",
+      recipient_name: "Ada",
+      credential_name: "Total Rewards Foundations",
+      credential_detail: "Quiz Centre",
+      score_pct: 80,
+      xp_earned: 40,
+      issued_at: "2026-06-01T00:00:00.000Z",
+    });
+    expect(cert.verified).toBe(true);
+    expect(cert.id).toBe("RA-ABCDEF12");
+    expect(cert.scorePct).toBe(80);
+    expect(cert.recipientName).toBe("Ada");
   });
 });
 
