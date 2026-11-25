@@ -1,5 +1,7 @@
 -- Shared rate-limit / lockout counters for serverless (Netlify) instances.
 -- Bucket ids are HMAC'd in the app so raw IPs are not stored.
+-- HMAC secret is RATE_LIMIT_HMAC_SECRET (server-only; never an admin secret).
+-- Retention: 24 hours from last update. Expired windows are deleted sooner.
 -- Run in the Academy SQL Editor (safe to re-run). Explicit grants are required
 -- for tables created after 30 October 2026.
 
@@ -13,7 +15,33 @@ create table if not exists public.rate_limit_buckets (
   updated_at    timestamptz not null default now()
 );
 
+comment on table public.rate_limit_buckets is
+  'HMAC bucket ids only (no IPs). RLS on; table GRANTs service_role only. 24-hour retention.';
+
 alter table public.rate_limit_buckets enable row level security;
+
+create or replace function public.purge_rate_limit_buckets()
+returns integer
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  n integer := 0;
+begin
+  delete from public.rate_limit_buckets
+  where updated_at < clock_timestamp() - interval '24 hours'
+     or (
+       reset_at < clock_timestamp()
+       and (locked_until is null or locked_until < clock_timestamp())
+     );
+  get diagnostics n = row_count;
+  return n;
+end;
+$$;
+
+revoke all on function public.purge_rate_limit_buckets() from public;
+grant execute on function public.purge_rate_limit_buckets() to service_role;
 
 create or replace function public.consume_rate_limit(
   p_id text,
@@ -55,6 +83,8 @@ begin
         end,
         updated_at = now_ts
   returning * into rec;
+
+  perform public.purge_rate_limit_buckets();
 
   return json_build_object(
     'ok', rec.count <= p_limit,
@@ -159,10 +189,14 @@ begin
 end;
 $$;
 
-revoke all on table public.rate_limit_buckets from anon, authenticated;
+revoke all on table public.rate_limit_buckets from public, anon, authenticated;
 grant select, insert, update, delete on table public.rate_limit_buckets to service_role;
 
-grant execute on function public.consume_rate_limit(text, integer, integer) to anon, authenticated;
-grant execute on function public.register_auth_failure(text, integer, integer, integer) to anon, authenticated;
-grant execute on function public.auth_lock_remaining(text) to anon, authenticated;
-grant execute on function public.clear_auth_failures(text) to anon, authenticated;
+grant execute on function public.consume_rate_limit(text, integer, integer)
+  to anon, authenticated, service_role;
+grant execute on function public.register_auth_failure(text, integer, integer, integer)
+  to anon, authenticated, service_role;
+grant execute on function public.auth_lock_remaining(text)
+  to anon, authenticated, service_role;
+grant execute on function public.clear_auth_failures(text)
+  to anon, authenticated, service_role;

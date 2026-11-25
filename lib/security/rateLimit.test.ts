@@ -4,6 +4,7 @@ import {
   isAuthLocked,
   registerAuthFailure,
   resetRateLimitStores,
+  resolveRateLimitHmacSecret,
 } from "@/lib/security/rateLimit";
 
 afterEach(() => {
@@ -27,6 +28,25 @@ describe("consumeRateLimit", () => {
     const after = consumeRateLimit("tts", "user-2", 1, 1_000, 2_100);
     expect(blocked.ok).toBe(false);
     expect(after.ok).toBe(true);
+  });
+});
+
+describe("resolveRateLimitHmacSecret", () => {
+  it("uses a dedicated server secret and refuses admin secrets", () => {
+    expect(
+      resolveRateLimitHmacSecret({ RATE_LIMIT_HMAC_SECRET: "rate-limit-hmac-key-32b" })
+    ).toBe("rate-limit-hmac-key-32b");
+    expect(
+      resolveRateLimitHmacSecret({
+        RATE_LIMIT_HMAC_SECRET: "shared-admin-token-value-32bytes",
+        REPOSITORY_ADMIN_SESSION_TOKEN: "shared-admin-token-value-32bytes",
+      })
+    ).toBeNull();
+    expect(
+      resolveRateLimitHmacSecret({
+        REPOSITORY_ADMIN_SESSION_TOKEN: "admin-session-token-value-32bytes",
+      })
+    ).toBeNull();
   });
 });
 

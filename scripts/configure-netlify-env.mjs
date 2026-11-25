@@ -81,6 +81,7 @@ const repositoryKeys = [
   "REPOSITORY_ADMIN_USERNAME",
   "REPOSITORY_ADMIN_PASSWORD",
   "REPOSITORY_ADMIN_SESSION_TOKEN",
+  "RATE_LIMIT_HMAC_SECRET",
 ];
 for (const key of repositoryKeys) {
   if (env[key]) newVars[key] = env[key];

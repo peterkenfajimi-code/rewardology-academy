@@ -59,12 +59,20 @@ const verify = await fetch(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      query: `select to_regclass('public.rate_limit_buckets') as table_name,
+      query: `select
+        to_regclass('public.rate_limit_buckets') as table_name,
+        (select relrowsecurity from pg_class c
+           join pg_namespace n on n.oid = c.relnamespace
+           where n.nspname = 'public' and c.relname = 'rate_limit_buckets') as rls,
+        (select coalesce(json_agg(json_build_object('grantee', grantee, 'privilege', privilege_type)
+           order by grantee, privilege_type), '[]'::json)
+           from information_schema.role_table_grants
+           where table_schema = 'public' and table_name = 'rate_limit_buckets') as grants,
         exists (
           select 1 from pg_proc p
           join pg_namespace n on n.oid = p.pronamespace
-          where n.nspname = 'public' and p.proname = 'consume_rate_limit'
-        ) as has_consume_rpc;`,
+          where n.nspname = 'public' and p.proname = 'purge_rate_limit_buckets'
+        ) as has_purge;`,
     }),
   }
 );

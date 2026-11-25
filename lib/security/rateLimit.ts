@@ -84,12 +84,27 @@ export function clearAuthFailures(scope: string, key: string) {
   locks.delete(`${scope}:${key}`);
 }
 
+/**
+ * Shared-store HMAC key. Server-only. Must not equal repository admin secrets.
+ * Missing or reused admin secrets → in-memory fallback (no shared counters).
+ */
+export function resolveRateLimitHmacSecret(
+  env: Record<string, string | undefined> = process.env
+): string | null {
+  const dedicated = env.RATE_LIMIT_HMAC_SECRET?.trim() ?? "";
+  if (dedicated.length < 16) return null;
+  const adminSecrets = [
+    env.REPOSITORY_ADMIN_SESSION_TOKEN,
+    env.REPOSITORY_ADMIN_PASSWORD,
+  ]
+    .map((value) => value?.trim())
+    .filter((value): value is string => Boolean(value));
+  if (adminSecrets.includes(dedicated)) return null;
+  return dedicated;
+}
+
 function hmacSecret(): string | null {
-  const dedicated = process.env.RATE_LIMIT_HMAC_SECRET?.trim();
-  if (dedicated && dedicated.length >= 16) return dedicated;
-  const session = process.env.REPOSITORY_ADMIN_SESSION_TOKEN?.trim();
-  if (session && Buffer.byteLength(session, "utf8") >= 32) return session;
-  return null;
+  return resolveRateLimitHmacSecret();
 }
 
 function bucketId(scope: string, key: string): string | null {
