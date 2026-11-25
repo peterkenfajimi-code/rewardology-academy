@@ -8,9 +8,11 @@ import { EmptyState } from "@/components/repository/EmptyState";
 import { EntryCard } from "@/components/repository/EntryCard";
 import { CATEGORY_ORDER, categoryLabel } from "@/lib/repository/category-labels";
 import type { CompanyIndexRow, PublicBenefitEntry } from "@/lib/repository/load-public-entries";
-import { repositoryCorrectionMailto } from "@/lib/repository/correctionLink";
+import {
+  REPOSITORY_CORRECTION_EMAIL,
+  repositoryCorrectionMailto,
+} from "@/lib/repository/correctionLink";
 import { marketLabel } from "@/lib/repository/market-labels";
-import { CONTACT_EMAIL } from "@/lib/site";
 import "@/styles/benefits-repository.css";
 
 type ProfileResponse = {
@@ -134,7 +136,7 @@ export function BenefitsRepositoryProfile({ slug }: { slug: string }) {
               {company.logo_storage_path
                 ? `${company.name}'s name and logo identify the subject of publicly sourced research and remain the trademarks of their owner.`
                 : `${company.name}'s name identifies the subject of publicly sourced research and remains the trademark of its owner.`}{" "}
-              This profile is not endorsed by the company.
+              The company has not approved this profile.
             </p>
           </div>
         </div>
@@ -145,8 +147,10 @@ export function BenefitsRepositoryProfile({ slug }: { slug: string }) {
           </Link>
           <p className="benefits-repo-muted">
             Found something inaccurate?{" "}
-            <a href={repositoryCorrectionMailto(company.name)}>Email {CONTACT_EMAIL}</a>
-            {" "}with a public source.
+            <a href={repositoryCorrectionMailto(company.name)}>
+              Email {REPOSITORY_CORRECTION_EMAIL}
+            </a>{" "}
+            with a public source.
           </p>
         </div>
       </header>

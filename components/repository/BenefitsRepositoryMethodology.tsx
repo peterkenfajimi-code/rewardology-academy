@@ -2,9 +2,12 @@ import Link from "next/link";
 import { SOURCE_RECENCY_YEARS } from "@/lib/repository/collection-policy";
 import { loadRepositoryCoverage } from "@/lib/repository/coverage";
 import { STALENESS_MONTHS } from "@/lib/repository/staleness";
-import { repositoryCorrectionMailto } from "@/lib/repository/correctionLink";
+import {
+  REPOSITORY_CORRECTION_EMAIL,
+  SUPERSEDED_FINDINGS_SENTENCE,
+  repositoryCorrectionMailto,
+} from "@/lib/repository/correctionLink";
 import { loadRepositoryLastReviewed } from "@/lib/repository/lastReviewed";
-import { CONTACT_EMAIL } from "@/lib/site";
 import "@/styles/benefits-repository.css";
 
 const SOURCES = [
@@ -17,7 +20,7 @@ const SOURCES = [
   {
     name: "Press releases",
     gives:
-      "Dated, specific announcements — a new health partnership, a policy change — that help us pin down when something changed.",
+      "Dated, specific announcements — a new health cover, a policy change — that help us pin down when something changed.",
   },
   {
     name: "Regulatory filings",
@@ -71,8 +74,7 @@ export async function BenefitsRepositoryMethodology() {
         </p>
         <p>
           This project is built and maintained by Rewardology Academy, a Total Rewards learning and
-          intelligence platform. It is not affiliated with, sponsored by, or endorsed by any of the companies
-          it covers.
+          intelligence platform. It is not affiliated with or sponsored by any of the companies it covers.
         </p>
       </section>
 
@@ -123,13 +125,13 @@ export async function BenefitsRepositoryMethodology() {
           </li>
           <li>
             <strong>Low</strong> — Vague or promotional language with no independently checkable claim.
-            Low-confidence findings are not published as facts; they&apos;re held for further verification.
+            Low-confidence findings are not published as facts; they&apos;re held for further review.
           </li>
         </ul>
         <p>
           We also distinguish a company&apos;s own specific disclosure from a country&apos;s general statutory
           minimum. If a company states a pension contribution rate that happens to match the legal minimum, we
-          verify the company actually said so — rather than assuming the statutory floor applies to it by
+          check that the company actually said so — rather than assuming the statutory floor applies to it by
           default. In the same way, accounting-policy wording that only defines a category of cost — for
           example, a standard definition of short-term benefits that mentions medical aid — is not taken as
           evidence that the company provides that benefit.
@@ -140,10 +142,9 @@ export async function BenefitsRepositoryMethodology() {
         <h2>How Conflicting Information Is Handled</h2>
         <p>
           When two sources disagree — say, a careers page states one figure and a more recent annual report
-          states another — we don&apos;t silently pick one or average them. The higher-trust, better-verified
-          source is published; the other is kept on record as <strong>pending verification</strong> rather than
-          discarded, and superseded findings stay in our review history with the reason recorded rather than
-          disappearing. Corrections demote an entry rather than delete it.
+          states another — we don&apos;t silently pick one or average them. The higher-trust source is
+          published; the other is kept on record as pending review rather than discarded.{" "}
+          {SUPERSEDED_FINDINGS_SENTENCE} Corrections demote an entry rather than delete it.
         </p>
       </section>
 
@@ -161,9 +162,9 @@ export async function BenefitsRepositoryMethodology() {
         <h2>What This Repository Is Not</h2>
         <ul>
           <li>
-            <strong>Not an endorsement.</strong> A company&apos;s inclusion here — or the absence of an entry in
+            <strong>Not a ranking.</strong> A company&apos;s inclusion here — or the absence of an entry in
             a given category — says nothing about how generous or well-run its benefits are relative to others.
-            It only reflects what has been publicly disclosed and verified so far.
+            It only reflects what has been publicly disclosed in the sources reviewed so far.
           </li>
           <li>
             <strong>Not comprehensive by design.</strong> Coverage grows source by source and company by
@@ -181,13 +182,12 @@ export async function BenefitsRepositoryMethodology() {
       <section className="benefits-repo-methodology-section">
         <h2>Found Something Inaccurate?</h2>
         <p>
-          If you believe an entry here misrepresents a public disclosure, or you&apos;re associated with a
-          listed company and can point us to a more current or accurate public source, email{" "}
-          <a href={repositoryCorrectionMailto()}>
-            {CONTACT_EMAIL}
-          </a>{" "}
-          — we&apos;ll review it against the original source and correct or update the entry with the same
-          discipline we apply to every other fact here.
+          Found something inaccurate? Email{" "}
+          <a href={repositoryCorrectionMailto()}>{REPOSITORY_CORRECTION_EMAIL}</a>
+          . If you believe an entry here misrepresents a public disclosure, or you&apos;re associated with a
+          listed company and can point us to a more current or accurate public source, write with a link to
+          the public source — we&apos;ll review it against the original source and correct or update the entry
+          with the same discipline we apply to every other fact here.
         </p>
       </section>
 

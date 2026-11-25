@@ -125,7 +125,7 @@ export function BenefitsRepositoryIndex({ marketCount }: { marketCount: number |
         <EmptyState
           heading={
             filters.length
-              ? `No verified data yet for ${filterDescription(filters)}`
+              ? `No published facts yet for ${filterDescription(filters)}`
               : "No published companies yet"
           }
           body={
